@@ -25,11 +25,11 @@ backend:
   # git-gateway
   name:                   github
   # Path to your GitHub repository (w/o https://github.com/)
-  repo:                   <gh-account>/<repository>
+  repo:                   jekyll-one-org/starter-app
   # e.g master | develop
   branch:                 master
   # URL of external OAuth Client (if any: e.g http://localhost:41001)
-  #base_url:
+  base_url:               https://oauth.jekyll.one
 
 # ------------------------------------------------------------------------------
 # Site (production) settings
@@ -84,7 +84,7 @@ collections:
       #
       - label: Global Settings
         name:  global_site_config
-        file:  packages/400_template_site/_cc_test_data/_config.yml
+        file:  cc_test_data/_config.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -525,7 +525,7 @@ collections:
       #
       - label: Resource Settings
         name:  site_resource_settings
-        file:  packages/400_template_site/_cc_test_data/_data/resources.yml
+        file:  cc_test_data/_data/resources.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -612,7 +612,7 @@ collections:
       #
       - label: Banner Settings
         name:  banner_settings
-        file:  packages/400_template_site/_cc_test_data/_data/blocks/banner.yml
+        file:  cc_test_data/_data/blocks/banner.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -816,7 +816,7 @@ collections:
       #
       - label: Panel Settings
         name:  panel_settings
-        file:  packages/400_template_site/_cc_test_data/_data/blocks/panel.yml
+        file:  cc_test_data/_data/blocks/panel.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1014,7 +1014,7 @@ collections:
       #
       - label: Footer Settings
         name:  footer_settings
-        file:  packages/400_template_site/_cc_test_data/_data/blocks/footer.yml
+        file:  cc_test_data/_data/blocks/footer.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1195,7 +1195,7 @@ collections:
       #
       - label:      J1 Cookie Consent
         name:       config_cookie_consent
-        file:       packages/400_template_site/_cc_test_data/_data/modules/cookie_consent.yml
+        file:       cc_test_data/_data/modules/cookie_consent.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1260,7 +1260,7 @@ collections:
       #
       - label:      J1 Jekyll Search
         name:       config_jekyll_search
-        file:       packages/400_template_site/_cc_test_data/_data/modules/jekyll_search.yml
+        file:       cc_test_data/_data/modules/jekyll_search.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1300,7 +1300,7 @@ collections:
       #
       - label:      J1 Navigation
         name:       config_navigation
-        file:       packages/400_template_site/_cc_test_data/_data/modules/defaults/navigator.yml
+        file:       cc_test_data/_data/modules/defaults/navigator.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1488,7 +1488,7 @@ collections:
       #
       - label:      J1 Back2Top
         name:       config_back2top
-        file:       packages/400_template_site/_cc_test_data/_data/modules/defaults/back2top.yml
+        file:       cc_test_data/_data/modules/defaults/back2top.yml
         fields:
 
           # --------------------------------------------------------------------
