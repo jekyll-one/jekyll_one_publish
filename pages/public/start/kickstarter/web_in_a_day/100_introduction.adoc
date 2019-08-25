@@ -15,7 +15,7 @@ resource_options:
   - attic:
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/pages/kickstarter/web_in_a_day/intro/get-started-1920x1280-bw.jpg
+        - url:                          /assets/images/pages/kickstarter/web_in_a_day/get-started-1920x1280-bw.jpg
           alt:                          Photo by JESHOOTS.COM on Unsplash
           alignY:                       top
           badge:
