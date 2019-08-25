@@ -1,0 +1,118 @@
+---
+title:                                  jQuery Pen
+tagline:                                Defrerreds and Promises
+description:                            jQuery test page checking 
+
+tags:                                   [ Start, Template, Web, Day, Jekyll ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/private/pen/jquery/deferreds/
+regenerate:                             false
+
+#resources:                             []
+resource_options:
+  - toccer:
+      collapseDepth:                    2
+  - attic:
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/pen/jquery/jquery-banner-1280x600.jpg
+          alt:                          jquery-banner
+---
+
+// Enable the Liquid Preprocessor
+//
+:page-liquid:
+
+// Set other global page attributes here
+// -------------------------------------------------------------------
+
+
+== jQuery when()
+
+// https://api.jquery.com/jquery.when/
+// https://api.jquery.com/deferred.catch/
+// https://stackoverflow.com/questions/5280699/jquery-when-understanding
+// https://stackoverflow.com/questions/39466615/jquery-3-1-0-then-done-and-when-error-swallowing
+
+Execute callback functions based on zero or more Thenable objects, usually 
+Deferred objects that represent asynchronous events.
+
+NOTE: deferreds
+Type: Deferred or Promise or Thenable Zero or more Thenable objects.
+
+If no arguments are passed to jQuery.when(), it will return a resolved Promise.
+
+If a single Deferred is passed to jQuery.when(), its Promise object 
+(a subset of the Deferred methods) is returned by the method. Additional 
+methods of the Promise object can be called to attach callbacks, such as 
+deferred.then. 
+
+When the Deferred is resolved or rejected, usually by the code that 
+created the Deferred originally, the appropriate callbacks will be called.
+
+== Try and catch
+
+lorem:sentences[5]
+
+++++
+<script>
+$(document).ready(function() {
+
+  var pageLoaded = setInterval(function() {
+    if (j1.getState() === 'finished') {
+
+      // pause display the current page until j1 initialization is 'finished'
+      setTimeout( function() {
+        var logger = log4javascript.getLogger('j1.pen');
+        var logText;
+        var json_data;
+
+        // ---------------------------------------------------------------------
+        // helper
+        // ---------------------------------------------------------------------
+        function getStatusEndpoint() {
+          var myUrl = window.location.href; 
+          var ua    = platform.name.toLowerCase();
+
+          // NOTE: named capture groups NOT supported by FF + IE11
+          if ( ua === 'chrome' ) {
+            reURL          = new RegExp('(?<prot>http[s]?:\/\/)?(?<host>[^\/]+)(?<path>.*)');
+            reGroups       = myUrl.match(reURL).groups;
+            statusEndpoint = reGroups.prot + reGroups.host + '/status';
+          } else {
+            reURL          = new RegExp('(http[s]?:\/\/)?([^\/]+)(.*)');
+            myUrl.match(reURL);
+            statusEndpoint = RegExp.$1 + RegExp.$2 + RegExp.$3 + 'status';
+          }
+          return statusEndpoint;
+        }
+
+        // ---------------------------------------------------------------------
+        // main
+        // ---------------------------------------------------------------------
+        var url = getStatusEndpoint();
+
+        $.when($.ajax(url))
+        .then(function(data) {          
+          json_data = JSON.stringify(data, undefined, 2);
+          logText   = 'deferred: ' + json_data;
+          logger.info(logText);
+        })
+        .catch(function(error) {
+          json_data = JSON.stringify(error, undefined, 2);
+          logText   = 'deferred: ' + json_data;
+          logger.error(logText);
+        });
+
+      });
+      // clear interval checking
+      clearInterval(pageLoaded);
+    }
+  }, 50); // END setInterval
+
+});
+</script>
+++++
+

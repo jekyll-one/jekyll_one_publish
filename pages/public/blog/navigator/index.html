@@ -1,0 +1,41 @@
+---
+layout:                                 blog_archive
+
+title:                                  Navigator
+tagline:                                explore posts
+description:                            Page Generator
+
+tags:                                   [ Blog, Navigator ]
+resources:                              []
+toc:                                    true
+noindex:                                true
+
+pagination:
+  enabled:                              true
+  permalink:                            /page:num/
+
+regenerate:                             false
+
+resource_options:
+  - toccer:
+      collapseDepth:                    2
+  - attic:
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/attics/library-1920x1280-bw.jpg
+          alt:                          library-1920x1280-bw
+---
+
+<pre>
+
+  This page is created by the layout: {{ page.layout }}.
+
+  If this text is displaywd (instead of the home page expected),
+  something went  wrong with the layout definitions. Check  the
+  output of the Jekyll engine building this site.
+
+  Check the  contents   of folder _layouts. Verify  if the base
+  layout  "{{ page.layout }}" exists  and the  referring  chain
+  (inheritance) is correct.
+
+</pre>

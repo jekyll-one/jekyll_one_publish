@@ -1,0 +1,36 @@
+---
+title:                                  The Components
+tagline:                                Building blocks ready to use
+description:                            Building blocks ready to use
+
+tags:                                   [ Template, Overview, Components ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/panels/service_panel_components/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+---
+
+== The Components
+
+Components are the building blocks ready to use to create common page components,
+connections to systems and workflows of social networks like Twitter or Facebook
+or cloud services like Disqus for blog-related online forums and discussion.
+
+=== Panel
+
+lorem:sentences[5]
+lorem:sentences[2]
+
+=== Builder
+
+lorem:sentences[2]
+lorem:sentences[5]
+
+=== Connectors
+
+lorem:sentences[5]
+lorem:sentences[2]

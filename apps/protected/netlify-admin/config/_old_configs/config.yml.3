@@ -1,0 +1,419 @@
+media_folder:       assets/images                                               # Media files will be stored in the repo
+# publish_mode:     editorial_workflow
+
+backend:
+  name:             github                                                      # git-gateway
+  repo:             jekyll-one/starter-netlify-cms                              # Path to your GitHub repository
+
+
+collections:
+
+  # ----------------------------------------------------------------------------
+  # Site Settings
+  #
+  - label:          Site Configuration
+    name:           j1_site_config                                              # Used in routes, e.g., /admin/collections/blog 
+    files:
+
+      # ------------------------------------------------------------------------
+      # Site Settings
+      #
+      - label:      Site Settings
+        name:       site_config_settings
+        file:       _data/modules/defaults/test.yml
+        fields:
+          - label:  Global settings
+            name:   defaults
+            hint:   Global configuration settings for J1 Cookie Consent
+            widget: object
+            fields: 
+              - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+
+      - label: "Social Media"
+        name: "social"
+        file: "_data/modules/defaults/social_media.yml"
+        fields:
+          - label: platform
+            name: platform
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Icon, name: icon, widget: string}
+              - {label: Link, name: link, widget: string}
+
+      # ------------------------------------------------------------------------
+      # Resource Settings
+      #
+      # - label:      Resource Settings
+      #   name:       site_resource_settings
+      #   file:       _data/modules/defaults/array.yml
+      #   fields:
+      #     - label:  Resources
+      #       name:   resources
+      #       widget: object
+      #       fields: 
+      #         - label:  resource
+      #           name:   resource
+      #           widget: list
+      #           fields: 
+      #             - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+      #             - { label: id, name: id, widget: string, hint: Enables or Disables the module }
+      #             - { label: comment, name: comment, widget: string, hint: Enables or Disables the module }
+
+
+      # ------------------------------------------------------------------------
+      # Resource Settings
+      
+      - label:      Resource Settings
+        name:       site_resource_settings
+        file:       _data/modules/defaults/array.yml
+        fields:
+          - label:  Resources
+            name:   resources
+            widget: object
+            fields: 
+              - label:  resource
+                name:   resource
+                widget: list
+                fields: 
+                  - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+                  - { label: id, name: id, widget: string, hint: Enables or Disables the module }
+                  - { label: comment, name: comment, widget: string, hint: Enables or Disables the module }
+
+
+
+
+
+
+
+
+
+
+
+
+
+      # - label:      Resource Settings
+      #   name:       site_resource_settings
+      #   file:       _data/modules/defaults/resources.yml
+      #   fields:
+      # 
+      #     - label:  resources
+      #       name:   resources
+      #       widget: list
+      #       fields:
+      #         - label:  Resource settings
+      #           name:   resource
+      #           hint:   Global configuration settings for J1 Cookie Consent
+      #           widget: object
+      #           fields: 
+      #             - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+      #             - { label: id, name: id, widget: string, hint: Enables or Disables the module }
+      #             - { label: comment, name: comment, widget: string, hint: Enables or Disables the module }
+                  
+
+
+
+
+
+
+
+
+
+
+  #     # ------------------------------------------------------------------------
+  #     # Template Settings
+  #     #
+  #     - label:      Template Settings
+  #       name:       site_template_settings
+  #       file:       _data/j1_config.yml
+  #       fields:     [
+  #                     { label: enabled, name: enabled, widget: boolean }
+  #                   ]
+  # 
+  #     # ------------------------------------------------------------------------
+  #     # Resource Settings
+  #     #
+  #     - label:      Resource Settings
+  #       name:       site_resource_settings
+  #       file:       _data/modules/defaults/array.yml
+  #       fields:
+  #         - label:  platform
+  #           name:   platform
+  #           widget: list
+  #           fields:
+  #             - {label: Name, name: name, widget: string}
+  #             - {label: Icon, name: icon, widget: string}
+  #             - {label: Link, name: link, widget: string}
+  # 
+  # # ------------------------------------------------------------------------
+  # # Layout Settings
+  # #
+  # - label:      Layout Configuration
+  #   name:       site_layout_configuration
+  #   files:
+  # 
+  #     - label:      Default Template
+  #       name:       config_jekyll_search
+  #       file:       _data/modules/defaults/test.yml
+  #       fields:
+  #         - label:  1st level
+  #           name:   defaults
+                   
+
+
+  # ----------------------------------------------------------------------------
+  # Module Default Settings
+  #
+  - label:          Module Configuration
+    name:           module_default_settings
+    files:
+  
+      # ------------------------------------------------------------------------
+      # J1 Cookie Consent
+      #
+      - label:      J1 Cookie Consent
+        name:       config_cookie_consent
+        file:       _data/modules/defaults/cookie_consent.yml
+        fields:
+          - label:  Global settings
+            name:   defaults
+            hint:   Global configuration settings for J1 Cookie Consent
+            widget: object
+            fields: 
+              - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+              - { label: id, name: consent_modal_id, widget: string, hint: Name of the HTM (div) container the consent modal are placed }
+              - { label: data path, name: modal_html_data_path, widget: string, hint: Path to HTML data portion for all modals used. Loaded via AJAX }
+              - { label: stop scrolling, name: stop_scrolling, widget: boolean, hint: Enables or Disables scrolling of the underlying page }              
+              - { label: type, name: modal_type, widget: string, hint: Type of the consent modal used }
+              - { label: position, name: modal_position, widget: string, hint: Position the consent modal is placed }
+              - { label: title, name: consent_modals_title, widget: string, hint: Title used for the the consent modal }
+              - { label: whitelisted pages, name: whitelisted_pages, widget: list, hint: List of pages no consent modal is presented (comma separated) }
+              - label:  Category settings
+                name:   categories
+                hint:   Controls (if enabled) the summary table of cookies used
+                widget: object
+                fields: 
+                  - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the summary table }
+                  - { label: title, name: category_title, widget: string, hint: Title place on top of the summary table }
+                  - { label: description, name: category_description, widget: string, hint: Title of the information column }
+                  - { label: description text, name: category_description_text, widget: string, hint: Description in the information column }
+                  - { label: 1st column, name: category_session, widget: string, hint: Title of the 1st column }
+                  - { label: Indicator 1st column, name: category_session_enabled, widget: boolean, hint: Indicator if category is enabled or disabled }
+                  - { label: 2nd column, name: category_persistent, widget: string, hint: Title of the 2nd column }
+                  - { label: Indicator 2nd column, name: category_persistent_enabled, widget: boolean, hint: Indicator if category is enabled or disabled }
+                  - { label: 3rd column, name: category_first_party, widget: string, hint: Title of the 3rd column }
+                  - { label: Indicator 3rd column, name: category_first_party_enabled, widget: boolean, hint: Indicator if category is enabled or disabled }
+                  - { label: 4th column, name: category_second_party, widget: string, hint: Title of the 4th column }
+                  - { label: Indicator 4th column, name: category_second_party_enabled, widget: boolean, hint: Indicator if category is enabled or disabled }
+              - label:  Button settings
+                name:   buttons
+                hint:   Controls what buttons are displayed
+                widget: object
+                fields: 
+                  - { label: policy button text, name: policy_button_text, widget: string, hint: Button description }
+                  - { label: policy button, name: category_session_enabled, widget: boolean, hint: If checked the buttun is enabled }
+                  - { label: accept button text, name: accept_button_text, widget: string, hint: Button description }
+                  - { label: accept button, name: accept_button, widget: boolean, hint: If checked the buttun is enabled }
+                  - { label: decline button text, name: decline_button_text, widget: string, hint: Button description }
+                  - { label: decline button, name: decline_button, widget: boolean, hint: If checked the buttun is enabled }
+
+  #     # ------------------------------------------------------------------------
+  #     # J1 Jekyll Search
+  #     #
+  #     - label:      J1 Jekyll Search
+  #       name:       config_jekyll_search
+  #       file:       _data/modules/defaults/jekyll_search.yml
+  #       fields:
+  #         - label:  Global settings
+  #           name:   defaults
+  #           hint:   Global configuration settings for J1 Jekyll Search
+  #           widget: object
+  #           fields: 
+  #             - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+  #             - { label: Icon placement, name: placement, widget: select, options: [ navbar ], hint: Where to place to search icon }
+  #             - { label: Window, name: target, widget: string, hint: Enables or Disables a new browser window for search results }
+  #             - { label: search input container id, name: search_input, widget: string, hint: ID of the search input container }
+  #             - { label: search output container id, name: results_output, widget: string, hint: ID of the search output container }
+  #             - { label: index data file, name: index_data, widget: string, hint: Filename of the generated index data }
+  #             - { label: result limit, name: result_limit, widget: number, hint: Limits the number of results }
+  #             - { label: no results text, name: no_results_text, widget: string, hint: Text displayed if no results found }
+  #             - { label: search item len, name: min_search_item_len, widget: number, min: 3, max: 8, hint: description }
+  #             - { label: fuzzy search, name: search_fuzzy, widget: boolean, hint: Enables Fuzzy Search }
+  #             - { label: exlude from search, name: search_exlude, widget: list, hint: List of pages excluded from search }
+  #             - { label: result template, name: result_template, widget: text, hint: HTML to render search matches }
+  # 
+  # 
+  #     # ------------------------------------------------------------------------
+  #     # J1 Navigation
+  #     #
+  #     - label:      J1 Navigation
+  #       name:       config_navigation
+  #       file:       _data/modules/defaults/navigator.yml
+  #       fields:
+  #         # --------------------------------------------------------------------
+  #         # Global settings
+  #         #
+  #         - label:  Global settings
+  #           name:   defaults
+  #           hint:   Global configuration settings for J1 Navigation Module
+  #           widget: object
+  #           fields: 
+  # 
+  #             - { label: Icon Family, name: icon_family, widget: select, options: [ MDI, FA ], hint: Default Icon Family for the Navigation Module }
+  # 
+  #             # ----------------------------------------------------------------
+  #             # Navigation Bar settings
+  #             #
+  #             - label:  Navigation Bar settings
+  #               name:   nav_bar
+  #               hint:   Controls the main navigation  bar
+  #               widget: object
+  #               fields:
+  #                 - { label: navigation bar id, name: id, widget: string, hint: ID of the Navigation bar }
+  #                 - { label: Media Breakpoint, name: media_breakpoint, widget: string, hint: Set the Media Breakpoint for the Navigation Bar get collapsed }
+  #                 - { label: brand position, name: brand_position, widget: string, hint: Place the brand image }
+  #                 - { label: brand type, name: brand_type, widget: select, options: [ image, text ], hint: Type of the brand image }
+  #                 - { label: brand type collapsed, name: brand_type_collapsed, widget: select, options: [ image, text ], hint: Type of the brand image if the menu bar is collapsed }
+  #                 - { label: fixed position, name: fixed, widget: boolean, hint: Defines the behaviour of the Menu bar if a page is scrolled }
+  #                 - { label: style, name: style, widget: select, options: [ overlay, embedded ], hint: Set how the Navigation Bar integrates with the page header  }
+  #                 - { label: color, name: color, widget: string, hint: TBD }
+  #                 - { label: position, name: position, widget: select, options: [ left, center, right ], hint: Position of the menu bar }
+  #                 - { label: bottom line size, name: bottom_line_height, widget: number, min: 0, max: 5, hint: Size of the line at the bottom of the navigation bar }
+  #                 - { label: bottom line color, name: bottom_line_color, widget: string, hint: Color of the line at the bottom of the navigation bar }
+  #                 - { label: background color expanded, name: background_color_full, widget: string, hint: Background color of the menu bar if expanded }
+  #                 - { label: background color scrolled, name: background_color_scrolled, widget: string, hint: Background color of the menu bar if the page is scrolled }
+  #                 - { label: background color collapsed, name: background_color_collapsed, widget: string, hint: Background color of the menu bar if collapsed }
+  # 
+  # 
+  #             # ----------------------------------------------------------------
+  #             # Navigation Menu settings
+  #             #
+  #             - label:  Menu Bar settings
+  #               name:   nav_menu
+  #               hint:   Controls the behaviour of the Navigation Menu
+  #               widget: object
+  #               fields:
+  #                 - { label: menu id, name: id, widget: string, hint: ID of the menu bar container }
+  #                 - { label: data path, name: data_path, widget: string, hint: HTML portion of the menu bar (loaded via AJAX) }
+  #                 - { label: raised level, name: raised_level, widget: number, min: 0, max: 25, hint: TBD }
+  #                 - { label: delay menu open, name: delay_menu_open, widget: number, min: 0, max: 500, hint: Delays a menu to open measured in milliseconds }
+  #                 - { label: max lenght, name: max_height, number, min: 200, max: 1000, hint: Limits a menu for its lenght (y-axis) }
+  #                 - { label: menu font size, name: menu_font_size, widget: string, hint: Size of the font used for menu entries }
+  #                 - { label: megamenu font size, name: megamenu_font_size, widget: string, hint: Size of the font used for MEGA menu entries }
+  #                 - { label: menu item color, name: menu_item_color, widget: string, hint: Menu item color }
+  #                 - { label: menu item color selected, name: menu_item_color_hover, widget: string, hint: Menu item color if selected }
+  #                 - { label: dropdown style, name: dropdown_style, widget: select, options: [ raised, flat ], hint: Dropdown menu style }
+  #                 - { label: item style, name: dropdown_item_style, widget: select, options: [ raised, flat ], hint: Dropdown menu item style }
+  #                 - { label: animate, name: dropdown_animate, widget: boolean, hint: Enables animation on dropdown menus }
+  #                 - { label: animation on open, name: dropdown_animate_in, widget: string, hint: Animation if a dropdown menu is opened. See AnimateCSS for animation types }
+  #                 - { label: animation on close, name: dropdown_animate_out, widget: string, hint: Animation if a dropdown menu is closed. See AnimateCSS for animation types }
+  #                 - { label: animation duration, name: dropdown_animate_duration, widget: number, min: 0, max: 2000, hint: Duration an animation get finished. Duration is measured in milliseconds }
+  #                 - { label: item width, name: dropdown_item_width, number, min: 200, max: 1000, hint: TBD }
+  #                 - { label: menu height_max, name: dropdown_menu_height_max, widget: string, hint: TBD }
+  #                 - { label: font size, name: dropdown_font_size, widget: string, hint: TBD }
+  #                 - { label: padding x, name: dropdown_padding_x, widget: string, hint: TBD }
+  #                 - { label: padding y, name: dropdown_padding_y, widget: string, hint: TBD }
+  #                 - { label: item color, name: dropdown_item_color, widget: string, hint: TBD }
+  #                 - { label: border color, name: dropdown_border_color, widget: string, hint: TBD }
+  #                 - { label: border top, name: dropdown_border_top, widget: number, hint: TBD }
+  #                 - { label: border radius, name: dropdown_border_radius, widget: string, hint: TBD }
+  #                 - { label: background color hover, name: dropdown_background_color_hover, widget: string, hint: TBD }
+  #                 - { label: background color active, name: dropdown_background_color_active, widget: string, hint: TBD }
+  # 
+  # 
+  #             # ----------------------------------------------------------------
+  #             # Navigation Quick Links settings
+  #             #
+  #             - label:  QuickLinks settings
+  #               name:   nav_quicklinks
+  #               hint:   Controls the behaviour of the Quick Links
+  #               widget: object
+  #               fields: 
+  #                 - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables Quicklinks }
+  #                 - { label: id, name: id, widget: string, hint: ID of the Quicklinks bar }
+  #                 - { label: data path, name: data_path, widget: string, hint: HTML portion of Quicklinks (loaded via AJAX) }
+  #                 - { label: icon family, name: icon_family, widget: select, options: [ MDI, FA ], hint: TBD }
+  #                 - { label: icon color, name: icon_color, widget: string, hint: TBD }
+  #                 - { label: item color selected, name: icon_color_hover, widget: string, hint: TBD }
+  #                 - { label: item size, name: icon_size, widget: string, hint: TBD }
+  #                 - { label: cookies icon, name: cookies_icon, widget: string, hint: TBD }
+  #                 - { label: topsearch icon, name: top_search_icon, widget: string, hint: TBD }
+  #                 - { label: sidebar, name: sidebar, widget: boolean, hint: TBD }
+  #                 - { label: sidebar icon, name: sidebar_icon, widget: string, hint: TBD }
+  #                 - { label: disqus icon, name: disqus_icon, widget: string, hint: TBD }
+  #                 - { label: disqus url, name: disqus_url, widget: string, hint: TBD }
+  #                 - { label: github icon, name: github_icon, widget: string, hint: TBD }
+  #                 - { label: github url, name: github_url, widget: string, hint: TBD }
+  #                 - { label: patreon icon, name: patreon_icon, widget: string, hint: TBD }
+  #                 - { label: patreon url, name: patreon_url, widget: string, hint: TBD }
+  #                 - { label: facebook icon, name: facebook_icon, widget: string, hint: TBD }
+  #                 - { label: facebook url, name: facebook_url, widget: string, hint: TBD }
+  #                 - { label: twitter icon, name: twitter_icon, widget: string, hint: TBD }
+  #                 - { label: twitter url, name: twitter_url, widget: string, hint: TBD }
+  #                 - { label: twitter url, name: twitter_url, widget: string, hint: TBD }
+  #                 - { label: signin, name: signin, widget: boolean, hint: TBD }
+  #                 - { label: signin client, name: signin_client, widget: select, options: [ enabled, disabled ], hint: TBD }
+  #                 - { label: signin icon, name: signin_icon, widget: string, hint: TBD }
+  #                 - { label: signout icon, name: signout_icon, widget: string, hint: TBD }
+  # 
+  #             # ----------------------------------------------------------------
+  #             # Navigation Top Search settings
+  #             #
+  #             - label:  Topsearch settings
+  #               name:   nav_topsearch
+  #               hint:   Controls the behaviour of the Top Search
+  #               widget: object
+  #               fields: 
+  #                 - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables Top Search }
+  #                 - { label: id, name: id, widget: string, hint: ID of the Topsearch container }
+  #                 - { label: type, name: type, widget: select, options: [ quicksearch, algolia, google ], hint: TBD }
+  #                 - { label: icon family, name: icon_family, widget: select, options: [ MDI, FA ], hint: TBD }
+  #                 - { label: icon color, name: icon_color, widget: string, hint: TBD }
+  #                 - { label: icon size, name: icon_size, widget: string, hint: TBD }
+  #                 - { label: search icon, name: search_icon, widget: string, hint: TBD }
+  #                 - { label: close icon, name: close_icon, widget: string, hint: TBD }
+  #                 - { label: input color, name: input_color, widget: string, hint: TBD }
+  #                 - { label: background color, name: background_color, widget: string, hint: TBD }
+  #                 - { label: placeholder, name: placeholder, widget: string, hint: TBD }
+  #                 - { label: search heading lead, name: search_heading_lead, widget: string, hint: TBD }
+  #                 - { label: result heading lead, name: result_heading_lead, widget: string, hint: TBD }
+  # 
+  #             # ----------------------------------------------------------------
+  #             # Navigation Side Bar settings
+  #             #
+  #             - label:  Side Bar settings
+  #               name:   nav_sidebar
+  #               hint:   Controls the behaviour of the Side Bar
+  #               widget: object
+  #               fields: 
+  #                 - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the Side Bar }
+  #                 - { label: id, name: id, widget: string, hint: ID of the Sidebar container }
+  #                 - { label: data path, name: data_path, widget: string, hint: HTML portion of the Sidebar (loaded via AJAX) }
+  #                 - { label: width, name: width, widget: number, min: 250, max: 500, hint: TBD }
+  #                 - { label: icon family, name: icon_family, widget: select, options: [ MDI, FA ], hint: TBD }
+  #                 - { label: icon color, name: icon_size, widget: string, hint: TBD }
+  #                 - { label: icon size, name: id, widget: string, hint: TBD }
+  #                 - { label: sidebar icon, name: sidebar_icon, widget: string, hint: TBD }
+  #                 - { label: close icon, name: close_icon, widget: string, hint: TBD }
+  #                 - { label: background color, name: background_color, widget: string, hint: TBD }
+  # 
+  # 
+  #             # ----------------------------------------------------------------
+  #             # Navigation Auth Client settings
+  #             #
+  #             - label:  Auth Client settings
+  #               name:   nav_authclient
+  #               hint:   Controls the behaviour of the Auth Client
+  #               widget: object
+  #               fields:
+  #                 - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the Auth Client }
+  #                 - { label: id, name: id, widget: string, hint: ID of the Auth Client icon }
+  #                 - { label: data path, name: data_path, widget: string, hint: HTML portion of Auth Client modals (loaded via AJAX) }
+  #                 - { label: signin modal id, name: signin_modal_id, widget: string, hint: TBD }
+  #                 - { label: authclient modals id, name: authclient_modals_id, widget: string, hint: TBD }
+  #                 - { label: hide on cookies declined, name: hide_on_cookies_declined, widget: boolean, hint: TBD }
+  #                 - { label: icon family, name: icon_family, widget: select, options: [ MDI, FA ], hint: TBD }
+  #                 - { label: signin icon, name: signin_icon, widget: string, hint: TBD }
+  #                 - { label: signout icon, name: signout_icon, widget: string, hint: TBD }
+  # 
+  

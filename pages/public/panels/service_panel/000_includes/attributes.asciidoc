@@ -1,0 +1,100 @@
+// ~/document_base_folder/000_includes
+//  Asciidoc attribute includes:                 attributes.asciidoc
+// -----------------------------------------------------------------------------
+
+
+// URLs - Internal references and/or sources on the Internet
+// -----------------------------------------------------------------------------
+tag::urls[]
+
+:fontawesome-home:                                https://fontawesome.com/
+:fontawesome-icons:                               https://fontawesome.com/icons?d=gallery
+:fontawesome-get-started:                         https://fontawesome.com/get-started
+
+:jekyll-one-core-doc-color-scheme:                https://support.jekyll-one.com/user_guide/core/color_scheme
+
+:light-gallery-license:                           http://sachinchoolur.github.io/lightGallery/docs/license.html
+
+:asciidoctor-extensions-lab:                      https://github.com/asciidoctor/asciidoctor-extensions-lab
+:asciidoctor-extensions-use-extension:            https://github.com/asciidoctor/asciidoctor-extensions-lab#using-an-extension
+:asciidoctor-user-manual-extensions:              http://asciidoctor.org/docs/user-manual/#extensions
+
+:bs_themes:                                       https://themes.getbootstrap.com/
+:bs_expo:                                         https://expo.getbootstrap.com/
+:bs_doc_components_buttons:                       http://getbootstrap.com/docs/4.0/components/buttons/
+:bs_doc_components_navbar:                        http://getbootstrap.com/docs/4.0/components/navbar/
+
+:roundtrip_data_slider_picker:                    /pages/public/start/roundtrip/data_slider_picker
+:roundtrip_image_headers:                         /pages/public/start/roundtrip/image_header
+:roundtrip_image_headers:                         /pages/public/start/roundtrip/image_header
+
+:roundtrip-readme-first:                          /pages/public/start/read_me_first/
+:roundtrip-present-images:                        /pages/public/start/roundtrip/present_images/
+:roundtrip-cards:                                 /pages/public/start/roundtrip/cards/
+:roundtrip-typography:                            /pages/public/start/roundtrip/typography/
+:roundtrip-asciidoc-extensions:                   /pages/public/start/roundtrip/asciidoc_extensions/
+:roundtrip-extended-modals:                       /pages/public/start/roundtrip/modals/
+:roundtrip-icon-fonts:                            /pages/public/start/roundtrip/mdi_icon_font/
+:roundtrip-responsive-tables:                     /pages/public/start/roundtrip/responsive_tables/
+:roundtrip-themes:                                /pages/public/start/roundtrip/themes/
+:roundtrip-search-engine:                         /pages/public/start/roundtrip/search_engine/
+
+:github-gist-home:                                https://gist.github.com/
+:asciidoc-extensions-gist-example:                https://gist.github.com/mojavelinux/5546622
+
+:previewer-emoji:                                 /pages/private/previewer/twitter_emoji/
+:previewer-theme:                                 /pages/public/previewer/theme/
+:previewer-mdi:                                   /pages/private/previewer/mdi_font/
+
+:kickstarter-web-in-a-day:                        /pages/public/start/kickstarter/web_in_a_day/intro/
+
+end::urls[]
+
+// Tags - Asciidoc attributes used internally
+// -----------------------------------------------------------------------------
+tag::tags[]
+
+:window:                                          window="_blank"
+:no-clipboard:                                    noclip
+:figure-caption:                                  Figure
+:images-dir:                                      pages/roundtrip
+:y:                                               icon:check[role="green"]
+:n:                                               icon:times[role="red"]
+:c:                                               icon:file-alt[role="blue"]
+:beginner:                                        icon:battery-quarter[role="md-blue"]
+:inter:                                           icon:battery-half[role="md-blue"]
+:advanced:                                        icon:battery-full[role="md-blue"]
+:emdash:                                          &#8212;
+:bullet:                                          &bull;
+:bigbullet:                                       &#9679;
+:bigbigbullet:                                    &#11044;
+:dot:                                             &#46;
+:dotdot:                                          &#46;&#46;
+:middot:                                          &middot;
+
+end::tags[] 
+
+// Data - Data elements for Asciidoctor extensions
+// -----------------------------------------------------------------------------
+tag::data[]
+
+:data-images-standalone:                          "pages/roundtrip/100_present_images/lightbox-image-1.jpg, Golden Gate Bridge with San Francisco in distance, pages/roundtrip/100_present_images/lightbox-image-2.jpg, Forest with mountains behind"
+:data-images-group:                               "pages/roundtrip/100_present_images/lightbox-image-1.jpg, Golden Gate Bridge with San Francisco in distance, pages/roundtrip/100_present_images/lightbox-image-2.jpg, Forest with mountains behind"
+
+end::data[]
+
+
+// Product - Document (e.g release) information
+// -----------------------------------------------------------------------------
+tag::product_info[]
+:license:                                         MIT License
+:revdate:                                         2018
+:revnumber:                                       1.0.0
+end::product_info[]
+
+
+// Author - Author information
+// -----------------------------------------------------------------------------
+tag::authors[]
+:uri-author-juergen-adams                         https://jekyll.one
+end::authors[]

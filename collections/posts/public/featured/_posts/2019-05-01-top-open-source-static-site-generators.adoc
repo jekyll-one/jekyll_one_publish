@@ -1,0 +1,80 @@
+---
+title:                                  Site generators
+tagline:                                open-source tools
+description:                            Top open-source site generators
+
+date:                                   2019-05-01 00:00:00
+series:
+adsense:                                false
+image:                                  /assets/images/attics/building-blocks-1920x1280-bw.jpg
+
+tags:                                   [ Jekyll, Generators ]
+index:                                  [ Jekyll, Top, Open, Source, Static, Site, Generators ]
+categories:                             [ featured ]
+
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/attics/building-blocks-1920x1280-bw.jpg
+          alt:                          Photo by Ryan Quintal on Unsplash
+#         caption:                      
+#           text:                       Photo by Ryan Quintal on Unsplash
+#           href:                       https://unsplash.com/@ryanquintal/portfolio
+          badge:
+            type:                       unsplash
+            author:                     Ryan Quintal
+            href:                       https://unsplash.com/@ryanquintal/portfolio
+---
+
+// NOTE:  General Asciidoc page attributes settings
+// -----------------------------------------------------------------------------
+:page-liquid:
+
+// Additional Asciidoc page attributes goes here
+// -----------------------------------------------------------------------------
+// :page-imagesdir: {{page.images.dir}}
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+People sometimes ask if static sites make sense for anything beyond a one pager.
+This article highlights top open source projects, in many different programming
+languages, that make static sites not only viable, but an attractive option
+for creating sophisticated websites!
+
+[role="clearfix mb-3"]
+excerpt__end
+
+// Page content
+// -----------------------------------------------------------------------------
+[[readmore]]
+== Static Site Generators
+
+[role="mb-3"]
+// image::{{page.image}}[{{page.title}}]
+image::/assets/images/blog/featured/staticgen.jpg[{{page.title}}]
+
+The typical CMS driven website works by building each page on-demand, fetching
+content from a database and running it through a template engine. This means
+each page is assembled from templates and content on each request to the
+server.
+
+For most sites this is completely unnecessary overhead and only adds
+complexity, performance problems and security issues. After all, by far
+the most websites only change when the content authors or their design
+team makes changes.
+
+A Static Site Generator takes a different approach and generate all the pages
+of the website once when there’s actually changes to the site. This means
+there’s no moving parts in the deployed website. Caching gets much easier,
+performance goes up and static sites are far more secure.
+
+To find out what Open-Source Static Site Generators are available today and
+their ranking in terms of popularity you should check https://www.staticgen.com/[StaticGen].
+
+On StaticGen, you'll will find the most complete list of generators!
+
+Have fun!

@@ -1,0 +1,178 @@
+---
+regenerate:                             true
+---
+
+{% capture cache %}
+
+{% comment %}
+ # -----------------------------------------------------------------------------
+ # ~/assets/data/quicklinks.html
+ # Liquid PROCEDURE template to create the HTML portion of the quicklink bar
+ # NOTE: Loaded dynamically by J1 NAV Manager module (AJAX)
+ #
+ # Product/Info:
+ # https://jekyll.one
+ #
+ # Copyright (C) 2019 Juergen Adams
+ #
+ # J1 Template is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #  liquid_var: {{ liquid_var | debug }}
+ # -----------------------------------------------------------------------------
+{% endcomment %}
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture select_color     %}themes/{{site.template.name}}/procedures/global/select_color.proc{% endcapture %}
+{% capture select_icon_size %}themes/{{site.template.name}}/procedures/global/select_icon_size.proc{% endcapture %}
+
+
+{% comment %} Liquid var initialization
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign modules                 = site.data.modules %}
+
+{% comment %} Set config files
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign navigator_defaults      = modules.defaults.navigator.defaults %}
+{% assign navigator_settings      = modules.navigator.settings %}
+{% assign consent_defaults        = modules.defaults.cookie_consent.defaults %}
+{% assign consent_settings        = modules.cookie_consent.settings %}
+{% assign quick_search_defaults   = modules.defaults.jekyll_search.defaults %}
+{% assign quick_search_settings   = modules.jekyll_search.settings %}
+
+{% assign auth_manager_config     = site.j1_auth %}
+{% assign auth_client_config      = navigator_defaults.nav_authclient %}
+
+{% comment %} Set config data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign nav_quicklinks_defaults = navigator_defaults.nav_quicklinks %}
+{% assign nav_quicklinks_settings = navigator_settings.nav_quicklinks %}
+
+{% comment %} Set config options
+------------------------------------------------------------------------------ {% endcomment %}
+{% assign quick_search_options    = quick_search_defaults | merge: quick_search_settings %}
+{% assign quicklinks_options      = nav_quicklinks_defaults | merge: nav_quicklinks_settings %}
+{% assign consent_options         = consent_defaults | merge: consent_settings %}
+
+{% comment %} Set quicklinks properties
+------------------------------------------------------------------------------ {% endcomment %}
+{% assign icon_family             = quicklinks_options.icon_family | downcase %}
+
+{% assign cookies_icon            = quicklinks_options.cookies_icon %}
+{% assign search_icon             = quicklinks_options.top_search_icon %}
+{% assign sidebar_icon            = quicklinks_options.sidebar_icon %}
+{% assign signin_icon             = quicklinks_options.signin_icon %}
+{% assign signout_icon            = quicklinks_options.signout_icon %}
+
+{% assign control_center_icon     = quicklinks_options.control_center_icon %}
+{% assign control_center_url      = quicklinks_options.control_center_url %}
+
+{% assign disqus_icon             = quicklinks_options.disqus_icon %}
+{% assign github_icon             = quicklinks_options.github_icon %}
+{% assign patreon_icon            = quicklinks_options.patreon_icon %}
+{% assign facebook_icon           = quicklinks_options.facebook_icon %}
+{% assign twitter_icon            = quicklinks_options.twitter_icon %}
+
+{% assign disqus_url              = quicklinks_options.disqus_url %}
+{% assign github_url              = quicklinks_options.github_url %}
+{% assign patreon_url             = quicklinks_options.patreon_url %}
+{% assign facebook_url            = quicklinks_options.facebook_url %}
+{% assign twitter_url             = quicklinks_options.twitter_url %}
+
+{% assign signin_modal_id         = auth_client_config.signin_modal_id %}
+
+
+
+{% comment %} Show|Hide Quicksearch icon
+------------------------------------------------------------------------------ {% endcomment %}
+{% if quick_search_options.enabled %}
+  {% assign show_quick_search_icon = true  %}
+{% else %}
+  {% assign show_quick_search_icon = false %}
+{% endif %}
+
+{% comment %} Show|Hide AuthManager icon
+------------------------------------------------------------------------------ {% endcomment %}
+{% if auth_manager_config.enabled %}
+  {% assign show_auth_manager_icon = true  %}
+{% else %}
+  {% assign show_auth_manager_icon = false %}
+{% endif %}
+
+{% comment %} Show|Hide Control Center icon
+------------------------------------------------------------------------------ {% endcomment %}
+{% if quicklinks_options.control_center %}
+  {% assign show_control_center_icon = true %}
+{% else %}
+  {% assign show_control_center_icon = false %}
+{% endif %}
+
+{% comment %} Show|Hide Sidebar icon
+------------------------------------------------------------------------------ {% endcomment %}
+{% if quicklinks_options.sidebar %}
+  {% assign show_sidebar_icon = true %}
+{% else %}
+  {% assign show_sidebar_icon = false %}
+{% endif %}
+
+{% comment %} Show|Hide CookieConsent icon
+------------------------------------------------------------------------------ {% endcomment %}
+{% if consent_options.enabled %}
+  {% assign consent_enabled = true %}
+{% else %}
+  {% assign consent_enabled = false %}
+{% endif %}
+
+{% if consent_options.show_consent_icon %}
+  {% assign consent_icon_enabled  = true %}
+{% else %}
+  {% assign consent_icon_enabled = false %}
+{% endif %}
+
+{% if consent_enabled and consent_icon_enabled %}
+  {% assign show_cookie_consent_icon = true %}
+{% else %}
+  {% assign show_cookie_consent_icon = false %}
+{% endif %}
+
+{% comment %} Select icon family and size (color set dynamically by adapter)
+------------------------------------------------------------------------------ {% endcomment %}
+{% if quicklinks_options.icon_family == 'FontAwesome' or quicklinks_options.icon_family == 'FontAwesome4' or quicklinks_options.icon_family == 'FontAwesome5' %}
+  {% assign icon_family = 'fa' %}
+{% elsif quicklinks_options.icon_family == 'MDI' or quicklinks_options.icon_family == 'Material Design Icons'%}
+  {% assign icon_family = 'mdi' %}
+{% else %}
+  {% assign icon_family = 'mdi' %}
+{% endif %}
+
+{% include {{select_icon_size}} family=quicklinks_options.icon_family size=quicklinks_options.icon_size %}
+{% assign icon_size = size %}
+
+
+{% comment %} Main
+-------------------------------------------------------------------------------- {% endcomment %}
+<!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [AuthManager detected as: {{ show_auth_manager_icon }}] -->
+<!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [CookieConsent detected as: {{ consent_enabled }}] -->
+<!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [Show CookieConsent icon detected as: {{ show_cookie_consent_icon }}] -->
+<!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [Show ControlCenter icon detected as: {{ show_control_center_icon }}] -->
+<!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [Set icon familiy as: {{ icon_family }}] -->
+<!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [Set icon size as: {{ icon_size }}] -->
+<ul class="navbar-nav">
+  {% if disqus_url != "none" %}<li id="quickLinksDisqusButton" class="nav-item"><a id="disqus_id" class="nav-icon" href="{{disqus_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{disqus_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if github_url != "none" %}<li id="quickLinksGithubButton"class="nav-item"><a id="github_id" class="nav-icon" href="{{github_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{github_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if patreon_url != "none" %}<li id="quickLinksPatreonButton" class="nav-item"><a id="patreon_id" class="nav-icon" href="{{patreon_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{patreon_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if facebook_url != "none" %}<li id="quickLinksFacebookButton" class="nav-item"><a id="facebook_id" class="nav-icon" href="{{facebook_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{facebook_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if twitter_url != "none" %}<li id="quickLinksTwitterButton"class="nav-item"><a id="twitter_id" class="nav-icon" href="{{twitter_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{twitter_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if show_auth_manager_icon %}<li id="quickLinksSignInOutButton" class="nav-item" style="display: none;"><a class="nav-icon" id="navLinkSignInOut" href="#" data-toggle="modal" data-target="#{{signin_modal_id}}"><i id="iconSignInOut" class="{{icon_family}} {{icon_family}}-{{signin_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if show_cookie_consent_icon %}<li id="quickLinksCookieButton" class="nav-item" style="display: none;"><a id="cookie-state" class="nav-icon" href="#" data-toggle="modal" data-target="#cookieRevokeCentralDanger"><i class="{{icon_family}} {{icon_family}}-{{cookies_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if show_quick_search_icon %}<li id="quickLinksSearchButton" class="nav-item search"><a class="nav-icon" href="#"><i class="{{icon_family}} {{icon_family}}-{{search_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if show_control_center_icon %}<li id="quickLinksControlCenterButton" class="nav-item control-center" style="display: block;"><a class="nav-icon" href="{{control_center_url}}"><i class="{{icon_family}} {{icon_family}}-{{control_center_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if show_sidebar_icon %}<li id="quickLinksSideBarButton" class="nav-item side-menu"><a class="nav-icon" href="#"><i class="{{icon_family}} {{icon_family}}-{{sidebar_icon}} {{icon_size}}"></i></a></li>{% endif %}
+</ul>
+
+{% endcapture %}
+
+{{ cache | pretty_print | remove:'<html><body>' | remove:'</body></html>' | strip_empty_lines }}
+{% assign cache = nil %}

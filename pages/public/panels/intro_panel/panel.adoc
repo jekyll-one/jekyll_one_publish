@@ -1,0 +1,151 @@
+---
+title:                                  J1 Template
+tagline:                                Responsive Webs using J1 Template
+description:                            Responsive Webs using J1 Template
+author:                                 J1 Team
+
+tags:                                   [ Jekyll, Template, Responsive, Web ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/panels/intro_panel/
+regenerate:                             false
+
+resources:                              [ lightbox, carousel ]
+resource_options:
+  - toccer:
+      collapseDepth:                    2
+---
+
+
+[[responsive-design]]
+== Full Responsive
+
+A good user experience browsing a Web is one of the most important features
+a site has to offer as a must - beside excellent content. Presenting content
+at it's best on all devices, for all window sizes makes an excellent Web
+brilliant. J1 Template support your Web for full responsiveness, for the
+best user experience on all modern devices.
+
+=== Bootstrap 4 Integration
+
+To not confuse your audience by irritating user interface (UI) components,
+J1 Template is based on Bootstrap, one of the  most popular HTML, CSS, and JS
+framework used today. J1 is using Bootstrap V4, the last current version to
+support your readers by common elements for navigation, data input, tables
+and many more.
+
+For you development projects, Bootstrap simplifies HTML programming a lot,
+offer excellent JS support for interactive components like navigation elements,
+cards, forms etc.
+
+[[current-technology]]
+== HTML5 · CSS3 · JS
+
+The Internet is a rapid changing world. Like the fashion industries, new trends
+are set every year. J1 Template combines modern technologies for the world
+of static Webs to make a Site uniqe using current standards in terms of Web
+Development, languages and tools.
+
+
+=== HTML5 + CSS3
+
+J1 is using HTML5 for structuring and presenting content on the World Wide Web.
+The fifth and current major version of the HTML standard offer a lot of new
+features including detailed processing models to encourage more interoperable
+implementations. It extends, improves and rationalizes the markup available for
+documents and introduces markup and application programming interfaces (APIs)
+for complex web applications. For same reasons, HTML5 is also a good choice for
+modern cross-platform mobile applications, because it includes features
+designed with low-powered devices in mind.
+
+Many new syntactic features are included with HTML5. To natively include and
+handle multimedia and graphical content, the new `<video>`, `<audio>` and
+`<canvas>` elements were added. Support for scalable vector graphics (SVG)
+content and MathML for mathematical formulas.
+
+To enrich the *semantic* content of documents, new page structure elements
+such as `<main>`, `<section>`, `<article>`,`<header>` or `<footer>` (and many
+more) are added. Better structured HTML code can help people having disabilities
+to read the pages presented.
+
+CSS is designed to enable the separation of presentation and content, including
+layout, colors, and fonts for example. This separation improves content
+accessibility, provide more flexibility and control in the presentation, enable
+multiple web pages to share formatting by specifying the relevant CSS in
+separate files and reduce complexity and repetition in the structural content.
+
+Separation of formatting and content also makes it feasible to present the
+same markup page in different styles for different rendering methods, such
+as on-screen, in print, by voice (via speech-based browser or screen reader),
+and on Braille-based tactile devices. CSS also has rules for alternate
+formatting if the content is accessed on a mobile device.
+
+CSS3 is divided into several separate documents called "modules". Each module
+adds new capabilities or extends features defined in formaer CSS 2, preserving
+backward compatibility.
+
+HTML5 in combination with CSS3 allows to create modern, modular code for Web
+pages that can be viewed on all modern devices like Mobiles, Tablets or the
+classic Desktop PC. The new HTML5 elements plus CSS3 modules can be used as a
+replacement for e.g. Adobe Flash to build modern Web pages based on open
+standards.
+
+=== Javascript
+
+HTML5 and CSS3 can do a lot. Content placement and basic methods for the
+dynamic of elements can be done using pure HTML5 and CSS3 methods. For more
+complex solutions like Apps and Modules the support of Javascript is needed.
+
+J1 Template has build-in a wide range of JS powered Apps and Modules to
+support a Web site for e.g. the navigation, for presenting image data in
+galeries, lightboxes and so on.
+
+
+[[launch-ready]]
+== Start in No Time
+
+The base idea of J1 Template is to give all people a tool set at their hands
+to create a Web with no need to start by Web Development or Web Design from
+the beginning.
+
+A Site based on J1 is structured by the underlying template methods and engines.
+Using J1, you can instantly start a Web project by creating you content, not by
+digging in the deep of Web development.
+
+=== Create your Web
+
+J1 is highly customizeable. Based on pure configuration, a unique Web can be
+created. J1 creates static Webs using Jekyll as the base engine. Static Webs
+are fast, secure but simple to manage. No complex database systems are needed.
+
+To present a static Web, only a Web server environment is needed. To publish a
+Web on the Internet, many possible platforms can be used like e.g. at Github -
+for free!
+
+The Internet is not a peaceful place. Every Site published to the public is
+attacked from the first second if published. Static Webs are robust, fast and
+that's import: *not* hackable. No offender attacking your Web is able to break
+your Site. Because it's static or in other words: unchangeable, unbreakable
+from outside.
+
+This makes a static Web for the better.
+
+=== Modules and Apps
+
+It's predictable what base components are needed for a modern Web. For Content
+Management Systems (CMS) like Joomla, Wordpress or Drupal a huge number of
+modules are available to extend a Web by e.g. Apps like image galleries, video
+players, calendars etc.
+
+This is a bit different for static Webs as they don't have a central
+Management System as CMS offer to integrate external code. There no ecosystem,
+no marketplace to get Apps and Modules from. It is not that complex to integrate
+external components into the world of Jekyll but one of the objectives of J1 is
+to give a featured toolset to all people without the need to install, to
+integrate components that are to be expected as a need.
+
+A rich set Modules and Apps are included for common needs of a Web like a
+flexible navigation system, a local search, lightboxes to present pictures,
+little helpers for scrolling or to create TOCs (table of contents) for a
+page.

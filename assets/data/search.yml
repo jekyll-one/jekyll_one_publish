@@ -1,0 +1,131 @@
+---
+regenerate:                             false
+---
+
+{% capture cache %}
+
+{% comment %}
+ # -----------------------------------------------------------------------------
+ # ~/assets/data/search.yml
+ # Liquid YAML template to generate INDEX data used by SimpleJekyllSearch
+ #
+ # Product/Info:
+ # http://jekyll.one
+ #
+ # Copyright (C) 2019 Juergen Adams
+ #
+ # J1 Template is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+ #
+ # -----------------------------------------------------------------------------
+ #
+ # SimpleJekyllSearch, a JavaScript library to add search functionality
+ # to any Jekyll Site or Blog.
+ #
+ # The Liquid template search.yml is used by J1 SimpleJekyllSearch.
+ # This template is a helper that creates the search database (index, YAML)
+ # for all documents.
+ #
+ # The Liquid template generates a simple YAML file as an array that contains 
+ # objects for ALL posts and pages included for indexing. See below the fields
+ # taken from the source files.
+ #
+ # NOTE:
+ # Be careful changing the Liquid code. If the code is changed, check
+ # the integrity of the YAML data created. Corrupted YAML data makes
+ # the Javascript of SimpleJekyllSearch to fail (JSONLoader.js) and no 
+ # search functionality will be available for most UNCLEAR reasons.
+ #
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #  {{ liquid_var | debug }}
+ # -----------------------------------------------------------------------------
+{% endcomment %}
+
+{% assign quick_search_config = site.data.modules.j1_jekyll_search %}
+{% assign result_target       = quick_search_config.target %}
+
+{% comment %} Set posts count by posts_num. Indicates if a comma  
+              needs to be set for valid JSON
+------------------------------------------------------------------------------ {% endcomment %}
+{% assign posts_num = site.posts.size %}
+
+  {% for post in site.posts %}
+  {% if post.noindex %} {% continue %} {% endif %}
+  {
+    "title":        "{{ post.title | strip }}",
+    "tagline":      "{{ post.tagline | strip }}",
+    {% if post.tags %}
+    "tags":         "{{ post.tags | join: ',' }}",
+    {% else %}
+    "tags":         "",
+    {% endif %}
+    {% if post.index %}
+    "index":         "{{ post.index | join: ',' }}",
+    {% else %}
+    "index":         "",
+    {% endif %}
+    {% if post.categories %}
+    "categories":   "{{ post.categories | join: ',' }}",
+    {% else %}
+    "categories":   "",
+    {% endif %}
+    "date":         "{{ post.date }}",
+    "url":          "{{ site.baseurl }}{{ post.url }}",
+    "target":       "{{ result_target }}",
+    {% if post.excerpt %}
+    "excerpt":      "{{ post.excerpt | newline_to_br | strip_html | strip | newline_to_space |  replace:'"','\"' | truncatewords: 50 }}"
+    {% else %}
+    "excerpt":      ""
+    {% endif %}
+  }{% if posts_num %},{% endif %}
+  {% endfor %}
+
+  {% comment %} For unknown reason, loop for pages needs corrected 
+                by page_offset. Helper forloop.last not usable.
+  ------------------------------------------------------------------------------ {% endcomment %}
+
+  {% comment %} For pages, NO excerpt is supported (v3.8.5)
+  ------------------------------------------------------------------------------ {% endcomment %}
+
+  {% assign page_offset = 2 %}
+
+  {% for page in site.pages %}
+  {% if page.noindex %} {% continue %} {% endif %}
+  {% if page.url contains 'assets' or page.url contains '.json' or page.url contains '.txt' %} {% continue %} {% endif %}
+  {% if page.url contains '.html' %} {% continue %} {% endif %} 
+  {% if page.url == '/'%} {% continue %} {% endif %}
+  {
+    "title":        "{{ page.title | escape }}",
+    "tagline":      "{{ page.tagline }}",
+    {% if page.tags %}
+    "tags":         "{{ page.tags | join: ', ' }}",
+    {% else %}
+    "tags":         "",
+    {% endif %}
+    {% if page.index %}
+    "index":        "{{ page.index | join: ', ' }}",
+    {% else %}
+    "index":        "",
+    {% endif %}
+    {% if page.categories %}
+    "categories":   "{{ page.categories | join: ', ' }}",
+    {% else %}
+    "categories":   "",
+    {% endif %}
+    "url":          "{{ site.baseurl }}{{ page.url }}",
+    "target":       "{{ result_target }}",
+    {% if page.excerpt %}
+    "excerpt":      "{{ page.excerpt | newline_to_br | strip_html | strip | newline_to_space |  replace:'"','\"' | truncatewords: 50 }}"
+    {% else %}
+    "excerpt":      "{{ page.description | newline_to_br | strip_html | strip | newline_to_space |  replace:'"','\"' | truncatewords: 50 }}"
+    {% endif %}
+  }{% unless forloop.rindex0 == page_offset %},{% endunless %}
+  {% endfor %}
+{% endcapture %}
+
+[
+  {{ cache | strip_empty_lines }}
+]
+
+{% assign cache = nil %}

@@ -1,0 +1,19 @@
+#collections:
+
+  # ----------------------------------------------------------------------------
+  # Site Settings
+  #
+  # - label:          Site Configuration
+  #   name:           j1_site_config                                            # Used in routes, e.g., /admin/collections/blog 
+  #   files:
+
+
+      # ------------------------------------------------------------------------
+      # 120 Template Settings
+      #
+      - label:      Template Settings
+        name:       site_template_settings
+        file:       _data/j1_config.yml
+        fields:     [
+                      { label: enabled, name: enabled, widget: boolean }
+                    ]

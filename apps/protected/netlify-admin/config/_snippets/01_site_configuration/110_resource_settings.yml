@@ -1,0 +1,88 @@
+#collections:
+
+  # ----------------------------------------------------------------------------
+  # Site Settings
+  #
+  # - label:          Site Configuration
+  #   name:           j1_site_config                                            # Used in routes, e.g., /admin/collections/blog 
+  #   files:
+
+      # ------------------------------------------------------------------------
+      # J1 Resource Settings
+      #
+      - label: J1 Resource Settings
+        name:  site_resource_settings
+        file:  packages/400_template_site/_cc_test_data/_data/template_settings.yml
+        fields:
+
+          # --------------------------------------------------------------------
+          # Description (used for J1 CC only)
+          #
+          - label:  description
+            name:   description
+            widget: object
+            fields:
+              - { label: title,     name: title,    widget: string, hint: General J1 Template settings to specify ALL resources used by a site or a layout }
+              - { label: scope,     name: scope,    widget: string, hint: Scope the data is used }
+              - { label: data file, name: location, widget: string, hint: Folder the configuration file is stored (relative to site root) }
+
+          # --------------------------------------------------------------------
+          # Global Settings
+          #
+          - label:  user settings
+            name:   globals
+            widget: object
+            fields:
+              - label:    asset base path
+                name:     base_path
+                widget:   string
+                hint:     Base path for all J1 Template assets (e.g. images)
+              - label:    preferred location
+                name:     location
+                widget:   select
+                options:  [ local, remote ]
+                default:  local
+                hint:     For J1 template, resources can be loaded from LOCAL assets folders or from REMOTE using e.g. a CDN on the internet
+              - label:    extensions
+                name:     extensions
+                widget:   object
+                hint:     For CSS and JS resources, NO extention (.css|.js) are given. EXTENSIONS are calculated AUTOMATICALLY based on the MODE (development|production) detected for a BUILD.
+                fields:
+                  - { label: css extention development, name: css_dev,  widget: select, options: [ css, min.css ], default: css, hint: TBD }
+                  - { label: css extention production,  name: css_prod, widget: select, options: [ css, min.css ], default: min.css, hint: TBD }
+                  - { label: js  extention development, name: js_dev,   widget: select, options: [ js, min.js ],   default: js, hint: TBD }
+                  - { label: js  extention production,  name: js_prod,  widget: select, options: [ js, min.js ],   default: js.css, hint: TBD }
+
+
+          # --------------------------------------------------------------------
+          # Resource properties
+          #
+          - label:  Resource Settings
+            name:   resources
+            widget: list
+            fields:
+              - label:    resource name
+                name:     name
+                widget:   string
+                hint:     Arbitrary name of a resource
+              - label:    resource
+                name:     resource
+                widget:   object
+                hint:     Specifies all properties of a resource
+                fields:
+                  - { label: enabled,         name: enabled,        widget: boolean,  hint: Enables or Disables the module }
+                  - { label: id,              name: id,             widget: string,   hint: Unique resource ID }
+                  - { label: comment,         name: comment,        widget: string,   hint: TBD }  
+                  - { label: region,          name: region,         widget: select, options: [ head, body-footer ], hint: TBD }
+                  - { label: layout,          name: layout,         widget: select, options: [ home, page, post, collection, blog_archive, app, raw, all ], default: page, multiple: true, hint: TBD }
+                  - { label: required,        name: required,       widget: select, options: [ always, ondemand ], hint: TBD }
+                  - { label: script load,     name: script_load,    widget: select, options: [ sync, async, defer ], hint: TBD }
+                  - { label: pass init data,  name: pass_init_data, widget: boolean, hint: TBD }
+                  - label:  data
+                    name:   data
+                    widget: object
+                    fields:
+                      - { label: css files,       name: css,            widget: "list", field: {label: CSS resource file} }
+                      - { label: files,           name: files,          widget: "list", field: {label: General resource file} }
+                      - { label: js files,        name: js,             widget: "list", field: {label: JS resource file} }
+                      - { label: init functions,  name: init_function,  widget: "list", field: {label: JS initializer function} }

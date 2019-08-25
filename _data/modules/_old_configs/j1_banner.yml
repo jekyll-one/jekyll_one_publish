@@ -1,0 +1,222 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/components/j1_banner.yml
+#  Template specific configuration data to configure BANNER lanes
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2019 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# GLOBALS
+# ------------------------------------------------------------------------------
+global:
+  data_path:                            /assets/data/banner/index.html
+
+# ------------------------------------------------------------------------------
+# BANNER
+# ------------------------------------------------------------------------------
+banners:
+
+  # ----------------------------------------------------------------------------
+  # HELPER banner
+  # ----------------------------------------------------------------------------
+  - banner:
+      enabled:                          true
+      id:                               divider-1
+      type:                             divider_banner
+
+  - banner:
+      enabled:                          true
+      id:                               divider-2
+      type:                             divider_banner
+
+  - banner:
+      enabled:                          true
+      id:                               divider-3
+      type:                             divider_banner
+
+  # ----------------------------------------------------------------------------
+  # TEASER banner
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # home_teaser_banner
+  #
+  - banner:
+      enabled:                          true
+      id:                               home_teaser_banner
+      type:                             teaser_banner
+      icon_family:                      MDI
+      style:                            light
+      background_color_1:               md_gray_50
+      background_color_2:               md_gray_50
+      lane_span:                        fixed
+      helper_classes:                   mt-4 mb-4
+
+      boxes:
+
+        - box:
+
+            enabled:                    true
+            width:                      12
+            type:                       text
+            animate:                    fadeInUp
+            title:                      All You need for your New Amazing Site
+            description: >
+                                        Jekyll meets Bootstrap - and makes a lot of friends.
+                                        J1 Template combines the best of open source software for
+                                        the Web and the Web site generator Jekyll. J1 is Open
+                                        Source and the modules packed as well - no pain for private
+                                        or professional use.
+                                        Explore this site to learn what's possible if you go the
+                                        Jekyll Way.<br/>
+            tagline: >
+                                        <big><b>Create powerful modern Static Webs: Secure, Flexible and Fast</b>.</big>
+            buttons:
+
+              - button:
+                  text:                 Start
+                  class:                btn-primary btn-raised btn-flex
+                  icon:                 rocket
+                  icon_color:           md_white
+                  icon_size:            lg
+                  href:                 /pages/public/start/kickstarter/web_in_a_day/intro/
+              - button:
+                  text:                 Download
+                  class:                btn-primary btn-raised btn-flex
+                  icon:                 download
+                  icon_color:           md_white
+                  icon_size:            lg
+                  href:                 /pages/public/start/downloads/linux_starter/
+              - button:
+                  text:                 Become a Patron
+                  class:                btn-danger btn-raised btn-flex
+                  icon:                 patreon
+                  icon_color:           md_white
+                  icon_size:            lg
+                  href:                 https://www.patreon.com/join/jekyll_one
+                  target:               blank
+
+# ----------------------------------------------------------------------------
+# IMAGE Banner
+# ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # home_image_banner
+  #
+  - banner:
+      enabled:                          true
+      id:                               home_image_banner
+      type:                             image_banner
+      background_color_1:               md_gray_300
+      background_color_2:               md_gray_50
+      lane_span:                        fluid
+      helper_classes:                   mt-4 mb-4
+
+      boxes:
+        - box:
+            enabled:                    true
+            gridify:                    false
+            size_y:                     450
+            darken:                     1
+            background_image:           /assets/images/attics/ideas-start-here-1920x1200.png
+
+  # ----------------------------------------------------------------------------
+  # PARALLAX Banner
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # home_parallax_banner
+  #
+  - banner:
+      enabled:                          false
+      id:                               home_parallax_banner
+      type:                             parallax_banner
+      style:                            dark
+      background_color_1:               md_gray_300
+      background_color_2:               md_gray_50
+      lane_span:                        fluid
+      helper_classes:                   mt-4 mb-4
+
+      boxes:
+        - box:
+            enabled:                    true
+            type:                       quote
+            cite_text: >
+                                        Making is like Wanting,
+                                        <br> but even <span style="color:red">Better</span>
+            cite:                       J1 Team
+            text_color:                 rgba_lighten_900
+            cite_color:                 rgba_lighten
+            gridify:                    true
+            size_y:                     300
+            darken:                     7
+            background_image:           /assets/images/quotes/people.png
+
+  # ----------------------------------------------------------------------------
+  # home_parallax_banner
+  #
+  - banner:
+      enabled:                          false
+      id:                               parallax_banner_einstein
+      type:                             parallax_banner
+      style:                            dark
+      lane_span:                        fluid
+      helper_classes:                   mt-4 mb-4
+
+      boxes:
+        - box:
+            enabled:                    true
+            type:                       quote
+            cite_text: >
+                                        Everything should be made as <b><span class="color-red">simple</span></b>
+                                        as possible,<br>
+                                        but not <b><span class="color-red">simpler</span></b>
+            cite:                       Albert Einstein
+            text_color:                 rgba_lighten_900
+            cite_color:                 rgba_lighten
+            gridify:                    true
+            darken:                     7
+            background_image:           /assets/images/quotes/albert_einstein.png
+
+  # ----------------------------------------------------------------------------
+  # NEWS banner
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # home_news_banner
+  #
+  - banner:
+      enabled:                          true
+      id:                               home_news_banner
+      type:                             news_banner
+      style:                            light
+      background_color_1:               md_gray_300
+      background_color_2:               md_gray_50
+      lane_span:                        fixed
+      helper_classes:                   mt-4 mb-4
+
+      boxes:
+        - box:
+            enabled:                    true
+            type:                       header
+            title:                      Latest News
+
+        - box:
+            enabled:                    true
+            type:                       preview
+            title:
+            category:                   featured
+
+        - box:
+            enabled:                    true
+            type:                       recent_news
+            title:                      More Articles
+            category:                   featured
+            max_posts:                  5

@@ -1,0 +1,225 @@
+---
+regenerate:                             true
+---
+
+{% capture cache %}
+
+{% comment %}
+ # -----------------------------------------------------------------------------
+ # ~/assets/data/cookie_consent.html
+ # Liquid PROCEDURE to generate the HTML (data) portion of all modals used
+ # by J1 Cookie Consent module
+ #
+ # Product/Info:
+ # https://jekyll.one
+ #
+ # Copyright (C) 2019 Juergen Adams
+ #
+ # J1 Template is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+ #
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #   liquid_var: {{ liquid_var | debug }}
+ #   config: {{ config | debug }}
+ # -----------------------------------------------------------------------------
+{% endcomment %}
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture select_color     %}themes/{{site.template.name}}/procedures/global/select_color.proc{% endcapture %}
+{% capture select_icon_size %}themes/{{site.template.name}}/procedures/global/select_icon_size.proc{% endcapture %}
+
+{% comment %} Set global settings
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign environment                   = site.environment %}
+
+
+{% comment %} Process YML config data
+================================================================================ {% endcomment %}
+
+{% comment %} Set config files
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign consent_defaults              = site.data.modules.defaults.cookie_consent.defaults %}
+{% assign consent_settings              = site.data.modules.cookie_consent.settings %}
+
+{% comment %} Set config options
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign consent_options               = consent_defaults | merge: consent_settings %}
+
+
+{% comment %} Main
+================================================================================ {% endcomment %}
+
+{% comment %} Modal cookie consent dialog
+-------------------------------------------------------------------------------- {% endcomment %}
+<div class="modal fade top" id="topFullCookieConsent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false" style="display: none;">
+  <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
+
+    <!-- Content -->
+    <div class="modal-content">
+
+      <!--Header-->
+      <div class="modal-header">
+        <p class="lead">{{consent_options.consent_modals_title}}</p>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+
+        <!-- About cookies -->
+        <div class="px-2">
+          <p class="pt-1 pr-2">{{consent_options.policy_about}}</p>
+        </div>
+
+        <!-- Cookie categories -->
+        {% if consent_options.categories.enabled %}
+        <div class="px-2">
+          <h6 class="card-subtitle text-muted mb-2">{{consent_options.categories.category_title}}</h6>
+          <table class="tableblock frame-all grid-all stretch table-responsive mr-2">
+            <colgroup>
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 60%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="tableblock halign-center valign-top">{{consent_options.categories.category_session}}</th>
+                <th class="tableblock halign-center valign-top">{{consent_options.categories.category_persistent}}</th>
+                <th class="tableblock halign-center valign-top">{{consent_options.categories.category_first_party}}</th>
+                <th class="tableblock halign-center valign-top">{{consent_options.categories.category_second_party}}</th>
+                <th class="tableblock halign-left valign-top">{{consent_options.categories.category_description}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tableblock halign-center valign-top">
+                  <p class="tableblock"><span class="icon red"><i class="fa md-green fa-check"></i></span></p>
+                </td>
+                <td class="tableblock halign-center valign-top">
+                  <p class="tableblock"><span class="icon green"><i class="fa md-green fa-check"></i></span></p>
+                </td>
+                <td class="tableblock halign-center valign-top">
+                  <p class="tableblock"><span class="icon green"><i class="fa md-green fa-check"></i></span></p>
+                </td>
+                <td class="tableblock halign-center valign-top">
+                  <p class="tableblock"><span class="icon green"><i class="fa md-red fa-times"></i></span></p>
+                </td>
+                <td class="tableblock halign-left valign-top">
+                  <div class="content">
+                    <div class="paragraph">
+                      <p>{{consent_options.categories.category_description_text}}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        {% endif %}
+      </div> <!-- END Body -->
+
+      <!-- Footer -->
+      <div class="modal-footer justify-content-center">
+        {% if consent_options.buttons.policy_button %}
+        <a type="button" id="policyButton" class="btn btn-raised btn-flex btn-secondary g-mr-5"> <i class="mdi mdi-18px mdi-dark mdi-read"></i>
+          {{consent_options.buttons.policy_button_text}}
+        </a>
+        {% endif %}
+        <a type="button" id="acceptButton" class="btn btn-raised btn-flex btn-info g-mr-5" data-dismiss="modal"> <i class="mdi mdi-18px mdi-dark mdi-check"></i>
+          {{consent_options.buttons.accept_button_text}}
+        </a>
+        {% if consent_options.buttons.decline_button %}
+        <a type="button" id="declineButton" class="btn btn-raised btn-flex btn-secondary g-mr-5" data-dismiss="modal"> <i class="mdi mdi-18px mdi-dark mdi-close"></i>
+          {{consent_options.buttons.decline_button_text}}
+        </a>
+        {% endif %}
+      </div> <!-- END Footer -->
+
+      <!-- Hidden Content -->
+      <div class="cookie-policy">
+        {% if consent_options.buttons.policy_button_text %}
+        <div id="modal-footer" class="modal-footer-hidden">
+          <div id="cookiePolicyInfo" class="card card-flat" style="display: none">
+            <div class="content">
+              <h4 class="notoc card-title">{{consent_options.cookie_policy_title}}</h4>
+              <h6 class="notoc category text-gray">{{consent_options.cookie_policy_tagline | asciidocify}}</h6>
+              <div class="card-description">{{ consent_options.cookie_policy_text | asciidocify}}</div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      </div> <!-- END Hidden Content -->
+    </div> <!-- END Content -->
+  </div>
+</div> <!-- END Modal -->
+{% comment %} END Modal cookie consent dialog
+-------------------------------------------------------------------------------- {% endcomment %}
+
+{% comment %} Modal revoke cookies dialog
+-------------------------------------------------------------------------------- {% endcomment %}
+<div class="modal fade" id="cookieRevokeCentralDanger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
+      <!-- Content -->
+      <div class="modal-content">
+
+      <!--Header-->
+      <div class="modal-header">
+        <p class="lead">Revoke Cookie Consent</p>
+      </div> <!--END Header-->
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="text-left">
+          <div class="sectionbody">
+            <div class="paragraph">
+              <p>If you do <strong>not</strong> wish to receive <strong>cookies</strong> anymore from <strong>this site</strong>, you can
+                revoke the cookie consent you’ve given. Furthermore, you may be able to refuse
+                them by adjusting your <strong>browser</strong> settings to <strong>reject on cookies</strong>.
+              </p>
+            </div>
+            <div class="admonitionblock caution">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="icon">
+                      <i class="fa icon-caution" title="Caution"></i>
+                    </td>
+                    <td class="content">
+                      If you have previously visited our website&thinsp;—&thinsp;or any pages this
+                      session&thinsp;—&thinsp;<strong>and</strong> agreed on the use of cookies, you may also have to
+                      <strong>delete</strong> already existing <strong>cookies</strong> by your <strong>browser</strong> in order to clean
+                      all cookies left.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="paragraph">
+              <p>
+                You are about to <strong>disagree</strong> on cookies used by this site.
+                If you do so, this site is <strong>unable</strong> to offer you any of our
+                <strong>functionalities</strong>, <strong>services</strong> or <strong>support</strong>.
+              </p>
+            </div>
+        </div>
+      </div> <!-- END Body -->
+
+      <!-- Footer -->
+      <div class="modal-footer justify-content-center">
+        <a type="button" id="revokeCookies" class="btn btn-raised btn-flex btn-md btn-red g-mr-5" data-dismiss="modal">Yes, please revoke cookie consent</a>
+        <a type="button" id="remainCookies" class="btn btn-raised btn-flex btn-md btn-secondary" data-dismiss="modal">No, please do nothing</a>
+      </div>
+    </div> <!-- END Footer -->
+
+  </div> <!-- END Content -->
+</div> <!-- END Modal -->
+{% comment %} END Modal revoke cookies dialog
+-------------------------------------------------------------------------------- {% endcomment %}
+
+{% endcapture %}
+
+{{ cache | pretty_print | remove:'<html><body>' | remove:'</body></html>' | strip_empty_lines }}
+{% assign cache = nil %}

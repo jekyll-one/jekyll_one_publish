@@ -1,0 +1,25 @@
+#collections:
+
+  # ----------------------------------------------------------------------------
+  # Site Settings
+  #
+  # - label:          Site Configuration
+  #   name:           j1_site_config                                            # Used in routes, e.g., /admin/collections/blog 
+  #   files:
+
+
+      # ------------------------------------------------------------------------
+      # 130 Layout Settings
+      #
+      - label:      Layout Configuration
+        name:       site_layout_configuration
+        files:
+      
+          - label:      Default Template
+            name:       config_jekyll_search
+            file:       _data/modules/defaults/test.yml
+            fields:
+              - label:  1st level
+                name:   defaults
+
+

@@ -1,0 +1,65 @@
+---
+title:                                  About
+tagline:                                j1 template
+description:                            Things you should know about this site
+categories:                             [ pages ]
+
+tags:                                   [ About ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/about/site/
+regenerate:                             false
+
+resources:                              [ lightbox ]
+resource_options:
+  - attic:
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/attics/banner/signpost-1920x800-bw.jpg
+          alt:                          signpost-1920x800-bw
+          transition:                   fadeInOut
+---
+
+lorem:sentences[3]
+
+lorem:sentences[3]
+
+== About this Site
+
+lorem:sentences[5]
+
+/////
+
+== Content permissions
+
+lorem:sentences[3]
+
+lorem:sentences[5]
+
+[cols="2,4,6", options="header", role="table-responsive"]
+|===============================================================================
+|Permission |Provider |Description
+
+|`blocked`
+|`j1`
+|Permission are set to `blocked` if a visitor has *declined* or (currently) 
+not *accepted* on *Cookies*. No content is accessible except on *whitelisted*
+pages like the Home Page, About page or pages like Impress, Privacy or License.
+
+|`public`
+|`j1` \| provider for authentication
+|Full access on all *public* pages 
+
+|`protected`
+|provider for authentication
+|Full access on all *public* and *protected* pages 
+
+|`private`
+|provider for authentication
+|Full access. Access grabted for all *public*, *protected* and *private* pages.
+
+|===============================================================================
+
+/////
+

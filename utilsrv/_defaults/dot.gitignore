@@ -1,0 +1,38 @@
+# Unneeded files used/created by NPM
+#
+node_modules/
+
+yarn.lock
+
+package-lock.json
+
+
+# Never publish your sensitive personal and/or OAuth
+# data to any repo - not to public, not to any private.
+#
+.env
+
+
+# Unneeded files created by you or helper processes
+#
+_unused/
+
+tmp/
+
+\.idea/
+
+\.vscode/
+
+\.sass-cache/
+
+**/*.txt
+
+**/*.old
+
+**/*.tmp
+
+**/*.log
+
+**/*.swp
+
+**/*_backup

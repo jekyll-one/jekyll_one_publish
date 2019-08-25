@@ -1,0 +1,465 @@
+---
+title:                                  Roundtrip
+tagline:                                enhanced bootstrap modals
+description:                            Enhanced Bootstrap Modals for J1 Template
+
+tags:                                   [ Template, Roundtrip, Bootstrap, Extended, Modal]
+index:                                  []
+categories:                             [ pages ]
+
+flowtext:                               false
+
+permalink:                              /pages/public/start/roundtrip/modals/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/bootstrap-1920x1000-bw.jpg
+          alt:                          bootstrap
+---
+
+// Enable the Liquid Preprocessor
+// -----------------------------------------------------------------------------
+:page-liquid:
+
+// Set other global page attributes here
+// -----------------------------------------------------------------------------
+
+// Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture set_env_entry_document %}themes/{{site.template.name}}/procedures/global/set_env_entry_document.proc{%endcapture%}
+
+// Initialize entry document paths
+// -----------------------------------------------------------------------------
+{% include {{set_env_entry_document}} init_folders=all %}
+
+// Load tags and urls
+// -----------------------------------------------------------------------------
+include::{includedir}/attributes.asciidoc[tag=tags]
+include::{includedir}/attributes.asciidoc[tag=urls]
+include::{includedir}/attributes.asciidoc[tag=data]
+
+// Additional Asciidoc page attributes goes here
+// -----------------------------------------------------------------------------
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+
+lorem:sentences[5]
+
+lorem:sentences[3]
+
+== J1 Modals
+
+pass:[<i class="mdi mdi-book-open mdi-2x mdi-md-bg-primary"></i>]
+Refer to: https://mdbootstrap.com/legacy/4.3.2/?page=javascript/modals[MDB - Enhanced Bootstrap Modals, window="_blank"].
+
+Enhanced J1 Bootstrap Modals are based on the free package `Bootstrap 4 plugin` 
+based on (legycy) version 4.3.2 provided by https://mdbootstrap.com/[MDBootstrap.com].
+
+Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for
+lightboxes, user notifications, or completely custom content. Modals are
+built with HTML, CSS, and JavaScript. They’re positioned over everything
+else in the document and remove scroll from the <body> so that modal
+content scrolls instead.
+
+pass:[<i class="mdi mdi-book-open mdi-2x mdi-md-bg-primary"></i>]
+Refer to: link:{bs_doc_components_modal}[Bootstrap Docs, window="_blank"].
+
+Using J1 enhanced predefined modal styles, some emotional weight is added to 
+the information displaye - ranging from a simple warning to critical system 
+failure or from an operation success to a neutral information.
+
+If you want to learn about advanced usage of Modals, read our free tutorial 
+https://mdbootstrap.com/automated-app-start/[Creating Automated web application].
+
+See also: https://mdbootstrap.com/javascript/modals/[Modal Core Documentation], 
+https://mdbootstrap.com/javascript/bootstrap-modal-examples/[Modal Forms and Modal Templates].
+
+=== Position and sizes
+
+lorem:sentences[5]
+
+++++
+<div class="row mb-4">
+  <!--First column-->
+  <div class="col-md-3">
+    <h5 class="text-center mb-1">Frame</h5>
+    <img src="/"pages/modals/01_frame_modal.jpg" alt="" class="img-fluid z-depth-1">
+    <div class="text-center">
+      <a class="btn btn-primary btn-raised mt-3" data-toggle="modal" data-target="#frameModalTopInfoDemo" data-backdrop="false">Launch</a> <br>
+    </div>
+  </div>
+  <!--First column-->
+  <!--Second column-->
+  <div class="col-md-3">
+    <h5 class="text-center mb-1">Side</h5>
+    <img src="/"pages/modals/02_site_modal.jpg" alt="" class="img-fluid z-depth-1">
+    <div class="text-center">
+      <a class="btn btn-primary btn-raised mt-3" data-toggle="modal" data-target="#sideModalTRSuccessDemo" data-backdrop="false">Launch</a> <br>
+    </div>
+  </div>
+  <!--Second column-->
+  <!--Third column-->
+  <div class="col-md-3">
+    <h5 class="text-center mb-1">Central</h5>
+    <img src="/"pages/modals/03_central_modal.jpg" alt="" class="img-fluid z-depth-1">
+    <div class="text-center">
+      <a class="btn btn-primary btn-raised mt-3" data-toggle="modal" data-target="#frameModalTopInfoDemo" data-backdrop="false">Launch</a> <br>      
+    </div>
+  </div>
+  <!--Third column-->
+  <!--Fourth column-->
+  <div class="col-md-3">
+    <h5 class="text-center mb-1">Fluid</h5>
+    <img src="/"pages/modals/04_fluid_modal.jpg" alt="" class="img-fluid z-depth-1">
+    <div class="text-center">
+      <button type="button" class="btn btn-primary btn-raised mt-3" data-toggle="modal" data-target="#fluidModalRightSuccessDemo">Launch</button> <br>
+    </div>
+  </div>
+  <!--Fourth column-->
+</div>
+++++
+
+lorem:sentences[5]
+
+=== Contact Form
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#modalContactForm">
+    Launch Modal Contact Form
+  </button>
+</div>
+++++
+
+=== Top Info
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#frameModalTopInfoDemo">
+    Launch Modal Top Info
+  </button>
+</div>
+++++
+
+=== Bottom Success
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#frameModalBottomSuccessDemo">
+    Launch Modal Bottom Success
+  </button>
+</div>
+++++
+
+
+=== Top Right Success
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#sideModalTRSuccessDemo">
+    Launch Modal Top Right Success
+  </button>
+</div>
+++++
+
+=== Top Left Info
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#sideModalTLInfoDemo">
+    Launch Modal Top Left Info
+  </button>
+</div>
+++++
+
+=== Bottom Right Danger
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#sideModalBRDangerDemo">
+    Launch Modal Bottom Right Danger
+  </button>
+</div>
+++++
+
+=== Bottom Left Warning
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#sideModalBLWarningDemo">
+    Launch Modal Bottom Left Warning
+  </button>
+</div>
+++++
+
+=== Form Login with Avatar
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#modalLoginAvatarDemo">
+    Launch Modal Form Login with Avatar
+  </button>
+</div>
+++++
+
+=== OmniLogin
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#modalOmniLogin">
+    Launch Modal OmniLogin
+  </button>
+</div>
+++++
+
+++++
+<!--Modal OmniLogin -->
+<div class="modal fade show" id="modalOmniLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-notify modal-lg modal-notify modal-info" role="document">
+    <!-- Content -->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="lead">Cookie Consent</p>
+      </div>
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="px-3">
+          <p class="pt-1 pr-2">
+            This website uses cookies to ensure you get the best experience on our content,
+            presented user-friendly, more effective and safer.
+          </p>
+        </div>
+        <div class="px-3">
+          
+          <h6 class="card-subtitle text-muted mt-4 mb-2">Cookie usage</h6><table class="tableblock frame-all grid-all stretch table-responsive mr-2">
+            <colgroup>
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 60%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="tableblock halign-center valign-top">Session Cookies</th>
+                <th class="tableblock halign-center valign-top">Persistent Cookies</th>
+                <th class="tableblock halign-center valign-top">First-party Cookies</th>
+                <th class="tableblock halign-center valign-top">Second-party Cookies</th>
+                <th class="tableblock halign-left valign-top">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tableblock halign-center valign-top">
+                  <p class="tableblock"><span class="icon red"><i class="fa fa-check"></i></span></p>
+                </td>
+                <td class="tableblock halign-center valign-top">
+                  <p class="tableblock"><span class="icon green"><i class="fa fa-check"></i></span></p>
+                </td>
+                <td class="tableblock halign-center valign-top">
+                  <p class="tableblock"><span class="icon green"><i class="fa fa-times"></i></span></p>
+                </td>
+                <td class="tableblock halign-center valign-top">
+                  <p class="tableblock"><span class="icon green"><i class="fa fa-times"></i></span></p>
+                </td>
+                <td class="tableblock halign-left valign-top">
+                  <div class="content">
+                    <div class="paragraph">
+                      <p>May used in sections marked by <span class="icon green"><i class="fa fa-check"></i></span></p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Footer -->
+        <div class="modal-footer justify-content-right mt-5">
+          <a type="button" id="cookiePolicy" class="btn btn-secondary-modal mr-2" data-dismiss="modal">
+            <i class="mdi mdi-18px mdi-dark mdi-read"></i>
+            Cookie Policy
+          </a>
+          <a type="button" id="acceptButton" class="btn btn-primary-modal mr-2" data-dismiss="modal">
+            <i class="mdi mdi-18px mdi-dark mdi-check"></i>
+            Yes, I accept cookies
+          </a>
+          <a type="button" id="declineButton" class="btn btn-outline-modal mr-2" data-dismiss="modal">
+            <i class="mdi mdi-18px mdi-dark mdi-close"></i>
+            No, I refuse cookies
+          </a>
+        </div> <!-- END Footer -->
+      </div> <!-- END Body -->
+    </div> <!-- END Content -->
+  </div>
+</div>
+<!-- END Modal OmniLogin -->
+<script>
+  var signIn = {
+    provider:   'Github',
+    login:      false
+  };
+  $('ul.nav-pills > li').click(function (e) {
+      e.preventDefault();
+      signIn.provider = $(this).text().trim();
+      signIn.provider = signIn.provider.toLowerCase();
+  });
+  $("button").click(function() {
+    if (this.id === "loginButton") {
+      signIn.login = true;
+    } else {
+      signIn.login = false;
+    }
+  });
+  $("#modalOmniLogin").on('hidden.bs.modal', function() {
+    if (signIn.login == true) {
+      console.log(signIn.provider, ' : ', signIn.login);
+      var provider = signIn.provider.toLowerCase();
+      var link = '/auth?provider=' + provider;
+      window.location.href = link;
+    } else {
+      console.log(signIn.provider, ' : ', signIn.login);
+    }
+  });
+</script>
+++++
+
+=== Central Large Info
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#centralModalLGInfoDemo">
+    Launch Modal Central Large Info
+  </button>
+</div>
+++++
+
+
+=== Central Fluid Success
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#centralModalFluidSuccessDemo">
+    Launch Modal Central Fluid Success
+  </button>
+</div>
+++++
+
+=== Full Height Right Success
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#fluidModalRightSuccessDemo">
+    Launch Modal Central Fluid Success
+  </button>
+</div>
+++++
+
+=== Full Height Left Info
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#fluidModalLeftInfoDemo">
+    Launch Modal Full Height Left Info
+  </button>
+</div>
+++++
+
+
+=== Full Height Top Warning
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#fluidModalTopWarningDemo">
+    Launch Modal Full Height Top Warning
+  </button>
+</div>
+++++
+
+=== Full Height Bottom Danger
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#fluidModalBottomDangerDemo">
+    Launch Modal Full Height Bottom Danger
+  </button>
+</div>
+++++
+
+=== Central Success
+
+Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
+
+++++
+<div class="ml-2 mb-5">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#centralModalSuccessDemo">
+    Launch Modal Central Success
+  </button>
+</div>
+++++
+
+== What's next
+
+lorem:sentences[5]
+
+Check out what the build in link:{roundtrip-responsive-tables}[BS table extensions] 
+can do! 
+
+
+// Include documents
+// -------------------------------------------------------------------
+
+include::{documentsdir}/410_extended_modals_html.asciidoc[]
+

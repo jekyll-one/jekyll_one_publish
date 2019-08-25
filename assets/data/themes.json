@@ -1,0 +1,59 @@
+---
+regenerate:                             false
+---
+
+{% capture j1_cache %}
+
+{% comment %}
+ # -----------------------------------------------------------------------------
+ # ~/assets/data/themes.json
+ # The Liquid template themes.json is used by the Theme Switcher to locate
+ # the CSS files to be loaded on a switch for a specific theme
+ #
+ # Product/Info:
+ # https://jekyll.one
+ #
+ # Copyright (C) 2019 Juergen Adams
+ #
+ # J1 Template is licensed under the MIT License.
+ # For details, see https://jekyll.one
+ # -----------------------------------------------------------------------------
+ # NOTE:
+ # Be carefull change the Liquid code. If the code is changed, check the
+ # interity of the JSON data created. Invalid JSON data will cause the
+ # Javascript portion of the Theme Switcher to fail and no valid CSS will
+ # be available to provide the needed styles to properly render your pages.
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #   {{ liquid_var | debug }}
+ # -----------------------------------------------------------------------------
+{% endcomment %}
+
+{% assign environment         = site.environment %}
+{% assign  asset_path         = site.data.template_settings.asset_path %}
+{% assign custom_theme_config = site.data.template_settings.custom_theme %}
+{% assign custom_scss         = custom_theme_config.custom_scss %}
+{% capture theme_path %}{{asset_path}}/modules/bs_theme_switcher/themes{% endcapture %}
+
+{% if environment == 'development' %}
+{
+  "themes":
+  [
+    {"name": "Uno",             "css": "{{asset_path}}/core/css/uno.css"},
+    {"name": "Bootstrap",       "css": "{{asset_path}}/core/css/bootstrap.css"}
+  ]
+}
+{% else %}
+{
+  "themes":
+  [
+    {"name": "Uno",             "css": "{{asset_path}}/core/css/uno.min.css"},
+    {"name": "Bootstrap",       "css": "{{asset_path}}/core/css/bootstrap.min.css"}
+  ]
+}
+{% endif %}
+
+{% endcapture %}
+
+{{ j1_cache | strip_empty_lines }}
+{% assign j1_cache = nil %}

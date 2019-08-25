@@ -1,0 +1,189 @@
+#collections:
+
+  # ----------------------------------------------------------------------------
+  # Site Settings
+  #
+  # - label:          Site Configuration
+  #   name:           j1_site_config                                            # Used in routes, e.g., /admin/collections/blog 
+  #   files:
+
+  # ----------------------------------------------------------------------------
+  # Site Configuration
+  #
+  - label: Site Configuration
+    name:  site_config                                                          # Used in routes, e.g., /admin/collections/blog 
+    files:
+
+      # ------------------------------------------------------------------------
+      # Global Site Configuration
+      #
+      - label: Site Global Settings
+        name:  global_site_config
+        file:  packages/400_template_site/_cc_test_data/_config.yml
+        fields:
+
+          # --------------------------------------------------------------------
+          # About this configuration (used for J1 CC only)
+          #
+          - label:  about
+            name:   about_config
+            widget: object
+            fields:
+              - { label: title,     name: title,    widget: string, hint: General site settings to customize how a site is built }
+              - { label: scope,     name: scope,    widget: string, hint: Scope the data is used }
+              - { label: data file, name: location, widget: string, hint: Folder the configuration file is stored (relative to site root) }
+        
+          # --------------------------------------------------------------------
+          # BUILD configuration
+          #
+          - { label:  environment, name: environment,  widget: string }
+          - { label:  version,     name: version,      widget: string }
+
+          # --------------------------------------------------------------------
+          # THEME configuration
+          #
+          - { label:  theme,       name: theme,        widget: string }
+          - label:    template
+            name:     template
+            widget:   object
+            fields:
+              - { label: name,   name: name,   widget: string, hint: TBD }
+              - { label: config, name: config, widget: string, hint: TBD }
+
+          # --------------------------------------------------------------------
+          # SITE configuration
+          #
+          - { label:  language,     name: language,     widget: string }
+          - { label:  coding,       name: coding,       widget: string }
+          - { label:  doctype,      name: doctype,      widget: string }
+          - { label:  title,        name: title,        widget: string }
+          - { label:  slogan,       name: slogan,       widget: string }
+          - { label:  description,  name: description,  widget: string }
+          - { label:  keywords,     name: keywords,     widget: text }
+
+          - label:    author
+            name:     author
+            widget:   object
+            fields:
+              - { label: name,    name: name,     widget: string, hint: TBD }
+              - { label: email,   name: email,    widget: string, hint: TBD }
+              - { label: github,  name: github,   widget: string, hint: TBD }
+              - { label: twitter, name: twitter,  widget: string, hint: TBD }
+
+          - label:    robots
+            name:     robots
+            widget:   object
+            fields:
+              - { label: index,    name: name,     widget: boolean, hint: TBD }
+              - { label: follow,   name: email,    widget: boolean, hint: TBD }
+
+          # --------------------------------------------------------------------
+          # BRAND configuration
+          #
+          - label:    brand
+            name:     brand
+            widget:   object
+            fields:
+              - { label: image,         name: image,        widget: string, hint: TBD }
+              - { label: image_height,  name: image_height, widget: string, hint: TBD }
+              - { label: text,          name: text,         widget: string, hint: TBD }
+              - { label: text_color,    name: text_color,   widget: string, hint: TBD }
+          
+          - label:    favicon
+            name:     favicon
+            widget:   object
+            fields:
+              - { label: image, name: image,  widget: string, hint: TBD }
+              - { label: type,  name: type,   widget: string, hint: TBD }
+
+          # --------------------------------------------------------------------
+          # JEKYLL specific site configuration
+          #
+          - { label:  permalink,        name: permalink,        widget: string }
+          - { label:  url,              name: url,              widget: string }
+          - { label:  baseurl,          name: baseurl,          widget: string }
+          - { label:  base_path,        name: base_path,        widget: string }
+          - { label:  protocol,         name: protocol,         widget: string }
+          - { label:  host,             name: host,             widget: string }
+          - { label:  port,             name: port,             widget: string }
+          - { label:  detach,           name: detach,           widget: boolean }
+          - { label:  encoding,         name: encoding,         widget: string }
+          - { label:  show_dir_listing, name: show_dir_listing, widget: boolean }
+
+          # --------------------------------------------------------------------
+          # PATH configuration
+          #
+          - { label:  source,           name: source,           widget: string }
+          - { label:  destination,      name: destination,      widget: string }
+          - { label:  plugins_dir,      name: plugins_dir,      widget: string }
+          - { label:  layouts_dir,      name: layouts_dir,      widget: string }
+          - { label:  data_dir,         name: data_dir,         widget: string }
+          - { label:  includes_dir,     name: includes_dir,     widget: string }
+          - { label:  collections_dir,  name: collections_dir,   widget: string }
+
+          # --------------------------------------------------------------------
+          # FILES configuration
+          #
+
+
+          # --------------------------------------------------------------------
+          # SASS conversion options
+          #
+
+
+          # --------------------------------------------------------------------
+          # POSTS Management
+          #
+
+
+          # --------------------------------------------------------------------
+          # LIQUID template engine
+          #
+
+
+          # --------------------------------------------------------------------
+          # PLUGIN configuration
+          #
+
+
+          # --------------------------------------------------------------------
+          # MARKDOWN
+          #
+
+
+          # --------------------------------------------------------------------
+          # ASCIIDOCTOR
+          #
+
+
+          # --------------------------------------------------------------------
+          # ALGOLIA Search
+          #
+
+
+          # --------------------------------------------------------------------
+          # AUTH Manager
+          #
+          # --------------------------------------------------------------------
+          # SAFEMODE
+          #
+
+          # --------------------------------------------------------------------
+          # PAGE configuration
+          #
+
+
+          # --------------------------------------------------------------------
+          # COLLECTION configuration
+          #
+
+
+          # --------------------------------------------------------------------
+          # FRONTMATTER defaults
+          #
+
+
+          # --------------------------------------------------------------------
+          # LAYOUT configuration
+          #
+

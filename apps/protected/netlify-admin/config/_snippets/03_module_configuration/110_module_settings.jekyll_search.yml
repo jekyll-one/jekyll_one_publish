@@ -1,0 +1,34 @@
+#collections:
+
+  # ----------------------------------------------------------------------------
+  # Module Default Settings
+  #
+  # - label:          Module Configuration
+  #   name:           module_default_settings
+  #   files:
+  
+      # ------------------------------------------------------------------------
+      # J1 Jekyll Search
+      #
+      - label:      J1 Jekyll Search
+        name:       config_jekyll_search
+        file:       _data/modules/defaults/jekyll_search.yml
+        fields:
+          - label:  Global settings
+            name:   defaults
+            hint:   Global configuration settings for J1 Jekyll Search
+            widget: object
+            fields: 
+              - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+              - { label: Icon placement, name: placement, widget: select, options: [ navbar ], hint: Where to place to search icon }
+              - { label: Window, name: target, widget: string, hint: Enables or Disables a new browser window for search results }
+              - { label: search input container id, name: search_input, widget: string, hint: ID of the search input container }
+              - { label: search output container id, name: results_output, widget: string, hint: ID of the search output container }
+              - { label: index data file, name: index_data, widget: string, hint: Filename of the generated index data }
+              - { label: result limit, name: result_limit, widget: number, hint: Limits the number of results }
+              - { label: no results text, name: no_results_text, widget: string, hint: Text displayed if no results found }
+              - { label: search item len, name: min_search_item_len, widget: number, min: 3, max: 8, hint: description }
+              - { label: fuzzy search, name: search_fuzzy, widget: boolean, hint: Enables Fuzzy Search }
+              - { label: exlude from search, name: search_exlude, widget: list, hint: List of pages excluded from search }
+              - { label: result template, name: result_template, widget: text, hint: HTML to render search matches }
+

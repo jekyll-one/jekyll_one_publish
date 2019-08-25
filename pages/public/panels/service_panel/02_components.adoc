@@ -1,0 +1,67 @@
+---
+title:                                  J1 Template Components
+tagline:                                Building blocks ready to use
+description:                            Building blocks ready to use
+
+tags:                                   [ Template, Overview, Components ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/panel/service_panel/components/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+---
+
+// Enable the Liquid Preprocessor 
+// -----------------------------------------------------------------------------
+:page-liquid:
+
+// Set other global page attributes here
+// -----------------------------------------------------------------------------
+//:my-asciidoc-attribute:
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture set_env_entry_document %}themes/{{site.template.name}}/procedures/global/set_env_entry_document.proc{%endcapture%}
+{% capture set_image_block %}themes/{{site.template.name}}/procedures/global/set_image_block.proc{%endcapture%}
+
+// Initialize entry document environmental attributes
+// -----------------------------------------------------------------------------
+{% include {{set_env_entry_document}} %}
+
+// Load tag, url and data attributes
+// -----------------------------------------------------------------------------
+include::{includedir}/attributes.asciidoc[tag=tags]
+include::{includedir}/attributes.asciidoc[tag=urls]
+include::{includedir}/attributes.asciidoc[tag=data]
+
+// Set local page attributes
+// -----------------------------------------------------------------------------
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+
+== Components
+
+Components are the building blocks ready to use to create common page components,
+connections to systems and workflows of social networks like Twitter or Facebook
+or cloud services like Disqus for blog-related online forums and discussion.
+
+lorem:sentences[5]
+
+=== Panel
+
+lorem:sentences[5]
+
+lorem:sentences[2]
+
+=== Builder
+
+lorem:sentences[3]
+
+lorem:sentences[2]
+
+=== Connectors
+
+lorem:sentences[5]

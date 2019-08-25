@@ -1,0 +1,63 @@
+---
+title:                                  Roundtrip
+tagline:                                step in
+description:                            What to get
+
+tags:                                   [ Start, Template, Whats, Up, Readme, TL;DR ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/start/roundtrip/whats_up/
+regenerate:                             false
+
+resources:                              [ lightbox ]
+resource_options:
+  - attic:
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/attics/the-place-1920x1280-bw.jpg
+          alt:                          Photo by Tim Mossholder on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Tim Mossholder
+            href:                       https://unsplash.com/@timmossholder/portfolio
+---
+
+// Enable the Liquid Preprocessor
+//
+:page-liquid:
+
+// Set other global page attributes here                                          
+// -------------------------------------------------------------------
+
+
+{% comment %} Liquid procedures
+--------------------------------------------------------------- {% endcomment %}
+{% capture set_env_entry_document %}themes/{{site.template.name}}/procedures/global/set_env_entry_document.proc{%endcapture%}
+
+
+// NOTE: Initialize entry document paths
+//
+{% include {{set_env_entry_document}} init_folders=all %}
+
+// Load tags and urls
+// -----------------------------------------------------------------------------
+include::{includedir}/attributes.asciidoc[tag=tags]
+include::{includedir}/attributes.asciidoc[tag=urls]
+include::{includedir}/attributes.asciidoc[tag=data]
+
+// Additional Asciidoc page attributes goes here
+//
+
+This is for you when you're yust too lazy to read the whole stuff.
+
+lorem:sentences[5]
+
+== Whats up
+
+lorem:sentences[5]
+
+lorem:sentences[3]
+
+
+

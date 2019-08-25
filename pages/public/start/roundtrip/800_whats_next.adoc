@@ -1,0 +1,73 @@
+---
+title:                                  Roundtrip
+tagline:                                where to go
+description:                            Where to go further
+
+tags:                                   [ Start, Template, Whats, Next, Further ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/start/roundtrip/whats_next/
+regenerate:                             false
+
+resources:                              [ lightbox ]
+resource_options:
+  - attic:
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/attics/go-up-1920x1280-bw.jpg
+          alt:                          Photo by Fab Lentz on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Fab Lentz
+            href:                       https://unsplash.com/@fossy
+---
+
+// Enable the Liquid Preprocessor
+//
+:page-liquid:
+
+// Set other global page attributes here                                          
+// -------------------------------------------------------------------
+
+
+{% comment %} Liquid procedures
+--------------------------------------------------------------- {% endcomment %}
+{% capture set_env_entry_document %}themes/{{site.template.name}}/procedures/global/set_env_entry_document.proc{%endcapture%}
+
+
+// NOTE: Initialize entry document paths
+//
+{% include {{set_env_entry_document}} init_folders=all %}
+
+// Load tags and urls
+// -----------------------------------------------------------------------------
+include::{includedir}/attributes.asciidoc[tag=tags]
+include::{includedir}/attributes.asciidoc[tag=urls]
+include::{includedir}/attributes.asciidoc[tag=data]
+
+// Additional Asciidoc page attributes goes here
+//
+
+Welcome to the Web Pages of J1 Template. If your here first time,
+hopefully you get on that page first - the *ReadMe First* of the *Start*
+section. For sure, there is no better place to start.
+
+Having a menu system is great. We hope the the Navigator of J1 will help
+you to explore this site, find what your are looking for. The site of J1
+has grown over the last month a lot. Many documents where seeking for a home.
+And we have really a bunch of them.
+
+== What's next
+
+Hopefully you've enjoyed exploring all the possibilities J1 offers for managing
+themes. But much, much more can the J1 do for your Web Site.
+
+This was the last place to go for the roundtrip. More details of the most
+common elements of Bootstrap can be found on the previewer for a theme. Have
+a look at the link:{previewer-theme}[Theme Previewer, window="_blank"].
+
+To make things real for your new Web, go for *Web in a Day*. This tutorial
+guides you through all the steps to build a Web - your Web using Jekyll and the
+Template J1. It's really a nice journey to *explore* and *learn* J1 - start with
+link:{kickstarter-web-in-a-day}[Web in a day, window="_blank"]!.

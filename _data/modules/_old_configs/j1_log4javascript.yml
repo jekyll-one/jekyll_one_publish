@@ -1,0 +1,101 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/log4javascript.yml
+# Default configuration for J1 Logger module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2019 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# GENERAL logging setting
+#
+#   loader_finished_message
+#   ----------------------------------------------------------------------------
+#
+#   If "loader_finished_message" is set to "true", the MODULE
+#   loader displays a FINISHED (log) message on info level for
+#   all modules loaded.
+#
+#   values:                         boolean (true|false)
+#   default:                        false
+#
+# ------------------------------------------------------------------------------
+loader_finished_message:            false
+
+# ------------------------------------------------------------------------------
+# APPENDER configurations
+#
+appenders:
+
+  # ----------------------------------------------------------------------------
+  # CONSOLE appender
+  - appender:
+      name:                         consoleAppender
+      type:                         BrowserConsoleAppender
+      custom_fields:                [ file, line, path ]
+      pattern_layout:               "[%d{HH:mm:ss.SSS}] [%-5p] [%-40c] [%f{1}:%f{2}] [%m]%n                       [%f{3}]"
+
+  # ----------------------------------------------------------------------------
+  # POPUP appender
+  - appender:
+      name:                         popupAppender
+      type:                         PopUpAppender
+      width:                        600
+      height:                       400
+      lazyInit:                     false
+      initiallyMinimized:           false
+      pattern_layout:               "%d{HH:mm:ss} %-5p - %m{1}%n"
+
+
+# ------------------------------------------------------------------------------
+# LOGGER configurations
+#
+logger:
+
+  # ----------------------------------------------------------------------------
+  # J1 PARENT logger (j1)
+  - log:
+      type:                         parent
+      name:                         j1
+      appender:                     [ consoleAppender ]
+      level:
+        production:                 warn
+        development:                debug
+
+  # ----------------------------------------------------------------------------
+  # ADAPTER CHILD logger (j1.adapter)
+  # - log:
+  #     type:                         child
+  #     name:                         adapter
+  #     appender:                     [ consoleAppender ]
+  #     level:
+  #       production:                 warn
+  #       development:                debug
+
+  # ----------------------------------------------------------------------------
+  # LOADER CHILD logger (j1.loader)
+  # - log:
+  #     type:                         child
+  #     name:                         loader
+  #     appender:                     [ consoleAppender ]
+  #     level:
+  #       production:                 warn
+  #       development:                debug
+  
+  # ----------------------------------------------------------------------------
+  # MODULE CHILD logger (j1.module)
+  # - log:
+  #     type:                         child
+  #     name:                         module
+  #     appender:                     [ consoleAppender ]
+  #     level:
+  #       production:                 warn
+  #       development:                debug
+
+

@@ -1,0 +1,58 @@
+#collections:
+
+  # ----------------------------------------------------------------------------
+  # Module Default Settings
+  #
+  # - label:          Module Configuration
+  #   name:           module_default_settings
+  #   files:
+  
+      # ------------------------------------------------------------------------
+      # J1 Back2Top
+      #
+      - label:      J1 Back2Top
+        name:       config_back2top
+        file:       packages/400_template_site/_cc_test_data/_data/modules/back2top.yml
+        fields:
+
+          # --------------------------------------------------------------------
+          # About this configuration (used for J1 CC only)
+          #
+          - label:  about
+            name:   about_config
+            widget: object
+            fields:
+              - { label: module name, name: title,    widget: string, hint: Provides a button displayed at the bottom of every page to scroll to the top }
+              - { label: scope,       name: scope,    widget: string, hint: Scope the data is used }
+              - { label: data file,   name: location, widget: string, hint: Folder the configuration file is stored (relative to site root) }
+
+          # --------------------------------------------------------------------
+          # User settings
+          #
+          - label:  user settings
+            name:   settings
+            hint:   User configuration settings for J1 Back2Top
+            widget: object
+            fields:
+              - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+              - { label: active color, name: active_color, widget: string, hint: Active color of the button }
+              - { label: background color, name: background_color, widget: string, hint: Background color of the button }
+              - { label: icon, name: icon, widget: string, hint: TBD }
+              - { label: icon family, name: icon_family, widget: select, options: [ MDI, FA ], hint: TBD }
+              # - { label: icon position, name: icon_position, widget: select, options: [ absolute, fixed ], hint: TBD }
+              - { label: scrollto, name: scrollto, widget: number, min: 0, max: 100, hint: TBD }
+              - { label: startline, name: startline, widget: number, min: 100, max: 500, hint: TBD }
+              - { label: scroll duration, name: scrollduration, widget: number, min: 500, max: 1500, hint: TBD }
+              # - label:  fade duration
+              #   name:   fadeduration
+              #   widget: object
+              #   fields:
+              #     - { label: fade in,   name: fadeIn,   widget: number, min: 500, max: 1500, hint: TBD }
+              #     - { label: fade out,  name: fadeOut,  widget: number, min: 500, max: 1500, hint: TBD }
+              # - label:  control attributes
+              #   name:   controlattrs
+              #   widget: object
+              #   fields:
+              #     - { label: offset x,  name: offsetx,  widget: number, min: 5, max: 10, hint: TBD }
+              #     - { label: offset y,  name: offsety,  widget: number, min: 5, max: 10, hint: TBD }
+

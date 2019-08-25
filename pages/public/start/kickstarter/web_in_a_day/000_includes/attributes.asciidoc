@@ -1,0 +1,71 @@
+// ~/document_base_folder/000_includes
+//  Asciidoc attribute includes:                 attributes.asciidoc
+// -----------------------------------------------------------------------------
+
+// URLs - Internal references and/or sources on the Internet
+// -----------------------------------------------------------------------------
+tag::urls[]
+
+:fontawesome-home:                                https://fontawesome.com/
+
+:quickstart-download:                             /pages/public/start/downloads/quickstart/
+:theme-minima-data:                               "pages/kickstarter/web_in_a_day/intro/jekyll-minima-theme.png, Web site based on Jekyll's Theme minima"
+:theme-uno-data:                                  "pages/kickstarter/web_in_a_day/intro/j1-template-theme.jpg, J1 Theme Uno"
+:quickstart-windows-data:                         "pages/kickstarter/web_in_a_day/intro/j1-quickstart-windows.png, J1 Quickstart for Windows"
+:j1-page-layout-data:                             "pages/kickstarter/web_in_a_day/intro/j1_layout.png, J1 Page Layout"
+:layout-inheritance-data:                         "pages/kickstarter/web_in_a_day/intro/layout_inheritance.png, Layout Inheritance"
+:content-inheritance-data:                        "pages/kickstarter/web_in_a_day/intro/content_inheritance.png, Content Inheritance"
+:lane-inheritance-data:                           "pages/kickstarter/web_in_a_day/intro/lane_inheritance.png, J1 Lane Inheritance"
+
+end::urls[]
+
+// Tags - Asciidoc attributes used internally
+// -----------------------------------------------------------------------------
+tag::tags[]
+
+:window:                                          window="_blank"
+:no-clipboard:                                    noclip
+:figure-caption:                                  Figure
+:images-dir:                                      pages/roundtrip
+:y:                                               icon:check[role="green"]
+:n:                                               icon:times[role="red"]
+:c:                                               icon:file-alt[role="blue"]
+:beginner:                                        icon:battery-quarter[role="md-blue"]
+:inter:                                           icon:battery-half[role="md-blue"]
+:advanced:                                        icon:battery-full[role="md-blue"]
+:emdash:                                          &#8212;
+:bullet:                                          &bull;
+:bigbullet:                                       &#9679;
+:bigbigbullet:                                    &#11044;
+:dot:                                             &#46;
+:dotdot:                                          &#46;&#46;
+:middot:                                          &middot;
+
+end::tags[] 
+
+// Data - Data elements for Asciidoctor extensions
+// -----------------------------------------------------------------------------
+tag::data[]
+
+:data-images-standalone:                          "{images-dir}/100_present_images/image-2.jpg, Two men in bicycle jerseys sitting outside at table having coffee, {images-dir}/100_present_images/image-1.jpg, Young lady looking at the beach"
+:data-images-group:                               "{images-dir}/100_present_images/image-3.jpg, Golden Gate Bridge with San Francisco in distance, {images-dir}/100_present_images/image-4.jpg, Forest with mountains behind, {images-dir}/100_present_images/image-5.jpg, Bicyclist looking out over hill at ocean"
+
+end::data[]
+
+// Product - Document (e.g release) information
+// -----------------------------------------------------------------------------
+tag::product_info[]
+:license:                                         MIT License
+:revdate:                                         2018
+:revnumber:                                       1.0.0
+end::product_info[]
+
+
+// Author - Author information
+// -----------------------------------------------------------------------------
+tag::authors[]
+:uri-author-juergen-adams                         https://jekyll.one
+end::authors[]
+
+
+

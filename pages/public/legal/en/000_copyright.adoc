@@ -1,0 +1,25 @@
+---
+title:                                  Copyright 
+tagline:                                Copyright for Software and Content
+description:                            Copyright for Software and Content
+
+tags:                                   [ Copyright, Software, Content ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/legal/en/copyright/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+---
+
+=== Copyright
+
+The content and works published on this website are governed by the copyright
+laws of Germany. Any duplication, processing, distribution or any form of
+utilisation beyond the scope of copyright law shall require the prior written
+consent of the author or authors in question.
+
+
+

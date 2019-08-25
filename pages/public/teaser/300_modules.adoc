@@ -1,0 +1,38 @@
+---
+title:                                  The Modules
+tagline:                                Ready-to-use applications to present image and video content
+description:                            Ready-to-use applications to present image and video content
+
+tags:                                   [ Template, Overview, Modules ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/panels/service_panel_modules/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+---
+
+== The Modules
+
+Javascript libraries and ready-to-use applications gets the Site dynamic.
+JS modules add complex funtionality to Web pages for image and video galleries
+or slider to present the content animated as a show.
+
+== Lightboxes
+
+lorem:sentences[5]
+lorem:sentences[2]
+
+
+== Slider
+
+lorem:sentences[2]
+lorem:sentences[5]
+
+
+== Galleries
+
+lorem:sentences[5]
+lorem:sentences[2]

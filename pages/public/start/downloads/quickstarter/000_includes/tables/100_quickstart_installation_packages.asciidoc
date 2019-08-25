@@ -1,0 +1,20 @@
+[cols="4,3,1,4", options="header", role="table-responsive"]
+|===============================================================================
+|Platform |Package Type |Language |Download
+
+|pass:[<i class="mdi mdi-windows mdi-md-gray mr-2"></i>] Windows, version >=7
+|pass:[<i class="mdi mdi-content-save mdi-md-gray mr-2"></i>] Windows Installer
+|English
+|link:{qs_download_win_en}[j1_quickstart_setup_en_win_generic_x86_32]
+
+|pass:[<i class="mdi mdi-linux mdi-md-gray mr-2"></i>] Linux, kernel >= v2.x
+|pass:[<i class="mdi mdi-archive mdi-md-gray mr-2"></i>] tar, gz compressed
+|English
+|link:{qs_download_linux_en}[j1_quickstart_setup_en_linux_generic_x86_64]
+
+|pass:[<i class="mdi mdi-apple mdi-md-gray mr-2"></i>] OSX, version >= 10.10
+|pass:[<i class="mdi mdi-archive mdi-md-gray mr-2"></i>] tar, gz compressed
+|English
+|link:{qs_download_mac_en}[j1_quickstart_setup_en_osx_generic_x86_64]
+
+|===============================================================================

@@ -1,0 +1,60 @@
+#collections:
+
+  # ----------------------------------------------------------------------------
+  # Module Default Settings
+  #
+  # - label:          Module Configuration
+  #   name:           module_default_settings
+  #   files:
+  
+      # ------------------------------------------------------------------------
+      # J1 Cookie Consent
+      #
+      - label:      J1 Cookie Consent
+        name:       config_cookie_consent
+        file:       _data/modules/defaults/test_data/cookie_consent.yml
+        fields:
+          - label:  Global settings
+            name:   defaults
+            hint:   Global configuration settings for J1 Cookie Consent
+            widget: object
+            fields: 
+              - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the module }
+              - { label: id, name: consent_modal_id, widget: string, hint: Name of the HTM (div) container the consent modal are placed }
+              - { label: data path, name: modal_html_data_path, widget: string, hint: Path to HTML data portion for all modals used. Loaded via AJAX }
+              - { label: stop scrolling, name: stop_scrolling, widget: boolean, hint: Enables or Disables scrolling of the underlying page }              
+              - { label: type, name: modal_type, widget: string, hint: Type of the consent modal used }
+              - { label: position, name: modal_position, widget: string, hint: Position the consent modal is placed }
+              - { label: title, name: consent_modals_title, widget: string, hint: Title used for the the consent modal }
+              - { label: whitelisted pages, name: whitelisted_pages, widget: list, hint: List of pages no consent modal is presented (comma separated) }
+              - label:  Category settings
+                name:   categories
+                hint:   Controls (if enabled) the summary table of cookies used
+                widget: object
+                fields: 
+                  - { label: enabled, name: enabled, widget: boolean, hint: Enables or Disables the summary table }
+                  - { label: title, name: category_title, widget: string, hint: Title place on top of the summary table }
+                  - { label: description, name: category_description, widget: string, hint: Title of the information column }
+                  - { label: description text, name: category_description_text, widget: string, hint: Description in the information column }
+                  - { label: 1st column, name: category_session, widget: string, hint: Title of the 1st column }
+                  - { label: Indicator 1st column, name: category_session_enabled, widget: boolean, hint: Indicator if category is enabled or disabled }
+                  - { label: 2nd column, name: category_persistent, widget: string, hint: Title of the 2nd column }
+                  - { label: Indicator 2nd column, name: category_persistent_enabled, widget: boolean, hint: Indicator if category is enabled or disabled }
+                  - { label: 3rd column, name: category_first_party, widget: string, hint: Title of the 3rd column }
+                  - { label: Indicator 3rd column, name: category_first_party_enabled, widget: boolean, hint: Indicator if category is enabled or disabled }
+                  - { label: 4th column, name: category_second_party, widget: string, hint: Title of the 4th column }
+                  - { label: Indicator 4th column, name: category_second_party_enabled, widget: boolean, hint: Indicator if category is enabled or disabled }
+              - label:  Button settings
+                name:   buttons
+                hint:   Controls what buttons are displayed
+                widget: object
+                fields: 
+                  - { label: policy button text, name: policy_button_text, widget: string, hint: Button description }
+                  - { label: policy button, name: category_session_enabled, widget: boolean, hint: If checked the buttun is enabled }
+                  - { label: accept button text, name: accept_button_text, widget: string, hint: Button description }
+                  - { label: accept button, name: accept_button, widget: boolean, hint: If checked the buttun is enabled }
+                  - { label: decline button text, name: decline_button_text, widget: string, hint: Button description }
+                  - { label: decline button, name: decline_button, widget: boolean, hint: If checked the buttun is enabled }
+
+
+

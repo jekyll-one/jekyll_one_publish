@@ -1,0 +1,52 @@
+---
+layout:                                 page
+
+title:                                  Static Site Generators
+tagline:                                Top Open-Source Static Site Generators
+description:                            Top Open-Source Static Site Generators
+date:                                   2016-10-27 19:16:49 +0100
+
+tags:                                   [ Static Site, Generators ]
+
+tags:                                   [ Static, Site, Generator, Jekyll, Hugo ]
+index:                                  []
+categories:                             [ collection, featured ]
+
+#permalink:
+regenerate:                             false
+
+toc:                                    false
+resources:                              []
+resource_options:
+---
+
+// Enable the Liquid Preprocessor
+//
+:page-liquid:
+
+// Set other global page attributes here
+// -----------------------------------------------------------------------------
+
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+People sometimes ask if static sites make sense for anything beyond a one-pager.
+This leaderboard highlights the top open source projects, in many different
+languages, that make static sites not only viable, but an attractive option
+for creating sophisticated websites!
+
+[role="clearfix mb-3"]
+excerpt__end
+
+
+== Static Site Generators
+
+The typical CMS driven website works by building each page on-demand, fetching
+content from a database and running it through a template engine. This means
+each page is assembled from templates and content on each request to the
+server.
+
+For most sites this is completely unnecessary overhead and only adds
+complexity, performance problems and security issues. After all, by far
+the most websites only change when the content authors or their design
+team makes changes.

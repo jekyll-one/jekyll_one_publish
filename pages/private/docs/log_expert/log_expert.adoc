@@ -1,0 +1,1964 @@
+---
+title:                                  LogExpert
+tagline:                                A tool for real time log
+description:                            LogExpert is a tool for real time log
+
+tags:                                   [ Template, Extension ]
+index:                                  []
+categories:                             [ pages, manuals ]
+
+permalink:                              /pages/private/user_guide/logexpert/
+regenerate:                             false
+#scrollbar:                             true
+
+resources:                              []
+resourceoptions:
+  - toccer:
+      collapseDepth:                    2
+---
+
+// Enable the Liquid Preprocessor
+// -----------------------------------------------------------------------------
+:page-liquid:
+
+// Set other global page attributes here
+// -----------------------------------------------------------------------------
+
+image:/assets/images/pages/log_expert/image_000.png[image,width=266,height=382]
+
+See: https://documentation.help/LogExpert/Welcome.htm[documentation.help, window="_blank"]
+
+LogExpert is a tool for real time log file displaying (also known as _tail_)
+as well as for analyzing log files _offline_.
+
+A summary of features comes here:
+
+* MDI-Interface with Tabs
+* Search function (including RegEx), Goto line
+* Bookmarks with comments
+* A very flexible filter view
+* Highlighting lines via search criteria
+* Splitting log lines into columns for some logfile formats
+* Parse the timestamp of every log line
+* Navigation in the log file via timestamps
+* Timeshift: Add/sub an offset to all displayed date/time values
+* Launch external tools - passing aruments to the tools
+* 3rd party plugin API for Columnizers, context menus, keyword triggers
+* Support for Log4j XML files
+
+
+== File handling
+
+=== Loading files
+
+Files can be loaded in 3 different ways:
+
+* Passing the filenames as command line arguments when starting
+* Using the _Open..._ item in the File menu or the Icon
+* Drag _n_ Drop the files onto LogExpert
+
+LogExpert loads the complete file because it has to count the number of
+lines. If the file is very large LogExpert will purge unused lines out
+of the memory. If the purged lines are requested again (e.g. by
+scrolling through the log file), LogExpert will reload the content.
+
+=== Watching files
+
+Every open file is watched for size modifications (the file is polled in
+250 ms interval). As soon as the file size grows up, the new lines will
+be read. If the file size decreases (e.g. if the file is created anew),
+LogExpert starts to load the complete file again. If you use the
+MultiFile feature, this behaviour is slightly different. See MultiFile
+chapter for more informations.
+
+If the _Follow tail_ checkbox is checked, LogExpert will always show
+the new content by scrolling to the end of the logfile.
+
+An activity level meter will show you how frequent the logfile is
+changed.
+
+The small LED on the right of the activity meter is the _dirty LED_.
+This LED lits up when a log file content has changed and the tab window
+of the log file is not the active tab. It also lits up on the active tab
+if the log file content has changed and the Follow tail mode is
+switched off.
+
+image:/assets/images/pages/log_expert/image_001.png[image,width=305,height=141]
+
+=== Follow tail state
+
+In the settings there_s an option on the first page ("View settings)
+called "Show tail state on tabs". If this option is enabled, there_s an
+additional LED on every tab. This LED lits up when Follow tail is
+active. The color can be choosen in the settings.
+
+If Follow tail is switched off by a keyword trigger (Highlighting and
+triggers), the LED lits yellow.
+
+image:/assets/images/pages/log_expert/image_002.png[image,width=296,height=142]
+
+=== If a file is missed
+
+If an open file does not exist or is deleted while watching, LogExpert
+will try to re-open it for some seconds. If the file is still missed,
+LogExpert clears the window and displays an appropriate icon on the tab.
+
+image:/assets/images/pages/log_expert/image_003.png[image,width=403,height=204]
+
+LogExpert keeps watching for the file as long as the tab window is open.
+If the file appears again, it will be reloaded.
+
+=== Reloading files manually
+
+You can always press the F5 key to reload a file manually.
+
+=== Renaming tabs
+
+Double click a tab to rename it. Tab names will be saved in the
+persistence files.
+
+
+
+=== Search
+
+Choose _Search_ from the View/Navigate menu or Press Ctrl-F to open the
+search dialog.
+
+image:/assets/images/pages/log_expert/image_004.png[]
+
+Simply enter your search item and press Enter (or click OK) to start the
+search. If the search item is found, the line containing the item is
+selected. If not, a _not found_ message is displayed on the status line.
+
+After an item was found you can can use the F3 key to locate the next
+search hit. If the end of the file is reached, the search starts from
+the top. Use Shift-F3 to reverse the search direction.
+
+You can also use regular expressions by selecting the "Regular
+Expression" option.
+
+=== Locating a line
+
+_Go to line_ from the View/Navigate menu (Ctrl-G) opens a simple dialog
+where you can enter a line number. Use this if you want to jump to a
+specific line.
+
+=== Normal navigation
+
+Use the scrollbar or mouse wheel to navigate through the file. If you
+scroll to the
+
+end, the _Follow tail_ checkbox will be enabled automatically. If you
+scroll upwards the checkbox is disabled.
+
+You can also use the usually keyboard commands for navigation:
+
+
+[cols="4,8", options="header", role="table-responsive"]
+|===============================================================================
+|Key |Description
+
+|Arrow up/down
+|One line up or down
+
+|Ctrl + Arrow up/downCtrl + Home/End
+|Jump to start/end of the logfile
+
+|PgUp/PgDown
+|Scroll one page up or down
+
+|Alt + PgUp/PgDown
+|Jump to prev/next highlight entry
+
+|===============================================================================
+
+
+=== Adding blank lines
+
+By pressing the Enter key you can double the height of the current line.
+This looks like a blank line. You can use this to get a better overview
+in logs or to group some lines. To remove a blank line use the Backspace
+key.
+
+The blank lines will be saved in the persistence file. So make shure
+you have persistence enabled in the settings.
+
+
+
+== Filter
+
+The filter is a powerful feature of LogExpert. You should read the
+filter chapters to get all the ideas behind the filter feature.
+
+=== Simple filtering
+
+Choose _Filter_ from the View/Navigate menu to open the filter panel. On
+top of the panel you see the input area. Below the input area you see
+the filter result list.
+
+image:/assets/images/pages/log_expert/image_005.png[]
+
+Enter a search item and press Enter (or click the Search button). The
+result list will display all lines with a search hit. You can double
+click a line in the result list to locate this line in the main logfile
+view.
+
+If you cange any of the filter options or enter a new search term, a red
+_dirty_ indicator on the search button will show you that the filter
+result list doesn_t match the current filter settings:
+
+image:/assets/images/pages/log_expert/image_006.png[]
+
+==== Filter tail
+
+This option has the same function as the _Follow tail_ checkbox, but
+only for the filter result list. So the result list is always
+up-to-date, if the log file changes.
+
+==== Sync
+
+This options will sync the position in the filter result list to the
+position of the log file display. If you scroll through the content of
+the log file in the upper list, the filter view will synchronize its
+position.
+
+=== RegEx
+
+Use regular expressions in the search string.
+
+=== Advanced Filter functions
+
+By clicking the _Show advanced_ button you will see more interesting
+features of
+
+LogExpert_s filter.
+
+image:/assets/images/pages/log_expert/image_007.png[]
+
+By clicking the _Hide advanced_ button you can close the Pro-Panel. Even
+if closed, the advanced options are active of course. There_s a small
+red indicator
+
+on the button if you have set any of the advanced options but the panel
+is closed:
+
+image:/assets/images/pages/log_expert/image_008.png[]
+
+==== Range search
+
+Enable _Range search_ and enter a second search item in the input field.
+Now the filter acts somewhat different. It searches for the first item.
+If found, the line with the search hit and all following lines will be
+added to the result list, until the second search item is found.
+
+This can be useful to filter out content with defined start and end tags
+(like
+
+<html> </html>).
+
+==== Back Spread
+
+Click on the knob and drag your mouse up and down to change the value.
+If you set a value other than zero the filter result list contains not
+only the lines with a search hit. It also contains the adjusted number
+of lines beneath the search hit in backward direction.
+
+Example: You set back spread to a value of 3 and search for "mouse". If
+"mouse" is found on line 200 of your log file, the lines 199, 198 and
+197 will be added to the result list, too.
+
+To distinguish between the real search hit lines and the spread lines,
+the search hit lines will be colored with gray background.
+
+==== Fore Spread
+
+Same as Back Spread but in forward direction.
+
+==== Fuzzyness
+
+(Experimental) This will use the Damerau-Levenshtein-Distance algorithm
+to add some fuzzyness to the search. The knob adjusts the fuzzyness
+factor. 0 means off (exact matches only). Depending on the search items
+the results may be unexpected and not very useful.
+
+==== Filter to Tab
+
+This button will open a new tab window and display the whole content of
+the filter result list in the new tab. But that_s not all: The new tab
+window will watch for log file modifications and keep its content
+up-to-date (like the _filter tail_ feature). You can launch as many
+filter tab windows as you want. Every filter tab window will keep its
+own search criteria.
+
+Note that you have to click the search button (or to press Enter) before
+you launch a new filter tab window.
+
+==== Invert Match
+
+If checked, the filter results contains all lines that does *not* match
+the search term.
+
+Note that the invert match operates before the Spread settings. The
+order is:
+
+. Check for matching lines
+. Invert results
+. Add additional lines regarding to the Spread settings
+
+==== Column restrict
+
+If checked, the filter will search only in the columns you enabled in
+the Columns dialog (click on the "Columns" button to open the Columns
+dialog). The
+
+columns are provided by the currently selected Columnizer. So be sure
+you have
+
+selected the right one. If more than one column is checked, the filter
+uses a kind of OR logic: A line matches if one of the columns contains
+the search string.
+
+.Options in the Column dialog
+image:/assets/images/pages/log_expert/image_009.png[]
+
+==== Exact match
+
+If checked, the filter matches only if the search string equals exactly
+the column content. If not checked, a substring search is performed.
+
+==== On empty columns
+
+Choose the behaviour for empty columns
+
+[cols="",]
+|===============================================================================
+
+a|No hit An empty column is no search hit.
+a|Search hit An empty column is always a search hit.
+a|Use prev content
+a|The column is a search hit if the last non- empty column was a search
+hit. This is usefull for multi line content like stack traces or data
+dumps.
+
+|===============================================================================
+
+
+==== Column restrict Example
+
+Here_s an example for the "Use prev content" option. The filter is set
+up to search for the string "3156" in the column Thread. As you can
+see, the multi line XML dump is contained completely in the filter
+result even though the thread id we_re looking for is found only on the
+first line of the dump.
+
+image:/assets/images/pages/log_expert/image_010.png[]
+
+*Context menu in filter result list*
+
+The filter result list has its own context menu. Here you can - for
+example - set a bookmark for all selected filter results.
+
+image:/assets/images/pages/log_expert/image_011.png[]
+
+*Hints and tips for using the filter*
+
+The filter function can be a very powerful feature if used in the right
+way. So be creative in using the filter for your daily work with
+logfiles! Here are some hints and use cases you might be interested in.
+
+*Use a filter on filter tabs*
+
+A filter tab window is like a normal logfile window. That means you can
+use a filter on that window. So you can filter an already filtered
+content - it_s like a filter chain. In combination with the Back Spread
+and Fore Spread settings you can find issues in your logfiles that would
+be hard to find with traditional search functions.
+
+Example:
+
+Your customer says: "Sometimes I get an error message when using the
+function
+
+_PlaySound_ in your software". There are no date or time for you to
+narrow the search. All you have is 15 MBs of logfiles and that improper
+error message of your customer. The word "error" appears often in the
+logfile (because it sometimes reflects a normal user error situation).
+The word "PlaySound" appears very often too (in a non-error context).
+How to find the sporadic error when
+
+using the function "PlaySound"?
+
+* Use the filter to search for "PlaySound".
+* Before doing the search, adjust the _Fore Spread_ to a value that is
+  usefull to include some log messages around the "PlaySound" log entry.
+  Use _Back Spread_ too, if needed.
+* Use _Filter to tab_ to see the filter results in a new tab window.
+* Use a new filter on the new tab and search for the word "error"
+
+Now you have all "error" log messages that appear in the near of the
+
+"PlaySound" messages.
+
+*The range search*
+
+Range search is useful for logfile content that is marked by some kind
+of start and end items (e.g. all kinds of XML tags).
+
+Example:
+
+You have an application that writes XML to some kind of external
+interface. For diagnostic reasons the output is also written to the
+logfile:
+
+<output>
+
+...some content...
+
+</output>
+
+If you are interested only in the output XML content you can use the
+range search in the filter. Use "<output>" as first search item and
+"</output>" as second search item (enable "Range search" in the advanced
+filter view). The filter result will include all the lines from
+"<output>" to "</output>".
+
+*Locate line in original file*
+
+There_s an menu item called _Locate filtered line in original file_ in
+the context menu of every filter tab. When you choose this item you can
+quickly jump to the appropriate position in your original file tab.
+
+*Save and restore filter settings*
+
+On the right of the filter result list there_s a small button which
+toggles a list. In this list you can save filter settings.
+
+image:/assets/images/pages/log_expert/image_012.png[]
+
+With the "Save Filter" button you can add the current filter settings to
+the list. So can recall the filter when you need it later by
+double-clicking an entry.
+
+The state of the list (hidden/visible) is stored in the persistence
+settings of each log file.
+
+*Auto start*
+
+If the "Auto start" option is checked, the filter search will start
+immediately when the filter is restored.
+
+This is a global option which is saved in the settings of LogExpert.
+
+*Auto hide*
+
+If the "Auto hide" option is checked, the list with the saved filters
+will be hidden after loading a filter setting from the list.
+
+This is a global option which is saved in the settings of LogExpert.
+
+*Change color*
+
+By right-clicking an entry you can change the color of the entry in the
+list. This doesn_t affect the filtering in any way. But it_s useful for
+a better overview when
+
+your filter list has many entries:
+
+image:/assets/images/pages/log_expert/image_013.png[]
+
+
+
+== Columnizers
+
+A columnizer can split the logfile into well defined columns. So a
+columnizer must know the format of the logfile. Because there are many
+different logfile formats out there, LogExpert cannot handle all of
+them. But you can provide your own columnizer by writing a plugin.
+
+To select a columnizer for the current log file Choose "Columnizer" from
+the Options menu.
+
+image:/assets/images/pages/log_expert/image_014.png[]
+
+If you check the "Apply to all open files" option, the selected
+columnizer will be applied to all open log files.
+
+LogExpert stores a history of log files and its selected columnizers. So
+when you load a file again, the last selected columnizer is enabled
+automatically.
+
+The Config button is only enabled if the Columnizer provides an own
+configuration dialog. The columnizers shipped with LogExpert don_t have
+configuration dialogs.
+
+=== Timeshift support
+
+A columnizer can optionally support timeshift. That means that the
+columnizer is capable of parsing the date/time values of a line in the
+logfile. The columnizer can add an offset to the displayed date/time
+value. Timeshift support is needed for the so called Timeshift feature and
+for navigating via date/time control.
+
+=== Built-in Columnizers
+
+There are 4 built-in columnizers. 3 of them support Timeshift.
+
+==== Timestamp
+
+This columnizer splits the line into 3 fields: date, time and the rest
+of the log message. The columnizer expects a date at position 0 of the
+line followed by a time (separated by space).
+
+Following formats are recognized:
+
+dd.MM.yyyy HH:mm:ss.fff
+
+dd.MM.yyyy HH:mm:ss,fff
+
+dd.MM.yyyy HH:mm:ss
+
+yyyy/MM/dd HH:mm:ss.fff
+
+yyyy/MM/dd HH:mm:ss,fff
+
+yyyy/MM/dd HH:mm:ss
+
+yyyy.MM.dd HH:mm:ss.fff
+
+yyyy.MM.dd HH:mm:ss,fff
+
+yyyy.MM.dd HH:mm:ss
+
+yyyy-MM-dd HH:mm:ss
+
+yyyy-MM-dd HH:mm:ss.fff
+
+yyyy-MM-dd HH:mm:ss,fff
+
+dd MMM yyyy HH:mm:ss
+
+dd MMM yyyy HH:mm:ss.fff
+
+dd MMM yyyy HH:mm:ss,fff
+
+dd.MM.yy HH:mm:ss.fff
+
+yyyy-MM-dd HH:mm:ss:ffff
+
+Here you can see an example. The first screenshot shows the original log
+file content (as shown when using no columnizer). The second screenshot
+shows the same log file using the Timestamp columnizer.
+
+image:/assets/images/pages/log_expert/image_015.png[]
+
+image:/assets/images/pages/log_expert/image_016.png[]
+
+==== CLF
+
+This columnizer expects lines to be formatted according the the CLF
+(Common logfile format) used by many web servers.
+
+image:/assets/images/pages/log_expert/image_017.png[]
+
+==== CSV
+
+The CSV Columnizer splits files with comma separated fields into
+columns. The number of columns is determined from the file content.
+
+image:/assets/images/pages/log_expert/image_018.png[]
+
+You can configure the Columnizer by clicking the Config-Button on the
+Columnizer-Chooser dialog.
+
+image:/assets/images/pages/log_expert/image_019.png[]
+
+[cols="4,8", options="header", role="table-responsive"]
+|===============================================================================
+|Key |Description
+
+|`Delimiter char`
+|The character which separates the fields. In most CSV files this will be
+comma or semicolon. Excel uses a semicolon.
+
+|`Quote char`
+|The character which is used to quote fields, so it can contain delimiter
+chars in its content. Excel uses " (at least in the german version)
+
+|`Escape char`
+|Character letting insert quotation characters inside a quoted field.
+Excel uses " (at least in the german version)
+
+|`Comment char`
+|When a line starts with this character, its treated as non-existing
+
+|`First line contains names`
+|Check this option, if the first line in the file contains the names of
+the fields. The columns in LogExpert will be named like this field
+names. Also the first line isn_t displayed as file content.
+
+|===============================================================================
+
+
+==== Log4j XML
+
+The Log4j XML Columnizer will parse log files produced by log4j when
+using XMLLayout. In XMLLayout every log entry is packed in a XML
+structure like this:
+
+.XMLLayout
+[source, xml, role="noclip"]
+----
+<log4j:message>
+  <![CDATA[This is log message number 0]]>
+</log4j:message>
+
+<log4j:locationInfo class="de.har.log4jtest.Main" 
+method="main" file="Main.java" line="28"/>
+
+</log4j:event>
+----
+
+The Columnizer can parse this XML structures and will display the log
+entries in a human readable way just like normal text log files:
+
+image:/assets/images/pages/log_expert/image_020.png[]
+
+In the Columnizer configuration you can select the field to display and
+the maximum length.
+
+image:/assets/images/pages/log_expert/image_021.png[]
+
+The Log4j XMl Columnizer source code is provided the LogExpert SDK. You
+can use it as a starting point to create XML Columnizers for other log
+file formats.
+
+
+=== Custom Columnizer
+
+You can create your own columnizer and use them with LogExpert.
+
+Have a look at
+http://www.log-expert.de/sdk.html[www.log-expert.de/sdk.html.] There
+you can find instructions on how to build your own columnizers and some
+example code.
+
+Short summary:
+
+. You have to provide a DLL written in some .NET language.
+. You have to implement the ILogLineColumnizer interface exported by
+  the ColumnizerLib DLL.
+. Put the DLL into a subdirectory of LogExpert called _plugins_
+
+
+== Timeshift and timestamp driven navigation
+
+If the currently used columnizer supports timeshift you can be lucky.
+Because this gives you some extra features described here.
+
+=== Timeshift
+
+Timeshift means that you can add an offset to the displayed date and
+times values. This is useful if you have to work with logfiles of
+clients and servers with differing system clocks.
+
+If the columnizer supports timeshift you can enable the timeshift
+feature in ther View/Navigate menu.
+
+image:/assets/images/pages/log_expert/image_022.png[]
+
+You can enter a time offset in the format HH:mm:ss.fff (fff =
+milliseconds). If you don_t want to calculate the needed offset by
+yourself you can also doubleclick in a log line into the column that
+displays the date/time.
+
+Now you are in the edit mode. Simply enter the time you want to see for this log
+entry and press Enter. The columnizer handles the time parsing and will
+calculate the needed offset.
+
+image:/assets/images/pages/log_expert/image_023.png[]
+
+=== Timestamp navigation
+
+If the columnizer supports timeshift there_s a date/time control at the
+status line of LogExpert. If you cannot see the control even if the
+columnizer supports timeshift, check the settings dialog. Maybe the
+timestamp control is disabled.
+
+image:/assets/images/pages/log_expert/image_024.png[]
+
+The timestamp control shows the timestamp of the current selected line.
+The displayed format is always "dd.MM.yyyy HH.mm.ss".
+
+You can change every digit by clicking with the left mouse button and
+dragging up/down or left/right. The drag direction (horizontal or
+vertical) can be changed via context menu or in the global settings
+dialog.
+
+After releasing the mouse button LogExpert tries to find the first
+logfile entry that matches the selected timestamp. It doesn_t matter if
+no exact match ist found. LogExpert will select the line right before
+the selected time, if no exact match can be located.
+
+==== Scroll to timestamp
+
+image:/assets/images/pages/log_expert/image_025.png[]
+
+In the context menu there_s an item _Scroll all tabs to current
+timestamp_. When you select this item all open logfiles will scroll to
+the timestamp of the selected line. Of course this works only for files
+with a selected columnizer that supports timeshift.
+
+==== Determine timestamp difference
+
+If you select 2 lines in the log file display, the time difference
+between the 2 selected lines will be displayed in the status line. No
+need to calculate that boring time diffs by yourself anymore!
+
+=== Time spread view
+
+Time spread view can give you an fast overview about the timestamps in
+your logfile. See Time spread view for more information.
+
+The time spread view can give you a fast overview about your logfile
+when you_re interested in the timestamps of the log entries. You can see
+where the most "activity" can be found in the log. "Activity" means:
+"How many lines can be found in a specific time span?".
+
+Time spread view works only when a Columnizer with Timeshift support is
+selected.
+
+Have a look at this screenshot. On the right you can see some markers
+(small ines). Positions with lines means that there is more activity in
+the log.
+
+image:/assets/images/pages/log_expert/image_026.png[]
+
+There are 2 different display modes which you can select in the
+settings. Choose the one you like best.
+
+*Activating the Time spread display*
+
+image:/assets/images/pages/log_expert/image_027.png[]
+
+You have to activate the Time spread display in the settings. If
+activated, the display appears on the right side of the scrollbar. You
+can change the contrast of the display by right-clicking on the display
+and dragging the mouse up and down.
+
+There_s a low-prio background task which recomputes the display on the
+following events:
+
+* The window size has changed (this includes opening/closing filter or
+  bookmark window)
+* The log file content has changed and there_s no log activity since 2
+  seconds
+
+*Time mode*
+
+In time mode LogExpert will determine the time range of the whole log
+file. Then it uses the line count to compute an average lines-per-_time
+unit_ value. The
+
+_time unit_ is a time range which depends on the time range of the log
+file and the height of the log view window. In fact it is computed as
+_log file time range_ / _window height_. Now for every time unit the
+real number of lines in this unit will be counted. The more this value lies
+above the average value, the more the marker for this time unit is visible
+(by using alpha blending).
+
+In short words: A marker indicates a time range which contains more log
+lines than usual in this log (= more activity).
+
+The visible result depends on the log file. If you have continuously
+traffic in the file with some peaks (e.g. in a web server log), you
+should see the peaks in the time spread display.
+
+The time spread view can be used as an easy timestamp based navigation
+tool. If you click on the time spread view, LogExpert will navigate your
+log file to the timestamp you selected on the time spread view. This can
+help to find a position in the file if you know the approx time.
+
+Note that the display does not represent the range of lines in the file.
+It represents the time range. If you click in the middle of the display,
+LogExpert will locate to a timestamp in the middle of the whole time
+range. That_s not the middle of the log file in most cases.
+
+*Line mode*
+
+The line mode is vice versa. It computes a _line unit_ value (line count
+/ window height). Now for every _line unit_ it computes the time range.
+If this range is higher than the average time range, a marker will be
+drawn on the time spread display.
+
+In line mode a marker indicates that more time than usual has passed by
+in a specific section of the log file. That means a marker shows
+locations in which the log has "paused" for a while. Thats quite the
+opposite to the time mode.
+
+Note that in line mode the display does not represent the whole range of
+time (as in time mode) but the whole range of lines. So if you click in
+the middle of the display, the middle of the log file is located.
+
+*Time sync*
+
+Ever needed to scroll through 2 or more logfiles side by side just to
+keep the timestamp positions in sync? LogExpert can do this for you. All
+you need is a Columnizer that supports timestamp parsing and logfiles
+with proper timestamps (every good logfile should have timestamps). Now
+you can keep 2 or more file tabs in sync, if you want to.
+
+"In sync" means: As soon as you change the current line in one of the
+synced files, all other files will re-locate its current position to the
+same timestamp. This works in all directions. There_s no kind of master
+or slave. If you scroll in one file, all synced files will follow.
+
+*How to sync*
+
+Just select the "Time synced files" menu entry from the context menu.
+You will see all other tab names in the sub-menu:
+
+image:/assets/images/pages/log_expert/image_028.png[]
+
+Files without timestamp Columnizers will be drawn disabled. All other
+files can be selected. When selected, the files will be in sync.
+
+You can have various files synced independently. So there can be
+multiple "groups" of synced files which doesn_t affect each other. In
+the context menu you can see if a file is already synced to another
+file:
+
+image:/assets/images/pages/log_expert/image_029.png[]
+
+Look at the screenshot above. The blue entries are 2 files which are
+already synced. Not to your current file but to another. You can join to
+an existing synced group by selecting one of the blue entries.
+
+Synced files can be spotted by the orange LED on the tab:
+
+image:/assets/images/pages/log_expert/image_030.png[]
+
+
+*Scroll behaviour when start syncing*
+
+If you select a file for syncing which is currently not synced, then the
+selected file (i.e. the _other_ file) will relocate to the timestamp of
+the current file.
+
+If you select a file which is already synced (i.e. _join a group_ - the
+blue entries...you remember), then the current file will relocate to the
+timestamp position of the already existing sync group.
+
+
+*Disable syncing*
+
+You can release a file from the sync mode via contenxt menu. Just select
+"Free this window from time sync"
+
+
+
+== MultiFile
+
+Most log file producing applications have a mechanism called "logfile
+rolling" or something like that. That means, if the logfile (e.g.
+logfile.txt) reaches a pre- defined file size, it will be renamed to
+logfile.txt.1 and a new logfile.txt will be created. If logfile.txt.1
+already exists, it will be renamed to logfile.txt.2 and so on up to a
+pre-defined number of files. So you maybe have a history of logfiles
+with logfile.txt.9 (containing the oldest log entries), logfile.txt.8,
+logfile.txt.7 and so
+
+on up to to logfile.txt with the most recent log entries. The 9 ist only
+an example. It can be any number.
+
+LogExpert can handle all this logfiles like one single large logfile.
+You you don_t have to worry about, in which logfile you have to search
+something. It_s like working with a single file.
+
+=== Using MultiFile
+
+For using MultiFile your files should follow the naming rule. That means
+if your most recent logfile is named "logfile.txt", the second most
+recent file must have the name "logfile.txt.1". The more less recent
+logfile is called "logfile.txt.2", and so on.
+
+To enable MultiFile load the most recent logfile (e.g. logfile.txt) into
+LogExpert. Now choose _MultiFile_ from the File menu. LogExpert will now
+load all files following the naming rule for the currently loaded file.
+LogExpert tries to load files by adding the numbers 1, 2, 3... to the
+file name and stops as soon as a file with the resulting filename isn_t
+found.
+
+=== Navigate MultiFiles
+
+You can use all functions and all navigations in a loaded MultiFile.
+There_s no difference to a normal file. When using MultiFile you can see
+the real filename of your current position in the status line. By using
+the Alt-Up and Alt-Down keys you can jump to the file boundaries.
+
+The displayed line count is the sum of all lines in all loaded files.
+The file size display shows the file size of the most current file.
+
+==== Rollover
+
+If the application that produces your logfiles does a rollover (i.e.
+renaming all files by shifting the filenames) Logexpert will detect this
+situation. All internal file buffers will be shifted according to the
+new file names. If the oldest logfile gets lost (because your
+application reaches the logfile history limit) its content will be
+removed from the display.
+
+==== Behind the scenes
+
+Just in case you_re interested, here is how LogExpert handles the log
+files if MultiFile is enabled:
+
+Imagine 3 logfiles: logfile.txt.2, logfile.txt.1 and logfile.txt.
+logfile.txt is the most current log file. It_s the primary log file,
+feed by your application with new log entries.
+
+Now you load logfile.txt and enable MultiFile. LogExpert will look for a
+file called "logfile.txt.1" and load it. Then it looks for
+"logfile.txt.2" and load it. Then it looks for "logfile.txt.3", does not
+find it and stop looking for more logfiles. All 3 log files will be
+displayed seamlessly in one window. LogExpert will watch "logfile.txt"
+for modifications and add the new log entries to the log window.
+
+If logfile.txt reaches the size limit, your application starts to do a
+log file rollover:
+
+*File renamed to*
+
+logfile.txt.2 logfile.txt.3
+
+logfile.txt.1 logfile.txt.2
+
+logfile.txt logfile.txt.1
+
+<created a new> logfile.txt
+
+LogExpert will detect that logfile.txt is created a new (because of the
+smaller file size). It checks, if there_s a file logfile.txt.3 and if
+so, it checks if logfile.txt.3 has the same file size as logfile.txt.2
+had before. If this is true, it will be assumed that logfile.txt.3 is
+the same file previously known as logfile.txt.2. The same procedure is
+done with logfile.txt.2 and logfile.txt.1.
+
+Because the files are the same as before (but only with other names)
+there is no need to reload all files again. Only some internal file
+infos have to be adjusted (file buffers, bookmarks, filter search
+results etc.). The new created logfile.txt is loaded completely, of
+course. LogExpert will also start to load the old files completely, as
+soon as it cannot match the new files with the old ones. In most cases
+this will be logfile.txt.1, because it may contain content that was not
+read before by LogExpert.
+
+Most applications have a limit for the logfile history. If (in our the
+example) the limit would be 4, there_s no logfile.txt.4. The content of
+logfile.txt.3 will be lost, when a rollover occurs.
+
+LogExpert can handle this situation. If LogExpert cannot find a renamed
+file for the oldest log file, its content will be removed from the
+internal file buffers (and from the log file display). This will almost
+result in changed line numbers. But all bookmarks and filter results
+will be adjusted. Bookmarks and filter results that are invalid now
+(because of the deleted log file) will be removed.
+
+
+
+== Bookmarks
+
+You can set bookmarks for marking positions in the log file. Use the
+following keyboard shortcuts:
+
+
+[cols="4,8", options="header", role="table-responsive"]
+|===============================================================================
+|Key |Description
+
+|F2
+|Jump to next boomark
+
+|Shift-F2
+|Jump to previous bookmark
+
+|Ctrl-F2
+|Toggle (set/unset) bookmark at current line
+
+|Alt-F2
+|Edit bookmark comment at current line
+
+|F6
+|Show/Hide bookmark list
+
+|===============================================================================
+
+
+By pressing the F6 key you can get a list of all current bookmarks. In
+the bookmark list you can jump to a bookmark (double click or Enter).
+You can also delete one or more bookmarks using the context menu or by
+pressing the delete key in the bookmark list.
+
+image:/assets/images/pages/log_expert/image_031.png[]
+
+=== Bookmark comments
+
+image:/assets/images/pages/log_expert/image_032.png[]
+
+You can add a comment to every bookmark. This can be done in 2 ways:
+Edit the comment in the text field in the bookmark list or press Alt-F2
+in the log file view.
+
+If the "Show bookmark bubbles" option in the toolbar is checked, the
+comments will be shown as an half-transparent overlay on the log file.
+If you don_t like the default position, you can drag every bubble to
+another position.
+
+image:/assets/images/pages/log_expert/image_033.png[]
+
+In the bookmark list you can see all the bookmark comments when enabling
+the
+
+"Show comment column" switch:
+
+image:/assets/images/pages/log_expert/image_034.png[]
+
+*Note:*
+
+The bookmarks (and their comments) are saved in the persistence file.
+If you
+
+don_t have enabled persistence in the settings your bookmarks will get
+lost on file closing.
+
+
+
+== Highlighting
+
+You can set up a list of keywords that will mark lines in the log file
+in different colors. Every time a keyword is found, the whole line will
+be colored as configured in the Highlight settings.
+
+Choose "Hilighting and triggers" from the Options menu to see the
+following dialog:
+
+image:/assets/images/pages/log_expert/image_035.png[]
+
+*Adding an entry*
+
+Enter a search string into the input field and choose a color for
+foreground and background. Then click on the "Add" button.
+
+*Removing an entry*
+
+Select the entry to be removed from the list. Then click on the "Delete"
+button.
+
+*Changing an entry*
+
+Select the entry to be changed from the list. Now you can change the
+search text and/or colors etc. As soon as you change something, the
+"Apply" button will be enabled. Click on the "Apply" button to commit
+your changes.
+
+*Entry order*
+
+You can change the order of the entries by using the "Up" and "Down"
+buttons. LogExpert will check the entries from top to bottom. As soon as
+a keyword matches a log line, the settings for this entry will be
+applied (the log line gets colored). If more keywords would match for
+the line, only the first wins.
+
+*Action triggers*
+
+There are also 4 "actions" that can be triggered by keywords:
+
+Don't lit dirty LED
+
+Lines containing the keyword will not lit the LED that indicates a "dirty"
+log file state.
+
+Useful for "unimportant" periodical log messages (connection pools, timing messages etc.)
+A bookmark will automatically be set on the line containing the keyword.
+
+You can enter a comment for this bookmark. In the bookmark comment you
+can use the following variables:
+
+%L = line number
+
+%P =directory path to file
+
+Set bookmark %N = file name
+
+%F = complete path incl. name
+
+%E = file extension
+
+%M = file name without extension
+
+\{<regex>} \{<replace>} Regex-Search/Replace operation will be done on
+the content of the current selected line.
+
+Stop Follow
+
+Tail
+
+"Follow Tail" will be switched off as soon as the keyword is found on a
+line. This can be usefull to let LogExpert stop scrolling when something
+important is happening in the logfile.
+
+Plugin Launch a plugin. You can use built-in plugins or write your own
+plugin using the SDK.
+
+Note that the action triggers only work for new "incoming" log file
+content. In other words, the conditions for the actions triggers are
+only checked when a log file has been changed and only for the new
+appended lines.
+
+== Grouping
+
+You can create various sets of highlight settings. A set of highlight
+settings is called a "group". You can choose the current group with the
+combo box in the toolbar:
+
+image:/assets/images/pages/log_expert/image_036.png[]
+
+Only the active group will be in effect. This allows fast switching of
+the file coloring depending on current needs or file types. You can also
+assign highlight groups for file types (via name pattern matching) in
+the settings.
+
+Hint: Right-clicking the combo box will open the highlight settings.
+
+
+== External tools
+
+You can configure 3 external tools which can be launched from LogExpert.
+LogExpert can add some command line arguments (file name, line number
+etc.). The output of a tool (stdout) can be piped to a new tab window in
+LogExpert.
+
+=== Setting up the tools
+
+Choose "Settings..." from the options menu and click on the "External
+Tools" tab in the setting dialog. Or choose "Configure..." from the
+tools menu.
+
+image:/assets/images/pages/log_expert/image_037.png[]
+
+Here you can configure as many tools as you like. All the tools will
+appear in the
+
+Tools menu. Checked entries will also be available in the tool bar.
+
+*Name*
+
+The name that will used in the Tools menu and for tool bar tooltips.
+
+*Program*
+
+Enter the path to the executable to be lauched here or click the button
+on the right for opening a file chooser dialog.
+
+*Arguments*
+
+Here you can type in the arguments for the command line of the lauched
+executable. You can use the following variables which will be replaced
+by its values when launching the tool:
+
+
+[cols="4,8", options="header", role="table-responsive"]
+|===============================================================================
+|Argument |Description
+
+|`%L`
+|Current line number. This is the number of the currently selected line
+in the log window.
+
+|`%N`
+|Name of log file without path
+
+|`%P`
+|Directory of log file
+
+|`%F`
+|Full file name (incl. path) of the log file
+
+|`%E`
+|File name extension of the log file
+
+|`%M`
+|Name of log file without extension
+
+|`?"<param-name>"(def1,def2,...)`
+|A parameter value that will be asked for on every tool launch. The
+optional param-name is only used for the parameter requester dialog. You
+can provide a list of pre-defined values (optional) which will be
+accessible in the requester dialog via combo box.
+
+|`\{<regex>} \{<replace>}`
+|A Regex-Search/Replace operation will be done on the content of the
+current selected line. The result is added to the command line.
+
+|===============================================================================
+
+
+If you use the MultiFile feature, the log file name is always the
+correct name of the file which contains the currently selected line.
+(remember that MultiFile treats 2 or more files like a single
+concatenated file). The line number will also be corrected.
+
+The curly braces used as the regex markers will be removed and are not
+part of the regex. Curly braces used in regex itself will not be removed
+of course. Only the outer braces will be removed.
+
+*Pipe sysout to tab*
+
+If this option is checked, LogExpert will redirect all output (stdout)
+of the external tool to a tab window (a new tab will be opened).
+
+*Columnizer for output*
+
+Here you can select a Columnizer which will be used for the output
+tab. Only available if "Pipe sysout to tab" is enabled.
+
+*Icon button*
+
+You can choose any icon that you like. The icon doesn_t need to be in
+the executable for the tool. It can be in any other executable, dll or
+icon file.
+
+*Tool Arguments Help*
+
+You can use the button on the right of the argument input field to show
+a helper dialog. In this dialog you see a summary of all the variables
+described above. Edit the argument line and click on the "Test" button
+to see the result. You see the result as it would be given as the
+argument line to the lauched tool.
+
+image:/assets/images/pages/log_expert/image_038.png[]
+
+*Regex-Example:*
+
+Regex is useful to parse compiler output an find the file name and line
+numbers. Imagine the following line in the build log of a C++ compiler:
+
+c:\work\listplugsample\listplug.cpp(155) : warning C4996: _stricmp_ was
+declared deprecated
+
+You can use the following 2 regex/replace-expressions to parse out file
+name and
+
+line number from the compiler output
+
+File name \{(.*)\(.*}\{$1}
+
+Line number \{.*\((\d*)\).*}\{$1}
+
+You can use both expressions on the argument line to start an editor
+with file name and line number. The argument line for UltraEdit in this
+example would be:
+
+\{(.*)\(.*}\{$1}/\{.*\((\d*)\).*}\{$1} (File name, slash, line number)
+
+
+
+*Context menu*
+
+Some functions are only available via context menu (right mouse click in
+the log view).
+
+image:/assets/images/pages/log_expert/image_039.png[]
+
+*Copy to clipboard*
+
+Copies the selected lines or cells into the system clipboard. Choose
+"Cell select mode" in the Options menu to switch between selecting of
+single cells or full rows.
+
+*Copy to new tab*
+
+Copies the selected lines or cells into a new tab window. Choose "Cell
+select mode" in the Options menu to switch between selecting of single
+cells or full rows.
+
+If you copy full rows to a new tab the copied rows will remember its
+original position in the original file. You can choose "Locate filtered
+line in original file" to jump to the position of the copied line in the
+original file.
+
+*Scroll all tabs to current timestamp*
+
+This menu item is only available if a Columnizer that supports
+Timeshift is active. By choosing this item, all open tabs will scroll
+to the same timestamp like the current selected line. Of course this
+works only if the other tabs have a timeshift capable Columnizer
+selected.
+
+In some cases there_s no exact match of timestamps beween logfiles.
+LogExpert will try to find an exact match. If no exact match is found
+the next smaller timestamp is selected.
+
+*Time synced files / free this window from time sync*
+
+This menu items are only available if a Columnizer that supports
+Timeshift is active. You can "link" 2 or more tabs together. If you
+select a line in one of the linked tabs then all other linked tabs will
+scroll to the same timestamp position.
+
+See Time sync for more information about that feature.
+
+*Locate filtered line in original file*
+
+This item is available if the current tab is a filter result tab or a
+tab created by "Copy to new tab". By choosing this item you can easily
+jump to the position in the file where the selected line comes from.
+
+*Toggle bookmark*
+
+Set or remove a bookmark on the current line.
+
+*Mark/Edit-Mode*
+
+Switch to "edit mode". Because you cannot edit log files with LogExpert
+this is only usefull to copy parts of a log line to the clipboard or use
+the context menu to filter for the selected search term.
+
+If Timeshift ist enabled you can use the edit mode to "edit" the
+timestamp of a log line. The timeshift offset will be calculated from
+the entered value. Then the offset will be applied to all log lines.
+
+You can also switch to edit mode by double clicking a line.
+
+Note that the mark/edit mode has its own context menu with useful
+functions!
+
+*Temp highlights*
+
+You can remove all temporary highlights or move them to the current
+highlight settings. Temporary highlights can be set when selecting parts
+of the line (mark/edit mode) and using the context menu.
+
+*Mark current filter range*
+
+This menu entry is only available if you have set up a filter with a
+range search (see Filter for more information). The range search mode
+doesn_t need to be enabled, but you must have filled a range delimiter
+in the range search input field.
+
+If the current line is located inside a range defined by that range
+filter, this function will select all lines of that range. Very useful
+to copy message dumps or something like that.
+
+*Additional entries from plugins*
+
+There may be additional context menu entries added by plugins. Refer to
+the LogExpert SDK for informations how to create own context menu
+plugins. There_s one pluginin shipped with LogExpert called eminus.
+
+*Column headers context menu*
+
+There_s another context menu for the column headers of the tables:
+
+image:/assets/images/pages/log_expert/image_040.png[]
+
+*Freeze columns until here*
+
+Freezes all columns starting from left until the selected column
+(including). The frozen colums will stay locked on their positions when
+scrolling horizontally.
+
+*Move (left/right/to last column)*
+
+Reorder columns. You can also drag the columns to another position with
+the mouse.
+
+*Tab context menu*
+
+Right-click on a tab to open its context menu.
+
+image:/assets/images/pages/log_expert/image_041.png[]
+
+*Close this tab/Close other tabs/Close all tabs*
+
+Guess what!
+
+*Tab color*
+
+Allows you to change the color for a tab. The colors are saved in a
+history for the last used 40 files.
+
+*Copy path to clipboard*
+
+Will copy the full path (inkl. file name) of the tab_s log file to the
+clipboard.
+
+*Find in Explorer*
+
+Will open a new Explorer window and select the log file.
+
+
+
+*Settings*
+
+Choose "Settings" from the Options menu to open the settings dialog. The
+
+Settings is divided into 5 pages.
+
+*View settings*
+
+image:/assets/images/pages/log_expert/image_042.png[]
+
+*Font*
+
+Choose a font for the log file display.
+
+*Follow tail enabled*
+
+Configures if the Follow tail option is enabled by default.
+
+*Filter tail enabled*
+
+Configures if the Filter tail option is enabled by default. See Filter
+for details.
+
+*Sync filter list enabled*
+
+Configures if Sync filter is enabled by default. See Filter for details.
+
+*Ask before closing tabs*
+
+If checked, you will see a "really close?" dialog when closing a tab.
+
+*Allow only 1 instance*
+
+If checked, only one instance of LogExpert can be started. Additional
+instances will quit immediately. All files (given by command line args)
+will be loaded by the one and only running instance.
+
+*Re-open last used files*
+
+If checked, LogExpert will load the last used files on startup.
+
+*Show tail state on tabs*
+
+Shows an additional LED on every file tab. The LED shows the current
+state of Follow tail on every tab. See File handling for more
+information. The Color button lets you choose a color for the LED.
+
+*Set last column width*
+
+You can force a column width for the rightmost column. Just enable the
+option and adjust a value of your choice. The column with is applied
+every time a Columnizer is selected (i.e. loading a file or changing the
+Columnizer).
+
+If you don_t use this option, the width of the last column is determined
+automatically by using the width of the displayed lines when selecting a
+Columnizer.
+
+*Timestamp control*
+
+image:/assets/images/pages/log_expert/image_043.png[]
+
+Choose here if you want to see the timestamp control in the status line.
+You can also choose how you want the control to operate: by left/right
+dragging or by up/down dragging. See Timeshift for more information.
+
+The options for the Time spread display are described in the Time
+spread view help page.
+
+*External tools*
+
+The settings for the external tools are described in the External
+tools section of this document.
+
+*Columnizers*
+
+image:/assets/images/pages/log_expert/image_044.png[]
+
+You can set default columnizers for file names matching a file name
+mask.
+
+For adding new entries enter a file name mask into the empty field at
+the last line and choose a columnizer from the list. To delete an entry
+select it and click on
+
+the Delete button.
+
+*Mask has priority before history*
+
+If checked, the settings in this dialog will always be used when loading
+files. If not checked, the settings will only be used if no entry in the
+columnizer history is found for the file to be loaded. The columnizer
+history stores the last 40 file names with its columnizer selections.
+
+*Highlight*
+
+image:/assets/images/pages/log_expert/image_045.png[]
+
+You can select default Highlight groups for file names matching a file
+name mask.
+
+For adding new entries enter a file name mask into the empty field at
+the last line and choose a columnizer from the list. To delete an entry
+select it and click on
+
+the Delete button.
+
+*Multi File*
+
+image:/assets/images/pages/log_expert/image_046.png[]
+
+This page configures how LogExpert operates if you load multiple files
+at once. Multiple files can be loaded by selecting more than one file in
+the Open file dialog or by drag & drop multiple files onto LogExpert.
+
+The default behaviour is to load every file into a separate tab window.
+But you can also configure that LogExpert treats the files as
+MultiFile. So you can use the MultiFile feature even if your file
+names don_t fit the naming convention for the automatic MultiFile
+feature. Note that LogExpert cannot handle a logfile rollover with
+MultiFiles correctly, if the logfiles don_t follow the naming
+convention.
+
+*Plugins*
+
+image:/assets/images/pages/log_expert/image_047.png[]
+
+Here you can configure the plugins, if you have any plugins available.
+The config options depends on the plugin. If the plugins provides an
+in-place config dialog you will see the settings directly embedded on
+the Plugins tab (like in the screenshot above). If the plugin needs a
+larger GUI, it can provide it_s own config dialog. In this case you will
+see a "Config" button which causes the plugin to show its own dialog.
+
+*Persistence*
+
+image:/assets/images/pages/log_expert/image_048.png[]
+
+Here you can choose if LogExpert saved persistence files
+automatically. A persistence file is an XML files which contains
+informations about a logfile. You can also select an location where to
+store these files.
+
+A persistence files has the file extension .lxp. If you Choose "Same
+directory as log file" the persistence file will have the same name as
+your log file (with added
+
+.lxp). If you choose one of the other options, the persistence file name
+is built from the absolute pathname of your log file (with added .lxp).
+
+*Memory / CPU*
+
+image:/assets/images/pages/log_expert/image_049.png[]
+
+You can adjust the memory that uses LogExpert for buffering lines. Also
+you can adjust the file polling interval for the tail mode.
+
+*Buffer usage*
+
+The buffer usage for every file can be adjusted. When working with large
+files you should consider to increase the defaults. This will speed up
+operations like filtering a lot! This is especially true when opening
+log files directly from a network drive (which is not recommended for
+large files).
+
+Here_s how it works internally:
+
+When loading files, LogExpert will group all lines into blocks. The
+number of lines per block can be adjusted. When the maximum number of
+blocks is reached, LogExpert will start to remove blocks from memory.
+The blocks which are used least will be removed at first. As soon as one
+of the lines of a removed blocks is needed again (because of scrolling
+or searching/filtering) the complete block will be reloaded from the
+file.
+
+To find optimal sizes you can experiment a bit. For my system it seems
+be be a good choice to have large blocks (about 500 to 3000 lines)
+instead of too much blocks. But this experience may vary from system to
+system.
+
+For a better performance the buffer limit will not be checked every time
+a block is added. Instead there_s a kind of garbage collector thread
+which checks the number of blocks from time to time (10 secs interval
+for now). This means there may be a larger memory consumption for some
+seconds, before blocks are free_d by the garbage thread.
+
+Buffer usage values count for every loaded file. If you have 10 large
+files open with settings of 2000 lines/block and number of blocks = 100,
+you will have
+
+2.000.000 lines in memory. Beause the internal representation of strings
+is 2- byte-Unicode, every character will take 2 bytes of memory. That
+means, a 40
+
+MB ASCII log file will consume about 80 MB memory if loaded completely.
+
+If you_re using LogExpert mostly as a tail tool (only viewing the last
+few lines), you may be happy with small buffer usage values. If you use
+LogExpert for heavy _offline_ analysis of large log files, you should
+try to increase buffer values (if you have enough RAM). The increased
+filtering speed is worth the RAM consumption. Trust me, your live will
+be easier a lot! ;)
+
+*Multi threaded filter*
+
+If enabled, the filter function will use multiple threads. This can
+improve the speed of the filter. The real speed gain depends on the
+actual system (number of processors etc.). On my dual core notebook it_s
+about twice as fast if the file is completely held in memory. When the
+file doesn_t fit completely in memory (buffer settings), then multi
+threading can be even faster than twice. Because if some threads are
+waiting for disk, the other ones can continue with filter searching in
+already loaded buffers.
+
+Currently, the number of threads started for filtering is processor
+count + 2. Every thread will get a part of the logfile. When all
+threads have completed, the results are merged. Because every thread
+works on a different part of the logfile, the block size settings may
+affect the speed, if buffer purges/reloads occure
+
+while filtering.
+
+*File polling interval*
+
+You can adjust the polling interval. This is the interval a log file is
+checked for changes. In most situations you should have no reason to
+change the value.
+
+The smallest allowed value is 20ms.
+
+
+
+== Persistence
+
+The new persistence feature added with LogExpert 1.2 allows you to
+restore the state of work with LogExpert. The following data is saved
+in/restored from the persistence file:
+
+* Bookmarks and bookmark comments
+* Added rowheights ("blank lines" added with the Enter key)
+* Tab name
+* Columnizer
+* Current selected line
+* Scroll position
+* Follow tail state (on/off)
+* Filter window state (on/off/advanced) and size
+* Bookmark window state (on/off) and size
+* Filter settings
+* All filter tabs
+
+So make shure to enable the automatic persistence saving in the settings
+to get most fun with LogExpert.
+
+When loading a log file LogExpert looks for the appropriate persistence
+file too. If found, it will be loaded and used. You can choose a
+location for the
+
+persistence files in the settings.
+
+
+
+== Sessions
+
+Use the _Save session..._ entry in the File menu to save a session.
+Session means that all open tabs will be saved. When loading a session
+all tabs of the session will be restored (i.e. all the log files will be
+opened).
+
+A session file is a small XML file which contains references to the
+
+persistence files of the log files. When saving a session, persistence
+file saving is forced even if persistence saving is disabled in the
+settings.
+
+To load a session use the _Load session..._ menu entry. You can also
+drag_n_drop a session file onto LogExpert or use a session file as
+command line argument.
+
+
+
+== _eminus_ context menu plugin
+
+Since version 1.2 LogExpert has a plugin API to provide additional
+functions. There_s one default plugin shipped with LogExpert: It_s
+called _eminus_. The plugin is able to parse log lines for valid Java
+stack trace entries. If a valid stack trace entry is found, the plugin
+sends the Java class name and the line number via TCP/IP to it_s
+counterpart: The eminus Eclipse plugin. The Eclipse plugin will load the
+class into the Eclipse code editor and locate to the given line.
+
+The Eclipse plugin can be downloaded from the LogExpert website.
+
+=== Configuration
+
+In the LogExpert settings you can configure the eminus plugin. Normally
+you will use the localhost IP address (127.0.0.1) and a port which is
+not used by other applications on your computer. If you want to
+remote-control an Eclipse IDE running on another computer you can
+configure its IP address. A password
+
+is required if you have set a password in the eminus settings in your
+Eclipse IDE. This is usefull to prevent your team-mates from
+remote-controlling your Eclipse IDE. :)
+
+image:/assets/images/pages/log_expert/image_050.png[]
+
+=== How to use
+
+Right-click on a log line with a Java stack trace entry to bring up the
+context menu. the menu entry _Load class in Eclipse_ is available if a
+valid stack trace entry is found.
+
+image:/assets/images/pages/log_expert/image_051.png[]
+
+=== Eclipse plugin
+
+Copy the eminus plugin (a jar file) into the dropins folder (or
+plugins folder) of your Eclipse installation.
+
+You can configure the plugin in the Eclipse preferences:
+
+image:/assets/images/pages/log_expert/image_052.png[]
+
+To activate the plugin, you have to check the eminus toolbar button. If
+the button is not active the plugin won_t listen for TCP/IP messages.
+
+image:/assets/images/pages/log_expert/image_053.png[]
+
+The eminus Eclipse plugin is written by Mathias Dräger. He also does a
+lot of beta testing for LogExpert since the very early development
+phase.
+
+
+
+== SFTP Plugin
+
+LogExpert comes with an SFTP plugin. This allows to load files directly
+from a remote server via SFTP.
+
+=== Loading files
+
+Use "File->Open URL..." and enter a URL like "sftp://<host>/<file>".
+Optional a user can be specified.
+
+image:/assets/images/pages/log_expert/image_054.png[]
+
+The plugin will ask for user and password. For every host the
+credentials are cached and will not be asked again.
+
+=== Using SSH keys
+
+The plugin also supports authentication via SSH keys. Go to LogExpert_s
+settings (plugin tab) and specify your private key file:
+
+image:/assets/images/pages/log_expert/image_055.png[]
+
+Note: Only one key is supported. Different per-host keys won_t work.
+
+The key file is loaded on first use (when first file is loaded via
+SFTP). You will be asked for the key_s passphrase for key decryption.
+Once loaded, the key is cached as long as LogExpert is running.
+
+image:/assets/images/pages/log_expert/image_056.png[]
+
+Now when loading a file via SFTP you only need to specify the user name
+but not the password. Therefore the password field is disabled then.
+
+image:/assets/images/pages/log_expert/image_057.png[]
+
+If authentication via SSH keys failed for any reason, you have the
+choice to try again or to fall back to password authentication.
+
+
+
+== Regular expressions
+
+Here are the most important regular expressions you can use in the
+filter, search dialog and in the command line arguments for external
+tools. There are some more, but the author is too lazy to copy them all
+from the Microsoft MSDN pages (and probably it may be illegal). On the
+end of the page there_s a link to the original regular expression
+documentation for .NET.
+
+=== Character classes
+
+[chargroup ] Any char of the group. E.g. [abc] will find a, b or c.
+
+[^ chargroup] A char not contained in the group. [^abc] will find all
+but a, b or c
+
+
+[cols="4,8", options="header", role="table-responsive"]
+|===============================================================================
+|Argument |Description
+
+|[fromchar - tochar]
+|Chars contained in the range. [a-z] will find all lowercase letters.
+
+|.
+|Any char but \n. Note: a . in a character group ([.]) is a literal, not
+ placeholder for _any char_.
+
+|===============================================================================
+
+
+\w same as [a-zA-Z0-9]
+
+\W same as [^a-zA-Z0-9]
+
+\s Space
+
+\S No Space
+
+\d Decimal digit
+
+\D No decimal digit
+
+=== Quantifiers
+
+* Zero or more matches
+
++ One or more matches
+
+? Zero or one matches
+
+\{n} Exactly n matches
+
+\{n,} At least n matches
+
+\{n,m} n to m matches
+
+*? First match that consumes as few repeats as possible
+
++? As few repeats as possible, but at least one
+
+?? Zero repeats if possible, or one
+
+=== Escapes
+
+\t Tab
+
+\r Carriage return
+
+\n New line
+
+\x20 ASCII char in hex notation (2 digits)
+
+\ Use \ to escape the following character. For example \*
+
+\b When in [] it_s a backspace char. Otherwise a word boundary.
+
+=== Grouping
+
+( subexpression )
+
+
+Captures the matched subexpression. Captures using () are numbered
+automatically based on the order of the opening parenthesis, starting
+from one. The first capture, capture element number zero, is the text
+matched by the whole regular expression pattern.
+
+
+=== Substitutions
+
+Substitutions are used in replacement patterns.
+
+$number Substitutes the last substring matched by group number number
+(decimal).
+
+$$ Substitutes a $ literal.
+
+$& Substitutes the match itself.
+
+$` Substitutes all the text of the input string before the match.
+
+$_ Substitutes all the text of the input string after the match.
+
+$+ Substitutes the last group captured.
+
+$ Substitutes the entire input string.
+
+The complete documentation of all RegEx options for .NET can be found on
+the
+
+Microsoft MSDN pages:
+
+http://msdn.microsoft.com/en-us/library/az24scfc(VS.80).aspx[msdn.microsoft.com]
+
+
+== Keyboard Shortcuts
+
+.Keyboard Shortcuts
+[cols="4,8", options="header", role="table-responsive"]
+|===============================================================================
+|Shortcuts |Function
+
+|`Ctrl-F4`
+|Close current file
+
+|`F5`
+|Reload current file
+
+|`F4`
+|Open/close filter view
+
+|`Ctrl-G`
+|Goto line
+
+|`Ctrl-F`
+|Open search dialog
+
+|`F3`
+|Search next
+
+|`F6`
+|Open/close bookmark view
+
+|`F2`
+|Jump to next bookmark
+
+|`Shift-F2`
+|Jump to prev bookmark
+
+|`Ctrl-F2`
+|Toggle bookmark
+
+|`Alt-F2`
+|Add bookmark comment
+
+|`Ctrl-T`
+|Copy selected lines to new tab window
+
+|`Ctrl-E`
+|Mark/Edit mode
+
+|`Ctrl-L`
+|Locate line in original file
+
+|`Alt-Up`
+|MultiFile: Jump to prev file
+
+|`Alt-Down`
+|MultiFile: Jump to next file
+
+|`Alt-PgUp`
+|Jump to prev highlight line
+
+|`Alt-PgDown`
+|Jump to next highlight line
+
+|`Enter`
+|Insert a virtual _blank line_
+
+|`Backspace`
+|Remove a blank line
+
+|`Ctrl-R`
+|Mark the current matching filter range in the log file
+
+|Dummy
+| lorem:sentences[5]
+
+|===============================================================================
+

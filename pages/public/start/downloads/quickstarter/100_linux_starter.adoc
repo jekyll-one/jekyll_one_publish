@@ -1,0 +1,561 @@
+---
+title:                                  J1 Starter
+tagline:                                Create your Linux environment in 15 minutes
+description:                            J1 Starter for the Linux environment
+
+tags:                                   [ Starter, Linux, Template ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/start/downloads/linux_starter/
+regenerate:                             false
+
+resources:                              [ lightbox, carousel ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      slides:
+        # Broadway Underground - still image
+        - url:                          /assets/videos/headers/still/underground-broadway.png
+          alt:                          Broadway Underground
+          alignY:                       top
+          animateFirst:                 false
+        # Broadway Underground - FAYETTE ST, moved file to Github/LFS
+        - url:                          https://github.com/jekyll-one-org/jekyll-one-lfs/raw/master/videos/underground-broadway.mp4
+          alignY:                       0
+          isVideo:                      true
+          loop:                         true
+          duration:                     12000
+        # Broadway Underground - still image
+        - url:                          /assets/videos/headers/still/underground-broadway.png
+          alt:                          Broadway Underground
+          alignY:                       top
+          transitionDuration:           750
+          transition:                   "push_left|push_right|cover_up|cover_down|fade|fadeInOut"
+---
+
+// NOTE:  General Asciidoc page attributes settings
+//
+:page-liquid:
+
+//  Load Liquid procedures
+// -------------------------------------------------------------------
+{% capture set_env_entry_document %}themes/{{site.template.name}}/procedures/global/set_env_entry_document.proc{%endcapture%}
+{% capture set_image_block %}themes/{{site.template.name}}/procedures/global/set_image_block.proc{%endcapture%}
+
+// Initialize entry document environmental attributes
+// -------------------------------------------------------------------
+{% include {{set_env_entry_document}} %}
+
+// Load tags and urls
+//
+include::{includedir}/attributes.asciidoc[tag=tags]
+include::{includedir}/attributes.asciidoc[tag=urls]
+include::{includedir}/attributes.asciidoc[tag=data]
+
+// Additional Asciidoc page attributes goes here
+//
+
+You work on Linux, most of the tools needed for developing a Jekyll Web are
+already installed or if missing quite easy to install. No wonder, Linux
+support developers at it's best.
+
+Creating a fully equipped Jekyll developing enviroment may take a while
+anyway. If you don't want to mixup already installed applications like
+Python, Ruby or NodeJS on your existing OS, you can go for J1 Quickstart.
+
+And you're done in 15 minutes ..
+
+== Quickstarter packages
+
+All the tools and their environments are localized and isolated to the
+application folder of the Quickstarter package and should *not* interfere
+with any already of the installed programs and their resources. Simply by
+setting some environment variables, the system you've prepared already for
+your (Jekyll) Development Environment will be left untouched.
+
+All Quickstarter packages contain the following packages:
+
+* Ruby language, version 2.5
+* NodeJS language, version 8.9.4
+* NPM, version 6.1.0
+* YARN, version 1.7.0
+* Nginx Web Server, version 1.13.3
+* OpenSSL, version 1.0.2 (LTS 2019)
+
+Additionally, some selected addons are packed for faster setup repectively
+improved productivity:
+
+* bash helper scripts
+* control scripts to start and stop services
+
+NOTE: Quickstarters for all platforms have very the same *layout* and most of
+the applications packed are the same (in terms of their versions). If you
+work on *Windows*, the working environment *feels* the same as if you
+are on MacOS or Linux. As a plus, if you go for a Quickstarter (first),
+the beginner's documentation and tutorials will be easier to read and you
+can immediately follow what is presented and catch faster the workflows
+used.
+
+In short: for the very first steps exploring the wonderful world of creating
+web sites using Jekyll and J1, the Quickstarter will be helpfull.
+
+It's on you.
+
+== Download a Quickstarter
+
+Find your platform and version for the J1 Quickstarter package you need
+with the following table:
+
+include::{includedir}/tables/100_quickstart_installation_packages.asciidoc[]
+
+
+=== System requirements
+
+For all platforms, a Intel-based system is required. The minimum
+hardware you'll need:
+
+* Processor: 1 gigahertz (GHz) or faster CPU, dual-core
+* RAM: 2 gigabyte (GB) for 32-bit (Windows only) or 4 GB for 64-bit systems
+* Hard disk space: 1 GB
+
+NOTE: For many tasks (NPM scripts), parallel processing is used to speed
+up the build processes. This cause a higher memory usage. Make sure the 
+system hardware (or the virtual machine) used meets the minimal system
+requirements.
+
+=== Softare requirements
+
+lorem:sentences[5]
+
+[source, sh]
+----
+# yum groupinstall "Development Tools"
+----
+
+lorem:sentences[3]
+
+[source, sh]
+----
+# yum install -y zlib zlib-devel openssl openssl-devel dbm dbm-devel gdbm gdbm-devel readline readline-devel
+----
+
+== Install a Quickstarter
+
+Installing a Quickstarter on all platforms is quite easy. Typically,
+a Quickstarter is used under *non-priviliged* accounts. Therefor, the
+installation is done using an non-priviliged user, *no root* access is
+needed for *Unix*-like system as MacOS or Linux.
+
+=== Install on Linux
+
+Installing the Quickstarter on Unix-like platforms is simple. The package
+is a simple *tar ball* that can be extracted elswhere into any arbitrary folder
+of your choice. BUT: the package should never be installed as *root* - use
+an *non-priviliged* user, your personal account for example.
+
+You can install J1 Quickstart in any folder of your choice but you should
+*not use* a folder that contains *spaces*. This *may* cause unforeseeable
+failures accessing files and folder by some of the components, tools or 3rd
+party libraries of ruby or python. On other hand, typing or reading folder
+names having spaces like */this/is/my \ folder \ having \ spaces/* is not fun.
+
+The tar ball is packed relatively to the folder *j1_quickstart*. In other
+words: the tar ball *contains* a folder j1_quickstart already (to prevent
+mesh up files in the parent folder).
+
+[source, sh]
+----
+$ mkdir -p /path/to/parent_directory
+$ tar -xzf j1_quickstart_setup_en_linux_generic_x86_64.tgz -C /path/to/parent_directory
+----
+
+TIP: For _/path/to/parent_directory_ e.g. you can use your user *home
+directory* like: *$HOME/j1_quickstart* to install the Quickstarter.
+
+Your J1 Quickstart package is in place. What needs to be done next? Go for
+<<setup_on_unix>>, the chapter below.
+
+
+[[setup_on_unix]]
+==== Setup the environment
+
+Only two steps are needed for Linux platforms to setup your environment
+completely. Open a simple terminal (console) and change (cd) to the
+Quickstarter installation folder.
+
+The two steps for the *very first* start are:
+
+. set the quickstarter environment
+. initialize J1 Quickstart for the first use
+
+To set the proper environment, run the helper script *set_env* out of the *etc* folder (run the script
+*dotted*, so-called *sourced*) to set some environment variables needed with your
+current shell. You'll need some more shells - open at 2 additional console (shell)
+sessions the same way (dont't forget to source your shell by running the set_env
+script!).
+
+Go for one of them and run:
+
+[source, sh]
+----
+$ . ./etc/set_env
+----
+
+The helper *j1init* supports you to do some very basic tasks with the the
+Quickstarter. Run the helper j1init with the option *help* or *he* to see
+more details what j1init can do:
+
+.Options of the helper script *j1init*
+[source, sh]
+----
+$ j1init he
+
+ Usage: j1init {all|check|status|print-env}
+ Usage: j1init {bundle-install|bundle-test|bundle-clean|bundle-remove}
+ Usage: j1init {gems-remove}
+ Usage: j1init {clean-log|clean-force}
+ Usage: j1init {help}
+
+              all|al:   (Re-)Initilize the Quickstarter. Compiles and
+                        installs Ruby and all Rubies needed.
+                        Useful only for setup. Be carefull using this option!
+            check|ck:   Run sanity checks for all J1 Quickstart components
+           status|st:   Display state of all Quickstarter deamons (RUNNING|STOPPED)
+        print-env|ev:   Display current environment
+   bundle-install|bi:   Install a bundle from current path
+      bundle-test|bt:   Integrity tests of a bundle from current path
+     bundle-clean|bc:   Delete all unused (older) gem referenced by a bundle
+                        from current path. Be carefull using this option!
+    bundle-remove|br:   Delete all gem referenced by a bundle from current path
+                        Be carefull using this option!
+      gems-remove|gr:   Delete ALL non-default gem from the system.
+                        Be carefull using this option!
+        clean-log|cl:   Delete all log files from ~/log folder
+      clean-force|cf:   Runs gems-remove + clean-log + delete all files
+                        from ~/var folder. Useful only for factory resets!
+             help|he:   Prints this help
+----
+
+To display your current environment, run:
+
+[source, sh]
+----
+$ j1init ev
+----
+
+.Environment displayed by *j1init*
+[source, sh]
+----
+j1init: found current quickstarter environment             [   OK    ]
+# --------------------------------------------------------------------
+#
+#  Current quickstarter environment settings:
+#
+#  GEM_HOME     /home/xxxx/j1_quickstart/ruby/lib/ruby/gems/2.3.0
+#  NGINX_BIN    /home/xxxx/j1_quickstart/nginx/bin
+#  GEM_BIN      /home/xxxx/j1_quickstart/ruby/lib/ruby/gems/2.3.0/bin
+#  OPENSSL_HOME /home/xxxx/j1_quickstart/openSSL
+#  NGINX_HOME   /home/xxxx/j1_quickstart/nginx
+#  OPENSSL_BIN  /home/xxxx/j1_quickstart/openSSL/bin
+#  PYTHON_LIB   /home/xxxx/j1_quickstart/python/lib
+#  PYTHON_BIN   /home/xxxx/j1_quickstart/python/bin
+#  NODE_BIN     /home/xxxx/j1_quickstart/nodejs/bin
+#  PYTHONHOME   /home/xxxx/j1_quickstart/python
+#  RUBY_HOME    /home/xxxx/j1_quickstart/ruby
+#  OPENSSL_CONF /home/xxxx/j1_quickstart/openSSL/openssl.cnf
+#  J1_HOME      /home/xxxx/j1_quickstart
+#  RUBY_BIN     /home/xxxx/j1_quickstart/ruby/bin
+#  NODE_MOD_BIN /home/xxxx/j1_quickstart/nodejs/lib/node_modules/.bin
+#  PYTHON_HOME  /home/xxxx/j1_quickstart/python
+#  NODE_HOME    /home/xxxx/j1_quickstart/nodejs
+#
+# --------------------------------------------------------------------
+----
+
+The helper j1init support some simple sanity checks to check the integrity
+of the Quickstarter installed. Run a first check by:
+
+[source, sh]
+----
+$ j1init ck
+----
+
+You'll find that some checks are passed, but overall the integrity checks
+are *FAILED*. For good reasons. The environment ist set and some of the
+pre-installed applications are checked successful (*PASSED*).
+
+.check results displayed by *j1init*
+[source, sh]
+----
+Status for quickstart: check environment                   [ PASSED  ]
+Status for quickstart: checking python executeable         [ PASSED  ]
+Status for quickstart: checking node executeable           [ PASSED  ]
+Status for quickstart: checking npm executeable            [ PASSED  ]
+Status for quickstart: no ruby executeable found           [ FAILED  ]
+Status for quickstart: no bundler executeable found        [ FAILED  ]
+Status for quickstart: no gem executeable found            [ FAILED  ]
+Status for quickstart: integrity checks                    [ FAILED  ]
+----
+
+=== Create a fresh RUBY
+
+But what is missing? All Ruby has test failed! For another good reason.
+There is (currently) *no* Ruby in place.
+
+The most boring step is the initializatopn part: a fresh Ruby will be build
+and installed for your platform for best performance and stability. But
+compiling a fresh Ruby will take a while - anyway it is fully automated.
+Except the coffee you may need meanwhile :) ...
+
+==== Development Packages
+
+sudo apt-get install -y gcc g++ make
+
+sudo apt-get install -y expat libxml2-dev libxslt1-dev libffi-dev libpng12-dev zlibc zlib1g zlib1g-dev libbz2-dev libgdbm-dev libssl-dev libreadline-dev libncurses5-dev
+
+sudo yum install -y expat libxml2-dev libxslt1-dev libffi-dev libpng12-dev zlibc zlib1g zlib1g-dev libbz2-dev libgdbm-dev libssl-dev libreadline-dev libncurses5-dev
+
+
+==== Building Ruby
+
+Start the initialization by running:
+
+[source, sh]
+----
+$ j1init al
+----
+
+and the setup phase starts by an question - you see something like this:
+
+[source, sh]
+----
+This will RESET and (RE-)INSTALL the J1 Quickstart installation ...
+Are really you sure? (y/n)?
+----
+
+To start building you Ruby for the new Quickstarter, answer (**y**es).
+The setup phase starts immediately. You see something like this:
+
+[source, sh]
+----
+  # Found your Quickstarter installed at: /home/xxxx/j1_quickstart
+  #
+  # Platform detected as: linux.
+  # Platform is supported. Continue processing ...
+  #
+  # Compiling and installing Ruby. This will take a while :|
+  # Have a break this time :)
+  #
+  # Unzip Ruby sources to: /home/xxxx/j1_quickstart/_ruby_src_extracted ...
+  # Unzip of Ruby sources finished successful.
+  #
+  # Prepare (configure) Ruby 2.3.4 for compilation ...
+  # Ruby 2.3.4 configuration successful.
+  #
+  # Compile Ruby 2.3.4 ...
+  # Ruby 2.3.4 compilation successful.
+  ...
+----
+
+The setup phase will take up to *15* minutes, depending on the performance the
+hardware you're using. To have a look what's going on under the hood, you can
+monitor the setup process by tailing the Quickstarters *logfile*:
+
+[source, sh]
+----
+$ tail -f ./log/j1quickstart.log
+----
+
+All main steps of the initialization phase are logged to *j1quickstart.log*
+like:
+
+.Logfile *j1quickstart.log*
+[source, sh]
+----
+[2017-08-11 13:16:07] [INFO  ] [j1init    ] [Start initializing J1 QuickStart]
+[2017-08-11 13:16:07] [INFO  ] [j1init    ] [unzip ruby sources to: ...
+[2017-08-11 13:16:08] [INFO  ] [j1init    ] [configure ruby 2.3.4 for compilation]
+[2017-08-11 13:18:17] [INFO  ] [j1init    ] [compile ruby 2.3.4]
+[2017-08-11 13:25:18] [INFO  ] [j1init    ] [install ruby 2.3.4 ]
+[2017-08-11 13:25:51] [INFO  ] [j1init    ] [Initializing j1init finished]
+[2017-08-11 13:25:51] [INFO  ] [j1init    ] [bundle from ... installed succesfully]
+[2017-08-11 13:25:51] [INFO  ] [j1init    ] [J1 Quickstarter init finished]
+----
+
+If your setup reaches the line *J1 Quickstarter init finished* your done! All
+has been prepared for you by the setup phase. You should check, if the sytem is
+now set correctly. Re-run the *integrity check* again:
+
+[source, sh]
+----
+$ j1init ck
+----
+
+You see something like this:
+
+[source, sh]
+----
+Status for quickstart: check environment                   [ PASSED  ]
+Status for quickstart: checking python executeable         [ PASSED  ]
+Status for quickstart: checking node executeable           [ PASSED  ]
+Status for quickstart: checking npm executeable            [ PASSED  ]
+Status for quickstart: checking ruby executeable           [ PASSED  ]
+Status for quickstart: checking bundler executeable        [ PASSED  ]
+Status for quickstart: checking gem executeable            [ PASSED  ]
+Status for quickstart: integrity checks                    [ PASSED  ]
+----
+
+Welcome this stage. You can be sure that all went fine. Puuh, a lot
+stuff was done. Anyway, is is done!
+
+NOTE: All commands of the Quickstarter using a *prefix* of *j1* to not
+*interfere* with programs the *same* name. For example *j1nginx* is a
+*helper* to manage and control the Web Server _Nginx_. Because the name
+of the executeable of the Web Server is *nginx*, the correspondend
+helper *j1nginx* is prepended by *j1*.
+
+You are veeery close to your new, fresh Jekyll Web. Go for the final step
+<<first-jekyll-web>> below to create one!
+
+Go, go, go!
+
+
+[[first-jekyll-web]]
+== Create a first Jekyll Web
+
+J1 Template is a so-called *gem-based* Template for Jekyll. What a hell
+does that mean? The template J1 *is* a *RubyGem*! And you've already
+installed that Gem for your work. No additional installing steps needed.
+And better: all gem-based templates are updated *automatically* if your
+bundle (the set of Rubies you're using for a project) gets updated.
+
+Use the current shell you've started the initialization phase earlier and
+run:
+
+[source, sh]
+----
+gem list ^j1_tem --local
+----
+
+You#ll get something like this
+
+----
+  *** LOCAL GEMS ***
+  j1_template (2019.4.12)
+----
+
+J1 Template comes with a *skin* styled by the *Bootstrap* V4 framework in a
+special flavour: *MDE*. That means **M**aterial **D**esign **E**lements.
+That's what billion of people know and use with *Android* mobiles each and
+every day. And - yes it is: Google *Material Design* for Jekyll Webs. That
+sounds cool - no it is hot, hot stuff!.
+
+Now the trilling part. How long will (should) it take to create a well
+equipped starter Web, based on Bootstrap and Googles Material Design?
+
+Fire up your Web in a *minute*!
+
+Open an another shell and move to the to *web root* directory *www* of the
+Quichstarter installation:
+
+[source, sh]
+----
+cd $J1_HOME/www
+----
+
+NOTE: Remember, users on MacOS and Linux needs to run *set_env* for all
+shells used to work with Jekyll and J1 first.
+
+Now, let's rock your fresh, new Web. J1 Template comes with a little *CLI*
+included to manage base tasks more ease. No surprise, the CLI for J1 Template
+is: *j1*. One of the tasks supported by the *j1* is to create a Web (scaffold)
+by the subcommand *generate* for a so-called Starter Web.
+
+Run in the shell you've opened the steps to go:
+
+. generate a starter (scaffold)
+. change to the web root folder
+. fire up jekyll (as a server)
+
+[source, sh]
+----
+j1 generate starter
+cd starter
+j1server
+----
+
+You've fired up Jekyll to build *and* serve your new Web. Someting like below
+is wrtten to your shell:
+
+----
+  Configuration file: / .. /www/starter/_config.yml
+              Source: / .. /www/starter
+        Destination:  / .. /www/starter/_site
+  Incremental build: enabled
+        Generating...
+                      done in 3.456 seconds.
+  Auto-regeneration: enabled for '/ .. /www/starter'
+      Server address: http://localhost:33333/
+    Server running... press ctrl-c to stop.
+----
+
+Haha, your done! Your Web is ready to use. The line *Server address: http://localhost:33333/*
+gives the *URL* of the Web created and *served*. For quick access, Jekyll
+supports *serving* a Web using the build-in server *Webrick*.
+
+To start your default Web browser for this Web, run from command line:
+
+[source, sh]
+----
+open http://localhost:33333/
+----
+
+Voila, your first Web is alive!
+
+Some interesting parts and features of J1 Template are prepared to
+explore. Have a look, surfe the Web for pages, for already prepared
+examples for you.
+
+TIP: Jekyll, respectively the *CLI* jekyll can be stopped by typing
+<**CTRL**> + <**C**> in the console or shell Jekyll has been started.
+
+Have fun exploring your first Jekyll Web!
+
+== What's next
+
+It depends on you, friends! If you like what Jekyll and J1 doing,
+or *can* do for you, the Kickstarter *Your Web in a Day* should the
+choice for going further.
+
+Yeah, a day sound a lot!  What is a Kickstarter?
+
+Simply spoken a *tutorial*. A very practical way to learn new things.
+A good mix of theory and practical work. At the end you'll have achived
+a lot. A really a good base for going further. You'll learn a bunch you
+should know in terms of Web technologies, Jekyll, J1 and how they can
+be used - without to be a *specialist*. And: all examples of *Your Web in a Day*
+are designed for *real world* usage, a good base for the Web you have
+on *your* minds.
+
+Or you experienced, the Jekyll way is *not* the best for your requirements.
+That will happen. That's *not* a desaster, a lot of of other ways for your
+success are open other ways. What decision you may have made: it's based on
+knowlegde. Not something guessed. That's important. For you and for the
+J1 team as well.
+
+You're welcome for a journey, a good day off exploring interesting places
+in the world of Jekyll and J1. The Kickstarter offers a lot more about what
+a Quickstarter can do, introduce you in using Jekyll, makes you confident
+using the J1 Template for your personal Web.
+
+In short: the Kickstarter supports you to create and manage Jekyll
+Webs efficently. The tutorial helps you to modify the configuration of
+a Jekyll Web, makes you familiar using the template system of J1, modify
+existing pages and explains how to create new pages and blogs (articles)
+for your personal needs.
+
+Interested? The doors are open at: link:{web_in_a_day}[Your Web in a Day, window="_blank"].
+
+Happy Jekylling!
