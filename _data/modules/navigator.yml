@@ -52,7 +52,7 @@ settings:
 
     control_center:                     true
     control_center_icon:                git
-    control_center_url:                 /apps/protected/netlify-cms/page/#control-center
+    control_center_url:                 /apps/private/netlify-cms/page/#control-center
 
     disqus_url:                         https://disqus.com/
     github_url:                         https://github.com/jekyll-one

@@ -22,33 +22,37 @@
 # publish_mode:           editorial_workflow
 #
 backend:
-  name:                   github                                                # git-gateway
-  repo:                   jekyll-one-org/j1_template                            # Path to your GitHub repository (w/o https://github.com/)
-  branch:                 develop                                               # e.g master | develop
-  base_url:               http://localhost:41001                                # URL of external OAuth Client
-
+  # git-gateway
+  name:                   github
+  # Path to your GitHub repository (w/o https://github.com/)
+  repo:                   jekyll-one-org/starter-app
+  # e.g master | develop
+  branch:                 master
+  # URL of external OAuth Client (if any: e.g http://localhost:41001)
+  base_url:               https://oauth.jekyll.one
 
 # ------------------------------------------------------------------------------
 # Site (production) settings
 #
-# logo_url:               http://localhost:5000/assets/images/icons/j1/scalable/j1.svg
-# site_url:               http://localhost:5000/
-# display_url:            http://localhost:5000/
+# logo_url:               http://localhost:4000/assets/images/icons/j1/scalable/j1.svg
+# logo_url:               http://localhost:4000/assets/images/icons/j1/j1-512x512.png
+# site_url:               http://localhost:4000/
+# display_url:            http://localhost:4000/
 #
 show_preview_links:       false
-logo_url:                 https://docs.jekyll.one/assets/images/icons/j1/j1-512x512.png
+
 
 
 # ------------------------------------------------------------------------------
 # Media (asset) settings
 #
 # media_library:
-#   name: uploadcare
+#   name:                 uploadcare
 #   config:
-#     publicKey: demopublickey
+#     publicKey:          demopublickey
 #
-media_folder:             packages/300_template_src/assets/images/public        # Media files will be stored in the repo
-public_folder:            packages/300_template_src/assets/uploads/
+media_folder:             /assets/images/public                                 # Media files will be stored in the repo
+public_folder:            /assets/uploads/
 
 # ------------------------------------------------------------------------------
 # File (name) settings
@@ -80,7 +84,7 @@ collections:
       #
       - label: Global Settings
         name:  global_site_config
-        file:  packages/400_template_site/_cc_test_data/_config.yml
+        file:  _cc_test_data/_config.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -149,14 +153,14 @@ collections:
               - { label: image_height,                  name: image_height, widget: string, hint: TBD }
               - { label: text,                          name: text,         widget: string, hint: TBD }
               - { label: text_color,                    name: text_color,   widget: string, hint: TBD }
-          
+
           - label:    favicon
             name:     favicon
             widget:   object
             fields:
               - { label: image,                         name: image,  widget: string, hint: TBD }
               - { label: type,                          name: type,   widget: string, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # JEKYLL specific site configuration
           #
@@ -170,7 +174,7 @@ collections:
           - { label:  detach,                           name: detach,           widget: boolean, hint: TBD }
           - { label:  encoding,                         name: encoding,         widget: string, hint: TBD }
           - { label:  show_dir_listing,                 name: show_dir_listing, widget: boolean, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # PATH configuration
           #
@@ -181,7 +185,7 @@ collections:
           - { label:  data_dir,                         name: data_dir,         widget: string, hint: TBD }
           - { label:  includes_dir,                     name: includes_dir,     widget: string, hint: TBD }
           - { label:  collections_dir,                  name: collections_dir,  widget: string, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # FILES configuration
           #
@@ -190,7 +194,7 @@ collections:
           - { label:  keep_files,                       name: keep_files,           widget: list, hint: TBD }
           - { label:  safe,                             name: safe,                 widget: boolean, hint: TBD }
           - { label:  strict_front_matter,              name: strict_front_matter,  widget: boolean, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # SASS conversion options
           #
@@ -200,7 +204,7 @@ collections:
             fields:
               - { label: sass_dir,                      name: sass_dir, widget: string, hint: General J1 Template settings to specify ALL resources used by a site or a layout }
               - { label: style,                         name: style,    widget: select, options: [ compact,compressed,expanded,nested ], hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # WEBRICK customizations
           #
@@ -214,7 +218,7 @@ collections:
           #       widget: object
           #       fields:
           #         - { label: My-Header,  name: My-Header, widget: string, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # POSTS Management
           #
@@ -222,7 +226,7 @@ collections:
           - { label: show_drafts,                       name: show_drafts,  widget: boolean, hint: TBD }
           - { label: unpublished,                       name: unpublished,  widget: boolean, hint: TBD }
           - { label: limit_posts,                       name: limit_posts,  widget: number, min: 10, max: 100 , hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # LIQUID template engine
           #
@@ -232,12 +236,12 @@ collections:
             fields:
               - { label: error mode,                    name: error_mode,     widget: select, options: [ lax,warn,strict ], hint: TBD }
               - { label: strict_filters,                name: strict_filters, widget: boolean, hint: TBD }
-                    
+
           # --------------------------------------------------------------------
           # PLUGIN configuration
           #
           - { label: PLUGIN configuration,              name: plugins, widget: list, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # JEKYLL FEED
           #
@@ -246,7 +250,7 @@ collections:
             widget: object
             fields:
               - { label: path,                          name: path, widget: string, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # MARKDOWN
           #
@@ -263,8 +267,8 @@ collections:
               - { label: toc levels,                    name: toc_levels,         widget: string, hint: TBD }
               - { label: smart quotes,                  name: smart_quotes,       widget: string, hint: TBD }
               - { label: syntax_highlighter,            name: syntax_highlighter, widget: string, hint: TBD }
-          
-          
+
+
           # --------------------------------------------------------------------
           # ASCIIDOCTOR
           #
@@ -277,7 +281,7 @@ collections:
               - { label: icons,                         name: icons, widget: string, hint: TBD }
               - { label: imagesdir,                     name: imagesdir, widget: string, hint: TBD }
               - { label: iconsdir,                      name: iconsdir, widget: string, hint: TBD }
-          
+
           - label:  asciidoc processing
             name:   asciidoc
             widget: object
@@ -285,7 +289,7 @@ collections:
               - { label: processor,                     name: processor,                    widget: string, hint: TBD }
               - { label: require_front_matter_header,   name: require_front_matter_header,  widget: string, hint: TBD }
               - { label: ext,                           name: ext,                          widget: string, hint: TBD }
-          
+
           - label:  asciidoctor settings
             name:   asciidoctor
             widget: object
@@ -293,7 +297,7 @@ collections:
               - { label: safe,                          name: safe,         widget: select, options: [ safe,unsafe ], hint: TBD }
               - { label: template_dir,                  name: template_dir, widget: string, hint: TBD }
               - { label: attributes,                    name: attributes,   widget: object, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # ALGOLIA Search
           #
@@ -307,7 +311,7 @@ collections:
               - { label: index_name,                    name: index_name,           widget: string, hint: TBD }
               - { label: extensions_to_index,           name: extensions_to_index,  widget: list, hint: TBD }
               - { label: files_to_exclude,              name: files_to_exclude,     widget: list, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # AUTH Manager
           #
@@ -364,12 +368,12 @@ collections:
                                 fields:
                                   - { label: whitelist, name: blacklist, widget: list, hint: TBD }
                                   - { label: blacklist, name: blacklist, widget: list, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # SAFEMODE
           #
           - { label: SAFEMODE settings,                 name: whitelist, widget: list, hint: TBD }
-          
+
           # --------------------------------------------------------------------
           # PAGE configuration
           #
@@ -481,14 +485,14 @@ collections:
                 name:     icons
                 widget:   object
                 fields:
-                  - { label: family,                    name: family,       widget: string, hint: TBD }                
+                  - { label: family,                    name: family,       widget: string, hint: TBD }
                   - { label: color,                     name: color,        widget: string, hint: TBD }
                   - { label: size,                      name: size,         widget: string, hint: TBD }
               - label:    images
                 name:     images
                 widget:   object
                 fields:
-                  - { label: dir,                       name: dir,       widget: string, hint: TBD }  
+                  - { label: dir,                       name: dir,       widget: string, hint: TBD }
 
 
           # --------------------------------------------------------------------
@@ -521,7 +525,7 @@ collections:
       #
       - label: Resource Settings
         name:  site_resource_settings
-        file:  packages/400_template_site/_cc_test_data/_data/resources.yml
+        file:  _cc_test_data/_data/resources.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -608,7 +612,7 @@ collections:
       #
       - label: Banner Settings
         name:  banner_settings
-        file:  packages/400_template_site/_cc_test_data/_data/blocks/banner.yml
+        file:  _cc_test_data/_data/blocks/banner.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -676,8 +680,8 @@ collections:
                       - { label: background color 2,  name: background_color_2, widget: string,   hint: TBD }
                       - { label: lane span,           name: lane_span,          widget: select,   options: [ fixed, fluid ], hint: TBD }
                       - { label: helper classes,      name: helper_classes,     widget: string,   hint: Unique resource ID }
-                      - label:    Boxes
-                        name:     boxes
+                      - label:    Cards
+                        name:     cards
                         widget:   list
                         hint:     Specifies the content portion of a banner
                         fields:
@@ -685,7 +689,7 @@ collections:
                             name:     name
                             widget:   string
                           - label:    Properties
-                            name:     box
+                            name:     card
                             widget:   object
                             fields:
                               - { label: enabled,     name: enabled,      widget: boolean,  hint: Enables or Disables the module }
@@ -695,7 +699,6 @@ collections:
                               - { label: title,       name: title,        widget: string,   hint: TBD }
                               - { label: description, name: description,  widget: text,     hint: TBD }
                               - { label: tagline,     name: tagline,      widget: string,   hint: TBD }
-
                               - label:    Buttons
                                 name:     buttons
                                 widget:   list
@@ -741,8 +744,8 @@ collections:
                       - { label: background color 2,  name: background_color_2, widget: string,   hint: TBD }
                       - { label: lane span,           name: lane_span,          widget: select,   options: [ fixed, fluid ], hint: TBD }
                       - { label: helper classes,      name: helper_classes,     widget: string,   hint: Unique resource ID }
-                      - label:    Boxes
-                        name:     boxes
+                      - label:    Cards
+                        name:     cards
                         widget:   list
                         hint:     Specifies the content portion of a banner
                         fields:
@@ -750,7 +753,7 @@ collections:
                             name:     name
                             widget:   string
                           - label:    Properties
-                            name:     box
+                            name:     card
                             widget:   object
                             fields:
                               - { label: enabled,           name: enabled,          widget: boolean,  hint: TBD }
@@ -785,8 +788,8 @@ collections:
                       - { label: background color 2,  name: background_color_2, widget: string,   hint: TBD }
                       - { label: lane span,           name: lane_span,          widget: select,   options: [ fixed, fluid ], hint: TBD }
                       - { label: helper classes,      name: helper_classes,     widget: string,   hint: Unique resource ID }
-                      - label:    Boxes
-                        name:     boxes
+                      - label:    Cards
+                        name:     cards
                         widget:   list
                         hint:     Specifies the content portion of a banner
                         fields:
@@ -794,7 +797,7 @@ collections:
                             name:     name
                             widget:   string
                           - label:    Properties
-                            name:     box
+                            name:     card
                             widget:   object
                             fields:
                               - { label: enabled,           name: enabled,          widget: boolean,  hint: TBD }
@@ -808,50 +811,379 @@ collections:
                               - { label: background_image,  name: background_image, widget: string,   hint: TBD }
 
 
+      # ------------------------------------------------------------------------
+      # Panel settings
+      #
+      - label: Panel Settings
+        name:  panel_settings
+        file:  _cc_test_data/_data/blocks/panel.yml
+        fields:
+
+          # --------------------------------------------------------------------
+          # About this configuration (used for J1 CC only)
+          #
+          - label:  about
+            name:   about_config
+            widget: object
+            fields:
+              - { label: title,     name: title,    widget: string, hint: General J1 Template settings to specify ALL resources used by a site or a layout }
+              - { label: scope,     name: scope,    widget: string, hint: Scope the data is used }
+              - { label: data file, name: location, widget: string, hint: Folder the configuration file is stored (relative to site root) }
+
+          # --------------------------------------------------------------------
+          # USER settings
+          #
+          - label:  User settings
+            name:   settings
+            widget: object
+            fields:
+
               # ----------------------------------------------------------------
-              # News Banner properties
+              # INTRO Panel properties
               #
-              - label:  News Banner
-                name:   news
+              - label:  Intro Panel
+                name:   intro
                 widget: list
                 fields:
-                  - label:    banner name
+                  - label:    panel name
                     name:     name
                     widget:   string
-                    hint:     Arbitrary name of a banner
+                    hint:     Arbitrary name of a panel
                   - label:    Properties
-                    name:     banner
+                    name:     panel
                     widget:   object
-                    hint:     Specifies all properties of a banner
+                    hint:     Specifies all properties of a panel
                     fields:
                       - { label: enabled,             name: enabled,            widget: boolean,  hint: Enables or Disables the module }
                       - { label: id,                  name: id,                 widget: string,   hint: Unique resource ID }
                       - { label: comment,             name: comment,            widget: string,   hint: TBD }
                       - { label: type,                name: type,               widget: string,   hint: TBD }
-                      - { label: background color 1,  name: background_color_1, widget: string,   hint: TBD }
-                      - { label: background color 2,  name: background_color_2, widget: string,   hint: TBD }
+                      - { label: Icon Family,         name: icon_family,        widget: select,   options: [ MDI, FA ], hint: Default Icon Family for the Navigation Module }
+                      - { label: style,               name: style,              widget: select,   options: [ flat, raised ], hint: TBD }
                       - { label: lane span,           name: lane_span,          widget: select,   options: [ fixed, fluid ], hint: TBD }
-                      - { label: helper classes,      name: helper_classes,     widget: string,   hint: Unique resource ID }
-                      - label:    Boxes
-                        name:     boxes
+                      - label:    Cards
+                        name:     cards
                         widget:   list
-                        hint:     Specifies the content portion of a banner
+                        hint:     Specifies the content portion of a panel
                         fields:
                           - label:    Content
                             name:     name
                             widget:   string
                           - label:    Properties
-                            name:     box
+                            name:     card
                             widget:   object
                             fields:
-                              - { label: enabled,   name: enabled,  widget: boolean,  hint: TBD }
-                              - { label: type,      name: type,     widget: string,   hint: TBD }
-                              - { label: title,     name: title,    widget: string,   hint: TBD }
-                              - { label: category,  name: category, widget: string,   hint: TBD }
+                              - { label: enabled,     name: enabled,    widget: boolean,  hint: TBD }
+                              - { label: type,        name: type,       widget: string,   hint: TBD }
+                              - { label: title,       name: title,      widget: string,   hint: TBD }
+                              - { label: tagline,     name: tagline,    widget: string,   hint: TBD }
+                              - { label: icon,        name: icon,       widget: string,   hint: TBD }
+                              - { label: icon_size,   name: icon_size,  widget: string,   hint: TBD }
+                              - { label: icon color,  name: icon_color, widget: string,   hint: TBD }
+                              - { label: text,        name: text,       widget: text,     hint: TBD }
+                              - label:    Buttons
+                                name:     buttons
+                                widget:   list
+                                hint:     Defines all buttons
+                                fields:
+                                  - label:    Button Name
+                                    name:     name
+                                    widget:   string
+                                  - label:    Button settings
+                                    name:     button
+                                    widget:   object
+                                    hint:     Specifies buttons used this teaser
+                                    fields:
+                                      - { label: text,        name: text,       widget: string,   hint: TBD }
+                                      - { label: class,       name: class,      widget: string,   hint: TBD }
+                                      - { label: icon,        name: icon,       widget: string,   hint: TBD }
+                                      - { label: icon_color,  name: icon_color, widget: string,   hint: TBD }
+                                      - { label: icon_size,   name: icon_size,  widget: string,   hint: TBD }
+                                      - { label: href,        name: href,       widget: string,   hint: TBD }
+
+
+              # ----------------------------------------------------------------
+              # SERVICE Panel properties
+              #
+              - label:  Service Panel
+                name:   service
+                widget: list
+                fields:
+                  - label:    panel name
+                    name:     name
+                    widget:   string
+                    hint:     Arbitrary name of a panel
+                  - label:    Properties
+                    name:     panel
+                    widget:   object
+                    hint:     Specifies all properties of a panel
+                    fields:
+                      - { label: enabled,             name: enabled,            widget: boolean,  hint: Enables or Disables the module }
+                      - { label: id,                  name: id,                 widget: string,   hint: Unique resource ID }
+                      - { label: comment,             name: comment,            widget: string,   hint: TBD }
+                      - { label: type,                name: type,               widget: string,   hint: TBD }
+                      - { label: Icon Family,         name: icon_family,        widget: select,   options: [ MDI, FA ], hint: Default Icon Family for the Navigation Module }
+                      - { label: style,               name: style,              widget: select,   options: [ flat, raised ], hint: TBD }
+                      - { label: lane span,           name: lane_span,          widget: select,   options: [ fixed, fluid ], hint: TBD }
+                      - label:   Header
+                        name:    header
+                        widget:  object
+                        fields:
+                          - { label: enabled,     name: enabled,      widget: boolean,  hint: TBD }
+                          - { label: title,       name: title,        widget: string,   hint: TBD }
+                          - { label: description, name: description,  widget: text,   hint: TBD }
+                      - label:    Cards
+                        name:     cards
+                        widget:   list
+                        hint:     Specifies the content portion of a panel
+                        fields:
+                          - label:    Content
+                            name:     name
+                            widget:   string
+                          - label:    Properties
+                            name:     card
+                            widget:   object
+                            fields:
+                              - { label: enabled,     name: enabled,    widget: boolean,  hint: TBD }
+                              - { label: type,        name: type,       widget: string,   hint: TBD }
+                              - { label: title,       name: title,      widget: string,   hint: TBD }
+                              - { label: tagline,     name: tagline,    widget: string,   hint: TBD }
+                              - { label: icon,        name: icon,       widget: string,   hint: TBD }
+                              - { label: icon_size,   name: icon_size,  widget: string,   hint: TBD }
+                              - { label: icon color,  name: icon_color, widget: string,   hint: TBD }
+                              - { label: text,        name: text,       widget: text,     hint: TBD }
+                              - label:    Services
+                                name:     services
+                                widget:   list
+                                hint:     Specifies a list of services
+                                fields:
+                                  - label:    Service Name
+                                    name:     name
+                                    widget:   string
+                                  - label:    Service Details
+                                    name:     service
+                                    widget:   object
+                                    fields:
+                                      - { label: title, name: title, widget: string, hint: TBD }
+                                      - { label: href,  name: href,  widget: string, hint: TBD }
+
+
+              # ----------------------------------------------------------------
+              # NEWS Panel properties
+              #
+              - label:  News Panel
+                name:   news
+                widget: list
+                fields:
+                  - label:    panel name
+                    name:     name
+                    widget:   string
+                    hint:     Arbitrary name of a panel
+                  - label:    Properties
+                    name:     panel
+                    widget:   object
+                    hint:     Specifies all properties of a panel
+                    fields:
+                      - { label: enabled,   name: enabled,    widget: boolean,  hint: Enables or Disables the module }
+                      - { label: id,        name: id,         widget: string,   hint: Unique resource ID }
+                      - { label: comment,   name: comment,    widget: string,   hint: TBD }
+                      - { label: type,      name: type,       widget: string,   hint: TBD }
+                      - { label: style,     name: style,      widget: select,   options: [ flat, raised ], hint: TBD }
+                      - { label: title,     name: title,      widget: string,   hint: TBD }
+                      - { label: tagline,   name: tagline,    widget: string,   hint: TBD }
+                      - { label: lane span, name: lane_span,  widget: select,   options: [ fixed, fluid ], hint: TBD }
+                      - label:    Cards
+                        name:     cards
+                        widget:   list
+                        hint:     Specifies the content portion of a panel
+                        fields:
+                          - label:    Content
+                            name:     name
+                            widget:   string
+                          - label:    Properties
+                            name:     card
+                            widget:   object
+                            fields:
+                              - { label: enabled,   name: enabled,    widget: boolean,  hint: TBD }
+                              - { label: type,      name: type,       widget: string,   hint: TBD }
+                              - { label: category,  name: category,   widget: string,   hint: TBD }
+                              - { label: max_posts, name: max_posts,  widget: number,   min: 1, max: 5, hint: TBD }
+
+      # ------------------------------------------------------------------------
+      # FOOTER settings
+      #
+      - label: Footer Settings
+        name:  footer_settings
+        file:  _cc_test_data/_data/blocks/footer.yml
+        fields:
+
+          # --------------------------------------------------------------------
+          # About this configuration (used for J1 CC only)
+          #
+          - label:  about
+            name:   about_config
+            widget: object
+            fields:
+              - { label: title,     name: title,    widget: string, hint: General J1 Template settings to specify ALL resources used by a site or a layout }
+              - { label: scope,     name: scope,    widget: string, hint: Scope the data is used }
+              - { label: data file, name: location, widget: string, hint: Folder the configuration file is stored (relative to site root) }
+
+          # --------------------------------------------------------------------
+          # User settings
+          #
+          - label:  user settings
+            name:   settings
+            hint:   User configuration settings for J1 Footers
+            widget: object
+            fields:
+
+              # ----------------------------------------------------------------
+              # FOOTERS
+              #
+              - label:  footers
+                name:   footers
+                hint:   Footers available for J1 Template pages
+                widget: list
+                fields:
+
+                  # ----------------------------------------------------------------
+                  # Footer EN-EN
+                  #
+                  - label:    footer name
+                    name:     name
+                    widget:   string
+                    hint:     Arbitrary name of a footer
+                  - label:    Properties
+                    name:     footer
+                    widget:   object
+                    fields:
+                      - { label: enabled, name: enabled,  widget: boolean,  hint: TBD }
+                      - { label: id,      name: id,       widget: string,   hint: TBD }
+                      - { label: comment, name: comment,  widget: string,   hint: TBD }
+                      - { label: theme,   name: theme,    widget: string,   hint: TBD }
+                      - label:  issue settings
+                        name:   issue
+                        widget: object
+                        fields:
+                          - { label: enabled,     name: enabled,      widget: boolean,  hint: TBD }
+                          - { label: date,        name: date,         widget: string,   hint: TBD }
+                          - { label: date_format, name: date_format,  widget: string,   hint: TBD }
+                          - { label: text,        name: text,         widget: string,   hint: TBD }
+                      - label:  icon settings
+                        name:   icons
+                        widget: object
+                        fields:
+                          - label:  facebook
+                            name:   facebook
+                            widget: object
+                            fields:
+                              - { label: enabled, name: enabled,  widget: boolean,  hint: TBD }
+                              - { label: href,    name: href,     widget: string,   hint: TBD }
+                          - label:  twitter
+                            name:   twitter
+                            widget: object
+                            fields:
+                              - { label: enabled, name: enabled,  widget: boolean,  hint: TBD }
+                              - { label: href,    name: href,     widget: string,   hint: TBD }
+
+                      - label:  legal settings
+                        name:   legals
+                        hint:   TBD
+                        widget: list
+                        fields:
+                          - label:    legal name
+                            name:     name
+                            widget:   string
+                            hint:     Arbitrary name of a legal entity
+                          - label:    Properties
+                            name:     legal
+                            widget:   object
+                            fields:
+                              - { label: enabled,   name: enabled,    widget: boolean,  hint: TBD }
+                              - { label: type,      name: type,       widget: string,   hint: TBD }
+                              - { label: statement, name: statement,  widget: string,   hint: TBD }
+                              - { label: href,      name: href,       widget: string,   hint: TBD }
+                      - label:  box settings
+                        name:   boxes
+                        hint:   TBD
+                        widget: list
+                        types:
+
+                          - label:  About Box
+                            name:   about
+                            widget: object
+                            fields:
+                              - { label: enabled, name: enabled,  widget: boolean,  hint: TBD }
+                              - { label: justify, name: justify,  widget: boolean,  hint: TBD }
+                              - { label: title,   name: title,    widget: string,   hint: TBD }
+                              - { label: text,    name: text,     widget: text,     hint: TBD }
+
+                          - label:  News Box
+                            name:   news
+                            widget: object
+                            fields:
+                              - { label: enabled,   name: enabled,    widget: boolean,  hint: TBD }
+                              - { label: title,     name: title,      widget: string,   hint: TBD }
+                              - { label: category,  name: category,   widget: select,   options: [ featured ], hint: TBD }
+                              - { label: max_posts, name: max_posts,  widget: number,   min: 1, max: 5, hint: TBD }
+
+                          - label:  Links Box
+                            name:   references
+                            widget: object
+                            fields:
+                              - { label: enabled, name: enabled,  widget: boolean,  hint: TBD }
+                              - { label: title,   name: title,    widget: string,   hint: TBD }
+                              - label:  links
+                                name:   links
+                                hint:   TBD
+                                widget: list
+                                fields:
+                                  - label:    Link name
+                                    name:     name
+                                    widget:   string
+                                    hint:     Arbitrary name of a link
+                                  - label:    link
+                                    name:     link
+                                    widget:   object
+                                    fields:
+                                      - { label: title,   name: title,    widget: string,   hint: TBD }
+                                      - { label: tagline, name: tagline,  widget: string,   hint: TBD }
+                                      - { label: href,    name: href,     widget: string,   hint: TBD }
+
+                          - label:  Contact Box
+                            name:   contact
+                            widget: object
+                            fields:
+                              - { label: enabled, name: enabled,  widget: boolean,  hint: TBD }
+                              - { label: title,   name: title,    widget: string,   hint: TBD }
+                              - label:  address
+                                name:   address
+                                widget: object
+                                fields:
+                                  - { label: enabled,   name: enabled,    widget: boolean,  hint: TBD }
+                                  - { label: address_1, name: address_1,  widget: string,   hint: TBD }
+                                  - { label: address_2, name: address_2,  widget: string,   hint: TBD }
+                                  - { label: address_3, name: address_3,  widget: string,   hint: TBD }
+                              - label:  phone
+                                name:   phone
+                                widget: object
+                                fields:
+                                  - { label: enabled, name: enabled,  widget: boolean,  hint: TBD }
+                                  - { label: phone_1, name: phone_1,  widget: string,   hint: TBD }
+                                  - { label: phone_2, name: phone_2,  widget: string,   hint: TBD }
+                              - label:  internet
+                                name:   internet
+                                widget: object
+                                fields:
+                                  - { label: enabled, name: enabled,  widget: boolean,  hint: TBD }
+                                  - { label: mail,    name: mail,     widget: string,   hint: TBD }
+                                  - { label: href,    name: href,     widget: string,   hint: TBD }
 
 
 
-  # ----------------------------------------------------------------------------
+
+
+  # ============================================================================
   # Default Module Settings
   #
   - label:          Module Configuration
@@ -863,7 +1195,7 @@ collections:
       #
       - label:      J1 Cookie Consent
         name:       config_cookie_consent
-        file:       packages/400_template_site/_cc_test_data/_data/modules/cookie_consent.yml
+        file:       _cc_test_data/_data/modules/cookie_consent.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -928,7 +1260,7 @@ collections:
       #
       - label:      J1 Jekyll Search
         name:       config_jekyll_search
-        file:       packages/400_template_site/_cc_test_data/_data/modules/jekyll_search.yml
+        file:       _cc_test_data/_data/modules/jekyll_search.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -968,7 +1300,7 @@ collections:
       #
       - label:      J1 Navigation
         name:       config_navigation
-        file:       packages/400_template_site/_cc_test_data/_data/modules/defaults/navigator.yml
+        file:       _cc_test_data/_data/modules/defaults/navigator.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1156,7 +1488,7 @@ collections:
       #
       - label:      J1 Back2Top
         name:       config_back2top
-        file:       packages/400_template_site/_cc_test_data/_data/modules/defaults/back2top.yml
+        file:       _cc_test_data/_data/modules/defaults/back2top.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1190,8 +1522,3 @@ collections:
               - { label: fadeduration, name: fadeduration, widget: number, min: 500, max: 1500, hint: description }
               - { label: result control HTML, name: controlHTML, widget: text, hint: HTML to render the scroll button }
               - { label: control attrs, name: controlattrs, widget: string, hint: TBD }
-
-
-
-
-

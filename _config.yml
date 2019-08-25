@@ -557,7 +557,7 @@ j1_auth:
       - \W*((?i)private(?-i))\W*
 
   providers:
-    activated:                          [ disqus, github, patreon ]
+    activated:                          [ disqus, github ]
 
     disqus:
       provider_url:                     https://disqus.com
