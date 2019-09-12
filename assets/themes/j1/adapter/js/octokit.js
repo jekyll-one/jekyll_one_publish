@@ -41,8 +41,8 @@ regenerate:                             false
 
 {% comment %} Set config data
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign webhook_defaults = modules.defaults.webhook.defaults %}
-{% assign webhook_settings = modules.webhook.settings %}
+{% assign webhook_defaults = modules.defaults.util_srv.defaults %}
+{% assign webhook_settings = modules.util_srv.settings %}
 
 {% comment %} Set config options
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -105,7 +105,7 @@ j1.adapter['octokit'] = (function (j1, window) {
         logger.warn('WebHooks disabled');
       }
 
-      if ( moduleOptions.enabled ) {
+      if (moduleOptions.enabled) {
         logger.info('WebHooks enabled, run initialization');
 
         _this.setState('started');
@@ -119,7 +119,7 @@ j1.adapter['octokit'] = (function (j1, window) {
           if (success) {
             // Run initializers if webhook modals are LOADED
             var dependencies_met_modals_loaded = setInterval(function() {
-              if ( j1.adapter.octokit.getState() == 'data_loaded') {
+              if (j1.adapter.octokit.getState() == 'data_loaded') {
                 logger.info('loading data completed');
                 // Run initializers
                 j1.core.octokit.init(moduleOptions);
@@ -151,7 +151,7 @@ j1.adapter['octokit'] = (function (j1, window) {
     // Manage button click events for all BS Modals
     // See: https://www.nickang.com/add-event-listener-for-loop-problem-in-javascript/
     // -------------------------------------------------------------------------
-    eventHandler: function ( options ) {
+    eventHandler: function (options) {
       var message = {};
       var logText;
       var json_message;
@@ -166,8 +166,8 @@ j1.adapter['octokit'] = (function (j1, window) {
 
       // Register button click events for WebHook modals
       // -------------------------------------------------------------------
-      modalButtons.forEach( function(button, index) {
-        button.addEventListener( 'click', function(e) {
+      modalButtons.forEach(function(button, index) {
+        button.addEventListener('click', function(e) {
 
           // acceptGitPullButton
           // ---------------------------------------------------------------
@@ -181,7 +181,7 @@ j1.adapter['octokit'] = (function (j1, window) {
               logText = 'Response received: ' + json_message;
               logger.info(logText);
 
-              if ( response.status === 'success' ) {
+              if (response.status === 'success') {
                 $('#gitPullSuccess').find('.pull-message').html(response.response);
                 $('#gitPullSuccess').modal('show');
               }
@@ -206,14 +206,14 @@ j1.adapter['octokit'] = (function (j1, window) {
           if (this.id === 'acceptGitPullButton') {
             logger.info('User clicked acceptGitPullButton');
 
-            // if ( options.git.pull.enabled ) {
+            // if (options.git.pull.enabled) {
             //   // Send commit message (silent mode)
             //   // -------------------------------------------------------------
             //   message.type    = 'command'
             //   message.action  = 'pull'
             //   message.text    = 'Run Git pull'
             //
-            //   j1.sendMessage( 'j1.adapter.octokit', 'j1.core.octokit', message );
+            //   j1.sendMessage('j1.adapter.octokit', 'j1.core.octokit', message);
             // }
 
             return false;
@@ -237,7 +237,7 @@ j1.adapter['octokit'] = (function (j1, window) {
           logger.info('Display webhookCommitDetected');
 
           // Autohide modal if configured
-          if ( options.commit_detection.modal_commit_detected.autohide) {
+          if (options.commit_detection.modal_commit_detected.autohide) {
             var timeout = setInterval(function() {
               $('#webhookCommitDetected').modal('hide');
               logger.info('Hide modal on timeout');
@@ -261,7 +261,7 @@ j1.adapter['octokit'] = (function (j1, window) {
           logger.info('Display gitPullSuccess');
 
           // Autohide modal if configured
-          if ( options.commit_detection.modal_pull_response.autohide) {
+          if (options.commit_detection.modal_pull_response.autohide) {
             var timeout = setInterval(function() {
               $('#gitPullSuccess').modal('hide');
               logger.info('Hide modal on timeout');
@@ -277,14 +277,14 @@ j1.adapter['octokit'] = (function (j1, window) {
 
           logger.info('Post processing on gitPullSuccess');
 
-          if ( options.utility_server.npm_client.enabled ) {
-            if ( options.utility_server.npm_client.built.execute ) {
+          if (options.utility_server.npm_client.enabled) {
+            if (options.utility_server.npm_client.built.execute) {
             // Send commit message (silent mode)
             // -------------------------------------------------------------
             message.type    = 'command'
             message.action  = 'built'
             message.text    = 'Run NPM built'
-            j1.sendMessage( 'j1.adapter.octokit', 'j1.core.octokit', message );
+            j1.sendMessage('j1.adapter.octokit', 'j1.core.octokit', message);
           }
         }
 
@@ -297,7 +297,7 @@ j1.adapter['octokit'] = (function (j1, window) {
           logger.info('Display npmScriptSuccess');
 
           // Autohide modal if configured
-          if ( options.commit_detection.modal_pull_response.autohide) {
+          if (options.commit_detection.modal_pull_response.autohide) {
             var timeout = setInterval(function() {
               $('#npmScriptSuccess').modal('hide');
               logger.info('Hide modal on timeout');
@@ -323,7 +323,7 @@ j1.adapter['octokit'] = (function (j1, window) {
     // messageHandler
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -335,7 +335,7 @@ j1.adapter['octokit'] = (function (j1, window) {
 
       // -----------------------------------------------------------------------
       //  Command message (action), type 'module_initialized'
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //
@@ -344,7 +344,7 @@ j1.adapter['octokit'] = (function (j1, window) {
 
       // -----------------------------------------------------------------------
       //  Command message (action), type (Git) 'pull'
-      if ( message.type === 'command' && message.action === 'pull' ) {
+      if (message.type === 'command' && message.action === 'pull') {
         var url = 'http://localhost:41001/git?request=pull';
 
         logText = 'Processing message from ' + sender + ', type: ' + message.type + ', action: ' + message.action;
@@ -357,12 +357,12 @@ j1.adapter['octokit'] = (function (j1, window) {
           logText = 'Response from xhrAPI received: ' + json_message;
           logger.info(logText);
 
-          if ( response.status === 'success' ) {
+          if (response.status === 'success') {
             $('#gitPullSuccess').find('.pull-message').html(response.response);
             $('#gitPullSuccess').modal('show');
           }
 
-          if ( response.status === 'failed' ) {
+          if (response.status === 'failed') {
             $('#requestFailed').find('.pull-message').html(response.response + response.error);
             $('#requestFailed').modal('show');
           }
@@ -371,7 +371,7 @@ j1.adapter['octokit'] = (function (j1, window) {
 
       // -----------------------------------------------------------------------
       //  Process command message (action), type (NPM) 'built'
-      if ( message.type === 'command' && message.action === 'built' ) {
+      if (message.type === 'command' && message.action === 'built') {
         //var url = 'http://localhost:41001/npm?request=get_version';
         var url = 'http://localhost:41001/npm?request=rebuilt';
 
@@ -385,12 +385,12 @@ j1.adapter['octokit'] = (function (j1, window) {
           logText = 'Response from xhrAPI received: ' + json_message;
           logger.info(logText);
 
-          if ( response.status === 'success' ) {
+          if (response.status === 'success') {
             $('#npmScriptSuccess').find('.pull-message').html(response.response);
             $('#npmScriptSuccess').modal('show');
           }
 
-          if ( response.status === 'failed' ) {
+          if (response.status === 'failed') {
             $('#requestFailed').find('.pull-message').html(response.response + response.error);
             $('#requestFailed').modal('show');
           }
@@ -407,7 +407,7 @@ j1.adapter['octokit'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     //  Set the current (processing) state of the module
     // -------------------------------------------------------------------------
-    setState: function ( stat ) {
+    setState: function (stat) {
       j1.adapter.octokit.state = stat;
     }, // END setState
 

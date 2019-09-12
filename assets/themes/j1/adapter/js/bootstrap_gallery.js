@@ -89,7 +89,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     // Initializer
     // -------------------------------------------------------------------------
-    init: function ( options ) {
+    init: function (options) {
       // initialize state flag
       j1.adapter.bs_gallery.state = 'pending';
 
@@ -99,7 +99,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
       var settings = $.extend({
         module_name: 'j1.adapter.bs_gallery',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
 
       {% comment %} Set global variables
       -------------------------------------------------------------------------- {% endcomment %}
@@ -112,8 +112,8 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
       //
       // moduleOptions = $.extend({}, {{jekyll_search_options | replace: '=>', ':' | replace: 'nil', '""'}});
       //
-      // if ( typeof settings !== 'undefined') {
-      //   moduleOptions = j1.mergeData( moduleOptions, settings );
+      // if (typeof settings !== 'undefined') {
+      //   moduleOptions = j1.mergeData(moduleOptions, settings);
       // }
 
       _this.setState('started');
@@ -153,7 +153,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
           {% assign column_width_md  = 12 | divided_by:thumb_items %}
 
           // Create an gallery instance if {{ container_id }} exists
-          if ( $('#{{ container_id }}').length ) {
+          if ($('#{{ container_id }}').length) {
 
             logText = 'gallery on ID #{{container_id}} is being initialized';
             _this.setState('running');
@@ -163,7 +163,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
             // Place HTML markup for the title
             {% if gallery_title %}
             var gallery_title = '<div class="bs-gallery-title">{{gallery_title}}</div>';
-            $('#{{ container_id }}').before( gallery_title );
+            $('#{{ container_id }}').before(gallery_title);
             {% endif %}
 
             $('#{{ container_id }}').addClass("lightgallery ");
@@ -186,16 +186,16 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
                 style += '.lg-thumbnail-{{container_id}}>img,.lg-thumbnail-{{container_id}} a>img{margin-left:auto;margin-right:auto} \n';
                 {% endif %}
                 style += '</style> \n';
-            $('head').append( style );
+            $('head').append(style);
 
             {% if gallery_type == "image" %}
             // Collect image gallery data from data file (xhr_data_path)
-            $.getJSON( '{{gallery_options.xhr_data_path}}', function (data) {
+            $.getJSON('{{gallery_options.xhr_data_path}}', function (data) {
               var content = '';
               //content += '<ul id="{{ gallery_id }}" class="row {{ css_classes }} bs-gallery-gutter list-unstyled">' + '\n';
               content += '<ul id="{{ gallery_id }}" class="row bs-gallery {{ css_classes }} bs-gallery-gutter list-unstyled">' + '\n';
 
-              for ( var i in data["{{item.gallery.id}}"] ) {
+              for (var i in data["{{item.gallery.id}}"]) {
                 var img       = data["{{item.gallery.id}}"][i].img;
                 var caption   = data["{{item.gallery.id}}"][i].caption;
 
@@ -217,11 +217,11 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
             var play_button = '/assets/themes/j1/extensions/light_gallery/img/icons/play-button.png';
 
             // Collect html5 video gallery data from data file (xhr_data_path)
-            $.getJSON( '{{gallery_options.xhr_data_path}}', function (data) {
+            $.getJSON('{{gallery_options.xhr_data_path}}', function (data) {
 
               {% if gallery_type == "video-html5" %}
               var hidden_video_div = '';
-              for ( var i in data["{{item.gallery.id}}"] ) {
+              for (var i in data["{{item.gallery.id}}"]) {
                 var video        = data["{{item.gallery.id}}"][i].video_path + '/' + data["{{item.gallery.id}}"][i].video;
                 var poster       = data["{{item.gallery.id}}"][i].image_path + '/' + data["{{item.gallery.id}}"][i].poster;
                 var caption      = data["{{item.gallery.id}}"][i].captions_lightbox;
@@ -235,12 +235,12 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
                 hidden_video_div += '  </video>' + '\n';
                 hidden_video_div += '</div>' + '\n';
               }
-              $('#{{ container_id }}').before( hidden_video_div );
+              $('#{{ container_id }}').before(hidden_video_div);
               {% endif %}
 
               //var content = '<ul id="{{ gallery_id }}" class="row {{ css_classes }} bs-gallery-gutter list-unstyled">' + '\n';
               var content = '<ul id="{{ gallery_id }}" class="{{bs_gallery_class}} row {{ css_classes }} bs-gallery-gutter list-unstyled">' + '\n';
-              for ( var i in data["{{item.gallery.id}}"] ) {
+              for (var i in data["{{item.gallery.id}}"]) {
                {% if gallery_type == "video-html5" %}
                 var video_id = data["{{item.gallery.id}}"][i].video_id;
                {% endif %}
@@ -311,7 +311,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -320,7 +320,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

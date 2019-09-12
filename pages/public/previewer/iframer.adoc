@@ -1,0 +1,74 @@
+---
+title:                                  Framer
+tagline:                                Test page for J1 module framer
+description:                            Test page for J1 module framer
+
+tags:                                   [ Start, Template, Web, Day, Jekyll ]
+index:                                  []
+categories:                             [ pages ]
+
+permalink:                              /pages/public/iframer/
+regenerate:                             false
+
+#resources:                             []
+resource_options:
+  - toccer:
+      collapseDepth:                    2
+  - attic:
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/widescreen/featured-1920x800.jpg
+          alt:                          featured-1920x800
+---
+
+// Enable the Liquid Preprocessor
+//
+:page-liquid:
+
+// Set other global page attributes here
+// -------------------------------------------------------------------
+
+== Automagic iFrame
+
+Resize window or click one of the links in the iFrame to watch it resize.
+
+++++
+<p id="callback" class="ml-2"></p>
+
+<iframe 
+  src="/assets/themes/j1/extensions/iframe_resizer/examples/frame.content.html" 
+  width="100%"
+  style="border-width:0;"
+  scrolling="no">
+</iframe>
+
+<script>
+	iFrameResize({
+		log:                    true,   // enable console logging
+		inPageLinks:            true,
+    minHeight:              250,
+		resizedCallback:        function(messageData){ // Callback fn when resize is received
+			$('p#callback').html(
+				'<b>Frame ID:</b> '    + messageData.iframe.id +
+				' <b>Height:</b> '     + messageData.height +
+				' <b>Width:</b> '      + messageData.width +
+				' <b>Event type:</b> ' + messageData.type
+			);
+		},
+		messageCallback:        function(messageData){ // Callback fn when message is received
+			$('p#callback').html(
+				'<b>Frame ID:</b> '    + messageData.iframe.id +
+				' <b>Message:</b> '    + messageData.message
+			);
+			alert(messageData.message);
+			document.getElementsByTagName('iframe')[0].iFrameResizer.sendMessage('Hello back from parent page');
+		},
+		closedCallback:         function(id){ // Callback fn when iFrame is closed
+			$('p#callback').html(
+				'<b>IFrame (</b>'    + id +
+				'<b>) removed from page.</b>'
+			);
+		}
+	});
+</script>
+++++

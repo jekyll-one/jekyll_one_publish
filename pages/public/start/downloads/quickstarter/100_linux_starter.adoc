@@ -443,7 +443,7 @@ You#ll get something like this
 
 ----
   *** LOCAL GEMS ***
-  j1_template (2019.4.12)
+  j1_template (2019.1.0)
 ----
 
 J1 Template comes with a *skin* styled by the *Bootstrap* V4 framework in a

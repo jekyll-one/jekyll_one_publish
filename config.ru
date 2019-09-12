@@ -1,35 +1,29 @@
-# Transforms J1 into a Web Application based on Rack and 
-# Sinatra using the OmniAuth software stack managed by Warden 
-# for authentication to create secured static J1 based web 
-# sites.
+# ------------------------------------------------------------------------------
+# ~/config.ru
 #
+# Transforms a J1 based site into a web application based on Rack and
+# Sinatra using the OmniAuth software stack (for authentication) managed 
+# by Warden (for session managemnent) for a secured static web
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2019 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# load base|app gem
+# ------------------------------------------------------------------------------
 require 'dotenv'
-#require 'puma'
-#require 'passenger'
 require 'j1_app'
 
-# Load initial data|environment
+# load general|confidential data settings from .env file
 # ------------------------------------------------------------------------------
-# noinspection RubyArgCount
 Dotenv.load
 
-# If an app is detected as *dockerized* (J1DOCKER=true), *no* development 
-# mode is available.
-#
-if ENV['J1DOCKER']
-  # Run the app in production mode
-  # ------------------------------------------------------------------------------
-  run J1App.site
-end
+# run the app
+# ------------------------------------------------------------------------------
+run J1App.site
 
-if ENV['J1_RACK_ENV'] == 'production'
-  # Run the app in production mode
-  # ------------------------------------------------------------------------------
-  run J1App.site
-end
-
-if ENV['J1_RACK_ENV'] == 'development'
-  # Run the app in production mode
-  # ------------------------------------------------------------------------------
-  run J1AppTest.site
-end

@@ -15,7 +15,7 @@ regenerate:                             false
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  # Test data:
  #  {{ config | debug }}
@@ -59,7 +59,7 @@ regenerate:                             false
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  #  Adapter generated: {{site.time}}
  # -----------------------------------------------------------------------------
@@ -97,15 +97,15 @@ j1.adapter['carousel'] = (function (j1, window) {
       var settings = $.extend({
         module_name: 'j1.adapter.carousel',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
 
       {% comment %} Load module config from yml data
       -------------------------------------------------------------------------- {% endcomment %}
       // Load  module DEFAULTS|CONFIG
       moduleOptions = $.extend({}, {{carousel_settings | replace: '=>', ':' | replace: 'nil', '""'}});
 
-      if ( typeof settings !== 'undefined') {
-        moduleOptions = j1.mergeData( moduleOptions, settings );
+      if (typeof settings !== 'undefined') {
+        moduleOptions = j1.mergeData(moduleOptions, settings);
       }
 
       {% comment %} Set global variables
@@ -127,7 +127,7 @@ j1.adapter['carousel'] = (function (j1, window) {
           {% assign lazyLoad      = item.show.lightbox %}
 
           // Create an Carousel INSTANCE if slider on id: {{ slider_id }} exists
-          if ( $('#{{slider_id}}').length ) {
+          if ($('#{{slider_id}}').length) {
 
             {% if environment == 'development' %}
               logText = 'Slider on ID {{ slider_id }} being initialized';
@@ -159,7 +159,7 @@ j1.adapter['carousel'] = (function (j1, window) {
             // Place HTML markup for the title
             {% if slider_title %}
             var slider_title = '<div class="slider-title">{{slider_title}}</div>';
-            $('#{{ slider_id }}').before( slider_title );
+            $('#{{ slider_id }}').before(slider_title);
             {% endif %}
 
             $('head').append("<style>.{{slider_id}}-item{margin: {{slide_space}}px;}</style>");
@@ -195,7 +195,7 @@ j1.adapter['carousel'] = (function (j1, window) {
             // jQuery show data functions
             function customDataSuccess_{{ forloop.index }}(data){
               var content = "";
-              for ( var i in data["{{ slider_id }}"] ) {
+              for (var i in data["{{ slider_id }}"]) {
                 {% if slider_type == 'image' %}
                 var lb          = data["{{ slider_id }}"][i].lb;
                 var lb_caption  = data["{{ slider_id }}"][i].lb_caption;
@@ -214,13 +214,13 @@ j1.adapter['carousel'] = (function (j1, window) {
 
                 {% if slider_type == 'image' %}
                 // If lightbox is enabled (preference over href)
-                if ( lb ) {
-                  if ( lb_caption ) {
+                if (lb) {
+                  if (lb_caption) {
                     content += '\t\t' + '<div class="item {{slider_id}}-item {{slide_border}}">'+ '\n';
                     content += '\t\t\t' + '<a href="' +img+ '" ' + 'data-lightbox="{{ slider_id }}" data-title="' +lb_caption+ '">' + '\n';
                     content += '\t\t\t\t' + '<img class="lazyOwl" src="' +img+ '">' + '\n';
                     content += '\t\t\t' + '</a>' + '\n';
-                    if ( href ) {
+                    if (href) {
                     content += '\t\t\t' + '<span class="carousel-caption"><a href="' +href+ '">' +lb_caption+ '</a> </span>' + '\n';
                     } else {
                     content += '\t\t\t' + '<span class="carousel-caption">' +lb_caption+ '</span>' + '\n';
@@ -229,7 +229,7 @@ j1.adapter['carousel'] = (function (j1, window) {
                   } else {
                     content += '<a class="item" href="' +img+ '" ' + 'data-lightbox="{{ slider_id }}"> <img class="lazyOwl" data-src="' +img+ '" alt="' +alt+ '">' + '</a>'
                   }
-                } else if ( href ) {
+                } else if (href) {
                     content += '<div class="item">' + '<img ' +css_classes+ ' src="' +img+ '" alt="' +alt+ '">' + '</div>'
                 } else {
                     content += '<div class="item">' + '<img ' +css_classes+ ' src="' +img+ '" alt="' +alt+ '">' + '</div>'
@@ -237,7 +237,7 @@ j1.adapter['carousel'] = (function (j1, window) {
                 {% endif %}
 
                 {% if slider_type == 'text' %}
-                if ( href ) {
+                if (href) {
                   content += '<div class="item">' + '<p href=' +href+ '">' +text+ '</p>' + '</div>'
                 } else {
                   content += '<div class="item">' + '<p>' +text+ '</p>' + '</div>'
@@ -263,7 +263,7 @@ j1.adapter['carousel'] = (function (j1, window) {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -272,7 +272,7 @@ j1.adapter['carousel'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

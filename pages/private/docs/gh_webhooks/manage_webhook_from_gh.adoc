@@ -22,11 +22,11 @@ resource_options:
 ---
 
 // Enable the Liquid Preprocessor
-//
+// -----------------------------------------------------------------------------
 :page-liquid:
 
 // Set other global page attributes here
-// -------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 // See: https://github.com/octokit/webhooks.js/
 

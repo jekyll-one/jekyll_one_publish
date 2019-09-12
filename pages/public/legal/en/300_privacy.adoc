@@ -150,16 +150,14 @@ all cookies left.
     $('a.btn').click(function() {  
       if (this.id === 'revokeCookies') {
         logger.debug('User clicked revokeCookiesButton');
-        user_state.cookies_accepted     = 'declined';
-//      user_state.provider_permissions = 'blocked';
+        user_state.cookies_accepted = 'declined';
         j1.writeCookie({
-          name:     cookie_user_session_name, 
-          data:     user_state
+          name: cookie_user_session_name, 
+          data: user_state
         });
         
         $('.toggle-button').toggleClass('mdi-toggle-switch-off mdi-toggle-switch');
-        // Update sidebar|Cookies
-        j1.core.navigator.updateSidebar();
+
         // Hide cookie icon
         $('#cookie-state').css('display', 'none');
         return true;

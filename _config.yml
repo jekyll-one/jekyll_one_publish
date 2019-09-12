@@ -8,7 +8,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ==============================================================================
@@ -59,7 +59,7 @@ environment:                            development
 #   anything here because version information is bumped-in by
 #   the build process
 #
-version:                                2019.4.12
+version:                                2019.1.0
 
 
 # ==============================================================================
@@ -83,9 +83,9 @@ version:                                2019.4.12
 #   Note: Do not change anything here because (gem-based) theme name
 #   information is bumped-in by the build process automatically
 #
-#   default:                            j1_template
+#   default:                            j1-template
 #
-theme:                                  j1_template
+theme:                                  j1-template
 
 # ------------------------------------------------------------------------------
 #   J1 Template configuration
@@ -224,7 +224,7 @@ doctype:                                html
 #   values:                             boolean (true|false)
 #   default:                            false
 #
-title:                                  J1 Template MDE
+title:                                  J1 Template
 slogan:                                 Starter App
 description:                            Made for Jekyll · Made for Your Web
 keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
@@ -248,7 +248,7 @@ robots:
 brand:
   image:                                icons/j1/j1-512x512.png
   image_height:                         64
-  text:                                 Starter Web
+  text:                                 Starter App
   text_color:                           "#9E9E9E"
 
 # Set the favicon (located in the asset_path/images) and type
@@ -371,22 +371,25 @@ collections_dir:                        collections
 
 # ------------------------------------------------------------------------------
 # FILES configuration
-# Set the files to include, exclude and ignore
+# Set the files to include, exclude and ignore (keep_files on _site)
 #
-include:                                [.htaccess]
+include:                                [ .htaccess ]
 exclude:                                [
-                                          vendor, node_modules, "package*",
-                                          ".sass-cache", ".vscode", ".idea",
-                                          "*.ignore",
-                                          "*.bat*", "*.sh", "*.tmp",
-                                          "*.txt", "*.log", "*.ppt*", 
-                                          "*.zip", "*.7z", "*.a2p",
-                                          "*.asciidoc", "History.markdown",
-                                          "README.md", "changelog.md",
-                                          "Rakefile", "Gemfile", "Guardfile",
-                                          "Gemfile.lock", "yarn.lock"
+                                          log, etc, vendor, node_modules,
+                                          History.markdown, README.md, 
+                                          changelog.md, Rakefile,
+                                          Gemfile, Gemfile.lock, Guardfile,
+                                          yarn.lock, config.ru,
+                                          package-lock.json, package.json,
+                                          Passengerfile.json,
+                                          '.sass-cache', '.vscode', 
+                                          '.idea', '*.ignore',
+                                          '*.bat', '*.sh', '*.tmp',
+                                          '*.txt', '*.log', '*.ppt*', 
+                                          '*.zip', '*.7z', '*.tgz', '*.tar',
+                                          '*.a2p', '*.asciidoc'
                                         ]
-keep_files:                             [ ".git", ".gitignore", node_modules, "package*" ]
+keep_files:                             []
 
 safe:                                   false
 strict_front_matter:                    false
@@ -557,7 +560,7 @@ j1_auth:
       - \W*((?i)private(?-i))\W*
 
   providers:
-    activated:                          [ disqus, github ]
+    activated:                          [ github, disqus ]
 
     disqus:
       provider_url:                     https://disqus.com
@@ -595,39 +598,79 @@ j1_auth:
             whitelist:                  [ all ]
             blacklist:                  []
 
-    patreon:
-      home_url:                         https://patreon.com
-      product_url:                      https://patreon.com/jekyll_one
-      strategy:                         member
-      scope:                            [ users, pledges-to-me ]
-      users:                            [ all ]
-      permissions:                      [ protected, private ]
-      data_fields:                      [
-                                          email, name, first_name, nickname,
-                                          amount_cents, created_at, declined_since
-                                        ]
-      conditions:
-        protected:
-          enabled:                      true
-          users:
-            blacklist:                  []
-        private:
-          enabled:                      true
-          users:
-            whitelist:                  [ juergen_adams ]
-            blacklist:                  []
-          payment:
-            activated:                  [ "Premium Content", "Value Content" ]
-            tiers:
-              - tier:
-                  name:                 "Premium Content"
-                  amount:               500,
-                  state:                paid
-              - tier:
-                  name:                 "Value Content"
-                  amount:               100,
-                  state:                paid
 
+  # facebook:
+  #   provider_url:                     https://facebook.com
+  #   strategy:                         member
+  #   scope:                            []
+  #   users:                            [ all ]
+  #   permissions:                      [ protected ]
+  #   data_fields:                      []
+  #   conditions:
+  #     protected:
+  #       enabled:                      true
+  #       users:
+  #         whitelist:                  [ all ]
+  #         blacklist:                  []
+  # 
+  # github:
+  #   provider_url:                     https://github.com
+  #   strategy:                         member
+  #   scope:                            []
+  #   users:                            [ all ]
+  #   permissions:                      [ protected ]
+  #   data_fields:                      []
+  #   conditions:
+  #     protected:
+  #       enabled:                      true
+  #       users:
+  #         whitelist:                  [ all ]
+  #         blacklist:                  []
+  # 
+  # patreon:
+  #   provider_url:                     https://patreon.com
+  #   strategy:                         member
+  #   scope:                            [ users, pledges-to-me ]
+  #   users:                            [ all ]
+  #   permissions:                      [ protected, private ]
+  #   data_fields:                      [
+  #                                       email, name, first_name, nickname,
+  #                                       amount_cents, created_at, declined_since
+  #                                     ]
+  #   conditions:
+  #     protected:
+  #       enabled:                      true
+  #       users:
+  #         blacklist:                  []
+  #     private:
+  #       enabled:                      true
+  #       users:
+  #         whitelist:                  [ juergen_adams ]
+  #         blacklist:                  []
+  #       payment:
+  #         activated:                  [ "Premium Content", "Value Content" ]
+  #         tiers:
+  #           - tier:
+  #               name:                 "Premium Content"
+  #               amount:               500,
+  #               state:                paid
+  #           - tier:
+  #               name:                 "Value Content"
+  #               amount:               100,
+  #               state:                paid
+  # 
+  # twitter:
+  #   provider_url:                     https://twitter.com
+  #   strategy:                         member
+  #   scope:                            []
+  #   users:                            [ all ]
+  #   permissions:                      [ protected ]
+  #   data_fields:                      []
+  #   conditions:
+  #     protected:
+  #       enabled:                      true
+  #       users:
+  #         blacklist:                  []
 
 # ------------------------------------------------------------------------------
 # SAFEMODE

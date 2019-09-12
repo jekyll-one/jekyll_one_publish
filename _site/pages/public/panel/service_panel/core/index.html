@@ -1,0 +1,866 @@
+
+
+
+
+  
+
+            <!DOCTYPE html>
+<html lang="en">
+  <!-- [INFO   ] [j1.layout.default.html                ] [ page generated: 2019-09-12 16:11:10 +0200 ] -->
+  <!-- [INFO   ] [j1.layout.default.html                ] [ environment detected as: development ] -->
+  <head>
+    <!-- link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous" -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'head' ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ start processing: place meta tags (taken from site config|page frontmatter) ] -->
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ page|content encoding ] -->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ added for MS Edge Browser ] -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ initial zoom level when the page is first loaded by the browser ] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout, design and configuration</title>
+    <meta name="description" content="Base functions for layout, design and configuration">
+    <link rel="icon" type="image/ico" href="/assets/images/icons/j1/j1-32x32.ico">
+    <meta name="author" content="J1 Team">
+    <meta name="keywords" content="Jekyll, One, Template, Ruby, Asciidoctor, Asciidoc, Bootstrap, Javascript, JS, JS3, CSS, CSS3, HTML5, Material, Design">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.analytics       ] [ start processing load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.analytics       ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (global): true ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (page): false} ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (provider): google} ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ start processing load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ start processing region: head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place css files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/core/css/vendor.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place css files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/core/css/globals.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: core ] -->
+    <script sync src="/assets/themes/j1/core/js/j1.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout all, place js files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <script sync src="/assets/themes/j1/core/js/template.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: logger ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module logger ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: logger ] -->
+    <script sync src="/assets/themes/j1/adapter/js/logger.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: attic ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module attic ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: attic ] -->
+    <script sync src="/assets/themes/j1/adapter/js/attic.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: themer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module themer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: themer ] -->
+    <script defer src="/assets/themes/j1/adapter/js/themer.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: navigator ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module navigator ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: navigator ] -->
+    <script sync src="/assets/themes/j1/adapter/js/navigator.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: webhook ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module webhooks ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: webhook ] -->
+    <script sync src="/assets/themes/j1/adapter/js/octokit.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: toccer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: blog_archive, module toccer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: blog_archive, place general file resources for resource_settings.id: toccer ] -->
+    <script defer src="/assets/themes/j1/adapter/js/toccer.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: back2top ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module back2top ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: back2top ] -->
+    <script defer src="/assets/themes/j1/adapter/js/back2top.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: scroller ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module smoothscroll ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: scroller ] -->
+    <script defer src="/assets/themes/j1/adapter/js/scroller.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: searcher ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module quicksearch ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: searcher ] -->
+    <script defer src="/assets/themes/j1/adapter/js/searcher.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: cookie_consent ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module cookie consent ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: cookie_consent ] -->
+    <script defer src="/assets/themes/j1/adapter/js/cookie_consent.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: framer ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: bs_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: lightbox ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: rouge ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, theme rouge ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: rouge ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/extensions/rouge/css/base16/theme.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: algolia ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: livereload ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: light_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: carousel ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: justified_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: data_tables ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: cookiebar ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: stickybits ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: stickyfill ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+    <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ end default_writer for region: 'head' ] -->
+  </head>
+  <body>
+    <!-- [INFO   ] [j1.layout.default.html                ] [ start page processing for region: 'body' ] -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ place wrapper to prevent "DOM flicker" ] -->
+    <div id="no_flicker" class="nojs">
+      <!-- [INFO   ] [j1.layout.default.html                ] [ make page hidden ] -->
+      <script>
+        $("#no_flicker").css("display", "none");
+      </script>
+      <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'body-navigation' ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-navigation, layout: page ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ start processing: top search ] -->
+      <div id="navigator_nav_topsearch" class="top-search">
+        <div class="container-fluid">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="mdi mdi-magnify mdi-48px" style="color:#9E9E9E"></i></span>
+            <input type="text" id="jss-input" class="form-control" placeholder="QuickSearch">
+            <span class="input-group-addon close-search"><i class="mdi mdi-close mdi-48px" style="color:#9E9E9E"></i></span>
+          </div>
+        </div>
+        <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ add search panel (hidden) ] -->
+        <div class="row">
+          <!-- div class="card card-flat panel-search mr-5 mb-3 ml-5" id="jss-panel" style="display: none" -->
+          <div class="panel-search mr-5 mb-3 ml-5" id="jss-panel" style="display: none">
+            <div class="panel-heading lead"></div>
+            <div class="panel-body">
+              <p></p>
+            </div>
+            <div class="search-list-group mr-5 ml-2">
+              <ul id="jss-results"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ end processing: top search ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: navigation ] -->
+      <nav id="navigator_nav_navbar" class="navbar navigator navbar-expand-lg navbar-default light navbar-fixed navbar-transparent">
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for sidebar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ sidebar detected ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: sidebar ] -->
+        <div id="navigator_nav_sidebar" class="side"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: sidebar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: main menue ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place brand to the: right ] -->
+        <button type="button" class="navigator navbar-toggler animated fadeIn" data-toggle="collapse" data-target="#navigator_nav_menu" aria-controls="navigator_nav_menu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="mdi mdi-menu mdi-48px"></i>
+        </button>
+        <a class="navbar-brand" href="/"> <img src="/assets/images/icons/j1/j1-512x512.png" height="64" alt="Starter App"></a>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: nav bar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place nav menu container for AJAX load ] -->
+        <div id="navigator_nav_menu" class="collapse"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for quicklinks ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ quicklinks enabled: true ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: quicklinks ] -->
+        <div id="navigator_nav_quicklinks" class="attr-nav collapse navbar-collapse justify-content-end"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing for: quicklinks ] -->
+      </nav>
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for: authclient ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ authclient enabled: true ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: authclient ] -->
+      <div id="authclient_modals" class="authclient_modals"></div>
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: auth_client ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: navigation ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+      <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end processing default_writer for region: 'body-navigation' ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ place content inherited by layout: page ] -->
+      <!-- [INFO   ]  [j1.layout.page.html                   ] [ start content processing ] -->
+      <!-- [INFO   ] [j1.layout.page.html                    ] [ call default_writer for region: 'body-header' ] -->
+      <header id="header">
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-header, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ load page specific header data from yaml data file ] -->
+        <div id="image_attic" class="attic">
+          <div class="container">
+            <div id="head-title" class="head-title animated"> 
+              <h2 id="head-title-text" class="notoc">J1 Template Core</h2>
+            </div>
+            <div id="head-tagline" class="head-tagline animated"> 
+              <h3 id="head-tagline-tagline" class="notoc">Layout, design and configuration</h3>
+            </div>
+            <!-- Image caption container (display: none per default) -->
+            <!-- div class="attic-caption text-emphasis-"></div -->
+            <div class="attic-caption"></div>
+          </div>
+        </div>
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+        <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      </header>
+      <!-- [INFO   ] [j1.layout.page.html                      ] [ end default_writer processing for region: 'body-header' ] -->
+      <!-- [INFO   ] [j1.layout.page.html                ] [ call content_writer for region: 'body-main' ] -->
+      <div class="container-fluid">
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ start processing: load CONTENT portion for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ load region 'body-main' for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ begin content ] -->
+        <div class="container mb-5">
+          <div class="row">
+            <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ start section for split page (TOC) ] -->
+            <section class="col-md-9 col-xs-12 r-text-300 js-toc-content">
+              <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ begin place content ] -->
+              <div class="sect1">
+                <h2 id="core">Core</h2>
+                <div class="sectionbody">
+                  <div class="paragraph">
+                    <p>The core integrates the site generator Jekyll into J1, contains all base
+                      functions for layout pages, design and configuration. Provides procedures
+                      to generate web pages automatically based on a given layout based on design
+                      settings and your personal configuration.</p>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="layout-system">Layout System</h3>
+                    <div class="paragraph">
+                      <p>Neque tempore ratione sed quia fuga sint sit a. Voluptatem voluptate quae ut repudiandae provident commodi ipsam cupiditate. Ab molestiae ex molestiae voluptate autem sunt et vel quod velit. Aut et adipisci adipisci et ut fugiat quo non temporibus illo praesentium debitis. Omnis ad reiciendis reprehenderit aut.</p>
+                    </div>
+                    <div id="lb-theme-uno" class="imageblock mb-3">
+                      <div class="title">J1 Page Layout</div>
+                      <div class="content">
+                        <a class="notoc" href="/assets/images/pages/kickstarter/web_in_a_day/j1_layout.png" data-lightbox="pages/kickstarter/web_in_a_day/j1_layout.png" data-title="J1 Page Layout">
+                          <img class="img-fluid" src="/assets/images/pages/kickstarter/web_in_a_day/j1_layout.png" alt="J1 Page Layout" width="700">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="template-engine">Template Engine</h3>
+                    <div class="paragraph">
+                      <p>Eveniet ea soluta impedit excepturi voluptates et nobis quasi in deleniti excepturi. Iure maiores doloremque quo vero laboriosam cupiditate. Vitae eum ut sed eum.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Beatae omnis voluptatem est cumque vitae fugiat adipisci eligendi fuga molestiae pariatur. Culpa expedita non cupiditate ut aut ut qui consectetur.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="bootstrap-integration">Bootstrap Integration</h3>
+                    <div class="paragraph">
+                      <p>See examples for Bootstrap’s powerful, responsive navigation header, the
+                        navbar. Includes support for branding, navigation, and more, including
+                        support for the collapse plugin.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p><i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>
+                        Refer to: <a href="http://getbootstrap.com/docs/4.0/components/navbar/" target="_blank" rel="noopener">Bootstrap Docs</a>.</p>
+                    </div>
+                    <div class="sect3">
+                      <h4 id="navbars">Navbars</h4>
+                      <!-- Navbar
+============================================================================ -->
+                      <div class="bs-docs-section clearfix">
+                        <div class="row mb-5">
+                          <div class="col-md-12">
+                            <div class="bs-component mb-2">
+                              <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarColor01">
+                                  <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">Pricing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">About</a>
+                                    </li>
+                                  </ul>
+                                  <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                                    <button class="btn btn-secondary btn-raised my-2 my-sm-0" type="submit">Search</button>
+                                  </form>
+                                </div>
+                              </nav>
+                            </div>
+                            <div class="bs-component mb-2">
+                              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarColor02">
+                                  <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">Pricing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">About</a>
+                                    </li>
+                                  </ul>
+                                  <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                                    <button class="btn btn-secondary btn-raised my-2 my-sm-0" type="submit">Search</button>
+                                  </form>
+                                </div>
+                              </nav>
+                            </div>
+                            <div class="bs-component mb-2">
+                              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarColor03">
+                                  <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">Pricing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">About</a>
+                                    </li>
+                                  </ul>
+                                  <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                                    <button class="btn btn-secondary btn-raised my-2 my-sm-0" type="submit">Search</button>
+                                  </form>
+                                </div>
+                              </nav>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sect3">
+                      <h4 id="buttons">Buttons</h4>
+                      <div class="paragraph">
+                        <p>Use Bootstrap’s custom button styles for actions in forms, dialogs, and
+                          more with support for multiple sizes, states, and more. Bootstrap includes
+                          several predefined button styles, each serving its own semantic purpose,
+                          with a few extras thrown in for more control.</p>
+                      </div>
+                      <div class="paragraph">
+                        <p><i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>
+                          Refer to: <a href="http://getbootstrap.com/docs/4.0/components/buttons/" target="_blank" rel="noopener">Bootstrap Docs</a>.</p>
+                      </div>
+                      <div class="bs-docs-section">
+                        <div class="row mb-4">
+                          <div class="col-md-10">
+                            <p class="bs-component">
+                              <button type="button" class="btn btn-primary btn-raised">
+                                Primary
+                                <div class="ripple-container"></div>
+                              </button>
+                              <button type="button" class="btn btn-secondary btn-raised">Secondary</button>
+                              <button type="button" class="btn btn-success btn-raised">
+                                Success
+                                <div class="ripple-container"></div>
+                              </button>
+                              <button type="button" class="btn btn-info btn-raised">Info</button>
+                              <button type="button" class="btn btn-warning btn-raised">Warning</button>
+                              <button type="button" class="btn btn-danger btn-raised">Danger</button>
+                              <button type="button" class="btn btn-link btn-raised">Link</button>
+                            </p>
+                            <p class="bs-component">
+                              <button type="button" class="btn btn-primary btn-raised disabled">Primary</button>
+                              <button type="button" class="btn btn-secondary btn-raised disabled">Secondary</button>
+                              <button type="button" class="btn btn-success btn-raised disabled">Success</button>
+                              <button type="button" class="btn btn-info btn-raised disabled">Info</button>
+                              <button type="button" class="btn btn-warning btn-raised disabled">Warning</button>
+                              <button type="button" class="btn btn-danger btn-raised disabled">Danger</button>
+                              <button type="button" class="btn btn-link btn-raised disabled">Link</button>
+                            </p>
+                            <p class="bs-component">
+                              <button type="button" class="btn btn-outline-primary btn-raised">Primary</button>
+                              <button type="button" class="btn btn-outline-secondary btn-raised">Secondary</button>
+                              <button type="button" class="btn btn-outline-success btn-raised">Success</button>
+                              <button type="button" class="btn btn-outline-info btn-raised">Info</button>
+                              <button type="button" class="btn btn-outline-warning btn-raised">Warning</button>
+                              <button type="button" class="btn btn-outline-danger btn-raised">Danger</button>
+                            </p>
+                            <div class="bs-component">
+                              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <button type="button" class="btn btn-primary btn-raised">Primary</button>
+                                <div class="btn-group" role="group">
+                                  <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <button type="button" class="btn btn-success btn-raised">Success</button>
+                                <div class="btn-group" role="group">
+                                  <button id="btnGroupDrop2" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="ripple-container"></div>
+                                  </button>
+                                  <div class="dropdown-menu showing hiding" aria-labelledby="btnGroupDrop2" x-placement="bottom-start" style="position: absolute; will-change: top, left; top: 37px; left: 0px;">
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                    <a class="dropdown-item" href="#">
+                                      Dropdown link
+                                      <div class="ripple-container">
+                                        <div class="ripple-decorator ripple-on ripple-out" style="left: 79.1094px; top: 56.7656px; background-color: rgb(255, 255, 255); transform: scale(19.75);"></div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <button type="button" class="btn btn-info">Info</button>
+                                <div class="btn-group" role="group">
+                                  <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <button type="button" class="btn btn-danger">Danger</button>
+                                <div class="btn-group" role="group">
+                                  <button id="btnGroupDrop4" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="bs-component mt-2">
+                              <button type="button" class="btn btn-primary btn-raised btn-lg">Large button</button>
+                              <button type="button" class="btn btn-primary btn-raised">Default button</button>
+                              <button type="button" class="btn btn-primary btn-raised btn-sm">Small button</button>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <p class="bs-component mt-2">
+                              <button type="button" class="btn btn-primary btn-raised btn-lg btn-block">Block level button</button>
+                            </p>
+                            <div class="bs-component" style="margin-bottom: 15px;">
+                              <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary btn-raised active">
+                                  <input type="checkbox" checked> Checkbox 1
+                                </label>
+                                <label class="btn btn-primary btn-raised">
+                                  <input type="checkbox"> Checkbox 2
+                                </label>
+                                <label class="btn btn-primary btn-raised">
+                                  <input type="checkbox"> Checkbox 3
+                                </label>
+                              </div>
+                            </div>
+                            <div class="bs-component" style="margin-bottom: 15px;">
+                              <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary btn-raised active">
+                                  <input type="radio" name="options" id="option1" checked> Radio 1
+                                </label>
+                                <label class="btn btn-primary btn-raised">
+                                  <input type="radio" name="options" id="option2"> Radio 2
+                                </label>
+                                <label class="btn btn-primary btn-raised">
+                                  <input type="radio" name="options" id="option3"> Radio 3
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ end section for split page (TOC) ] -->
+            <!-- NOTE: BS or Tocbot Affix is not used anymore. Replaced by CSS style "sticky" -->
+            <aside class="col-md-3 d-none d-md-block sticky">
+              <div id="sidebar">
+                <div id="j1-toc-mgr" class="toc js-toc"></div>
+              </div>
+            </aside>
+             <!-- end ASIDE for split page -->
+            <!-- endif sidebar -->
+          </div>
+           <!-- end row -->
+        </div>
+         <!-- end container -->
+        <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ end place content ] -->
+        <!-- [INFO   ] [j1.page.J1 Template Core                   ] [Save the current ArticleBrowser page to UserState cookie] -->
+        <!-- script>
+  var logger   = log4javascript.getLogger("j1.page.j1 template core.init");  
+  var cookieUserState = 'j1.user.state'
+  var log_text = 'Save the current browser page (j1 template core) to cookie: ' +cookieUserState;  
+  var j1_user_state = {
+    'authenticated' : 'false',
+    'cookies_accepted' : 'false',
+    'theme_css' : 'unknown',
+    'theme_extension_css' : 'unknown',
+    'theme_name' : 'unknown',
+    'last_page' : 'unknown',
+    'last_provider' : 'unknown',
+    'last_signin' : 'unknown',
+    'provider' : 'unknown',
+    'user_name' : 'unknown',
+    'user_id' : 'unknown'     
+  };
+  // Set|Detect J1 App status
+  j1_user_state.last_page = "/pages/public/panel/service_panel/core/"
+  j1.setUserState( j1_user_state ); 
+  logger.info(log_text);
+</script -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ load region 'body-main' for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.connectors.comments         ] [ start processing load region head, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.connectors.comments         ] [ end processing ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ placement for all lane items finished ] -->
+        <!-- [DEBUG  ] [j1.layout.content_writer.proc         ] [ reset all lane items ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ end processing ] -->
+      </div>
+      <!-- [INFO   ] [j1.layout.page.html                ] [ end content_writer processing for region: 'body-main' ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end content inherited by layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'body-footer' ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <footer id="exception_container" class="container-fluid no-padding"></footer>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <footer id="j1_footer" class=""></footer>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ start processing. Place all SHIM config for all MODULES, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ create GLOBAL JS script variables for later module access ] -->
+      <script>
+        // [INFO   ] [j1.layout_shim_generator.html         ] [ create global JS variable ENVIRONMENT for Javascript access: development ]
+        var j1_environment = 'development';
+        // [INFO   ] [j1.layout_shim_generator.html         ] [ create global INSTANCE variables for headers ]
+        if ( $('#homehead').length ) {
+          j1["homehead"] = true;
+        }
+        if ( $('#pagehead').length ) {
+          j1["pagehead"] = true;
+        }
+        if ( $('#texthead').length ) {
+          j1["texthead"] = true;
+        }
+        // IE10 viewport hack for Surface/Desktop Windows 8 bug
+        // Copyright 2014-2015 Twitter, Inc. (Bootstrap)
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var e = document.createElement("style");
+          e.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+          document.querySelector("head").appendChild(e);
+        }
+      </script>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ place container for Cookie Consent Modals ] -->
+      <div id="cookie_consent_modals"></div>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ place container for WebHook Modals ] -->
+      <div id="web_hook_modals"></div>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ initialize BS tooltips|popovers ] -->
+      <script>
+        $(function() {
+          $('[data-toggle="tooltip"]').tooltip();
+          $('[data-toggle="popover"]').popover();
+        });
+      </script>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ initialize enhanced bootstrap modals ] -->
+      <script>
+        $(function() {
+          $('body').on('shown.bs.modal', '.modal', function() {
+              if($('.modal-backdrop').length) {
+              } else {
+                  $modal_dialog = $(this).children('.modal-dialog');
+                  if($modal_dialog.hasClass('modal-side')) {
+                      $(this).addClass('modal-scrolling');
+                      $('body').addClass('scrollable');
+                  }
+                  if($modal_dialog.hasClass('modal-frame')) {
+                      $(this).addClass('modal-content-clickable');
+                      $('body').addClass('scrollable');
+                  }
+              }
+          });
+          $('body').on('hidden.bs.modal', '.modal', function() {
+              $('body').removeClass('scrollable');
+          });
+        });
+      </script>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ start processing. collect data for region: body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: core ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: core ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'template core is being initialized';
+            logger.info(log_text);
+                // [INFO   ] [j1.layout.module_writer.proc          ] [ pass init data for: core ]
+                var settings = $.extend({}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                  j1.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: logger ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: logger ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module logger is being initialized';
+            logger.info(log_text);
+                  j1.adapter.logger.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: attic ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: attic ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module attic is being initialized';
+            logger.info(log_text);
+                // [INFO   ] [j1.layout.module_writer.proc          ] [ pass init data for: attic ]
+                var settings = $.extend({}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                  j1.adapter.attic.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: themer ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: themer ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module themer is being initialized';
+            logger.info(log_text);
+                  j1.adapter.themer.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: navigator ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["themer"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: navigator ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module navigator is being initialized';
+            logger.info(log_text);
+                  var interval_count = 0;
+                  var max_count      = 10;
+                  var dependencies_met_navigator = setInterval(function() {
+                    interval_count += 1;
+                    if ( j1.adapter.themer.getState() == 'finished' ) {
+                      j1.adapter.navigator.init();
+                      logger.info('resource_settings.dependencies of module navigator met for: themer');
+                      logger.debug('resource_settings.dependencies of module navigator met after: ' + interval_count * 25 + ' ms');
+                      clearInterval(dependencies_met_navigator);
+                      }
+                    if (interval_count > max_count) {
+                      logger.warn('dependency check failed for module: navigator');
+                      clearInterval(dependencies_met_navigator);
+                      logger.warn('run initializer navigator unchecked for: themer');
+                      j1.adapter.navigator.init();
+                    }
+                  }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: webhook ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: webhook ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module webhooks is being initialized';
+            logger.info(log_text);
+                // [INFO   ] [j1.layout.module_writer.proc          ] [ pass init data for: webhook ]
+                var settings = $.extend({}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                  j1.adapter.octokit.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: toccer ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["navigator"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: toccer ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module toccer is being initialized';
+            logger.info(log_text);
+              // [INFO   ] [j1.layout.module_writer.proc          ] [ pass module specific frontmatter options for: toccer ]
+              var settings = $.extend({}, {"collapseDepth":2}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                var interval_count = 0;
+                var dependencies_met_toccer = setInterval(function() {
+                var max_count      = 10;
+                  interval_count += 1;
+                  if ( j1.adapter.navigator.getState() == 'finished' ) {
+                    j1.adapter.toccer.init( settings );
+                    logger.info('resource_settings.dependencies of module toccer met for: navigator');
+                    logger.debug('resource_settings.dependencies of module toccer met after: ' + interval_count * 25 + ' ms');
+                    clearInterval(dependencies_met_toccer);
+                    }
+                  if (interval_count > max_count) {
+                    logger.warn('dependency check failed for module: toccer');
+                    clearInterval(dependencies_met_toccer);
+                    logger.warn('run initializer toccer unchecked for: navigator');
+                    j1.adapter.toccer.init(settings);
+                  }
+                }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: back2top ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["navigator"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: back2top ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module back2top is being initialized';
+            logger.info(log_text);
+                  var interval_count = 0;
+                  var max_count      = 10;
+                  var dependencies_met_back2top = setInterval(function() {
+                    interval_count += 1;
+                    if ( j1.adapter.navigator.getState() == 'finished' ) {
+                      j1.adapter.back2top.init();
+                      logger.info('resource_settings.dependencies of module back2top met for: navigator');
+                      logger.debug('resource_settings.dependencies of module back2top met after: ' + interval_count * 25 + ' ms');
+                      clearInterval(dependencies_met_back2top);
+                      }
+                    if (interval_count > max_count) {
+                      logger.warn('dependency check failed for module: back2top');
+                      clearInterval(dependencies_met_back2top);
+                      logger.warn('run initializer back2top unchecked for: navigator');
+                      j1.adapter.back2top.init();
+                    }
+                  }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: scroller ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: scroller ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module smoothscroll is being initialized';
+            logger.info(log_text);
+                  j1.adapter.scroller.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: searcher ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: searcher ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module quicksearch is being initialized';
+            logger.info(log_text);
+                  j1.adapter.searcher.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: cookie_consent ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: cookie_consent ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module cookie consent is being initialized';
+            logger.info(log_text);
+                  j1.adapter.cookie_consent.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: framer ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: bs_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: lightbox ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: rouge ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: rouge ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'theme rouge is being initialized';
+            logger.info(log_text);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: algolia ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: livereload ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ livereload module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: light_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: carousel ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: justified_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: data_tables ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: cookiebar ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ cookiebar module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: stickybits ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ stickybits module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: stickyfill ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ stickyfill module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+      <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end content_writer default_writer for region: 'body-footer' ] -->
+    </div>
+    <!-- [INFO   ] [j1.layout.default.html                ] [ end default writer] -->
+  </body>
+  <!-- [INFO   ] [j1.layout.default.html                ] [ end page processing ] -->
+</html>
+  
+
+  

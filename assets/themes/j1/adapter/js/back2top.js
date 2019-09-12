@@ -120,7 +120,7 @@ j1.adapter['back2top'] = (function (j1, window) {
       var settings = $.extend({
         module_name: 'j1.adapter.back2top',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
 
       {% comment %} Set global variables
       -------------------------------------------------------------------------- {% endcomment %}
@@ -132,7 +132,7 @@ j1.adapter['back2top'] = (function (j1, window) {
       // Load  module DEFAULTS|CONFIG
       moduleOptions = $.extend({}, {{back2top_options | replace: '=>', ':' | replace: 'nil', '""'}});
 
-      if ( typeof settings !== 'undefined') {
+      if (typeof settings !== 'undefined') {
         moduleOptions = j1.mergeData(moduleOptions, settings);
       }
 
@@ -179,8 +179,9 @@ j1.adapter['back2top'] = (function (j1, window) {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
-      var json_message = JSON.stringify(message, undefined, 2);
+    messageHandler: function (sender, message) {
+      // var json_message = JSON.stringify(message, undefined, 2);              // multiline
+      var json_message = JSON.stringify(message);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
@@ -188,7 +189,7 @@ j1.adapter['back2top'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

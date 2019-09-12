@@ -103,8 +103,8 @@ country_data_path:                      /assets/data/countries.json
 # ------------------------------------------------------------------------------
 cookies:
   app_session:                          j1.app.session
-  user_session:                         j1.user.state                           # j1.user.session
-  cookie_consent:                       j1.cookie
+  user_session:                         j1.user.session
+  user_state:                           j1.user.state
     
 # ==============================================================================
 # PAGE configuration settings
@@ -126,8 +126,7 @@ cookies:
 #   NOTE: See ~/packages/300_template_src/_layouts/default.html
 #
 # ------------------------------------------------------------------------------
-#flicker_timeout:                       250
-flicker_timeout:                        50
+flicker_timeout:                        250
 
 # -------------------------------------------------------------------------
 # HTML Pretty Print
@@ -178,9 +177,9 @@ fa:
 # Body style settings
 #
 body:
-  scrollbar:                            true                                    # false
+  scrollbar:                            false 
   background-color:                     md_gray_50
-  font-color:                           md_gray_900   # default
+  font-color:                           md_gray_900
   font-size:                            1em
   font-weight:                          400
   line-height:                          1.5

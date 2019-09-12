@@ -123,7 +123,7 @@ j1.adapter['cookie_bar'] = (function (j1, window) {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -132,7 +132,7 @@ j1.adapter['cookie_bar'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

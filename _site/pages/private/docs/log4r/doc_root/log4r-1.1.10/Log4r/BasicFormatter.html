@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>class Log4r::BasicFormatter - log4r-1.1.10 Documentation</title>
+    <script type="text/javascript">
+      var rdoc_rel_prefix = "/assets/themes/j1/extensions/rdoc/";
+      var index_rel_prefix = "../index.html";
+    </script>
+    <!-- script src="../../js/jquery.js"></script -->
+    <!-- script src="../../js/darkfish.js"></script -->
+    <script src="/assets/themes/j1/extensions/iframe_resizer/js/client/iframeResizer.contentWindow.js"></script>
+    <link href="../../css/rdoc.css" rel="stylesheet">
+  <body id="top" role="document" class="class">
+    <nav role="navigation">
+      <div id="project-navigation">
+        <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+          <h2>
+            <a href="../index.html" rel="home">Home</a>
+          </h2>
+        </div>
+        <div id="search-section" role="search" class="project-section initially-hidden">
+          <form action="#" method="get" accept-charset="utf-8">
+            <div id="search-field-wrapper">
+              <input id="search-field" role="combobox" aria-label="Search"
+                aria-autocomplete="list" aria-controls="search-results"
+                type="text" name="search" placeholder="Search" spellcheck="false"
+                title="Type to search, Up and Down to navigate, Enter to load">
+            </div>
+            <ul id="search-results" aria-label="Search Results"
+              aria-busy="false" aria-expanded="false"
+              aria-atomic="false" class="initially-hidden"></ul>
+          </form>
+        </div>
+      </div>
+      <div id="class-metadata">
+        <div id="parent-class-section" class="nav-section">
+          <h3>Parent</h3>
+          <p class="link"><a href="SimpleFormatter.html">Log4r::SimpleFormatter</a>
+        </div>
+        <!-- Method Quickref -->
+        <div id="method-list-section" class="nav-section">
+          <h3>Methods</h3>
+          <ul class="link-list" role="directory">
+            <li ><a href="#method-c-new">::new</a>
+            <li ><a href="#method-i-format">#format</a>
+            <li ><a href="#method-i-format_object">#format_object</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main role="main" aria-labelledby="class-Log4r::BasicFormatter">
+      <h1 id="class-Log4r::BasicFormatter" class="class">
+        class Log4r::BasicFormatter
+      </h1>
+      <section class="description">
+        <p><a href="BasicFormatter.html"><code>BasicFormatter</code></a> produces output like this:</p>
+        <pre>WARN loggername: I dropped my Wookie!</pre>
+        <p>Or like this if trace is on:</p>
+        <pre>WARN loggername(file.rb at 12): Hot potato!</pre>
+        <p>Also, it will pretty-print any Exception it gets and <code>inspect</code> everything else.</p>
+        <p>Hash arguments include:</p>
+        <dl class="rdoc-list note-list">
+          <dt><code>depth</code>
+          <dd>
+            <p>How many lines of the stacktrace to display.</p>
+          </dd>
+        </dl>
+      </section>
+      <section id="5Buntitled-5D" class="documentation-section">
+        <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+          <header>
+            <h3>Public Class Methods</h3>
+          </header>
+          <div id="method-c-new" class="method-detail ">
+            <div class="method-heading">
+              <span class="method-name">new</span><span
+                class="method-args">(hash={})</span>
+            </div>
+            <div class="method-description">
+            </div>
+          </div>
+        </section>
+        <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+          <header>
+            <h3>Public Instance Methods</h3>
+          </header>
+          <div id="method-i-format" class="method-detail ">
+            <div class="method-heading">
+              <span class="method-name">format</span><span
+                class="method-args">(event)</span>
+            </div>
+            <div class="method-description">
+            </div>
+          </div>
+          <div id="method-i-format_object" class="method-detail ">
+            <div class="method-heading">
+              <span class="method-name">format_object</span><span
+                class="method-args">(obj)</span>
+            </div>
+            <div class="method-description">
+              <p>Formats data according to its class:</p>
+              <dl class="rdoc-list note-list">
+                <dt>String
+                <dd>
+                  <p>Prints it out as normal.</p>
+                </dd>
+                <dt>Exception
+                <dd>
+                  <p>Produces output similar to command-line exceptions.</p>
+                </dd>
+                <dt><a href="../Object.html"><code>Object</code></a>
+                <dd>
+                  <p>Prints the type of object, then the output of <code>inspect</code>. An example – Array: [1, 2, 3]</p>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer id="validator-badges" role="contentinfo">
+      <p><a href="https://validator.w3.org/check/referer">Validate</a>
+      <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.1.
+      <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org/">Michael Granger</a>.
+    </footer>

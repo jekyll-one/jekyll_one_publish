@@ -8,7 +8,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -242,11 +242,12 @@ about_config:
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# SETTINGS
+# DEFAULTS
 #
 defaults:
 
   enabled:                            true
+
   load:                               sync
   log:                                false
   autoResize:                         true
@@ -257,7 +258,7 @@ defaults:
   interval:                           32
   heightCalculationMethod:            bodyOffset
   maxHeight:                          100000000
-  minHeight:                          150
+  minHeight:                          512
   maxWidth:                           100000000
   minWidth:                           0
   resizeFrom:                         parent

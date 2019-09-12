@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from localhost:8808/doc_root/log4r-1.1.10/Log4r/RollingFileOutputter.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2019 12:46:12 GMT -->
+<head>
+<meta charset="UTF-8">
+
+<title>class Log4r::RollingFileOutputter - log4r-1.1.10 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "/assets/themes/j1/extensions/rdoc/";
+  var index_rel_prefix = "../index.html";
+</script>
+
+<!-- script src="../../js/jquery.js"></script -->
+<!-- script src="../../js/darkfish.js"></script -->
+
+<script src="/assets/themes/j1/extensions/iframe_resizer/js/client/iframeResizer.contentWindow.js"></script>
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="FileOutputter.html">Log4r::FileOutputter</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-get_current_sequence_number">#get_current_sequence_number</a>
+    
+    <li ><a href="#method-i-makeNewFilename">#makeNewFilename</a>
+    
+    <li ><a href="#method-i-open_log_file">#open_log_file</a>
+    
+    <li ><a href="#method-i-purge_log_files">#purge_log_files</a>
+    
+    <li ><a href="#method-i-requiresRoll">#requiresRoll</a>
+    
+    <li ><a href="#method-i-roll">#roll</a>
+    
+    <li class="calls-super" ><a href="#method-i-write">#write</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Log4r::RollingFileOutputter">
+  <h1 id="class-Log4r::RollingFileOutputter" class="class">
+    class Log4r::RollingFileOutputter
+  </h1>
+
+  <section class="description">
+    
+<p><a href="RollingFileOutputter.html"><code>RollingFileOutputter</code></a> - subclass of FileOutputter that rolls files on size or time. So, given a filename of “error.log”, the first log file will be “error000001.log”. When its check condition is exceeded, it&#39;ll create and log to “error000002.log”, etc.</p>
+
+<p>Additional hash arguments are:</p>
+<dl class="rdoc-list label-list"><dt><code>:maxsize</code>
+<dd>
+<p>Maximum size of the file in bytes.</p>
+</dd><dt><code>:maxtime</code>
+<dd>
+<p>Maximum age of the file in seconds.</p>
+</dd><dt><code>:max_backups</code>
+<dd>
+<p>Maxium number of prior log files to maintain. If <a href="RollingFileOutputter.html#attribute-i-max_backups"><code>max_backups</code></a> is a positive number, </p>
+</dd></dl>
+
+<pre>then each time a roll happens, RollingFileOutputter will delete the oldest backup log files in excess
+of this number (if any).  So, if max_backups is 10, then a maximum of 11 files will be maintained (the current
+log, plus 10 backups). If max_backups is 0, no backups will be kept. If it is negative (the default),
+there will be no limit on the number of files created. Note that the sequence numbers will continue to escalate;
+old sequence numbers are not reused.</pre>
+<dl class="rdoc-list label-list"><dt><code>:trunc</code>
+<dd>
+<p>If true, deletes ALL existing log files (based on :filename) upon initialization,</p>
+</dd></dl>
+
+<pre>and the sequence numbering will start over at 000001. Otherwise continues logging where it left off
+last time (i.e. either to the file with the highest sequence number, or a new file, as appropriate).</pre>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-current_sequence_number" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">current_sequence_number</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-max_backups" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">max_backups</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-maxsize" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">maxsize</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-maxtime" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">maxtime</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-start_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">start_time</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(_name, hash={})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="FileOutputter.html#method-c-new"><code>Log4r::FileOutputter::new</code></a>
+            </div>
+          
+
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-get_current_sequence_number" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_current_sequence_number</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the highest existing log file sequence number, or 1 if there are no existing log files.</p>
+          
+          
+
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-makeNewFilename" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">makeNewFilename</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Constructs a new filename from the @current_sequence_number, @core_file_name, and @file_extension, and assigns it to @filename</p>
+          
+          
+
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-open_log_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">open_log_file</span><span
+            class="method-args">(mode)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Open @filename with the given mode:</p>
+
+<pre>&#39;a&#39; - appends to the end of the file if it exists; otherwise creates it.
+&#39;w&#39; -  truncates the file to zero length if it exists, otherwise creates it.</pre>
+
+<p>Re-initializes @datasize and @startime appropriately.</p>
+          
+          
+
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-purge_log_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">purge_log_files</span><span
+            class="method-args">(number_to_keep)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete all but the latest number_to_keep log files.</p>
+          
+          
+
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-requiresRoll" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">requiresRoll</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>does the file require a roll?</p>
+          
+          
+
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-roll" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">roll</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>roll the file</p>
+          
+          
+
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-write" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write</span><span
+            class="method-args">(data)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>perform the write</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org/">Michael Granger</a>.
+</footer>
+

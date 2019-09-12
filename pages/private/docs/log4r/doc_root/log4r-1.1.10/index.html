@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>log4r-1.1.10 Documentation</title>
+
+    <!-- link href="/assets/themes/j1/extensions/rdoc/css/fonts.css" rel="stylesheet" -->
+    <link href="/assets/themes/j1/extensions/rdoc/css/rdoc.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/extensions/rouge/css/base16/theme.css">
+
+    <script type="text/javascript">
+      // var rdoc_rel_prefix = "/assets/themes/j1/extensions/rdoc/";
+      var rdoc_rel_prefix = "/assets/themes/j1/extensions/rdoc/";
+      var index_rel_prefix = "index.html";
+    </script>
+
+    <!-- script src="/assets/themes/j1/extensions/rdoc/js/jquery.js"></script -->
+    <!-- script src="/assets/themes/j1/extensions/rdoc/js/darkfish.js"></script -->
+    <script src="/assets/themes/j1/extensions/iframe_resizer/js/client/iframeResizer.contentWindow.js"></script>
+
+  </head>
+
+  <body id="top" role="document" class="file">
+    <nav role="navigation">
+      <div id="project-navigation">
+        <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+          <h2><a href="index.html" rel="home">Home</a></h2>
+        </div>
+        <div id="search-section" role="search" class="project-section initially-hidden">
+          <form action="#" method="get" accept-charset="utf-8">
+            <div id="search-field-wrapper">
+              <input id="search-field" role="combobox" aria-label="Search"
+                aria-autocomplete="list" aria-controls="search-results"
+                type="text" name="search" placeholder="Search" spellcheck="false"
+                title="Type to search, Up and Down to navigate, Enter to load">
+            </div>
+            <ul id="search-results" aria-label="Search Results"
+              aria-busy="false" aria-expanded="false"
+              aria-atomic="false" class="initially-hidden"></ul>
+          </form>
+        </div>
+      </div>
+      <div id="project-metadata">
+        <div id="classindex-section" class="nav-section">
+          <h3>Class and Module Index</h3>
+          <ul class="link-list">
+            <li><a href="Log4r.html">Log4r</a>
+            <li><a href="Log4r/BasicFormatter.html">Log4r::BasicFormatter</a>
+            <li><a href="Log4r/ConfigError.html">Log4r::ConfigError</a>
+            <li><a href="Log4r/Configurator.html">Log4r::Configurator</a>
+            <li><a href="Log4r/DateFileOutputter.html">Log4r::DateFileOutputter</a>
+            <li><a href="Log4r/DefaultFormatter.html">Log4r::DefaultFormatter</a>
+            <li><a href="Log4r/EmailOutputter.html">Log4r::EmailOutputter</a>
+            <li><a href="Log4r/FileOutputter.html">Log4r::FileOutputter</a>
+            <li><a href="Log4r/Formatter.html">Log4r::Formatter</a>
+            <li><a href="Log4r/GDC.html">Log4r::GDC</a>
+            <li><a href="Log4r/IOOutputter.html">Log4r::IOOutputter</a>
+            <li><a href="Log4r/Log4jXmlFormatter.html">Log4r::Log4jXmlFormatter</a>
+            <li><a href="Log4r/Log4rConfig.html">Log4r::Log4rConfig</a>
+            <li><a href="Log4r/Log4rTools.html">Log4r::Log4rTools</a>
+            <li><a href="Log4r/LogEvent.html">Log4r::LogEvent</a>
+            <li><a href="Log4r/LogServer.html">Log4r::LogServer</a>
+            <li><a href="Log4r/Logger.html">Log4r::Logger</a>
+            <li><a href="Log4r/Logger/LoggerFactory.html">Log4r::Logger::LoggerFactory</a>
+            <li><a href="Log4r/Logger/Repository.html">Log4r::Logger::Repository</a>
+            <li><a href="Log4r/MDC.html">Log4r::MDC</a>
+            <li><a href="Log4r/NDC.html">Log4r::NDC</a>
+            <li><a href="Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a>
+            <li><a href="Log4r/Outputter.html">Log4r::Outputter</a>
+            <li><a href="Log4r/Outputter/OutputterFactory.html">Log4r::Outputter::OutputterFactory</a>
+            <li><a href="Log4r/PatternFormatter.html">Log4r::PatternFormatter</a>
+            <li><a href="Log4r/ROMPClient.html">Log4r::ROMPClient</a>
+            <li><a href="Log4r/ROMPServer.html">Log4r::ROMPServer</a>
+            <li><a href="Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a>
+            <li><a href="Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a>
+            <li><a href="Log4r/RootLogger.html">Log4r::RootLogger</a>
+            <li><a href="Log4r/ScribeOutputter.html">Log4r::ScribeOutputter</a>
+            <li><a href="Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a>
+            <li><a href="Log4r/StderrOutputter.html">Log4r::StderrOutputter</a>
+            <li><a href="Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a>
+            <li><a href="Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a>
+            <li><a href="Log4r/UDPOutputter.html">Log4r::UDPOutputter</a>
+            <li><a href="Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a>            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main">
+      <p>
+        This is the API documentation for log4r-1.1.10 Documentation.
+      </p>
+      <p>
+        Log4r is a comprehensive and flexible logging library written in Ruby 
+        for use in Ruby programs. It features a hierarchical logging system 
+        of any number of levels, custom level names, logger inheritance, 
+        multiple output destinations per log event, execution tracing, 
+        custom formatting, thread safteyness, XML and YAML configuration, 
+        and more.
+      </p>
+      <p>
+        The library is an adherent to the philosophy of logging using simple 
+        print statements. What Log4r adds to this philosophy is a flexible way 
+        of controling the information being logged. Log information can be sent 
+        to any kind of destination and with varying degrees of importance.
+        Log4r is designed so that logging statements can remain in production 
+        code with almost no extra computational cost.
+      </p>
+    </main>
+
+  </body>
+
+</html>

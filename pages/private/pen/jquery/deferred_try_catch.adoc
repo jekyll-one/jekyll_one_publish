@@ -65,7 +65,7 @@ $(document).ready(function() {
 
       // pause display the current page until j1 initialization is 'finished'
       setTimeout( function() {
-        var logger = log4javascript.getLogger('j1.pen');
+        var logger = log4javascript.getLogger('j1.content.pages');
         var logText;
         var json_data;
 
@@ -96,12 +96,14 @@ $(document).ready(function() {
 
         $.when($.ajax(url))
         .then(function(data) {          
-          json_data = JSON.stringify(data, undefined, 2);
+//        json_data = JSON.stringify(data, undefined, 2);                       multiline
+          json_data = JSON.stringify(data);
           logText   = 'deferred: ' + json_data;
           logger.info(logText);
         })
         .catch(function(error) {
-          json_data = JSON.stringify(error, undefined, 2);
+//        json_data = JSON.stringify(data, undefined, 2);                       multiline
+          json_data = JSON.stringify(error);
           logText   = 'deferred: ' + json_data;
           logger.error(logText);
         });

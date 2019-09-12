@@ -1,0 +1,1668 @@
+
+
+
+
+  
+
+            <!DOCTYPE html>
+<html lang="en">
+  <!-- [INFO   ] [j1.layout.default.html                ] [ page generated: 2019-09-12 16:11:10 +0200 ] -->
+  <!-- [INFO   ] [j1.layout.default.html                ] [ environment detected as: development ] -->
+  <head>
+    <!-- link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous" -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'head' ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ start processing: place meta tags (taken from site config|page frontmatter) ] -->
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ page|content encoding ] -->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ added for MS Edge Browser ] -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ initial zoom level when the page is first loaded by the browser ] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>automatic resizing of iFrames</title>
+    <meta name="description" content="iFrame Resizer">
+    <link rel="icon" type="image/ico" href="/assets/images/icons/j1/j1-32x32.ico">
+    <meta name="author" content="J1 Team">
+    <meta name="keywords" content="Jekyll, One, Template, Ruby, Asciidoctor, Asciidoc, Bootstrap, Javascript, JS, JS3, CSS, CSS3, HTML5, Material, Design">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.analytics       ] [ start processing load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.analytics       ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (global): true ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (page): false} ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (provider): google} ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ start processing load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ start processing region: head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place css files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/core/css/vendor.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place css files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/core/css/globals.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: core ] -->
+    <script sync src="/assets/themes/j1/core/js/j1.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout all, place js files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <script sync src="/assets/themes/j1/core/js/template.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: logger ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module logger ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: logger ] -->
+    <script sync src="/assets/themes/j1/adapter/js/logger.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: attic ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module attic ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: attic ] -->
+    <script sync src="/assets/themes/j1/adapter/js/attic.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: themer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module themer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: themer ] -->
+    <script defer src="/assets/themes/j1/adapter/js/themer.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: navigator ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module navigator ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: navigator ] -->
+    <script sync src="/assets/themes/j1/adapter/js/navigator.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: webhook ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module webhooks ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: webhook ] -->
+    <script sync src="/assets/themes/j1/adapter/js/octokit.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: toccer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: blog_archive, module toccer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: blog_archive, place general file resources for resource_settings.id: toccer ] -->
+    <script defer src="/assets/themes/j1/adapter/js/toccer.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: back2top ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module back2top ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: back2top ] -->
+    <script defer src="/assets/themes/j1/adapter/js/back2top.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: scroller ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module smoothscroll ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: scroller ] -->
+    <script defer src="/assets/themes/j1/adapter/js/scroller.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: searcher ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module quicksearch ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: searcher ] -->
+    <script defer src="/assets/themes/j1/adapter/js/searcher.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: cookie_consent ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module cookie consent ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: cookie_consent ] -->
+    <script defer src="/assets/themes/j1/adapter/js/cookie_consent.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: framer ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: bs_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: lightbox ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: rouge ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, theme rouge ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: rouge ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/extensions/rouge/css/base16/theme.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: algolia ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: livereload ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: light_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: carousel ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: justified_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: data_tables ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: cookiebar ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: stickybits ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: stickyfill ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+    <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ end default_writer for region: 'head' ] -->
+  </head>
+  <body>
+    <!-- [INFO   ] [j1.layout.default.html                ] [ start page processing for region: 'body' ] -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ place wrapper to prevent "DOM flicker" ] -->
+    <div id="no_flicker" class="nojs">
+      <!-- [INFO   ] [j1.layout.default.html                ] [ make page hidden ] -->
+      <script>
+        $("#no_flicker").css("display", "none");
+      </script>
+      <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'body-navigation' ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-navigation, layout: page ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ start processing: top search ] -->
+      <div id="navigator_nav_topsearch" class="top-search">
+        <div class="container-fluid">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="mdi mdi-magnify mdi-48px" style="color:#9E9E9E"></i></span>
+            <input type="text" id="jss-input" class="form-control" placeholder="QuickSearch">
+            <span class="input-group-addon close-search"><i class="mdi mdi-close mdi-48px" style="color:#9E9E9E"></i></span>
+          </div>
+        </div>
+        <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ add search panel (hidden) ] -->
+        <div class="row">
+          <!-- div class="card card-flat panel-search mr-5 mb-3 ml-5" id="jss-panel" style="display: none" -->
+          <div class="panel-search mr-5 mb-3 ml-5" id="jss-panel" style="display: none">
+            <div class="panel-heading lead"></div>
+            <div class="panel-body">
+              <p></p>
+            </div>
+            <div class="search-list-group mr-5 ml-2">
+              <ul id="jss-results"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ end processing: top search ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: navigation ] -->
+      <nav id="navigator_nav_navbar" class="navbar navigator navbar-expand-lg navbar-default light navbar-fixed navbar-transparent">
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for sidebar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ sidebar detected ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: sidebar ] -->
+        <div id="navigator_nav_sidebar" class="side"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: sidebar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: main menue ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place brand to the: right ] -->
+        <button type="button" class="navigator navbar-toggler animated fadeIn" data-toggle="collapse" data-target="#navigator_nav_menu" aria-controls="navigator_nav_menu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="mdi mdi-menu mdi-48px"></i>
+        </button>
+        <a class="navbar-brand" href="/"> <img src="/assets/images/icons/j1/j1-512x512.png" height="64" alt="Starter App"></a>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: nav bar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place nav menu container for AJAX load ] -->
+        <div id="navigator_nav_menu" class="collapse"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for quicklinks ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ quicklinks enabled: true ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: quicklinks ] -->
+        <div id="navigator_nav_quicklinks" class="attr-nav collapse navbar-collapse justify-content-end"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing for: quicklinks ] -->
+      </nav>
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for: authclient ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ authclient enabled: true ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: authclient ] -->
+      <div id="authclient_modals" class="authclient_modals"></div>
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: auth_client ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: navigation ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+      <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end processing default_writer for region: 'body-navigation' ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ place content inherited by layout: page ] -->
+      <!-- [INFO   ]  [j1.layout.page.html                   ] [ start content processing ] -->
+      <!-- [INFO   ] [j1.layout.page.html                    ] [ call default_writer for region: 'body-header' ] -->
+      <header id="header">
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-header, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ load page specific header data from yaml data file ] -->
+        <div id="image_attic" class="attic">
+          <div class="container">
+            <div id="head-title" class="head-title animated"> 
+              <h2 id="head-title-text" class="notoc">Framer</h2>
+            </div>
+            <div id="head-tagline" class="head-tagline animated"> 
+              <h3 id="head-tagline-tagline" class="notoc">automatic resizing of iFrames</h3>
+            </div>
+            <!-- Image caption container (display: none per default) -->
+            <!-- div class="attic-caption text-emphasis-"></div -->
+            <div class="attic-caption"></div>
+          </div>
+        </div>
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+        <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      </header>
+      <!-- [INFO   ] [j1.layout.page.html                      ] [ end default_writer processing for region: 'body-header' ] -->
+      <!-- [INFO   ] [j1.layout.page.html                ] [ call content_writer for region: 'body-main' ] -->
+      <div class="container-fluid">
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ start processing: load CONTENT portion for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ load region 'body-main' for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ begin content ] -->
+        <div class="container mb-5">
+          <div class="row">
+            <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ start section for split page (TOC) ] -->
+            <section class="col-md-9 col-xs-12 r-text-300 js-toc-content">
+              <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ begin place content ] -->
+              <div class="paragraph">
+                <p>This library enables the automatic resizing of the height and width of
+                  both same and cross domain iFrames to fit their contained content. It
+                  provides a range of features to address the most common issues with
+                  using iFrames, these include:</p>
+              </div>
+              <div class="ulist">
+                <ul>
+                  <li>
+                    <p>Height and width resizing of the iFrame to content size.</p>
+                  </li>
+                  <li>
+                    <p>Works with multiple and nested iFrames.</p>
+                  </li>
+                  <li>
+                    <p>Domain authentication for cross domain iFrames.</p>
+                  </li>
+                  <li>
+                    <p>Provides a range of page size calculation methods to support complex
+                      CSS layouts.</p>
+                  </li>
+                  <li>
+                    <p>Detects changes to the DOM that can cause the page to resize using
+                      <a href="https://developer.mozilla.org/en/docs/Web/API/MutationObserver">MutationObserver</a>.</p>
+                  </li>
+                  <li>
+                    <p>Detects events that can cause the page to resize (Window Resize, CSS
+                      Animation and Transition, Orientation Change and Mouse events).</p>
+                  </li>
+                  <li>
+                    <p>Simplified messaging between iFrame and host page via
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API/window.postMessage">postMessage</a>.</p>
+                  </li>
+                  <li>
+                    <p>Fixes in page links in iFrame and supports links between the iFrame
+                      and parent page.</p>
+                  </li>
+                  <li>
+                    <p>Provides custom sizing and scrolling methods.</p>
+                  </li>
+                  <li>
+                    <p>Exposes parent position and viewport size to the iFrame.</p>
+                  </li>
+                  <li>
+                    <p>Works with <a href="http://viewerjs.org/">ViewerJS</a> to support PDF and ODF
+                      documents.</p>
+                  </li>
+                  <li>
+                    <p>Fallback support down to IE8.</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="sect1">
+                <h2 id="getting-started">Getting started</h2>
+                <div class="sectionbody">
+                  <div class="paragraph">
+                    <p>The package contains two minified JavaScript files in the js folder. The
+                      first
+                      (<a href="https://raw.githubusercontent.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js">iframeResizer.min.js</a>)
+                      is for the page hosting the iFrames. It can be called with <strong>native</strong>
+                      JavaScript;</p>
+                  </div>
+                  <div class="listingblock">
+                    <div class="content">
+                      <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="kd">var</span> <span class="nx">iframes</span> <span class="o">=</span> <span class="nx">iFrameResize</span><span class="p">(</span> <span class="p">[{</span><span class="nx">options</span><span class="p">}],</span> <span class="p">[</span><span class="nx">css</span> <span class="nx">selector</span><span class="p">]</span> <span class="o">||</span> <span class="p">[</span><span class="nx">iframe</span><span class="p">]</span> <span class="p">);</span></span></code></pre>
+                    </div>
+                  </div>
+                  <div class="paragraph">
+                    <p>or via <strong>jQuery</strong>. (See <a href="#browser-compatibility">notes</a> below for using
+                      native version with IE8).</p>
+                  </div>
+                  <div class="listingblock">
+                    <div class="content">
+                      <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">iframe</span><span class="dl">'</span><span class="p">).</span><span class="nx">iFrameResize</span><span class="p">(</span> <span class="p">[{</span><span class="nx">options</span><span class="p">}]</span> <span class="p">);</span></span></code></pre>
+                    </div>
+                  </div>
+                  <div class="paragraph">
+                    <p>The second file
+                      (<a href="https://raw.github.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js">iframeResizer.contentWindow.min.js</a>)
+                      is a <strong>native</strong> JavaScript file that needs placing in the page contained
+                      within your iFrame. <em>This file is designed to be a guest on someone
+                        else’s system, so has no dependencies and won’t do anything until it’s
+                        activated by a message from the containing page</em>.</p>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="typical-setup">Typical setup</h3>
+                    <div class="paragraph">
+                      <p>The normal configuration is to have the iFrame resize when the browser
+                        window changes size or the content of the iFrame changes. To set this up
+                        you need to configure one of the dimensions of the iFrame to a
+                        percentage and tell the library to only update the other dimension.
+                        Normally you would set the width to 100% and have the height scale to
+                        fit the content.</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span><span class="nx">iframe</span><span class="p">{</span><span class="nl">width</span><span class="p">:</span><span class="mi">100</span><span class="o">%</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;</span></span>
+<span id="L2" class="line"><span class="o">&lt;</span><span class="nx">iframe</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">http://anotherdomain.com/iframe.html</span><span class="dl">"</span> <span class="nx">scrolling</span><span class="o">=</span><span class="dl">"</span><span class="s2">no</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/iframe</span><span class="err">&gt;</span></span>
+<span id="L3" class="line"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="nx">iFrameResize</span><span class="p">({</span><span class="na">log</span><span class="p">:</span><span class="kc">true</span><span class="p">})</span><span class="o">&lt;</span><span class="sr">/script&gt;</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Note that scrolling is set to ‘no’ in the iFrame tag, as older versions
+                        of IE don’t allow this to be turned off in code and can just slightly
+                        add a bit of extra space to the bottom of the content that it doesn’t
+                        report when it returns the height. If you have problems, check the
+                        <a href="#troubleshooting">troubleshooting</a> section below.</p>
+                    </div>
+                    <div class="sect3">
+                      <h4 id="example">Example</h4>
+                      <div class="paragraph">
+                        <p>To see this working take a look at this
+                          <a href="http://davidjbradshaw.com/iframe-resizer/example/">example</a> and watch the
+                          <a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console">console</a>.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="options">Options</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="log">log</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">false</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">boolean</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Setting the <code>log</code> option to true will make the scripts in both the host
+                        page and the iFrame output everything they do to the JavaScript console
+                        so you can see the communication between the two scripts.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="autoresize">autoResize</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">true</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">boolean</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>When enabled changes to the Window size or the DOM will cause the iFrame
+                        to resize to the new content size. Disable if using size method with
+                        custom dimensions.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p><em>Note: When set to false the iFrame will still inititally size to the
+                          contained content, only additional resizing events are disabled.</em></p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="bodybackground">bodyBackground</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">null</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">string</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Override the body background style in the iFrame.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="bodymargin">bodyMargin</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">null</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">string</span> <span class="o">||</span> <span class="nx">number</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Override the default body margin style in the iFrame. A string can be
+                        any valid value for the CSS margin attribute, for example ‘8px 3em’. A
+                        number value is converted into px.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="checkorigin">checkOrigin</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">true</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">boolean</span> <span class="o">||</span> <span class="nx">array</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>When set to true, only allow incoming messages from the domain listed in
+                        the <code>src</code> property of the iFrame tag. If your iFrame navigates between
+                        different domains, ports or protocols; then you will need to provide an
+                        array of URLs or disable this option.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="inpagelinks">inPageLinks</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">false</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">boolean</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>When enabled in page linking inside the iFrame and from the iFrame to
+                        the parent page will be enabled.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="interval">interval</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="mi">32</span>  <span class="p">(</span><span class="k">in</span> <span class="nx">ms</span><span class="p">)</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">number</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>In browsers that don’t support
+                        <a href="https://developer.mozilla.org/en/docs/Web/API/MutationObserver">mutationObserver</a>,
+                        such as IE10, the library falls back to using setInterval, to check for
+                        changes to the page size. The default value is equal to two frame
+                        refreshes at 60Hz, setting this to a higher value will make screen
+                        redraws noticeable to the user.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Setting this property to a negative number will force the interval check
+                        to run instead of
+                        <a href="https://developer.mozilla.org/en/docs/Web/API/MutationObserver">mutationObserver</a>.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Set to zero to disable.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="heightcalculationmethod">heightCalculationMethod</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bodyOffset</span><span class="dl">'</span></span>
+<span id="L2" class="line"><span class="nx">values</span><span class="p">:</span>  <span class="dl">'</span><span class="s1">bodyOffset</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">bodyScroll</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">documentElementOffset</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">documentElementScroll</span><span class="dl">'</span> <span class="o">|</span></span>
+<span id="L3" class="line">         <span class="dl">'</span><span class="s1">max</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">min</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">grow</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">lowestElement</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">taggedElement</span><span class="dl">'</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>By default the height of the iFrame is calculated by converting the
+                        margin of the <code>body</code> to <em>px</em> and then adding the top and bottom figures
+                        to the offsetHeight of the <code>body</code> tag.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>In cases where CSS styles causes the content to flow outside the <code>body</code>
+                        you may need to change this setting to one of the following options.
+                        Each can give different values depending on how CSS is used in the page
+                        and each has varying side-effects. You will need to experiment to see
+                        which is best for any particular circumstance.</p>
+                    </div>
+                    <div class="ulist">
+                      <ul>
+                        <li>
+                          <p><strong>bodyScroll</strong> uses <code>document.body.scrollHeight</code></p>
+                        </li>
+                        <li>
+                          <p><strong>documentElementOffset</strong> uses <code>document.documentElement.offsetHeight</code></p>
+                        </li>
+                        <li>
+                          <p><strong>documentElementScroll</strong> uses <code>document.documentElement.scrollHeight</code></p>
+                        </li>
+                        <li>
+                          <p><strong>max</strong> takes the largest value of the main four options</p>
+                        </li>
+                        <li>
+                          <p><strong>min</strong> takes the smallest value of the main four options</p>
+                        </li>
+                        <li>
+                          <p><strong>grow</strong> same as <strong>max</strong> but disables the double resize that is used to
+                            workout if the iFrame needs to shrink. This provides much better
+                            performance if your iFrame will only ever increase in size</p>
+                        </li>
+                        <li>
+                          <p><strong>lowestElement</strong> Loops though every element in the the DOM and finds
+                            the lowest bottom point</p>
+                        </li>
+                        <li>
+                          <p><strong>taggedElement</strong> Finds the bottom of the lowest element with a
+                            <code>data-iframe-height</code> attribute</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="admonitionblock note">
+                      <table>
+                        <tr>
+                          <td class="icon">
+                            <i class="fa icon-note" title="Note"></i>
+                          </td>
+                          <td class="content">
+                            <div class="paragraph">
+                              <p><em>*If the default option doesn’t work then the best solutions is to
+                                  either to use* taggedElement, <strong>or to use</strong> lowestElement <strong>in modern
+                                    browsers and</strong> max *in IE10 downwards.*</em></p>
+                            </div>
+                            <div class="listingblock">
+                              <div class="content">
+                                <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="c1">// Detect IE10 and below</span></span>
+<span id="L2" class="line"><span class="kd">var</span> <span class="nx">isOldIE</span> <span class="o">=</span> <span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">MSIE</span><span class="dl">"</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span></span>
+<span id="L3" class="line"></span>
+<span id="L4" class="line"><span class="nx">iFrameResize</span><span class="p">(</span> <span class="p">{</span></span>
+<span id="L5" class="line">    <span class="na">heightCalculationMethod</span><span class="p">:</span> <span class="nx">isOldIE</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">max</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">lowestElement</span><span class="dl">'</span></span>
+<span id="L6" class="line"><span class="p">});</span></span></code></pre>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="admonitionblock note">
+                      <table>
+                        <tr>
+                          <td class="icon">
+                            <i class="fa icon-note" title="Note"></i>
+                          </td>
+                          <td class="content">
+                            The <strong>lowestElement</strong> option is the most reliable way of determining
+                            the page height. However, it does have a performance impact in older
+                            versions of IE. In one screen refresh (16ms) Chrome can calculate the
+                            position of around 10,000 html nodes, whereas IE 8 can calculate
+                            approximately 50. The <strong>taggedElement</strong> option provides much greater
+                            performance by limiting the number of elements that need their position
+                            checked.
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="admonitionblock note">
+                      <table>
+                        <tr>
+                          <td class="icon">
+                            <i class="fa icon-note" title="Note"></i>
+                          </td>
+                          <td class="content">
+                            The <strong>bodyScroll</strong>, <strong>documentElementScroll</strong>, <strong>max</strong> and <strong>min</strong> options
+                            can cause screen flicker and will prevent the <a href="#interval">interval</a>
+                            trigger downsizing the iFrame when the content shrinks. This is mainly
+                            an issue in IE 10 and below, where the
+                            <a href="https://developer.mozilla.org/en/docs/Web/API/MutationObserver">mutationObserver</a>
+                            event is not supported. To overcome this you need to manually trigger a
+                            page resize by calling the
+                            <a href="#size-customheight-customwidth">parentIFrame.size()</a> method when you
+                            remove content from the page.
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="maxheightmaxwidth">maxHeight|maxWidth</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="nx">infinity</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">integer</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Set maximum height/width of iFrame.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="minheight-minwidth">minHeight / minWidth</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="mi">0</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">integer</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Set minimum height/width of iFrame.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="resizefrom">resizeFrom</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="dl">'</span><span class="s1">parent</span><span class="dl">'</span></span>
+<span id="L2" class="line"><span class="nx">values</span><span class="p">:</span> <span class="dl">'</span><span class="s1">parent</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">child</span><span class="dl">'</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Listen for resize events from the parent page, or the iFrame. Select the
+                        ‘child’ value if the iFrame can be resized independently of the browser
+                        window. <em>Selecting this value can cause issues with some height
+                          calculation methods on mobile devices</em>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="scrolling">scrolling</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">false</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">boolean</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Enable scroll bars in iFrame.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="sizeheight">sizeHeight</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">true</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">boolean</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Resize iFrame to content height.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="sizewidth">sizeWidth</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">false</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">boolean</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Resize iFrame to content width.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="tolerance">tolerance</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="mi">0</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span>    <span class="nx">integer</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Set the number of pixels the iFrame content size has to change by,
+                        before triggering a resize of the iFrame.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="widthcalculationmethod">widthCalculationMethod</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="dl">'</span><span class="s1">scroll</span><span class="dl">'</span></span>
+<span id="L2" class="line"><span class="nx">values</span><span class="p">:</span>  <span class="dl">'</span><span class="s1">bodyOffset</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">bodyScroll</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">documentElementOffset</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">documentElementScroll</span><span class="dl">'</span> <span class="o">|</span></span>
+<span id="L3" class="line">         <span class="dl">'</span><span class="s1">max</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">min</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">scroll</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">rightMostElement</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">taggedElement</span><span class="dl">'</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>By default the width of the page is worked out by taking the greater of
+                        the <strong>documentElement</strong> and <strong>body</strong> scrollWidth values.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Some CSS technics may require you to change this setting to one of the
+                        following options. Each can give different values depending on how CSS
+                        is used in the page and each has varying side-effects. You will need to
+                        experiment to see which is best for any particular circumstance.</p>
+                    </div>
+                    <div class="ulist">
+                      <ul>
+                        <li>
+                          <p><strong>bodyOffset</strong> uses <code>document.body.offsetWidth</code></p>
+                        </li>
+                        <li>
+                          <p><strong>bodyScroll</strong> uses <code>document.body.scrollWidth</code></p>
+                        </li>
+                        <li>
+                          <p><strong>documentElementOffset</strong> uses <code>document.documentElement.offsetWidth</code></p>
+                        </li>
+                        <li>
+                          <p><strong>documentElementScroll</strong> uses <code>document.documentElement.scrollWidth</code></p>
+                        </li>
+                        <li>
+                          <p><strong>scroll</strong> takes the largest value of the two scroll options</p>
+                        </li>
+                        <li>
+                          <p><strong>max</strong> takes the largest value of the main four options</p>
+                        </li>
+                        <li>
+                          <p><strong>min</strong> takes the smallest value of the main four options</p>
+                        </li>
+                        <li>
+                          <p><strong>rightMostElement</strong> Loops though every element in the the DOM and finds
+                            the right most point</p>
+                        </li>
+                        <li>
+                          <p><strong>taggedElement</strong> Finds the left most element with a <code>data-iframe-width</code>
+                            attribute</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="admonitionblock note">
+                      <table>
+                        <tr>
+                          <td class="icon">
+                            <i class="fa icon-note" title="Note"></i>
+                          </td>
+                          <td class="content">
+                            <em>The <strong>rightMostElement</strong> option is the most reliable way of
+                              determining the page width. However, it does have a performance impact
+                              in older versions of IE. In one screen refresh (16ms) Chrome can
+                              calculate the position of around 10,000 html nodes, whereas IE 8 can
+                              calculate approximately 50. The <strong>taggedElement</strong> option provides much
+                              greater performance by limiting the number of elements that need their
+                              position checked.</em>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="admonitionblock note">
+                      <table>
+                        <tr>
+                          <td class="icon">
+                            <i class="fa icon-note" title="Note"></i>
+                          </td>
+                          <td class="content">
+                            <em>The <strong>bodyScroll</strong>, <strong>documentElementScroll</strong>, <strong>max</strong> and <strong>min</strong> options
+                              can cause screen flicker and will prevent the <a href="#interval">interval</a>
+                              trigger downsizing the iFrame when the content shrinks. This is mainly
+                              an issue in IE 10 and below, where the
+                              <a href="https://developer.mozilla.org/en/docs/Web/API/MutationObserver">mutationObserver</a>
+                              event is not supported. To overcome this you need to manually trigger a
+                              page resize by calling the
+                              <a href="#size-customheight-customwidth">parentIFrame.size()</a> method when you
+                              remove content from the page.</em>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="callback-methods">Callback Methods</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="closedcallback">closedCallback</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">type</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">iframeID</span><span class="p">)</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Called when iFrame is closed via <code>parentIFrame.close()</code> or
+                        <code>iframe.iframeResizer.close()</code> methods. See below for details.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="initcallback">initCallback</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">type</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">iframe</span><span class="p">)</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Initial setup callback function.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="messagecallback">messageCallback</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">type</span><span class="p">:</span> <span class="kd">function</span> <span class="p">({</span><span class="nx">iframe</span><span class="p">,</span><span class="nx">message</span><span class="p">})</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Receive message posted from iFrame with the <code>parentIFrame.sendMessage()</code>
+                        method.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="resizedcallback">resizedCallback</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">type</span><span class="p">:</span> <span class="kd">function</span> <span class="p">({</span><span class="nx">iframe</span><span class="p">,</span><span class="nx">height</span><span class="p">,</span><span class="nx">width</span><span class="p">,</span><span class="nx">type</span><span class="p">})</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Function called after iFrame resized. Passes in messageData object
+                        containing the <strong>iFrame</strong>, <strong>height</strong>, <strong>width</strong> and the <strong>type</strong> of event that
+                        triggered the iFrame to resize.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="scrollcallback">scrollCallback</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">type</span><span class="p">:</span> <span class="kd">function</span> <span class="p">({</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">})</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Called before the page is repositioned after a request from the iFrame,
+                        due to either an in page link, or a direct request from either
+                        <a href="#scrolltoxy">parentIFrame.scrollTo()</a> or
+                        <a href="#scrolltooffsetxy">parentIFrame.scrollToOffset()</a>. If this callback
+                        function returns false, it will stop the library from repositioning the
+                        page, so that you can implement your own animated page scrolling
+                        instead.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="iframe-page-options">IFrame Page Options</h2>
+                <div class="sectionbody">
+                  <div class="paragraph">
+                    <p>The following options can be set from within the iFrame page by creating
+                      a <code>window.iFrameResizer</code> object before the JavaScript file is loaded
+                      into the page.</p>
+                  </div>
+                  <div class="listingblock">
+                    <div class="content">
+                      <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span></span>
+<span id="L2" class="line">    <span class="nb">window</span><span class="p">.</span><span class="nx">iFrameResizer</span> <span class="o">=</span> <span class="p">{</span></span>
+<span id="L3" class="line">        <span class="na">targetOrigin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://mydomain.com</span><span class="dl">'</span></span>
+<span id="L4" class="line">    <span class="p">}</span></span>
+<span id="L5" class="line"><span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;</span></span>
+<span id="L6" class="line"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">js/iframeresizer.contentwindow.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span></span></code></pre>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="targetorigin">targetOrigin</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span> <span class="nx">string</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>This option allows you to restrict the domain of the parent page, to
+                        prevent other sites mimicing your parent page.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="messagecallback-2">messageCallback</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">type</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Receive message posted from the parent page with the
+                        <code>iframe.iFrameResizer.sendMessage()</code> method (See below for details).</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="readycallback">readyCallback</h3>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">type</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>This function is called once iFrame-Resizer has been initialized after
+                        receiving a call from the parent page. If you need to call any of the
+                        parentIFrame methods (See below) during page load, then they should be
+                        called from this callback.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>height|widthCalculationMethod</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">default</span><span class="p">:</span> <span class="kc">null</span></span>
+<span id="L2" class="line"><span class="nx">type</span><span class="p">:</span> <span class="nx">string</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>These options can be used to override the option set in the parent page
+                        (See above for details on available values). This can be useful when
+                        moving between pages in the iFrame that require different values for
+                        these options.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="iframe-page-methods">IFrame Page Methods</h2>
+                <div class="sectionbody">
+                  <div class="paragraph">
+                    <p>These methods are available in the iFrame via the <code>window.parentIFrame</code>
+                      object. These method should be contained by a test for the
+                      <code>window.parentIFrame</code> object, in case the page is not loaded inside an
+                      iFrame. For example:</p>
+                  </div>
+                  <div class="listingblock">
+                    <div class="content">
+                      <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">if</span> <span class="p">(</span><span class="dl">'</span><span class="s1">parentIFrame</span><span class="dl">'</span> <span class="k">in</span> <span class="nb">window</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="L2" class="line">    <span class="nx">parentIFrame</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span></span>
+<span id="L3" class="line"><span class="p">}</span></span></code></pre>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="autoresize-2">autoResize ()</h3>
+                    <div class="paragraph">
+                      <p>autoResize([bool])</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Turn autoResizing of the iFrame on and off. Returns bool of current
+                        state.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="close">close ()</h3>
+                    <div class="paragraph">
+                      <p>Remove the iFrame from the parent page.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="getid">getId ()</h3>
+                    <div class="paragraph">
+                      <p>Returns the ID of the iFrame that the page is contained in.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="getpageinfo">getPageInfo ()</h3>
+                    <div class="paragraph">
+                      <p>getPageInfo(callback || false)</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Ask the containing page for its positioning coordinates. You need to
+                        provide a callback which receives an object with the following
+                        properties:</p>
+                    </div>
+                    <div class="ulist">
+                      <ul>
+                        <li>
+                          <p><strong>clientHeight</strong> The height of the viewport in pixels</p>
+                        </li>
+                        <li>
+                          <p><strong>clientWidth</strong> The width of the viewport in pixels</p>
+                        </li>
+                        <li>
+                          <p><strong>offsetLeft</strong> The number of pixels between the left edge of the
+                            containing page and the left edge of the iframe</p>
+                        </li>
+                        <li>
+                          <p><strong>offsetTop</strong> The number of pixels between the top edge of the
+                            containing page and the top edge of the iframe</p>
+                        </li>
+                        <li>
+                          <p><strong>scrollLeft</strong> The number of pixels between the left edge of the iframe
+                            and the left edge of the iframe viewport</p>
+                        </li>
+                        <li>
+                          <p><strong>scrollTop</strong> The number of pixels between the top edge of the iframe
+                            and the top edge of the iframe viewport</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="paragraph">
+                      <p>Your callback function will be recalled when the parent page is scrolled
+                        or resized.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Pass <code>false</code> to disable the callback.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="scrollto">scrollTo ()</h3>
+                    <div class="paragraph">
+                      <p>scrollTo(x,y)</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Scroll the parent page to the coordinates x and y.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="scrolltooffset">scrollToOffset ()</h3>
+                    <div class="paragraph">
+                      <p>scrollToOffset(x,y)</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Scroll the parent page to the coordinates x and y relative to the
+                        position of the iFrame.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="sendmessage">sendMessage ()</h3>
+                    <div class="paragraph">
+                      <p>sendMessage(message,[targetOrigin])</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Send data to the containing page, <code>message</code> can be any data type that
+                        can be serialized into JSON. The <code>targetOrigin</code> option is used to
+                        restrict where the message is sent to; to stop an attacker mimicking
+                        your parent page. See the MDN documentation on
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage">postMessage</a>
+                        for more details.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="setheightcalculationmethod">setHeightCalculationMethod()</h3>
+                    <div class="paragraph">
+                      <p>setHeightCalculationMethod(heightCalculationMethod)</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Change the method use to workout the height of the iFrame.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="size">size ()</h3>
+                    <div class="paragraph">
+                      <p>size ([customHeight],[ customWidth])</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Manually force iFrame to resize. This method optionally accepts two
+                        arguments: <strong>customHeight</strong> &amp; <strong>customWidth</strong>. To use them you need first to
+                        disable the <code>autoResize</code> option to prevent auto resizing and enable the
+                        <code>sizeWidth</code> option if you wish to set the width.</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="nx">iFrameResize</span><span class="p">({</span></span>
+<span id="L2" class="line">    <span class="na">autoResize</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span></span>
+<span id="L3" class="line">    <span class="na">sizeWidth</span><span class="p">:</span> <span class="kc">true</span></span>
+<span id="L4" class="line"><span class="p">});</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="paragraph">
+                      <p>Then you can call the <code>size</code> method with dimensions:</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="k">if</span> <span class="p">(</span><span class="dl">'</span><span class="s1">parentIFrame</span><span class="dl">'</span> <span class="k">in</span> <span class="nb">window</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="L2" class="line">    <span class="nx">parentIFrame</span><span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// Set height to 100px</span></span>
+<span id="L3" class="line"><span class="p">}</span></span></code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="iframe-object-methods">IFrame Object Methods</h2>
+                <div class="sectionbody">
+                  <div class="paragraph">
+                    <p>Once the iFrame has been initialized, an <code>iFrameResizer</code> object is bound
+                      to it. This has the following methods available.</p>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="close-2">close ()</h3>
+                    <div class="paragraph">
+                      <p>Remove the iFrame from the page.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="movetoanchor">moveToAnchor ()</h3>
+                    <div class="paragraph">
+                      <p>moveToAnchor(anchor)</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Move to anchor in iFrame.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="resize">resize()</h3>
+                    <div class="paragraph">
+                      <p>Tell the iFrame to resize itself.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="sendmessage-2">sendMessage ()</h3>
+                    <div class="paragraph">
+                      <p>sendMessage(message,[targetOrigin])</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Send data to the containing page, <code>message</code> can be any data type that
+                        can be serialized into JSON. The <code>targetOrigin</code> option is used to
+                        restrict where the message is sent to, in case your iFrame navigates
+                        away to another domain.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="troubleshooting">Troubleshooting</h2>
+                <div class="sectionbody">
+                  <div class="paragraph">
+                    <p>The first steps to investigate a problem is to make sure you are using
+                      the latest version and then enable the <a href="#log">log</a> option, which
+                      outputs everything that happens to the
+                      <a href="https://developers.google.com/chrome-developer-tools/docs/console#opening_the_console">JavaScript
+                        Console</a>. This will enable you to see what both the iFrame and host page
+                      are up to and also see any JavaScript error messages.</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>Solutions for the most common problems are outlined in this section. If
+                      you need futher help, then please ask questions on
+                      <a href="http://stackoverflow.com/questions/tagged/iframe-resizer">StackOverflow</a>
+                      with the <code>iframe-resizer</code> tag.</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>Bug reports and pull requests are welcome on the
+                      <a href="https://github.com/davidjbradshaw/iframe-resizer/issues">issue tracker</a>.
+                      Please read the
+                      <a href="https://github.com/davidjbradshaw/iframe-resizer/blob/master/CONTRIBUTING.md">contributing
+                        guidelines</a> before openning a ticket, as this will ensure a faster
+                      resolution.</p>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="iframe-not-sizing-correctly">IFrame not sizing correctly</h3>
+                    <div class="paragraph">
+                      <p>If a larger element of content is removed from the normal document flow,
+                        through the use of absolute positioning, it can prevent the browser
+                        working out the correct size of the page. In such cases you can change
+                        the <a href="#heightcalculationmethod">heightCalculationMethod</a> to uses one
+                        of the other sizing methods.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="iframe-not-downsizing">IFrame not downsizing</h3>
+                    <div class="paragraph">
+                      <p>The most likely cause of this problem is having set the height of an
+                        element to be 100% of the page somewhere in your CSS. This is normally
+                        on the <code>html</code> or <code>body</code> elements, but it could be on any element in the
+                        page. This can sometimes be got around by using the <code>taggedElement</code>
+                        height calculation method and added a <code>data-iframe-height</code> attribute to
+                        the element that you want to define the bottom position of the page. You
+                        may find it useful to use <code>position: relative</code> on this element to define
+                        a bottom margin or allow space for a floating footer.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>Not having a valid
+                        <a href="http://en.wikipedia.org/wiki/Document_type_declaration">HTML document
+                          type</a> in the iFrame can also sometimes prevent downsizing. At it’s most
+                        simplest this can be the following.</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span></span></code></pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="iframe-not-resizing">IFrame not resizing</h3>
+                    <div class="paragraph">
+                      <p>The most common cause of this is not placing the
+                        <a href="https://raw.github.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js">iframeResizer.contentWindow.min.js</a>
+                        script inside the iFramed page. If the other page is on a domain outside
+                        your control and you can not add JavaScript to that page, then now is
+                        the time to give up all hope of ever getting the iFrame to size to the
+                        content. As it is impossible to work out the size of the contained page,
+                        without using JavaScript on both the parent and child pages.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="iframe-not-detecting-hover-events">IFrame not detecting :hover events</h3>
+                    <div class="paragraph">
+                      <p>If your page resizes via CSS <code>:hover</code> events, these won’t be detected by
+                        default. It is however possible to create <code>mouseover</code> and <code>mouseout</code>
+                        event listeners on the elements that are resized via CSS and have these
+                        events call the
+                        <a href="##parentiframesize-customheight-customwidth">parentIFrame.size()</a>
+                        method. With jQuery this can be done as follows</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="kd">function</span> <span class="nx">resize</span><span class="p">(){</span></span>
+<span id="L2" class="line">    <span class="k">if</span> <span class="p">(</span><span class="dl">'</span><span class="s1">parentIFrame</span><span class="dl">'</span> <span class="k">in</span> <span class="nb">window</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="L3" class="line">        <span class="c1">// Fix race condition in FireFox with setTimeout</span></span>
+<span id="L4" class="line">        <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">parentIFrame</span><span class="p">.</span><span class="nx">size</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">parentIFrame</span><span class="p">),</span><span class="mi">0</span><span class="p">);</span></span>
+<span id="L5" class="line">    <span class="p">}</span></span>
+<span id="L6" class="line"><span class="p">}</span></span>
+<span id="L7" class="line"></span>
+<span id="L8" class="line"><span class="nx">$</span><span class="p">(</span><span class="o">*</span><span class="nx">Element</span> <span class="kd">with</span> <span class="nx">hover</span> <span class="nx">style</span><span class="o">*</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="nx">resize</span><span class="p">);</span></span></code></pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="iframe-not-resize-on-textarea">IFrame not resize on textarea</h3>
+                    <div class="paragraph">
+                      <p>Both FireFox and the WebKit based browsers allow the user to resize
+                        <code>textarea</code> input boxes. Unfortunately the WebKit browsers don’t trigger
+                        the mutation event when this happens. This can be worked around to some
+                        extent with the following code.</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="kd">function</span> <span class="nx">store</span><span class="p">(){</span></span>
+<span id="L2" class="line">    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">;</span></span>
+<span id="L3" class="line">    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetHeight</span><span class="p">;</span></span>
+<span id="L4" class="line"><span class="p">}</span></span>
+<span id="L5" class="line"></span>
+<span id="L6" class="line"><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">textarea</span><span class="dl">'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="nx">store</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">mouseover mouseout</span><span class="dl">'</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span></span>
+<span id="L7" class="line">    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">offsetWidth</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetHeight</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">){</span></span>
+<span id="L8" class="line">        <span class="nx">store</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">);</span></span>
+<span id="L9" class="line">        <span class="k">if</span> <span class="p">(</span><span class="dl">'</span><span class="s1">parentIFrame</span><span class="dl">'</span> <span class="k">in</span> <span class="nb">window</span><span class="p">){</span></span>
+<span id="L10" class="line">            <span class="nx">parentIFrame</span><span class="p">.</span><span class="nx">size</span><span class="p">();</span></span>
+<span id="L11" class="line">        <span class="p">}</span></span>
+<span id="L12" class="line">    <span class="p">}</span></span>
+<span id="L13" class="line"><span class="p">});</span></span></code></pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="iframe-flickers">IFrame flickers</h3>
+                    <div class="paragraph">
+                      <p>Some of the alternate <a href="#heightcalculationmethod">height calculation
+                          methods</a>, such as <strong>max</strong> can cause the iFrame to flicker. This is due to
+                        the fact that to check for downsizing, the iFrame first has to be
+                        downsized before the new height can be worked out. This effect can be
+                        reduced by setting a <a href="#minheight%E2%80%94%E2%80%8Bminwidth">minSize</a> value, so that
+                        the iFrame is not reset to zero height before regrowing.</p>
+                    </div>
+                    <div class="paragraph">
+                      <p>In modern browsers, if the default <a href="#heightcalculationmethod">height
+                          calculation method</a> does not work, then it is normally best to use
+                        <strong>lowestElement</strong>, which is flicker free, and then provide a fallback to
+                        <strong>max</strong> in IE10 downwards.</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="kd">var</span> <span class="nx">isOldIE</span> <span class="o">=</span> <span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">MSIE</span><span class="dl">"</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Detect IE10 and below</span></span>
+<span id="L2" class="line"></span>
+<span id="L3" class="line"><span class="nx">iFrameResize</span><span class="p">({</span></span>
+<span id="L4" class="line">    <span class="na">heightCalculationMethod</span><span class="p">:</span> <span class="nx">isOldIE</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">max</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">lowestElement</span><span class="dl">'</span><span class="p">,</span></span>
+<span id="L5" class="line">    <span class="na">minSize</span><span class="p">:</span><span class="mi">100</span></span>
+<span id="L6" class="line"><span class="p">});</span></span></code></pre>
+                      </div>
+                    </div>
+                    <div class="admonitionblock note">
+                      <table>
+                        <tr>
+                          <td class="icon">
+                            <i class="fa icon-note" title="Note"></i>
+                          </td>
+                          <td class="content">
+                            Please see the notes section under
+                            <a href="#heightcalculationmethod">heightCalculationMethod</a> to understand the
+                            limitations of the different options.
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="parentiframe-not-found">ParentIFrame not found</h3>
+                    <div class="paragraph">
+                      <p>The <code>parentIFrame</code> object is created once the iFrame has been initially
+                        resized. If you wish to use it during page load you will need call it
+                        from the readyCallback.</p>
+                    </div>
+                    <div class="listingblock">
+                      <div class="content">
+                        <pre class="highlight"><code class="language-javascript" data-lang="javascript"><span id="L1" class="line"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span></span>
+<span id="L2" class="line">    <span class="nb">window</span><span class="p">.</span><span class="nx">iFrameResizer</span> <span class="o">=</span> <span class="p">{</span></span>
+<span id="L3" class="line">        <span class="na">readyCallback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span></span>
+<span id="L4" class="line">            <span class="kd">var</span> <span class="nx">myId</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">parentIFrame</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span></span>
+<span id="L5" class="line">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The ID of the iFrame in the parent page is: </span><span class="dl">'</span><span class="o">+</span><span class="nx">myId</span><span class="p">);</span></span>
+<span id="L6" class="line">        <span class="p">}</span></span>
+<span id="L7" class="line">    <span class="p">}</span></span>
+<span id="L8" class="line"><span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;</span></span>
+<span id="L9" class="line"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">js/iframeresizer.contentwindow.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span></span></code></pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="unexpected-message-received">Unexpected message received</h3>
+                    <div class="paragraph">
+                      <p>By default the origin of incoming messages is checked against the <code>src</code>
+                        attribute of the iFrame. If they don’t match an error is thrown. This
+                        behaviour can be disabled by setting the <a href="#checkorigin">checkOrigin</a>
+                        option to <strong>false</strong>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="pdf-and-opendocument-files">PDF and OpenDocument files</h2>
+                <div class="sectionbody">
+                  <div class="paragraph">
+                    <p>It is not possible to add the required JavaScript to PDF and ODF files.
+                      However, you can get around this limitation by using
+                      <a href="http://viewerjs.org/">ViewerJS</a> to render these files inside a HTML page,
+                      that also contains the iFrame JavaScript file
+                      (<a href="https://raw.github.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js">iframeResizer.contentWindow.min.js</a>).</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ end section for split page (TOC) ] -->
+            <!-- NOTE: BS or Tocbot Affix is not used anymore. Replaced by CSS style "sticky" -->
+            <aside class="col-md-3 d-none d-md-block sticky">
+              <div id="sidebar">
+                <div id="j1-toc-mgr" class="toc js-toc"></div>
+              </div>
+            </aside>
+             <!-- end ASIDE for split page -->
+            <!-- endif sidebar -->
+          </div>
+           <!-- end row -->
+        </div>
+         <!-- end container -->
+        <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ end place content ] -->
+        <!-- [INFO   ] [j1.page.Framer                   ] [Save the current ArticleBrowser page to UserState cookie] -->
+        <!-- script>
+  var logger   = log4javascript.getLogger("j1.page.framer.init");  
+  var cookieUserState = 'j1.user.state'
+  var log_text = 'Save the current browser page (framer) to cookie: ' +cookieUserState;  
+  var j1_user_state = {
+    'authenticated' : 'false',
+    'cookies_accepted' : 'false',
+    'theme_css' : 'unknown',
+    'theme_extension_css' : 'unknown',
+    'theme_name' : 'unknown',
+    'last_page' : 'unknown',
+    'last_provider' : 'unknown',
+    'last_signin' : 'unknown',
+    'provider' : 'unknown',
+    'user_name' : 'unknown',
+    'user_id' : 'unknown'     
+  };
+  // Set|Detect J1 App status
+  j1_user_state.last_page = "/pages/private/user_guide/framer/"
+  j1.setUserState( j1_user_state ); 
+  logger.info(log_text);
+</script -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ load region 'body-main' for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.connectors.comments         ] [ start processing load region head, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.connectors.comments         ] [ end processing ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ placement for all lane items finished ] -->
+        <!-- [DEBUG  ] [j1.layout.content_writer.proc         ] [ reset all lane items ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ end processing ] -->
+      </div>
+      <!-- [INFO   ] [j1.layout.page.html                ] [ end content_writer processing for region: 'body-main' ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end content inherited by layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'body-footer' ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <footer id="exception_container" class="container-fluid no-padding"></footer>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <footer id="j1_footer" class=""></footer>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ start processing. Place all SHIM config for all MODULES, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ create GLOBAL JS script variables for later module access ] -->
+      <script>
+        // [INFO   ] [j1.layout_shim_generator.html         ] [ create global JS variable ENVIRONMENT for Javascript access: development ]
+        var j1_environment = 'development';
+        // [INFO   ] [j1.layout_shim_generator.html         ] [ create global INSTANCE variables for headers ]
+        if ( $('#homehead').length ) {
+          j1["homehead"] = true;
+        }
+        if ( $('#pagehead').length ) {
+          j1["pagehead"] = true;
+        }
+        if ( $('#texthead').length ) {
+          j1["texthead"] = true;
+        }
+        // IE10 viewport hack for Surface/Desktop Windows 8 bug
+        // Copyright 2014-2015 Twitter, Inc. (Bootstrap)
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var e = document.createElement("style");
+          e.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+          document.querySelector("head").appendChild(e);
+        }
+      </script>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ place container for Cookie Consent Modals ] -->
+      <div id="cookie_consent_modals"></div>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ place container for WebHook Modals ] -->
+      <div id="web_hook_modals"></div>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ initialize BS tooltips|popovers ] -->
+      <script>
+        $(function() {
+          $('[data-toggle="tooltip"]').tooltip();
+          $('[data-toggle="popover"]').popover();
+        });
+      </script>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ initialize enhanced bootstrap modals ] -->
+      <script>
+        $(function() {
+          $('body').on('shown.bs.modal', '.modal', function() {
+              if($('.modal-backdrop').length) {
+              } else {
+                  $modal_dialog = $(this).children('.modal-dialog');
+                  if($modal_dialog.hasClass('modal-side')) {
+                      $(this).addClass('modal-scrolling');
+                      $('body').addClass('scrollable');
+                  }
+                  if($modal_dialog.hasClass('modal-frame')) {
+                      $(this).addClass('modal-content-clickable');
+                      $('body').addClass('scrollable');
+                  }
+              }
+          });
+          $('body').on('hidden.bs.modal', '.modal', function() {
+              $('body').removeClass('scrollable');
+          });
+        });
+      </script>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ start processing. collect data for region: body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: core ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: core ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'template core is being initialized';
+            logger.info(log_text);
+                // [INFO   ] [j1.layout.module_writer.proc          ] [ pass init data for: core ]
+                var settings = $.extend({}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                  j1.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: logger ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: logger ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module logger is being initialized';
+            logger.info(log_text);
+                  j1.adapter.logger.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: attic ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: attic ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module attic is being initialized';
+            logger.info(log_text);
+                // [INFO   ] [j1.layout.module_writer.proc          ] [ pass init data for: attic ]
+                var settings = $.extend({}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                  j1.adapter.attic.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: themer ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: themer ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module themer is being initialized';
+            logger.info(log_text);
+                  j1.adapter.themer.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: navigator ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["themer"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: navigator ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module navigator is being initialized';
+            logger.info(log_text);
+                  var interval_count = 0;
+                  var max_count      = 10;
+                  var dependencies_met_navigator = setInterval(function() {
+                    interval_count += 1;
+                    if ( j1.adapter.themer.getState() == 'finished' ) {
+                      j1.adapter.navigator.init();
+                      logger.info('resource_settings.dependencies of module navigator met for: themer');
+                      logger.debug('resource_settings.dependencies of module navigator met after: ' + interval_count * 25 + ' ms');
+                      clearInterval(dependencies_met_navigator);
+                      }
+                    if (interval_count > max_count) {
+                      logger.warn('dependency check failed for module: navigator');
+                      clearInterval(dependencies_met_navigator);
+                      logger.warn('run initializer navigator unchecked for: themer');
+                      j1.adapter.navigator.init();
+                    }
+                  }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: webhook ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: webhook ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module webhooks is being initialized';
+            logger.info(log_text);
+                // [INFO   ] [j1.layout.module_writer.proc          ] [ pass init data for: webhook ]
+                var settings = $.extend({}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                  j1.adapter.octokit.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: toccer ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["navigator"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: toccer ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module toccer is being initialized';
+            logger.info(log_text);
+              // [INFO   ] [j1.layout.module_writer.proc          ] [ pass module specific frontmatter options for: toccer ]
+              var settings = $.extend({}, {"collapseDepth":2}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                var interval_count = 0;
+                var dependencies_met_toccer = setInterval(function() {
+                var max_count      = 10;
+                  interval_count += 1;
+                  if ( j1.adapter.navigator.getState() == 'finished' ) {
+                    j1.adapter.toccer.init( settings );
+                    logger.info('resource_settings.dependencies of module toccer met for: navigator');
+                    logger.debug('resource_settings.dependencies of module toccer met after: ' + interval_count * 25 + ' ms');
+                    clearInterval(dependencies_met_toccer);
+                    }
+                  if (interval_count > max_count) {
+                    logger.warn('dependency check failed for module: toccer');
+                    clearInterval(dependencies_met_toccer);
+                    logger.warn('run initializer toccer unchecked for: navigator');
+                    j1.adapter.toccer.init(settings);
+                  }
+                }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: back2top ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["navigator"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: back2top ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module back2top is being initialized';
+            logger.info(log_text);
+                  var interval_count = 0;
+                  var max_count      = 10;
+                  var dependencies_met_back2top = setInterval(function() {
+                    interval_count += 1;
+                    if ( j1.adapter.navigator.getState() == 'finished' ) {
+                      j1.adapter.back2top.init();
+                      logger.info('resource_settings.dependencies of module back2top met for: navigator');
+                      logger.debug('resource_settings.dependencies of module back2top met after: ' + interval_count * 25 + ' ms');
+                      clearInterval(dependencies_met_back2top);
+                      }
+                    if (interval_count > max_count) {
+                      logger.warn('dependency check failed for module: back2top');
+                      clearInterval(dependencies_met_back2top);
+                      logger.warn('run initializer back2top unchecked for: navigator');
+                      j1.adapter.back2top.init();
+                    }
+                  }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: scroller ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: scroller ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module smoothscroll is being initialized';
+            logger.info(log_text);
+                  j1.adapter.scroller.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: searcher ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: searcher ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module quicksearch is being initialized';
+            logger.info(log_text);
+                  j1.adapter.searcher.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: cookie_consent ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: cookie_consent ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module cookie consent is being initialized';
+            logger.info(log_text);
+                  j1.adapter.cookie_consent.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: framer ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: bs_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: lightbox ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: rouge ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: rouge ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'theme rouge is being initialized';
+            logger.info(log_text);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: algolia ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: livereload ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ livereload module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: light_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: carousel ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: justified_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: data_tables ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: cookiebar ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ cookiebar module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: stickybits ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ stickybits module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: stickyfill ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ stickyfill module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+      <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end content_writer default_writer for region: 'body-footer' ] -->
+    </div>
+    <!-- [INFO   ] [j1.layout.default.html                ] [ end default writer] -->
+  </body>
+  <!-- [INFO   ] [j1.layout.default.html                ] [ end page processing ] -->
+</html>
+  
+
+  

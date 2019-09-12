@@ -113,7 +113,7 @@ j1.adapter['toccer'] = (function () {
       logger.info('state: ' + _this.getState());
       logger.info('Module is being initialized');
 
-      if ( options  !== undefined ) {
+      if (options  !== undefined) {
         var settings = $.extend({}, options);
       } else {
         var settings = false;
@@ -159,7 +159,7 @@ j1.adapter['toccer'] = (function () {
 
         } else {
           // if toc enabled only
-          if ( isToc ) {
+          if (isToc) {
             // state = 'finished';
             // logger.info('state: ' + state); // Set|Log status
             // logger.info('module initialized successfully');
@@ -177,7 +177,7 @@ j1.adapter['toccer'] = (function () {
     // -------------------------------------------------------------------------
     // Set Toccer options
     // -------------------------------------------------------------------------
-    initToccerCore: function ( options ) {
+    initToccerCore: function (options) {
 
       if (options  !== undefined) {
         var settings = $.extend({}, options);
@@ -221,7 +221,7 @@ j1.adapter['toccer'] = (function () {
 
       if (tocbot.options.log == true) {
         // Writes all of the current option settings to JS console
-        console.log( tocbot.options );
+        console.log(tocbot.options);
       }
 
       return true;
@@ -256,9 +256,9 @@ j1.adapter['toccer'] = (function () {
           bottom: function () {
             /*  space below the affixed element */
             if (disqus_id.length) {
-              return ( _this.bottom = $(disqus_id).outerHeight(true) + $(footer_id).outerHeight(true) + footer_offset )
+              return (_this.bottom = $(disqus_id).outerHeight(true) + $(footer_id).outerHeight(true) + footer_offset)
             } else {
-              return ( _this.bottom = $(footer_id).outerHeight(true) + footer_offset );
+              return (_this.bottom = $(footer_id).outerHeight(true) + footer_offset);
             }
           }
         }
@@ -283,7 +283,7 @@ j1.adapter['toccer'] = (function () {
         // var o         = n + m + a + offset;
         var o         = n + m + offset;
 
-        if( navbar.hasClass('navbar-fixed')){
+        if(navbar.hasClass('navbar-fixed')){
           $('#j1-sidebar.affix').css('top', o);
         } else {
           $('#j1-sidebar.affix').css('top', m);
@@ -317,7 +317,7 @@ j1.adapter['toccer'] = (function () {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

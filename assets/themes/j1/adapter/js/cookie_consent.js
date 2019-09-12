@@ -78,9 +78,8 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
   };
   var environment               = '{{environment}}';
   var cookie_names              = j1.getCookieNames();
-  var cookie_consent_name       = cookie_names.cookie_consent;
-  var cookie_user_session_name  = cookie_names.user_session;
-  var cookie_consent_exists     = j1.existsCookie(cookie_consent_name);
+  var user_state_name           = cookie_names.user_state;
+  var user_state_exists         = j1.existsCookie(user_state_name);
   var moduleOptions             = {};
   var user_session              = {};
   var _this;
@@ -105,15 +104,16 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
       var settings = $.extend({
         module_name: 'j1.adapter.cookie_consent',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
 
       _this             = j1.adapter.cookie_consent;
       logger            = log4javascript.getLogger('j1.adapter.cookie_consent');
-      cookie_consent    = j1.existsCookie(cookie_consent_name) ?
-                            j1.readCookie(cookie_consent_name) :
+      cookie_consent    = j1.existsCookie(user_state_name) ?
+                            j1.readCookie(user_state_name) :
                             j1.writeCookie({
-                              name:     cookie_consent_name,
-                              data:     cookie_consent
+                              name:     user_state_name,
+                              data:     cookie_consent,
+                              expires:  365
                             });
 
       // -----------------------------------------------------------------------
@@ -121,7 +121,7 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       moduleOptions = $.extend({}, {{consent_options | replace: '=>', ':' | replace: 'nil', '""'}});
 
-      if ( typeof options !== 'undefined') {
+      if (typeof options !== 'undefined') {
         moduleOptions = j1.mergeData(moduleOptions, settings);
       }
 
@@ -130,17 +130,24 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
         logger.info('state: ' + _this.getState());
         logger.info('module is being initialized');
 
-        cookie_consent                      = j1.readCookie(cookie_consent_name);
+        cookie_consent                      = j1.readCookie(user_state_name);
         cookie_consent.deleteOnDecline      = moduleOptions.delete_cookies_on_decline;
         cookie_consent.showConsentOnPending = moduleOptions.show_consent_on_pending;
         cookie_consent.whitelistedPages     = moduleOptions.whitelisted_pages;
         cookie_consent.stopScrolling        = moduleOptions.stop_scrolling;
 
         // Update cookie consent
+
+        // j1.writeCookie({
+        //   name:    user_state_name,
+        //   data:    cookie_consent,
+        //   expires: cookie_consent.live_span
+        // });
+
         j1.writeCookie({
-          name:    cookie_consent_name,
+          name:    user_state_name,
           data:    cookie_consent,
-          expires: cookie_consent.live_span
+          expires: 365
         });
 
         // ---------------------------------------------------------------------
@@ -156,7 +163,7 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
             // core initializer
             // -----------------------------------------------------------------
             var dependencies_met_cookie_consent_core = setInterval(function() {
-              if ( _this.getState() == 'data_loaded' ) {
+              if (_this.getState() == 'data_loaded') {
                 _this.setState('processing');
 
                 j1.core.cookie_consent.init ({
@@ -179,10 +186,10 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
             // event handler
             // -----------------------------------------------------------------
             var dependencies_events = setInterval(function() {
-              if ( _this.getState() == 'initialized' ) {
+              if (_this.getState() == 'initialized') {
                 _this.setState('processing');
 
-                j1.core.cookie_consent.eventHandler( cookie_consent );
+                j1.core.cookie_consent.eventHandler(cookie_consent);
                 _this.setState('finished');
                 logger.info('state: ' + _this.getState());
                 clearInterval(dependencies_events);
@@ -207,7 +214,7 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
     // messageHandler:
     // Manage messages send from other modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -216,7 +223,7 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands if send as a message
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'state_final' ) {
+      if (message.type === 'command' && message.action === 'state_final') {
         //
         // Place handling of command|action here
         //
@@ -233,7 +240,7 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     //  Set the current (processing) state of the module
     // -------------------------------------------------------------------------
-    setState: function ( stat ) {
+    setState: function (stat) {
       j1.adapter.cookie_consent.state = stat;
     }, // END setState
 

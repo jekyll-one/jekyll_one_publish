@@ -27,8 +27,6 @@ resource_options:
 // Page content
 // -----------------------------------------------------------------------------
 
-What is _Patreon_ -- what is a _Patron_???
-
 _Patron_ allows fans -- the *patrons* -- to pay creators for their work. Many 
 of these creators are influencers: photographers on Instagram, comedians 
 on YouTube, podcasters that tweet, creative technicians providing useful 

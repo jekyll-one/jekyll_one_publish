@@ -1,0 +1,84 @@
+[ N 2019-09-12 13:53:34.9555 28125/T1 age/Wat/WatchdogMain.cpp:1366 ]: Starting Passenger watchdog...
+[ N 2019-09-12 13:53:34.9752 28128/T1 age/Cor/CoreMain.cpp:1339 ]: Starting Passenger core...
+[ N 2019-09-12 13:53:34.9754 28128/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ N 2019-09-12 13:53:34.9819 28128/T1 age/Cor/CoreMain.cpp:1014 ]: Passenger core online, PID 28128
+[ N 2019-09-12 13:53:37.0497 28128/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+
+[ N 2019-09-12 13:54:31.5391 28128/T7 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-09-12 13:54:31.5392 28128/T1 age/Cor/CoreMain.cpp:1245 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-09-12 13:54:31.5393 28128/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28201, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:54:31.5394 28128/T7 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-09-12 13:54:31.5394 28128/T9 Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-09-12 13:54:31.5395 28128/T7 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-09-12 13:54:31.5395 28128/T9 Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-09-12 13:54:31.5396 28128/Tc Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-09-12 13:54:31.5397 28128/Tc Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-09-12 13:54:31.5399 28128/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28201, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:54:31.8254 28128/T1 age/Cor/CoreMain.cpp:1324 ]: Passenger core shutdown finished
+[ N 2019-09-12 13:57:02.4760 28424/T1 age/Wat/WatchdogMain.cpp:1366 ]: Starting Passenger watchdog...
+[ N 2019-09-12 13:57:02.4940 28427/T1 age/Cor/CoreMain.cpp:1339 ]: Starting Passenger core...
+[ N 2019-09-12 13:57:02.4941 28427/T1 age/Cor/CoreMain.cpp:327 ]: Passenger core running in single-application mode.
+[ N 2019-09-12 13:57:02.4941 28427/T1 age/Cor/CoreMain.cpp:328 ]: Serving app      : /apps/passenger/starter-2019.1.0
+[ N 2019-09-12 13:57:02.4941 28427/T1 age/Cor/CoreMain.cpp:330 ]: App type         : rack
+[ N 2019-09-12 13:57:02.4941 28427/T1 age/Cor/CoreMain.cpp:331 ]: App startup file : /apps/passenger/starter-2019.1.0/config.ru
+[ N 2019-09-12 13:57:02.4990 28427/T1 age/Cor/CoreMain.cpp:1014 ]: Passenger core online, PID 28427
+[ E 2019-09-12 13:57:04.5513 28427/T6 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check failed: request content was corrupted or not understood (if this error persists check your connection security or try upgrading Passenger) (next check in 24 hours)
+[ N 2019-09-12 13:57:18.5424 28427/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-09-12 13:57:18.5425 28427/T1 age/Cor/CoreMain.cpp:1245 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-09-12 13:57:18.5425 28427/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28498, application /apps/passenger/starter-2019.1.0
+[ N 2019-09-12 13:57:18.5426 28427/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28522, application /apps/passenger/starter-2019.1.0
+[ N 2019-09-12 13:57:18.5427 28427/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28542, application /apps/passenger/starter-2019.1.0
+[ W 2019-09-12 13:57:18.5429 28427/Ta Ser/Server.h:1079 ]: [Client 2-3] Disconnecting client with error: server is shutting down
+[ W 2019-09-12 13:57:18.5430 28427/Ta Ser/Server.h:1079 ]: [Client 2-2] Disconnecting client with error: server is shutting down
+[ W 2019-09-12 13:57:18.5430 28427/T8 Ser/Server.h:1079 ]: [Client 1-4] Disconnecting client with error: server is shutting down
+[ W 2019-09-12 13:57:18.5431 28427/Ta Ser/Server.h:1079 ]: [Client 2-1] Disconnecting client with error: server is shutting down
+[ W 2019-09-12 13:57:18.5432 28427/T8 Ser/Server.h:1079 ]: [Client 1-3] Disconnecting client with error: server is shutting down
+[ N 2019-09-12 13:57:18.5432 28427/Ta Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-09-12 13:57:18.5432 28427/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ W 2019-09-12 13:57:18.5433 28427/T8 Ser/Server.h:1079 ]: [Client 1-2] Disconnecting client with error: server is shutting down
+[ N 2019-09-12 13:57:18.5434 28427/T8 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-09-12 13:57:18.5435 28427/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-09-12 13:57:18.5438 28427/Tc Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-09-12 13:57:18.5438 28427/Tc Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-09-12 13:57:18.5442 28427/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28498, application /apps/passenger/starter-2019.1.0
+[ N 2019-09-12 13:57:18.5443 28427/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28522, application /apps/passenger/starter-2019.1.0
+[ N 2019-09-12 13:57:18.5444 28427/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28542, application /apps/passenger/starter-2019.1.0
+[ N 2019-09-12 13:57:18.8304 28427/T1 age/Cor/CoreMain.cpp:1324 ]: Passenger core shutdown finished
+[ N 2019-09-12 13:57:26.1369 28586/T1 age/Wat/WatchdogMain.cpp:1366 ]: Starting Passenger watchdog...
+[ N 2019-09-12 13:57:26.1569 28589/T1 age/Cor/CoreMain.cpp:1339 ]: Starting Passenger core...
+[ N 2019-09-12 13:57:26.1571 28589/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ N 2019-09-12 13:57:26.1636 28589/T1 age/Cor/CoreMain.cpp:1014 ]: Passenger core online, PID 28589
+[ N 2019-09-12 13:57:28.2268 28589/T6 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+
+[ N 2019-09-12 13:57:51.7013 28589/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-09-12 13:57:51.7014 28589/T1 age/Cor/CoreMain.cpp:1245 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-09-12 13:57:51.7014 28589/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28660, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:57:51.7015 28589/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28684, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:57:51.7016 28589/Tb Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-09-12 13:57:51.7017 28589/Tb Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-09-12 13:57:51.7018 28589/T8 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-09-12 13:57:51.7019 28589/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-09-12 13:57:51.7020 28589/Td Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-09-12 13:57:51.7021 28589/Td Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-09-12 13:57:51.7037 28589/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28660, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:57:51.7038 28589/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28684, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:57:53.2613 28589/T1 age/Cor/CoreMain.cpp:1324 ]: Passenger core shutdown finished
+[ N 2019-09-12 13:59:18.6140 28774/T1 age/Wat/WatchdogMain.cpp:1366 ]: Starting Passenger watchdog...
+[ N 2019-09-12 13:59:18.6338 28777/T1 age/Cor/CoreMain.cpp:1339 ]: Starting Passenger core...
+[ N 2019-09-12 13:59:18.6340 28777/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ N 2019-09-12 13:59:18.6405 28777/T1 age/Cor/CoreMain.cpp:1014 ]: Passenger core online, PID 28777
+[ N 2019-09-12 13:59:20.7077 28777/T6 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+
+[ N 2019-09-12 13:59:32.6799 28777/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-09-12 13:59:32.6799 28777/T1 age/Cor/CoreMain.cpp:1245 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-09-12 13:59:32.6800 28777/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28850, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:59:32.6800 28777/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28874, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:59:32.6801 28777/T8 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-09-12 13:59:32.6802 28777/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-09-12 13:59:32.6802 28777/Tb Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-09-12 13:59:32.6802 28777/Tb Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-09-12 13:59:32.6803 28777/Td Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-09-12 13:59:32.6803 28777/Td Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-09-12 13:59:32.6807 28777/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28850, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:59:32.6808 28777/T1 age/Cor/CoreMain.cpp:1146 ]: Checking whether to disconnect long-running connections for process 28874, application /apps/passenger/starter-2019.1.0 (development)
+[ N 2019-09-12 13:59:32.9787 28777/T1 age/Cor/CoreMain.cpp:1324 ]: Passenger core shutdown finished

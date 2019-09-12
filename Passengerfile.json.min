@@ -1,9 +1,0 @@
-{
-  "app_type": 					"rack",
-  "address":            		"0.0.0.0",
-  "port": 						"5000",
-  "engine": 					"nginx",
-  "pid_file": 					"etc/passenger.pid",
-  "startup_file": 				"config.ru",
-  "log_file": 					"log/passenger.log"
-}  

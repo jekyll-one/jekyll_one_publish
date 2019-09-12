@@ -1,5 +1,5 @@
 ---
-regenerate:                             false
+regenerate:                             true
 ---
 
 {% capture cache %}
@@ -49,6 +49,7 @@ regenerate:                             false
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign framer_options    = framer_defaults | merge: framer_settings %}
 
+
 /*
  # -----------------------------------------------------------------------------
  #  ~/assets/themes/j1/adapter/js/framer.js
@@ -96,7 +97,7 @@ j1.adapter['framer'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     // Initializer
     // -------------------------------------------------------------------------
-    init: function ( options ) {
+    init: function (options) {
       // initialize state flag
       j1.adapter.framer.state = 'pending';
 
@@ -106,7 +107,7 @@ j1.adapter['framer'] = (function (j1, window) {
       var settings = $.extend({
         module_name: 'j1.adapter.example',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
 
       {% comment %} Load module config from yml data
       -------------------------------------------------------------------------- {% endcomment %}
@@ -114,8 +115,8 @@ j1.adapter['framer'] = (function (j1, window) {
       //
       moduleOptions = $.extend({}, {{framer_options | replace: '=>', ':' | replace: 'nil', '""'}});
 
-      if ( typeof settings !== 'undefined') {
-        moduleOptions = j1.mergeData( moduleOptions, settings );
+      if (typeof settings !== 'undefined') {
+        moduleOptions = j1.mergeData(moduleOptions, settings);
       }
 
       {% comment %} Set global variables
@@ -128,7 +129,7 @@ j1.adapter['framer'] = (function (j1, window) {
       logger.info('module is being initialized');
 
       iFrameResize({
-        log:                      moduleOptions.settings.log,
+        log:                      moduleOptions.log,
         autoResize:               moduleOptions.autoResize,
         bodyBackground:           moduleOptions.bodyBackground,
         bodyMargin:               moduleOptions.bodyMargin,
@@ -149,6 +150,10 @@ j1.adapter['framer'] = (function (j1, window) {
         targetOrigin:             moduleOptions.checkOrigin
       });
 
+      _this.setState('finished');
+      logger.info('state: ' + _this.getState());
+      logger.info('module initializing finished');
+
       return true;
     }, // END init
 
@@ -156,7 +161,7 @@ j1.adapter['framer'] = (function (j1, window) {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -165,7 +170,7 @@ j1.adapter['framer'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

@@ -8,7 +8,7 @@
 #  Copyright (C) 2019 Juergen Adams
 #
 #  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+#  See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 #
@@ -47,6 +47,7 @@ require 'json'
 module Jekyll
   module J1_Filters
 
+    EMPTY = ''
     EMPTY_LINE = /^\s*\n/
     MULTIPLE_SPACES = / +/
     ALL_SPACES = /\s+/
@@ -66,11 +67,13 @@ module Jekyll
     #  merge: merge two hashes (input <- hash)
     #
     #  Example:
-    #   {% assign nav_bar_options = nav_bar_default | merge: nav_bar_config %}
+    #   {% assign settings = options|merge:defaults %}
     # --------------------------------------------------------------------------
     def merge(input, hash)
       unless input.respond_to?(:to_hash)
-        raise ArgumentError.new("merge filter requires hash arguments: arg_input")
+        # value = input == EMPTY ? 'empty' : input
+        is_caller = caller[0][/`([^']*)'/, 1]
+        raise ArgumentError.new('merge filter requires at least a hash for 1st arg, found caller|args: ' + "#{is_caller}|#{input}:#{hash}")
       end
       # if hash to merge is NOT a hash or empty return first hash (input)
       unless hash.respond_to?(:to_hash)

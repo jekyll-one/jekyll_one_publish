@@ -144,10 +144,10 @@ j1.adapter['navigator'] = (function (j1, window) {
   var authclient_modals_data_path = '{{authclient_options.xhr_data_path}}';
 
   var cookie_names                = j1.getCookieNames();
-  const cookie_user_session_name  = cookie_names.user_session;
+  var cookie_user_session_name    = cookie_names.user_session;
 
-  var user_state                  = {};
-  var user_state_merged           = {};
+  var user_session                = {};
+  var user_session_merged         = {};
   var session_state               = {};
 
   var j1_colors                   = {};
@@ -184,7 +184,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       var settings  = $.extend({
         module_name: 'j1.adapter.navigator',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
       _this         = j1.adapter.navigator;
       logger        = log4javascript.getLogger('j1.adapter.navigator');
 
@@ -240,7 +240,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       j1.adapter.navigator['navAuthManagerConfig']  = navAuthMAnagerConfig;
 
       // Load (individual) frontmatter options (currently NOT used)
-      if ( options  != null ) { var frontmatterOptions = $.extend({}, options) }
+      if (options  != null) { var frontmatterOptions = $.extend({}, options) }
 
       logger.info('mode detected as: ' + j1.getMode());
       _this.setState('started');
@@ -250,24 +250,24 @@ j1.adapter['navigator'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       // data loader
       // -----------------------------------------------------------------------
-      logger.info('run deferred data load)');
+      logger.info('run deferred data load');
       $.when (
-        j1.xhrDATA ( // sidebar
+        j1.xhrDATA (// sidebar
           'j1.adapter.navigator', {
           xhr_container_id: navSidebarOptions.xhr_container_id,
           xhr_data_path:    navSidebarOptions.xhr_data_path },
           null),
-        j1.xhrDATA ( // quicklinks
+        j1.xhrDATA (// quicklinks
           'j1.adapter.navigator', {
           xhr_container_id: navQuicklinksOptions.xhr_container_id,
           xhr_data_path:    navQuicklinksOptions.xhr_data_path },
           null),
-        j1.xhrDATA ( // authclient
+        j1.xhrDATA (// authclient
           'j1.adapter.navigator', {
           xhr_container_id: navAuthClientConfig.xhr_container_id,
           xhr_data_path:    navAuthClientConfig.xhr_data_path },
           null),
-        j1.xhrDATA ( // menubar
+        j1.xhrDATA (// menubar
           'j1.adapter.navigator', {
           xhr_container_id: navMenuOptions.xhr_container_id,
           xhr_data_path:    navMenuOptions.xhr_data_path },
@@ -277,7 +277,7 @@ j1.adapter['navigator'] = (function (j1, window) {
         // core initializer
         // ---------------------------------------------------------------------
         var dependencies_met_navigator_core = setInterval (function () {
-          if ( _this.getState() === 'data_loaded') {
+          if (_this.getState() === 'data_loaded') {
             _this.setState('processing');
 
             logger.info('status: ' + _this.getState());
@@ -372,14 +372,14 @@ j1.adapter['navigator'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     initAuthClient: function(auth_config) {
       var logger      = log4javascript.getLogger('j1.adapter.navigator.initAuthClient');
-      var user_state  = j1.readCookie(cookie_user_session_name);
+      var user_session  = j1.readCookie(cookie_user_session_name);
 
       _this.modalEventHandler(auth_config);
 
       if (j1.appDetected() && j1.authClientEnabled()) {
         // Toggle/Set SignIn/SignOut icon|link in QuickLinks
         // See: https://stackoverflow.com/questions/13524107/how-to-set-data-attributes-in-html-elements
-        if (user_state.authenticated === 'true') {
+        if (user_session.authenticated === 'true') {
           // Set SignOut
           $('#navLinkSignInOut').attr('data-target', '#modalOmniSignOut');
           $('#iconSignInOut').removeClass('mdi-login').addClass('mdi-logout');
@@ -399,7 +399,7 @@ j1.adapter['navigator'] = (function (j1, window) {
     // See: https://www.nickang.com/add-event-listener-for-loop-problem-in-javascript/
     // -------------------------------------------------------------------------
     modalEventHandler: function (options) {
-      var logger      = log4javascript.getLogger("j1.adapter.navigator.EventHandler");
+      // var logger      = log4javascript.getLogger("j1.adapter.navigator.EventHandler");
       var authConfig  = options;
       var route;
       var provider;
@@ -448,9 +448,9 @@ j1.adapter['navigator'] = (function (j1, window) {
       $('input:checkbox[name="providerSignOut"]').on('click', function (e) {
         e.stopPropagation();
         signOut.providerSignOut = $('input:checkbox[name="providerSignOut"]').is(":checked");
-        if( environment == "development" ) {
+        if(environment == "development") {
           logText = "Provider signout set to: " + signOut.providerSignOut;
-          logger.info( logText );
+          logger.info(logText);
         }
       });
 
@@ -459,8 +459,8 @@ j1.adapter['navigator'] = (function (j1, window) {
       $("#modalOmniSignOut").on('show.bs.modal', function() {
           var modal = $(this);
           logger.info('Place current user data');
-          user_state = j1.readCookie(cookie_user_session_name);
-          modal.find('.user-info').text('You are signed in to provider: ' + user_state.provider);
+          user_session = j1.readCookie(cookie_user_session_name);
+          modal.find('.user-info').text('You are signed in to provider: ' + user_session.provider);
       }); // END SHOW modalOmniSignOut
 
       // Manage post events on modal "modalOmniSignIn"
@@ -490,9 +490,9 @@ j1.adapter['navigator'] = (function (j1, window) {
         if (signOut.do == true) {
           logger.info('Load active provider from cookie: ' + cookie_user_session_name);
 
-          user_state    = j1.readCookie(cookie_user_session_name);
-          provider      = user_state.provider;
-          provider_url  = user_state.provider_site_url;
+          user_session    = j1.readCookie(cookie_user_session_name);
+          provider      = user_session.provider;
+          provider_url  = user_session.provider_site_url;
 
           logText = 'Provider detected: ' + provider;
           logger.info(logText);
@@ -585,10 +585,10 @@ j1.adapter['navigator'] = (function (j1, window) {
       // Size of brand image
       $('head').append("<style>.navbar-brand > img { height: {{brand_image_height}}px !important; }</style>");
       // Navbar transparent-light (light)
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator.navbar-transparent.light { background-color: " +navBarOptions.background_color_full+ " !important; border-bottom: solid 0px !important; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator.navbar-transparent.light { background-color: " +navBarOptions.background_color_full+ " !important; border-bottom: solid 0px !important; } }</style>");
 
-//    $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator.navbar-scrolled.light { background-color: " +navBarOptions.background_color_scrolled+ " !important; } }</style>");
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator.navbar-scrolled.light { background-color: " +bg_scrolled+ " !important; } }</style>");
+//    $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator.navbar-scrolled.light { background-color: " +navBarOptions.background_color_scrolled+ " !important; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator.navbar-scrolled.light { background-color: " +bg_scrolled+ " !important; } }</style>");
 
       // Menubar collapsed (mobile)
       $('head').append('<style>.navbar-collapse.collapse.show { background-color: ' +bg_scrolled+ ' !important; }</style>');
@@ -596,8 +596,8 @@ j1.adapter['navigator'] = (function (j1, window) {
 
       /* Navbar media-queries, LARGE Window|Desktop (>= 1024) */
       /* jadams:  Oversized menu bar fixed by: overflow: hidden */
-//    $('head').append("<style>@media (max-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator { background-color: " +navBarOptions.background_color_collapsed+ " !important; overflow: hidden; } }</style>");
-      $('head').append("<style>@media (max-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator { background-color: " +bg_collapsed+ " !important; overflow: hidden; } }</style>");
+//    $('head').append("<style>@media (max-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator { background-color: " +navBarOptions.background_color_collapsed+ " !important; overflow: hidden; } }</style>");
+      $('head').append("<style>@media (max-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator { background-color: " +bg_collapsed+ " !important; overflow: hidden; } }</style>");
       //$('head').append("<style>@media (max-width: 1023px) { row { margin-left: 0 !important; margin-right: 0 !important; } }</style>");
 
       {% comment %} navQuicklinks styles
@@ -615,46 +615,46 @@ j1.adapter['navigator'] = (function (j1, window) {
       // Remove background for anchor
       $('head').append("<style>.dropdown-menu > .active > a { background-color: transparent !important; }</style>");
       // hover menu-item|menu-sub-item
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator .dropdown-item:focus, nav.navbar.navigator .dropdown-item:hover, nav.navbar.navigator .nav-sub-item:focus, nav.navbar.navigator .nav-sub-item:hover { background: " +navMenuOptions.dropdown_background_color_hover+ " !important;  } }</style>");
-      // $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu > li a:hover { color: " +navMenuOptions.menu_item_color_hover+ " !important; background: " +navMenuOptions.dropdown_background_color_hover+ " !important; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator .dropdown-item:focus, nav.navbar.navigator .dropdown-item:hover, nav.navbar.navigator .nav-sub-item:focus, nav.navbar.navigator .nav-sub-item:hover { background: " +navMenuOptions.dropdown_background_color_hover+ " !important;  } }</style>");
+      // $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu > li a:hover { color: " +navMenuOptions.menu_item_color_hover+ " !important; background: " +navMenuOptions.dropdown_background_color_hover+ " !important; } }</style>");
 
       // 1st dropdown, limit height
       // TODO: overflow needs to be managed correctly (not static)
-      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu  { max-height: " +navMenuOptions.dropdown_menu_height_max+ "em; overflow: hidden } }</style>");
+      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu  { max-height: " +navMenuOptions.dropdown_menu_height_max+ "em; overflow: hidden } }</style>");
 
       //  Limit dropdown item width
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator ul.nav.navbar-right .dropdown-menu .dropdown-menu { left: -" +navMenuOptions.dropdown_item_width+ "em !important; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator ul.nav.navbar-right .dropdown-menu .dropdown-menu { left: -" +navMenuOptions.dropdown_item_width+ "em !important; } }</style>");
 
       // Limit last (2nd) dropdown in height (nav.navbar.navigator li.dropdown ul.dropdown-menu ul.dropdown-menu)
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu ul.dropdown-menu  { top: -" +navMenuOptions.dropdown_border_top+ "px !important; max-height: " +navMenuOptions.dropdown_menu_height_max+ "em !important; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu ul.dropdown-menu  { top: -" +navMenuOptions.dropdown_border_top+ "px !important; max-height: " +navMenuOptions.dropdown_menu_height_max+ "em !important; } }</style>");
 
       //  Set dropdown item colors
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator ul.nav > li > a { color: " +navMenuOptions.menu_item_color+ " !important; } }</style>");
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator ul.nav > li > a:hover { color: " +navMenuOptions.menu_item_color_hover+ " !important; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator ul.nav > li > a { color: " +navMenuOptions.menu_item_color+ " !important; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator ul.nav > li > a:hover { color: " +navMenuOptions.menu_item_color_hover+ " !important; } }</style>");
 
       // Dropdown menu styles
-      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu { animation-duration: " +navMenuOptions.dropdown_animate_duration+ "s !important; color: " +navMenuOptions.dropdown_border_color+ "; width: " +navMenuOptions.dropdown_item_width+ "px; border-top: solid " +navMenuOptions.dropdown_border_height+ "px; left: 1rem; top: calc( 90px + " +navMenuOptions.dropdown_border_height+ "px ); } }</style>");
-      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu { animation-duration: " +navMenuOptions.dropdown_animate_duration+ "s !important; color: " +navMenuOptions.dropdown_border_color+ "; width: " +navMenuOptions.dropdown_item_width+ "em; border-top: solid " +navMenuOptions.dropdown_border_height+ "px; left: 1em; } }</style>");
+      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu { animation-duration: " +navMenuOptions.dropdown_animate_duration+ "s !important; color: " +navMenuOptions.dropdown_border_color+ "; width: " +navMenuOptions.dropdown_item_width+ "px; border-top: solid " +navMenuOptions.dropdown_border_height+ "px; left: 1rem; top: calc(90px + " +navMenuOptions.dropdown_border_height+ "px); } }</style>");
+      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu { animation-duration: " +navMenuOptions.dropdown_animate_duration+ "s !important; color: " +navMenuOptions.dropdown_border_color+ "; width: " +navMenuOptions.dropdown_item_width+ "em; border-top: solid " +navMenuOptions.dropdown_border_height+ "px; left: 1em; } }</style>");
       // jadams, 2017-11-30: removed left padding from dropdown mwenu (for new j1nav style based on Navigator|Slate)
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu { animation-duration: " +navMenuOptions.dropdown_animate_duration+ "s !important; color: " +bg_scrolled+ " !important; width: " +navMenuOptions.dropdown_item_width+ "emm!important; border-top: solid " +navMenuOptions.dropdown_border_top+ "px !important; border-radius: " +navMenuOptions.dropdown_border_radius+ "px !important; left: 0; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu { animation-duration: " +navMenuOptions.dropdown_animate_duration+ "s !important; color: " +bg_scrolled+ " !important; width: " +navMenuOptions.dropdown_item_width+ "emm!important; border-top: solid " +navMenuOptions.dropdown_border_top+ "px !important; border-radius: " +navMenuOptions.dropdown_border_radius+ "px !important; left: 0; } }</style>");
 
       {% if dropdown_style == 'raised' %}
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu { box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu { box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important; } }</style>");
       {% endif %}
 
       // jadams,2017-11-22: stop configure dropdown_font_size
-      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown li.dropdown.nav-item.nav-sub-item { color: " +navMenuOptions.dropdown_item_color+ "; font-size: " +navMenuOptions.dropdown_font_size+ "; font-weight: 400; } }</style>");
-      // $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu > li > a { color: " +navMenuOptions.dropdown_item_color+ "; font-size: " +navMenuOptions.dropdown_font_size+ "; font-weight: 400; display: inline-flex; align-items: center;} }</style>");
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu > li > a { color: " +navMenuOptions.dropdown_item_color+ " !important; font-size: " +navMenuOptions.dropdown_font_size+ " !important; font-weight: 400; } }</style>");
-      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator ul.dropdown-menu.megamenu-content .content ul.menu-col li a { color: " +navMenuOptions.dropdown_item_color+ " !important; font-size: " +navMenuOptions.megamenu_font_size+ " !important; font-weight: 400; } }</style>");
+      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown li.dropdown.nav-item.nav-sub-item { color: " +navMenuOptions.dropdown_item_color+ "; font-size: " +navMenuOptions.dropdown_font_size+ "; font-weight: 400; } }</style>");
+      // $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu > li > a { color: " +navMenuOptions.dropdown_item_color+ "; font-size: " +navMenuOptions.dropdown_font_size+ "; font-weight: 400; display: inline-flex; align-items: center;} }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu > li > a { color: " +navMenuOptions.dropdown_item_color+ " !important; font-size: " +navMenuOptions.dropdown_font_size+ " !important; font-weight: 400; } }</style>");
+      $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator ul.dropdown-menu.megamenu-content .content ul.menu-col li a { color: " +navMenuOptions.dropdown_item_color+ " !important; font-size: " +navMenuOptions.megamenu_font_size+ " !important; font-weight: 400; } }</style>");
 
       // dropdown-menu item padding
       // jadams, 2017-11-22:  moved item padding to nav|dropdown-item based on font-site (rel|em)
       {% if dropdown_item_style == 'raised' %}
-      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu > li > a { padding: " +navMenuOptions.dropdown_padding_y+ "px " +navMenuOptions.dropdown_padding_x+ "px; box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); } }</style>");
+      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu > li > a { padding: " +navMenuOptions.dropdown_padding_y+ "px " +navMenuOptions.dropdown_padding_x+ "px; box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); } }</style>");
       {% else %}
-      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator li.dropdown ul.dropdown-menu > li > a { padding: " +navMenuOptions.dropdown_padding_y+ "px " +navMenuOptions.dropdown_padding_x+ "px; } }</style>");
-      // blödsinn $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ " ) { nav.navbar.navigator .dropdown .nav-item  { padding-top: " +navMenuOptions.dropdown_item_padding+ "px; padding-bottom: " +navMenuOptions.dropdown_item_padding+ "px; } }</style>");
+      //$('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator li.dropdown ul.dropdown-menu > li > a { padding: " +navMenuOptions.dropdown_padding_y+ "px " +navMenuOptions.dropdown_padding_x+ "px; } }</style>");
+      // blödsinn $('head').append("<style>@media (min-width: " +gridBreakpoint_lg+ ") { nav.navbar.navigator .dropdown .nav-item  { padding-top: " +navMenuOptions.dropdown_item_padding+ "px; padding-bottom: " +navMenuOptions.dropdown_item_padding+ "px; } }</style>");
       {% endif %}
 
       {% comment %} navQuicklinks styles
@@ -727,22 +727,23 @@ j1.adapter['navigator'] = (function (j1, window) {
     // messageHandler
     // Manage messages (paylods) send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
-      var json_message = JSON.stringify(message, undefined, 2);
+    messageHandler: function (sender, message) {
+      // var json_message = JSON.stringify(message, undefined, 2);              // multiline
+      var json_message = JSON.stringify(message);  
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'Received message from ' + sender + ': ' + json_message;        
       logger.debug(logText);
 
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //
         logger.info(message.text);
       }
-      if ( message.type === 'command' && message.action === 'status' ) {
+      if (message.type === 'command' && message.action === 'status') {
         logger.info('messageHandler: received - ' + message.action);
       }
 
@@ -757,7 +758,7 @@ j1.adapter['navigator'] = (function (j1, window) {
     // setState
     // Set the current (processing) state of the module
     // -------------------------------------------------------------------------
-    setState: function ( stat ) {
+    setState: function (stat) {
       j1.adapter.navigator.state = stat;
     }, // END setState
 

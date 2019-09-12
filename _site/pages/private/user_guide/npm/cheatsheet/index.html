@@ -1,0 +1,1068 @@
+
+
+
+
+  
+
+            <!DOCTYPE html>
+<html lang="en">
+  <!-- [INFO   ] [j1.layout.default.html                ] [ page generated: 2019-09-12 16:11:10 +0200 ] -->
+  <!-- [INFO   ] [j1.layout.default.html                ] [ environment detected as: development ] -->
+  <head>
+    <!-- link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous" -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'head' ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ start processing: place meta tags (taken from site config|page frontmatter) ] -->
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ page|content encoding ] -->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ added for MS Edge Browser ] -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ initial zoom level when the page is first loaded by the browser ] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>package.json cheatsheet</title>
+    <meta name="description" content="Manage the project file package.json">
+    <link rel="icon" type="image/ico" href="/assets/images/icons/j1/j1-32x32.ico">
+    <meta name="author" content="J1 Team">
+    <meta name="keywords" content="Jekyll, One, Template, Ruby, Asciidoctor, Asciidoc, Bootstrap, Javascript, JS, JS3, CSS, CSS3, HTML5, Material, Design">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+    <!-- [INFO   ] [j1.layout.meta_data_generator.html    ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.analytics       ] [ start processing load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.analytics       ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (global): true ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (page): false} ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ detected advertising (provider): google} ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ start processing load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.modules.connectors.ads             ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ start processing region: head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place css files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/core/css/vendor.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place css files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/core/css/globals.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: core ] -->
+    <script sync src="/assets/themes/j1/core/js/j1.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all template core ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout all, place js files for resource ID: core ] -->
+    <!-- [FATAL  ] [j1.procedures.select_location.proc    ] [ no valid resource locator for LOCAL found ] -->
+    <!-- [WARN   ] [j1.procedures.select_location.proc    ] [ fallback location LOCAL selected ] -->
+    <script sync src="/assets/themes/j1/core/js/template.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: logger ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module logger ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: logger ] -->
+    <script sync src="/assets/themes/j1/adapter/js/logger.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: attic ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module attic ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: attic ] -->
+    <script sync src="/assets/themes/j1/adapter/js/attic.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: themer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module themer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: themer ] -->
+    <script defer src="/assets/themes/j1/adapter/js/themer.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: navigator ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module navigator ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: navigator ] -->
+    <script sync src="/assets/themes/j1/adapter/js/navigator.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: webhook ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module webhooks ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: webhook ] -->
+    <script sync src="/assets/themes/j1/adapter/js/octokit.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: toccer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: blog_archive, module toccer ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: blog_archive, place general file resources for resource_settings.id: toccer ] -->
+    <script defer src="/assets/themes/j1/adapter/js/toccer.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: back2top ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module back2top ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: back2top ] -->
+    <script defer src="/assets/themes/j1/adapter/js/back2top.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: scroller ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module smoothscroll ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: scroller ] -->
+    <script defer src="/assets/themes/j1/adapter/js/scroller.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: searcher ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module quicksearch ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: searcher ] -->
+    <script defer src="/assets/themes/j1/adapter/js/searcher.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: cookie_consent ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, module cookie consent ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: cookie_consent ] -->
+    <script defer src="/assets/themes/j1/adapter/js/cookie_consent.js"></script>
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: framer ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: bs_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: lightbox ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: rouge ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, theme rouge ] -->
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ layout: all, place general file resources for resource_settings.id: rouge ] -->
+    <link rel="stylesheet" type="text/css" href="/assets/themes/j1/extensions/rouge/css/base16/theme.css">
+    <!-- [INFO   ] [j1.layout.resource_writer.proc        ] [ placement for all data_keys finished ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: algolia ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: livereload ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: light_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: carousel ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: justified_gallery ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: data_tables ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: cookiebar ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: stickybits ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ process resource: stickyfill ] -->
+    <!-- [INFO   ] [j1.layout_resource_generator.html     ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+    <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+    <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ end default_writer for region: 'head' ] -->
+  </head>
+  <body>
+    <!-- [INFO   ] [j1.layout.default.html                ] [ start page processing for region: 'body' ] -->
+    <!-- [INFO   ] [j1.layout.default.html                ] [ place wrapper to prevent "DOM flicker" ] -->
+    <div id="no_flicker" class="nojs">
+      <!-- [INFO   ] [j1.layout.default.html                ] [ make page hidden ] -->
+      <script>
+        $("#no_flicker").css("display", "none");
+      </script>
+      <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'body-navigation' ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-navigation, layout: page ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ start processing: top search ] -->
+      <div id="navigator_nav_topsearch" class="top-search">
+        <div class="container-fluid">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="mdi mdi-magnify mdi-48px" style="color:#9E9E9E"></i></span>
+            <input type="text" id="jss-input" class="form-control" placeholder="QuickSearch">
+            <span class="input-group-addon close-search"><i class="mdi mdi-close mdi-48px" style="color:#9E9E9E"></i></span>
+          </div>
+        </div>
+        <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ add search panel (hidden) ] -->
+        <div class="row">
+          <!-- div class="card card-flat panel-search mr-5 mb-3 ml-5" id="jss-panel" style="display: none" -->
+          <div class="panel-search mr-5 mb-3 ml-5" id="jss-panel" style="display: none">
+            <div class="panel-heading lead"></div>
+            <div class="panel-body">
+              <p></p>
+            </div>
+            <div class="search-list-group mr-5 ml-2">
+              <ul id="jss-results"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [INFO   ] [j1.modules.navigator.topsearch.proc   ] [ end processing: top search ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: topsearch ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: navigation ] -->
+      <nav id="navigator_nav_navbar" class="navbar navigator navbar-expand-lg navbar-default light navbar-fixed navbar-transparent">
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for sidebar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ sidebar detected ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: sidebar ] -->
+        <div id="navigator_nav_sidebar" class="side"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: sidebar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: main menue ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place brand to the: right ] -->
+        <button type="button" class="navigator navbar-toggler animated fadeIn" data-toggle="collapse" data-target="#navigator_nav_menu" aria-controls="navigator_nav_menu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="mdi mdi-menu mdi-48px"></i>
+        </button>
+        <a class="navbar-brand" href="/"> <img src="/assets/images/icons/j1/j1-512x512.png" height="64" alt="Starter App"></a>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ start processing: nav bar ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place nav menu container for AJAX load ] -->
+        <div id="navigator_nav_menu" class="collapse"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for quicklinks ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ quicklinks enabled: true ] -->
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: quicklinks ] -->
+        <div id="navigator_nav_quicklinks" class="attr-nav collapse navbar-collapse justify-content-end"></div>
+        <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing for: quicklinks ] -->
+      </nav>
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ check for: authclient ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ authclient enabled: true ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ place container for: authclient ] -->
+      <div id="authclient_modals" class="authclient_modals"></div>
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: auth_client ] -->
+      <!-- [INFO   ] [j1.modules.navigator.generator.html   ] [ end processing: navigation ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+      <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end processing default_writer for region: 'body-navigation' ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ place content inherited by layout: page ] -->
+      <!-- [INFO   ]  [j1.layout.page.html                   ] [ start content processing ] -->
+      <!-- [INFO   ] [j1.layout.page.html                    ] [ call default_writer for region: 'body-header' ] -->
+      <header id="header">
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-header, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ load page specific header data from yaml data file ] -->
+        <div id="image_attic" class="attic">
+          <div class="container">
+            <div id="head-title" class="head-title animated"> 
+              <h2 id="head-title-text" class="notoc">NPM</h2>
+            </div>
+            <div id="head-tagline" class="head-tagline animated"> 
+              <h3 id="head-tagline-tagline" class="notoc">package.json cheatsheet</h3>
+            </div>
+            <!-- Image caption container (display: none per default) -->
+            <!-- div class="attic-caption text-emphasis-"></div -->
+            <div class="attic-caption"></div>
+          </div>
+        </div>
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+        <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+        <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      </header>
+      <!-- [INFO   ] [j1.layout.page.html                      ] [ end default_writer processing for region: 'body-header' ] -->
+      <!-- [INFO   ] [j1.layout.page.html                ] [ call content_writer for region: 'body-main' ] -->
+      <div class="container-fluid">
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ start processing: load CONTENT portion for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ load region 'body-main' for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ begin content ] -->
+        <div class="container mb-5">
+          <div class="row">
+            <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ start section for split page (TOC) ] -->
+            <section class="col-md-9 col-xs-12 r-text-300 js-toc-content">
+              <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ begin place content ] -->
+              <div class="paragraph">
+                <p>Recently I started a
+                  <a href="https://areknawo.com/nodejs-inside-out-modules-api-rediscovery/">series
+                    about Node.js</a> and its built-in API. There, as I said, we’ll be
+                  exploring every single Node.js API in-depth (or at least that’s the
+                  plan). But, talking about Node.js without mentioning the famous
+                  <strong><a href="https://docs.npmjs.com/files/package.json">package.json</a></strong> 🗄 would be a
+                  sign of big ignorance of the importance of this file.</p>
+              </div>
+              <div class="paragraph">
+                <p>I think we all know what package.json is. Probably nearly every new
+                  JS-related project is started by setting up this particular file. And
+                  still, developers' knowledge about such important, seemingly simple JSON
+                  file is often limited to just a few fields. Of course, it’s nothing
+                  wrong - you don’t have to know the whole specification, but it’s good to
+                  at least have some clue about what’s what. This is especially important
+                  when e.g. creating <strong>your first public NPM package</strong>. And, because of
+                  inconsistent, incomplete or hard-to-read documentations about it around
+                  the web, many newcomers often publish their first packages…​ with
+                  <strong>errors</strong>.</p>
+              </div>
+              <div class="paragraph">
+                <p>With all above said, in this article, we’ll finally fix this flaw. We’re
+                  going to explore package.json as deeply as possible! So, consider
+                  bookmarking  this page for later use as the full-fledged <strong>package.json
+                    cheatsheet</strong>!  Let’s get started!</p>
+              </div>
+              <div class="sect1">
+                <h2 id="basics">Basics</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="name">name</h3>
+                    <div class="paragraph">
+                      <p>I think the <code>name</code> property needs no explanation. Your package won’t
+                        function correctly without this <strong>compulsory field</strong>. There are only some
+                        rules that you must obey when naming your new package:</p>
+                    </div>
+                    <div class="ulist">
+                      <ul>
+                        <li>
+                          <p>Your name should be <strong>unique</strong> (when publishing to NPM) ;</p>
+                        </li>
+                        <li>
+                          <p>If you have proper NPM organization register, you can use your package
+                            with so-called <strong>scope</strong> e.g. @organization/package;</p>
+                        </li>
+                        <li>
+                          <p>The character length of the name should be no bigger than <strong>214
+                              characters</strong> including scoping;</p>
+                        </li>
+                        <li>
+                          <p><strong>No capped letters</strong> and <strong>underscore</strong> (<strong>_</strong>) or <strong>dot</strong> (<strong>.</strong>) <strong>on the
+                              beginning</strong>;</p>
+                        </li>
+                        <li>
+                          <p>You can use only <strong>URL-safe chars</strong> - your name will most likely be
+                            typed by others in terminals and used as URL at NPM page;</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="version">version</h3>
+                    <div class="paragraph">
+                      <p>The second required and no-brainer field. <code>version</code>, together with name
+                        form a <strong>unique ID</strong> for <strong>every release</strong> of your package. Because, guess
+                        what! - you should/must change the version with every new release of
+                        your package! Also, your version string should be parsable by
+                        <strong><a href="https://github.com/npm/node-semver">node-semver</a></strong>, meaning that it
+                        should have a certain, predictable <strong>structure</strong>. 🏗 You should probably
+                        have seen all possible version codes by now, browsing the NPM. Usually,
+                        it comes in a form of 3 numbers separated by dots (.), e.g. <strong>0.0.0</strong>.
+                        After that, an optional tag (e.g. <strong>next</strong>, <strong>beta</strong>, <strong>alpha</strong>) preceded by a
+                        dash and optionally followed by yet another dot and number, e.g.
+                        <strong>0.0.0-next.0</strong>. Of course, you shouldn’t just drop any new version you
+                        think is suitable (especially when your package is used by other
+                        people). That’s why <strong>versioning guidelines</strong> like
+                        <strong><a href="https://semver.org">Semantic Versioning</a></strong> have been created.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="information">Information</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="description">description</h3>
+                    <div class="paragraph">
+                      <p>It’s good to provide your users with at least some <strong>info about your
+                          package</strong>. ℹ A short <code>description</code> string in your main JSON file can
+                        serve that purpose great! It will then be displayed in <strong>NPM listings</strong>
+                        and e.g. in <strong>VS Code pop-ups</strong>. Of course, it won’t be enough and so
+                        <strong>README.md</strong> file at your project’s root can be a good idea. Mentioned
+                        file can later be used for your package’s <strong>NPM page</strong>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="keywords">keywords</h3>
+                    <div class="paragraph">
+                      <p><code>keywords</code> give you an option to improve the <em>"SEO"</em> of your package.
+                        This array of strings will make your package <strong>rank higher</strong> when your
+                        possible users will search through NPM listings by keywords that much
+                        the ones you provided.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="license">license</h3>
+                    <div class="paragraph">
+                      <p><code>license</code> is a simple and short, but very important field. It’s this
+                        string that lets your users know at what terms you share your code. The
+                        string must be one of <strong><a href="https://spdx.org/licenses/">SPDX identifiers</a></strong>
+                        (short forms), like <strong>MIT</strong>, <strong>GPL-3.0</strong> and etc. If you yet don’t know what
+                        kind of license suits you best, consider checking out
+                        <a href="https://tldrlegal.com/"><strong>this page</strong></a>, where you can quickly understand
+                        and pick the best one (SPDX identifiers included!). It’s a good practice
+                        (if not a requirement) to later put the actual text of your
+                        license-of-choice at your project’s root in <strong>LICENSE.md</strong> file.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="homepage">homepage</h3>
+                    <div class="paragraph">
+                      <p>If you have a nice <strong>landing page</strong> for your package, you can freely put
+                        its <strong>URL</strong> here. It will later be displayed at NPM page and in various
+                        other places.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="repository">repository</h3>
+                    <div class="paragraph">
+                      <p>If you’re publishing your package publicly on NPM, high chances are it’s
+                        some kind of open source software. Thus, information about the location
+                        of the actual <strong>source-code</strong>  may come in handy. The <code>repository</code> field
+                        can do just that! There are two ways in which you can set it up - an
+                        <strong>object</strong> with 2 or 3 properties, i.e. <code>type</code> (your repository type, like
+                        <strong>"git"</strong> or <strong>"svn"</strong> in a string), <code>url</code> (the URL of your repository) and
+                        optional <code>directory</code> within your repo (if it’s e.g. <strong>monorepo</strong>). The
+                        other possible form is a <strong>string</strong> (that can also be used to install
+                        packages from repos directly) in a format of "<strong>provider</strong>:*user*/<strong>repo</strong>"
+                        (where the provider can be <strong>"github"</strong>, <strong>"gitlab"</strong> or <strong>"bitbucket"</strong>) or
+                        "<strong>gist</strong>:*id*" (for Gists only).</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="bugs">bugs</h3>
+                    <div class="paragraph">
+                      <p>Yeah, <code>bugs</code> happen so often that they deserve their own, separate
+                        field.  It usually should point out to the <strong>issues page</strong> of your
+                        repository or to any other place where these issues can <strong>be reported</strong>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="author">author</h3>
+                    <div class="paragraph">
+                      <p>Proper first creator of the package deserves <strong>proper credits</strong>.  This
+                        field can have two possible types of value: an object or a string. The
+                        <strong>object</strong> can have 3 properties - <code>name</code>, <code>email</code> and <code>url</code> (for author’s
+                        website). The different, shorter format is a <strong>string</strong> version, with
+                        predefined formatting (when compared to object) - <strong>"<em>name</em> &lt;<em>email</em>&gt;
+                          (<em>url</em>)"</strong>. These different brackets are required, but not all of them
+                        needs to be provided. You can omit e.g. (url) and provide only name and
+                        email. NPM will be happy with any variation.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="contributors">contributors</h3>
+                    <div class="paragraph">
+                      <p><code>contributors</code> are just as important as the author himself.  And, as
+                        each should be noted, there’s a special property for that too!
+                        <code>contributors</code> is an <strong>array of objects or strings</strong>, where same rules as
+                        with singular author field apply. Another interesting feature is that
+                        you can provide proper <strong>AUTHORS.md</strong> file at the root of your project
+                        where, line by line, contributors of your project will be provided (in
+                        string format mentioned earlier). This will later be used as
+                        contributors <strong>default value</strong>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="files">Files</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="files-2">files</h3>
+                    <div class="paragraph">
+                      <p>There’s a high chance that you may want your final package to include
+                        only certain files. To do this you have two options. You can provide a
+                        <code>files</code> property in your package.json, in form of an <strong>array of strings</strong>
+                        (with support for <strong>separate files</strong>, <strong>directories</strong>, and <strong>wildcards</strong> ),
+                        to <strong>include only certain files</strong> in package send to NPM. Another option
+                        is to provide the <strong>.npmignore</strong> file (like popular
+                        <strong><a href="https://git-scm.com/docs/gitignore">.gitignore</a></strong>) which will later be
+                        used to <strong>exclude certain files</strong>. Of course, there are some files that
+                        will never respect those rules and will always be included (e.g.
+                        <strong>README.md</strong> or <strong>LICENSE.md</strong>) or excluded (e.g. <strong>node_modules</strong> or
+                        <strong>.git</strong>).</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="main">main</h3>
+                    <div class="paragraph">
+                      <p>Probably everybody knows the <code>main</code> field. It should point to default,
+                        the most important file (<strong>entry point</strong>) of the whole package. It will be
+                        included in the final bundle no matter <code>files</code> configuration.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="browser">browser</h3>
+                    <div class="paragraph">
+                      <p>With <code>browser</code> property, we’re getting to different variations of main
+                        files for your package. It can be used when e.g. you use some kind of
+                        module bundler which outputs different formats (like <strong>IIFE</strong> or <strong>UMD</strong>).
+                        Browser field should point to file, that may be <strong>used in browsers</strong> 🖥 and
+                        be dependent on <strong>global variables</strong> of this environment (e.g. <code>window</code>).</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="unpkg">unpkg</h3>
+                    <div class="paragraph">
+                      <p>Maybe it’s not 100% official, but <strong><a href="https://unpkg.com/">UNPKG</a></strong> as
+                        <strong>NPM-based CDN</strong> have gained so much popularity and user base, that this
+                        property might be worth a closer look. <code>unpkg</code> should point to a file
+                        that will later be exclusively used by UNPKG to provide its CDN support.
+                        It’s usually the same as the earlier-mentioned <code>browser</code>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="module">module</h3>
+                    <div class="paragraph">
+                      <p>If you have one, <code>module</code> property should point out the file that is an
+                        entry point for your modular (not-bundled) code base. It’s targeted
+                        towards more <strong>modern environments</strong>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="typings">typings</h3>
+                    <div class="paragraph">
+                      <p>The <code>typings</code> or <code>types</code> (shorter alternative) field shows really how
+                        popular <strong><a href="https://typescriptlang.org">TypeScript</a></strong> together with <strong>great
+                          development tooling</strong> it provides has become. This property should point
+                        to the entry file of your <strong>TypeScript declaration files</strong> (if you have
+                        one). It will later be sent to NPM and available to download and provide
+                        good <strong>IDE support</strong> for your users. This is a bit more convenient than
+                        uploading your typings separately to something like
+                        <strong><a href="https://definitelytyped.org/">DefinitelyTyped</a></strong>, at least IMHO.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="bin">bin</h3>
+                    <div class="paragraph">
+                      <p>If your package is some kind of executable file, it must include this
+                        field. It should point out to the <strong>main file</strong> of your <strong>Node.js
+                          executable</strong> or have a form of an <strong>object</strong> with keys corresponding to
+                        <strong>different executables</strong> and values to <strong>their files</strong>. Just remember that
+                        you should begin your executable files with this magic line  -
+                        <code>#!/usr/bin/env node</code>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="man">man</h3>
+                    <div class="paragraph">
+                      <p>If you have any documentation in the form of
+                        <strong><a href="https://en.wikipedia.org/wiki/Man_page">man pages</a></strong> for your package,
+                        feel free to provide it here. It can be a string pointing to a <strong>single
+                          file or an array</strong> of such.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="directories">directories</h3>
+                    <div class="paragraph">
+                      <p><code>directories</code> may be one of these mysterious fields that not many know
+                        what it exactly does. I’ll tell you - it’s mostly just <strong>meta-info</strong>.
+                        Exactly two fields provide some functionality and nothing else. Of
+                        course, all of them should have a form of string pointing to <strong>different
+                          directories</strong>.</p>
+                    </div>
+                    <div class="ulist">
+                      <ul>
+                        <li>
+                          <p><code>lib</code> - meta info about where your library is exactly located in your
+                            package;</p>
+                        </li>
+                        <li>
+                          <p><code>bin</code> - directory where all your <strong>executable files</strong> are located. Can
+                            be used instead of providing different files, one by one, with <code>bin</code>
+                            property. Know that you cannot use these two properties together - <strong>only
+                              one of them</strong>;</p>
+                        </li>
+                        <li>
+                          <p><code>man</code> - directory where all your <strong>man pages</strong> are located. You can use
+                            this instead of providing an array of files through <code>man</code> property. It’s
+                            certainly less tiresome;</p>
+                        </li>
+                        <li>
+                          <p><code>doc</code> - meta info about directory where <strong>markdown documentation</strong> for a
+                            given package is located;</p>
+                        </li>
+                        <li>
+                          <p><code>example</code> - meta info about directory where you have <strong>example code</strong>;</p>
+                        </li>
+                        <li>
+                          <p><code>test</code> - meta info about directory where your <strong>test files</strong> are
+                            located;</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="paragraph">
+                      <p>Keep in mind that, as
+                        <a href="https://docs.npmjs.com/files/package.json#directories">NPM official
+                          documentation</a> mentions, this data can be used in the future to provide
+                        some additional features e.g. nice documentation or whatever…​</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="tasks">Tasks</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="scripts">scripts</h3>
+                    <div class="paragraph">
+                      <p>I think you know well what <code>scripts</code> field does. It’s a simple object
+                        with keys corresponding to commands and their values to what they should
+                        do. You most likely use script names like <strong>"build"</strong> or <strong>"start"</strong>, but
+                        did you know that there are some scripts that are executed automatically
+                        when predefined event occurs? There are quite a few of them and you can
+                        find <a href="https://docs.npmjs.com/misc/scripts"><strong>the complete list here</strong></a>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="config">config</h3>
+                    <div class="paragraph">
+                      <p><code>config</code> property has a form of a special object, where you can specify
+                        some <strong>configuration</strong> that you can later <strong>use in your scripts</strong>.  For
+                        example, a config property named <code>port</code> can be later referenced using
+                        <code>npm_package_config_port</code>, where the preceding part is always required.
+                        These options can also be altered using e.g.
+                        <code>npm config set [package]:[prop] [value]</code>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="dependencies">Dependencies</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="dependencies-2">dependencies</h3>
+                    <div class="paragraph">
+                      <p>Everybody knows what <strong>NPM dependencies</strong> are and…​
+                        <a href="https://www.reddit.com/r/ProgrammerHumor/comments/6s0wov/heaviest_objects_in_the_universe/">memes</a>
+                        about how <strong>deep</strong> they can get.  And <code>dependencies</code> is a field
+                        responsible for all of that. Here all your dependencies that are
+                        required to be installed (and are most likely used) by your package
+                        <strong>must be listed</strong>. <code>npm install</code> or <code>yarn add</code> will automatically <strong>manage
+                          these for you</strong>. Just remember that you can also list &amp; install
+                        dependencies from <strong>URLs</strong>, <strong>Git URLs</strong>, <strong>GitHub URLs</strong>, <strong>linked packages</strong>
+                        and <strong>local paths</strong>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="devdependencies">devDependencies</h3>
+                    <div class="paragraph">
+                      <p><strong>Development dependencies</strong> (those installed with <code>--save-dev</code> or
+                        <code>--dev</code>) are meant to contain all dependencies that are required during
+                        the <strong>development process</strong> 🏗 of the given package. It can be e.g.
+                        <strong>testing framework</strong>, <strong>module bundler</strong> or <strong>transpiler</strong>. All of these
+                        won’t be installed for standard use of the package.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="peerdependencies">peerDependencies</h3>
+                    <div class="paragraph">
+                      <p><strong>Peer dependencies</strong> (this time <strong>not configured automatically</strong>) allow you
+                        to specify compatibility of your package with some other ones. This
+                        should have a form of an <strong>object</strong> with <strong>compatible packages names</strong> as
+                        keys and <strong>their respective versions</strong> (following node-semver, e.g. 0.x.x)
+                        as values. Since NPM v3 these dependencies aren’t installed by default.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="optionaldependencies">optionalDependencies</h3>
+                    <div class="paragraph">
+                      <p>If any of your packages are <strong>optional</strong>, i.e. don’t really have to be
+                        installed but can be helpful, you can add them here. These will be
+                        installed only if possible (e.g. if a platform is compatible). The often
+                        seen example of this is an NPM module called
+                        <strong><a href="https://www.npmjs.com/package/fsevents">fsevents</a></strong>, available only on
+                        Mac OS.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="bundleddependencies">bundledDependencies</h3>
+                    <div class="paragraph">
+                      <p><strong>Bundled dependencies</strong> should have a form of an array with names of
+                        dependencies that would be bundled with your final package. This can be
+                        useful when preserving your project with <strong>tarball files</strong>, which, bundled
+                        using <code>npm pack</code>, will include files here specified.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="platform">Platform</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="engines">engines</h3>
+                    <div class="paragraph">
+                      <p><code>engines</code> is a very useful property (just like any other), allowing you
+                        to specify an object of <strong>libraries</strong> and <strong>runtimes</strong> (like <strong>Node.js</strong>,
+                        <strong>NPM</strong> or <strong><a href="https://facebook.github.io/react-native/">React Native</a></strong>).
+                        Object keys correspond to specific names (just like the ones on NPM -
+                        lower case, dashed) and values in the form of compatible <strong>versions
+                          strings</strong> (node-semver-compatible). This is especially useful when your
+                        package depends on <strong>modern features</strong> (available only in latest Node.js
+                        releases) or on other, usually globally-installed libraries and
+                        runtimes.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="os">os</h3>
+                    <div class="paragraph">
+                      <p>If your package can run only on <strong>specific operating systems</strong>, you can
+                        specify this fact with <code>os</code> property, in the form of an array of <strong>OS
+                          code names</strong>. You can specify only the ones that are allowed (e.g.
+                        <code>["linux"]</code>) or those that aren’t with preceding <strong>exclamation mark</strong>
+                        (<strong>!</strong>) (e.g. <code>["!win32"]</code>).</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="cpu">cpu</h3>
+                    <div class="paragraph">
+                      <p>Just like with <code>os</code>, by using <code>cpu</code> property, you can specify on which
+                        kinds of CPUs your code can run. Same rules (include &amp; exclude) apply
+                        (e.g. <code>["x64"]</code> or <code>["!arm"]</code>).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="publishing">Publishing</h2>
+                <div class="sectionbody">
+                  <div class="sect2">
+                    <h3 id="private">private</h3>
+                    <div class="paragraph">
+                      <p>If you want your package to remain <strong>private</strong> (or an <strong>entry to a
+                          multirepo</strong>) you can set the <code>private</code> property to <strong>true</strong>. It will ensure
+                        that your package <strong>won’t be published</strong>, even if you’d make a mistake and
+                        try to do it. It’s <strong>false by default</strong>.</p>
+                    </div>
+                  </div>
+                  <div class="sect2">
+                    <h3 id="publishconfig">publishConfig</h3>
+                    <div class="paragraph">
+                      <p>If you want (or have a real reason behind this), you can override any of
+                        <strong><a href="https://docs.npmjs.com/misc/config#config-settings">numerous NPM config
+                            values</a></strong> before publishing your package, with this particular property.
+                        This should have a form of an object. Most likely you’ll want to change
+                        only values like <code>"tag"</code>, <code>"registry"</code> or <code>"access"</code>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sect1">
+                <h2 id="custom-fields">Custom fields</h2>
+                <div class="sectionbody">
+                  <div class="paragraph">
+                    <p>Beyond all the fields above, package.json has become a place for various
+                      different tools to place their own, <strong>custom fields</strong> and <strong>configs</strong> there.
+                      Just like mentioned <strong>UNPKG</strong>,
+                      <strong><a href="https://babeljs.io/docs/en/config-files">Babel</a></strong>,
+                      <strong><a href="https://prettier.io/docs/en/configuration.html">Prettier</a></strong>  and tons of
+                      <strong>different tools</strong> allow you to do so. It’s almost always written in
+                      their <strong>documentation</strong>. But, with such a big number of tools,
+                      package.json has become a bit…​ <strong>crowded</strong>. Thus, IMHO, it’s better to
+                      use <strong>separate config files</strong> whenever possible and leave package.json
+                      only for all, still numerous, stuff listed above.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ end section for split page (TOC) ] -->
+            <!-- NOTE: BS or Tocbot Affix is not used anymore. Replaced by CSS style "sticky" -->
+            <aside class="col-md-3 d-none d-md-block sticky">
+              <div id="sidebar">
+                <div id="j1-toc-mgr" class="toc js-toc"></div>
+              </div>
+            </aside>
+             <!-- end ASIDE for split page -->
+            <!-- endif sidebar -->
+          </div>
+           <!-- end row -->
+        </div>
+         <!-- end container -->
+        <!-- [INFO   ] [j1.layout.content_generator_page.html ] [ end place content ] -->
+        <!-- [INFO   ] [j1.page.NPM                   ] [Save the current ArticleBrowser page to UserState cookie] -->
+        <!-- script>
+  var logger   = log4javascript.getLogger("j1.page.npm.init");  
+  var cookieUserState = 'j1.user.state'
+  var log_text = 'Save the current browser page (npm) to cookie: ' +cookieUserState;  
+  var j1_user_state = {
+    'authenticated' : 'false',
+    'cookies_accepted' : 'false',
+    'theme_css' : 'unknown',
+    'theme_extension_css' : 'unknown',
+    'theme_name' : 'unknown',
+    'last_page' : 'unknown',
+    'last_provider' : 'unknown',
+    'last_signin' : 'unknown',
+    'provider' : 'unknown',
+    'user_name' : 'unknown',
+    'user_id' : 'unknown'     
+  };
+  // Set|Detect J1 App status
+  j1_user_state.last_page = "/pages/private/user_guide/npm/cheatsheet/"
+  j1.setUserState( j1_user_state ); 
+  logger.info(log_text);
+</script -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ load region 'body-main' for layout: page ] -->
+        <!-- [INFO   ] [j1.layout.connectors.comments         ] [ start processing load region head, layout: page ] -->
+        <!-- [INFO   ] [j1.layout.connectors.comments         ] [ end processing ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ placement for all lane items finished ] -->
+        <!-- [DEBUG  ] [j1.layout.content_writer.proc         ] [ reset all lane items ] -->
+        <!-- [INFO   ] [j1.layout.content_writer.proc         ] [ end processing ] -->
+      </div>
+      <!-- [INFO   ] [j1.layout.page.html                ] [ end content_writer processing for region: 'body-main' ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end content inherited by layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ call default_writer for region: 'body-footer' ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <footer id="exception_container" class="container-fluid no-padding"></footer>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <footer id="j1_footer" class=""></footer>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ start processing. Place all SHIM config for all MODULES, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ create GLOBAL JS script variables for later module access ] -->
+      <script>
+        // [INFO   ] [j1.layout_shim_generator.html         ] [ create global JS variable ENVIRONMENT for Javascript access: development ]
+        var j1_environment = 'development';
+        // [INFO   ] [j1.layout_shim_generator.html         ] [ create global INSTANCE variables for headers ]
+        if ( $('#homehead').length ) {
+          j1["homehead"] = true;
+        }
+        if ( $('#pagehead').length ) {
+          j1["pagehead"] = true;
+        }
+        if ( $('#texthead').length ) {
+          j1["texthead"] = true;
+        }
+        // IE10 viewport hack for Surface/Desktop Windows 8 bug
+        // Copyright 2014-2015 Twitter, Inc. (Bootstrap)
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var e = document.createElement("style");
+          e.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+          document.querySelector("head").appendChild(e);
+        }
+      </script>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ place container for Cookie Consent Modals ] -->
+      <div id="cookie_consent_modals"></div>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ place container for WebHook Modals ] -->
+      <div id="web_hook_modals"></div>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ initialize BS tooltips|popovers ] -->
+      <script>
+        $(function() {
+          $('[data-toggle="tooltip"]').tooltip();
+          $('[data-toggle="popover"]').popover();
+        });
+      </script>
+      <!-- [INFO   ] [j1.layout_shim_generator.html         ] [ initialize enhanced bootstrap modals ] -->
+      <script>
+        $(function() {
+          $('body').on('shown.bs.modal', '.modal', function() {
+              if($('.modal-backdrop').length) {
+              } else {
+                  $modal_dialog = $(this).children('.modal-dialog');
+                  if($modal_dialog.hasClass('modal-side')) {
+                      $(this).addClass('modal-scrolling');
+                      $('body').addClass('scrollable');
+                  }
+                  if($modal_dialog.hasClass('modal-frame')) {
+                      $(this).addClass('modal-content-clickable');
+                      $('body').addClass('scrollable');
+                  }
+              }
+          });
+          $('body').on('hidden.bs.modal', '.modal', function() {
+              $('body').removeClass('scrollable');
+          });
+        });
+      </script>
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ start processing: load region body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ start processing. collect data for region: body-footer, layout: page ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: core ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: core ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'template core is being initialized';
+            logger.info(log_text);
+                // [INFO   ] [j1.layout.module_writer.proc          ] [ pass init data for: core ]
+                var settings = $.extend({}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                  j1.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: logger ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: logger ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module logger is being initialized';
+            logger.info(log_text);
+                  j1.adapter.logger.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: attic ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: attic ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module attic is being initialized';
+            logger.info(log_text);
+              // [INFO   ] [j1.layout.module_writer.proc          ] [ pass module specific frontmatter options for: attic ]
+              var settings = $.extend({}, {"opacity":0.2, "slides":[{"url":"/assets/images/articles/log4r/code-1920x600.jpg", "alt":"code-1920x600"}]}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                j1.adapter.attic.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: themer ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: themer ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module themer is being initialized';
+            logger.info(log_text);
+                  j1.adapter.themer.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: navigator ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["themer"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: navigator ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module navigator is being initialized';
+            logger.info(log_text);
+                  var interval_count = 0;
+                  var max_count      = 10;
+                  var dependencies_met_navigator = setInterval(function() {
+                    interval_count += 1;
+                    if ( j1.adapter.themer.getState() == 'finished' ) {
+                      j1.adapter.navigator.init();
+                      logger.info('resource_settings.dependencies of module navigator met for: themer');
+                      logger.debug('resource_settings.dependencies of module navigator met after: ' + interval_count * 25 + ' ms');
+                      clearInterval(dependencies_met_navigator);
+                      }
+                    if (interval_count > max_count) {
+                      logger.warn('dependency check failed for module: navigator');
+                      clearInterval(dependencies_met_navigator);
+                      logger.warn('run initializer navigator unchecked for: themer');
+                      j1.adapter.navigator.init();
+                    }
+                  }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: webhook ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: webhook ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module webhooks is being initialized';
+            logger.info(log_text);
+                // [INFO   ] [j1.layout.module_writer.proc          ] [ pass init data for: webhook ]
+                var settings = $.extend({}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                  j1.adapter.octokit.init(settings);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: toccer ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["navigator"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: toccer ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module toccer is being initialized';
+            logger.info(log_text);
+              // [INFO   ] [j1.layout.module_writer.proc          ] [ pass module specific frontmatter options for: toccer ]
+              var settings = $.extend({}, {"collapseDepth":2}, {"layout": "page", "scrollbar": "false", "toc": "true", "comments": "false"});
+                var interval_count = 0;
+                var dependencies_met_toccer = setInterval(function() {
+                var max_count      = 10;
+                  interval_count += 1;
+                  if ( j1.adapter.navigator.getState() == 'finished' ) {
+                    j1.adapter.toccer.init( settings );
+                    logger.info('resource_settings.dependencies of module toccer met for: navigator');
+                    logger.debug('resource_settings.dependencies of module toccer met after: ' + interval_count * 25 + ' ms');
+                    clearInterval(dependencies_met_toccer);
+                    }
+                  if (interval_count > max_count) {
+                    logger.warn('dependency check failed for module: toccer');
+                    clearInterval(dependencies_met_toccer);
+                    logger.warn('run initializer toccer unchecked for: navigator');
+                    j1.adapter.toccer.init(settings);
+                  }
+                }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: back2top ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ resource_settings.dependencies detected: ["navigator"] ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: back2top ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module back2top is being initialized';
+            logger.info(log_text);
+                  var interval_count = 0;
+                  var max_count      = 10;
+                  var dependencies_met_back2top = setInterval(function() {
+                    interval_count += 1;
+                    if ( j1.adapter.navigator.getState() == 'finished' ) {
+                      j1.adapter.back2top.init();
+                      logger.info('resource_settings.dependencies of module back2top met for: navigator');
+                      logger.debug('resource_settings.dependencies of module back2top met after: ' + interval_count * 25 + ' ms');
+                      clearInterval(dependencies_met_back2top);
+                      }
+                    if (interval_count > max_count) {
+                      logger.warn('dependency check failed for module: back2top');
+                      clearInterval(dependencies_met_back2top);
+                      logger.warn('run initializer back2top unchecked for: navigator');
+                      j1.adapter.back2top.init();
+                    }
+                  }, 25);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: scroller ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: scroller ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module smoothscroll is being initialized';
+            logger.info(log_text);
+                  j1.adapter.scroller.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: searcher ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: searcher ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module quicksearch is being initialized';
+            logger.info(log_text);
+                  j1.adapter.searcher.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: cookie_consent ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: cookie_consent ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'module cookie consent is being initialized';
+            logger.info(log_text);
+                  j1.adapter.cookie_consent.init();
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: framer ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: bs_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: lightbox ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: rouge ] -->
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ place J1 adapter for resource: rouge ] -->
+      <script>
+        $(document).ready(function() {
+          var logger = log4javascript.getLogger("j1.module_loader");
+            var log_text = 'theme rouge is being initialized';
+            logger.info(log_text);
+                });
+      </script>
+      <!-- [INFO   ] [j1.layout.module_writer.proc          ] [ placement for all data_keys finished ] -->
+      <!-- [DEBUG  ] [j1.layout.module_writer.proc          ] [ reset all data_keys ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: algolia ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: livereload ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ livereload module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: light_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: carousel ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: justified_gallery ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: data_tables ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: cookiebar ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ cookiebar module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: stickybits ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ stickybits module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ process resource: stickyfill ] -->
+      <!-- [WARN   ] [j1.layout.module_writer.proc          ] [ stickyfill module detected as: false ] -->
+      <!-- [INFO   ] [j1.layout_module_generator.html       ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing: load region head, layout: page ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ placement for all lane items finished ] -->
+      <!-- [DEBUG  ] [j1.layout.default_writer.proc         ] [ reset all lane items ] -->
+      <!-- [INFO   ] [j1.layout.default_writer.proc         ] [ end processing ] -->
+      <!-- [INFO   ] [j1.layout.default.html                ] [ end content_writer default_writer for region: 'body-footer' ] -->
+    </div>
+    <!-- [INFO   ] [j1.layout.default.html                ] [ end default writer] -->
+  </body>
+  <!-- [INFO   ] [j1.layout.default.html                ] [ end page processing ] -->
+</html>
+  
+
+  

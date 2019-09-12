@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- Modal 'webhookResponseDetected' -->
+    <div class="modal fade top" id="webhookCommitDetected" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-lg modal-notify modal-info" role="document">
+        <!-- Content -->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <p class="lead">WebHook</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+            </button>
+          </div>
+          <!-- Body -->
+          <div class="modal-body">
+            <div class="px-3">
+              <p class="pt-1 pr-2">
+                Received the following payload from provider:
+              </p>
+            </div>
+            <pre class="json-payload ml-4" style="font-family: monospace; font-size: .95rem;"></pre>
+            <div class="px-3">
+              <p class="pt-1 pr-2">
+                In order to pull the current changes to your local working copy,
+                click on button "Yes, please".
+              </p>
+            </div>
+          </div>
+          <!-- Footer -->
+          <div class="modal-footer">
+            <a type="button" id="acceptGitPullButton" class="btn btn btn-raised btn-flex btn-md btn-info g-mr-5" data-dismiss="modal">Yes, please</a>
+            <a type="button" id="declineGitPullButton" class="btn btn btn-raised btn-flex btn-md btn-secondary" data-dismiss="modal">No, thanks</a>
+          </div>
+        </div>
+        <!-- END Content -->
+      </div>
+    </div>
+    <!-- END Modal 'webhookResponseDetected' -->
+    <!-- Modal gitPullSuccess -->
+    <div class="modal fade right" id="gitPullSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-side modal-top-right modal-notify modal-success" role="document">
+        <!-- Content -->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <p class="lead">Git</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+            </button>
+          </div>
+          <!-- Body -->
+          <div class="modal-body">
+            <div class="text-center">
+              <i class="mdi mdi-4x mdi-check mdi-rotateIn mb-1"></i>
+              <p class="pull-message"></p>
+            </div>
+          </div>
+          <!-- Footer -->
+          <div class="modal-footer justify-content-center">
+            <a type="button" id="gitPullOkButton" class="btn btn btn-raised btn-flex btn-md btn-success" data-dismiss="modal">Ok, thanks</a>
+          </div>
+        </div>
+        <!-- END Content -->
+      </div>
+    </div>
+    <!-- END Side Modal gitPullSuccess -->
+    <!-- Modal 'npmScriptSuccess' -->
+    <div class="modal fade right" id="npmScriptSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-side modal-top-right modal-notify modal-success" role="document">
+        <!-- Content -->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <p class="lead">NPM</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+            </button>
+          </div>
+          <!-- Body -->
+          <div class="modal-body">
+            <div class="text-center">
+              <i class="mdi mdi-4x mdi-check mdi-rotateIn mb-1"></i>
+              <p class="pull-message"></p>
+            </div>
+          </div>
+          <!-- Footer -->
+          <div class="modal-footer justify-content-center">
+            <a type="button" id="gitPullOkButton" class="btn btn btn-raised btn-flex btn-md btn-success" data-dismiss="modal">Ok, thanks</a>
+          </div>
+        </div>
+        <!-- END Content -->
+      </div>
+    </div>
+    <!-- END Modal 'npmScriptSuccess' -->
+    <!-- Side Modal 'requestFailed' -->
+    <div class="modal fade right" id="requestFailed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+        <!-- Content -->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <p class="lead">Request failed</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+            </button>
+          </div>
+          <!-- Body -->
+          <div class="modal-body">
+            <div class="text-center">
+              <i class="mdi mdi-4x mdi-check mdi-rotateIn mb-1"></i>
+              <p class="pull-message"></p>
+            </div>
+          </div>
+          <!-- Footer -->
+          <div class="modal-footer justify-content-center">
+            <a type="button" id="requestFailedOkButton" class="btn btn-outline-secondary-modal" data-dismiss="modal">Ok, thanks</a>
+          </div>
+        </div>
+        <!-- END Content -->
+      </div>
+    </div>
+    <!-- END Side Modal 'requestFailed' -->
+  

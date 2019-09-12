@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "utls",
-  "version": "2019.4.12",
+  "version": "2019.1.0",
   "description": "J1 Template Utility Server",
   "homepage": "https://jekyll.one",
   "author": {
@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://your.site"
+    "url": "https://jekyll.one"
   },
   "engines": {
     "node": ">=10.0",
@@ -20,18 +20,18 @@
   },
   "utilsrv": {
     "enabled": "true",
-    "verbose": "true"
   },
   "scripts": {
     "clean": "shx rm -f *.lock && shx rm -f package-lock.json",
-    "app": "run-s utilsrv",
-    "develop": "run-s utilsrv",
     "start": "run-s utilsrv-run",
+    "develop": "run-s utilsrv",
     "utilsrv": "cross-env UTILSRV_ENABLED=$npm_package_utilsrv_enabled if-env UTILSRV_ENABLED=true && run-s -s utilsrv-run || run-s -s utilsrv-exit",
-    "utilsrv-run": "echo Startup service .. && cross-env UTILSRV_VERBOSE=$npm_package_utilsrv_verbose node server.js",
-    "utilsrv-exit": "echo Startup disabled, server not started."
+    "utilsrv-run": "echo Startup utility server .. && node server.js",
+    "utilsrv-exit": "echo Startup utility server globally disabled, not started."
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "cross-var": "^1.1.0",
     "dotenv": "^2.0.0",
@@ -39,12 +39,14 @@
     "fs": "0.0.1-security",
     "if-env": "^1.0.4",
     "js-yaml": "^3.13.1",
+    "lite-url": "^1.0.5",
     "moment": "^2.24.0",
     "npm-run-all": "^4.1.5",
-    "per-env": "^1.0.2",
     "randomstring": "^1.1.5",
     "shx": "^0.2.2",
     "simple-git": "^1.113.0",
-    "simple-oauth2": "^1.6.0"
+    "simple-oauth2": "^1.6.0",
+    "sprintf-js": "^1.1.2",
+    "touch": "^3.1.0"
   }
 }

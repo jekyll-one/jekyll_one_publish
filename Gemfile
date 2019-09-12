@@ -9,8 +9,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
-#
+# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 #
 #  To install all gem needed for Jekyll and J1 Template
@@ -48,7 +47,7 @@ gem 'jekyll', '~> 3.8.5'
 
 # Theme Rubies, default: J1 Template
 #
-gem 'j1_template', '~> 2019.4.12'
+gem 'j1-template', '~> 2019.1.0'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -120,8 +119,8 @@ end
 # ------------------------------------------------------------------------------
 # Debugger specific RubyGems
 #
-#gem 'debase', '0.2.3'
-#gem 'ruby-debug-ide', '0.7.0.beta7'
+# gem 'debase', '0.2.3'
+# gem 'ruby-debug-ide', '0.7.0.beta7'
 
 # ------------------------------------------------------------------------------
 # Web Application specific RubyGems
@@ -151,7 +150,7 @@ end
 #     --directory_index_file \
 #     --empty_alt_ignore ./_site/index.html &> out.txt
 #
-#gem 'html-proofer', '~> 3.10'
+# gem 'html-proofer', '~> 3.10'
 
 # ------------------------------------------------------------------------------
 # Define the build environment and the web server for J1 sites that
@@ -184,6 +183,13 @@ gem 'puma', '>= 3.12'
 # gem 'omniauth-oauth2', '~> 1.4'
 # gem 'sinatra', '~> 2.0'
 # gem 'warden', '~> 1.2'
+
+# ------------------------------------------------------------------------------
+# Gem needed for J1 logger based on log4r (middleware)
+#
+# gem 'log4r', '~> 1.1.10'
+# gem 'uuid', '~> 2.3', '>= 2.3.8'
+# gem 'date', '~> 2.0'
 
 # ------------------------------------------------------------------------------
 # DEVELOPMENT: Gem needed for the Jekyll and J1 dev environment

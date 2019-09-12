@@ -148,7 +148,7 @@ j1.adapter['your_adapter'] = (function (j1, window) {
       var settings = $.extend({
         module_name: 'j1.adapter.your_adapter',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
 
       {% comment %} Load module config from yml data
       -------------------------------------------------------------------------- {% endcomment %}
@@ -156,8 +156,8 @@ j1.adapter['your_adapter'] = (function (j1, window) {
       //
       // moduleOptions = $.extend({}, {{jekyll_options | replace: '=>', ':' | replace: 'nil', '""'}});
       //
-      // if ( typeof settings !== 'undefined') {
-      //   moduleOptions = j1.mergeData( moduleOptions, settings );
+      // if (typeof settings !== 'undefined') {
+      //   moduleOptions = j1.mergeData(moduleOptions, settings);
       // }
 
       {% comment %} Set global variables
@@ -184,7 +184,7 @@ j1.adapter['your_adapter'] = (function (j1, window) {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -193,7 +193,7 @@ j1.adapter['your_adapter'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

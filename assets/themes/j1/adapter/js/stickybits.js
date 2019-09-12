@@ -121,7 +121,7 @@ j1.adapter['stickybits'] = (function () {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -130,7 +130,7 @@ j1.adapter['stickybits'] = (function () {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //
@@ -148,7 +148,7 @@ j1.adapter['stickybits'] = (function () {
     // setState
     // Set the current (processing) state of the module
     // -------------------------------------------------------------------------
-    setState: function ( stat ) {
+    setState: function (stat) {
       j1.adapter.stickybits.state = stat;
     }, // END setState
 

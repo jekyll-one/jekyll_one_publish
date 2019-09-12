@@ -1,0 +1,58 @@
+// ~/document_base_folder/000_includes
+//  Asciidoc attribute includes:                 attributes.asciidoc
+// -----------------------------------------------------------------------------
+
+// URLs - Internal references and/or sources on the Internet
+// -----------------------------------------------------------------------------
+tag::urls[]
+:home-platformjs:                                 https://github.com/bestiejs/platform.js
+:home-platformjs-docs:                            https://github.com/bestiejs/platform.js/tree/master/doc
+
+end::urls[]
+
+// Tags - Asciidoc attributes used internally
+// -----------------------------------------------------------------------------
+tag::tags[]
+
+:window:                                          window="_blank"
+:no-clipboard:                                    noclip
+:figure-caption:                                  Figure
+:images-dir:                                      pages/roundtrip
+:y:                                               icon:check[role="green"]
+:n:                                               icon:times[role="red"]
+:c:                                               icon:file-alt[role="blue"]
+:beginner:                                        icon:battery-quarter[role="md-blue"]
+:inter:                                           icon:battery-half[role="md-blue"]
+:advanced:                                        icon:battery-full[role="md-blue"]
+:emdash:                                          &#8212;
+:bullet:                                          &bull;
+:bigbullet:                                       &#9679;
+:bigbigbullet:                                    &#11044;
+:dot:                                             &#46;
+:dotdot:                                          &#46;&#46;
+:middot:                                          &middot;
+
+end::tags[] 
+
+// Data - Data elements for Asciidoctor extensions
+// -----------------------------------------------------------------------------
+tag::data[]
+
+:data-images-group:                               "{images-dir}/100_present_images/image-3.jpg, Golden Gate Bridge with San Francisco in distance, {images-dir}/100_present_images/image-4.jpg, Forest with mountains behind, {images-dir}/100_present_images/image-5.jpg, Bicyclist looking out over hill at ocean"
+
+end::data[]
+
+// Product - Document (e.g release) information
+// -----------------------------------------------------------------------------
+tag::product_info[]
+:license:                                         MIT License
+:revdate:                                         2018
+:revnumber:                                       1.0.0
+end::product_info[]
+
+
+// Author - Author information
+// -----------------------------------------------------------------------------
+tag::authors[]
+:uri-author-juergen-adams                         https://jekyll.one
+end::authors[]

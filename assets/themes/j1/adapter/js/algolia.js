@@ -99,7 +99,7 @@ j1.adapter['algolia'] = (function (j1, window) {
       var settings = $.extend({
         module_name: 'j1.adapter.algolia',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
 
       {% comment %} Set global variables
       -------------------------------------------------------------------------- {% endcomment %}
@@ -115,8 +115,8 @@ j1.adapter['algolia'] = (function (j1, window) {
       // Load  module DEFAULTS|CONFIG
       moduleOptions = $.extend({}, {{algolia_config | replace: '=>', ':' | replace: 'nil', '""'}});
 
-      if ( typeof settings !== 'undefined') {
-        moduleOptions = j1.mergeData( moduleOptions, settings );
+      if (typeof settings !== 'undefined') {
+        moduleOptions = j1.mergeData(moduleOptions, settings);
       }
 
       var search = instantsearch({
@@ -132,7 +132,7 @@ j1.adapter['algolia'] = (function (j1, window) {
         // var re = new RegExp("^\/posts");
         // var re = new RegExp("^\/pages");
         var re = new RegExp("^\/pages|^\/posts|^\/collections");
-        if ( re.test(hit.url) ) {
+        if (re.test(hit.url)) {
           let date = '';
           if (hit.date) {
             date = moment.unix(hit.date).format('MMM D, YYYY');
@@ -171,7 +171,7 @@ j1.adapter['algolia'] = (function (j1, window) {
         // logger.info('state: ' + state);
       }
 
-      if ( moduleOptions.enabled == true ) {
+      if (moduleOptions.enabled == true) {
         // initialize currentRefinedValues
         search.addWidget(
           instantsearch.widgets.currentRefinedValues({
@@ -253,7 +253,7 @@ j1.adapter['algolia'] = (function (j1, window) {
         */
       }
 
-      if ( moduleOptions.enabled == true ) {
+      if (moduleOptions.enabled == true) {
         search.start();
         $('#searcher').addClass('row');
 
@@ -261,7 +261,7 @@ j1.adapter['algolia'] = (function (j1, window) {
         logger.info('state: ' + _this.getState());
         logger.info('module initializing finished');
       } else {
-        $('#algolia-site-search').append( '<p class="ml-5 mt-5 mb-5 "> <strong>Algolia Search DISABLED</strong> </p>' );
+        $('#algolia-site-search').append('<p class="ml-5 mt-5 mb-5 "> <strong>Algolia Search DISABLED</strong> </p>');
         _this.setState('finished');
         logger.info('state: ' + _this.getState());
         logger.warn("module disabled");
@@ -274,7 +274,7 @@ j1.adapter['algolia'] = (function (j1, window) {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -283,7 +283,7 @@ j1.adapter['algolia'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

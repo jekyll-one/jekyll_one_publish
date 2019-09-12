@@ -15,7 +15,7 @@ regenerate:                             false
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
 {% endcomment %}
 
@@ -57,7 +57,7 @@ regenerate:                             false
  # Copyright (C) 2016 Miro Mannino
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
  # Justified Gallery is licensed under the MIT license
  # See: https://github.com/miromannino/Justified-Gallery
  # -----------------------------------------------------------------------------
@@ -91,7 +91,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     // Initializer
     // -------------------------------------------------------------------------
-    init: function ( options ) {
+    init: function (options) {
       // initialize state flag
       j1.adapter.jf_gallery.state = 'pending';
 
@@ -102,7 +102,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
       var settings = $.extend({
         module_name: 'j1.adapter.jf_gallery',
         generated:   '{{site.time}}'
-      }, options );
+      }, options);
 
       {% comment %} Load module config from yml data
       -------------------------------------------------------------------------- {% endcomment %}
@@ -110,8 +110,8 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
       //
       moduleOptions = $.extend({}, {{jf_gallery_options | replace: '=>', ':' | replace: 'nil', '""'}});
 
-      if ( typeof settings !== 'undefined') {
-        moduleOptions = j1.mergeData( moduleOptions, settings );
+      if (typeof settings !== 'undefined') {
+        moduleOptions = j1.mergeData(moduleOptions, settings);
       }
 
       {% comment %} Set global variables
@@ -123,7 +123,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
       logger.info('state: ' + _this.getState());
       logger.info('module is being initialized');
 
-      _this.load( moduleOptions );
+      _this.load(moduleOptions);
 
       return true;
     },
@@ -131,7 +131,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
     // -----------------------------------------------------------------------
     // Load AJAX data and initialize the jg gallery
     // -----------------------------------------------------------------------
-    load: function ( options ) {
+    load: function (options) {
       logger = log4javascript.getLogger('j1.adapter.jf_gallery.load');
 
       {% if environment == 'development' %}
@@ -188,7 +188,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
           {% endif %}
 
           // Create an gallery instance if id: {{ container_id }} exists
-          if ( $('#{{ container_id }}').length ) {
+          if ($('#{{ container_id }}').length) {
 
           {% if environment == 'development' %}
             logText = 'Gallery on ID #{{ container_id }} is being initialized';
@@ -198,14 +198,14 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
           // Place HTML markup for the title
           {% if gallery_title %}
           var gallery_title = '<div class="jg-gallery-title">{{ gallery_title }}</div>';
-          $('#{{ container_id }}').before( gallery_title );
+          $('#{{ container_id }}').before(gallery_title);
           {% endif %}
 
           $('#{{ container_id }}').addClass("justifiedgallery ");
 
           {% if gallery_type == "image" %}
             // Collect image gallery data from data file (xhr_data_path)
-            $.getJSON( '{{jf_gallery_options.xhr_data_path}}', function (data) {
+            $.getJSON('{{jf_gallery_options.xhr_data_path}}', function (data) {
               var content = '';
               var gallery_class = 'justified-gallery'
               {% if lightbox == "lg" %}
@@ -213,13 +213,13 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
               {% endif %}
               content += '<div id="{{ gallery_id }}" class="' +gallery_class+ '{{ css_classes }}">' + '\n';
 
-              for ( var i in data["{{item.gallery.id}}"] ) {
+              for (var i in data["{{item.gallery.id}}"]) {
                 var img               = data["{{item.gallery.id}}"][i].img;
                 var captions_gallery  = data["{{item.gallery.id}}"][i].captions_gallery;
                 var captions_lightbox = data["{{item.gallery.id}}"][i].captions_lightbox;
                 var lightbox          = "{{ lightbox }}";
 
-                if ( captions_lightbox != null && lightbox == 'lg' ) {
+                if (captions_lightbox != null && lightbox == 'lg') {
                   content +=  '<a data-sub-html="' +captions_lightbox+ '" ';
                   content +=  'href="' +img+ '">' + '\n';
                 } else {
@@ -238,7 +238,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
               // Initialize and run the gallery using individual gallery|lightbox options
               {% if lightbox == "lg" %}
                 var gallery_selector = $("#{{ gallery_id }}");
-                if ( options !== undefined ) {
+                if (options !== undefined) {
                   // lightbox initialized on COMPLETE event of justifiedGallery
                   gallery_selector.justifiedGallery().on('jg.complete', function () {
                     gallery_selector.lightGallery({
@@ -299,7 +299,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
     // messageHandler: MessageHandler for J1 CookieConsent module
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -308,7 +308,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         _this.setState('finished');
         logger.info(message.text);
       }

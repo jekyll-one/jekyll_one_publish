@@ -8,7 +8,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 
@@ -21,12 +21,12 @@ about_config:
   scope:                                User settings
   location:                             _data/modules/log4javascript.yml
 
-# ------------------------------------------------------------------------------
+# ==============================================================================
 # User configuration settings
 #
 settings:
 
-  # ----------------------------------------------------------------------------
+  # ============================================================================
   # APPENDER configurations
   #
   appenders:
@@ -37,8 +37,18 @@ settings:
       appender:
         name:                         consoleAppender
         type:                         BrowserConsoleAppender
+        layout:                       PatternLayout
         custom_fields:                [ file, line, path ]
-        pattern_layout:               "[%d{HH:mm:ss.SSS}] [%-5p] [%-40c] [%f{1}:%f{2}] [%m]%n                       [%f{3}]"
+        pattern_string:               '[%d{HH:mm:ss.SSS}] [%f{4}] [%-5p] [%-40c] [%f{1}:%f{2}] %m%n[%f{3}]'
+
+    # --------------------------------------------------------------------------
+    # AJAX appender
+    - name:                           Ajax Appender
+      appender:
+        name:                         ajaxAppender
+        type:                         BrowserAjaxAppender
+        layout:                       JsonLayout
+        custom_fields:                [ file, line, path ]
 
     # --------------------------------------------------------------------------
     # POPUP appender
@@ -50,10 +60,12 @@ settings:
         height:                       400
         lazyInit:                     false
         initiallyMinimized:           false
-        pattern_layout:               "%d{HH:mm:ss} %-5p - %m{1}%n"
+        layout:                       PatternLayout
+        custom_fields:                []
+        pattern_string:               '[%d{HH:mm:ss}] [ %-5p] - [%m{1}]%n'
 
 
-  # ----------------------------------------------------------------------------
+  # ============================================================================
   # LOGGER configurations
   #
   loggers:
@@ -64,7 +76,7 @@ settings:
       logger:
         type:                         parent
         name:                         j1
-        appender:                     [ consoleAppender ]
+        appender:                     [ consoleAppender, ajaxAppender ]
         level:
           production:                 warn
           development:                debug

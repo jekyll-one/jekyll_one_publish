@@ -92,16 +92,16 @@ j1.adapter['themer'] = (function (j1, window) {
   // ---------------------------------------------------------------------------
   // globals
   // ---------------------------------------------------------------------------
-  var environment             = '{{environment}}';
-  var moduleOptions           = {};
-  var user_state              = {};
-  var cookie_names            = j1.getCookieNames();
-  var user_state_cookie_name  = cookie_names.user_session;
-  var user_state_detected     = false;
-  var id                      = 'default';
-  var cssFile                 = '{{themer_options.defaultCssFile}}';
-  var interval_count          = 0;
-  var max_count               = 4;
+  var environment            = '{{environment}}';
+  var moduleOptions          = {};
+  var user_state             = {};
+  var cookie_names           = j1.getCookieNames();
+  var cookie_user_state_name = cookie_names.user_state;
+  var user_state_detected    = false;
+  var id                     = 'default';
+  var cssFile                = '{{themer_options.defaultCssFile}}';
+  var interval_count         = 0;
+  var max_count              = 4;
   var user_state_json;
   var user_state_cookie;
   var _this;
@@ -109,10 +109,17 @@ j1.adapter['themer'] = (function (j1, window) {
   var themeName;
   var themeCss;
   var themeCssHtml;
+  var vendorCssHtml;
   var themeExtensionCss;
   var themeExtensionCssHtml;
   var logger;
   var logText;
+
+  var default_theme_css           = environment === 'production' ? '/assets/themes/j1/core/css/uno.min.css' : '/assets/themes/j1/core/css/uno.css';
+  var default_theme_extention_css = '{{themer_options.includeBootswatch}}';
+  var default_theme_name          = 'Uno';
+  var default_theme_author        = 'J1 Team';
+  var default_theme_link          = 'https://jekyll.one/';
 
   // ---------------------------------------------------------------------------
   // helper functions
@@ -143,8 +150,8 @@ j1.adapter['themer'] = (function (j1, window) {
     var style;
 
     // find CSS file 'styleSheetName' in document
-    for( var i in document.styleSheets ){
-      if( sheets[i].href && sheets[i].href.indexOf(styleSheetName + ".css") > -1 ) {
+    for(var i in document.styleSheets){
+      if(sheets[i].href && sheets[i].href.indexOf(styleSheetName + ".css") > -1) {
         stylesheet = sheets[i];
         break;
       }
@@ -183,26 +190,27 @@ j1.adapter['themer'] = (function (j1, window) {
       logger.info('state: ' + _this.getState());
 
       // Detect|Set J1 UserState
-      user_state_detected = j1.existsCookie(user_state_cookie_name);
-      if ( user_state_detected ) {
-        user_state                = j1.readCookie(user_state_cookie_name);
-        themeName                 = user_state.theme_name;
-        themeCss                  = user_state.theme_css;
-        themeExtensionCss         = user_state.theme_extension_css;
+      user_state_detected = j1.existsCookie(cookie_user_state_name);
+      if (user_state_detected) {
+        user_state            = j1.readCookie(cookie_user_state_name);
+        themeName             = user_state.theme_name;
+        themeCss              = user_state.theme_css;
+        themeExtensionCss     = user_state.theme_extension_css;
       }
       if (themeCss) {
-        themeCssHtml              = "<link rel='stylesheet' id='" + id + "' href='" + themeCss + "' type='text/css' />";
-        themeExtensionCssHtml     = "<link rel='stylesheet' id='" + id + "' href='" + themeExtensionCss + "' type='text/css' />";
+        themeCssHtml          = "<link rel='stylesheet' id='" + id + "' href='" + themeCss + "' type='text/css' />";
+        themeExtensionCssHtml = "<link rel='stylesheet' id='" + id + "' href='" + themeExtensionCss + "' type='text/css' />";
       } else {
-        themeCssHtml              = '<link rel="stylesheet" type="text/css" id="default" href="{{asset_path}}/{{theme_base}}/{{default_theme}}.{{theme_ext}}" />';
-        vendorCssHtml             = '<link rel="stylesheet" type="text/css" id="default" href="{{asset_path}}/{{theme_base}}/{{vendor_css}}.{{theme_ext}}" />';
+        themeName             = default_theme_name;
+        themeCssHtml          = '<link rel="stylesheet" type="text/css" id="default" href="{{asset_path}}/{{theme_base}}/{{default_theme}}.{{theme_ext}}" />';
+        vendorCssHtml         = '<link rel="stylesheet" type="text/css" id="default" href="{{asset_path}}/{{theme_base}}/{{vendor_css}}.{{theme_ext}}" />';
         $('head').append(vendorCssHtml);
       }
       $('head').append(themeCssHtml);
 
       // Append|Remove theme extentions
       // TODO: Make default theme name 'Uno' configurable
-      if ( themeName === 'Uno'  ) {
+      if (themeName === 'Uno') {
         $('head link[href*="' +themeExtensionCss+ '"]').remove();
       } else {
         $('head').append(themeExtensionCssHtml);
@@ -303,7 +311,7 @@ j1.adapter['themer'] = (function (j1, window) {
     // messageHandler
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -312,7 +320,7 @@ j1.adapter['themer'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       //  Process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
         // Place handling of command|action here
         //

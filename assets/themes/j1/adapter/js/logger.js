@@ -43,10 +43,14 @@ regenerate:                             false
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign logger_defaults   = modules.defaults.log4javascript.defaults %}
 {% assign logger_settings   = modules.log4javascript.settings %}
+{% assign webhook_defaults  = modules.defaults.util_srv.defaults %}
+{% assign webhook_settings  = modules.util_srv.settings %}
 
 {% comment %} Set config options
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign logger_options    = logger_defaults | merge: logger_settings %}
+{% assign webhook_options   = webhook_defaults | merge: webhook_settings %}
+
 
 /*
  # -----------------------------------------------------------------------------
@@ -66,30 +70,45 @@ regenerate:                             false
 */
 'use strict';
 
-{% comment %} Main
--------------------------------------------------------------------------------- {% endcomment %}
 j1.adapter['logger'] = (function (j1, window) {
 
-  {% comment %} Set global variables
-  ------------------------------------------------------------------------------ {% endcomment %}
-  var environment   = '{{environment}}';
-  var moduleOptions = {};
+  // ---------------------------------------------------------------------------
+  // globals
+  // ---------------------------------------------------------------------------
+  var environment           = '{{environment}}';
+  var page_id               = uuid().slice(25, 37);
+  var cookie_names          = j1.getCookieNames();
+  var loggerRequestCallback = false;
+  var moduleOptions         = {};
+  var user_session;
+  var appDetected;
   var _this;
   var logger;
+  var log2disk;
+  var ajaxAppender;
+  var consoleAppender;
+  var jsonLayout;
+  var httpPostDataLayout;
+  var xmlLayout;
+  var jsonLayout;
+  var nullLayout;
+  var simpleLayout;
+  var patternLayout;
   var logText;
-
+  var payloadURL;
+  
   // ---------------------------------------------------------------------------
-  // Helper functions
+  // helper functions
   // ---------------------------------------------------------------------------
 
   // ---------------------------------------------------------------------------
   // getCustomData
-  // Throw a fake exception to retrieve the stack trace and analyze
+  // throw a 'fake' exception to retrieve the stack trace and analyze
   // to find the line from which this function was called
   // ---------------------------------------------------------------------------
   var getCustomData = function(layout, loggingReference) {
     var customData = [];
-
+    
     try {(0)()} catch (e) {
       var pattern = /^(.+?) ?\(?((?:file|https?|chrome-extension):.*?):(\d+)(?::(\d+))?\)?\s*$/ig;
       // Split the stack trace
@@ -109,15 +128,15 @@ j1.adapter['logger'] = (function (j1, window) {
       var line = logger_location[logger_location.length - 2];
       // Push resulting fields on an Object|Array to identify
       // the first custom field (%f{1}) by index [0]
-      customData.push( { 'name':'file', 'value':file } );
-      customData.push( { 'name':  'line', 'value': line } );
-      customData.push( { 'name':  'path', 'value': path } );
+      customData.push({ 'name':  'file', 'value':file });
+      customData.push({ 'name':  'line', 'value': line });
+      customData.push({ 'name':  'path', 'value': path });
+      customData.push({ 'name':  'id',   'value': page_id });
     }
 
-    // Set all custom fields > %f{1}
+    // set custom fields > %f{1}
     for (var i = 1, len = layout.customFields.length; i < len; i++) {
       var name = layout.customFields[i].name;
-      //var result = customData[i].name;
       if (customData[i].value) layout.customFields[i].value = customData[i].value;
     }
 
@@ -125,81 +144,148 @@ j1.adapter['logger'] = (function (j1, window) {
     return customData[0].value
   }
 
+  var requestCallback = function(data) {
+    var xhrData = data;
+    //
+    // place handling of command|action here
+    //
+    return;
+  }
+
   // ---------------------------------------------------------------------------
-  // Main object
+  // main object
   // ---------------------------------------------------------------------------
   return {
 
     // -------------------------------------------------------------------------
-    // Initializer
+    // initializer
     // -------------------------------------------------------------------------
-    init: function () {
+    init: function (options) {
       // initialize state flag
-      j1.adapter.logger.state = 'pending';
+      j1.adapter.logger.state = 'started';
 
-      {% comment %} Set global variables
-      -------------------------------------------------------------------------- {% endcomment %}
-      _this   = j1.adapter.logger;
-      logger  = log4javascript.getLogger('j1.adapter.logger');
+      // load module DEFAULTS|CONFIG
+      moduleOptions = $.extend({}, {{webhook_options | replace: '=>', ':' | replace: 'nil', '""'}});
 
-      _this.setState('started');
-      logger.info('state: ' + _this.getState());
+      // -----------------------------------------------------------------------
+      // setup logger instances
+      // -----------------------------------------------------------------------
+      _this       = j1.adapter.logger;
+      logger      = log4javascript.getLogger('j1.adapter.logger');
+      log2disk    = log4javascript.getLogger('j1.adapter.log2disk');
 
-      // Create a console consoleAppender inherited by all (client) loggers
-      var consoleAppender = new log4javascript.BrowserConsoleAppender();
-      consoleAppender.setThreshold(log4javascript.Level.DEBUG);
+      // wait until user_session.mode is detected by j1.init()
+      //
+      var dependencies_met_mode_detected = setInterval(function() {
+        user_session = j1.readCookie(cookie_names.user_session);
 
-      // Setup the root logger and appender
-      log4javascript.getRootLogger().addAppender(consoleAppender);
+        if (user_session.mode !== 'na') {
+          clearInterval(dependencies_met_mode_detected);
+          appDetected = user_session.mode === 'app' ? true : false;
 
-      // Set a PatternLayout with custom fields created by function getCustomData()
-      var patternLayout = new log4javascript.PatternLayout('[%d{HH:mm:ss.SSS}] [%-5p] [%-35c] [%f{1}:%f{2}] [%m]%n                       [%f{3}]');
+          if (appDetected) {
+            payloadURL = moduleOptions.utility_server.logger_client.payload_url_app;
+          } else {
+            payloadURL = moduleOptions.utility_server.logger_client.payload_url_web;
+          }
 
-      // Use the method getLineNumber() as the value for the 0th custom field
-      patternLayout.setCustomField('file',   getCustomData);
-      patternLayout.setCustomField('line',   getCustomData);
-      patternLayout.setCustomField('path',   getCustomData);
-      consoleAppender.setLayout(patternLayout);
+          // -----------------------------------------------------------------------
+          // setup appenders
+          // -----------------------------------------------------------------------
 
-      // Set logging levels for all template (parent|child) logger
-      if (environment == 'production') {
-        log4javascript.getLogger('j1').setLevel(log4javascript.Level.WARN);
-      }
-      if (environment == 'development' || environment == 'devel' || environment == 'dev' || environment == 'test') {
-        log4javascript.getLogger('j1').setLevel(log4javascript.Level.DEBUG);
-      } else {
-        // fallback settings
-        log4javascript.getLogger('j1').setLevel(log4javascript.Level.WARN);
-      }
+          // consoleAppender (browser console)
+          consoleAppender = new log4javascript.BrowserConsoleAppender();
+          consoleAppender.setThreshold(log4javascript.Level.DEBUG);
 
-      _this.setState('finished');
-      logger.info('state: ' + _this.getState());
+          // ajaxAppender (XHR)
+          ajaxAppender = new log4javascript.AjaxAppender(payloadURL);               // HTTP POST log data on the utility server (write log to disk)
+          ajaxAppender.setThreshold(log4javascript.Level.DEBUG);
+        	ajaxAppender.setWaitForResponse(true);
+          ajaxAppender.setSendAllOnUnload(true);
+          ajaxAppender.addHeader('X-Page-ID', page_id);
 
-      return true;
+          // success callback for testing (disabled for default)
+          if (loggerRequestCallback) {
+            ajaxAppender.setRequestSuccessCallback(requestCallback);      
+          }	
+
+          // -----------------------------------------------------------------------
+          // setup layouts
+          // -----------------------------------------------------------------------
+          patternLayout       = new log4javascript.PatternLayout('[%d{HH:mm:ss.SSS}] [%f{4}] [%-5p] [%-40c] [%f{1}:%f{2}] %m%n[%f{3}]');
+          httpPostDataLayout  = new log4javascript.HttpPostDataLayout();
+          xmlLayout           = new log4javascript.XmlLayout();
+          jsonLayout          = new log4javascript.JsonLayout();
+          nullLayout          = new log4javascript.NullLayout();
+          simpleLayout        = new log4javascript.SimpleLayout();
+
+          // Use the method getLineNumber() as the value for the 0th custom field
+          patternLayout.setCustomField('file',    getCustomData);
+          patternLayout.setCustomField('line',    getCustomData);
+          patternLayout.setCustomField('path',    getCustomData);
+          patternLayout.setCustomField('id',      getCustomData);
+          httpPostDataLayout.setCustomField('id', page_id);
+
+          consoleAppender.setLayout(patternLayout);
+          ajaxAppender.setLayout(httpPostDataLayout);
+        
+          // -----------------------------------------------------------------------
+          // setup (root) logger
+          // -----------------------------------------------------------------------
+          log4javascript.getRootLogger().addAppender(ajaxAppender);
+          log4javascript.getRootLogger().addAppender(consoleAppender);
+
+          // Set logging levels for all template (parent|child) logger
+          if (environment == 'production') {
+            log4javascript.getLogger('j1').setLevel(log4javascript.Level.WARN);
+          }
+          if (environment == 'development' || environment == 'devel' || environment == 'dev' || environment == 'test') {
+            log4javascript.getLogger('j1').setLevel(log4javascript.Level.DEBUG);
+          } else {
+            // fallback settings
+            log4javascript.getLogger('j1').setLevel(log4javascript.Level.WARN);
+          }
+
+          _this.setState('started');
+          logger.info('state: ' + _this.getState());
+
+          // -----------------------------------------------------------------------
+          // setup logger client (Internet)
+          // passing log data over Internet|SeeMe currently NOT used
+          // -----------------------------------------------------------------------
+          // j1.core.log4javascript.init(moduleOptions);
+
+          _this.setState('finished');
+          logger.info('state: ' + _this.getState());
+
+          return true;
+        }
+      }, 25); // END 'mode detected'
+
     }, // END init
 
     // -------------------------------------------------------------------------
     // messageHandler: MessageHandler for J1 NAV module
-    // Manage messages (paylods) send from other J1 modules
+    // manage messages (paylods) send from other J1 modules
     // -------------------------------------------------------------------------
-    messageHandler: function ( sender, message ) {
+    messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------
-      //  Process commands|actions
+      //  process commands|actions
       // -----------------------------------------------------------------------
-      if ( message.type === 'command' && message.action === 'module_initialized' ) {
+      if (message.type === 'command' && message.action === 'module_initialized') {
         //
-        // Place handling of command|action here
+        // place handling of command|action here
         //
         logger.info(message.text);
       }
 
       //
-      // Place handling of other command|action here
+      // place handling of other command|action here
       //
 
       return true;
@@ -207,7 +293,7 @@ j1.adapter['logger'] = (function (j1, window) {
 
     // -------------------------------------------------------------------------
     // setState
-    // Set the current (processing) state of the module
+    // set the current (processing) state of the module
     // -------------------------------------------------------------------------
     setState: function (stat) {
       j1.adapter.logger.state = stat;
@@ -215,7 +301,7 @@ j1.adapter['logger'] = (function (j1, window) {
 
     // -------------------------------------------------------------------------
     // getState
-    // Returns the current (processing) state of the module
+    // return ;urns the current (processing) state of the module
     // -------------------------------------------------------------------------
     getState: function () {
       return j1.adapter.logger.state;

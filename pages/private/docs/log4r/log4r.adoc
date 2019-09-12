@@ -1,0 +1,1148 @@
+---
+title:                                  Log4r
+tagline:                                manage application logs smart
+description:                            Manage logs like log4j
+
+tags:                                   [ Ruby, Manual ]
+index:                                  [ log4j, log4r, Logs  ]
+categories:                             [ pages ]
+
+permalink:                              /pages/private/user_guide/log4r/
+regenerate:                             false
+
+#resources:                             []
+resource_options:
+  - toccer:
+      collapseDepth:                    2
+  - attic:
+      opacity:                          0.2
+      slides:
+        - url:                          /assets/images/articles/log4r/code-1920x600.jpg
+          alt:                          code-1920x600
+---
+
+// Enable the Liquid Preprocessor
+// -----------------------------------------------------------------------------
+:page-liquid:
+
+// Set other global page attributes here
+// -----------------------------------------------------------------------------
+
+
+Log4r is a comprehensive and flexible logging library written in Ruby
+for use in Ruby programs. It features a hierarchical logging system of
+any number of levels, custom level names, logger inheritance, multiple
+output destinations, execution tracing, custom formatting, thread
+safteyness, XML and YAML configuration, and more.
+
+The library is an adherent to the philosophy of logging using simple print
+statements. What Log4r adds to this philosophy is a flexible way of
+controling the information being logged. Log information can be sent to
+any kind of destination and with varying degrees of importance. Log4r is
+designed so that logging statements can remain in production code with
+almost no extra computational cost.
+
+
+== What's up
+
+Log4r intends to be easy to use and configure, no matter the complexity.
+Simple scripts can use Log4r right away with minimal configuration,
+while more complex applications can set up a structured
+configuration file based on XML or YAML. Find the documentation below
+provided, with a user's manual, a reference API, and over a dozen
+examples. Log4r attempts to abide by the Principle of Least Surprise,
+which means that it works as intended at all points.
+
+Log4r was inspired by and provides much of the features of the
+http://jakarta.apache.org/log4j/docs/index.html[Apache Log4j] project,
+but is not a direct implementation or clone. Aside from superficial
+similarities, the projects are not related in any way and the code base
+is completely distinct. Log4r was developed without even looking at the
+Apache Log4j code.
+
+Log4r is an Open Source project and intends to remain that way. The
+Log4r license is similar to the Ruby Language license. It resides on
+
+While Log4r is interpreted, it attempts to achieve optimal performance
+and scale well. Already, plans are being made to write the
+performance-critical components as a C extension to Ruby.
+
+Log4r was inspired by and provides much of the features of the
+http://jakarta.apache.org/log4j/docs/index.html[Apache Log4j] project,
+but is not a direct implementation or clone. Aside from superficial
+similarities, the projects are not related in any way and the code base
+is completely distinct. Log4r was developed without even looking at the
+Apache Log4j code.
+
+Log4r is an Open Source project and intends to remain that way. The
+Log4r license is similar to the Ruby Language license. It resides on
+link:license.html[this page] and in the distribution in a file
+
+=== Quick'n dirty
+
+Here's an example of how to use Log4r right away.
+
+[source, ruby]
+----
+require 'log4r'
+include Log4r
+
+# create a logger named 'mylog' that logs to stdout
+mylog = Logger.new 'mylog'
+mylog.outputters = Outputter.stdout
+
+# Now we can log.
+def do_log(log)
+  log.debug "This is a message with level DEBUG"
+  log.info "This is a message with level INFO"
+  log.warn "This is a message with level WARN"
+  log.error "This is a message with level ERROR"
+  log.fatal "This is a message with level FATAL"
+end
+do_log(mylog)
+----
+
+The output will look something like this:
+
+[source, ruby]
+----
+DEBUG mylog: This is a message with level DEBUG
+ INFO mylog: This is a message with level INFO
+ WARN mylog: This is a message with level WARN
+ERROR mylog: This is a message with level ERROR
+FATAL mylog: This is a message with level FATAL
+----
+
+For ease of access, the logger is stored in a hashtable keyed to its
+name:
+
+[source, ruby]
+----
+mylog = Logger['mylog']        # Get our logger back
+----
+
+Suppose we want to turn off `DEBUG`, `INFO` and `WARN` messages and see
+only `ERROR` and `FATAL`. To do this, we set the level threshold for
+mylog to `ERROR`:
+
+[source, ruby]
+----
+mylog.level = ERROR
+----
+
+Running `do_log(mylog)` yields:
+
+[source, ruby]
+----
+ERROR mylog: This is a message with level ERROR
+FATAL mylog: This is a message with level FATAL
+----
+
+
+== Step in
+
+We will now go over the components of Log4r. A summary of each is
+provided, and links to the link:rdoc/index.html[Log4r RDoc API] are
+provided for further perusal.
+
+=== Levels
+
+Log4r uses a hierarchical system of logging. That is, certain log events
+can have a higher priority than other log events. Hence, one can control
+how much information one wants to log by adjusting the *level threshold*
+of logging. By default, the logging levels and priorities are:
+
+[source, ruby]
+----
+DEBUG < INFO < WARN < ERROR < FATAL
+----
+
+In the previous section, we saw how setting the level to `ERROR`
+prevented messages with levels `DEBUG`, `INFO` and `WARN` from showing
+up. The names and numbers of these levels are configurable. You can have
+any number of levels and name them whatever you wish. The logging
+methods we saw in the last section will be named after the custom
+levels. Log4r adjusts itself to suit your needs.
+
+To find out more about levels, please see rdoc/files/log4r_rb.html.
+
+=== Loggers
+
+The principle interface in Log4r is a Logger. Loggers have one logging
+method for each level and any number of output destinations. A logger's
+level threshold and output destinations may be changed dynamically.
+Loggers are stored within a Repository for retrieval at any time.
+Loggers provide all kinds of data for logging: the log message itself,
+the line number and file it was called in, a timestamp, the log
+priority, and so on.
+
+Loggers can inherit other Loggers. Inheritance means that a Logger
+initially adopts the characteristics of its parent if none are
+specified. A Logger's level is inherited once, and a Logger will write
+to its parents output destinations as well as its own. This behavior is
+optional, but allows one to structure a powerful, and easily
+configurable logging system.
+
+To find out more about loggers, please see
+rdoc/files/log4r/logger_rb.html.
+
+
+=== Outputters
+
+An output destination (file, raw IO, stdout, etc.) is represented by an
+Outputter object. An Outputter has a particular means of formatting data
+(Formatter) and has a level threshold of its own. Outputters, like
+Loggers, are stored in a repository and can be retrieved and manipulated
+at any time. Every outputter is thread-safe, meaning that multiple
+threads can log to the same Outputter without worrying about race
+conditions.
+
+There is a growing collection of outputters provided: raw IO, to stdout,
+to stderr, to files (including one that splits and zips up logs
+periodically), to syslog and to an email address. If a specialized
+Outputter is needed, one can be created from scratch in almost no time,
+thanks to the ease of extending log4r outputters, the well documented
+code and the open source license.
+
+To find out more about outputters, please see
+rdoc/files/log4r/outputter/outputter_rb.html.
+
+=== Formatters
+
+A Formatter is responsible for rendering a log message into an output
+format. Several Formatters are provided, including the powerful
+PatternFormatter. PatternFormatter uses sprintf-like directives to
+format log messages and eliminates the need for custom Formatters.
+
+To find out more about formatters, please see
+rdoc/files/log4r/formatter/formatter_rb.html. +
+To find out more about PatternFormatter, please see
+rdoc/files/log4r/formatter/patternformatter_rb.html.
+
+=== Configuration
+
+Configuring Log4r is accomplished via the Configurator and
+YamlConfigurator classes. They allow one to set custom levels and load
+up XML or YAML configurations. The XML and YAML grammar used by Log4r is
+extremely flexible and can accomodate the configuration of custom
+Outputters and Formatters with no extra work. That is, if a custom
+Outputter is created, it can immedieately be configured without needing
+to write extra code. This is acomplished by taking advantage of Ruby's
+powerful reflection capabilities.
+
+To find out more about configuration, please see
+rdoc/files/log4r/configurator_rb.html. +
+For YAML configuration, also see
+link:rdoc/files/log4r/yamlconfigurator_rb.html[rdoc/files/log4r/yamlconfigurator.html]
+
+
+=== Remote Logging
+
+It is possible to send log events from an Outputter to a Logger over a
+network. This is accomplished using the distributed Ruby library ROMP, a
+subclass of Logger called LogServer, and a RemoteOutputter.
+
+To find out more about remote logging, please see
+rdoc/files/log4r/logserver_rb.html
+
+Alternatively, one can just send log reports via email using
+EmailOutputter.
+
+To find out more about EmailOutputter, please see
+rdoc/classes/Log4r/EmailOutputter.html
+
+
+== Art of Logging
+
+Log4r in itself does not automatically enable people to understand
+logging, however it does provide tools to assist in _The Art of
+Logging_. We will now cover some of the techniques in this art and how
+to use Log4r to accomplish them.
+
+=== Avoiding Parameter Evaluation
+
+Suppose we have a complex structure and don't have the time to make a
+special `to_s` method. When we want to log the contents of the object,
+we end up doing something like this:
+
+[source, ruby]
+----
+log.debug( myobj.collect{|e| e.collect{|p| p.to_s}} )
+----
+
+It is expensive to do this because every time the debug method is
+called, the parameters passed to it will be evaluated. Because this is a
+feature of Ruby, setting the logger to `OFF` will not prevent the
+evaluation. There are two ways to get around parameter evaluation. The
+first is to perform a simple if condition:
+
+[source, ruby]
+----
+if log.debug?
+  log.debug( myobj.collect{|e| e.collect{|p| p.to_s}} )
+end
+----
+
+Here we are introduced to `log.debug?`, which is called a _query
+method_. It returns true if `DEBUG` messages are being logged, otherwise
+it returns false. Query methods are very cheap to invoke and are a great
+way to encapsulate complext logging statements. The query methods, like
+the logging ones, are named after the levels, but with a question mark
+at the end. As another example, `log.info?` will find out if `INFO` is
+being logged and so on.
+
+The second way around parameter evaluation is to pass a block to the
+logging method:
+
+[source, ruby]
+----
+log.debug { myobj.collect{|e| e.collect{|p| p.to_s} }
+----
+
+The block will be evaluated if and only if the logger is capable of
+handling `DEBUG` log events.
+
+=== How Many?
+
+How many loggers should one have? Only experience can tell, but a
+general rule of thumb is to create one static logger per class and one
+per service or state.
+
+When dealing with a large number of loggers, logger inheritance and
+additivity can help organize what gets logged and to where.
+
+The configuration possibilities in Log4r are uncountable and can
+sometimes be daunting. It's best to start with something simple and
+evolve it over time. To assist in this task, Log4r can be set up using
+XML or YAML configuration files.
+
+=== Where To?
+
+Log4r lets one associate any number of Outputters to a Logger. Logger
+additivity enables propagation of a log event upwards in the logger
+hierarchy. The outputters themselves can have their own level
+thresholds. Unlike normal loggers, Outputters can log at certain
+specific log levels. this allows one to channel particular data to a
+particular output. All things considered, log4r offers tremendous
+flexibility in deciding what gets logged where.
+
+=== Where From?
+
+Want to find out where a particular log statement came from? Loggers
+have tracers which record the call stack when turned on:
+
+[source, ruby]
+----
+Logger['mylog'].trace = true
+----
+
+The trace is then accesible by a Formatter.
+
+
+=== Who's Talking?
+
+If there are many loggers that use logger inheritance, it's occasionally
+a good idea to show the full ancestry of a logger in the log statement.
+Here's how to set up PatternFormatter to show the full ancestry of a
+logger in a logging statement (in XML):
+
+[source, ruby]
+----
+<formatter type="PatternFormatter">
+  <!-- %C shows full ancestry -->
+  <pattern>[%l %C] %m</pattern>
+</formatter>
+----
+
+For a logger named 'me' with ancestors 'cain::grandpa::pa', it will
+produce:
+
+[source, ruby]
+----
+[DEBUG cain::grandpa::pa::me] Log message
+----
+
+=== The Null Logger
+
+In addition to being the parent of all loggers, Logger.root is a null
+object. That means that it does absolutely nothing when its log methods
+are invoked. Its query methods always return false and it has no
+outputters. It is useful to turn loggers off from within code:
+
+[source, ruby]
+----
+noisylog = Logger.root
+noisy.debug "This won't do anything"
+----
+
+=== Gotchas
+
+If you are using Log4r, there are a few gotchas that you should be aware
+of:
+
+* Logger levels can be dynamically redefined, but the change won't be
+  noticed by any children. That is, if you set `root.level=OFF` _after_
+  defining some loggers, none of the loggers will change their level to
+  `OFF`. There is a good reason for this behavior.
+* Dynamically redefining levels, tracing or additivity is expensive.
+  It's best to set up all your loggers in a config script and avoid making
+  dynamic changes to Log4r objects. The dynamism is most useful for
+  debugging and development, where local control of logging is a great
+  convenience.
+* When an `IOOutputter`'s `IO` is closed, the `IOOutputter` changes its
+  level to `OFF`
+
+=== Performance
+
+Profiling has revealed that log4r is typically an order of magnitude or
+two slower than log4j. However, this is still damn fast! In particular,
+if a logger is set to `OFF`, the overhead of checking to see if a log
+event should be logged nearly vanishes. This was accomplished by
+dynamically redefining the unloggable logging methods to do nothing.
+
+In the future, Log4r's performance critical features will be written as
+a C extension to Ruby. It will still be optional, but it will be
+available for those who absolutely need to squeeze every last ounce of
+performance out of Log4r. (No longer in the works, unfortunately.)
+
+
+== Examples
+
+See: https://github.com/colbygk/log4r/blob/master/examples/README[log4r project examples]
+
+See: https://github.com/colbygk/log4r/tree/master/examples[log4r project example sources] 
+
+The examples are:
+
+. <<Out of the box>>, How to get started with minimal setup
+. <<Simple config>>, Using Log4r casually
+. <<Moderate config>>, A more sophisticated config
+. <<XML config>>, XML configuration example based on #3
+. <<A real example>>, A real example (or used to be ;-)
+. <<Remote logging>>, Remote logging example
+. <<Using RollingFileOutputter>>, Using RollingFileOutputter
+. <<YAML configuration example>>, YAML configuration example
+
+The output will go to screen and to files in the directory logs/.
+
+Note to RubyGems users: The syntax to require log4r as a gem is as follows:
+
+[source, ruby]
+----
+require 'rubygems'
+require_gem 'log4r'
+----
+
+Obviously, the examples will need to be modified to follow this.
+
+
+=== Out of the box
+
+How to get started with minimal setup.
+
+.outofthebox.rb
+[source, ruby]
+----
+# Here's how to start using log4r right away
+$: << File.join('..','lib')                   # path if log4r not installed
+require "log4r"
+
+Log = Log4r::Logger.new("outofthebox")        # create a logger
+Log.add Log4r::Outputter.stderr               # which logs to stdout
+
+# do some logging
+def do_logging
+ Log.debug "debugging"
+ Log.info "a piece of info"
+ Log.warn "Danger, Will Robinson, danger!"
+ Log.error "I dropped my Wookie! :("
+ Log.fatal "kaboom!"
+end
+do_logging
+
+# now let's filter anything below WARN level (DEBUG and INFO)
+puts "-= Changing level to WARN =-"
+Log.level = Log4r::WARN
+do_logging
+----
+
+=== Simple config
+
+Using Log4r casually.
+
+.simpleconfig.rb
+[source, ruby]
+----
+# Simple configuration example.
+# Where we configure just one logger and make it log to a file and stdout.
+
+# add the path to log4r if it isn't installed in a ruby path
+$: << File.join('..','lib')
+require "log4r"
+
+# First things first, get the root logger and set its level to WARN.
+# This makes the global level WARN. Later on, we can turn off all logging
+# by setting it to OFF right here (or dynamically if you prefer)
+Log4r::Logger.root.level = Log4r::WARN
+
+# Remember: By specifying a level, we are saying "Include this level and
+# anything worse." So in this case, we're logging WARN, ERROR and FATAL
+
+# create a logger
+log = Log4r::Logger.new("simpleconf")
+
+# We want to log to $stderr and a file ./tmp.log
+
+# Create an outputter for $stderr. It defaults to the root level WARN
+Log4r::StderrOutputter.new 'console'
+# for the file, we want to log only FATAL and ERROR and don't trunc
+Log4r::FileOutputter.new('logfile', 
+                         :filename=>'logs/simple.log', 
+                         :trunc=>false,
+                         :level=>Log4r::FATAL)
+
+# add the outputters (this method accepts outputter names or references)
+log.add('console','logfile')
+
+# Now let's try it out:
+log.debug "debugging"
+log.info "a piece of info"
+log.warn "Danger, Will Robinson, danger!"
+log.error "I dropped my Wookie! :("
+log.fatal "kaboom!"
+
+# now run this and compare output to ./tmp.log
+----
+
+
+=== Moderate config
+
+A more sophisticated config
+
+.moderateconfig.rb
+[source, ruby]
+----
+# Now, for something more complicted
+# Let's pretend this is the global config file for our app
+
+$: << File.join('..','lib')
+require "log4r"
+
+include Log4r                   # include Log4r to make things simple
+
+Logger.root.level = DEBUG       # global level DEBUG
+
+# suppose we want to have loggers for a Server and a Client class
+# furthermore, we want the client gui to have its own logger. (You'll want
+# one logger per class or so.)
+# When the loggers are created, they are stored in a repository for further
+# retreival at any point using a hash method call: Logger['name']
+
+# server is stable, so only log ERROR and FATAL
+Logger.new("server", ERROR)
+# let's say we don't need the DEBUG junk for client logs
+Logger.new("client", INFO)
+# but we're still debugging the gui
+debugger = Logger.new("client::gui", DEBUG)
+debugger.trace = true     # we want to see where the log method was called
+
+# Guilog is a child of client. In this case, any log events to the gui
+# logger will also be logged to the client outputters. We can change
+# that behavior by setting guilogger's 'additive' to false, but not yet.
+
+# let's create the outputters
+FileOutputter.new('server', :filename=>'logs/server.log', :trunc => false)
+FileOutputter.new('client', :filename=>'logs/client.log')
+FileOutputter.new('gui', :filename=>'logs/guidebug.log')
+# additionally, we want ERROR and FATAL messages to go to stderr
+StderrOutputter.new('console', :level=>ERROR)
+
+# add the outputters
+Logger['server'].add 'server', 'console'
+Logger['client'].add 'client', 'console'
+Logger['client::gui'].add 'gui'  # gui will also write to client's outputters
+
+# That's it for config. Now let's use the loggers:
+
+def do_logging(log)
+  log.debug "debugging"
+  log.info "a piece of info"
+  log.warn "Danger, Will Robinson, danger!"
+  log.error "I dropped my Wookie! :(" 
+  log.fatal "kaboom!"
+end
+
+Logger.each_logger{|logger| do_logging(logger) }
+
+# You can dynamically change levels and turn off tracing:
+Logger['client'].level = OFF
+Logger['client::gui'].trace = false
+
+puts 'Only server should show Dynamic Change onscreen:'
+Logger.each_logger{|logger| logger.fatal "Dynamic change." }
+# logs/client.log file should not show "Dynamic change."
+# logs/guidebug.log should not show the trace at "Dynamic change."
+
+# we can also set our outputter to log only specified levels:
+
+Outputter['console'].only_at ERROR
+puts "Should only see ERROR next:"
+do_logging Logger['server']
+----
+
+=== XML config
+
+XML configuration example based on <<Moderate config>>.
+
+.xmlconfig.rb
+[source, ruby]
+----
+# This is like moderateconfig.rb, but using an XML config
+# please look at moderate.xml
+
+$: << '../lib'
+
+require 'log4r'
+require 'log4r/configurator'
+include Log4r
+
+# set any runtime XML variables
+Configurator['logpath'] = './logs'
+# Load up the config file
+Configurator.load_xml_file('./moderate.xml')
+
+# now repeat what moderateconfig.rb does
+def do_logging(log)
+log.debug "debugging"
+log.info "a piece of info"
+log.warn "Danger, Will Robinson, danger!"
+log.error "I dropped my Wookie! :("
+log.fatal "kaboom!"
+end
+
+Logger.each_logger{|logger| do_logging(logger) }
+# stop here
+----
+
+.moderate.xml
+[source, xml]
+----
+<!-- the config file used by xmlconfig.rb -->
+<log4r_config>
+  <pre_config>
+    <global level="DEBUG"/>
+    <!-- we'll set serverlog in XML and logpath at runtime for illustration -->
+    <parameter name="serverlog" value="./logs/server.log"/>
+  </pre_config>
+
+  <!-- outputters, illustrating XML config flexibility -->
+  <outputter type="FileOutputter" name="server">
+    <filename>#{serverlog}</filename>
+    <trunc>false</trunc>
+  </outputter>
+  <outputter type="FileOutputter" name="client" 
+             filename="#{logpath}/client.log"/>
+  <outputter type="FileOutputter" name="gui" 
+             filename="#{logpath}/guidebug.log"/>
+  <outputter type="StderrOutputter" name="console" level="ERROR"/>
+
+  <!-- loggers -->
+
+  <logger name="server" level="ERROR" outputters="server, console"/>
+  <logger name="client" level="INFO"  outputters="client, console"/>
+  <logger name="client::gui" trace="true">
+    <level>DEBUG</level>
+    <outputter>gui</outputter>
+  </logger>
+
+</log4r_config> 
+----
+
+
+=== A real example
+
+A real example (or used to be ;-)
+
+.rrsetup.rb
+[source, ruby]
+----
+# This is a real config file used by a game that I'm working on
+# The XML config file is called rrconfig.xml
+
+$: << File.join('..','lib')
+require 'log4r'
+require 'log4r/configurator'
+include Log4r
+
+# How to format component data - low noise
+class CompFormatter < Formatter
+  def format(event)
+    buff = event.name + "> "
+    if event.data.kind_of?(String) then buff += event.data
+    else buff += event.data.inspect end
+    return buff + "\n"
+  end
+end
+
+# Set the logpath. Eventually, this will be determined from the environment.
+Configurator['logpath'] = './logs'
+Configurator.load_xml_file('rrconfig.xml')
+
+# the rest is an example
+
+Robot = {"name"=>"twonky", "row"=>"3", "col"=>"4"}
+
+def do_logging(log)
+log.comp3  Robot
+log.comp2 Robot
+log.comp1 Robot
+log.data "this is a piece of data".split
+log.debug "debugging"
+log.info "a piece of info"
+log.warn "Danger, Will Robinson, danger!"
+log.error "I dropped my Wookie! :(" 
+log.fatal "kaboom!"
+end
+
+Logger.each_logger {|logger| do_logging(logger)}
+
+# you can see the results onscreen and in logs/game.log
+# logs/data.log and logs/component.log
+----
+
+rrconfig.xml
+[source, xml]
+----
+<!-- This is a real config file used by a game that I'm working on 
+     The Ruby file that loads this is rrsetup.rb -->
+<log4r_config>
+  <pre_config>
+    <!-- I like having a ton of levels. There are three extra for component
+         data, comp1..3 and one level for object dumps (DATA) -->
+    <custom_levels>
+      COMP3, COMP2, COMP1, DATA, DEBUG, INFO, WARN, ERROR, FATAL
+    </custom_levels>
+    <!-- change to ERROR when the game goes to production -->
+    <global level="ALL"/>
+  </pre_config>
+
+  <!-- Outputters -->
+
+  <!-- game.log records DEBUG and higher, so no game component data -->
+  <outputter name="gameout" type="FileOutputter" level="DEBUG">
+    <!-- I set the logpath from within the game. -->
+    <filename>#{logpath}/game.log</filename>
+  </outputter>
+  <!-- DATA level goes to its own special file. These log events are
+       too noisy for game.log and are not game components. Useful
+       for dumping lots of objects during development. -->
+  <outputter name="gamedata" type="FileOutputter" only_at="DATA">
+    <filename>#{logpath}/data.log</filename>
+    <!-- low-noise custom formatter for objects -->
+    <formatter type="CompFormatter"/>
+  </outputter>
+  <!-- Spit any errors to the console. They merit special attention -->
+  <outputter name="console" type="StderrOutputter" level="ERROR"/>
+  <!-- A separate log file for tracking game components, 
+       used for development. It logs ALL-->
+  <outputter name="componentout" type="FileOutputter">
+    <filename>#{logpath}/component.log</filename>
+    <formatter type="CompFormatter"/>
+  </outputter>
+
+  <!-- Loggers -->
+
+  <!-- 'game' is the main logger for the client-server framework -->
+  <logger name="game" level="DATA" additive="false" trace="true">
+    <outputters>gameout, gamedata, console</outputters>
+  </logger>
+  <!-- Notice how we have fine control over how each element logs.
+       The gui and controller are stable while the rest are being debugged. -->
+  <logger name="game::gui" level="ERROR" additive="true" trace="true"/>
+  <logger name="game::boardgui" level="DEBUG" additive="true" trace="false"/>
+  <logger name="game::server" level="DEBUG" additive="true" trace="true"/>
+  <logger name="game::client" level="DEBUG" additive="true" trace="true"/>
+  <logger name="game::controller" level="ERROR" additive="true" trace="false"/>
+
+  <!-- 'component' is the main logger for game objects. It's used in
+       development to track how the objects change with time. -->
+  <logger name="component" level="ALL" additive="false" trace="false">
+    <outputter>componentout</outputter>
+    <outputter>console</outputter>
+  </logger>
+  <logger name="component::board"/>
+  <logger name="component::tile"/>
+  <logger name="component::player"/>
+  <logger name="component::player::robot"/>
+ 
+</log4r_config>
+----
+
+=== Remote logging
+
+Remote logging example
+
+.logserver.rb
+[source, ruby]
+----
+# How to use LogServer
+
+$: << File.join('..','lib')
+require 'log4r'
+require 'log4r/configurator'
+
+# XML configuration is simple enough to embed here
+xml = %(
+<log4r_config>
+  <logserver name="server" uri="tcpromp://localhost:9999">
+   <outputter>stdout</outputter>
+  </logserver>
+</log4r_config>
+)
+Log4r::Logger.new('log4r').add 'stdout'        # to see what's going on inside
+Log4r::Configurator.load_xml_string xml        # load it up
+sleep                                   
+# now run logclient.rb on another terminal
+----
+
+.logclient.rb
+[source, ruby]
+----
+# How to use RemoteOutputter. See logserver.rb first.
+
+$: << File.join('..','lib')
+require 'log4r'
+require 'log4r/outputter/remoteoutputter'
+include Log4r
+
+Logger.new('log4r').add 'stdout'        # to see what's going on inside
+RemoteOutputter.new 'remote',           # make a RemoteOutputter
+    :uri=>'tcpromp://localhost:9999',   # where our LogServer is
+    :buffsize=>10                       # buffer 10 before sending to LogServer
+Logger.new('client').add('remote')      # give 'remote' to a 'client' Logger
+
+# we're done with setup, now let's log
+def log(l)
+  l.debug "debugging"
+  l.info "a piece of info"
+  l.warn "Danger, Will Robinson, danger!"
+  l.error "I dropped by Wookie! :("
+  l.fatal "kaboom!"
+end
+
+5.times { log(Logger['client']) }      # do a bunch of logging
+Logger['client'].info "Bye Bye from client!"
+Outputter['remote'].flush              # flush the RemoteOutputter
+----
+
+=== Using RollingFileOutputter
+
+Using RollingFileOutputter.
+
+.fileroll.rb
+[source, ruby]
+----
+# How to use RollingFileOutputter
+
+$: << "../lib"
+require 'log4r'
+include Log4r
+
+puts "this will take a while"
+
+# example of log file being split by time constraint 'maxtime'
+config = {
+  "filename" => "logs/TestTime.log",
+  "maxtime" => 10,
+  "trunc" => true
+}
+timeLog = Logger.new 'WbExplorer'
+timeLog.outputters = RollingFileOutputter.new("WbExplorer", config)
+timeLog.level = DEBUG
+
+# log something once a second for 100 seconds
+100.times { |t|
+  timeLog.info "blah #{t}"
+  sleep(1.0)
+}
+
+# example of log file being split by space constraint 'maxsize'
+config = {
+  "filename" => "logs/TestSize.log",
+  "maxsize" => 16000,
+  "trunc" => true
+}
+sizeLog = Logger.new 'WbExplorer'
+sizeLog.outputters = RollingFileOutputter.new("WbExplorer", config)
+sizeLog.level = DEBUG
+
+# log a large number of times
+100000.times { |t|
+  sizeLog.info "blah #{t}"
+}
+
+puts "done! check the two sets of log files in logs/ (TestTime and TestSize)"
+----
+
+=== YAML configuration example
+
+YAML configuration example
+
+.yaml.rb
+[source, ruby]
+----
+# Log4r can be configured using YAML. This example uses log4r_yaml.yaml
+
+$: << File.join('..','lib') # path if log4r is not installed
+require 'log4r'
+require 'log4r/yamlconfigurator'
+# we use various outputters, so require them, otherwise config chokes
+require 'log4r/outputter/datefileoutputter'
+require 'log4r/outputter/emailoutputter'
+require 'log4r/outputter/scribeoutputter'
+
+cfg = Log4r::YamlConfigurator # shorthand
+cfg['HOME'] = '.'      # the only parameter in the YAML, our HOME directory
+
+# load the YAML file with this
+cfg.load_yaml_file('log4r_yaml.yaml')
+
+# Method to log each of the custom levels
+def do_logging(log)
+  log.deb "This is DEB"
+  log.inf "This is INF"
+  log.prt "This is PRT"
+  log.wrn "This is WRN"
+  log.err "This is ERR"
+  log.fat "This is FAT"
+end
+
+# turn off the email outputter
+Log4r::Outputter['email'].level = Log4r::OFF
+# the other two outputters log to stderr and a timestamped file in ./logs
+do_logging( Log4r::Logger['mylogger'])
+----
+
+.log4r_yaml.yaml
+[source, yaml]
+----
+purpose    : TestA
+description: This is the 1st YAML doc
+say        : Hi
+
+---
+# *** YAML2LOG4R ***
+log4r_config:
+  # define all pre config ...
+  pre_config:
+    custom_levels:
+      - DEB
+      - INF
+      - PRT
+      - WRN
+      - ERR
+      - FAT
+    global:
+      level: DEB
+    root  :
+      level: DEB
+    parameters:
+      - name   : x
+        value  : aaa
+      - name   : y
+        value  : bbb
+
+  # define all loggers ...
+  loggers:
+    - name      : mylogger
+      level     : DEB
+      additive  : 'false'
+      trace     : 'false'
+      outputters:
+        - stderr
+        - logfile
+        - email
+        - scribe
+
+    - name      :  yourlogger
+      level     : INF
+      outputters:
+        - stderr
+        - logfile
+        - scribe
+
+  # define all outputters (incl. formatters)
+  outputters:
+    - type     : StderrOutputter
+      name     : stderr 
+      level    : DEB
+      only_at  :
+        - INF
+        - WRN
+        - FAT
+      formatter:
+        date_pattern: '%y%m%d %H:%M:%S'
+        pattern     : '%d %l: %m '
+        type        : PatternFormatter
+
+    - type        : DateFileOutputter
+      name        : logfile
+      level       : DEB
+      date_pattern: '%Y%m%d'
+      trunc       : 'false'
+      dirname     : "#{HOME}/logs"
+      formatter   :
+        date_pattern: '%y%m%d %H:%M:%S'
+        pattern     : '%d %l: %m'
+        type        : PatternFormatter
+  
+    - type        : EmailOutputter
+      name        : email
+      level       : FAT
+      server      : localhost
+      subject     : 'Message from #{PN}:'
+      from        : test@localhost
+      to          : anhu@localhost
+      immediate_at: FAT
+      formatfirst : 'true'
+      formatter   :
+        date_pattern: '%y%m%d %H:%M:%S'
+        pattern     : '%d %l: %m'
+        type        : PatternFormatter
+
+    - type        : ScribeOutputter
+      name        : scribe
+      level       : DEB
+      host        : "127.0.0.1"
+      port        : "9090"
+      formatter   :
+        date_pattern: '%y%m%d %H:%M:%S'
+        pattern     : '%d %l: %m'
+        type        : PatternFormatter
+---
+purpose    : TestB
+description: This is the last YAML doc
+say        : Bye
+----
+
+
+
+== Other examples
+
+I have been using log4r at work in most of the applications and systems
+written in Ruby. It’s easy to use, and provide the features that an
+application would need: 
+
+* Support multiple message levels such as Fatal, Error, Warn and Msg.
+
+* Customizable log file format - Multiple output destinations, like
+  print out on the screen, and store in a log file
+
+Here in this post, I’ll show you how to use log4r in your Ruby project.
+
+=== Install the Gem
+
+[source, ruby]
+----
+gem install log4r
+----
+
+=== Include log4r in your project
+
+One thing to note is the log4r supports configurations through YAML
+file, and you can define the configuration file when including the
+log4r.
+
+[source, ruby]
+----
+require 'log4r'
+require 'log4r/yamlconfigurator'
+require 'log4r/outputter/datefileoutputter'
+require 'log4r/outputter/emailoutputter'
+include Log4r
+ycfg = YamlConfigurator    # handy shorthand
+ycfg.load_yaml_file(File.dirname(__FILE__)+'/l4r.yml')
+----
+
+=== Configure log4r with a config file
+
+You can define the logging levels, logger names, output destinations,
+etc. The following code shows an example of the configurations that I
+use.
+
+.log4r.yml
+[source, yaml]
+----
+log4r_config:
+  # define all pre config ...
+  pre_config:
+    global:
+      level: DEBUG
+    root  :
+      level: DEBUG
+
+  # define all loggers ...
+  loggers:
+    - name      : myproject
+      level     : DEBUG
+      additive  : 'false'
+      trace     : 'false'
+      outputters:
+        - stderr
+        - logfile
+        - email
+
+  # define all outputters (incl. formatters)
+  outputters:
+    - type     : StderrOutputter
+      name     : stderr
+      level    : INFO
+      formatter:
+        date_pattern: #'%y%m%d %H:%M:%S'
+        pattern     : '[%c] %l: %m'
+        type        : PatternFormatter
+
+    - type        : DateFileOutputter
+      name        : logfile
+      level       : DEBUG
+      date_pattern: #'%Y%m%d'
+      trunc       : 'false'
+      dirname     : "."
+      formatter   :
+        date_pattern: '%H:%M:%S'
+        pattern     : '[%c] %d %l: %m'
+        type        : PatternFormatter
+
+    - type        : EmailOutputter
+      name        : email
+      level       : FATAL
+      server      : <server domain>
+      subject     : 'Message myproject:'
+      from        : <email address>
+      to          : <email address>
+      formatter   :
+        date_pattern: #'%y%m%d %H:%M:%S'
+        pattern     : '%d %l: %m'
+        type        : PatternFormatter
+----
+
+
+===  Initialize a logger
+
+You need initialize a logger in your project first.
+
+[source, ruby]
+----
+logger = Log4r::Logger['myproject']
+----
+
+=== Use your logger
+
+[source, ruby]
+----
+logger.info 'My Project Starts!'
+logger.warn 'Here is a warning'
+logger.error 'Here is an error'
+logger.fatal 'Fatal error happens. Program will exit'
+----
+
