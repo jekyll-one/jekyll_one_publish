@@ -1,2 +1,2 @@
 # starter-app
-Starter App demo starter-app
+Starter App demo
