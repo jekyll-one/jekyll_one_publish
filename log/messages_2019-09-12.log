@@ -5312,3 +5312,14 @@
 [2019-09-12 16:24:21.389] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check config, authentication: enabled
 [2019-09-12 16:24:21.390] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, content detected of category: public
 [2019-09-12 16:24:21.390] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, pass all content of category: public
+[2019-09-12 16:38:32.199] [0505600a2e6] [INFO ] [/                                       ] [j1.mw.auth_mgr                          ] middleware is being initialized
+[2019-09-12 16:38:32.199] [0505600a2e6] [INFO ] [/                                       ] [j1.mw.auth_mgr                          ] state: stated
+[2019-09-12 16:38:32.210] [0505600a2e6] [INFO ] [/                                       ] [j1.mw.auth_mgr                          ] middleware initialized successfully
+[2019-09-12 16:38:32.210] [0505600a2e6] [INFO ] [/                                       ] [j1.mw.auth_mgr                          ] state: finished
+[2019-09-12 16:38:32.325] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] initial checks initiated
+[2019-09-12 16:38:32.325] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] read user session cookie
+[2019-09-12 16:38:32.325] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check authentication state
+[2019-09-12 16:38:32.326] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] user authenticated: jadams_gmx_de
+[2019-09-12 16:38:32.326] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check config, authentication: enabled
+[2019-09-12 16:38:32.326] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, content detected of category: public
+[2019-09-12 16:38:32.326] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, pass all content of category: public
