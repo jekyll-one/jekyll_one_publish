@@ -5168,3 +5168,147 @@
 [2019-09-12 16:16:46.838] [a9e8c880d4f] [INFO ] [                                        ] [j1.displayPage] state: finished
 [2019-09-12 16:16:46.838] [a9e8c880d4f] [INFO ] [                                        ] [j1.displayPage] page finalized successfully
 [2019-09-12 16:16:46.849] [a9e8c880d4f] [INFO ] [                                        ] [j1.core.attic] container visible on id: #image_attic
+[2019-09-12 16:23:57.963] [0505600a2e6] [INFO ] [/apps/public/cc/                        ] [j1.mw.auth_mgr.preflight                ] initial checks initiated
+[2019-09-12 16:23:57.964] [0505600a2e6] [INFO ] [/apps/public/cc/                        ] [j1.mw.auth_mgr.preflight                ] read user session cookie
+[2019-09-12 16:23:57.964] [0505600a2e6] [INFO ] [/apps/public/cc/                        ] [j1.mw.auth_mgr.preflight                ] check authentication state
+[2019-09-12 16:23:57.964] [0505600a2e6] [INFO ] [/apps/public/cc/                        ] [j1.mw.auth_mgr.preflight                ] user authenticated: jadams_gmx_de
+[2019-09-12 16:23:57.965] [0505600a2e6] [INFO ] [/apps/public/cc/                        ] [j1.mw.auth_mgr.preflight                ] check config, authentication: enabled
+[2019-09-12 16:23:57.965] [0505600a2e6] [INFO ] [/apps/public/cc/                        ] [j1.mw.auth_mgr.preflight                ] check content, content detected of category: public
+[2019-09-12 16:23:57.965] [0505600a2e6] [INFO ] [/apps/public/cc/                        ] [j1.mw.auth_mgr.preflight                ] check content, pass all content of category: public
+[2019-09-12 16:23:59.159] [0505600a2e6] [INFO ] [/                                       ] [j1.mw.auth_mgr                          ] middleware is being initialized
+[2019-09-12 16:23:59.159] [0505600a2e6] [INFO ] [/                                       ] [j1.mw.auth_mgr                          ] state: stated
+[2019-09-12 16:23:59.169] [0505600a2e6] [INFO ] [/                                       ] [j1.mw.auth_mgr                          ] middleware initialized successfully
+[2019-09-12 16:23:59.169] [0505600a2e6] [INFO ] [/                                       ] [j1.mw.auth_mgr                          ] state: finished
+[2019-09-12 16:23:58.732] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.logger] state: started
+[2019-09-12 16:23:58.739] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.logger] state: finished
+[2019-09-12 16:24:01.386] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] initial checks initiated
+[2019-09-12 16:24:01.386] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] read user session cookie
+[2019-09-12 16:24:01.386] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check authentication state
+[2019-09-12 16:24:01.387] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] user authenticated: jadams_gmx_de
+[2019-09-12 16:24:01.387] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check config, authentication: enabled
+[2019-09-12 16:24:01.387] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, content detected of category: public
+[2019-09-12 16:24:01.387] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, pass all content of category: public
+[2019-09-12 16:23:58.742] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] mode detected as: not_detected
+[2019-09-12 16:23:58.743] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] state: started
+[2019-09-12 16:24:01.890] [0505600a2e6] [INFO ] [/status?page=/apps/public/cc/           ] [j1.mw.auth_mgr.api.state                ] status request received
+[2019-09-12 16:24:01.890] [0505600a2e6] [INFO ] [/status?page=/apps/public/cc/           ] [j1.mw.auth_mgr.api.state                ] page requested: /apps/public/cc/
+[2019-09-12 16:24:01.890] [0505600a2e6] [INFO ] [/status?page=/apps/public/cc/           ] [j1.mw.auth_mgr.api.state                ] content category found: public
+[2019-09-12 16:24:01.890] [0505600a2e6] [INFO ] [/status?page=/apps/public/cc/           ] [j1.mw.auth_mgr.api.state                ] user detected as: jadams_gmx_de
+[2019-09-12 16:24:01.890] [0505600a2e6] [INFO ] [/status?page=/apps/public/cc/           ] [j1.mw.auth_mgr.api.state                ] user state detected as: signed in
+[2019-09-12 16:24:01.890] [0505600a2e6] [INFO ] [/status?page=/apps/public/cc/           ] [j1.mw.auth_mgr.api.state                ] send data for: signed in
+[2019-09-12 16:23:58.743] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] module is being initialized
+[2019-09-12 16:23:58.746] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] run deferred data load
+[2019-09-12 16:23:58.759] [34c471a73a7] [INFO ] [                                        ] [j1.module_loader] resource_settings.dependencies of module navigator met for: themer
+[2019-09-12 16:23:58.763] [34c471a73a7] [DEBUG] [                                        ] [j1.module_loader] resource_settings.dependencies of module navigator met after: 25 ms
+[2019-09-12 16:23:58.987] [34c471a73a7] [INFO ] [                                        ] [j1.getColorData] Color data loaded successfully
+[2019-09-12 16:24:03.658] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] initial checks initiated
+[2019-09-12 16:24:03.658] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] read user session cookie
+[2019-09-12 16:24:03.658] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check authentication state
+[2019-09-12 16:24:03.658] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] user authenticated: jadams_gmx_de
+[2019-09-12 16:24:03.659] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check config, authentication: enabled
+[2019-09-12 16:24:03.659] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, content detected of category: public
+[2019-09-12 16:24:03.659] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, pass all content of category: public
+[2019-09-12 16:23:58.989] [34c471a73a7] [INFO ] [                                        ] [j1.getColorData] state: color_data_loaded_success
+[2019-09-12 16:23:59.048] [34c471a73a7] [WARN ] [                                        ] [j1.module_loader] dependency check failed for module: toccer
+[2019-09-12 16:23:59.049] [34c471a73a7] [WARN ] [                                        ] [j1.module_loader] run initializer toccer unchecked for: navigator
+[2019-09-12 16:23:59.051] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.toccer] state: started
+[2019-09-12 16:23:59.051] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.toccer] Module is being initialized
+[2019-09-12 16:23:59.052] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.toccer] state: finished
+[2019-09-12 16:23:59.052] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.toccer] module initialized successfully
+[2019-09-12 16:23:59.053] [34c471a73a7] [WARN ] [                                        ] [j1.module_loader] dependency check failed for module: back2top
+[2019-09-12 16:23:59.055] [34c471a73a7] [WARN ] [                                        ] [j1.module_loader] run initializer back2top unchecked for: navigator
+[2019-09-12 16:23:59.056] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.back2top] state: started
+[2019-09-12 16:23:59.058] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.back2top] module is being initialized
+[2019-09-12 16:23:59.059] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.back2top] state: finished
+[2019-09-12 16:23:59.062] [34c471a73a7] [INFO ] [                                        ] [j1.getFontSizeData] Font size data loaded successfully
+[2019-09-12 16:23:59.063] [34c471a73a7] [INFO ] [                                        ] [j1.getFontSizeData] state: fontsize_data_loaded_success
+[2019-09-12 16:23:59.069] [34c471a73a7] [DEBUG] [                                        ] [j1.sendMessage] Send message from j1.core.back2top to j1.adapter.back2top: {"type":"command","action":"module_initialized","text":"Module initialized successfully"}
+[2019-09-12 16:23:59.069] [34c471a73a7] [DEBUG] [                                        ] [j1.adapter.back2top] Received message from j1.core.back2top: {"type":"command","action":"module_initialized","text":"Module initialized successfully"}
+[2019-09-12 16:23:59.071] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.back2top] Module initialized successfully
+[2019-09-12 16:23:59.099] [34c471a73a7] [INFO ] [                                        ] [j1.loadMessageCatalog] data for message catalog loaded
+[2019-09-12 16:23:59.101] [34c471a73a7] [INFO ] [                                        ] [j1.init] data for data objects loaded
+[2019-09-12 16:23:59.102] [34c471a73a7] [INFO ] [                                        ] [j1.init] state: started
+[2019-09-12 16:23:59.104] [34c471a73a7] [INFO ] [                                        ] [j1.init] read user state from cookie
+[2019-09-12 16:23:59.105] [34c471a73a7] [INFO ] [                                        ] [j1.init] update user session cookie
+[2019-09-12 16:23:59.111] [34c471a73a7] [INFO ] [                                        ] [j1.initBanner] loading banner on ID: exception_container
+[2019-09-12 16:23:59.119] [34c471a73a7] [INFO ] [                                        ] [j1.initFooter] begin initialization
+[2019-09-12 16:23:59.267] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.attic] state: initialized
+[2019-09-12 16:23:59.292] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] set state for j1.adapter.octokit to: data_loaded
+[2019-09-12 16:23:59.322] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] data on #web_hook_modals loaded successfully
+[2019-09-12 16:23:59.407] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.octokit] loading data completed
+[2019-09-12 16:23:59.407] [34c471a73a7] [INFO ] [                                        ] [j1.core.octokit] Octokit Client being initialized for Payload URL: https://smee.io/bzTe8lpQq1KeSJF
+[2019-09-12 16:23:59.411] [34c471a73a7] [DEBUG] [                                        ] [j1.adapter.octokit] eventHandler: register events
+[2019-09-12 16:23:59.414] [34c471a73a7] [DEBUG] [                                        ] [j1.adapter.octokit] eventHandler: events registered
+[2019-09-12 16:23:59.414] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.octokit] state: finished
+[2019-09-12 16:23:59.415] [34c471a73a7] [DEBUG] [                                        ] [j1.adapter.attic] Load image header
+[2019-09-12 16:23:59.427] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.attic] state: completed
+[2019-09-12 16:23:59.443] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] set state for j1.adapter.cookie_consent to: data_loaded
+[2019-09-12 16:23:59.447] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] data on #cookie_consent_modals loaded successfully
+[2019-09-12 16:23:59.464] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] data on #navigator_nav_sidebar loaded successfully
+[2019-09-12 16:23:59.480] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] data on #navigator_nav_quicklinks loaded successfully
+[2019-09-12 16:23:59.503] [34c471a73a7] [INFO ] [                                        ] [j1.core.cookie-consent] cookie consent found: accepted
+[2019-09-12 16:23:59.513] [34c471a73a7] [INFO ] [                                        ] [j1.core.cookie-consent] user accepted on cookies
+[2019-09-12 16:23:59.516] [34c471a73a7] [INFO ] [                                        ] [j1.core.cookie-consent] update sidebar
+[2019-09-12 16:23:59.523] [34c471a73a7] [DEBUG] [                                        ] [j1.core.navigator.updateSidebar] user state data: {"mode":"app","locale":"de-DE","user_name":"jadams_gmx_de","provider":"disqus","provider_membership":"member","provider_permissions":["protected"],"provider_site_url":"https://disqus.com","provider_home_url":"https://disqus.com/by/juergen_adams/","provider_blog_url":"https://disqus.com/by/juergen_adams/","provider_member_url":"https://disqus.com/by/juergen_adams/","provider_privacy_url":"/pages/public/legal/en/privacy/","requested_page":"/apps/public/cc/","previous_page":"/","last_pager":"/pages/public/blog/navigator/","created":"2019-09-12 15:20:56","timestamp":"2019-09-12 16:23:59","user_id":221064604,"users_allowed":["all"],"page_permission":"public","authenticated":"true","current_page":"/apps/public/cc/","payment_status":null,"writer":"middleware","provider_url":"https://disqus.com","theme_css":"/assets/themes/j1/core/css/uno.css","theme_extension_css":"/assets/themes/j1/core/css/theme_extensions.css","theme_name":"Uno","theme_author":"J1 Team","theme_author_url":"https://jekyll.one","theme_link":"https://jekyll.one/","theme_version":"2019.1.0","cookies_accepted":"accepted","whitelistedPages":["/","/pages/public/about/site/","/pages/public/about/become_a_patron/ /pages/public/legal/en/impress/","/pages/public/legal/en/privacy/","/pages/public/legal/en/license_agreement/"],"deleteOnDecline":false,"showConsentOnPending":false,"stopScrolling":true,"session_active":true,"last_session_ts":"2019-09-12 16:23:57","cc_authenticated":true}
+[2019-09-12 16:23:59.563] [34c471a73a7] [INFO ] [                                        ] [j1.core.cookie-consent] continue on requested page: /apps/public/cc/
+[2019-09-12 16:23:59.566] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.cookie_consent] state: initialized
+[2019-09-12 16:23:59.568] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.cookie_consent] core module initialized
+[2019-09-12 16:23:59.572] [34c471a73a7] [DEBUG] [                                        ] [j1.core.cookie-consent.eventHandler] register button click events
+[2019-09-12 16:23:59.572] [34c471a73a7] [DEBUG] [                                        ] [j1.core.cookie-consent.eventHandler] events registered
+[2019-09-12 16:23:59.572] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.cookie_consent] state: finished
+[2019-09-12 16:23:59.586] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] data on #authclient_modals loaded successfully
+[2019-09-12 16:23:59.595] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] set state for j1.adapter.navigator to: data_loaded
+[2019-09-12 16:23:59.598] [34c471a73a7] [INFO ] [                                        ] [j1.xhrDATA] data on #navigator_nav_menu loaded successfully
+[2019-09-12 16:24:00.500] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] status: processing
+[2019-09-12 16:24:00.502] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] initialize navigator core
+[2019-09-12 16:24:00.503] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] application status detected: true
+[2019-09-12 16:24:00.506] [34c471a73a7] [INFO ] [                                        ] [j1.initFooter] footer on ID #j1_footer loaded successfully
+[2019-09-12 16:24:00.507] [34c471a73a7] [INFO ] [                                        ] [j1.initFooter] Set state for module j1: footer_loaded
+[2019-09-12 16:24:00.509] [34c471a73a7] [INFO ] [                                        ] [j1.initFooter] initialization completed
+[2019-09-12 16:24:00.516] [34c471a73a7] [INFO ] [                                        ] [j1.initBanner] loading banner on ID #exception_container completed
+[2019-09-12 16:24:00.665] [34c471a73a7] [INFO ] [                                        ] [j1.init] loading data completed
+[2019-09-12 16:24:00.667] [34c471a73a7] [INFO ] [                                        ] [j1.init] state: running
+[2019-09-12 16:24:00.673] [34c471a73a7] [INFO ] [                                        ] [j1.initMDB] MDB is being initialized
+[2019-09-12 16:24:00.767] [34c471a73a7] [INFO ] [                                        ] [j1.initMDB] initializing MDB completed
+[2019-09-12 16:24:00.773] [34c471a73a7] [INFO ] [                                        ] [j1.initClipboard] begin initialization
+[2019-09-12 16:24:00.775] [34c471a73a7] [INFO ] [                                        ] [j1.initClipboard] initialization completed
+[2019-09-12 16:24:00.782] [34c471a73a7] [INFO ] [                                        ] [j1.core.navigator] core is being initialized
+[2019-09-12 16:24:00.796] [34c471a73a7] [DEBUG] [                                        ] [j1.sendMessage] Send message from j1.core.navigator to j1.adapter.navigator: {"type":"command","action":"module_initialized","text":"navigator core initialized successfully"}
+[2019-09-12 16:24:00.798] [34c471a73a7] [DEBUG] [                                        ] [j1.adapter.navigator] Received message from j1.core.navigator: {"type":"command","action":"module_initialized","text":"navigator core initialized successfully"}
+[2019-09-12 16:24:00.799] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] navigator core initialized successfully
+[2019-09-12 16:24:00.811] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] theme switcher menu loaded successfully
+[2019-09-12 16:24:00.826] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] initialize events and styles
+[2019-09-12 16:24:00.832] [34c471a73a7] [DEBUG] [                                        ] [j1.core.navigator.eventHandler] register OPEN event|s for QuickSearch
+[2019-09-12 16:24:00.835] [34c471a73a7] [DEBUG] [                                        ] [j1.core.navigator.eventHandler] register CLOSE event|s for QuickSearch
+[2019-09-12 16:24:00.835] [34c471a73a7] [DEBUG] [                                        ] [j1.core.navigator.eventHandler] register OPEN event|s for SideBar
+[2019-09-12 16:24:00.836] [34c471a73a7] [DEBUG] [                                        ] [j1.core.navigator.eventHandler] register CLOSE event|s for SideBar
+[2019-09-12 16:24:00.852] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] apply styles
+[2019-09-12 16:24:00.882] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] init AuthClient
+[2019-09-12 16:24:00.907] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] Initialize button click events
+[2019-09-12 16:24:00.914] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] initialize events completed
+[2019-09-12 16:24:00.915] [34c471a73a7] [INFO ] [                                        ] [j1.adapter.navigator] state: finished
+[2019-09-12 16:24:00.927] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] finalize page
+[2019-09-12 16:24:00.930] [34c471a73a7] [INFO ] [                                        ] [j1.setCss] set color scheme for selected theme
+[2019-09-12 16:24:00.947] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] app mode detetced
+[2019-09-12 16:24:00.973] [34c471a73a7] [DEBUG] [                                        ] [j1.adapter.attic] state: 
+[2019-09-12 16:24:00.974] [34c471a73a7] [DEBUG] [                                        ] [j1.adapter.attic] add caption text
+[2019-09-12 16:24:00.997] [34c471a73a7] [DEBUG] [                                        ] [j1.core.switcher] User state cookie found
+[2019-09-12 16:24:01.223] [34c471a73a7] [DEBUG] [                                        ] [j1.core.switcher] User state cookie found
+[2019-09-12 16:24:01.447] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] show cookie icon
+[2019-09-12 16:24:01.450] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] show signout icon
+[2019-09-12 16:24:01.450] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] authentication detected as: true
+[2019-09-12 16:24:01.476] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] page change detected
+[2019-09-12 16:24:01.490] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] previous page: /
+[2019-09-12 16:24:01.493] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] current page: /apps/public/cc/
+[2019-09-12 16:24:01.493] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] update sidebar
+[2019-09-12 16:24:01.496] [34c471a73a7] [DEBUG] [                                        ] [j1.core.navigator.updateSidebar] user state data: {"mode":"app","locale":"de-DE","user_name":"jadams_gmx_de","provider":"disqus","provider_membership":"member","provider_permissions":["protected","public"],"provider_site_url":"https://disqus.com","provider_home_url":"https://disqus.com/by/juergen_adams/","provider_blog_url":"https://disqus.com/by/juergen_adams/","provider_member_url":"https://disqus.com/by/juergen_adams/","provider_privacy_url":"/pages/public/legal/en/privacy/","requested_page":"/apps/public/cc/","previous_page":"/","last_pager":"/pages/public/blog/navigator/","created":"2019-09-12 15:20:56","timestamp":"2019-09-12 16:23:59","user_id":221064604,"users_allowed":["all"],"page_permission":"public","authenticated":"true","current_page":"/apps/public/cc/","payment_status":null,"writer":"middleware","provider_url":"https://disqus.com","theme_css":"/assets/themes/j1/core/css/uno.css","theme_extension_css":"/assets/themes/j1/core/css/theme_extensions.css","theme_name":"Uno","theme_author":"J1 Team","theme_author_url":"https://jekyll.one","theme_link":"https://jekyll.one/","theme_version":"2019.1.0","cookies_accepted":"accepted","whitelistedPages":["/","/pages/public/about/site/","/pages/public/about/become_a_patron/ /pages/public/legal/en/impress/","/pages/public/legal/en/privacy/","/pages/public/legal/en/license_agreement/"],"deleteOnDecline":false,"showConsentOnPending":false,"stopScrolling":true,"session_active":true,"last_session_ts":"2019-09-12 16:23:57","cc_authenticated":true}
+[2019-09-12 16:24:01.512] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] state: finished
+[2019-09-12 16:24:01.513] [34c471a73a7] [INFO ] [                                        ] [j1.displayPage] page finalized successfully
+[2019-09-12 16:24:01.549] [34c471a73a7] [INFO ] [                                        ] [j1.core.attic] container visible on id: #image_attic
+[2019-09-12 16:24:21.389] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] initial checks initiated
+[2019-09-12 16:24:21.389] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] read user session cookie
+[2019-09-12 16:24:21.389] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check authentication state
+[2019-09-12 16:24:21.389] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] user authenticated: jadams_gmx_de
+[2019-09-12 16:24:21.389] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check config, authentication: enabled
+[2019-09-12 16:24:21.390] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, content detected of category: public
+[2019-09-12 16:24:21.390] [0505600a2e6] [INFO ] [/apps/public/cc/config.yml              ] [j1.mw.auth_mgr.preflight                ] check content, pass all content of category: public
