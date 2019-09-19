@@ -73,7 +73,7 @@ gem 'htmlbeautifier', '>= 1.2.1'
 gem 'middleman-core', '~> 4.2', '>= 4.2.1'
 
 # ------------------------------------------------------------------------------
-# Timezone support (multi-platform)
+# Timezone support
 #
 gem 'tzinfo', '>= 1.2.2'
 
