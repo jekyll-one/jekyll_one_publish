@@ -5,7 +5,7 @@ title:                                  Control Center
 tagline:                                site management
 description:                            A CMS environment based on Netlify CMS
 
-tags:                                   [ App, Site Manager ]
+tags:                                   [ App, Control Center ]
 index:                                  [ Control, Center, Netlify, CMS ]
 categories:                             [ apps ]
 
@@ -83,11 +83,11 @@ resource_options:
   }
 
 	iFrameResize({
-		log:                      false,                                            // enable console logging if set to 'true'
+		log:                      false,
 		inPageLinks:              true,
     heightCalculationMethod:  'lowestElement',
     minHeight:                512,
-		resizedCallback:        function(messageData){ // Callback fn when resize is received
+		resizedCallback:          function(messageData) {
 			$('p#callback').html(
 				'<b>Frame ID:</b> '    + messageData.iframe.id +
 				' <b>Height:</b> '     + messageData.height +

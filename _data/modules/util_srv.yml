@@ -45,8 +45,10 @@ settings:
   utility_server:
 
     enabled:                            true
-    port:                               44444
+    ssl:                                false
     origin:                             localhost
+    host_name:                          0.0.0.0
+    port:                               44444
     verbose:                            false
     
     oauth_client:
@@ -57,9 +59,9 @@ settings:
       authorize_path:                   /login/oauth/authorize
 
     git_client:
-      enabled:                          true
-      secret:                           12ada70c0d34914d194f1a790c9b23bd       # Webhook secret configured at GH
-      payload_url:                      https://smee.io/bzTe8lpQq1KeSJF        # e.g. https://smee.io/bz....1KeSJF
+      enabled:                          false
+      secret:                           <your-gh-secret>                        # Webhook secret configured at GH
+      payload_url:                      <your-payload-url>                      # e.g. https://smee.io/bz....1KeSJF
 
       pull:
         execute:                        true                                    # true|false
@@ -67,7 +69,7 @@ settings:
         response_failed:                "The pull request to your local working copy has failed. Reason: "
 
     npm_client:
-      enabled:                          true
+      enabled:                          false
 
       built:                              
         execute:                        false                                   # rebuilt disabled for testing (as Jekyll is running in parallel)
@@ -75,9 +77,9 @@ settings:
         response_failed:                "The built request to your local fite has failed. Reason: "
 
     logger_client:
-      enabled:                          true
+      enabled:                          false
       payload_url_app:                  https://app.jekyll.one/log2disk?request=write
-      payload_url_web:                  http://j1-docker:44444/log2disk?request=write
+      payload_url_web:
 
       log_folder:                       log
       log_file_name:                    messages
@@ -89,5 +91,5 @@ settings:
       file_mode:                        append
       
 
-# END config
 # ------------------------------------------------------------------------------
+# END config

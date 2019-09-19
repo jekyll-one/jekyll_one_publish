@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/Gemfile
+# ~/Gemfile (runtime)
 # Provides package information to bundle all Ruby gem needed
 # for Jekyll and J1 template (managed by Ruby Gem Bundler)
 #
@@ -32,7 +32,6 @@
 #         gem cleanup
 #
 # ------------------------------------------------------------------------------
-
 source "https://rubygems.org"
 ruby RUBY_VERSION
 
@@ -43,11 +42,11 @@ ruby RUBY_VERSION
 
 # Latest stable Jekyll version
 #
-gem 'jekyll', '~> 3.8.5'
+gem 'jekyll', '~> 3.0'
 
 # Theme Rubies, default: J1 Template
 #
-gem 'j1-template', '~> 2019.1.0'
+gem 'j1-template', '~> 2019.1.0' 
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -85,12 +84,12 @@ gem 'tzinfo', '>= 1.2.2'
 #   Windows does not include zoneinfo files, so bundle the
 #   tzinfo-data gem
 #
-gem "tzinfo-data" if Gem.win_platform?
+gem "tzinfo-data"                                                               # if Gem.win_platform?
 
 #  Windows Directory Monitor (WDM) monitor directories
 #  for changes
 #
-gem 'wdm', '>= 0.1.1' if Gem.win_platform?
+gem 'wdm', '>= 0.1.1'                                                           # if Gem.win_platform?
 
 # ------------------------------------------------------------------------------
 # Jekyll Plugins
@@ -106,7 +105,7 @@ group :jekyll_plugins do
 # gem 'jekyll-gist', '>= 1.5.0'
 # gem 'jekyll-sitemap', '>= 1.2.0'
 # gem 'jekyll-redirect-from', '>= 0.13.0'
-  gem 'j1_paginator', '>= 2019.1.0'
+  gem 'j1-paginator', '>= 2019.1.0'
   gem 'jekyll-sass-converter', '>= 1.5.1'
 end
 
@@ -178,18 +177,21 @@ gem 'puma', '>= 3.12'
 # gem 'rack-protection', '~> 2.0'
 # gem 'rack-ssl-enforcer', '~> 0.2'
 # gem 'rest-client', '~> 2.0'
-# 
+ 
 # gem 'omniauth', '>= 1.3.0'
 # gem 'omniauth-oauth2', '~> 1.4'
+
 # gem 'sinatra', '~> 2.0'
+# gem 'sinatra-cross_origin', '~> 0.3.1'
+
 # gem 'warden', '~> 1.2'
 
 # ------------------------------------------------------------------------------
 # Gem needed for J1 logger based on log4r (middleware)
 #
-# gem 'log4r', '~> 1.1.10'
-# gem 'uuid', '~> 2.3', '>= 2.3.8'
-# gem 'date', '~> 2.0'
+gem 'log4r', '~> 1.1.10'
+gem 'uuid', '~> 2.3', '>= 2.3.8'
+gem 'date', '~> 2.0'
 
 # ------------------------------------------------------------------------------
 # DEVELOPMENT: Gem needed for the Jekyll and J1 dev environment
@@ -198,9 +200,9 @@ gem 'puma', '>= 3.12'
 # For the build (npm|yarn), J1 Template is using scss_lint
 # for linting the SCSS (CSS) components:
 #
-# gem 'scss_lint', '~> 0.56.0'
-# gem 'sass', '~> 3.5.0'
-# gem 'bump', '~> 0.5.4'
+gem 'scss_lint', '~> 0.56.0'
+gem 'sass', '~> 3.5.0'
+gem 'bump', '~> 0.5.4'
 
 # ------------------------------------------------------------------------------
 # END

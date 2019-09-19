@@ -26,7 +26,7 @@
 			<script src="../js/ie8.polyfils.min.js"></script>
 		<![endif]-->
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="../js/client/iframeResizer.contentWindow.min.js" defer></script>
 
 		<script>
@@ -40,10 +40,10 @@
 			 */
 
 			iFrameResize({
-				log                     : true,                  // Enable console logging
-				enablePublicMethods     : true,                  // Enable methods within iframe hosted page
+				log                     : true,
+				enablePublicMethods     : true,
 				enableInPageLinks       : true,
-				resizedCallback         : function(messageData){ // Callback fn when resize is received
+				resizedCallback         : function(messageData){
 					$('p#callback').html(
 						'<b>Frame ID:</b> '    + messageData.iframe.id +
 						' <b>Height:</b> '     + messageData.height +
@@ -51,14 +51,14 @@
 						' <b>Event type:</b> ' + messageData.type
 					);
 				},
-				messageCallback         : function(messageData){ // Callback fn when message is received
+				messageCallback         : function(messageData){
 					$('p#callback').html(
 						'<b>Frame ID:</b> '    + messageData.iframe.id +
 						' <b>Message:</b> '    + messageData.message
 					);
 					alert(messageData.message + ' (' + messageData.iframe.id + ')' );
 				},
-				closedCallback         : function(id){ // Callback fn when iFrame is closed
+				closedCallback         : function(id){
 					$('p#callback').html(
 						'<b>IFrame (</b>'    + id +
 						'<b>) removed from page.</b>'

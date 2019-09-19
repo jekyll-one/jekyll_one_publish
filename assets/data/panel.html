@@ -84,6 +84,7 @@ regenerate:                             true
           {% assign tagline         = panel_settings.tagline|strip_newlines %}
           {% assign buttons         = panel_settings.buttons %}
           {% assign header          = panel_settings.header %}
+          {% assign helper_classes  = panel_settings.helper_classes %}
           {% assign cards           = panel_settings.cards %}
         {% endif %}
       {% endfor %}
@@ -114,6 +115,8 @@ regenerate:                             true
         {% assign icon_family = 'fa' %}
       {% elsif icon_family == 'mdi' %}
         {% assign icon_family = 'mdi' %}
+      {% elsif icon_family == 'iconify' %}
+        {% assign icon_family = 'iconify' %}
       {% else'%}
         {% assign icon_family = 'mdi' %}
       {% endif %}
@@ -141,7 +144,7 @@ regenerate:                             true
                   <h1 class="g-font-weight-500 g-mb-0">{{panel_settings.title}}</h1>
                   <p class="tagline"><b>{{panel_settings.tagline}}</b></p>
                   <div class="d-inline-block g-width-50 g-height-2 g-bg-primary g-mb-2"></div>
-                  <p class="lead mb-0">{{panel_settings.description}}</p>
+                  <p class="lead {{helper_classes}}">{{panel_settings.description}}</p>
                 </div>
               </div>
             </div>
@@ -160,6 +163,7 @@ regenerate:                             true
                   {% if key == 'type' %}        {% assign card_type         = value %}                   {% endif %}
                   {% if key == 'icon' %}        {% assign card_icon         = value %}                   {% endif %}
                   {% if key == 'icon_size' %}   {% assign card_icon_size    = value %}                   {% endif %}
+                  {% if key == 'icon_family' %} {% assign card_icon_family  = value | downcase %}        {% endif %}
                   {% if key == 'icon_color' %}  {% assign card_icon_color   = value %}                   {% endif %}
                   {% if key == 'title' %}       {% assign card_title        = value | strip_newlines%}   {% endif %}
                   {% if key == 'tagline' %}     {% assign card_tagline      = value | strip_newlines%}   {% endif %}
@@ -211,13 +215,21 @@ regenerate:                             true
                 <div class="media g-mb-15 {{card_raised}}">
 
                   <div class="d-flex mr-4">
-                    <span class="g-color-primary">
-                      {% if card_icon_color == 'bg-primary' %}                      
-                        <i class="{{icon_family}} {{icon_family}}-{{card_icon}} {{icon_family}}-{{card_icon_size}} mdi-md-bg-primary"></i>
+                    {% if card_icon_family == 'iconify' %}
+                      {% if card_icon_color == 'bg-primary' %}
+                        <span class="{{card_icon_family}} {{card_icon_family}}-{{card_icon_size}} iconify-md-bg-primary" data-icon="{{card_icon}}" data-inline="false"></span>
                       {% else %}
-                        <i class="{{icon_family}} {{icon_family}}-{{card_icon}} {{icon_family}}-{{card_icon_size}} {{icon_family}}-{{card_icon_color}}"></i>
+                        <span class="{{card_icon_family}} {{card_icon_family}}-{{card_icon_size}} {{card_icon_family}}-{{card_icon_color}}" data-icon="{{card_icon}}" data-inline="false"></span>
                       {% endif %}
-                    </span>
+                    {% else %}                    
+                      <span class="g-color-primary">
+                        {% if card_icon_color == 'bg-primary' %}                      
+                          <i class="{{card_icon_family}} {{card_icon_family}}-{{card_icon}} {{card_icon_family}}-{{card_icon_size}} mdi-md-bg-primary"></i>
+                        {% else %}
+                          <i class="{{card_icon_family}} {{card_icon_family}}-{{card_icon}} {{card_icon_family}}-{{card_icon_size}} {{card_icon_family}}-{{card_icon_color}}"></i>
+                        {% endif %}
+                      </span>
+                    {% endif %}
                   </div>
 
                   <div class="media-body">
@@ -227,16 +239,21 @@ regenerate:                             true
                     {% for data in card_buttons %} {% for item in data %} {% for button in item[1] %}
                       {% assign key   = button[0] %}
                       {% assign value = button[1] %}
-                      {% if key == 'text' %}       {% assign button_text       = value %} {% endif %}
-                      {% if key == 'class' %}      {% assign button_class      = value %} {% endif %}
-                      {% if key == 'icon' %}       {% assign button_icon       = value %} {% endif %}
-                      {% if key == 'icon_color' %} {% assign button_icon_color = value %} {% endif %}
-                      {% if key == 'icon_size' %}  {% assign button_icon_size  = value %} {% endif %}
-                      {% if key == 'href' %}       {% assign button_href       = value %} {% endif %}
-                      {% if key == 'target' %}     {% assign button_target     = value %} {% endif %}
+                      {% if key == 'text' %}        {% assign button_text         = value %} {% endif %}
+                      {% if key == 'class' %}       {% assign button_class        = value %} {% endif %}
+                      {% if key == 'icon' %}        {% assign button_icon         = value %} {% endif %}
+                      {% if key == 'icon_family' %} {% assign button_icon_family  = value %} {% endif %}
+                      {% if key == 'icon_color' %}  {% assign button_icon_color   = value %} {% endif %}
+                      {% if key == 'icon_size' %}   {% assign button_icon_size    = value %} {% endif %}
+                      {% if key == 'href' %}        {% assign button_href         = value %} {% endif %}
+                      {% if key == 'target' %}      {% assign button_target       = value %} {% endif %}
                     {% endfor %} {% endfor %}{% endfor %}
 
-                    <a class="g-font-weight-600 g-font-size-12 g-text-underline--none--hover g-text-upper" href="{{button_href}}">{{button_text}}</a -->
+                    {% if button_target == null %}
+                      <a class="g-font-weight-600 g-font-size-12 g-text-underline--none--hover g-text-upper" href="{{button_href}}">{{button_text}}</a>
+                    {% else %}
+                      <a class="g-font-weight-600 g-font-size-12 g-text-underline--none--hover g-text-upper" href="{{button_href}}" target="{{button_target}}">{{button_text}}</a>
+                    {% endif %}
                   </div>
 
                 </div>

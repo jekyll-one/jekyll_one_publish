@@ -22,6 +22,7 @@ resource_options:
 //
 :cookies:
 :revoke_cookie_consent:
+:delete_cookies:
 :content_permissions:
 :server-logs:
 
@@ -173,6 +174,53 @@ all cookies left.
 ++++
 endif::[]
 
+ifdef::delete_cookies[]
+== Delete cookies
+
+If you have previously visited our website -- or any pages this
+session -- *and* agreed on the use of cookies, you may also have to 
+*delete* already existing *cookies* by your *browser* in order to clean
+all cookies left. 
+
+By clicking the button below, all cookies related to *this* site will be 
+deleted.
+
+++++
+<div class="ml-0 mb-0">
+  <button type="button" name="deleteCookies" class="btn btn-primary btn-raised btn-flex mb-3">
+    <i class="mdi mdi-cookie mdi-lg mdi-md-bg-primary-50 mr-1"></i>
+    Delete Cookies
+  </button>
+</div>
+
+<script>
+  var logger       = log4javascript.getLogger('page.privacy');
+  var cookie_names = j1.getCookieNames();
+
+  // ---------------------------------------------------------------------------
+  //  EventHandler
+  // ---------------------------------------------------------------------------
+  $('button[name="deleteCookies"]').on('click', function (e) {
+    logger.debug('User clicked deleteCookiesButton');
+
+    j1.removeCookie({
+      name: cookie_names.user_session
+    });
+    j1.removeCookie({
+      name: cookie_names.user_state
+    });
+    j1.removeCookie({
+      name: cookie_names.app_session
+    });
+
+    logger.debug('cookies deleted: ' + cookie_names.user_session + ', ' + cookie_names.user_state);
+    logger.debug('pass to (browser) default page');
+    j1.goHome();
+
+  });
+</script>
+++++
+endif::[]
 
 ifdef::content_permissions[]
 == Content permissions

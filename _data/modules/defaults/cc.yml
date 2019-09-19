@@ -13,11 +13,11 @@
 # ------------------------------------------------------------------------------
 
 # ==============================================================================
-# Global settings
+# global settings
 #
 
 # ------------------------------------------------------------------------------
-# Backend settings (Repo|OAuth Client)
+# backend settings (Repo)
 #
 # publish_mode:                         editorial_workflow
 #
@@ -25,34 +25,35 @@ backend:
   # git-gateway
   name:                                 github
   # path to your GitHub repository (w/o https://github.com/)
-  repo:                                 jekyll-one-org/starter-app
+  repo:                                 your-repo
   # e.g master | develop
-  branch:                               jekyll-one-org/starter-app
-  # url of 'external' oauth client (e.g. j1 utility server at: http://localhost:44444)
-  base_url:                            https://oauth.jekyll.one
+  branch:                               your-repo-branch
+  # url of 'external' oauth client (e.g. j1 utility server)
+  #base_url:                            your-base-url
+  base_url:
 
 # ------------------------------------------------------------------------------
 # Site (production) settings
 #
-# logo_url:                             "<your-logo-url>"
-# site_url:                             "<your-site-url>"
-# display_url:                          "<your-display-url>"
+# logo_url:                             your-logo-url
+# site_url:                             your-site-url
+# display_url:                          your-display-url
 #
 show_preview_links:                     false
 
 # ------------------------------------------------------------------------------
-# Media (asset) settings
+# media (asset) settings
 #
 # media_library:
 #   name: uploadcare
 #   config:
 #     publicKey: demopublickey
 #
-media_folder:                           /assets/images/public
-public_folder:                          /assets/uploads/
+media_folder:                           packages/300_template_src/assets/images/public
+public_folder:                          packages/300_template_src/assets/uploads/
 
 # ------------------------------------------------------------------------------
-# File (name) settings
+# file (name) settings
 #
 # The slug option allows you to change how filenames for entries are
 # created and sanitized. For modifying the actual data in a slug, see
@@ -66,27 +67,27 @@ slug:
 
 
 # ==============================================================================
-# Collection (files and folders) settings
+# collection (files and folders) settings
 #
 collections:
 
   # ----------------------------------------------------------------------------
-  # Site Configuration
+  # site configuration
   #
   - label: Site Configuration
-    name:  site_config
+    name:  site_config                                                          # Used in routes, e.g., /admin/collections/blog
     files:
 
       # ------------------------------------------------------------------------
-      # Global Site Configuration
+      # global site configuration
       #
       - label: Global Settings
         name:  global_site_config
-        file:  _cc_test_data/_config.yml
+        file:  packages/400_template_site/_cc_test_data/_config.yml
         fields:
 
           # --------------------------------------------------------------------
-          # About this configuration (used for J1 CC only)
+          # about (used for J1 CC only)
           #
           - label:  about
             name:   about_config
@@ -523,7 +524,7 @@ collections:
       #
       - label: Resource Settings
         name:  site_resource_settings
-        file:  _cc_test_data/_data/resources.yml
+        file:  packages/400_template_site/_cc_test_data/_data/resources.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -610,7 +611,7 @@ collections:
       #
       - label: Banner Settings
         name:  banner_settings
-        file:  _cc_test_data/_data/blocks/banner.yml
+        file:  packages/400_template_site/_cc_test_data/_data/blocks/banner.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -814,7 +815,7 @@ collections:
       #
       - label: Panel Settings
         name:  panel_settings
-        file:  _cc_test_data/_data/blocks/panel.yml
+        file:  packages/400_template_site/_cc_test_data/_data/blocks/panel.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1012,7 +1013,7 @@ collections:
       #
       - label: Footer Settings
         name:  footer_settings
-        file:  _cc_test_data/_data/blocks/footer.yml
+        file:  packages/400_template_site/_cc_test_data/_data/blocks/footer.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1193,7 +1194,7 @@ collections:
       #
       - label:      J1 Cookie Consent
         name:       config_cookie_consent
-        file:       _cc_test_data/_data/modules/cookie_consent.yml
+        file:       packages/400_template_site/_cc_test_data/_data/modules/cookie_consent.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1258,7 +1259,7 @@ collections:
       #
       - label:      J1 Jekyll Search
         name:       config_jekyll_search
-        file:       _cc_test_data/_data/modules/jekyll_search.yml
+        file:       packages/400_template_site/_cc_test_data/_data/modules/jekyll_search.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1298,7 +1299,7 @@ collections:
       #
       - label:      J1 Navigation
         name:       config_navigation
-        file:       _cc_test_data/_data/modules/navigator.yml
+        file:       packages/400_template_site/_cc_test_data/_data/modules/navigator.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1486,7 +1487,7 @@ collections:
       #
       - label:      J1 Back2Top
         name:       config_back2top
-        file:       _cc_test_data/_data/modules/back2top.yml
+        file:       packages/400_template_site/_cc_test_data/_data/modules/back2top.yml
         fields:
 
           # --------------------------------------------------------------------
@@ -1536,7 +1537,7 @@ collections:
       #
       - label:      J1 WebHook
         name:       config_webhook
-        file:       _cc_test_data/_data/modules/webhook.yml
+        file:       packages/400_template_site/_cc_test_data/_data/modules/webhook.yml
         fields:
 
           # --------------------------------------------------------------------

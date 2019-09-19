@@ -79,7 +79,7 @@ module.exports = ( function ($) {
     };
 
     var options                     = $.extend(defaults,options);
-    var logger                      = log4javascript.getLogger('j1.Cookiebar');
+    var logger                      = log4javascript.getLogger('j1.cookiebar');
     var cookie_names                = j1.getCookieNames();
     const cookie_user_session_name  = cookie_names.user_session;
     var user_session                  = {};
@@ -89,7 +89,7 @@ module.exports = ( function ($) {
     if ( user_session_detected ) {
       logger.info('User state cookie found');
   //  user_session = j1.getUserState();
-      user_session = j1.core.readCookie(cookie_user_session_name);
+      user_session = j1.readCookie(cookie_user_session_name);
     } else {
       logger.error('User state NOT cookie found');
     }
@@ -130,7 +130,7 @@ module.exports = ( function ($) {
     // Update user state cookie
     user_session.cookies_accepted  = cookieValue;
     // j1.setUserState( user_session );
-    j1.core.writeCookie({
+    j1.writeCookie({
       name: cookie_user_session_name, 
       data: user_session
     });
@@ -156,7 +156,7 @@ module.exports = ( function ($) {
       // Update user state cookie
       user_session.cookies_accepted  = val;
       // j1.setUserState( user_session );
-      j1.core.writeCookie({
+      j1.writeCookie({
         name: cookie_user_session_name, 
         data: user_session
       });
@@ -237,7 +237,7 @@ module.exports = ( function ($) {
         // Update user state cookie
         user_session.cookies_accepted  = 'accepted';
         // j1.setUserState( user_session );
-        j1.core.writeCookie({
+        j1.writeCookie({
           name: cookie_user_session_name, 
           data: user_session
         });

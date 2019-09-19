@@ -1,19 +1,5 @@
-# ------------------------------------------------------------------------------
-# ~/.gitignore
-# Git ignores for J1 Template run-time systems
-#
-# Product/Info:
-# https://jekyll.one
-#
-# Copyright (C) 2019 Juergen Adams
-#
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
-#
-# ------------------------------------------------------------------------------
-
 # Unneeded files used/created by NPM
-#
+# ------------------------------------------------------------------------------
 node_modules/
 
 yarn.lock
@@ -21,13 +7,10 @@ yarn.lock
 package-lock.json
 
 
-
 # Unneeded files created by you or helper processes
-#
+# ------------------------------------------------------------------------------
 
 Gemfile.lock
-
-.jekyll-metadata
 
 tmp/
 
@@ -47,17 +30,21 @@ tmp/
 
 **/*_backup
 
-**/*_unused
-
 
 # Never publish your sensitive personal and/or OAuth
 # data to any repo - not to public, not to any private.
+# ------------------------------------------------------------------------------
 .env
 
 
-
 # Unneeded files for the generated site
-#
+# ------------------------------------------------------------------------------
+.jekyll-metadata
+
+_data/modules/cc.yml
+
 _site/
 
-log/
+.jekyll-cache/
+
+.sass-cache/

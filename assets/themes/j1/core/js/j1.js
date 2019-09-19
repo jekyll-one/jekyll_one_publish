@@ -49,6 +49,7 @@ regenerate:                             true
 
 {% comment %} Set config data
 -------------------------------------------------------------------------------- {% endcomment %}
+{% assign auth_client_config      = site.j1_auth %}
 {% assign banner_config_defaults  = blocks.defaults.banner.defaults %}
 {% assign banner_config_settings  = blocks.banner.settings %}
 {% assign panel_config_defaults   = blocks.defaults.panel.defaults %}
@@ -136,27 +137,20 @@ var j1 = (function () {
   var default_theme_link          = 'https://jekyll.one/';
   var default_white_listed_pages  = [];
 
-  // var cookie_names = {
-  //   'app_session':          '{{template_config.cookies.app_session}}',
-  //   'user_session':         '{{template_config.cookies.user_session}}',
-  //   'cookie_consent':       '{{template_config.cookies.user_session}}'
-  // }
-
   var cookie_names = {
     'app_session':  '{{template_config.cookies.app_session}}',
     'user_session': '{{template_config.cookies.user_session}}',
     'user_state':   '{{template_config.cookies.user_state}}'
   }
 
-
-  // J1 User SESSION Cookie (initial values)
+  // user SESSION cookie (initial values)
   var user_session = {
     'mode':                 'na',
     'locale':               navigator.language || navigator.userLanguage,
     'user_name':            '{{template_config.user.user_name}}',
     'provider':             '{{template_config.user.provider}}',
     'provider_membership':  '{{template_config.user.provider_membership}}',
-    'provider_permissions': '{{template_config.user.provider_permissions}}',
+    'provider_permissions': 'public,{{template_config.user.provider_permissions}}',
     'provider_site_url':    '{{template_config.user.provider_site_url}}',
     'provider_home_url':    '{{template_config.user.provider_home_url}}',
     'provider_blog_url':    '{{template_config.user.provider_blog_url}}',
@@ -167,8 +161,7 @@ var j1 = (function () {
     'last_pager':           '/pages/public/blog/navigator/'    
   };
 
-
-  // J1 User STATE Cookie (initial values)
+  // user STATE cookie (initial values)
   var user_state = {
     'theme_css':            default_theme_css,
     'theme_extension_css':  '{{themer_options.includeBootswatch}}',
@@ -212,9 +205,27 @@ var j1 = (function () {
     // Initializer
     // -------------------------------------------------------------------------
     init: function (options) {
-      var logger    = log4javascript.getLogger('j1.init');
-      var url       = new parseURL(window.location.href)
-      var baseUrl   = url.origin;
+
+      // -----------------------------------------------------------------------
+      // global var (function)
+      // -----------------------------------------------------------------------
+      var logger        = log4javascript.getLogger('j1.init');
+      var url           = new parseURL(window.location.href)
+      var baseUrl       = url.origin;
+      var epoch         = Math.floor(Date.now()/1000);
+      var timestamp_now = moment.unix(epoch).format('YYYY-MM-DD HH:mm:ss');
+      var curr_state    = 'started';
+
+      // -----------------------------------------------------------------------
+      // options loader
+      // -----------------------------------------------------------------------
+      var settings = $.extend(
+        {
+          foo: 'foo_option',
+          bar: 'bar_option'
+        }, 
+        options 
+      );
 
       // catch senseless detect url 404 errors (middleware /status)
       // See: https://stackoverflow.com/questions/4687235/jquery-get-or-post-to-catch-page-load-error-eg-404
@@ -223,24 +234,27 @@ var j1 = (function () {
         statusCode : {                    
           // raised on response status code 404
           404 : function (jqxhr, textStatus, errorThrown) {
-            var logger = log4javascript.getLogger('j1.init');
-            if(jqxhr.responseText.indexOf('GET /status') > -1) { 
-              logger.debug('no middleware found on url /status: ignored');
-              logger.debug('continue on mode: web');
-            }
+            var interval_count = 0;
+            var max_count      = 10;
+            var dependencies_met_logger = setInterval(function() {
+              interval_count += 1;
+              if ( j1.adapter.logger.getState() == 'finished' ) {
+                var logger = log4javascript.getLogger('j1.init');
+                clearInterval(dependencies_met_logger);
+                if(jqxhr.responseText.indexOf('GET /status') > -1) { 
+                  logger.info('no middleware found on url /status: ignored');
+                  logger.info('continue on mode: web');
+                }
+                if (interval_count > max_count) {
+                  logger.warn('dependency check failed for module: logger');
+                  logger.warn('continue on initializer unchecked');
+                  j1.adapter.navigator.init();
+                }
+              }
+            }, 25);
           }
         }
        });
-
-      // -----------------------------------------------------------------------
-      // options loader
-      // -----------------------------------------------------------------------
-      var defaults  = {
-        toc:        false,
-        scrollbar:  false,
-        comments:   false
-      };
-      var settings = $.extend(defaults, options);
 
       // -----------------------------------------------------------------------
       // Session ON_CLOSE event
@@ -267,28 +281,14 @@ var j1 = (function () {
           expires: 365
         });
 
-        // jadams, 2019-08-31: NOT possible !! to remove because every
-        // page change will delete the session
-        // Other stratey needed
-        // j1.removeCookie({
-        //   name: cookie_user_session_name
-        // });
-
       });
-
-      // -----------------------------------------------------------------------
-      // init global vars
-      // -----------------------------------------------------------------------
-      var epoch               = Math.floor(Date.now()/1000);
-      var timestamp_now       = moment.unix(epoch).format('YYYY-MM-DD HH:mm:ss');
-      var curr_state          = 'started';
-      
-      user_session.created    = timestamp_now;
-      user_session.timestamp  = timestamp_now;
 
       // -----------------------------------------------------------------------
       // Initialize|Load (existing) user cookies
       // -----------------------------------------------------------------------
+      user_session.created    = timestamp_now;
+      user_session.timestamp  = timestamp_now;
+
       user_session  =  j1.existsCookie(cookie_names.user_session)
                         ? j1.readCookie(cookie_names.user_session)
                         : j1.writeCookie({
@@ -315,8 +315,9 @@ var j1 = (function () {
       // -----------------------------------------------------------------------
       // if (user_session.mode === 'na' || user_session.mode === 'app') {
       if (user_session.mode === 'na') {
-        var url       = new parseURL(window.location.href);
-        var ep_status = baseUrl + '/status' + '?page=' + window.location.pathname;
+        var url           = new parseURL(window.location.href);
+        var ep_status     = baseUrl + '/status' + '?page=' + window.location.pathname;
+        var detectTimeout =  50;
 
         baseUrl       = url.origin;
 
@@ -356,7 +357,7 @@ var j1 = (function () {
             });
             j1.setState(curr_state);
             logger.info('state: ' + j1.getState());
-          }, 100);
+          }, detectTimeout);
         });
       } else {
         state = 'started';
@@ -833,18 +834,18 @@ var j1 = (function () {
     //  to load the current state from the middleware (skipped in WEB mode)
     // -------------------------------------------------------------------------
     displayPage: function (options) {
-      var logger          = log4javascript.getLogger('j1.displayPage');
-      var flickerTimeout  = {{template_config.flicker_timeout}};
-      var url             = new parseURL(window.location.href)
-      var baseUrl         = url.origin;
-      var ep_status       = baseUrl + '/status' + '?page=' + window.location.pathname;
-      var user_session    = j1.readCookie(cookie_names.user_session);
-      var user_state      = j1.readCookie(cookie_names.user_state);
-      var current_url     = new parseURL(window.location.href);
+      var logger            = log4javascript.getLogger('j1.displayPage');
+      var flickerTimeout      = {{template_config.flicker_timeout}};
+      var url                 = new parseURL(window.location.href)
+      var baseUrl             = url.origin;
+      var ep_status           = baseUrl + '/status' + '?page=' + window.location.pathname;
+      var user_session        = j1.readCookie(cookie_names.user_session);
+      var user_state          = j1.readCookie(cookie_names.user_state);
+      var current_url         = new parseURL(window.location.href);
+      var providerPermissions = {};
       var provider;
       var previous_page;
-      var appDetected;
-      var providerPermissions;
+      var appDetected;      
       var categoryAllowed;
       
 
@@ -868,8 +869,7 @@ var j1 = (function () {
           });
 
           providerPermissions = user_session.provider_permissions;
-          providerPermissions.push('public');
-          categoryAllowed = providerPermissions.includes(user_session.page_permission);
+          categoryAllowed     = providerPermissions.includes(user_session.page_permission);
 
           // Make sure that protected pages are ALWAYS checked for permissions
           // -------------------------------------------------------------------
@@ -1096,7 +1096,6 @@ var j1 = (function () {
         selector    = $('.' + anchor_id + ', #' + anchor_id +',[name='+anchor_id+']');
         heading     = selector[0].nodeName;
 
-
         // scroll only, if an anchor is given with URL
         if (selector.length) {
           var delay     = {{toccer_options.smoothScrollDuration}};
@@ -1128,12 +1127,12 @@ var j1 = (function () {
 
     // -------------------------------------------------------------------------
     //  authClientEnabled:
-    //  Returns the state of the authClient
+    //  Returns the state of the authClient (taken from site config)
     // -------------------------------------------------------------------------
     authClientEnabled: function () {
-      var authClientEnabled     = {{site.j1_auth.enabled}};
+      var authClientConfig = $.extend({}, {{auth_client_config|replace: '=>', ':'}});
 
-      return authClientEnabled;
+      return authClientConfig.enabled;
     }, // END authClientEnabled
 
     // -------------------------------------------------------------------------
@@ -1852,6 +1851,9 @@ var j1 = (function () {
 
       // mdi icons
       // -----------------------------------------------------------------------
+      $('head').append('<style>.iconify-md-bg-primary { color: ' +bg_primary+ ' !important; }</style>');
+      $('head').append('<style>.fa-md-bg-primary { color: ' +bg_primary+ ' !important; }</style>');
+      $('head').append('<style>.fas-md-bg-primary { color: ' +bg_primary+ ' !important; }</style>');
       $('head').append('<style>.mdi-md-bg-primary { color: ' +bg_primary+ ' !important; }</style>');
 
       // asciidoc
@@ -1952,6 +1954,21 @@ var j1 = (function () {
     getFalse: function () {
       return false;
     }, // END isTrue
+
+    // -------------------------------------------------------------------------
+    //  Return users to their browser homepage
+    // -------------------------------------------------------------------------
+    goHome: function () {
+      // most browsers
+      if (typeof window.home == 'function') { 
+        window.home();
+      } else if (document.all) {
+        // for IE 
+        window.location.href = "about:home";
+      } else {
+        window.location.href = "about:blank";
+      }
+    } // END gohome
 
   } // END j1 (return)
 }) (j1, window);

@@ -16,11 +16,7 @@
 #
 # ------------------------------------------------------------------------------
 #
-# Set the environment data for the build
-#
-# A build specific configuration giFhighves all templates access to a
-# variable site.environment to use this to optionally include|exclude
-# certain content based on which environment is set.
+# Set the environment for the build
 #
 # NOTE:
 #   You can specify a Jekyll environment at build time. In the build
@@ -51,15 +47,19 @@
 #   values:                             development|test|production
 #   default:                            development
 #
-environment:                            development
+environment:                            production
 
 # version
 # ------------------------------------------------------------------------------
-#   Sets the build environment of the web site. Do not change
-#   anything here because version information is bumped-in by
-#   the build process
+#   Sets the build version of j1-template Gem
 #
-version:                                2019.1.0
+version:                                2019.1.3
+
+# version
+# ------------------------------------------------------------------------------
+#   Sets the build version of j1-template
+#
+copyright:                              J1 · Copyright © 2019
 
 
 # ==============================================================================
@@ -225,7 +225,7 @@ doctype:                                html
 #   default:                            false
 #
 title:                                  J1 Template
-slogan:                                 Starter App
+slogan:                                 J1 App
 description:                            Made for Jekyll · Made for Your Web
 keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
                                         Asciidoc, Bootstrap, Javascript,
@@ -236,6 +236,9 @@ author:
   github:                               username
   twitter:                              username
   feedburner:                           feedname
+
+webmaster:
+  email:                                webmaster@example.domain
 
 robots:
   index:                                false
@@ -248,7 +251,7 @@ robots:
 brand:
   image:                                icons/j1/j1-512x512.png
   image_height:                         64
-  text:                                 Starter App
+  text:                                 Starter Web
   text_color:                           "#9E9E9E"
 
 # Set the favicon (located in the asset_path/images) and type
@@ -375,16 +378,15 @@ collections_dir:                        collections
 #
 include:                                [ .htaccess ]
 exclude:                                [
-                                          log, etc, vendor, node_modules,
+                                          log, vendor, node_modules, utilsrv,
                                           History.markdown, README.md, 
                                           changelog.md, Rakefile,
                                           Gemfile, Gemfile.lock, Guardfile,
                                           yarn.lock, config.ru,
                                           package-lock.json, package.json,
-                                          Passengerfile.json,
                                           '.sass-cache', '.vscode', 
                                           '.idea', '*.ignore',
-                                          '*.bat', '*.sh', '*.tmp',
+                                          '*.bat', '*.sh', '*.tmp', 'dot.*',
                                           '*.txt', '*.log', '*.ppt*', 
                                           '*.zip', '*.7z', '*.tgz', '*.tar',
                                           '*.a2p', '*.asciidoc'
@@ -446,7 +448,7 @@ plugins:
 # - jekyll-gist
 # - jekyll-sitemap
 # - jekyll-redirect-from
-  - j1_paginator
+  - j1-paginator
   - jekyll-sass-converter
 
 # ------------------------------------------------------------------------------
@@ -560,7 +562,7 @@ j1_auth:
       - \W*((?i)private(?-i))\W*
 
   providers:
-    activated:                          [ github, disqus ]
+    activated:                          [ github ]
 
     disqus:
       provider_url:                     https://disqus.com

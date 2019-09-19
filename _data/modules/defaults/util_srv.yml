@@ -46,8 +46,10 @@ defaults:
   utility_server:
 
     enabled:                            false
-    port:                               44444
+    ssl:                                false
     origin:                             localhost
+    host_name:                          0.0.0.0
+    port:                               44444
     verbose:                            false
     
     oauth_client:

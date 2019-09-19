@@ -1,15 +1,14 @@
 # ------------------------------------------------------------------------------
-#  ~/_data/blocks/banner.yml
-#  User configuration settings for BANNER lanes
+# ~/_data/blocks/banner.yml
+# User configuration settings for BANNER lanes
 #
-#  Product/Info:
-#  https://jekyll.one
+# Product/Info:
+# https://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2019 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
-#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -86,7 +85,7 @@ settings:
   divider:
 
     # --------------------------------------------------------------------------
-    # DIVIDER banner properties
+    # Banner 1
     #
     - name:                               Divider Banner 1
       banner:
@@ -95,28 +94,13 @@ settings:
         type:                             divider
         comment:                          Divider Banner 1
 
-    - name:                               Divider Banner 2
-      banner:
-        id:                               divider-2
-        enabled:                          true
-        type:                             divider
-        comment:                          Divider Banner 2
-
-    - name:                               Divider Banner 3
-      banner:
-        id:                               divider-3
-        enabled:                          true
-        type:                             divider
-        comment:                          Divider Banner 3
-
-
   # ----------------------------------------------------------------------------
   # TEASER Banner
   #
   teaser:
 
     # --------------------------------------------------------------------------
-    # home_teaser_banner
+    # Home Teaser
     #
     - name:                               Home Teaser Banner
       banner:
@@ -139,90 +123,46 @@ settings:
               width:                      12
               type:                       text
               animate:                    fadeInUp
-              title:                      Jekyll One Template
+              title:                      Go the static way
               tagline:                    <large><b>powerful modern static webs</b></large>
               description: >
-                                          Jekyll meets Bootstrap. And makes a lot of friends.
-                                          J1 One Template combines the best of free software 
-                                          for the web. J1 is open source and the modules packed 
-                                          as well. No pain for private or professional use.
+                                          If you’re not familiar with Jekyll (or other 
+                                          <a href="https://www.staticgen.com/" target="blank">website generators</a>), 
+                                          Jekyll is a so-called static site generator. Think of it like a 
+                                          modern content management system (CMS, e.g. like Wordpress) but
+                                          without all the complexity and headache.
                                           <br/><br/>
-                                          Explore what's possible if you go the 
-                                          the static way.
-              buttons:
-                - name:                   Start button
-                  button:
-                    text:                 Start
-                    class:                btn btn-raised btn-flex btn-md btn-info g-mr-5
-                    icon:                 rocket
-                    icon_color:           md_white
-                    icon_size:            24px
-                    href:                 /pages/public/start/kickstarter/web_in_a_day/intro/
+                                          <strong>No need to build a giant content strangling Rube Goldberg machine 
+                                          to manage a website.</strong>
+                                          <br/><br/>
+                                          All you’re doing at the end of the day is writing your content and 
+                                          the builtin engines does all the tricky things in behind needed for 
+                                          a website: design pages, putting out HTML, CSS and Javascript.
+                                          As a result, the site creation process gets out of your way. It’s done 
+                                          by J1 Template and allows you to concentrate on what truly matters:                                           
+                                          <strong>your content</strong>.
 
-                - name:                   Download button
-                  button:
-                    text:                 Download
-                    class:                btn btn-raised btn-flex btn-md btn-info g-mr-5
-                    icon:                 download
-                    icon_color:           md_white
-                    icon_size:            24px
-                    href:                 /pages/public/start/downloads/quickstart/
-
-                - name:                   Patreon button
-                  button:
-                    text:                 Become a Patron
-                    class:                btn btn-raised btn-flex btn-md btn-red
-                    icon:                 patreon
-                    icon_color:           md_white
-                    icon_size:            24px
-                    href:                 https://www.patreon.com/join/jekyll_one
-                    target:               blank
 
   # ----------------------------------------------------------------------------
   # IMAGE Banner
   #
   image:
-    # --------------------------------------------------------------------------
-    # home_image_banner
-    #
-    - name:                               Home Image Banner
-      banner:
-        id:                               home_image_banner
-        enabled:                          true
-        type:                             image
-        comment:                          Main image banner shown on home page
-        background_color_1:               md_gray_300
-        background_color_2:               md_gray_50
-        lane_span:                        fluid
-        helper_classes:                   mt-4 mb-4
-
-        cards:
-
-          - name:                         Image settings
-            card:
-              enabled:                    true
-              gridify:                    false
-              size_y:                     450
-              darken:                     1
-              background_image:           /assets/images/attics/ideas-start-here-1920x1280-bw.jpg
-
 
   # ----------------------------------------------------------------------------
   # PARALLAX Banner
   #
   parallax:
+
     # --------------------------------------------------------------------------
     # home_parallax_banner
     #
-    - name:                               Home Parallax Banner v1
+    - name:                               Home Parallax Banner
       banner:
         id:                               home_parallax_banner
         enabled:                          true
         type:                             parallax
-        comment:                          Main parallax banner shown on home page
+        comment:                          Parallax banner shown on home page
         style:                            dark
-#       background_color_1:               md_gray_300
-#       background_color_2:               md_gray_50
         lane_span:                        fluid
         helper_classes:                   mt-4 mb-4
 
@@ -235,10 +175,9 @@ settings:
               cite_text_size:             300%
               cite_text_quotes:           false
               cite_text: >
-                                          Making is like Wanting,
-                                          <br> but even <span style="color:red">Better</span>
+                                          Making is like Wanting, <br> but even 
+                                          <span style="color:red">Better</span>
               cite_size:                  200%
-#             cite:                       J1 Team
               text_color:                 rgba_lighten_900
               cite_color:                 rgba_lighten
               gridify:                    true
@@ -246,50 +185,5 @@ settings:
               darken:                     6
               background_image:           /assets/images/attics/ideas-start-here-1920x1280-bw.jpg
 
-    # --------------------------------------------------------------------------
-    # parallax_banner_einstein
-    #
-    - name:                               Home Parallax Banner v2
-      banner:
-        id:                               parallax_banner_einstein
-        enabled:                          false
-        type:                             parallax
-        comment:                          Main parallax banner shown on home page
-        style:                            dark
-        lane_span:                        fluid
-        helper_classes:                   mt-4 mb-4
-
-        cards:
-
-          - name:                         Quote settings
-            card:
-              enabled:                    true
-              type:                       quote
-              cite_text: >
-                                          Everything should be made as <b><span class="color-red">simple</span></b>
-                                          as possible,<br>
-                                          but not <b><span class="color-red">simpler</span></b>
-              cite:                       Albert Einstein
-              text_color:                 rgba_lighten_900
-              cite_color:                 rgba_lighten
-              gridify:                    true
-              darken:                     7
-              background_image:           /assets/images/quotes/albert_einstein.png
-
-  # ----------------------------------------------------------------------------
-  # FOO Banner
-  #
-  foo:
-    # --------------------------------------------------------------------------
-    # foo_banner
-    #
-    - name:                               Foo Banner
-      banner:
-        id:                               foo_banner
-        enabled:                          false
-        type:                             foo
-        comment:                          Banner (type) to test config issues/exceptions
-
-
-# END config
 # ------------------------------------------------------------------------------
+# END config

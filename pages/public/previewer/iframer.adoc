@@ -44,10 +44,10 @@ Resize window or click one of the links in the iFrame to watch it resize.
 
 <script>
 	iFrameResize({
-		log:                    true,   // enable console logging
-		inPageLinks:            true,
+		log:                    true,
     minHeight:              250,
-		resizedCallback:        function(messageData){ // Callback fn when resize is received
+		resizedCallback: function(messageData){
+     
 			$('p#callback').html(
 				'<b>Frame ID:</b> '    + messageData.iframe.id +
 				' <b>Height:</b> '     + messageData.height +
@@ -55,15 +55,17 @@ Resize window or click one of the links in the iFrame to watch it resize.
 				' <b>Event type:</b> ' + messageData.type
 			);
 		},
-		messageCallback:        function(messageData){ // Callback fn when message is received
+		messageCallback: function(messageData){
+     
 			$('p#callback').html(
 				'<b>Frame ID:</b> '    + messageData.iframe.id +
 				' <b>Message:</b> '    + messageData.message
 			);
 			alert(messageData.message);
 			document.getElementsByTagName('iframe')[0].iFrameResizer.sendMessage('Hello back from parent page');
-		},
-		closedCallback:         function(id){ // Callback fn when iFrame is closed
+		},    
+		closedCallback: function(id){
+     
 			$('p#callback').html(
 				'<b>IFrame (</b>'    + id +
 				'<b>) removed from page.</b>'

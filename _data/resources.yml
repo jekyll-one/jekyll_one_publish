@@ -722,6 +722,27 @@ resources:
         js:                             []
         init_function:                  []
 
+  # ----------------------------------------------------------------------------
+  # iconify framework
+  #
+  - name:                               iconify
+    resource:
+      id:                               iconify
+      enabled:                          true
+      comment:                          iconify framework
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ extensions/iconify/js/iconify.min.js ]
+        js:                             []
+        init_function:                  []
+
+
 # ==============================================================================
 # Additional Apps and Modules - loaded ASYCHRONOUSLY (defer)
 # ------------------------------------------------------------------------------
@@ -896,6 +917,5 @@ resources:
         js:                             [ extensions/stickyfill/js/stickyfill ]
         init_function:                  [ j1.adapter.stickyfill.init ]
 
-
-# END config
 # ------------------------------------------------------------------------------
+# END config

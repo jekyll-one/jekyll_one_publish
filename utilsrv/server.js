@@ -116,13 +116,17 @@ try {
 // -----------------------------------------------------------------------------
 // utility server (daemon) settings
 //
-const port                  = utilsrv_options.utility_server.port || 44444;
-const origin                = utilsrv_options.utility_server.origin || 'localhost';
-const verbose               = utilsrv_options.utility_server.verbose || false;
-const logFileName           = utilsrv_options.utility_server.logger_client.log_file_name  + '_' + current_date || 'messages' + '_' + current_date;
-const logFileExt            = utilsrv_options.utility_server.logger_client.log_file_ext || 'log';
-const logFolder             = utilsrv_options.utility_server.logger_client.log_folder || 'log';
-const logFileNamePath       = log_home + '/' + logFolder + '/' + logFileName + '.' +  logFileExt;
+const ssl             = utilsrv_options.utility_server.ssl || false;
+const port            = utilsrv_options.utility_server.port || 44444;
+const origin          = utilsrv_options.utility_server.origin || 'localhost';
+const hostName        = utilsrv_options.utility_server.host_name || '0.0.0.0';
+const verbose         = utilsrv_options.utility_server.verbose || false;
+const logFileName     = utilsrv_options.utility_server.logger_client.log_file_name  + '_' + current_date || 'messages' + '_' + current_date;
+const logFileExt      = utilsrv_options.utility_server.logger_client.log_file_ext || 'log';
+const logFolder       = utilsrv_options.utility_server.logger_client.log_folder || 'log';
+const logFileNamePath = log_home + '/' + logFolder + '/' + logFileName + '.' +  logFileExt;
+const util_srv_url    = ssl ? 'https://' +  origin + ':' +  port : 'http://' +  origin + ':' +  port;
+
 
 // -----------------------------------------------------------------------------
 // print utility server issue
@@ -163,9 +167,9 @@ if ( utilsrv_options.utility_server.logger_client.mode === 'append') {
 //
 const loginAuthTarget             = process.env.AUTH_TARGET || '_self';
 const oauthProvider               = utilsrv_options.utility_server.oauth_client.provider || 'github';
-const oauthProviderUrl            = utilsrv_options.utility_server.oauth_client.url || 'https://github.com';
+const oauthProviderUrl            = utilsrv_options.utility_server.oauth_client.provider_url || 'https://github.com';
 const oauthProviderTokenPath      = utilsrv_options.utility_server.oauth_client.token_path || '/login/oauth/access_token';
-const oauthProviderAuthorizePath  = utilsrv_options.utility_server.oauth_client.authorize_path.url || '/login/oauth/authorize';
+const oauthProviderAuthorizePath  = utilsrv_options.utility_server.oauth_client.authorize_path || '/login/oauth/authorize';
 
 // -----------------------------------------------------------------------------
 // cors settings
@@ -189,8 +193,8 @@ var corsSettings = {
 const app    = express();
 const oauth2 = simpleOauthModule.create({
   client: {
-    id: process.env.OAUTH_CLIENT_ID,
-    secret: process.env.OAUTH_CLIENT_SECRET
+    id: process.env.UTIL_SRV_GITHUB_CLIENT_ID,
+    secret: process.env.UTIL_SRV_GITHUB_CLIENT_SECRET
   },
   auth: {
     // Supply oauthProviderUrl for enterprise github installs
@@ -214,7 +218,7 @@ if (('').match(originPattern)) {
 // authorization uri definition
 //
 const authorizationUri = oauth2.authorizationCode.authorizeURL({
-  redirect_uri: process.env.REDIRECT_URL || '/auth/github/callback',
+  redirect_uri: util_srv_url + '/auth/github/callback',
   scope:        process.env.SCOPE || 'repo, user',
   state:        randomstring.generate(32)
 });
@@ -252,8 +256,8 @@ app.get('/', (req, res) => {
 //  ----------------------------------------------------------------------------
 app.get('/auth', (req, res) => {
 
-  if (verbose) console.log('Utility Server: endpoint /auth entered');
-  if (verbose) console.log('Utility Server: authorization URL: ' + authorizationUri);
+  if (environment === 'dev') console.log('Utility Server: endpoint /auth entered');
+  if (environment === 'dev') console.log('Utility Server: authorization URL: ' + authorizationUri);
   res.redirect(authorizationUri);
 
 }); // end endpoint auth
@@ -269,13 +273,13 @@ app.get('/auth/github/callback', (req, res) => {
     code: code
   };
 
-  if (verbose) console.log('Utility Server: auth redirect entered: /auth/github/callback');
+  if (environment === 'dev') console.log('Utility Server: auth redirect entered: /auth/github/callback');
 
   if (oauthProvider === 'gitlab') {
-    options.client_id = process.env.OAUTH_CLIENT_ID;
-    options.client_secret = process.env.OAUTH_CLIENT_SECRET;
+    options.client_id = process.env.UTIL_SRV_GITHUB_CLIENT_ID;
+    options.client_secret = process.env.UTIL_SRV_GITHUB_CLIENT_SECRET;
     options.grant_type = 'authorization_code';
-    options.redirect_uri = process.env.REDIRECT_URL;
+    options.redirect_uri = process.env.REDIRECT_URL || '/auth/github/callback';
   }
 
   oauth2.authorizationCode.getToken(options, (error, result) => {
@@ -299,7 +303,7 @@ app.get('/auth/github/callback', (req, res) => {
     <script>
     (function() {
 
-      // Register an event handler to listen for messages for the child window
+      // Register an event handler to listen for messages of the child window
       window.addEventListener("message", receiveMessage, false);
 
       // Post a authorizing message to the parent window (Netlify CMS App)
@@ -325,7 +329,7 @@ app.get('/auth/github/callback', (req, res) => {
     })()
     </script>`;
 
-    if (verbose) console.log('Utility Server: Send script (IIF) to main (parent) window (Netlify CMS App): ' + script);
+    if (environment === 'dev') console.log('Utility Server: Send script (IIF) to main (parent) window (Netlify CMS App): ' + script);
     return res.send(script);
   });
 
@@ -567,6 +571,6 @@ process.on('uncaughtException', function(err) {
 
 // run the daemon (use IPV4, all interfaces)
 // see https://github.com/expressjs/express/issues/3528
-app.listen(port, '0.0.0.0' () => {
+app.listen(port, hostName, () => {
   console.log("Utility Server is listening on port: " + port);
 });
