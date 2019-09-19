@@ -84,12 +84,12 @@ gem 'tzinfo', '>= 1.2.2'
 #   Windows does not include zoneinfo files, so bundle the
 #   tzinfo-data gem
 #
-gem "tzinfo-data"                                                               # if Gem.win_platform?
+gem "tzinfo-data" if Gem.win_platform?
 
 #  Windows Directory Monitor (WDM) monitor directories
 #  for changes
 #
-gem 'wdm', '>= 0.1.1'                                                           # if Gem.win_platform?
+gem 'wdm', '>= 0.1.1' if Gem.win_platform?
 
 # ------------------------------------------------------------------------------
 # Jekyll Plugins
