@@ -164,6 +164,5 @@ j1.adapter['stickybits'] = (function () {
 })(j1, window);
 
 {% endcapture %}
-
 {{ cache | strip_empty_lines }}
 {% assign cache = nil %}

@@ -349,6 +349,5 @@ j1.adapter['toccer'] = (function () {
 })(j1, window);
 
 {% endcapture %}
-
 {{ j1_cache | strip_empty_lines }}
 {% assign j1_cache = nil %}

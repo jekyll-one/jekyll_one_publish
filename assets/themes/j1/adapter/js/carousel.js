@@ -302,10 +302,10 @@ j1.adapter['carousel'] = (function (j1, window) {
       return j1.adapter.scroller.state;
     } // END state
 
-
   }; // END return
 
 })(j1, window);
 
 {% endcapture %}
 {{ cache | strip_empty_lines }}
+{% assign cache = nil %}

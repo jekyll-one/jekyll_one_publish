@@ -1,5 +1,5 @@
 ---
-regenerate:                             false
+regenerate:                             true
 ---
 
 {% capture cache %}
@@ -43,13 +43,13 @@ regenerate:                             false
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign logger_defaults   = modules.defaults.log4javascript.defaults %}
 {% assign logger_settings   = modules.log4javascript.settings %}
-{% assign webhook_defaults  = modules.defaults.util_srv.defaults %}
-{% assign webhook_settings  = modules.util_srv.settings %}
+{% assign util_srv_defaults = modules.defaults.util_srv.defaults %}
+{% assign util_srv_settings = modules.util_srv.settings %}
 
 {% comment %} Set config options
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign logger_options    = logger_defaults | merge: logger_settings %}
-{% assign webhook_options   = webhook_defaults | merge: webhook_settings %}
+{% assign util_srv_options  = util_srv_defaults | merge: util_srv_settings %}
 
 
 /*
@@ -79,7 +79,7 @@ j1.adapter['logger'] = (function (j1, window) {
   var page_id               = uuid().slice(25, 37);
   var cookie_names          = j1.getCookieNames();
   var loggerRequestCallback = false;
-  var moduleOptions         = {};
+  var utilSrvOptions        = {};
   var user_session;
   var appDetected;
   var _this;
@@ -96,7 +96,7 @@ j1.adapter['logger'] = (function (j1, window) {
   var patternLayout;
   var logText;
   var payloadURL;
-  
+
   // ---------------------------------------------------------------------------
   // helper functions
   // ---------------------------------------------------------------------------
@@ -108,7 +108,7 @@ j1.adapter['logger'] = (function (j1, window) {
   // ---------------------------------------------------------------------------
   var getCustomData = function(layout, loggingReference) {
     var customData = [];
-    
+
     try {(0)()} catch (e) {
       var pattern = /^(.+?) ?\(?((?:file|https?|chrome-extension):.*?):(\d+)(?::(\d+))?\)?\s*$/ig;
       // Split the stack trace
@@ -164,8 +164,8 @@ j1.adapter['logger'] = (function (j1, window) {
       // initialize state flag
       j1.adapter.logger.state = 'started';
 
-      // load module DEFAULTS|CONFIG
-      moduleOptions = $.extend({}, {{webhook_options | replace: '=>', ':' | replace: 'nil', '""'}});
+      // load module DEFAULTS|CONFIG to js object
+      utilSrvOptions = $.extend({}, {{util_srv_settings | replace: '=>', ':' | replace: 'nil', '""'}});
 
       // -----------------------------------------------------------------------
       // setup logger instances
@@ -184,34 +184,35 @@ j1.adapter['logger'] = (function (j1, window) {
           appDetected = user_session.mode === 'app' ? true : false;
 
           if (appDetected) {
-            payloadURL = moduleOptions.utility_server.logger_client.payload_url_app;
+            payloadURL = utilSrvOptions.utility_server.logger_client.payload_url_app;
           } else {
-            payloadURL = moduleOptions.utility_server.logger_client.payload_url_web;
+            payloadURL = utilSrvOptions.utility_server.logger_client.payload_url_web;
           }
 
-          // -----------------------------------------------------------------------
+          // -------------------------------------------------------------------
           // setup appenders
-          // -----------------------------------------------------------------------
+          // -------------------------------------------------------------------
 
           // consoleAppender (browser console)
           consoleAppender = new log4javascript.BrowserConsoleAppender();
           consoleAppender.setThreshold(log4javascript.Level.DEBUG);
 
           // ajaxAppender (XHR)
-          ajaxAppender = new log4javascript.AjaxAppender(payloadURL);               // HTTP POST log data on the utility server (write log to disk)
+          // HTTP POST log data on the utility server (write log to disk)
+          ajaxAppender = new log4javascript.AjaxAppender(payloadURL);
           ajaxAppender.setThreshold(log4javascript.Level.DEBUG);
-        	ajaxAppender.setWaitForResponse(true);
+          ajaxAppender.setWaitForResponse(true);
           ajaxAppender.setSendAllOnUnload(true);
           ajaxAppender.addHeader('X-Page-ID', page_id);
 
           // success callback for testing (disabled for default)
           if (loggerRequestCallback) {
-            ajaxAppender.setRequestSuccessCallback(requestCallback);      
-          }	
+            ajaxAppender.setRequestSuccessCallback(requestCallback);
+          }
 
-          // -----------------------------------------------------------------------
+          // -------------------------------------------------------------------
           // setup layouts
-          // -----------------------------------------------------------------------
+          // -------------------------------------------------------------------
           patternLayout       = new log4javascript.PatternLayout('[%d{HH:mm:ss.SSS}] [%f{4}] [%-5p] [%-40c] [%f{1}:%f{2}] %m%n[%f{3}]');
           httpPostDataLayout  = new log4javascript.HttpPostDataLayout();
           xmlLayout           = new log4javascript.XmlLayout();
@@ -228,14 +229,10 @@ j1.adapter['logger'] = (function (j1, window) {
 
           consoleAppender.setLayout(patternLayout);
           ajaxAppender.setLayout(httpPostDataLayout);
-        
-          // -----------------------------------------------------------------------
-          // setup (root) logger
-          // -----------------------------------------------------------------------
-          log4javascript.getRootLogger().addAppender(ajaxAppender);
-          log4javascript.getRootLogger().addAppender(consoleAppender);
 
-          // Set logging levels for all template (parent|child) logger
+          // -------------------------------------------------------------------
+          // setup log levels
+          // -------------------------------------------------------------------
           if (environment == 'production') {
             log4javascript.getLogger('j1').setLevel(log4javascript.Level.WARN);
           }
@@ -246,14 +243,26 @@ j1.adapter['logger'] = (function (j1, window) {
             log4javascript.getLogger('j1').setLevel(log4javascript.Level.WARN);
           }
 
+          // -------------------------------------------------------------------
+          // setup (root) loggers
+          // -------------------------------------------------------------------
+          log4javascript.getRootLogger().addAppender(consoleAppender);
+
+          if (utilSrvOptions.utility_server.logger_client.enabled === 'true') {
+            log4javascript.getRootLogger().addAppender(ajaxAppender);
+            logger.info('ajaxAppender detected as: enabled');
+          } else {
+            logger.info('ajaxAppender detected as: disabled');
+          }
+
           _this.setState('started');
           logger.info('state: ' + _this.getState());
 
-          // -----------------------------------------------------------------------
+          // -------------------------------------------------------------------
           // setup logger client (Internet)
           // passing log data over Internet|SeeMe currently NOT used
-          // -----------------------------------------------------------------------
-          // j1.core.log4javascript.init(moduleOptions);
+          // -------------------------------------------------------------------
+          // j1.core.log4javascript.init(utilSrvOptions);
 
           _this.setState('finished');
           logger.info('state: ' + _this.getState());
@@ -311,6 +320,5 @@ j1.adapter['logger'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-
 {{ cache | strip_empty_lines }}
 {% assign cache = nil %}

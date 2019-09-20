@@ -165,12 +165,12 @@ j1.adapter['octokit'] = (function (j1, window) {
       }
 
       // Register button click events for WebHook modals
-      // -------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       modalButtons.forEach(function(button, index) {
         button.addEventListener('click', function(e) {
 
           // acceptGitPullButton
-          // ---------------------------------------------------------------
+          // -------------------------------------------------------------------
           if (this.id === 'acceptGitPullButton') {
             logger.info('User clicked acceptGitPullButton');
 
@@ -194,7 +194,7 @@ j1.adapter['octokit'] = (function (j1, window) {
           }
 
           // declineGitPullButton
-          // ---------------------------------------------------------------
+          // -------------------------------------------------------------------
           if (this.id === 'declineGitPullButton') {
             logger.info('User clicked declineGitPullButton');
 
@@ -202,13 +202,13 @@ j1.adapter['octokit'] = (function (j1, window) {
           }
 
           // acceptGitPullButton
-          // ---------------------------------------------------------------
+          // -------------------------------------------------------------------
           if (this.id === 'acceptGitPullButton') {
             logger.info('User clicked acceptGitPullButton');
 
             // if (options.git.pull.enabled) {
             //   // Send commit message (silent mode)
-            //   // -------------------------------------------------------------
+            //   // ------------------------------------------------------------
             //   message.type    = 'command'
             //   message.action  = 'pull'
             //   message.text    = 'Run Git pull'
@@ -220,7 +220,7 @@ j1.adapter['octokit'] = (function (j1, window) {
           };
 
           // requestFailedOkButton
-          // ---------------------------------------------------------------
+          // -------------------------------------------------------------------
           if (this.id === 'requestFailedOkButton') {
             logger.info('User clicked requestFailedOkButton');
 
@@ -231,7 +231,7 @@ j1.adapter['octokit'] = (function (j1, window) {
       });
 
       // Register pre/post events for modal 'webhookCommitDetected'
-      // -------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       $(document).on('shown.bs.modal','#webhookCommitDetected',
         function (e) {
           logger.info('Display webhookCommitDetected');
@@ -255,7 +255,7 @@ j1.adapter['octokit'] = (function (j1, window) {
 
 
       // Register pre/post events for modal 'gitPullSuccess'
-      // -------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       $(document).on('shown.bs.modal','#gitPullSuccess',
         function () {
           logger.info('Display gitPullSuccess');
@@ -280,7 +280,7 @@ j1.adapter['octokit'] = (function (j1, window) {
           if (options.utility_server.npm_client.enabled) {
             if (options.utility_server.npm_client.built.execute) {
             // Send commit message (silent mode)
-            // -------------------------------------------------------------
+            // -----------------------------------------------------------------
             message.type    = 'command'
             message.action  = 'built'
             message.text    = 'Run NPM built'
@@ -291,7 +291,7 @@ j1.adapter['octokit'] = (function (j1, window) {
       }); // END hidden modal 'gitPullSuccess'
 
       // Register pre/post events for modal 'npmScriptSuccess'
-      // -------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       $(document).on('shown.bs.modal','#npmScriptSuccess',
         function () {
           logger.info('Display npmScriptSuccess');
@@ -423,6 +423,5 @@ j1.adapter['octokit'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-
 {{ cache | strip_empty_lines }}
 {% assign cache = nil %}

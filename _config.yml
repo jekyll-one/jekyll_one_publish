@@ -224,8 +224,8 @@ doctype:                                html
 #   values:                             boolean (true|false)
 #   default:                            false
 #
-title:                                  J1 Template
-slogan:                                 J1 App
+title:                                  J1
+slogan:                                 J1 Previews
 description:                            Made for Jekyll · Made for Your Web
 keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
                                         Asciidoc, Bootstrap, Javascript,
@@ -348,7 +348,7 @@ base_path:                              ""
 #
 protocol:                               http
 host:                                   localhost
-port:                                   4000
+port:                                   16001
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 
@@ -376,10 +376,10 @@ collections_dir:                        collections
 # FILES configuration
 # Set the files to include, exclude and ignore (keep_files on _site)
 #
-include:                                [ .htaccess ]
+include:                                []
 exclude:                                [
-                                          log, vendor, node_modules, utilsrv,
-                                          History.markdown, README.md, 
+                                          log, etc, vendor, node_modules, 
+                                          utilsrv, History.markdown, README.md, 
                                           changelog.md, Rakefile,
                                           Gemfile, Gemfile.lock, Guardfile,
                                           yarn.lock, config.ru,

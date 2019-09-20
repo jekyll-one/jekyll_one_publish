@@ -355,3 +355,4 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
 
 {% endcapture %}
 {{ cache | strip_empty_lines }}
+{% assign cache = nil %}

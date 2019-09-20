@@ -1,5 +1,5 @@
 ---
-regenerate:                             true
+regenerate:                             false
 ---
 
 {% capture cache %}
@@ -166,6 +166,5 @@ j1.adapter['cookie_bar'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-
 {{ cache | strip_empty_lines }}
 {% assign cache = nil %}

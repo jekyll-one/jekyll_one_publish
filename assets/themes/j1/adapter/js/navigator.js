@@ -423,7 +423,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       logger.info(logText);
 
       // Manage button click events for modal "signInOutButton"
-      // -------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       $('ul.nav-pills > li').click(function (e) {
         e.preventDefault();
         // jadams, 2019-07-30: To be checked if needed
@@ -455,7 +455,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       });
 
       // Manage pre events on modal "modalOmniSignIn"
-      // -------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       $("#modalOmniSignOut").on('show.bs.modal', function() {
           var modal = $(this);
           logger.info('Place current user data');
@@ -464,7 +464,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       }); // END SHOW modalOmniSignOut
 
       // Manage post events on modal "modalOmniSignIn"
-      // -------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       $("#modalOmniSignIn").on('hidden.bs.modal', function() {
         if (signIn.do == true) {
           provider      = signIn.provider.toLowerCase();
@@ -485,7 +485,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       }); // END post events "modalOmniSignIn"
 
       // Manage post events on modal "modalOmniSignOut"
-      // -------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       $("#modalOmniSignOut").on('hidden.bs.modal', function() {
         if (signOut.do == true) {
           logger.info('Load active provider from cookie: ' + cookie_user_session_name);
@@ -729,9 +729,9 @@ j1.adapter['navigator'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     messageHandler: function (sender, message) {
       // var json_message = JSON.stringify(message, undefined, 2);              // multiline
-      var json_message = JSON.stringify(message);  
+      var json_message = JSON.stringify(message);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;        
+      logText = 'Received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------
@@ -774,6 +774,5 @@ j1.adapter['navigator'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-
 {{ cache | strip_empty_lines }}
 {% assign cache = nil %}

@@ -341,3 +341,4 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
 
 {% endcapture %}
 {{ cache | strip_empty_lines }}
+{% assign cache = nil %}

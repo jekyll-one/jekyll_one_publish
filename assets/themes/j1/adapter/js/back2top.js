@@ -1,5 +1,5 @@
 ---
-regenerate:                             false
+regenerate:                             true
 ---
 
 {% capture cache %}
@@ -145,7 +145,7 @@ j1.adapter['back2top'] = (function (j1, window) {
         j1.core.back2top.init(moduleOptions);
 
         _this.setState('finished');
-        logger.info('state: ' + _this.getState());     
+        logger.info('state: ' + _this.getState());
       } else {
         _this.setState('finished');
         logger.info('state: ' + _this.getState());
@@ -180,7 +180,7 @@ j1.adapter['back2top'] = (function (j1, window) {
     // Manage messages send from other J1 modules
     // -------------------------------------------------------------------------
     messageHandler: function (sender, message) {
-      // var json_message = JSON.stringify(message, undefined, 2);              // multiline
+      // var json_message = JSON.stringify(message, undefined, 2);
       var json_message = JSON.stringify(message);
 
       logText = 'Received message from ' + sender + ': ' + json_message;
@@ -223,6 +223,5 @@ j1.adapter['back2top'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-
 {{ cache | strip_empty_lines }}
 {% assign cache = nil %}

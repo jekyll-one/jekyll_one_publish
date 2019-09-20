@@ -700,7 +700,7 @@ resources:
                                           "https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"
                                         ]
         js:                             []
-        init_function:                  [ j1.core.algolia.init ]
+        init_function:                  [ j1.adapter.algolia.init ]
 
   # ----------------------------------------------------------------------------
   # Livereload

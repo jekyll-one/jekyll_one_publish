@@ -1,5 +1,5 @@
 ---
-regenerate:                         false
+regenerate:                             false
 ---
 
 {% capture cache %}
@@ -288,16 +288,16 @@ j1.adapter['themer'] = (function (j1, window) {
       // var admonitionblock_important_color = j1.getStyleValue('btn-warning', 'background-color');
       // var admonitionblock_warning_color   = j1.getStyleValue('icon-warning', 'color');
       // var admonitionblock_caution_color   = j1.getStyleValue('btn-danger', 'background-color');
-      // 
+      //
       // var tabs_pills_link_color_active    = j1.setColorData('md_blue');         // j1.getStyleValue('btn-info', 'background-color');
       // var tabs_pills_link_color_hover     = j1.setColorData('md_gray_300');     // j1.getStyleValue('btn-secondary', 'background-color');
-      // 
+      //
       // $('head').append('<style>.g-bg-primary { background-color: ' +bg_primary+ ' !important; }</style>');
       // $('head').append('<style>.mdi-md-bg-primary { color: ' +bg_primary+ '; }</style>');
-      // 
+      //
       // $('head').append('<style>.nav-link:hover { background-color: ' +tabs_pills_link_color_hover+ ' !important; }</style>');
       // $('head').append('<style>.nav-link.active { background-color: ' +tabs_pills_link_color_active+ ' !important; }</style>');
-      // 
+      //
       // $('head').append('<style>.icon-note { color: ' +admonitionblock_note_color+ ' !important; }</style>');
       // $('head').append('<style>.icon-tip { color: ' +admonitionblock_tip_color+ ' !important; }</style>');
       // $('head').append('<style>.icon-important { color: ' +admonitionblock_important_color+ ' !important; }</style>');
@@ -353,6 +353,5 @@ j1.adapter['themer'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-
 {{ cache | strip_empty_lines }}
 {% assign cache = nil %}

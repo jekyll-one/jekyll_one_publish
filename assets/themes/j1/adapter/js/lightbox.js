@@ -97,7 +97,7 @@ j1.adapter['lightbox'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     init: function () {
       // initialize state flag
-      j1.adapter.lightbox.state = 'pending';      
+      j1.adapter.lightbox.state = 'pending';
 
       {% comment %} Set global variables
       -------------------------------------------------------------------------- {% endcomment %}
@@ -177,6 +177,5 @@ j1.adapter['lightbox'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-
 {{ cache | strip_empty_lines }}
 {% assign cache = nil %}
