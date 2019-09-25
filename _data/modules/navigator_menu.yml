@@ -95,20 +95,7 @@
       href:                             /pages/public/blog/navigator/archive/
       icon:                             archive
 
-- item:                                 Theme
-  theme_select:
-    - local_themes:                     enabled
-      title:                            THEMES from Jekyll-One
-      icon:                             face
-    - bootswatch_themes:                enabled
-      title:                            THEMES from Bootswatch
-      icon:                             face-profile
-    - preview:                          enabled
-      title:                            THEME Previewer
-      href:                             /pages/public/previewer/theme/
-      icon:                             eye
-
-- item:                                 Tool
+- item:                                 Tools
   sublevel:
     - title:                            Gallery Previewer
       href:                             /pages/protected/previewer/justified_gallery/
@@ -190,7 +177,7 @@
           target:                       blank
           icon:                         hospital
 
-    - title:                            Tool
+    - title:                            Tools
       icon:                             #wrench
       column:
         - title:                        FreeFormatter
@@ -233,6 +220,19 @@
           href:                         http://www.regexlib.com/
           target:                       blank
           icon:                         regex
+
+- item:                                 Themes
+  theme_select:
+    - local_themes:                     enabled
+      title:                            THEMES from Jekyll-One
+      icon:                             face
+    - bootswatch_themes:                enabled
+      title:                            THEMES from Bootswatch
+      icon:                             face-profile
+    - preview:                          enabled
+      title:                            THEME Previewer
+      href:                             /pages/public/previewer/theme/
+      icon:                             eye
 
 - item:                                 About
   sublevel:
