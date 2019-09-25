@@ -69,6 +69,9 @@ regenerate:                             true
 {% assign control_center_icon     = quicklinks_options.control_center_icon %}
 {% assign control_center_url      = quicklinks_options.control_center_url %}
 
+{% assign home_icon               = quicklinks_options.home_icon %}
+{% assign home_url                = quicklinks_options.home_url %}
+
 {% assign disqus_icon             = quicklinks_options.disqus_icon %}
 {% assign github_icon             = quicklinks_options.github_icon %}
 {% assign patreon_icon            = quicklinks_options.patreon_icon %}
@@ -160,11 +163,12 @@ regenerate:                             true
 <!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [Set icon familiy as: {{ icon_family }}] -->
 <!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [Set icon size as: {{ icon_size }}] -->
 <ul class="navbar-nav">
-  {% if disqus_url != "none" %}<li id="quickLinksDisqusButton" class="nav-item"><a id="disqus_id" class="nav-icon" href="{{disqus_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{disqus_icon}} {{icon_size}}"></i></a></li>{% endif %}
-  {% if github_url != "none" %}<li id="quickLinksGithubButton"class="nav-item"><a id="github_id" class="nav-icon" href="{{github_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{github_icon}} {{icon_size}}"></i></a></li>{% endif %}
-  {% if patreon_url != "none" %}<li id="quickLinksPatreonButton" class="nav-item"><a id="patreon_id" class="nav-icon" href="{{patreon_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{patreon_icon}} {{icon_size}}"></i></a></li>{% endif %}
-  {% if facebook_url != "none" %}<li id="quickLinksFacebookButton" class="nav-item"><a id="facebook_id" class="nav-icon" href="{{facebook_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{facebook_icon}} {{icon_size}}"></i></a></li>{% endif %}
-  {% if twitter_url != "none" %}<li id="quickLinksTwitterButton"class="nav-item"><a id="twitter_id" class="nav-icon" href="{{twitter_url}}" target="_blank"><i class="{{icon_family}} {{icon_family}}-{{twitter_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if home_url != "none" %}<li id="quickLinksHomeButton" class="nav-item"><a id="home_id" class="nav-icon" href="{{home_url}}" target="none"><i class="{{icon_family}} {{icon_family}}-{{home_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if disqus_url != "none" %}<li id="quickLinksDisqusButton" class="nav-item"><a id="disqus_id" class="nav-icon" href="{{disqus_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{disqus_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if github_url != "none" %}<li id="quickLinksGithubButton"class="nav-item"><a id="github_id" class="nav-icon" href="{{github_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{github_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if patreon_url != "none" %}<li id="quickLinksPatreonButton" class="nav-item"><a id="patreon_id" class="nav-icon" href="{{patreon_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{patreon_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if facebook_url != "none" %}<li id="quickLinksFacebookButton" class="nav-item"><a id="facebook_id" class="nav-icon" href="{{facebook_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{facebook_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if twitter_url != "none" %}<li id="quickLinksTwitterButton"class="nav-item"><a id="twitter_id" class="nav-icon" href="{{twitter_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{twitter_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if show_auth_manager_icon %}<li id="quickLinksSignInOutButton" class="nav-item" style="display: none;"><a class="nav-icon" id="navLinkSignInOut" href="#" data-toggle="modal" data-target="#{{signin_modal_id}}"><i id="iconSignInOut" class="{{icon_family}} {{icon_family}}-{{signin_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if show_cookie_consent_icon %}<li id="quickLinksCookieButton" class="nav-item" style="display: none;"><a id="cookie-state" class="nav-icon" href="#" data-toggle="modal" data-target="#cookieRevokeCentralDanger"><i class="{{icon_family}} {{icon_family}}-{{cookies_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if show_quick_search_icon %}<li id="quickLinksSearchButton" class="nav-item search"><a class="nav-icon" href="#"><i class="{{icon_family}} {{icon_family}}-{{search_icon}} {{icon_size}}"></i></a></li>{% endif %}

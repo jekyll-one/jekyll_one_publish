@@ -3,8 +3,8 @@ title:                                  Roundtrip
 tagline:                                typography
 description:                            Typography, a crucial branding element
 
-tags:                                   [ Template, Roundtrip, Typography ]
-index:                                  []
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Template, Roundtrip, Typography ]
 categories:                             [ pages ]
 
 permalink:                              /pages/public/start/roundtrip/typography/
@@ -13,6 +13,8 @@ regenerate:                             false
 resources:                              []
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.3
       slides:
         - url:                          /assets/images/pages/roundtrip/typography-1920x1280-bw.jpg

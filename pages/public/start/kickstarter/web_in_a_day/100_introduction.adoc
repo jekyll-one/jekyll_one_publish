@@ -3,8 +3,8 @@ title:                                  Web in a day
 tagline:                                meet & greet jekyll
 description:                            Modern static website in a day
 
-tags:                                   [ Kickstarter, Introduction, Web, Website, Jekyll ]
-index:                                  []
+tags:                                   [ Kickstarter ]
+index:                                  [ Introduction, Web, Website, Jekyll ]
 categories:                             [ pages ]
 
 permalink:                              /pages/public/start/kickstarter/web_in_a_day/intro/
@@ -13,7 +13,9 @@ regenerate:                             false
 resources:                              [ lightbox, carousel ]
 resource_options:
   - attic:
-      opacity:                          0.5
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5 
       slides:
         - url:                          /assets/images/pages/kickstarter/web_in_a_day/get-started-1920x1280-bw.jpg
           alt:                          Photo by JESHOOTS.COM on Unsplash

@@ -40,15 +40,15 @@ settings:
   #   puts some "noise" on the image to focus more on the quote|text rather
   #   than the image.
   #
-  #   values:                         boolean (true|false)
-  #   default:                        true
+  #   values:                           boolean (true|false)
+  #   default:                          true
   #
   #   gridifier
   #   --------------------------------------------------------------------------
   #   Pixel image used to gridify the background image of the banner.
   #
-  #   values:                         image path|name (string)
-  #   default:                        /assets/images/patterns/gridtile.png
+  #   values:                           image path|name (string)
+  #   default:                          /assets/images/patterns/gridtile.png
   #
   #   darken
   #   --------------------------------------------------------------------------
@@ -57,27 +57,27 @@ settings:
   #   range from 1 (light) to 9 (dark). Useful to focus on the quote|text
   #   rather than the background image.
   #
-  #   values:                         number [1 .. 9]
-  #   default:                        3
+  #   values:                           number [1 .. 9]
+  #   default:                          3
   #
   #   background
   #   --------------------------------------------------------------------------
   #   Default background image of the banner if no other image is specified with
   #   the panels configuration (j1_panels.yml).
   #
-  #   values:                         image path|name (string)
-  #   default:                        /assets/images/quotes/default.png
+  #   values:                           image path|name (string)
+  #   default:                          /assets/images/quotes/default.png
   # ----------------------------------------------------------------------------
   parallax_settings:
 
-    gridify:                          true
-    gridifier:                        /assets/images/patterns/gridtile.png
-    text_color:                       rgba_lighten
-    cite_color:                       rgba_lighten
-    darken:                           3
-    background:                       /assets/images/quotes/default.png
-    background_pos_x:                 50%
-    background_pos_y:                 0
+    gridify:                            true
+    gridifier:                          /assets/images/patterns/gridtile.png
+    text_color:                         rgba_lighten
+    cite_color:                         rgba_lighten
+    darken:                             3
+    background:                         /assets/images/quotes/default.png
+    background_pos_x:                   50%
+    background_pos_y:                   0
 
   # ----------------------------------------------------------------------------
   # DIVIDER Banner
@@ -87,12 +87,12 @@ settings:
     # --------------------------------------------------------------------------
     # Banner 1
     #
-    - name:                               Divider Banner 1
+    - name:                             Divider Banner 1
       banner:
-        id:                               divider-1
-        enabled:                          true
-        type:                             divider
-        comment:                          Divider Banner 1
+        id:                             divider-1
+        enabled:                        true
+        type:                           divider
+        comment:                        Divider Banner 1
 
   # ----------------------------------------------------------------------------
   # TEASER Banner
@@ -102,45 +102,58 @@ settings:
     # --------------------------------------------------------------------------
     # Home Teaser
     #
-    - name:                               Home Teaser Banner
+    - name:                             Home Teaser Banner
       banner:
-        id:                               home_teaser_banner
-        enabled:                          true
-        comment:                          Top teaser shown on home page
-        type:                             teaser
-        icon_family:                      MDI
-        style:                            light
-        background_color_1:               md_gray_50
-        background_color_2:               md_gray_50
-        lane_span:                        fixed
-        helper_classes:                   mt-4 mb-4
+        id:                             home_teaser_banner
+        enabled:                        true
+        comment:                        Top teaser shown on home page
+        type:                           teaser
+        icon_family:                    MDI
+        style:                          light
+        background_color_1:             md_gray_50
+        background_color_2:             md_gray_50
+        lane_span:                      fixed
+        helper_classes:                 mt-4 mb-4
 
         cards:
 
-          - name:                         Teaser Content
+          - name:                       Teaser Content
             card:
-              enabled:                    true
-              width:                      12
-              type:                       text
-              animate:                    fadeInUp
-              title:                      Go the static way
-              tagline:                    <large><b>powerful modern static webs</b></large>
+              enabled:                  true
+              width:                    12
+              type:                     text
+              animate:                  fadeInUp
+              title:                    Go the static way
+              tagline:                  <large><b>powerful modern static webs</b></large>
               description: >
-                                          If you’re not familiar with Jekyll (or other 
-                                          <a href="https://www.staticgen.com/" target="blank">website generators</a>), 
-                                          Jekyll is a so-called static site generator. Think of it like a 
-                                          modern content management system (CMS, e.g. like Wordpress) but
-                                          without all the complexity and headache.
-                                          <br/><br/>
-                                          <strong>No need to build a giant content strangling Rube Goldberg machine 
-                                          to manage a website.</strong>
-                                          <br/><br/>
-                                          All you’re doing at the end of the day is writing your content and 
-                                          the builtin engines does all the tricky things in behind needed for 
-                                          a website: design pages, putting out HTML, CSS and Javascript.
-                                          As a result, the site creation process gets out of your way. It’s done 
-                                          by J1 Template and allows you to concentrate on what truly matters:                                           
-                                          <strong>your content</strong>.
+                                        If you’re not familiar with Jekyll (or other 
+                                        <a href="https://www.staticgen.com/" target="blank">website generators</a>), 
+                                        Jekyll is a so-called static site generator. Think of it like a 
+                                        modern but lightweight content management system (CMS, e.g. like Wordpress
+                                        but much simpler) and without all the complexity and headache.
+
+                                        <div class="admonitionblock note">
+                                          <table>
+                                            <tbody><tr>
+                                              <td class="icon">
+                                                <i class="fa icon-note" title="Note"></i>
+                                              </td>
+                                              <td class="content">
+                                                No need to build a giant content strangling Rube Goldberg machine 
+                                                to manage a website. If you the static way, no database is needed
+                                                and no PHP-based dynamic rendering that slows down the performace
+                                                of your website.
+                                              </td>
+                                            </tr></tbody>
+                                          </table>
+                                        </div>
+
+                                        All you’re doing at the end of the day is writing your content and 
+                                        the builtin engines does all the tricky things in behind needed for 
+                                        a website: design pages, putting out HTML, CSS and Javascript.
+                                        As a result, the site creation process gets out of your way. It’s done 
+                                        by J1 Template and allows you to concentrate on what truly matters:                                           
+                                        <strong>your content</strong>.
 
 
   # ----------------------------------------------------------------------------
@@ -156,34 +169,34 @@ settings:
     # --------------------------------------------------------------------------
     # home_parallax_banner
     #
-    - name:                               Home Parallax Banner
+    - name:                             Home Parallax Banner
       banner:
-        id:                               home_parallax_banner
-        enabled:                          true
-        type:                             parallax
-        comment:                          Parallax banner shown on home page
-        style:                            dark
-        lane_span:                        fluid
-        helper_classes:                   mt-4 mb-4
+        id:                             home_parallax_banner
+        enabled:                        true
+        type:                           parallax
+        comment:                        Parallax banner shown on home page
+        style:                          dark
+        lane_span:                      fluid
 
         cards:
 
-          - name:                         Quote settings
+          - name:                       Quote settings
             card:
-              enabled:                    true
-              type:                       quote
-              cite_text_size:             300%
-              cite_text_quotes:           false
+              enabled:                  true
+              type:                     quote
+              cite_text_size:           300%
+              cite_text_quotes:         false
               cite_text: >
-                                          Making is like Wanting, <br> but even 
-                                          <span style="color:red">Better</span>
-              cite_size:                  200%
-              text_color:                 rgba_lighten_900
-              cite_color:                 rgba_lighten
-              gridify:                    true
-              size_y:                     450
-              darken:                     6
-              background_image:           /assets/images/attics/ideas-start-here-1920x1280-bw.jpg
+                                        Making is like Wanting, <br> but even 
+                                        <span style="color:red">Better</span>
+              cite_size:                200%
+              text_color:               rgba_lighten_900
+              cite_color:               rgba_lighten
+              gridify:                  true
+              size_y:                   450
+              darken:                   6
+              background_image:         /assets/images/attics/ideas-start-here-1920x1280-bw.jpg
+
 
 # ------------------------------------------------------------------------------
 # END config

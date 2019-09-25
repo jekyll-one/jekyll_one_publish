@@ -87,7 +87,6 @@ settings:
   # ----------------------------------------------------------------------------
   galleries:
 
-
     # --------------------------------------------------------------------------
     # Live DEMO
     #
@@ -124,19 +123,8 @@ settings:
                                           The Hope, Florence streets. Florence people.,
                                           I Love You, The painter in Florence
                                         ]
-        captions_lightbox:              [
-                                          <p>Peace of mind<p>,
-                                          Abu Dhabi,
-                                          Never stop climbing, Terme,
-                                          Deep sea, Above the World,
-                                          The Spring, Cat firmness,
-                                          Into the Sea, Bologna's T-Day,
-                                          Just in a dream Place, Erice,
-                                          Freedom, Maybe spring,
-                                          Love, These are the colors I love,
-                                          The Hope, Florence streets. Florence people.,
-                                          I Love You, The painter in Florence
-                                        ]
+        captions_lightbox:              
+
         gallery_options:
           rowHeight:                    120
           margins:                      1
@@ -145,63 +133,57 @@ settings:
           mode:                         lg-fade
           cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
 
-
     # --------------------------------------------------------------------------
-    # Gallery Customizer
+    # Gallery Customizer (Mega Cities)
     #
     - gallery:
         enabled:                        true
         type:                           image
         id:                             jg_customizer
-        show_delay:                     300
+  #     title:                          Masonry grid layout of Justified Gallery
+        show_delay:                     250
         css_classes:                    mb-3
-        images_path:                    /assets/images/gallery/justified_gallery
-        thumb_path:                     /assets/images/gallery/justified_gallery
+        images_path:                    /assets/images/gallery/mega_cities
+        thumb_path:                     /assets/images/gallery/mega_cities
         images:                         [
-                                          24096687789_c37d45712f_b.jpg, 23753792354_bd75d8dabc_b.jpg,
-                                          16961685188_f130144d60_b.jpg, 24014174029_2cfa940264_b.jpg,
-                                          13824674674_ca1e482394_b.jpg, 13824322785_104dc0968c_b.jpg,
-                                          8842312290_f310d491f4_b.jpg,  8811828736_88392f614a_b.jpg,
-                                          8400794773_932654a20e_b.jpg,  8157236803_78aa1698b6_b.jpg,
-                                          7948632554_01f6ae6b6f_b.jpg,  7822678460_ee98ff1f69_b.jpg,
-                                          7002395006_29fdc85f7a_b.jpg,  7062575651_b23918b11a_b.jpg,
-                                          6841267340_855273fd7e_b.jpg,  6791628438_affaa19e10_b.jpg,
-                                          6916180091_9c9559e463_b.jpg,  6880502467_d4b3c4b2a8_b.jpg,
-                                          6876412479_6268c6e2aa_b.jpg,  6840627709_92ed52fb41_b.jpg
+                                          banter-snaps_b.jpg, 
+                                          denys-nevozhai-1_b.jpg,
+                                          gints-gailis_b.jpg,
+                                          steven-diaz_b.jpg,
+                                          denys-nevozhai-2_b.jpg,
+                                          johan-mouchet_b.jpg,
+                                          emmad-mazhari_b.jpg,
+                                          federico-rizzarelli_b.jpg,
+                                          andreas-brucker_b.jpg,
+                                          thomas-tucker_b.jpg,
+                                          luca-bravo_b.jpg,
+                                          ethan-brooke_b.jpg,
+                                          oskars-sylwan_b.jpg
                                         ]
         captions_gallery:               [
-                                          Peace of mind, Abu Dhabi,
-                                          Never stop climbing, Terme,
-                                          Deep sea, Above the World,
-                                          The Spring, Cat firmness,
-                                          Into the Sea, Bologna's T-Day,
-                                          Just in a dream Place, Erice,
-                                          Freedom, Maybe spring,
-                                          Love, These are the colors I love,
-                                          The Hope, Florence streets. Florence people.,
-                                          I Love You, The painter in Florence
+                                          Osaka - Japan,
+                                          Man posing at the rooftop of Jin Mao Tower Shanghai - China,
+                                          Shangri-La Hotel Jakarta - Indonesia,
+                                          Tokyo seen from World Trade Center Observation Deck - Japan,
+                                          Young couple over Shenzhen - China,
+                                          The Queen Bee at the Eureka Tower - Melbourne Southbank Australia,
+                                          Chicago - United States,
+                                          Shanghai - China,
+                                          Cityscape of Bangkok Downtown - Thailand,
+                                          Sunset over Taipei City - Taiwan,
+                                          Brooklyn Bridge New York - United States,
+                                          Lotte World Tower Seoul - South Korea,
+                                          New York City, United States
                                         ]
-        captions_lightbox:              [
-                                          <p>Peace of mind<p>,
-                                          Abu Dhabi,
-                                          Never stop climbing, Terme,
-                                          Deep sea, Above the World,
-                                          The Spring, Cat firmness,
-                                          Into the Sea, Bologna's T-Day,
-                                          Just in a dream Place, Erice,
-                                          Freedom, Maybe spring,
-                                          Love, These are the colors I love,
-                                          The Hope, Florence streets. Florence people.,
-                                          I Love You, The painter in Florence
-                                        ]
+        captions_lightbox:
+
         gallery_options:
-          rowHeight:                    120
+          rowHeight:                    150
           margins:                      1
         lightbox_options:
           lightbox:                     lg
           mode:                         lg-fade
           cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
-
 
     # --------------------------------------------------------------------------
     # Old Times

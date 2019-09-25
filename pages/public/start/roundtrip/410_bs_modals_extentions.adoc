@@ -3,8 +3,8 @@ title:                                  Roundtrip
 tagline:                                enhanced bootstrap modals
 description:                            Enhanced Bootstrap Modals for J1 Template
 
-tags:                                   [ Template, Roundtrip, Bootstrap, Extended, Modal]
-index:                                  []
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Template, Roundtrip, Bootstrap, Extended, Modal]
 categories:                             [ pages ]
 
 flowtext:                               false
@@ -15,6 +15,8 @@ regenerate:                             false
 resources:                              []
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/pages/roundtrip/bootstrap-1920x1000-bw.jpg

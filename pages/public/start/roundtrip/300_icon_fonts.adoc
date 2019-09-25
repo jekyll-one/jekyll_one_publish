@@ -3,8 +3,8 @@ title:                                  Roundtrip
 tagline:                                icon fonts
 description:                            J1 Template Roundtrip - Icon Fonts
 
-tags:                                   [ Template, Roundtrip, Material, Design, MDI, Font Awesome, Icon, Fonts ]
-index:                                  []
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Template, Roundtrip, Material, Design, MDI, Font Awesome, Icon, Fonts ]
 categories:                             [ pages ]
 
 permalink:                              /pages/public/start/roundtrip/mdi_icon_font/
@@ -13,6 +13,8 @@ regenerate:                             false
 resources:                              []
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/pages/roundtrip/icon-fonts-1920x1280-bw.jpg

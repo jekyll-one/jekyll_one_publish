@@ -5,21 +5,23 @@ description:                            Using Docker on Windows
 
 date:                                   2018-11-01 00:00:00 +0100
 series:                                 j1-using-docker
-adsense:                                true
-comments:                               true
+adsense:                                false
+comments:                               false
 toc:                                    true
 
-tags:                                   [ Docker, Windows, Shared, Folder, Folders ]
-index:                                  []
-categories:                             [ tutorial, kickstarter ]
+tags:                                   [ Tutorial, kickstarter ]
+index:                                  [ Docker, Windows, Shared, Folder, Folders ]
+categories:                             []
 
-regenerate:                             false 
+regenerate:                             true 
 
-resources:                              [ stickyfill ]
+resources:                              []
 resource_options:
   - toccer:
       collapseDepth:                    3
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/attics/banner/docker-1280x600-bw.jpg
@@ -65,6 +67,7 @@ include::{tabledir}/debug_variables.asciidoc[]
 // Page content
 // -----------------------------------------------------------------------------
 //include::{documentsdir}/100-docker-using-shared-folders.asciidoc[]
+
 
 [[readmore]]
 == Docker smooth on Windows

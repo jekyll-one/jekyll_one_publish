@@ -248,7 +248,7 @@ j1.adapter['logger'] = (function (j1, window) {
           // -------------------------------------------------------------------
           log4javascript.getRootLogger().addAppender(consoleAppender);
 
-          if (utilSrvOptions.utility_server.logger_client.enabled === 'true') {
+          if (utilSrvOptions.utility_server.logger_client.enabled) {
             log4javascript.getRootLogger().addAppender(ajaxAppender);
             logger.info('ajaxAppender detected as: enabled');
           } else {

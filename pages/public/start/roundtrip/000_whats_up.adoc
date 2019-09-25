@@ -3,8 +3,8 @@ title:                                  Roundtrip
 tagline:                                step in
 description:                            What to get
 
-tags:                                   [ Start, Template, Whats, Up, Readme, TL;DR ]
-index:                                  []
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Start, Template, Whats, Up, Readme, TL;DR ]
 categories:                             [ pages ]
 
 permalink:                              /pages/public/start/roundtrip/whats_up/
@@ -13,14 +13,16 @@ regenerate:                             false
 resources:                              [ lightbox ]
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/attics/the-place-1920x1280-bw.jpg
-          alt:                          Photo by Tim Mossholder on Unsplash
+        - url:                          /assets/images/attics/runner-1920x1200-bw.jpg
+          alt:                          Photo by Alexander Redl on Unsplash
           badge:
             type:                       unsplash
-            author:                     Tim Mossholder
-            href:                       https://unsplash.com/@timmossholder/portfolio
+            author:                     Alexander Redl
+            href:                       https://unsplash.com/@alexanderredl
 ---
 
 // Enable the Liquid Preprocessor

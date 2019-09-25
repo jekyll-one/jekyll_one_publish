@@ -1,14 +1,13 @@
 ---
-#scrollbar:                              true
-
 title:                                  Roundtrip
 tagline:                                present videos
 description:                            J1 Template Roundtrip - Present video based data
 
-tags:                                   [ Template, Roundtrip, Video ]
-index:                                  []
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Template, Roundtrip, Video ]
 categories:                             [ pages ]
 
+scrollbar:                              false
 toc:                                    true
 
 permalink:                              /pages/public/start/roundtrip/present_videos/
@@ -17,6 +16,8 @@ regenerate:                             false
 resources:                              [ lightbox, light_gallery, bs_gallery ]
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       background_color:
         color_1:                        md_grey_100
         color_2:                        md_grey_400
@@ -30,7 +31,7 @@ resource_options:
         - url:                          https://github.com/jekyll-one-org/jekyll-one-lfs/raw/master/videos/underground-broadway.mp4
           alignY:                       0
           isVideo:                      true
-          loop:                         true
+          loop:                         false
           duration:                     12000
         # Broadway Underground - still image (animate random)
         - url:                          /assets/videos/headers/still/underground-broadway.png

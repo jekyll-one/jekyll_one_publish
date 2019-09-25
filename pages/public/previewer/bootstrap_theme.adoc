@@ -3,8 +3,7 @@ title:                                  Theme previewer
 tagline:                                common components
 description:                            Themes Previewer for common components of a selected theme.
 
-tags:                                   [ Theme, Previewer]
-
+tags:                                   [ App, Previewer ]
 index:                                   [ 
                                           Bootstrap, Theme, Preview, Common, 
                                           Component, Navbars, Buttons, Typography,
@@ -21,17 +20,19 @@ flowtext:                               false
 permalink:                              /pages/public/previewer/theme/
 regenerate:                             false
 
-resources:                              [ tocbot ]
+resources:                              []
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/pages/roundtrip/themes-1920x1280-bw.jpg
           alt:                          Photo by Clem Onojeghuo on Unsplash
-#         badge:
-#           type:                       unsplash
-#           author:                     Clem Onojeghuo
-#           href:                       https://unsplash.com/@clemono
+          badge:
+            type:                       unsplash
+            author:                     Clem Onojeghuo
+            href:                       https://unsplash.com/@clemono
 ---
 
 // Enable the Liquid Preprocessor
@@ -63,25 +64,37 @@ include::{includedir}/attributes.asciidoc[tag=urls]
 ++++
   <!-- Prepend H1 tag here -->
   <div id="h1_theme_name" class="row mb-3">
-    <!-- Load the previously selected theme from the cookie -->
+
+    <!-- Load the previously selected theme from the (user state) cookie -->
     <script>
-      var cookie_names                = j1.getCookieNames();
-      const cookie_user_session_name  = cookie_names.user_session;
-      var user_state                  = {};
-      var user_state_detected;
+    $(document).ready(function() {
+      var interval_count = 0;
+      var max_count      = 10;
+      var cookie_names   = j1.getCookieNames();
+      var user_state     = {};
       var themeName;
       var themeNameHeadline;
-
-      /* Read J1 UserState cookie */
-      user_state_detected = j1.existsCookie (cookie_user_session_name);
-      if ( user_state_detected ) {
-        user_state = j1.readCookie(cookie_user_session_name);
-        themeName  = user_state.theme_name;
-      } else {
-        themeName         = 'J1 Default';
-      }
-      var themeNameHeadline = '<h1 id="theme_name">Theme ' +themeName+ '</h1>';
-      $('#h1_theme_name').prepend(themeNameHeadline);
+      var user_state_detected;
+      
+      var dependencies_met_themer = setInterval(function() {
+        interval_count += 1;
+        if ( j1.adapter.themer.getState() == 'finished' ) {
+          user_state_detected = j1.existsCookie (cookie_names.user_state);
+          if ( user_state_detected ) {
+            user_state = j1.readCookie(cookie_names.user_state);
+            themeName  = user_state.theme_name;
+          } else {
+            themeName  = 'J1 Default';
+          }
+          var themeNameHeadline = '<h1 id="theme_name">Theme ' +themeName+ '</h1>';
+          $('#h1_theme_name').prepend(themeNameHeadline);
+          clearInterval(dependencies_met_themer);
+          }
+        if (interval_count > max_count) {
+          clearInterval(dependencies_met_themer);
+        }
+      }, 25);
+    });
     </script>
   </div>
 ++++

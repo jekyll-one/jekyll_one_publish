@@ -3,10 +3,9 @@ title:                                  Roundtrip
 tagline:                                BS table extensions
 description:                            Enhanced table styles for Bootstrap
 
-tags:                                   [ 
-                                         Template, Bootstrap, Roundtrip, Extended, Tables
-                                        ]
-index:                                  []
+
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Template, Bootstrap, Roundtrip, Extended, Tables]
 categories:                             [ pages ]
 
 flowtext:                               false
@@ -17,11 +16,8 @@ regenerate:                             false
 resources:                              []
 resource_options:
   - attic:
-#    background_color:
-#      color_1:                        md_grey_100
-#      color_2:                        md_grey_400
-#     padding_top:                      350
-#     padding_bottom:                   50
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.7
       slides:
         - url:                          /assets/images/pages/roundtrip/tables-1920x1280-bw.jpg

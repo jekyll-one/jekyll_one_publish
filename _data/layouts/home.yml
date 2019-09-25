@@ -162,16 +162,17 @@ lanes:
       id:                               home_teaser_banner
       region:                           body-main
       type:                             async
-      helper_classes:                   mt-5 mb-3
+      helper_classes:                   mt-4 mb-0
 
   # ----------------------------------------------------------------------------
   # DIVIDER banner
   #
   - lane:
-      enabled:                          false
+      enabled:                          true
       id:                               divider-1
       region:                           body-main
       type:                             async
+      helper_classes:                   mt-4 mb-5
 
   # ----------------------------------------------------------------------------
   # INTRO panel

@@ -6,14 +6,21 @@ description:                            Largest City in the state of Minnesota
 date:                                   2016-11-20 19:16:49 +0100
 series:
 
-tags:                                   [ USA, Minnesota, City, Minneapolis ]
-index:                                  []
+tags:                                   [ Wikipedia ]
+index:                                  [ USA, Minnesota, City, Minneapolis ]
 categories:                             []
 
 regenerate:                             false
 
 resources:                              []
 resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5 
+      slides:
+        - url:                          /assets/images/blog/wikipedia/minneapolis.1200x400.jpg
+          alt:                          Minnesota
 ---
 
 // NOTE:  General Asciidoc page attributes settings

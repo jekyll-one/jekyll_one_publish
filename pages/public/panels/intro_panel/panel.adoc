@@ -1,11 +1,11 @@
 ---
 title:                                  J1 Template
-tagline:                                Responsive Webs using J1 Template
+tagline:                                responsive web design
 description:                            Responsive Webs using J1 Template
 author:                                 J1 Team
 
-tags:                                   [ Jekyll, Template, Responsive, Web ]
-index:                                  []
+tags:                                   [ Jekyll, Template ]
+index:                                  [ Jekyll, Template, Responsive, Web ]
 categories:                             [ pages ]
 
 permalink:                              /pages/public/panels/intro_panel/
@@ -13,8 +13,13 @@ regenerate:                             false
 
 resources:                              [ lightbox, carousel ]
 resource_options:
-  - toccer:
-      collapseDepth:                    2
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5 
+      slides:
+        - url:                          /assets/images/attics/the-place-1920x1280-bw.jpg
+          alt:                          the-place-1920x1280-bw
 ---
 
 

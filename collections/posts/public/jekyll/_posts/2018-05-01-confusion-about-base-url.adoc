@@ -8,8 +8,8 @@ series:
 adsense:                                false
 image:                                  /assets/images/blog/featured/what-is-a-baseurl.jpg
 
-tags:                                   [ Jekyll, Configuration, URL, base_url ]
-index:                                  []
+tags:                                   [ Jekyll, Configuration ]
+index:                                  [ Jekyll, Configuration, URL, base_url ]
 categories:                             [ featured ]
 
 regenerate:                             false
@@ -17,6 +17,8 @@ regenerate:                             false
 resources:                              []
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/attics/banner/jekyll.1200x600-bw.jpg

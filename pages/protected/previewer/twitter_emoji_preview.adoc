@@ -13,14 +13,16 @@ regenerate:                             false
 resources:                              []
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/pages/roundtrip/emojies-1920x1280-bw.jpg
           alt:                          Photo by Fausto García on Unsplash
-#         badge:
-#           type:                       unsplash
-#           author:                     Fausto García
-#           href:                       https://unsplash.com/@faustogarmen/portfolio
+          badge:
+            type:                       unsplash
+            author:                     Fausto García
+            href:                       https://unsplash.com/@faustogarmen/portfolio
 ---
 
 // Enable the Liquid Preprocessor

@@ -108,6 +108,9 @@ defaults:
     control_center_icon:                git
     control_center_url:                 /apps/public/cc/
 
+    home_icon:                          home-variant
+    home_url:                           "#"
+
     disqus_icon:                        disqus
     disqus_url:                         none
     github_icon:                        github-circle

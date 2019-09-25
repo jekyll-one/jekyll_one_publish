@@ -16,7 +16,6 @@ regenerate:                             true
  #
  # J1 Template is licensed under the MIT License.
  # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
- #
  # -----------------------------------------------------------------------------
  # Test data:
  #    {{ variable | debug }}
@@ -82,9 +81,9 @@ regenerate:                             true
           {% assign lane_span       = panel_settings.lane_span %}
           {% assign title           = panel_settings.title|strip_newlines %}
           {% assign tagline         = panel_settings.tagline|strip_newlines %}
+          {% assign description     = panel_settings.description|strip_newlines %}
           {% assign buttons         = panel_settings.buttons %}
           {% assign header          = panel_settings.header %}
-          {% assign helper_classes  = panel_settings.helper_classes %}
           {% assign cards           = panel_settings.cards %}
         {% endif %}
       {% endfor %}
@@ -144,7 +143,8 @@ regenerate:                             true
                   <h1 class="g-font-weight-500 g-mb-0">{{panel_settings.title}}</h1>
                   <p class="tagline"><b>{{panel_settings.tagline}}</b></p>
                   <div class="d-inline-block g-width-50 g-height-2 g-bg-primary g-mb-2"></div>
-                  <p class="lead {{helper_classes}}">{{panel_settings.description}}</p>
+                  <!-- p class="lead">{{description | asciidocify}}</p -->
+                  <p class="lead">{{description}}</p>
                 </div>
               </div>
             </div>

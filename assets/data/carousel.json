@@ -6,17 +6,16 @@ regenerate:                             false
 
 {% comment %}
  # -----------------------------------------------------------------------------
- #   ~/assets/data/carousel.json
- #   Liquid JSON template for ALL (Owl Carousel) sliders configured
+ # ~/assets/data/carousel.json
+ # Liquid JSON template for ALL (Owl Carousel) sliders configured
  #
- #   Product/Info:
- #   http://jekyll.one
+ # Product/Info:
+ # http://jekyll.one
  #
- #   Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2019 Juergen Adams
  #
- #   J1 Template is licensed under the MIT License.
- #   See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
- #
+ # J1 Template is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  #
  #  The Liquid template sliders.json is used by J1 Slider (Owl Carousel).

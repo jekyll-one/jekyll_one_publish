@@ -1,11 +1,11 @@
 ---
 title:                                  Become a patron
-tagline:                                access premium content
-description:                            Get access to premium content
+tagline:                                help us to create premium content
+description:                            Help to create premium content
 categories:                             [ pages ]
 
-tags:                                   [ Patron, Premium, Content ]
-index:                                  []
+tags:                                   [ business ]
+index:                                  [ Patron, Premium, Content ]
 categories:                             [ pages ]
 
 permalink:                              /pages/public/about/become_a_patron/
@@ -14,6 +14,8 @@ regenerate:                             false
 resources:                              [ lightbox ]
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5 
       slides:
         - url:                          /assets/images/attics/premium-1920x1280-bw.jpg

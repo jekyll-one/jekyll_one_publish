@@ -1,15 +1,14 @@
 ---
-#scrollbar:                              true
-
 title:                                  Roundtrip
 tagline:                                present images
 description:                            J1 Template Roundtrip - Present image based data
 
-tags:                                   [ Template, Roundtrip, Images ]
-index:                                  []
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Template, Roundtrip, Images ]
 categories:                             [ pages ]
 
 toc:                                    true
+scrollbar:                              false
 
 permalink:                              /pages/public/start/roundtrip/present_images/
 regenerate:                             false
@@ -20,6 +19,8 @@ resources:                              [
                                         ]
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
@@ -300,7 +301,7 @@ As for all galleries, a *lightbox* is put on all images to enlarge and browse
 them for convenience and best access.
 
 .Grand Pa around the 1930th
-carousel::bg_old_times[role="mb-5"]
+gallery::bg_old_times[role="mb-5"]
 
 
 ==== Justified Gallery
@@ -316,12 +317,12 @@ vertical space. Sort of like mason fitting stones in a wall. You’ll have
 seen it in use all over the Internet!
 
 .Masonry grid layout of Justified Gallery
-carousel::jg_live_demo[role="mb-5"]
+gallery::jg_live_demo[]
 
 
 == What's next
 
-lorem:sentences[3].
+lorem:sentences[5]
 
 lorem:sentences[3]
 

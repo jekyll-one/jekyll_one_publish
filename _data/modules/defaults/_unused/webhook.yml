@@ -1,0 +1,80 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/webhook.yml
+# Default configuration settings for J1 (Github) WebHook module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2019 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one/j1-template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+# NOTE: For the utility server, toplevel ports like 44444 are used to prevent
+#       Chrome unsafe port issues (net::ERR_UNSAFE_PORT)
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+  title:                                WebHook
+  scope:                                Default settings
+  location:                             _data/modules/defaults/webhook.yml
+
+# ------------------------------------------------------------------------------
+# Default configuration settings
+#
+defaults:
+
+  enabled:                              false
+  xhr_container_id:                     web_hook_modals
+  xhr_data_path:                        /assets/data/webhook/index.html
+
+  commit_detection:
+
+    auth_status:                        authenticated
+    users:                              [ j1juergen ]
+
+    modal_commit_detected:
+      enabled:                          false
+      autohide:                         false
+      timeout:                          5000
+
+    modal_pull_response:
+      enabled:                          false
+      autohide:                         true
+      timeout:                          5000
+
+  utility_server:
+
+    enabled:                            true
+    port:                               44444
+    origin:                             localhost
+    verbose:                            false
+    
+    oauth_client:
+      enabled:                          false
+
+    git_client:
+      enabled:                          false
+      pull:
+        execute:                        false                                   # true|false
+        response_success:               The pull request to your local working copy finished successfully.
+        response_failed:                "The pull request to your local working copy has failed. Reason: "
+
+    npm_client:
+      enabled:                          false
+      built:                              
+        execute:                        false                                   # true|false
+        response_success:               The built request to your local site finished successfully.
+        response_failed:                "The built request to your local fite has failed. Reason: "
+
+    logger_client:
+      enabled:                          false
+      payload_url_app:                  http://localhost:5000/log2disk?request=write
+      payload_url_web:                  http://localhost:44444/log2disk?request=write
+
+
+# END config
+# ------------------------------------------------------------------------------

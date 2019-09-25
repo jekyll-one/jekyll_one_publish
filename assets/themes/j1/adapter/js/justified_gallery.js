@@ -1,5 +1,5 @@
 ---
-regenerate:                             false
+regenerate:                             true
 ---
 
 {% capture cache %}
@@ -134,13 +134,13 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
     load: function (options) {
       logger = log4javascript.getLogger('j1.adapter.jf_gallery.load');
 
-      {% if environment == 'development' %}
-        _this.setState('running');
-        logger.info('state: ' + _this.getState());
-      {% endif %}
+      _this.setState('running');
+      logger.info('state: ' + _this.getState());
 
       {% for item in jf_gallery_options.galleries %}
         {% if item.gallery.enabled %}
+
+          {% assign gallery_id = item.gallery.id %}
 
           {% assign lb_options        	  = item.gallery.lightbox_options %}
           {% assign jg_options            = item.gallery.gallery_options  %}
@@ -169,9 +169,6 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
             {% assign lb_share_pinterest  = false %}
           {% endif %}
 
-          {% assign container_id = item.gallery.id %}
-          {% capture gallery_id %}{{item.gallery.id}}_div{% endcapture %}
-
           {% if item.gallery.show_delay %}  {% assign show_delay    = item.gallery.show_delay %}  {% endif %}
           {% if lb_options.mode %}          {% assign lb_mode       = lb_options.mode %}          {% endif %}
           {% if lb_options.cssEasing %}     {% assign lb_cssEasing  = lb_options.cssEasing %}     {% endif %}
@@ -187,21 +184,19 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
             logger.error(logText);
           {% endif %}
 
-          // Create an gallery instance if id: {{ container_id }} exists
-          if ($('#{{ container_id }}').length) {
+          // Create an gallery instance if id: {{gallery_id}} exists
+          if ($('#{{gallery_id}}').length) {
 
-          {% if environment == 'development' %}
-            logText = 'Gallery on ID #{{ container_id }} is being initialized';
-            logger.info(logText);
-          {% endif %}
+          logText = 'Gallery on ID #{{gallery_id}} is being initialized';
+          logger.info(logText);
 
           // Place HTML markup for the title
           {% if gallery_title %}
-          var gallery_title = '<div class="jg-gallery-title">{{ gallery_title }}</div>';
-          $('#{{ container_id }}').before(gallery_title);
+          var gallery_title = '<div class="jg-gallery-title">{{gallery_title}}</div>';
+          $('#{{gallery_id}}').before(gallery_title);
           {% endif %}
 
-          $('#{{ container_id }}').addClass("justifiedgallery ");
+          $('#{{gallery_id}}').addClass("justified-gallery {{css_classes}}");
 
           {% if gallery_type == "image" %}
             // Collect image gallery data from data file (xhr_data_path)
@@ -211,76 +206,78 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
               {% if lightbox == "lg" %}
               gallery_class += ' light-gallery ';
               {% endif %}
-              content += '<div id="{{ gallery_id }}" class="' +gallery_class+ '{{ css_classes }}">' + '\n';
 
               for (var i in data["{{item.gallery.id}}"]) {
                 var img               = data["{{item.gallery.id}}"][i].img;
                 var captions_gallery  = data["{{item.gallery.id}}"][i].captions_gallery;
                 var captions_lightbox = data["{{item.gallery.id}}"][i].captions_lightbox;
-                var lightbox          = "{{ lightbox }}";
+                var lightbox          = "{{lightbox}}";
 
                 if (captions_lightbox != null && lightbox == 'lg') {
                   content +=  '<a data-sub-html="' +captions_lightbox+ '" ';
                   content +=  'href="' +img+ '">' + '\n';
+                  content +=  '  <img src="' +img+ '" img alt="' +captions_lightbox+ '">' + '\n';
                 } else {
-                  content +=  '<a href="' +img+ '">' + '\n';
-                }
+                  content +=  '<a data-sub-html="' +captions_gallery+ '" ';
+                  content +=  'href="' +img+ '">' + '\n';
                   content +=  '  <img src="' +img+ '" img alt="' +captions_gallery+ '">' + '\n';
-                  //content +=  '  <img class="img-overlay" src="/assets/themes/j1/modules/lightboxes/light_gallery/img/icons/zoom.png">' + '\n';
-                  content +=  '</a>' + '\n';
+                }
+                content +=  '</a>' + '\n';
 
               } // END for
-              content += '</div>';
           {% endif %}
               // Hide gallery container (until lightGallery is NOT initialized)
               // and place HTML markup
-              $("#{{ container_id }}").hide().html(content);
+              $("#{{gallery_id}}").hide().html(content);
               // Initialize and run the gallery using individual gallery|lightbox options
               {% if lightbox == "lg" %}
-                var gallery_selector = $("#{{ gallery_id }}");
+                var gallery_selector = $("#{{gallery_id}}");
                 if (options !== undefined) {
                   // lightbox initialized on COMPLETE event of justifiedGallery
-                  gallery_selector.justifiedGallery().on('jg.complete', function () {
+                  gallery_selector.justifiedGallery({
+                    {% for option in item.gallery.gallery_options %}
+                    {{option[0] | json}}: {{option[1] | json}},
+                    {% endfor %}
+                  })
+                  .on('jg.complete', function (e) {
+                    e.stopPropagation();
                     gallery_selector.lightGallery({
                       {% for option in item.gallery.jg_options %}
-                      {{ option[0] | json }}: {{ option[1] | json }},
+                      {{option[0] | json}}: {{option[1] | json}},
                       {% endfor %}
                     });
                     // Initialize instance variable of lightGallery (for later access)
-                    j1["{{gallery_id}}"] = gallery_selector.data('lightGallery');
+                    j1['{{gallery_id}}'] = gallery_selector.data('lightGallery');
                     // Show gallery DIV element if jg has completed *and* the
                     // lightbox is initialized (delayed)
-                    setTimeout(function() { $("#{{ container_id }}").show(); }, {{ show_delay }});
-
-                    {% if environment == 'development' %}
-                      logText = 'Gallery on ID #{{ container_id }} initializing completed';
+                    setTimeout(function() { 
+                      $("#{{gallery_id}}").show();
+                      logText = 'Gallery on ID #{{gallery_id}} initializing completed';
                       logger.info(logText);
-                    {% endif %}
-
+                    }, {{show_delay}});
                   });
                 } else {
                   gallery_selector.justifiedGallery({
                     {% for option in item.gallery.gallery_options %}
-                    {{ option[0] | json }}: {{ option[1] | json }},
+                    {{option[0] | json}}: {{option[1] | json}},
                     {% endfor %}
-                  }).on('jg.complete', function () {
+                  }).on('jg.complete', function (e) {
+                    e.stopPropagation();
                     // lightbox initialized on COMPLETE event of justifiedGallery
                     gallery_selector.lightGallery({
                       {% for option in item.gallery.jg_options %}
-                      {{ option[0] | json }}: {{ option[1] | json }},
+                      {{option[0] | json}}: {{option[1] | json}},
                       {% endfor %}
                     });
                     // Initialize instance variable of lightGallery (for later access)
-                    j1["{{gallery_id}}"] = gallery_selector.data('lightGallery');
+                    j1['{{gallery_id}}'] = gallery_selector.data('lightGallery');
                     // Show gallery DIV element if jg has completed *and* the
                     // lightbox is initialized (delayed)
-                    setTimeout(function() { $("#{{ container_id }}").show(); }, {{ show_delay }});
-
-                    {% if environment == 'development' %}
-                      logText = 'Gallery on ID #{{ container_id }} initializing completed';
+                    setTimeout(function() { 
+                      $("#{{gallery_id}}").show();
+                      logText = 'Gallery on ID #{{gallery_id}} initializing completed';
                       logger.info(logText);
-                    {% endif %}
-
+                      }, {{show_delay}});
                   });
                 }
               {% endif %} // ENDIF lightbox "lg"
@@ -340,5 +337,5 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-{{ cache | strip_empty_lines }}
+{{cache | strip_empty_lines}}
 {% assign cache = nil %}

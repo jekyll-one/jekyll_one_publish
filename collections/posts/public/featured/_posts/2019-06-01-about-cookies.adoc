@@ -10,13 +10,15 @@ image:                                  /assets/images/attics/cookies-1920x1200-
 
 tags:                                   [ About, Cookies ]
 index:                                  [ Cookie, Usage, Type, Policy, Consent ]
-categories:                             [ featured ]
+categories:                             []
 
 regenerate:                             false
 
 resources:                              []
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/attics/cookies-1920x1200-bw.jpg

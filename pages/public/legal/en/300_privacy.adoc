@@ -1,6 +1,6 @@
 ---
-title:                                  Privacy Statement
-tagline:                                Protection of your personal data
+title:                                  Privacy
+tagline:                                your personal data
 description:                            Protection of your personal data
 
 tags:                                   [ Privacy, Statement ]
@@ -12,6 +12,18 @@ regenerate:                             false
 
 resources:                              []
 resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5 
+      slides:
+        - url:                          /assets/images/attics/lianhao-1920x1280.jpg
+          alt:                          Photo by Lianhao Qu
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Lianhao Qu
+            href:                       https://unsplash.com/@lianhao
 ---
 
 // NOTE: General Asciidoc page attributes settings
@@ -31,60 +43,50 @@ The operators of this website take protection of your personal data extremely
 seriously. We treat your personal data as confidential and comply with the
 data protection legislation and this privacy policy.
 
-It is generally possible to use our website without disclosing personal data.
-Where personal data (for example name, postal or e-mail address) is collected
+It is generally *not* possible to use our website without disclosing personal 
+data. Where personal data (for example a user name, page visits) is collected
 on our website, this is voluntary insofar as is possible. This data is never
 disclosed to third parties without your express consent.
-
-We would like to point out that the transmission of electronic data (e.g.,
-communication via e-mail) is prone to security vulnerabilities. A perfectly
-consistent protection of this data against third parties is not possible.
 
 ifdef::cookies[]
 == Cookies
 
-A cookie is a commonly used automated data collection tool. Cookies are small
-text files that are placed on your computer or device by websites that you
-visit in order to make websites work, or work more efficiently.
+A cookie is a commonly used automated data collection method. Cookies are
+small text files that are placed on your computer or device by websites that 
+you visit in order to make websites work, or work more efficiently.
 
-We, may our partners,  make use of cookies, web beacons, pixel tags, scripts
-or other similar technologies on our websites to improve the browsing experience
-of our pages:
+We, may our partners, make use of cookies, web beacons, pixel tags, scripts
+or other similar technologies on our websites to improve the browsing 
+experience of our pages:
 
-* Tailor information presented to you based on your browsing preferences, such
-as language, vitied pages, selected conten and geographical region
+* Tailor information presented to you based on your browsing preferences,
+  such as language, user account data, selected content and geographical 
+  region
 
-* Collect statistics regarding your website usage;
+* Collect statistics regarding your website usage
 
-We, may our partners, make use of cookies, web beacons, pixel tags, 
-scripts or other similar technologies on our websites to improve the 
-browsing experience of our pages. We use different kinds of cookies. 
-
-Cookies are classified by its *lifespan* and the *domain* to which it 
-belongs. 
+All personal data collected is stored in Cookies. We use different kinds 
+of cookies. Cookies are classified by its *lifespan* and the *domain* to 
+which it belongs.
     
 Session Cookie::
 Classified by *lifespan*. Necessary to provide you with services and 
-features available through our websites. Without these cookies, services
-you may need, such as shopping carts or e-billing, cannot be provided.
+features available through our websites for the time of your visit. If you 
+leave our pages, these Cookies are automatically deleted by your web browser.
+Without these cookies, services you may need cannot be provided.
 
 Persistent Cookie::
 Classified by *lifespan*. Necessary to provide you with services and 
-features available through our websites. Without these cookies, services 
-you may need, such as shopping carts or e-billing, cannot be provided.
+features available through our websites if you return the site. Without 
+these cookies, services cannot be provided.
 
 First-party Cookie::
-Classified by the *domain*. Collect information that is either used in 
-aggregate form to help us understand how the website is being used or how
-effective our marketing campaigns are, or to help us customize the website
-for you.
+Classified by the *domain*. First-party Cookies are created by *this* site.
+We are using both types: Session Cookies *and* Persistent Cookies.
 
 Second-party Cookie::
-Classified by the *domain*. Used to make advertising messages more 
-relevant to you.
-
-If your website includes a cookie management tool, you will find a hover
-button at the bottom of your screen.
+Classified by the *domain*. Used to integrate services from *other* sites 
+like Github, Patreon, Disqus and others.
 
 [NOTE]
 ====
@@ -222,43 +224,6 @@ deleted.
 ++++
 endif::[]
 
-ifdef::content_permissions[]
-== Content permissions
-
-lorem:sentences[3]
-
-lorem:sentences[2]
-
-
-[cols="2,4,6", options="header", role="table-responsive"]
-|===============================================================================
-|Permission |Provider |Description
-
-|`blocked`
-|`{{site.data.template_settings.user.provider}}`
-|Permission are set to `blocked` if a visitor has *declined* or (currently) 
-not *accepted* on *Cookies*. No content is accessible except on *whitelisted*
-pages like the Home Page, About page or pages like Impress, Privacy or License.
-
-|`public`
-|`{{site.data.template_settings.user.provider}}`
-|Full access on all *public* pages 
-
-|`protected`
-|Provider for authentication
-|Full access on all *public* and *protected* pages 
-
-|`private`
-|Provider for authentication
-|Full access. Access grabted for all *public*, *protected* and *private* pages.
-
-|===============================================================================
-
-TIP: You can accept on Cookies *again* at *any time* by re-visiting one of the
-content pages provided by this website.
-endif::[]
-
-
 ifdef::server-logs[]
 == Server log files
 
@@ -269,11 +234,11 @@ system, date/time stamp, and/or clickstream data.
 
 These are:
 
-* Browsertyp, Browserversion
-* verwendetes Betriebssystem
+* Browser type and version
+* Operating System
 * Referrer URL
-* Hostname des zugreifenden Rechners
-* Uhrzeit der Serveranfrage
+* Hostname
+* Timestamp of page requests
 
 We may combine this log information with other information we collect about
 you. We do this to improve services we offer you, to improve marketing,

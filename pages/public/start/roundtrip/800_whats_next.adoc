@@ -3,8 +3,8 @@ title:                                  Roundtrip
 tagline:                                where to go
 description:                            Where to go further
 
-tags:                                   [ Start, Template, Whats, Next, Further ]
-index:                                  []
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Start, Template, Whats, Next, Further ]
 categories:                             [ pages ]
 
 permalink:                              /pages/public/start/roundtrip/whats_next/
@@ -13,14 +13,13 @@ regenerate:                             false
 resources:                              [ lightbox ]
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/attics/go-up-1920x1280-bw.jpg
-          alt:                          Photo by Fab Lentz on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     Fab Lentz
-            href:                       https://unsplash.com/@fossy
+        - url:                          /assets/images/attics/banner/signpost-1920x800-bw.jpg
+          alt:                          signpost-1920x800-bw
+          transition:                   fadeInOut
 ---
 
 // Enable the Liquid Preprocessor

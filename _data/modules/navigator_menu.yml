@@ -15,15 +15,8 @@
 #   For general navigation settings, see j1_navigator.yml
 # ------------------------------------------------------------------------------
 
-- item:                                 Start
+- item:                                 Learn
   sublevel:
-
-    - title:                            What's up
-      href:                             /pages/public/start/whats_up/
-      icon:                             arrow-right
-#   - title:                            Change Me First
-#     href:                             /pages/public/start/change_me_first/
-#     icon:                             pencil
 
     - title:                            Roundtrip
       icon:                             wallet-travel
@@ -52,18 +45,9 @@
         - title:                        BS table extensions
           href:                         /pages/public/start/roundtrip/responsive_tables/
           icon:                         table
-      # - title:                        Cards
-      #   href:                         /pages/public/start/roundtrip/cards/
-      #   icon:                         cards-outline
         - title:                        BS themes
           href:                         /pages/public/start/roundtrip/themes/
           icon:                         face
-      # - title:                        Search Engine
-      #   href:                         /pages/public/start/roundtrip/search_engine/
-      #   icon:                         magnify
-        - title:                        What's next
-          href:                         /pages/public/start/roundtrip/whats_next/
-          icon:                         arrow-down
 
     - title:                            Web in a Day
       icon:                             rocket
@@ -89,62 +73,12 @@
         - title:                        Using Git
           href:                         "#"
           icon:                         git
-
-    - title:                            What's next
-      href:                             /pages/public/start/whats_next/
-      icon:                             arrow-down
-
-- item:                                 Docs
-  sublevel:
-
-    - title:                            User Guide
-      icon:                             book
-      dropdown:
-
-      - title:                          NPM
-        icon:                           nodejs
-        dropdown:
-          - title:                      Project CheatSheet
-            href:                       /pages/private/user_guide/npm/cheatsheet/
-            icon:                       book-open
-
-      - title:                          Platform
-        href:                           /pages/private/user_guide/platform/ 
-        icon:                           laptop-windows
-      - title:                          Framer
-        href:                           /pages/private/user_guide/framer/
-        icon:                           image-filter-none
-      - title:                          Netlify CMS
-        href:                           /pages/private/user_guide/netlify_cms/
-        icon:                           git
-      - title:                          Manage Webhooks
-        href:                           /pages/private/user_guide/manage_webhook_from_gh/
-        icon:                           download-network
-      - title:                          LogExpert
-        href:                           /pages/private/user_guide/logexpert/
-        icon:                           textbox
-      - title:                          Log4r
-        icon:                           diamond
-        dropdown:
-          - title:                      User Guide
-            href:                       /pages/private/user_guide/log4r/
-            icon:                       book
-          - title:                      api documentation
-            href:                       /pages/private/user_guide/log4r/rdoc/
-            icon:                       details
-
-
-    - title:                            Pen
-      icon:                             pen
-      dropdown:
-
-        - title:                        jquery
-          icon:                         jquery
-          dropdown:
-
-          - title:                      Deferreds and Promises
-            href:                       /pages/private/pen/jquery/deferreds/
-            icon:                       history
+        - title:                        Dokument Skeleton
+          href:                         /pages/public/start/kickstarter/web_in_a_day/document/skeleton/
+          icon:                         book
+        - title:                        Wrapping up
+          href:                         "#"
+          icon:                         emoticon-excited
 
 - item:                                 Blog
   sublevel:
@@ -157,32 +91,11 @@
     - title:                            Date
       href:                             /pages/public/blog/navigator/archive/dateview/
       icon:                             calendar
-  # - title:                            Tag Viewer
-  #   href:                             /pages/public/blog/navigator/archive/tagview/
-  #   icon:                             tag
     - title:                            Archive
       href:                             /pages/public/blog/navigator/archive/
       icon:                             archive
 
-# - item:                                 Collections
-#   sublevel:
-#     - title:                            What's up
-#       href:                             /pages/private/collections/whats_up/
-#       icon:                             arrow-right
-#     - title:                            A Book Shelf
-#       icon:                             book-open-variant
-#       dropdown:
-#         - title:                        Biography
-#           href:                         /pages/private/collections/bookshelf/biography/
-#           icon:                         nature-people
-#         - title:                        Fantasy
-#           href:                         /pages/private/collections/bookshelf/fantasy/
-#           icon:                         pillar
-#         - title:                        Romance
-#           href:                         /pages/private/collections/bookshelf/romance/
-#           icon:                         image-filter-vintage
-
-- item:                                 Themes
+- item:                                 Theme
   theme_select:
     - local_themes:                     enabled
       title:                            THEMES from Jekyll-One
@@ -195,11 +108,8 @@
       href:                             /pages/public/previewer/theme/
       icon:                             eye
 
-- item:                                 Apps
+- item:                                 Tool
   sublevel:
-  # - title:                            Teamup Calendar
-  #   href:                             /apps/public/calendar/
-  #   icon:                             calendar
     - title:                            Gallery Previewer
       href:                             /pages/protected/previewer/justified_gallery/
       icon:                             view-dashboard
@@ -280,7 +190,7 @@
           target:                       blank
           icon:                         hospital
 
-    - title:                            Tools
+    - title:                            Tool
       icon:                             #wrench
       column:
         - title:                        FreeFormatter

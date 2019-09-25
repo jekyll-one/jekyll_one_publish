@@ -3,8 +3,8 @@ title:                                  Roundtrip
 tagline:                                themes
 description:                            J1 Template Roundtrip - Template Themes
 
-tags:                                   [ Template, Roundtrip, Bootstrap, Themes ]
-index:                                  []
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Template, Roundtrip, Bootstrap, Themes ]
 categories:                             [ pages ]
 
 permalink:                              /pages/public/start/roundtrip/themes/
@@ -13,6 +13,8 @@ regenerate:                             false
 resources:                              []
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/pages/roundtrip/themes-1920x1280-bw.jpg

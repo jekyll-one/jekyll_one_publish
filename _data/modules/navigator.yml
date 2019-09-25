@@ -54,6 +54,8 @@ settings:
     control_center_icon:                git
     control_center_url:                 /apps/public/cc/
 
+    home_url:                           "#"
+
     disqus_url:                         https://disqus.com/
     github_url:                         https://github.com/jekyll-one
     patreon_url:                        https://www.patreon.com/jekyll_one/posts
