@@ -1,6 +1,6 @@
 ---
 title:                                  MDI Icon Previewer
-tagline:                                Search and Select MDI Icons
+tagline:                                search and customize icons
 description:                            Material Design Icons Preview for J1 Template
 
 tags:                                   [ Preview, Material, Design, MDI, FontAwesome, Icon, Fonts ]

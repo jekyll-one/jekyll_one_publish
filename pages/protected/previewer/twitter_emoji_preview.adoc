@@ -1,6 +1,6 @@
 ---
 title:                                  Emoji Previewer
-tagline:                                Search and Select Twitter Emoji's
+tagline:                                search and customize icons
 description:                            Twitter Emoji Icons V1 Preview Page for J1 Template
 
 tags:                                   [ Twitter, Emoji, Icons, Preview ]
