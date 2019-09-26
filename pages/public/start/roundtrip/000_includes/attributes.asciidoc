@@ -49,7 +49,7 @@ end::urls[]
 // -----------------------------------------------------------------------------
 tag::tags[]
 
-:window:                                          window="_blank"
+:window:                                          window="blank"
 :no-clipboard:                                    noclip
 :figure-caption:                                  Figure
 :images-dir:                                      pages/roundtrip
