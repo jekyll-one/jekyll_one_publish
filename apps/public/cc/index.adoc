@@ -17,6 +17,8 @@ regenerate:                             false
 resources:                              [ framer ]
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
         - url:                          /assets/images/attics/banner/admin-dashboard-bootstrap-1280x800-bw.jpg
