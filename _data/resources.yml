@@ -593,6 +593,26 @@ resources:
 # ------------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
+  # Gallery Customizer
+  #
+  - name:                               J1 Gallery Customizer
+    resource:
+      id:                               gallery_customizer
+      enabled:                          true
+      comment:                          Gallery Customizer
+      layout:                           [ app, raw ]
+      region:                           head
+      required:                         ondemand
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   true
+      data:
+        css:                            []
+        files:                          [ adapter/js/gallery_customizer.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.gallery_customizer.init ]
+
+  # ----------------------------------------------------------------------------
   # iFrame Resizer
   #
   - name:                               J1 Framer

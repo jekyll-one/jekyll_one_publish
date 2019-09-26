@@ -47,13 +47,13 @@
 #   values:                             development|test|production
 #   default:                            development
 #
-environment:                            production
+environment:                            development
 
 # version
 # ------------------------------------------------------------------------------
 #   Sets the build version of j1-template Gem
 #
-version:                                2019.1.3
+version:                                2019.1.6
 
 # version
 # ------------------------------------------------------------------------------
