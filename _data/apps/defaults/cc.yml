@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_data/apps/cc.yml
-# User configuration settings for J1 Control Center
+# Default configuration settings for J1 Control Center
 #
 # Product/Info:
 # https://jekyll.one
@@ -78,15 +78,15 @@
 about_config:
 
   title:                                Control Center
-  scope:                                User settings
-  location:                             _data/apps/cc.yml
+  scope:                                Default settings
+  location:                             _data/apps/defaults/cc.yml
 
 # ------------------------------------------------------------------------------
-# User configuration settings
+# Default configuration settings
 #
-settings:
+defaults:
 
-  enabled:                              true
+  enabled:                              false
   remove_netlify_cms_user:              true                                    # 
   xhr_container_id:                     control-center
   xhr_data_path:                        /assets/data/cc.html

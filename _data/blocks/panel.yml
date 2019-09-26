@@ -106,7 +106,7 @@ settings:
                     icon_size:
                     icon_color:
                     href:               https://jekyll-one.github.io/
-                    target:             blank
+                    target:
 
           - name:                       Netlify
             card:
@@ -138,7 +138,7 @@ settings:
                     icon_size:
                     icon_color:
                     href:               https://j1-starter-web.netlify.com/
-                    target:             blank
+                    target:
 
 
           - name:                       Heroku
@@ -171,7 +171,7 @@ settings:
                     icon_size:
                     icon_color:
                     href:               https://j1-starter-web.herokuapp.com/
-                    target:             blank
+                    target:
 
 
   # ----------------------------------------------------------------------------

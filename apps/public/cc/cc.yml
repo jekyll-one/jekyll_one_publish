@@ -34,7 +34,7 @@ backend:
   # base_url:                           http:/your.domain:port                  # app
   # NOTE: for domain localhost, baseurl could be set to EMPTY
   # base_url:                           https://oauth.jekyll.one
-  base_url:                             https://app.jekyll.one
+  base_url:                             https://preview.jekyll.one
 
 # ------------------------------------------------------------------------------
 # Site (production) settings

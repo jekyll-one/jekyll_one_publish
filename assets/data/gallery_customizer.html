@@ -28,8 +28,13 @@ regenerate:                             true
 
 {% comment %} Set config files
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign customizer_defaults = site.data.apps.defaults.gallery_customizer.defaults %}
-{% assign customizer_settings = site.data.apps.gallery_customizer.settings %}
+{% assign apps                = site.data.apps %}
+{% assign modules             = site.data.modules %}
+
+{% comment %} Set config data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign customizer_defaults = apps.defaults.gallery_customizer.defaults %}
+{% assign customizer_settings = apps.gallery_customizer.settings %}
 
 {% comment %} Set config options
 -------------------------------------------------------------------------------- {% endcomment %}
