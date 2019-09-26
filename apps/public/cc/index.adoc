@@ -58,7 +58,7 @@ resource_options:
   <!--p id="callback" class="ml-2"></p -->
 
   <iframe
-    src="/assets/data/cc.html"
+    src="/assets/data/cc/index.html"
     width="100%"
     style="border-width:0;">
   </iframe>

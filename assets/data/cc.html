@@ -1,3 +1,63 @@
+---
+regenerate:                             true
+---
+
+{% capture cache %}
+
+{% comment %}
+ # -----------------------------------------------------------------------------
+ # ~/assets/data/cc.html
+ # Liquid procedure to generate HTML (data) for J1 Control Center used by
+ # (fragmented) AJAX load
+ #
+ # Product/Info:
+ # https://jekyll.one
+ #
+ # Copyright (C) 2019 Juergen Adams
+ #
+ # J1 Template is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #    {{ variable | debug }}
+ # -----------------------------------------------------------------------------
+{% endcomment %}
+
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+
+{% comment %} Set global settings
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign environment = site.environment %}
+{% assign debug       = false %}
+
+
+{% comment %} Process YML config data
+================================================================================ {% endcomment %}
+
+{% comment %} Set config files
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign modules             = site.data.modules %}
+
+{% comment %} Set config data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign cc_config_defaults  = modules.defaults.cc.backend %}
+{% assign cc_config_settings  = modules.cc.backend %}
+{% assign util_srv_defaults   = modules.defaults.util_srv.defaults %}
+{% assign util_srv_settings   = modules.util_srv.settings %}
+
+{% comment %} Set config options
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign cc_config_options   = cc_config_defaults | merge: cc_config_settings %}
+{% assign util_srv_options    = util_srv_defaults | merge: util_srv_settings %}
+
+{% comment %} Set HELPER variables
+-------------------------------------------------------------------------------- {% endcomment %}
+
+
+{% comment %} Main
+================================================================================ {% endcomment %}
 <!doctype html>
 <html>
 
@@ -9,16 +69,21 @@
 
   <body>
     <!-- script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script -->
-    <script src="../themes/j1/extensions/netlify_cms/js/netlify-cms.js"></script>
-    <script src="../themes/j1/extensions/log4javascript/log4javascript.min.js"></script>
-    <script src="../themes/j1/extensions/iframe_resizer/js/client/iframeResizer.contentWindow.js"></script>
+    <script src="/assets/themes/j1/extensions/netlify_cms/js/netlify-cms.js"></script>
+    <script src="/assets/themes/j1/extensions/log4javascript/log4javascript.min.js"></script>
+    <script src="/assets/themes/j1/extensions/iframe_resizer/js/client/iframeResizer.contentWindow.js"></script>
 
     <script>
-      // ---------------------------------------------------------------------------
+      // -----------------------------------------------------------------------
+      // globals
+      // -----------------------------------------------------------------------
+      var environment           = '{{environment}}';
+
+      // -----------------------------------------------------------------------
       // getCustomData
       // Throw a fake exception to retrieve the stack trace and analyze
       // to find the line from which this function was called
-      // ---------------------------------------------------------------------------
+      // -----------------------------------------------------------------------
       var getCustomData = function(layout, loggingReference) {
         var customData = [];
 
@@ -72,10 +137,24 @@
       patternLayout.setCustomField('path',   getCustomData);
       consoleAppender.setLayout(patternLayout);
 
-      var logger = log4javascript.getLogger('j1.iFrameResizer');
+      // -------------------------------------------------------------------
+      // setup log levels
+      // -------------------------------------------------------------------
+      if (environment == 'production') {
+        log4javascript.getLogger('j1').setLevel(log4javascript.Level.WARN);
+      }
+      if (environment == 'development' || environment == 'devel' || environment == 'dev' || environment == 'test') {
+        log4javascript.getLogger('j1').setLevel(log4javascript.Level.DEBUG);
+      } else {
+        // fallback settings
+        log4javascript.getLogger('j1').setLevel(log4javascript.Level.WARN);
+      }
+
+      var logger = log4javascript.getLogger('j1.cc');
 
     	window.iFrameResizer = {
-    		readyCallback: function (messageData) { // Callback fn when ready state is detected
+    		readyCallback: function (messageData) {
+          // Callback fn when ready state is detected
           var logText  = 'state: finished';
           logger.info(logText);
     		}
@@ -83,3 +162,7 @@
     </script>    
   </body>
 </html>
+
+{% endcapture %}
+{{ cache | strip_empty_lines }}
+{% assign cache = nil %}
