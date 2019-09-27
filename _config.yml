@@ -380,7 +380,7 @@ include:                                []
 exclude:                                [
                                           log, etc, vendor, node_modules, 
                                           utilsrv, History.markdown, README.md, 
-                                          changelog.md, Rakefile,
+                                          changelog.md, Rakefile, Passengerfile.json,
                                           Gemfile, Gemfile.lock, Guardfile,
                                           yarn.lock, config.ru,
                                           package-lock.json, package.json,
