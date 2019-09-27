@@ -128,9 +128,11 @@ settings:
               description: >
                                         If you’re not familiar with Jekyll (or other 
                                         <a href="https://www.staticgen.com/" target="blank">website generators</a>), 
-                                        Jekyll is a so-called static site generator. Think of it like a 
-                                        modern but lightweight content management system (CMS, e.g. like Wordpress
-                                        but much simpler) and without all the complexity and headache.
+                                        Jekyll is a so-called static site generator. Think of it as 
+                                        a modern but lightweight content management system CMS - like
+                                        <a href="https://wordpress.com/" target="blank">Wordpress</a> or
+                                        <a href="https://www.joomla.org/" target="blank">Joomla</a>
+                                        but much, much simpler and without all the complexity.
 
                                         <div class="admonitionblock note">
                                           <table>
@@ -139,10 +141,13 @@ settings:
                                                 <i class="fa icon-note" title="Note"></i>
                                               </td>
                                               <td class="content">
-                                                No need to build a giant content strangling Rube Goldberg machine 
-                                                to manage a website. If you the static way, no database is needed
-                                                and no PHP-based dynamic rendering that slows down the performace
-                                                of your website.
+                                                For many use cases, there is no need to use a full blown CMS
+                                                to manage a website. If you go the static way, no database is needed
+                                                and no PHP-based dynamic rendering engine that slows down the 
+                                                performace of your website. For e.g. document servers like 
+                                                <a href="https://getbootstrap.com/docs" target="blank">Bootstrap</a> or
+                                                <a href="https://docs.docker.com/" target="blank">Docker</a>, Jekyll is
+                                                used for good reasons.
                                               </td>
                                             </tr></tbody>
                                           </table>

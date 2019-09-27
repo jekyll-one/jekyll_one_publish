@@ -225,7 +225,7 @@ doctype:                                html
 #   default:                            false
 #
 title:                                  J1
-slogan:                                 J1 Previews
+slogan:                                 J1 Preview
 description:                            Made for Jekyll · Made for Your Web
 keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
                                         Asciidoc, Bootstrap, Javascript,

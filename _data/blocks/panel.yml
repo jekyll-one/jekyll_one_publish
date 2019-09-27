@@ -87,9 +87,9 @@ settings:
               text: >
                                         GitHub Pages is a static site hosting service designed to
                                         host your personal or project pages directly from a GitHub 
-                                        repository.
+                                        repository for <strong>free</strong>.
                                         If you use Jekyll as a static site generator with GitHub Pages,
-                                        you benefit from more support with setting up, updating, and 
+                                        you may benefit from more support with setting up, updating, and 
                                         troubleshooting your site.
                                         <br/><br/>
                                         If you're using GitHub repos to manage your
@@ -120,8 +120,10 @@ settings:
               icon_color:               bg-primary
               text: >
                                         Netlify provides everything you need to build 
-                                        fast, modern websites. Features like continuous deployment 
-                                        and serverless functions support your web for the better.
+                                        fast, modern websites based on modern static site 
+                                        generators like Jekyll (and many others). 
+                                        Powerful features like continuous deployment and 
+                                        serverless functions support your website for the better.
                                         <br/><br/>
                                         Run your site on a purpose-built, multi-cloud infrastructure 
                                         designed for speed, automated to scale, and intrinsically
@@ -137,7 +139,7 @@ settings:
                     icon_family:
                     icon_size:
                     icon_color:
-                    href:               https://j1-starter-web.netlify.com/
+                    href:               https://j1-preview.netlify.com/
                     target:
 
 
@@ -153,11 +155,11 @@ settings:
               icon_color:               bg-primary
               text: >
                                         Heroku is a cloud platform that lets build, deliver, monitor 
-                                        and scale web applications; bypassing infrastructure headache.                                        
-                                        Heroku focuses relentlessly on apps and the developer experience 
-                                        around apps. 
+                                        and scale web applications; bypassing all infrastructure headache.                                        
+                                        Heroku focuses relentlessly on web applications and an excellent
+                                        developer experience around apps. 
                                         <br/><br/>
-                                        If you have plans to deploy your J1 based web as an app,
+                                        If you have plans to deploy your J1 based web as an web application,
                                         really a good home.
 
               buttons:
