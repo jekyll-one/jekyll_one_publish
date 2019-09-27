@@ -50,7 +50,7 @@ settings:
 
     enabled:                            true
 
-    control_center:                     true                                    # to be disabled for GH Pages
+    control_center:                     false
     control_center_icon:                git
     control_center_url:                 /apps/public/cc/
 
