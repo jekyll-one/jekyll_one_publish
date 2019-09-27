@@ -549,7 +549,7 @@ algolia:
 #
 # ------------------------------------------------------------------------------
 j1_auth:
-  enabled:                              true
+  enabled:                              false
   ssl:                                  false
 
   content:
