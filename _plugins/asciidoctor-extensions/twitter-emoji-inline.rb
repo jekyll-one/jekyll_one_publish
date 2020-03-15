@@ -8,7 +8,7 @@
 #  Copyright (C) 2019 Juergen Adams
 #
 #  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
@@ -27,10 +27,10 @@ Asciidoctor::Extensions.register do
     def process parent, target, attributes
       doc = parent.document
       # Use twemoji only
-      size_class = (size = attributes['size']) ? %( twa-#{size}) : nil
-      modifier_class = (modifier = attributes['modifier']) ? %( twa-#{modifier}) : nil
+      size_class = (size = attributes['size']) ? %(twa-#{size}) : nil
+      modifier_class = (modifier = attributes['modifier']) ? %(twa-#{modifier}) : nil
       emoji_name = target.tr '_', '-'
-      %(<i class="twa#{size_class} twa-#{emoji_name} twa-#{modifier}"></i>)
+      %(<i class="twa #{size_class} twa-#{emoji_name} twa-#{modifier}"></i>)
     end
   end
   inline_macro EmojiInlineMacro

@@ -145,6 +145,7 @@ j1.adapter['attic'] = (function (j1, window) {
             if ($('#{{attic_id}}').length) {
               $("#{{attic_id}}").backstretch(
                 atticOptions.slides, {
+                  debug:                          atticOptions.debug,
                   spinner:                        atticOptions.spinner,
                   alignX:                         atticOptions.alignX,
                   alignY:                         atticOptions.alignY,
@@ -520,7 +521,7 @@ j1.adapter['attic'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------

@@ -11,7 +11,7 @@
  #  Copyright (C) 2016 Ant Parsons (primebox.co.uk)
  #
  #  J1 Template is licensed under the MIT License.
- #  See: https://github.com/jekyll-one/j1-template/blob/master/LICENSE
+ #  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
  #  cookiebar is licensed under Creative Commons Attribution 3.0 Unported License.
  #  See: http://creativecommons.org/licenses/by/3.0/
  #

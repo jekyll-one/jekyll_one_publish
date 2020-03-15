@@ -1,6 +1,6 @@
 ---
 title:                                  About
-tagline:                                j1 template
+tagline:                                J1 Template
 description:                            Things you should know about this site
 categories:                             [ pages ]
 

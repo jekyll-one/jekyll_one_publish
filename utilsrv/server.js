@@ -12,14 +12,15 @@
  # Copyright (C) 2019 Juergen Adams
  # Copyright (C) 2019 Václav Klecanda
  #
- #  J1 Template is licensed under the MIT License.
- #  See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
- #  Netlify-cms-github-oauth-provider is licensed under UNKNOWN License.
- #  See: https://github.com/vencax/netlify-cms-github-oauth-provider/blob/master/README.md
+ # J1 Template is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+ # Netlify-cms-github-oauth-provider is licensed under UNKNOWN License.
+ # See: https://github.com/vencax/netlify-cms-github-oauth-provider/blob/master/README.md
  # -----------------------------------------------------------------------------
- # NOTE:
- # To fix Webstorm NodeJS API issue
- # see: https://stackoverflow.com/questions/19532660/webstorm-7-cannot-recognize-node-api-methods
+ # NOTE:  
+ #  To fix Webstorm NodeJS API issue see:
+ #  https://stackoverflow.com/questions/19532660/webstorm-7-cannot-recognize-node-api-methods
+ # -----------------------------------------------------------------------------
 */
 'use strict';
 
@@ -67,11 +68,13 @@ const vsprintf          = require('sprintf-js').vsprintf;
 const daemon_home   = path.resolve(__dirname);
 const environment   = daemon_home.indexOf('packages') !== -1 ? 'dev' : 'prod';
 const current_date  = moment().format('YYYY-MM-DD');
-let dotenv_home;
+// let dotenv_home;
 let config_home;
 let project_home;
 let log_home;
 let utilsrv_options;
+let log4javascript_options;
+let private_data;
 let logStream;
 
 // timestamp settings
@@ -84,49 +87,62 @@ moment().format('YYYY-MM-DD hh:mm:ss.SSS');
 if (environment === 'dev') {
   project_home    = daemon_home + '/../400_template_site';
   config_home     = daemon_home + '/../400_template_site/_data';
-  dotenv_home     = daemon_home + '/../400_template_site';
+//dotenv_home     = daemon_home + '/../400_template_site';
   log_home        = daemon_home + '/../..';
 } else {
   project_home    = daemon_home + '/..';
   config_home     = daemon_home + '/../_data';
-  dotenv_home     = daemon_home + '/..';
+//dotenv_home     = daemon_home + '/..';
   log_home        = daemon_home + '/..';
 }
 
-const dotenv      = require('dotenv').config({ path: dotenv_home + '/.env', silent: true });
-const dotenv_json = JSON.stringify( dotenv, null, 2 );                          // JSON pretty print
+// const dotenv      = require('dotenv').config({ path: dotenv_home + '/.env', silent: true });
+// const dotenv_json = JSON.stringify( dotenv, null, 2 );                          // JSON pretty print
 
 // =============================================================================
 // load configuration data (WebHook)
 // -----------------------------------------------------------------------------
 
-const modules_settings      = config_home + '/modules';
-const modules_defaults      = modules_settings + '/defaults';
-const utilsrv_defaults_file = modules_defaults + '/' + 'util_srv.yml';
-const utilsrv_settings_file = modules_settings + '/' + 'util_srv.yml';
+const modules_settings              = config_home + '/modules';
+const modules_defaults              = modules_settings + '/defaults';
+
+const private_data_file             = config_home + '/' + 'private.yml';
+
+const log4javascript_defaults_file  = modules_defaults + '/' + 'log4javascript.yml';
+const log4javascript_settings_file  = modules_settings + '/' + 'log4javascript.yml';
+
+const utilsrv_defaults_file         = modules_defaults + '/' + 'util_srv.yml';
+const utilsrv_settings_file         = modules_settings + '/' + 'util_srv.yml';
 
 try {
-  const utilsrv_defaults    = yaml.safeLoad(fs.readFileSync(utilsrv_defaults_file, 'utf8'));
-  const utilsrv_settings    = yaml.safeLoad(fs.readFileSync(utilsrv_settings_file, 'utf8'));
-  utilsrv_options           = mergeData(utilsrv_defaults.defaults, utilsrv_settings.settings);
+  const log4javascript_defaults     = yaml.safeLoad(fs.readFileSync(log4javascript_defaults_file, 'utf8'));
+  const log4javascript_settings     = yaml.safeLoad(fs.readFileSync(log4javascript_settings_file, 'utf8'));
+  const utilsrv_defaults            = yaml.safeLoad(fs.readFileSync(utilsrv_defaults_file, 'utf8'));
+  const utilsrv_settings            = yaml.safeLoad(fs.readFileSync(utilsrv_settings_file, 'utf8'));
+  const private_data_settings       = yaml.safeLoad(fs.readFileSync(private_data_file, 'utf8'));
+
+  private_data                      = private_data_settings.util_srv;
+  log4javascript_options            = mergeData(log4javascript_defaults.defaults, log4javascript_settings_file.settings);
+  utilsrv_options                   = mergeData(utilsrv_defaults.defaults, utilsrv_settings.settings);
+
 } catch (e) {
   console.log(e);
 }
+const ajaxAppenderOptions           = log4javascript_options.appenders[1].appender;
 
 // -----------------------------------------------------------------------------
 // utility server (daemon) settings
 //
-const ssl             = utilsrv_options.utility_server.ssl || false;
-const port            = utilsrv_options.utility_server.port || 44444;
-const origin          = utilsrv_options.utility_server.origin || 'localhost';
-const hostName        = utilsrv_options.utility_server.host_name || '0.0.0.0';
-const verbose         = utilsrv_options.utility_server.verbose || false;
-const logFileName     = utilsrv_options.utility_server.logger_client.log_file_name  + '_' + current_date || 'messages' + '_' + current_date;
-const logFileExt      = utilsrv_options.utility_server.logger_client.log_file_ext || 'log';
-const logFolder       = utilsrv_options.utility_server.logger_client.log_folder || 'log';
+const ssl             = utilsrv_options.ssl || false;
+const port            = utilsrv_options.port || 44444;
+const origin          = utilsrv_options.origin || 'localhost';
+const hostName        = utilsrv_options.host_name || '0.0.0.0';
+const verbose         = utilsrv_options.verbose || false;
+const logFileName     = ajaxAppenderOptions.log_file_name  + '_' + current_date || 'messages' + '_' + current_date;
+const logFileExt      = ajaxAppenderOptions.log_file_ext || 'log';
+const logFolder       = ajaxAppenderOptions.log_folder || 'log';
 const logFileNamePath = log_home + '/' + logFolder + '/' + logFileName + '.' +  logFileExt;
 const util_srv_url    = ssl ? 'https://' +  origin + ':' +  port : 'http://' +  origin + ':' +  port;
-
 
 // -----------------------------------------------------------------------------
 // print utility server issue
@@ -138,7 +154,6 @@ if (environment === 'dev') {
   console.log('Project path set to:     ' + project_home);
   console.log('Data path set to:        ' + config_home);
   console.log('Log file set to:         ' + logFileNamePath);
-  console.log('DotEnv settings loaded:  ' + dotenv_json);
 }
 
 // -----------------------------------------------------------------------------
@@ -146,30 +161,35 @@ if (environment === 'dev') {
 // fs.writeFile(logFileNamePath, '',  function(){console.log('Reset file: ' +logFileNamePath)});
 //
 
-if ( utilsrv_options.utility_server.logger_client.create_on_start === 'true') {
+if ( ajaxAppenderOptions.create_on_start === 'true') {
   touch(logFileNamePath);
 } else {
   touch(logFileNamePath);
 }
 
-if ( utilsrv_options.utility_server.logger_client.reset_on_start === 'true') {
+if ( ajaxAppenderOptions.reset_on_start === 'true') {
   fs.truncate(logFileNamePath, 0, function(){console.log('Reset file: ' + logFileNamePath)});
 }
 
-if ( utilsrv_options.utility_server.logger_client.mode === 'append') {
+if ( ajaxAppenderOptions.mode === 'append') {
   logStream = fs.createWriteStream(logFileNamePath, {'flags': 'a'});
 } else {
   logStream = fs.createWriteStream(logFileNamePath, {'flags': 'a'});
 }
 
 // -----------------------------------------------------------------------------
-// oauth client settings
+// Github OAuth client settings (used for CC)
 //
-const loginAuthTarget             = process.env.AUTH_TARGET || '_self';
-const oauthProvider               = utilsrv_options.utility_server.oauth_client.provider || 'github';
-const oauthProviderUrl            = utilsrv_options.utility_server.oauth_client.provider_url || 'https://github.com';
-const oauthProviderTokenPath      = utilsrv_options.utility_server.oauth_client.token_path || '/login/oauth/access_token';
-const oauthProviderAuthorizePath  = utilsrv_options.utility_server.oauth_client.authorize_path || '/login/oauth/authorize';
+const loginAuthTarget             = '_self';
+const oauthProvider               = 'github';
+const oauthProviderUrl            = 'https://github.com';
+const oauthProviderTokenPath      = '/login/oauth/access_token';
+const oauthProviderAuthorizePath  = '/login/oauth/authorize';
+const oauthProviderRedirectUrl    = private_data.oauth.site_redirect_url;
+const oauthProviderClientScope    = private_data.oauth.client_scope;
+const oauthProviderClientId       = private_data.oauth.client_id;
+const oauthProviderClientSecret   = private_data.oauth.client_secret;
+
 
 // -----------------------------------------------------------------------------
 // cors settings
@@ -193,8 +213,8 @@ var corsSettings = {
 const app    = express();
 const oauth2 = simpleOauthModule.create({
   client: {
-    id: process.env.UTIL_SRV_GITHUB_CLIENT_ID,
-    secret: process.env.UTIL_SRV_GITHUB_CLIENT_SECRET
+    id: oauthProviderClientId,
+    secret: oauthProviderClientSecret
   },
   auth: {
     // Supply oauthProviderUrl for enterprise github installs
@@ -218,8 +238,8 @@ if (('').match(originPattern)) {
 // authorization uri definition
 //
 const authorizationUri = oauth2.authorizationCode.authorizeURL({
-  redirect_uri: util_srv_url + '/auth/github/callback',
-  scope:        process.env.SCOPE || 'repo, user',
+  redirect_uri: oauthProviderRedirectUrl,
+  scope:        oauthProviderClientScope || 'repo, user',
   state:        randomstring.generate(32)
 });
 
@@ -351,7 +371,8 @@ app.get('/success', (req, res) => {
 // run git cli commands locally on the host
 // -----------------------------------------------------------------------------
 // noinspection JSUnusedLocalSymbols
-let git = app.get('/git', (req, res) => {
+//let git = app.get('/git', (req, res) => {
+app.get('/git', (req, res) => {
 
   // ---------------------------------------------------------------------------
   // API response message
@@ -395,13 +416,13 @@ let git = app.get('/git', (req, res) => {
   // pull the repo (async)
   if ( req.query.request === 'pull' ) {
     pull(project_home)
-      .then(pull => console.log('Utility Server: Pull request done. Status: ' + response_message.status))
+      .then(pull => console.log('Utility Server: pull request done. Status: ' + response_message.status))
       .then(function() {
         if ( response_message.status === 'failed') {
-          response_message.response = utilsrv_options.utility_server.git_client.pull.response_failed;
+          response_message.response = response_message.status;
         } else {
           response_message.status   = 'success';
-          response_message.response = utilsrv_options.utility_server.git_client.pull.response_success;
+          response_message.response = response_message.status;
         }
         response = JSON.stringify(response_message);
         if (verbose) console.log('Utility Server: Send response: ' + response);
@@ -479,10 +500,10 @@ app.get('/npm', (req, res) => {
     .then(npm => console.log('Utility Server: NPM script done. Status: ' + response_message.status))
     .then(function() {
       if ( response_message.status === 'failed') {
-        response_message.response = utilsrv_options.utility_server.npm_client.built.response_failed;
+        response_message.response = utilsrv_options.npm_client.built.response_failed;
       } else {
         response_message.status   = 'success';
-        response_message.response = utilsrv_options.utility_server.npm_client.built.response_success;
+        response_message.response = utilsrv_options.npm_client.built.response_success;
       }
       response = JSON.stringify(response_message);
       if (verbose) console.log('Utility Server: Send response: ' + response);
@@ -495,7 +516,8 @@ app.get('/npm', (req, res) => {
 // process log data received from POST request, write to disk|file
 // -----------------------------------------------------------------------------
 // noinspection JSUnusedLocalSymbols
-let logger = app.post('/log2disk', (req, res) => {
+// let logger = app.post('/log2disk', (req, res) => {
+app.post('/log2disk', (req, res) => {
   // ---------------------------------------------------------------------------
   // globals
   let pageID   = req.headers['x-page-id'];
@@ -566,7 +588,7 @@ process.on('uncaughtException', function(err) {
     console.log('Initializing the utility server failed. Exiting ...');
     console.log(err);
   }
-  process.exit(1);
+  process.exit;
 });
 
 // run the daemon (use IPV4, all interfaces)

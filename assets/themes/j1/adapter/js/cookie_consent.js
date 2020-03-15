@@ -153,8 +153,8 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
         // ---------------------------------------------------------------------
         // data loader
         // ---------------------------------------------------------------------
-        logger.info('loading HTML data for modals');
-        $.when(j1.xhrDATA('j1.adapter.cookie_consent', moduleOptions, 'data_loaded'))
+        logger.info('loading html data for modals');
+        $.when (j1.xhrData('j1.adapter.cookie_consent', moduleOptions, 'data_loaded'))
         .then (function (success) {
           if (success) {
             logger.info('loading data completed');
@@ -217,7 +217,7 @@ j1.adapter['cookie_consent'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.info(logText);
 
       // -----------------------------------------------------------------------

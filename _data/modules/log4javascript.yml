@@ -8,7 +8,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 
@@ -36,6 +36,7 @@ settings:
     - name:                           Console Appender
       appender:
         name:                         consoleAppender
+        enabled:                      true
         type:                         BrowserConsoleAppender
         layout:                       PatternLayout
         custom_fields:                [ file, line, path ]
@@ -46,15 +47,29 @@ settings:
     - name:                           Ajax Appender
       appender:
         name:                         ajaxAppender
+        enabled:                      true
         type:                         BrowserAjaxAppender
         layout:                       JsonLayout
         custom_fields:                [ file, line, path ]
 
+        payload_url_app:              http://localhost:5000/log2disk?request=write
+        payload_url_web:              http://localhost:44444/log2disk?request=write
+
+        log_folder:                   log
+        log_file_name:                messages
+        log_file_ext:                 log      
+
+        create_on_start:              true
+        reset_on_start:               true
+        rolling_files:                false
+        file_mode:                    append
+
     # --------------------------------------------------------------------------
     # POPUP appender
     - name:                           Popup Appender
-      appender:
+      appender:      
         name:                         popupAppender
+        enabled:                      false
         type:                         PopUpAppender
         width:                        600
         height:                       400
@@ -112,5 +127,5 @@ settings:
     #       development:                debug
 
 
-# END config
 # ------------------------------------------------------------------------------
+# END config

@@ -42,13 +42,16 @@ regenerate:                             true
 ================================================================================ {% endcomment %}
 
 {% comment %} Set config files
+{% assign auth_manager_config           = site.j1_auth %}
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign site_config                   = site %}
 {% assign template_config               = site.data.template_settings %}
 {% assign blocks                        = site.data.blocks %}
 {% assign modules                       = site.data.modules %}
 
-{% assign auth_manager_config           = site.j1_auth %}
+{% assign authentication_defaults       = modules.defaults.authentication.defaults %}
+{% assign authentication_settings       = modules.authentication.settings %}
+
 {% assign template_config               = site.data.template_settings %}
 {% assign navigator_defaults            = site.data.modules.defaults.navigator.defaults %}
 {% assign navigator_settings            = site.data.modules.navigator.settings %}
@@ -66,11 +69,12 @@ regenerate:                             true
 {% assign nav_topsearch_settings        = navigator_settings.nav_topsearch %}
 {% assign nav_sidebar_defaults          = navigator_defaults.nav_sidebar %}
 {% assign nav_sidebar_settings          = navigator_settings.nav_sidebar %}
-{% assign nav_authclient_defaults       = navigator_defaults.nav_authclient %}
-{% assign nav_authclient_settings       = navigator_settings.nav_authclient %}
+{% assign nav_authclient_defaults       = authentication_defaults.auth_client %}
+{% assign nav_authclient_settings       = authentication_settings.auth_client %}
 
 {% comment %} Set config options
 -------------------------------------------------------------------------------- {% endcomment %}
+{% assign authentication_options        = authentication_defaults | merge: authentication_settings %}
 {% assign nav_bar_options               = nav_bar_defaults | merge: nav_bar_settings %}
 {% assign nav_menu_options              = nav_menu_defaults | merge: nav_menu_settings %}
 {% assign quicklinks_options            = nav_quicklinks_defaults | merge: nav_quicklinks_settings %}
@@ -215,7 +219,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       navSidebarConfig                              = $.extend({}, {{sidebar_options | replace: '=>', ':' }});
       navAuthClientConfig                           = $.extend({}, {{authclient_options | replace: '=>', ':' }});
 
-      navAuthMAnagerConfig                          = $.extend({}, {{auth_manager_config | replace: '=>', ':' }});
+      navAuthMAnagerConfig                          = $.extend({}, {{authentication_options | replace: '=>', ':' }});
       authClientEnabled                             = navAuthMAnagerConfig.enabled;
 
 
@@ -242,7 +246,6 @@ j1.adapter['navigator'] = (function (j1, window) {
       // Load (individual) frontmatter options (currently NOT used)
       if (options  != null) { var frontmatterOptions = $.extend({}, options) }
 
-      logger.info('mode detected as: ' + j1.getMode());
       _this.setState('started');
       logger.info('state: ' + _this.getState());
       logger.info('module is being initialized');
@@ -252,22 +255,22 @@ j1.adapter['navigator'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       logger.info('run deferred data load');
       $.when (
-        j1.xhrDATA (// sidebar
+        j1.xhrData (// sidebar
           'j1.adapter.navigator', {
           xhr_container_id: navSidebarOptions.xhr_container_id,
           xhr_data_path:    navSidebarOptions.xhr_data_path },
           null),
-        j1.xhrDATA (// quicklinks
+        j1.xhrData (// quicklinks
           'j1.adapter.navigator', {
           xhr_container_id: navQuicklinksOptions.xhr_container_id,
           xhr_data_path:    navQuicklinksOptions.xhr_data_path },
           null),
-        j1.xhrDATA (// authclient
+        j1.xhrData (// authclient
           'j1.adapter.navigator', {
           xhr_container_id: navAuthClientConfig.xhr_container_id,
           xhr_data_path:    navAuthClientConfig.xhr_data_path },
           null),
-        j1.xhrDATA (// menubar
+        j1.xhrData (// menubar
           'j1.adapter.navigator', {
           xhr_container_id: navMenuOptions.xhr_container_id,
           xhr_data_path:    navMenuOptions.xhr_data_path },
@@ -285,7 +288,7 @@ j1.adapter['navigator'] = (function (j1, window) {
 
             // Detect|Set J1 App status
             appDetected       = j1.appDetected();
-            authClientEnabled = j1.authClientEnabled();
+            authClientEnabled = j1.authEnabled();
             logger.info('application status detected: ' + appDetected);
 
             var dependencies_met_nav_menu = setInterval (function() {
@@ -326,7 +329,7 @@ j1.adapter['navigator'] = (function (j1, window) {
                   navSidebarOptions
                 );
 
-                logger.info('init AuthClient');
+                logger.info('init auth client');
                 j1.adapter.navigator.initAuthClient(j1.adapter.navigator.navAuthManagerConfig);
                 _this.setState('finished');
                 logger.info('state: ' + _this.getState());
@@ -376,7 +379,7 @@ j1.adapter['navigator'] = (function (j1, window) {
 
       _this.modalEventHandler(auth_config);
 
-      if (j1.appDetected() && j1.authClientEnabled()) {
+      if (j1.appDetected() && j1.authEnabled()) {
         // Toggle/Set SignIn/SignOut icon|link in QuickLinks
         // See: https://stackoverflow.com/questions/13524107/how-to-set-data-attributes-in-html-elements
         if (user_session.authenticated === 'true') {
@@ -400,7 +403,7 @@ j1.adapter['navigator'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     modalEventHandler: function (options) {
       // var logger      = log4javascript.getLogger("j1.adapter.navigator.EventHandler");
-      var authConfig  = options;
+      var authConfig  = options.j1_auth;
       var route;
       var provider;
       var provider_url;
@@ -419,7 +422,7 @@ j1.adapter['navigator'] = (function (j1, window) {
         do:               false
       }
 
-      logText = "Initialize button click events";
+      logText = "initialize button click events";
       logger.info(logText);
 
       // Manage button click events for modal "signInOutButton"
@@ -449,7 +452,7 @@ j1.adapter['navigator'] = (function (j1, window) {
         e.stopPropagation();
         signOut.providerSignOut = $('input:checkbox[name="providerSignOut"]').is(":checked");
         if(environment == "development") {
-          logText = "Provider signout set to: " + signOut.providerSignOut;
+          logText = "provider signout set to: " + signOut.providerSignOut;
           logger.info(logText);
         }
       });
@@ -458,7 +461,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       $("#modalOmniSignOut").on('show.bs.modal', function() {
           var modal = $(this);
-          logger.info('Place current user data');
+          logger.info('place current user data');
           user_session = j1.readCookie(cookie_user_session_name);
           modal.find('.user-info').text('You are signed in to provider: ' + user_session.provider);
       }); // END SHOW modalOmniSignOut
@@ -469,17 +472,18 @@ j1.adapter['navigator'] = (function (j1, window) {
         if (signIn.do == true) {
           provider      = signIn.provider.toLowerCase();
           allowed_users = signIn.users.toString();
-          logText       = 'Provider detected: ' + provider;
+          logText       = 'provider detected: ' + provider;
           logger.info(logText);
+
           var route = '/authentication?request=signin&provider=' +provider+ '&allowed_users=' +allowed_users;
-          logText = 'Call middleware for route ' +route+ ' for signin';
+          logText = 'call middleware for signin on route: ' + route;
           logger.info(logText);
           window.location.href = route;
         } else {
           provider = signIn.provider.toLowerCase();
-          logText = 'Provider detected: ' + provider;
+          logText = 'provider detected: ' + provider;
           logger.info(logText);
-          logText = 'Login for ' +provider+ " declined";
+          logText = 'login declined for provider: ' +provider;
           logger.info(logText);
         }
       }); // END post events "modalOmniSignIn"
@@ -488,31 +492,31 @@ j1.adapter['navigator'] = (function (j1, window) {
       // -----------------------------------------------------------------------
       $("#modalOmniSignOut").on('hidden.bs.modal', function() {
         if (signOut.do == true) {
-          logger.info('Load active provider from cookie: ' + cookie_user_session_name);
+          logger.info('load active provider from cookie: ' + cookie_user_session_name);
 
           user_session    = j1.readCookie(cookie_user_session_name);
           provider      = user_session.provider;
           provider_url  = user_session.provider_site_url;
 
-          logText = 'Provider detected: ' + provider;
+          logText = 'provider detected: ' + provider;
           logger.info(logText);
-          logText = 'Initiate signout for ' +provider;
+          logText = 'initiate signout for provider: ' +provider;
           logger.info(logText);
-          // var route = '/authentication?request=signout&provider=' + provider + '&provider_signout=' + signOut.providerSignOut + '&provider_url=' + provider_url;
+          
           var route = '/authentication?request=signout&provider=' + provider + '&provider_signout=' + signOut.providerSignOut; // + '/logout/';
-          logText = 'Call middleware: ' +route;
+          logText = 'call middleware on route : ' +route;
           logger.info(logText);
           window.location.href = route;
         } else {
           provider = signOut.provider.toLowerCase();
-          logText = 'Provider detected: ' + provider;
+          logText = 'provider detected: ' + provider;
           logger.info(logText);
-          logText = 'SignOut for ' +provider+ " declined";
+          logText = 'signout declined for provider: ' +provider ;
           logger.info(logText);
         }
       }); // END post events "modalSignOut"
 
-      logText = "initialize events completed";
+      logText = "initialize button click events completed";
       logger.info(logText);
 
       return true;
@@ -731,7 +735,7 @@ j1.adapter['navigator'] = (function (j1, window) {
       // var json_message = JSON.stringify(message, undefined, 2);              // multiline
       var json_message = JSON.stringify(message);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------

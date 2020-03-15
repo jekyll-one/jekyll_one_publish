@@ -149,7 +149,7 @@ j1.adapter['back2top'] = (function (j1, window) {
       } else {
         _this.setState('finished');
         logger.info('state: ' + _this.getState());
-        logger.warn('modulec back2top disabled');
+        logger.warn('module back2top disabled');
       }
 
       return true;
@@ -183,7 +183,7 @@ j1.adapter['back2top'] = (function (j1, window) {
       // var json_message = JSON.stringify(message, undefined, 2);
       var json_message = JSON.stringify(message);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------

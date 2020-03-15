@@ -16,7 +16,7 @@ regenerate:                             true
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  # Test data:
  #  liquid_var: {{ liquid_var | debug }}
@@ -31,19 +31,22 @@ regenerate:                             true
 
 {% comment %} Liquid var initialization
 -------------------------------------------------------------------------------- {% endcomment %}
+{% assign apps                    = site.data.apps %}
 {% assign modules                 = site.data.modules %}
 
 {% comment %} Set config files
 -------------------------------------------------------------------------------- {% endcomment %}
+{% assign template_settings       = site.data.template_settings %}
+{% assign authentication_defaults = modules.defaults.authentication.defaults %}
+{% assign authentication_settings = modules.authentication.settings %}
 {% assign navigator_defaults      = modules.defaults.navigator.defaults %}
 {% assign navigator_settings      = modules.navigator.settings %}
 {% assign consent_defaults        = modules.defaults.cookie_consent.defaults %}
 {% assign consent_settings        = modules.cookie_consent.settings %}
 {% assign quick_search_defaults   = modules.defaults.jekyll_search.defaults %}
 {% assign quick_search_settings   = modules.jekyll_search.settings %}
-
-{% assign auth_manager_config     = site.j1_auth %}
-{% assign auth_client_config      = navigator_defaults.nav_authclient %}
+{% assign cc_app_config_defaults  = apps.defaults.cc.defaults %}
+{% assign cc_app_config_settings  = apps.cc.settings %}
 
 {% comment %} Set config data
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -51,26 +54,41 @@ regenerate:                             true
 {% assign nav_quicklinks_settings = navigator_settings.nav_quicklinks %}
 
 {% comment %} Set config options
------------------------------------------------------------------------------- {% endcomment %}
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign authentication_options  = authentication_defaults | merge: authentication_settings %}
 {% assign quick_search_options    = quick_search_defaults | merge: quick_search_settings %}
 {% assign quicklinks_options      = nav_quicklinks_defaults | merge: nav_quicklinks_settings %}
 {% assign consent_options         = consent_defaults | merge: consent_settings %}
+{% assign cc_app_config_options   = cc_app_config_defaults | merge: cc_app_config_settings %}
+
+{% comment %} Set authentication properties
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign authentication_enabled  = authentication_options.j1_auth.enabled %}
+{% assign auth_client_config      = authentication_options.auth_client %}
+
 
 {% comment %} Set quicklinks properties
------------------------------------------------------------------------------- {% endcomment %}
+-------------------------------------------------------------------------------- {% endcomment %}
 {% assign icon_family             = quicklinks_options.icon_family | downcase %}
 
 {% assign cookies_icon            = quicklinks_options.cookies_icon %}
+
 {% assign search_icon             = quicklinks_options.top_search_icon %}
 {% assign sidebar_icon            = quicklinks_options.sidebar_icon %}
-{% assign signin_icon             = quicklinks_options.signin_icon %}
-{% assign signout_icon            = quicklinks_options.signout_icon %}
 
-{% assign control_center_icon     = quicklinks_options.control_center_icon %}
-{% assign control_center_url      = quicklinks_options.control_center_url %}
+{% assign signin_icon             = auth_client_config.signin_icon %}
+{% assign signout_icon            = auth_client_config.signout_icon %}
+
+{% assign control_center_icon     = cc_app_config_options.quicklinks_icon %}
+{% assign control_center_url      = cc_app_config_options.quicklinks_url %}
+
+{% assign translator_icon         = quicklinks_options.translator_icon %}
 
 {% assign home_icon               = quicklinks_options.home_icon %}
 {% assign home_url                = quicklinks_options.home_url %}
+
+{% assign back_icon               = quicklinks_options.back_icon %}
+{% assign back_url                = quicklinks_options.back_url %}
 
 {% assign disqus_icon             = quicklinks_options.disqus_icon %}
 {% assign github_icon             = quicklinks_options.github_icon %}
@@ -87,33 +105,40 @@ regenerate:                             true
 {% assign signin_modal_id         = auth_client_config.signin_modal_id %}
 
 
-
 {% comment %} Show|Hide Quicksearch icon
------------------------------------------------------------------------------- {% endcomment %}
+-------------------------------------------------------------------------------- {% endcomment %}
 {% if quick_search_options.enabled %}
   {% assign show_quick_search_icon = true  %}
 {% else %}
   {% assign show_quick_search_icon = false %}
 {% endif %}
 
+{% comment %} Show|Hide Translator icon
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if template_settings.translation.enabled %}
+  {% assign show_translator_icon = true  %}
+{% else %}
+  {% assign show_translator_icon = false %}
+{% endif %}
+
 {% comment %} Show|Hide AuthManager icon
------------------------------------------------------------------------------- {% endcomment %}
-{% if auth_manager_config.enabled %}
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if authentication_enabled %}
   {% assign show_auth_manager_icon = true  %}
 {% else %}
   {% assign show_auth_manager_icon = false %}
 {% endif %}
 
 {% comment %} Show|Hide Control Center icon
------------------------------------------------------------------------------- {% endcomment %}
-{% if quicklinks_options.control_center %}
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if cc_app_config_options.enabled %}
   {% assign show_control_center_icon = true %}
 {% else %}
   {% assign show_control_center_icon = false %}
 {% endif %}
 
 {% comment %} Show|Hide Sidebar icon
------------------------------------------------------------------------------- {% endcomment %}
+-------------------------------------------------------------------------------- {% endcomment %}
 {% if quicklinks_options.sidebar %}
   {% assign show_sidebar_icon = true %}
 {% else %}
@@ -121,7 +146,7 @@ regenerate:                             true
 {% endif %}
 
 {% comment %} Show|Hide CookieConsent icon
------------------------------------------------------------------------------- {% endcomment %}
+-------------------------------------------------------------------------------- {% endcomment %}
 {% if consent_options.enabled %}
   {% assign consent_enabled = true %}
 {% else %}
@@ -141,7 +166,7 @@ regenerate:                             true
 {% endif %}
 
 {% comment %} Select icon family and size (color set dynamically by adapter)
------------------------------------------------------------------------------- {% endcomment %}
+-------------------------------------------------------------------------------- {% endcomment %}
 {% if quicklinks_options.icon_family == 'FontAwesome' or quicklinks_options.icon_family == 'FontAwesome4' or quicklinks_options.icon_family == 'FontAwesome5' %}
   {% assign icon_family = 'fa' %}
 {% elsif quicklinks_options.icon_family == 'MDI' or quicklinks_options.icon_family == 'Material Design Icons'%}
@@ -163,20 +188,21 @@ regenerate:                             true
 <!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [Set icon familiy as: {{ icon_family }}] -->
 <!-- [INFO   ] [j1.modules.navigator.quicklinks.html  ] [Set icon size as: {{ icon_size }}] -->
 <ul class="navbar-nav">
+  {% if back_url != "none" %}<li id="quickLinksHomeButton" class="nav-item"><a id="home_id" class="nav-icon" href="{{back_url}}"><i class="{{icon_family}} {{icon_family}}-{{back_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if home_url != "none" %}<li id="quickLinksHomeButton" class="nav-item"><a id="home_id" class="nav-icon" href="{{home_url}}"><i class="{{icon_family}} {{icon_family}}-{{home_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if disqus_url != "none" %}<li id="quickLinksDisqusButton" class="nav-item"><a id="disqus_id" class="nav-icon" href="{{disqus_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{disqus_icon}} {{icon_size}}"></i></a></li>{% endif %}
-  {% if github_url != "none" %}<li id="quickLinksGithubButton"class="nav-item"><a id="github_id" class="nav-icon" href="{{github_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{github_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if github_url != "none" %}<li id="quickLinksGithubButton" class="nav-item"><a id="github_id" class="nav-icon" href="{{github_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{github_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if patreon_url != "none" %}<li id="quickLinksPatreonButton" class="nav-item"><a id="patreon_id" class="nav-icon" href="{{patreon_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{patreon_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if facebook_url != "none" %}<li id="quickLinksFacebookButton" class="nav-item"><a id="facebook_id" class="nav-icon" href="{{facebook_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{facebook_icon}} {{icon_size}}"></i></a></li>{% endif %}
-  {% if twitter_url != "none" %}<li id="quickLinksTwitterButton"class="nav-item"><a id="twitter_id" class="nav-icon" href="{{twitter_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{twitter_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if twitter_url != "none" %}<li id="quickLinksTwitterButton" class="nav-item"><a id="twitter_id" class="nav-icon" href="{{twitter_url}}" target="blank"><i class="{{icon_family}} {{icon_family}}-{{twitter_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if show_auth_manager_icon %}<li id="quickLinksSignInOutButton" class="nav-item" style="display: none;"><a class="nav-icon" id="navLinkSignInOut" href="#" data-toggle="modal" data-target="#{{signin_modal_id}}"><i id="iconSignInOut" class="{{icon_family}} {{icon_family}}-{{signin_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if show_cookie_consent_icon %}<li id="quickLinksCookieButton" class="nav-item" style="display: none;"><a id="cookie-state" class="nav-icon" href="#" data-toggle="modal" data-target="#cookieRevokeCentralDanger"><i class="{{icon_family}} {{icon_family}}-{{cookies_icon}} {{icon_size}}"></i></a></li>{% endif %}
-  {% if show_quick_search_icon %}<li id="quickLinksSearchButton" class="nav-item search"><a class="nav-icon" href="#"><i class="{{icon_family}} {{icon_family}}-{{search_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if show_translator_icon %}<li id="quickLinksLanguageButton" class="nav-item translator"><a class="nav-icon" href="#"><i class="{{icon_family}} {{icon_family}}-{{translator_icon}} {{icon_size}}"></i></a></li>{% endif %}
+  {% if show_quick_search_icon %}<li id="quickLinksSearchButton" class="nav-item search"><a class="nav-icon" href="#"><i class="{{icon_family}} {{icon_family}}-{{search_icon}} {{icon_size}}"></i></a></li>{% endif %}  
   {% if show_control_center_icon %}<li id="quickLinksControlCenterButton" class="nav-item control-center" style="display: block;"><a class="nav-icon" href="{{control_center_url}}"><i class="{{icon_family}} {{icon_family}}-{{control_center_icon}} {{icon_size}}"></i></a></li>{% endif %}
   {% if show_sidebar_icon %}<li id="quickLinksSideBarButton" class="nav-item side-menu"><a class="nav-icon" href="#"><i class="{{icon_family}} {{icon_family}}-{{sidebar_icon}} {{icon_size}}"></i></a></li>{% endif %}
 </ul>
 
 {% endcapture %}
-
 {{ cache | pretty_print | remove:'<html><body>' | remove:'</body></html>' | strip_empty_lines }}
 {% assign cache = nil %}

@@ -1,6 +1,6 @@
 ---
 title:                                  Using Docker
-tagline:                                Docker on Windows
+tagline:                                docker on windows
 description:                            Using Docker on Windows
 
 date:                                   2018-11-01 00:00:00 +0100

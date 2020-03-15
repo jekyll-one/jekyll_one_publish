@@ -259,7 +259,7 @@ j1.adapter['algolia'] = (function (j1, window) {
 
         _this.setState('finished');
         logger.info('state: ' + _this.getState());
-        logger.info('module initializing finished');
+        logger.info('initializing module finished');
       } else {
         $('#algolia-site-search').append('<p class="ml-5 mt-5 mb-5 "> <strong>Algolia Search DISABLED</strong> </p>');
         _this.setState('finished');
@@ -277,7 +277,7 @@ j1.adapter['algolia'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------

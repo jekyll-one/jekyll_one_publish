@@ -1,6 +1,6 @@
 ---
-title:                                  Emoji Previewer
-tagline:                                search and customize icons
+title:                                  Twitter Emoji Previewer
+tagline:                                search and select twitter emoji's
 description:                            Twitter Emoji Icons V1 Preview Page for J1 Template
 
 tags:                                   [ Twitter, Emoji, Icons, Preview ]
@@ -9,6 +9,8 @@ categories:                             [ pages, manuals ]
 
 permalink:                              /pages/protected/previewer/twitter_emoji/
 regenerate:                             false 
+
+scrollbar:                              true
 
 resources:                              []
 resource_options:

@@ -15,7 +15,7 @@ regenerate:                             true
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
 {% endcomment %}
 
@@ -57,7 +57,7 @@ regenerate:                             true
  # Copyright (C) 2016 Miro Mannino
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
  # Justified Gallery is licensed under the MIT license
  # See: https://github.com/miromannino/Justified-Gallery
  # -----------------------------------------------------------------------------
@@ -123,7 +123,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
       logger.info('state: ' + _this.getState());
       logger.info('module is being initialized');
 
-      _this.load(moduleOptions);
+      _this.initialize(moduleOptions);
 
       return true;
     },
@@ -131,8 +131,8 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
     // -----------------------------------------------------------------------
     // Load AJAX data and initialize the jg gallery
     // -----------------------------------------------------------------------
-    load: function (options) {
-      logger = log4javascript.getLogger('j1.adapter.jf_gallery.load');
+    initialize: function (options) {
+      logger = log4javascript.getLogger('j1.adapter.jf_gallery.init');
 
       _this.setState('running');
       logger.info('state: ' + _this.getState());
@@ -187,7 +187,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
           // Create an gallery instance if id: {{gallery_id}} exists
           if ($('#{{gallery_id}}').length) {
 
-          logText = 'Gallery on ID #{{gallery_id}} is being initialized';
+          logText = 'gallery is being initialized on id: #{{gallery_id}}';
           logger.info(logText);
 
           // Place HTML markup for the title
@@ -252,7 +252,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
                     // lightbox is initialized (delayed)
                     setTimeout(function() { 
                       $("#{{gallery_id}}").show();
-                      logText = 'Gallery on ID #{{gallery_id}} initializing completed';
+                      logText = 'initializing gallery finished on id: #{{gallery_id}}';
                       logger.info(logText);
                     }, {{show_delay}});
                   });
@@ -275,7 +275,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
                     // lightbox is initialized (delayed)
                     setTimeout(function() { 
                       $("#{{gallery_id}}").show();
-                      logText = 'Gallery on ID #{{gallery_id}} initializing completed';
+                      logText = 'initializing gallery finished on id: #{{gallery_id}}';
                       logger.info(logText);
                       }, {{show_delay}});
                   });
@@ -290,7 +290,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
           } //end gallery
         {% endif %} // ENDIF gallery enabled
       {% endfor %}
-    }, // END function load
+    }, // END function initialize
 
     // -------------------------------------------------------------------------
     // messageHandler: MessageHandler for J1 CookieConsent module
@@ -299,7 +299,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------

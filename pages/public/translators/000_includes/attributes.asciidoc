@@ -1,0 +1,85 @@
+// ~/document_base_folder/000_includes
+//  Asciidoc attribute includes:                 attributes.asciidoc
+// -----------------------------------------------------------------------------
+
+
+// URLs - Internal references and/or sources on the Internet
+// -----------------------------------------------------------------------------
+tag::urls[]
+
+:travis-ci-home:                                  https://travis-ci.com/
+
+:gh-new-repo:                                     https://github.com/new
+
+:seeme-io-home:                                   https://smee.io/
+:seeme-io-new-channel:                            https://smee.io/new
+
+:gh-probot-team:                                  https://github.com/probot
+:gh-probot-team-seeme:                            https://github.com/probot/smee.io
+
+:heroku-home:                                     https://heroku.com/
+
+:mdn-server-sent-events:                          https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+
+:wikipedia-en-ci:                                 https://en.wikipedia.org/wiki/Continuous_integration
+:wikipedia-websocket:                             https://en.wikipedia.org/wiki/WebSocket
+
+:kickstart-web-in-a-day:                          /pages/public/start/kickstarter/web_in_a_day/intro/
+
+end::urls[]
+
+// Tags - Asciidoc attributes used internally
+// -----------------------------------------------------------------------------
+tag::tags[]
+
+:window:                                          window="blank"
+:no-clipboard:                                    noclip
+:figure-caption:                                  Figure
+:images-dir:                                      pages/roundtrip
+:y:                                               icon:check[role="green"]
+:n:                                               icon:times[role="red"]
+:c:                                               icon:file-alt[role="blue"]
+:beginner:                                        icon:battery-quarter[role="md-blue"]
+:inter:                                           icon:battery-half[role="md-blue"]
+:advanced:                                        icon:battery-full[role="md-blue"]
+:emdash:                                          &#8212;
+:bullet:                                          &bull;
+:bigbullet:                                       &#9679;
+:bigbigbullet:                                    &#11044;
+:dot:                                             &#46;
+:dotdot:                                          &#46;&#46;
+:middot:                                          &middot;
+
+end::tags[] 
+
+// Data - Data elements for Asciidoctor extensions
+// -----------------------------------------------------------------------------
+tag::data[]
+
+:data-j1-webhook-flow:                            "pages/j1_webhooks/flows/webhook_flow-1920x1280.jpg, J1 Webhook Flow"
+:data-browser-console-new-site:                   "pages/j1_webhooks/000_browser_console-1280x600.jpg, Browser Console (Chrome)"
+:data-smee-new-channel:                           "pages/j1_webhooks/001_smee_channel-1280x400.jpg, New channel (Webhook Proxy URL) at smee.io"
+:data-gh-repo-settings:                           "pages/j1_webhooks/002_gh_repo_settings-1280x800.jpg, Settings page for a repo at Github"
+:data-gh-webhook-settings:                        "pages/j1_webhooks/003_gh_webhook_settings-1280x1000.jpg, Configuration page to configure a Webhook at Github"
+:data-gh-webhook-settings-post:                   "pages/j1_webhooks/004_gh_webhook_settings-post-1280x600.jpg, Result page (initial) for a webhook configured at Github"
+:data-smee-ping-reveived:                         "pages/j1_webhooks/005_smee_channel_ping_receive-1280x800.jpg, Delivery page at SeeMe the ping from GH was received"
+:data-gh-redeliver-wh-payload:                    "pages/j1_webhooks/006_gh_redeliver_payload-1280x900.jpg, Redeliver a payload from a previous Webhook event at Github"
+:data-receive-redelivered-payload:                "pages/j1_webhooks/007_receive_redelivered_payload-1280x800.jpg, Receive a payload from a previous Webhook event"
+
+end::data[]
+
+
+// Product - Document (e.g release) information
+// -----------------------------------------------------------------------------
+tag::product_info[]
+:license:                                         MIT License
+:revdate:                                         2018
+:revnumber:                                       1.0.0
+end::product_info[]
+
+
+// Author - Author information
+// -----------------------------------------------------------------------------
+tag::authors[]
+:uri-author-juergen-adams                         https://jekyll.one
+end::authors[]

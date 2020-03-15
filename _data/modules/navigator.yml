@@ -11,7 +11,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -28,106 +28,44 @@ about_config:
 settings:
 
   # ----------------------------------------------------------------------------
-  # Navigation bar
+  # NavBar
   #
   nav_bar:
-
     enabled:                            true
+
     fixed:                              true
 
   # ----------------------------------------------------------------------------
-  # Navigation menu
+  # NavMenu
   #
   nav_menu:
-
     enabled:                            true
+
     delay_open_menu:                    250
 
   # ----------------------------------------------------------------------------
-  # Navigation quicklinks
+  # NavQuicklinks
   #
   nav_quicklinks:
-
     enabled:                            true
 
-    control_center:                     false
-    control_center_icon:                git
-    control_center_url:                 /apps/public/cc/
-
-    home_url:                           https://jekyll.one/
+    home_url:                           https://preview.jekyll.one/             # none | URL
+    back_url:                           https://jekyll.one/                     # none | URL
 
     disqus_url:                         https://disqus.com/
     github_url:                         https://github.com/jekyll-one
-    patreon_url:                        https://www.patreon.com/jekyll_one/posts
+    patreon_url:                        none                                    # https://www.patreon.com/jekyll_one/posts
 
   # ----------------------------------------------------------------------------
-  # Navigation topsearch
+  # NavTopsearch
   #
   nav_topsearch:
-
     enabled:                            true
 
   # ----------------------------------------------------------------------------
-  # Auth CLIENT
-  #
-  nav_authclient:
-
-    enabled:                            true
-
-    auth_signin_modal:
-      title:                            SignIn
-      body_text: >
-                                        In order to get *signed in*, check one of the options below
-                                        and mark a provider for authentication. You'll be *redirected*
-                                        to authenticate with the provider *selected*. If signed in
-                                        *successfully*, you get back to this site for the page requested.
-
-
-                                        NOTE: To get access to secured pages of this site,
-                                        authentication with a provider is needed only *once*.
-
-    auth_disqus:
-      id:                               1
-      title:                            Disqus
-      text: >
-                                        SignIn to Disqus. Get access to all *PROTECTED* content pages of this site.
-    auth_facebook:
-      id:                               2
-      title:                            Facebook
-      text: >
-                                        SignIn to Facebook. Get access to all *PROTECTED* content pages of this site.
-    auth_github:
-      id:                               3
-      title:                            Github
-      text: >
-                                        SignIn to Github. Get access to all *PROTECTED* content pages of this site.
-    auth_patreon:
-      id:                               4
-      title:                            Patreon
-      text: >
-                                        SignIn to Patreon. Get access to all *PROTECTED* and *PRIVATE* content pages of this site.
-    auth_twitter:
-      id:                               5
-      title:                            Twitter
-      text: >
-                                        SignIn to Twitter. Get access to all *PROTECTED* content pages of this site.
-
-    auth_signout_modal:
-      title:                            SignOut
-      body_text: >
-                                        After signing out from this site, you'll be *redirected*
-                                        to the *provider* you're currently authenticated. From your
-                                        home page at the *provider*, you can *sign out* completely.
-
-
-                                        NOTE: In order to signing out *completely*, check the switch
-                                        below to *on*.
-
-  # ------------------------------------------------------------------------------
-  # Navigation sidebar
+  # NavSidebar
   #
   nav_sidebar:
-
     enabled:                            true
 
     boxes:
@@ -218,5 +156,5 @@ settings:
           #   target:                   none
 
 
-# END config
 # ------------------------------------------------------------------------------
+# END config

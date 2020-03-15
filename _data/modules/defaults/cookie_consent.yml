@@ -8,7 +8,7 @@
 #  Copyright (C) 2019 Juergen Adams
 #
 #  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one/j1-template/blob/master/LICENSE
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ about_config:
 #
 defaults:
 
-  enabled:                              false
+  enabled:                              false                                   # needed for j1.layout_shim_generator.html
 
   # consent_modal_id:                     cookie_consent_modals
   # modal_html_data_path:                 /assets/data/cookie_consent/index.html
@@ -65,5 +65,5 @@ defaults:
     decline_button_text:                No, I refuse cookies
 
 
-# END config
 # ------------------------------------------------------------------------------
+# END config

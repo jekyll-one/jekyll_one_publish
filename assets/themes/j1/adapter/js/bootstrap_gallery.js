@@ -120,7 +120,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
       logger.info('state: ' + _this.getState());
       logger.info('module is being initialized');
 
-      _this.bgInit();
+      _this.initialize();
 
       return true;
     }, // END init
@@ -128,9 +128,9 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
     // -------------------------------------------------------------------------
     // Load AJAX data and initialize the gallery
     // -------------------------------------------------------------------------
-    bgInit: function () {
+    initialize: function () {
 
-      logger = log4javascript.getLogger("j1.adapter.bs_gallery.bgInit");
+      logger = log4javascript.getLogger("j1.adapter.bs_gallery.init");
 
       {% for item in gallery_options.galleries %}
         {% if item.gallery.enabled %}
@@ -155,7 +155,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
           // Create an gallery instance if {{ container_id }} exists
           if ($('#{{ container_id }}').length) {
 
-            logText = 'gallery on ID #{{container_id}} is being initialized';
+            logText = 'gallery is being initialized on id: #{{container_id}}';
             _this.setState('running');
             logger.info('state: ' + _this.getState());
             logger.info(logText);
@@ -294,8 +294,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
 
                 // Initialize instance variable of lightGallery  (for later access)
                 j1["{{gallery_id}}"] = $('#{{ gallery_id }}').data('lightGallery');
-
-                logText = 'LightGallery on ID #{{ container_id }} initializing finished';
+                logText = 'initializing gallery finished on id: #{{container_id}}';
                 _this.setState('finished');
                 logger.info('state: ' + _this.getState());
                 logger.info(logText);
@@ -305,7 +304,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
       {% endfor %}
 
       return true;
-    }, // END bgInit
+    }, // END initialize
 
     // -------------------------------------------------------------------------
     // messageHandler: MessageHandler for J1 CookieConsent module
@@ -314,7 +313,7 @@ j1.adapter['bs_gallery'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------

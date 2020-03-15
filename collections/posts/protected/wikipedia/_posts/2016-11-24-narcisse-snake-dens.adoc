@@ -1,6 +1,6 @@
 ---
 title:                                  Narcisse Snake Dens
-tagline:                                Largest snake population
+tagline:                                largest snake population
 description:                            Largest snake population
 
 date:                                   2016-11-24 00:00:00 +0100

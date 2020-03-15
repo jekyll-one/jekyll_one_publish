@@ -45,7 +45,7 @@
     "opt_profile": "",
     "opt_watch": "--watch",
     "opt_livereload": "--livereload",
-    "vendor_path": "vendor/bundle",
+    "vendor_path": "./vendor",
     "vendorize": "false"
   },
   "algolia": {

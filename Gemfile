@@ -9,7 +9,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 #
 #  To install all gem needed for Jekyll and J1 Template
@@ -46,7 +46,7 @@ gem 'jekyll', '~> 3.0'
 
 # Theme Rubies, default: J1 Template
 #
-gem 'j1-template', '~> 2019.1.0' 
+gem 'j1-template', '~> 2019.1.7' 
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -84,12 +84,12 @@ gem 'tzinfo', '>= 1.2.2'
 #   Windows does not include zoneinfo files, so bundle the
 #   tzinfo-data gem
 #
-gem "tzinfo-data" if Gem.win_platform?
+gem "tzinfo-data"                                                               # if Gem.win_platform?
 
 #  Windows Directory Monitor (WDM) monitor directories
 #  for changes
 #
-gem 'wdm', '>= 0.1.1' if Gem.win_platform?
+gem 'wdm', '>= 0.1.1'                                                           # if Gem.win_platform?
 
 # ------------------------------------------------------------------------------
 # Jekyll Plugins
@@ -164,7 +164,7 @@ end
 # running # tasks defined by a Rakefile prior running the app|web.
 #
 # gem 'passenger', '>= 5.3'
-gem 'puma', '>= 3.12'
+gem "puma", '>= 4.3.1'
 
 # ------------------------------------------------------------------------------
 # If J1 is transformed into a (Rack and Sinatra based) Web
@@ -173,7 +173,7 @@ gem 'puma', '>= 3.12'
 # authentication. For default, the Omniauth (authentication) strategies
 # for Github, Twitter, Facebook and Patreon are implemented.
 #
-# gem 'rack', '~> 2.0'
+# gem 'rack', '>= 2.0.8'
 # gem 'rack-protection', '~> 2.0'
 # gem 'rack-ssl-enforcer', '~> 0.2'
 # gem 'rest-client', '~> 2.0'

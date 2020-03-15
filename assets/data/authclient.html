@@ -15,7 +15,7 @@ regenerate:                             true
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  # Test data:
  #   liquid_var: {{ liquid_var | debug }}
@@ -30,19 +30,28 @@ regenerate:                             true
 
 {% comment %} Set config files
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign navigator_defaults          = site.data.modules.defaults.navigator.defaults %}
-{% assign navigator_settings          = site.data.modules.navigator.settings %}
+{% assign template_config         = site.data.template_settings %}
+{% assign blocks                  = site.data.blocks %}
+{% assign modules                 = site.data.modules %}
+
+{% assign authentication_defaults = modules.defaults.authentication.defaults %}
+{% assign authentication_settings = modules.authentication.settings %}
+
+{% assign navigator_defaults      = modules.defaults.navigator.defaults %}
+{% assign navigator_settings      = modules.navigator.settings %}
 
 {% comment %} Set config data
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign nav_authclient_default      = navigator_defaults.nav_authclient %}
-{% assign nav_authclient_settings     = navigator_settings.nav_authclient %}
+{% assign nav_authclient_defaults = authentication_defaults.auth_client %}
+{% assign nav_authclient_settings = authentication_settings.auth_client %}
 
 {% comment %} Set config options
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign authclient_options          = nav_authclient_default | merge: nav_authclient_settings %}
-{% assign providers                   = site.j1_auth.providers.activated %}
-{% assign active_provider             = site.j1_auth.providers.activated[0] %}
+{% assign authentication_options  = authentication_defaults | merge: authentication_settings %}
+{% assign authclient_options      = nav_authclient_defaults | merge: nav_authclient_settings %}
+
+{% assign providers               = authentication_options.j1_auth.providers.activated %}
+{% assign active_provider         = authentication_options.j1_auth.providers.activated[0] %}
 
 
 {% comment %} Liquid var initialization
@@ -50,58 +59,58 @@ regenerate:                             true
 
 {% comment %} Set auth_client properties 
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign icon_family                 = authclient_options.icon_family | downcase %}
-{% assign signin_icon                 = authclient_options.signin_icon %}
-{% assign signout_icon                = authclient_options.signout_icon %}
+{% assign icon_family             = authclient_options.icon_family | downcase %}
+{% assign signin_icon             = authclient_options.signin_icon %}
+{% assign signout_icon            = authclient_options.signout_icon %}
 
-{% assign signin_modal_title          = authclient_options.auth_signin_modal.title %}
-{% assign signin_modal_body_text      = authclient_options.auth_signin_modal.body_text %}
-{% assign signout_modal_title         = authclient_options.auth_signout_modal.title %}
-{% assign signout_modal_body_text     = authclient_options.auth_signout_modal.body_text %}
+{% assign signin_modal_title      = authclient_options.auth_signin_modal.title %}
+{% assign signin_modal_body_text  = authclient_options.auth_signin_modal.body_text %}
+{% assign signout_modal_title     = authclient_options.auth_signout_modal.title %}
+{% assign signout_modal_body_text = authclient_options.auth_signout_modal.body_text %}
 
 {% if providers contains 'disqus' %}
-  {% assign auth_disqus_enabled       = true %}
-  {% assign auth_disqus_id            = authclient_options.auth_disqus.id %}
-  {% assign auth_disqus_title         = authclient_options.auth_disqus.title | downcase %}
-  {% assign auth_disqus_text          = authclient_options.auth_disqus.text %}
+  {% assign auth_disqus_enabled   = true %}
+  {% assign auth_disqus_id        = authclient_options.auth_disqus.id %}
+  {% assign auth_disqus_title     = authclient_options.auth_disqus.title | downcase %}
+  {% assign auth_disqus_text      = authclient_options.auth_disqus.text %}
 {% else %}
-  {% assign auth_disqus_enabled       = false %}
+  {% assign auth_disqus_enabled   = false %}
 {% endif %}
 
 {% if providers contains 'github' %}
-  {% assign auth_github_enabled       = true %}
-  {% assign auth_github_id            = authclient_options.auth_github.id %}
-  {% assign auth_github_title         = authclient_options.auth_github.title | downcase %}
-  {% assign auth_github_text          = authclient_options.auth_github.text %}
+  {% assign auth_github_enabled   = true %}
+  {% assign auth_github_id        = authclient_options.auth_github.id %}
+  {% assign auth_github_title     = authclient_options.auth_github.title | downcase %}
+  {% assign auth_github_text      = authclient_options.auth_github.text %}
 {% else %}
-  {% assign auth_github_enabled       = false %}
+  {% assign auth_github_enabled   = false %}
 {% endif %}
 
 {% if providers contains 'facebook' %}
-  {% assign auth_facebook_enabled     = true %}
-  {% assign auth_facebook_id          = authclient_options.auth_facebook.id %}
-  {% assign auth_facebook_title       = authclient_options.auth_facebook.title | downcase %}
-  {% assign auth_facebook_text        = authclient_options.auth_facebook.text %}
+  {% assign auth_facebook_enabled = true %}
+  {% assign auth_facebook_id      = authclient_options.auth_facebook.id %}
+  {% assign auth_facebook_title   = authclient_options.auth_facebook.title | downcase %}
+  {% assign auth_facebook_text    = authclient_options.auth_facebook.text %}
 {% else %}
-  {% assign auth_facebook_enabled     = false %}
+  {% assign auth_facebook_enabled = false %}
 {% endif %}
 
 {% if providers contains 'twitter' %}
-  {% assign auth_twitter_enabled      = true %}
-  {% assign auth_twitter_id           = authclient_options.auth_twitter.id %}
-  {% assign auth_twitter_title        = authclient_options.auth_twitter.title | downcase %}
-  {% assign auth_twitter_text         = authclient_options.auth_twitter.text %}
+  {% assign auth_twitter_enabled  = true %}
+  {% assign auth_twitter_id       = authclient_options.auth_twitter.id %}
+  {% assign auth_twitter_title    = authclient_options.auth_twitter.title | downcase %}
+  {% assign auth_twitter_text     = authclient_options.auth_twitter.text %}
 {% else %}
-  {% assign auth_twitter_enabled      = false %}
+  {% assign auth_twitter_enabled  = false %}
 {% endif %}
 
 {% if providers contains 'patreon' %} 
-  {% assign auth_patreon_enabled      = true %}
-  {% assign auth_patreon_id           = authclient_options.auth_patreon.id %}
-  {% assign auth_patreon_title        = authclient_options.auth_patreon.title | downcase %}
-  {% assign auth_patreon_text         = authclient_options.auth_patreon.text %}
+  {% assign auth_patreon_enabled  = true %}
+  {% assign auth_patreon_id       = authclient_options.auth_patreon.id %}
+  {% assign auth_patreon_title    = authclient_options.auth_patreon.title | downcase %}
+  {% assign auth_patreon_text     = authclient_options.auth_patreon.text %}
 {% else %}
-  {% assign auth_patreon_enabled      = false %}
+  {% assign auth_patreon_enabled  = false %}
 {% endif %}
 
 {% if authclient_options.icon_family == 'FontAwesome' or authclient_options.icon_family == 'FontAwesome4' or authclient_options.icon_family == 'FontAwesome5' %}

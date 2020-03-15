@@ -8,7 +8,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 
@@ -25,16 +25,15 @@ backend:
   # git-gateway
   name:                                 github
   # path to your GitHub repository (w/o https://github.com/)
-  repo:                                 jekyll-one-org/starter-app
+  repo:                                 your-repo
   # e.g master | develop
-  branch:                               master
+  branch:                               your-repo-branch
   # url of 'external' oauth client (e.g. j1 utility server at: http://localhost:44444)
   # base_url:                           http://localhost:44444                  # web
   # base_url:                           http://localhost:5000                   # app
   # base_url:                           http:/your.domain:port                  # app
   # NOTE: for domain localhost, baseurl could be set to EMPTY
-  # base_url:                           https://oauth.jekyll.one
-  base_url:                             https://preview.jekyll.one
+  base_url:
 
 # ------------------------------------------------------------------------------
 # Site (production) settings

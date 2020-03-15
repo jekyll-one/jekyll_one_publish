@@ -129,7 +129,7 @@ settings:
                                         If you’re not familiar with Jekyll (or other 
                                         <a href="https://www.staticgen.com/" target="blank">website generators</a>), 
                                         Jekyll is a so-called static site generator. Think of it as 
-                                        a modern but lightweight content management system CMS - like
+                                        a modern but lightweight Content Management System (CMS) - like
                                         <a href="https://wordpress.com/" target="blank">Wordpress</a> or
                                         <a href="https://www.joomla.org/" target="blank">Joomla</a>
                                         but much, much simpler and without all the complexity.

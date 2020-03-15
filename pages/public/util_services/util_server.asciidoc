@@ -1,0 +1,71 @@
+---
+title:                                  Utility Server
+tagline:                                development support
+description:                            Utility Server
+
+tags:                                   [ Tools ]
+index:                                  [ Utility, Server, logs, Authentification, OAuth ]
+categories:                             [ pages ]
+
+permalink:                              /pages/public/util_server/
+regenerate:                             false
+
+resources:                              [ lightbox ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/attics/robert-v-ruggiero-1920x1280.jpg
+          alt:                          Photo by Robert V. Ruggiero on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Robert V. Ruggiero
+            href:                       https://unsplash.com/@rvrmakes
+---
+
+// Enable the Liquid Preprocessor
+// -----------------------------------------------------------------------------
+:page-liquid:
+
+// Set other global page attributes here
+// -----------------------------------------------------------------------------
+//:my-asciidoc-attribute:
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture set_env_entry_document %}themes/{{site.template.name}}/procedures/global/set_env_entry_document.proc{%endcapture%}
+
+
+// Initialize entry document environmental attributes
+// -----------------------------------------------------------------------------
+{% include {{set_env_entry_document}} %}
+
+// Load tag, url and data attributes
+// -----------------------------------------------------------------------------
+include::{includedir}/attributes.asciidoc[tag=tags]
+include::{includedir}/attributes.asciidoc[tag=urls]
+include::{includedir}/attributes.asciidoc[tag=data]
+
+// Set local page attributes
+// -----------------------------------------------------------------------------
+// :images-dir:                         {imagesdir}/path/to/page/images
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+Welcome to the pages of J1 Template. If your here first time,
+hopefully you get on that page first. For sure, there is no better 
+place to step in.
+
+
+== Utility server
+
+First of all, you've started already! The important first step in to find 
+your way to Jekyll is done. Congratiulations.
+

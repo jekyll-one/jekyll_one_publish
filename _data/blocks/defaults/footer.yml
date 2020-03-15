@@ -8,7 +8,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ defaults:
         type:                           about
         enabled:                        true
         justify:                        true
-        title:                          J1 TEMPLATE
+        title:                          J1 Template
         text: >
                                         Jekyll meets Bootstrap - and makes a lot of friends.
                                         J1 Template combines the best of open source software for

@@ -16,7 +16,7 @@ regenerate:                             true
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  # Test data:
  #   liquid_var: {{ liquid_var | debug }}
@@ -123,15 +123,15 @@ regenerate:                             true
       <!-- Footer -->
       <div class="modal-footer justify-content-center">
         {% if consent_options.buttons.policy_button %}
-        <a type="button" id="policyButton" class="btn btn-raised btn-flex btn-secondary g-mr-5"> <i class="mdi mdi-18px mdi-dark mdi-read"></i>
+        <a type="button" id="policyButton" class="btn btn-raised btn-flex btn-secondary g-mr-5 mb-3"> <i class="mdi mdi-18px mdi-dark mdi-read"></i>
           {{consent_options.buttons.policy_button_text}}
         </a>
         {% endif %}
-        <a type="button" id="acceptButton" class="btn btn-raised btn-flex btn-info g-mr-5" data-dismiss="modal"> <i class="mdi mdi-18px mdi-dark mdi-check"></i>
+        <a type="button" id="acceptButton" class="btn btn-raised btn-flex btn-info g-mr-5 mb-3" data-dismiss="modal"> <i class="mdi mdi-18px mdi-dark mdi-check"></i>
           {{consent_options.buttons.accept_button_text}}
         </a>
         {% if consent_options.buttons.decline_button %}
-        <a type="button" id="declineButton" class="btn btn-raised btn-flex btn-secondary g-mr-5" data-dismiss="modal"> <i class="mdi mdi-18px mdi-dark mdi-close"></i>
+        <a type="button" id="declineButton" class="btn btn-raised btn-flex btn-secondary g-mr-5 mb-3" data-dismiss="modal"> <i class="mdi mdi-18px mdi-dark mdi-close"></i>
           {{consent_options.buttons.decline_button_text}}
         </a>
         {% endif %}
@@ -208,8 +208,8 @@ regenerate:                             true
 
       <!-- Footer -->
       <div class="modal-footer justify-content-center">
-        <a type="button" id="revokeCookies" class="btn btn-raised btn-flex btn-md btn-red g-mr-5" data-dismiss="modal">Yes, please revoke cookie consent</a>
-        <a type="button" id="remainCookies" class="btn btn-raised btn-flex btn-md btn-secondary" data-dismiss="modal">No, please do nothing</a>
+        <a type="button" id="revokeCookies" class="btn btn-raised btn-flex btn-md btn-red g-mr-5 mb-3" data-dismiss="modal">Yes, please revoke cookie consent</a>
+        <a type="button" id="remainCookies" class="btn btn-raised btn-flex btn-md btn-secondary mb-3" data-dismiss="modal">No, please do nothing</a>
       </div>
     </div> <!-- END Footer -->
 

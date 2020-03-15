@@ -1,6 +1,6 @@
 ---
 title:                                  Framer
-tagline:                                framer module test page
+tagline:                                Test page for J1 module framer
 description:                            Test page for J1 module framer
 
 tags:                                   [ App, Previewer ]

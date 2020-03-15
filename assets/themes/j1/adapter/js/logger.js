@@ -43,14 +43,10 @@ regenerate:                             true
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign logger_defaults   = modules.defaults.log4javascript.defaults %}
 {% assign logger_settings   = modules.log4javascript.settings %}
-{% assign util_srv_defaults = modules.defaults.util_srv.defaults %}
-{% assign util_srv_settings = modules.util_srv.settings %}
 
 {% comment %} Set config options
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign logger_options    = logger_defaults | merge: logger_settings %}
-{% assign util_srv_options  = util_srv_defaults | merge: util_srv_settings %}
-
 
 /*
  # -----------------------------------------------------------------------------
@@ -79,7 +75,8 @@ j1.adapter['logger'] = (function (j1, window) {
   var page_id               = uuid().slice(25, 37);
   var cookie_names          = j1.getCookieNames();
   var loggerRequestCallback = false;
-  var utilSrvOptions        = {};
+  var loggerOptions         = {};
+  var ajaxAppenderOptions   = {};
   var user_session;
   var appDetected;
   var _this;
@@ -165,7 +162,8 @@ j1.adapter['logger'] = (function (j1, window) {
       j1.adapter.logger.state = 'started';
 
       // load module DEFAULTS|CONFIG to js object
-      utilSrvOptions = $.extend({}, {{util_srv_settings | replace: '=>', ':' | replace: 'nil', '""'}});
+      loggerOptions       = $.extend({}, {{logger_options | replace: '=>', ':' | replace: 'nil', '""'}});
+      ajaxAppenderOptions = loggerOptions.appenders[1].appender;
 
       // -----------------------------------------------------------------------
       // setup logger instances
@@ -184,9 +182,9 @@ j1.adapter['logger'] = (function (j1, window) {
           appDetected = user_session.mode === 'app' ? true : false;
 
           if (appDetected) {
-            payloadURL = utilSrvOptions.utility_server.logger_client.payload_url_app;
+            payloadURL = ajaxAppenderOptions.payload_url_app;
           } else {
-            payloadURL = utilSrvOptions.utility_server.logger_client.payload_url_web;
+            payloadURL = ajaxAppenderOptions.payload_url_web;
           }
 
           // -------------------------------------------------------------------
@@ -248,21 +246,15 @@ j1.adapter['logger'] = (function (j1, window) {
           // -------------------------------------------------------------------
           log4javascript.getRootLogger().addAppender(consoleAppender);
 
-          if (utilSrvOptions.utility_server.logger_client.enabled) {
+          if (ajaxAppenderOptions.enabled) {
             log4javascript.getRootLogger().addAppender(ajaxAppender);
-            logger.info('ajaxAppender detected as: enabled');
+            logger.info('ajax appender detected as: enabled');
           } else {
-            logger.info('ajaxAppender detected as: disabled');
+            logger.info('ajax appender detected as: disabled');
           }
 
           _this.setState('started');
           logger.info('state: ' + _this.getState());
-
-          // -------------------------------------------------------------------
-          // setup logger client (Internet)
-          // passing log data over Internet|SeeMe currently NOT used
-          // -------------------------------------------------------------------
-          // j1.core.log4javascript.init(utilSrvOptions);
 
           _this.setState('finished');
           logger.info('state: ' + _this.getState());
@@ -280,7 +272,7 @@ j1.adapter['logger'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------

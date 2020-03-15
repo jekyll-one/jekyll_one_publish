@@ -15,7 +15,7 @@ regenerate:                             false
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  #
  # SimpleJekyllSearch, a JavaScript library to add search functionality
@@ -44,9 +44,10 @@ regenerate:                             false
 {% assign quick_search_config = site.data.modules.j1_jekyll_search %}
 {% assign result_target       = quick_search_config.target %}
 
-{% comment %} Set posts count by posts_num. Indicates if a comma  
-              needs to be set for valid JSON
------------------------------------------------------------------------------- {% endcomment %}
+{% comment %} 
+  Set posts count by posts_num. Indicates if a comma needs to be 
+  set for valid JSON
+-------------------------------------------------------------------------------- {% endcomment %}
 {% assign posts_num = site.posts.size %}
 
   {% for post in site.posts %}

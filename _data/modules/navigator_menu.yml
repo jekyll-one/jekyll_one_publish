@@ -8,22 +8,36 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 # NOTE:
 #   For general navigation settings, see j1_navigator.yml
 # ------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------
+# Menu LEARN
+#
 - item:                                 Learn
   sublevel:
+
+  # - title:                            Webhooks
+  #   href:                             /pages/public/j1_webhooks/
+  #   icon:                             github-circle
+  # - title:                            Translators
+  #   href:                             /pages/public/translators/
+  #   icon:                             alpha-l-circle
+  # - title:                            Utility Server
+  #   href:                             /pages/public/util_server/
+  #   icon:                             server
+
+    - title:                            What's up
+      href:                             /pages/public/learn/whats_up/
+      icon:                             alert
 
     - title:                            Roundtrip
       icon:                             wallet-travel
       dropdown:
-        - title:                        What's up
-          href:                         /pages/public/start/roundtrip/whats_up/
-          icon:                         arrow-right
         - title:                        Present images
           href:                         /pages/public/start/roundtrip/present_images/
           icon:                         image
@@ -53,13 +67,13 @@
       icon:                             rocket
       dropdown:
         - title:                        Meet & Greet Jekyll
-          href:                         /pages/public/start/kickstarter/web_in_a_day/intro/
+          href:                         /pages/public/start/kickstarter/web_in_a_day/meet_and_greet/
           icon:                         flag-checkered
         - title:                        Getting prepared
-          href:                         "#"
+          href:                         /pages/public/start/kickstarter/web_in_a_day/preparations/
           icon:                         cart
         - title:                        A first awesome Web
-          href:                         "#"
+          href:                         /pages/public/start/kickstarter/web_in_a_day/first_awesome_web/
           icon:                         creation
         - title:                        Writing Articles
           href:                         "#"
@@ -73,16 +87,19 @@
         - title:                        Using Git
           href:                         "#"
           icon:                         git
-        - title:                        Dokument Skeleton
-          href:                         /pages/public/start/kickstarter/web_in_a_day/document/skeleton/
-          icon:                         book
+        - title:                        Deploy a Web
+          href:                         /pages/public/start/kickstarter/web_in_a_day/document/deploy_aw_eb/
+          icon:                         web
         - title:                        Wrapping up
           href:                         "#"
-          icon:                         emoticon-excited
+          icon:                         backup-restore
 
+# ------------------------------------------------------------------------------
+# Menu BLOG
+#
 - item:                                 Blog
   sublevel:
-    - title:                            Navigator
+    - title:                            Creators Blog
       href:                             /pages/public/blog/navigator/
       icon:                             navigation
     - title:                            Categories
@@ -95,6 +112,9 @@
       href:                             /pages/public/blog/navigator/archive/
       icon:                             archive
 
+# ------------------------------------------------------------------------------
+# Menu TOOLS
+#
 - item:                                 Tools
   sublevel:
     - title:                            Gallery Previewer
@@ -110,6 +130,9 @@
       href:                             /pages/public/iframer/
       icon:                             image-filter-none
 
+# ------------------------------------------------------------------------------
+# Menu ONLINE
+#
 - item:                                 Online
   megamenu:
     - title:                            Sites
@@ -221,19 +244,25 @@
           target:                       blank
           icon:                         regex
 
+# ------------------------------------------------------------------------------
+# Menu Themes
+#
 - item:                                 Themes
   theme_select:
     - local_themes:                     enabled
-      title:                            THEMES from Jekyll-One
+      title:                            Themes from Jekyll-One
       icon:                             face
     - bootswatch_themes:                enabled
-      title:                            THEMES from Bootswatch
+      title:                            Themes from Bootswatch
       icon:                             face-profile
     - preview:                          enabled
-      title:                            THEME Previewer
+      title:                            Theme Previewer
       href:                             /pages/public/previewer/theme/
       icon:                             eye
 
+# ------------------------------------------------------------------------------
+# Menu ABOUT
+#
 - item:                                 About
   sublevel:
     - title:                            This site
@@ -251,6 +280,5 @@
       href:                             /pages/public/about/become_a_patron/
 
 
-
-# END config
 # ------------------------------------------------------------------------------
+# END config

@@ -149,7 +149,7 @@ j1.adapter['searcher'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.info(logText);
 
       // -----------------------------------------------------------------------

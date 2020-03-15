@@ -9,7 +9,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 
@@ -24,3 +24,7 @@ smaller:                            0.750em
 xsmall:                             0.500em
 xxsmall:                            0.375em
 xxxsmall:                           0.250em
+
+
+# ------------------------------------------------------------------------------
+# END config

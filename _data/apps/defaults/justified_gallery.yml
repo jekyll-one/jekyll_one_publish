@@ -8,7 +8,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ defaults:
   #   values:                           string
   #   default:                          /assets/data/galleries.json
   #
-  enabled:                              true
+  enabled:                              true                                    # needed for j1.layout_shim_generator.html
   xhr_data_path:                        /assets/data/galleries.json
   instance_type:                        multiple
   rowHeight:                            170
@@ -241,5 +241,5 @@ defaults:
           cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
 
 
-# END config
 # ------------------------------------------------------------------------------
+# END config

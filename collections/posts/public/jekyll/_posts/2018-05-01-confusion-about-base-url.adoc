@@ -1,6 +1,6 @@
 ---
 title:                                  Jekyll URLs
-tagline:                                What is a baseurl
+tagline:                                what is baseurl
 description:                            Jekyll URL Configuration
 
 date:                                   2018-05-01 00:00:00

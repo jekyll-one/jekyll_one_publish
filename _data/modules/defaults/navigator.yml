@@ -9,7 +9,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 # NOTE:
@@ -31,8 +31,10 @@ defaults:
 
   icon_family:                          MDI
 
+  # ----------------------------------------------------------------------------
+  # NavBar
+  #
   nav_bar:
-
     enabled:                            false
 
     xhr_container_id:                   navigator_nav_navbar
@@ -51,8 +53,10 @@ defaults:
     background_color_collapsed:         bg-primary
     background_color_scrolled:          bg-primary
 
+  # ----------------------------------------------------------------------------
+  # NavMenu
+  #
   nav_menu:
-
     enabled:                            false
 
     xhr_container_id:                   navigator_nav_menu
@@ -87,8 +91,10 @@ defaults:
     dropdown_background_color_hover:    md_bluegrey_50
     dropdown_background_color_active:   md_bluegrey_100
 
+  # ----------------------------------------------------------------------------
+  # NavQuicklinks
+  #
   nav_quicklinks:
-
     enabled:                            false
 
     xhr_container_id:                   navigator_nav_quicklinks
@@ -102,14 +108,16 @@ defaults:
     cookies_icon:                       cookie
     top_search_icon:                    magnify
 
+    translator_icon:                    flag-variant
+
     sidebar:                            true
     sidebar_icon:                       dots-vertical
-    control_center:                     true
-    control_center_icon:                git
-    control_center_url:                 /apps/public/cc/
 
     home_icon:                          home-variant
-    home_url:                           "#"
+    home_url:                           none
+
+    back_icon:                          subdirectory-arrow-left
+    back_url:                           none
 
     disqus_icon:                        disqus
     disqus_url:                         none
@@ -121,13 +129,11 @@ defaults:
     facebook_url:                       none
     twitter_icon:                       twitter
     twitter_url:                        none
-    signin:                             false
-    signin_client:                      enabled
-    signin_icon:                        login
-    signout_icon:                       logout
 
+  # ----------------------------------------------------------------------------
+  # NavTopsearch
+  #
   nav_topsearch:
-
     enabled:                            false
 
     xhr_container_id:                   navigator_nav_topsearch
@@ -143,8 +149,10 @@ defaults:
     search_heading_lead:                ""
     result_heading_lead:                ""
 
+  # ----------------------------------------------------------------------------
+  # NavSidebar
+  #
   nav_sidebar:
-
     enabled:                            false
 
     xhr_container_id:                   navigator_nav_sidebar
@@ -157,19 +165,6 @@ defaults:
     sidebar_icon:                       dots-vertical
     close_icon:                         close
     background_color:                   md_grey_900
-
-  nav_authclient:
-
-    enabled:                            false
-
-    xhr_container_id:                   authclient_modals
-    xhr_data_path:                      /assets/data/authclient/index.html
-
-    signin_modal_id:                    modalOmniSignIn
-    hide_on_cookies_declined:           true
-    icon_family:                        MDI
-    signin_icon:                        login
-    signout_icon:                       logout
 
 
 # END config

@@ -15,10 +15,10 @@ regenerate:                             false
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  # Test data:
- #  {{ config | debug }}
+ #  {{config | debug}}
  # -----------------------------------------------------------------------------
 {% endcomment %}
 
@@ -59,7 +59,7 @@ regenerate:                             false
  # Copyright (C) 2019 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+ # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
  # -----------------------------------------------------------------------------
  #  Adapter generated: {{site.time}}
  # -----------------------------------------------------------------------------
@@ -126,11 +126,11 @@ j1.adapter['carousel'] = (function (j1, window) {
           {% assign css_classes   = item.show.css_classes %}
           {% assign lazyLoad      = item.show.lightbox %}
 
-          // Create an Carousel INSTANCE if slider on id: {{ slider_id }} exists
+          // Create an Carousel INSTANCE if slider on id: {{slider_id}} exists
           if ($('#{{slider_id}}').length) {
 
             {% if environment == 'development' %}
-              logText = 'Slider on ID {{ slider_id }} being initialized';
+              logText = 'slider is being initialized on id: #{{slider_id}}';
               logger.info(logText);
               _this.setState('running');
               logger.info('state: ' + _this.getState());
@@ -159,7 +159,7 @@ j1.adapter['carousel'] = (function (j1, window) {
             // Place HTML markup for the title
             {% if slider_title %}
             var slider_title = '<div class="slider-title">{{slider_title}}</div>';
-            $('#{{ slider_id }}').before(slider_title);
+            $('#{{slider_id}}').before(slider_title);
             {% endif %}
 
             $('head').append("<style>.{{slider_id}}-item{margin: {{slide_space}}px;}</style>");
@@ -168,46 +168,46 @@ j1.adapter['carousel'] = (function (j1, window) {
 
             {% comment %}
             // Initialize default parameters
-            $("#{{ slider_id }}").owlCarousel({
+            $("#{{slider_id}}").owlCarousel({
               {% for option in carousel_options %}
-              {{ option[0] | json }}: {{ option[1] | json }},
+              {{option[0] | json}}: {{option[1] | json}},
               {% endfor %}
             });
             {% endcomment %}
 
             // Initialize individual show parameters
-            $("#{{ slider_id }}").owlCarousel({
+            $("#{{slider_id}}").owlCarousel({
               {% for option in item.show.options %}
-              {{ option[0] | json }}: {{ option[1] | json }},
+              {{option[0] | json}}: {{option[1] | json}},
               {% endfor %}
               // Enable lazyLoad if lightbox is enabled
               {% if item.show.lightbox %}
               "lazyLoad": true,
               {% endif %}
-              "jsonPath": {{ carousel_options.xhr_data_path | json }},
-              "jsonSuccess": customDataSuccess_{{ forloop.index }}
+              "jsonPath": {{carousel_options.xhr_data_path | json}},
+              "jsonSuccess": customDataSuccess_{{forloop.index}}
             });
             // Initialize instance variable (for later access)
-            //{{ slider_id }} = $('#{{ slider_id }}').data('owlCarousel');
+            //{{slider_id}} = $('#{{slider_id}}').data('owlCarousel');
 
-            j1["{{slider_id}}"] = $('#{{ slider_id }}').data('owlCarousel');
+            j1["{{slider_id}}"] = $('#{{slider_id}}').data('owlCarousel');
 
             // jQuery show data functions
-            function customDataSuccess_{{ forloop.index }}(data){
+            function customDataSuccess_{{forloop.index}}(data){
               var content = "";
-              for (var i in data["{{ slider_id }}"]) {
+              for (var i in data["{{slider_id}}"]) {
                 {% if slider_type == 'image' %}
-                var lb          = data["{{ slider_id }}"][i].lb;
-                var lb_caption  = data["{{ slider_id }}"][i].lb_caption;
-                var img         = data["{{ slider_id }}"][i].img;
-                var alt         = data["{{ slider_id }}"][i].alt;
+                var lb          = data["{{slider_id}}"][i].lb;
+                var lb_caption  = data["{{slider_id}}"][i].lb_caption;
+                var img         = data["{{slider_id}}"][i].img;
+                var alt         = data["{{slider_id}}"][i].alt;
                 {% endif %}
                 {% if slider_type == 'text' %}
-                var text        = data["{{ slider_id }}"][i].text;
+                var text        = data["{{slider_id}}"][i].text;
                 {% endif %}
-                var href        = data["{{ slider_id }}"][i].href;
+                var href        = data["{{slider_id}}"][i].href;
                 {% if  css_classes %}
-                var css_classes = 'class="{{ css_classes }}";'
+                var css_classes = 'class="{{css_classes}}";'
                 {% else %}
                 var css_classes = ''
                 {% endif %}
@@ -217,7 +217,7 @@ j1.adapter['carousel'] = (function (j1, window) {
                 if (lb) {
                   if (lb_caption) {
                     content += '\t\t' + '<div class="item {{slider_id}}-item {{slide_border}}">'+ '\n';
-                    content += '\t\t\t' + '<a href="' +img+ '" ' + 'data-lightbox="{{ slider_id }}" data-title="' +lb_caption+ '">' + '\n';
+                    content += '\t\t\t' + '<a href="' +img+ '" ' + 'data-lightbox="{{slider_id}}" data-title="' +lb_caption+ '">' + '\n';
                     content += '\t\t\t\t' + '<img class="lazyOwl" src="' +img+ '">' + '\n';
                     content += '\t\t\t' + '</a>' + '\n';
                     if (href) {
@@ -227,7 +227,7 @@ j1.adapter['carousel'] = (function (j1, window) {
                     }
                     content += '\t\t' + '</div>' + '\n';
                   } else {
-                    content += '<a class="item" href="' +img+ '" ' + 'data-lightbox="{{ slider_id }}"> <img class="lazyOwl" data-src="' +img+ '" alt="' +alt+ '">' + '</a>'
+                    content += '<a class="item" href="' +img+ '" ' + 'data-lightbox="{{slider_id}}"> <img class="lazyOwl" data-src="' +img+ '" alt="' +alt+ '">' + '</a>'
                   }
                 } else if (href) {
                     content += '<div class="item">' + '<img ' +css_classes+ ' src="' +img+ '" alt="' +alt+ '">' + '</div>'
@@ -244,17 +244,17 @@ j1.adapter['carousel'] = (function (j1, window) {
                 }
                 {% endif %}
               }
-              $("#{{ slider_id }}").html(content);
-              logText = 'Slider on ID {{ slider_id }} initializing finished';
+              $("#{{slider_id}}").html(content);
+              logText = 'initializing slider finished on id: {{slider_id}}';
               logger.info(logText);
-            } // END customDataSuccess_{{ forloop.index }}
+            } // END customDataSuccess_{{forloop.index}}
           } // END if carousel exists
         {% endif %}
       {% endfor %}
 
       _this.setState('finished');
       logger.info('state: ' + _this.getState());
-      logger.info('module initializing finished');
+      logger.info('initializing module finished');
 
       return true;
     }, // END init
@@ -266,7 +266,7 @@ j1.adapter['carousel'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------
@@ -307,5 +307,5 @@ j1.adapter['carousel'] = (function (j1, window) {
 })(j1, window);
 
 {% endcapture %}
-{{ cache | strip_empty_lines }}
+{{cache | strip_empty_lines}}
 {% assign cache = nil %}

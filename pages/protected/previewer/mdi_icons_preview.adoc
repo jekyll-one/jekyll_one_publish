@@ -1,6 +1,6 @@
 ---
 title:                                  MDI Icon Previewer
-tagline:                                search and customize icons
+tagline:                                search and select mdi icons
 description:                            Material Design Icons Preview for J1 Template
 
 tags:                                   [ Preview, Material, Design, MDI, FontAwesome, Icon, Fonts ]
@@ -9,6 +9,8 @@ categories:                             [ pages, manuals ]
 
 permalink:                              /pages/protected/previewer/mdi_font/
 regenerate:                             false
+
+scrollbar:                              true
 
 resources:                              []
 resource_options:
@@ -87,28 +89,6 @@ include equivalent text either inside the `<i>` tag or right next to it
 click to reply, the link is usable if CSS doesn't load, and human readers
 with good eyesight and a decent browser see a pretty icon.
 
-
-//////////
-=== Flex Icons
-
-lorem:sentences[5]
-
-++++
-<div class="row">
-  <a href="#" class="mdi mdi-md-gray-300">
-    <i class="mdi mdi-alert mdi-3x mdi-md-red mdi-flex-align-center mr-2"></i> Hover effect on the anchor text
-  </a>
-</div>
-
-<div class="row">
-  <a href="#" class="mdi mdi-md-gray-300">
-    <i class="mdi mdi-alert mdi-3x mdi-md-red mdi-flex-align-center mr-2">
-     Hover effect on the anchor text
-    </i>
-  </a>
-<div>
-++++
-//////////
 
 == Sizes
 

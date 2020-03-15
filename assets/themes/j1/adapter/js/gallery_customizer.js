@@ -154,14 +154,14 @@ j1.adapter['gallery_customizer'] = (function (j1, window) {
       // data loader
       // ---------------------------------------------------------------------
       $.when (
-        j1.xhrDATA (
+        j1.xhrData (
           'j1.adapter.gallery_customizer', {
           xhr_container_id: customizerOptions.xhr_container_id, 
           xhr_data_path:    customizerOptions.xhr_data_path },
           'data_loaded'))
       .then (function (success) {
         if (success) {
-          logger.info('loading data on #started started successfully');
+          logger.info('loading customizer started on id: #' + customizerOptions.xhr_container_id);
 
           // -------------------------------------------------------------------
           // initializer
@@ -172,14 +172,16 @@ j1.adapter['gallery_customizer'] = (function (j1, window) {
               var galleryId       = '#jg_customizer';
               var $formId         = $('#jg-customizer-form');
               var $instance       = $('#jg_customizer');
-              var logger          = log4javascript.getLogger('j1.gallery_customizer');
-              var logText         = '';
               var kbdDelay        = 750;
               var imageHeightMin  = 40;
 
+              logger.info('loading customizer finished on id: #' + customizerOptions.xhr_container_id);
+
               // -------------------------------------------------------------------
               // load gallery data
-              j1.adapter.jf_gallery.load(galleryOptions);
+              j1.adapter.jf_gallery.initialize(galleryOptions);
+
+              logger.info('initialize customizer ui|forms');
 
               if ($formId.length) {
                 var timerid;
@@ -358,7 +360,7 @@ j1.adapter['gallery_customizer'] = (function (j1, window) {
 
               _this.setState('finished');
               logger.info('state: ' + _this.getState());
-              logger.info('module initializing finished');
+              logger.info('initializing module finished');
               clearInterval(dependencies_met_data_loaded);
 
               return true;
@@ -366,6 +368,10 @@ j1.adapter['gallery_customizer'] = (function (j1, window) {
           }, 25);
 
         } // END if success
+      })
+      .catch(function(error) {
+        logger.error('loading html data failed at: j1.xhrData');
+        return false;
       }); // End thenable
 
     }, // END init
@@ -377,7 +383,7 @@ j1.adapter['gallery_customizer'] = (function (j1, window) {
     messageHandler: function (sender, message) {
       var json_message = JSON.stringify(message, undefined, 2);
 
-      logText = 'Received message from ' + sender + ': ' + json_message;
+      logText = 'received message from ' + sender + ': ' + json_message;
       logger.debug(logText);
 
       // -----------------------------------------------------------------------

@@ -1,3 +1,2 @@
-# Jekyll One Preview
-
-Present j1 web previews
+# j1-preview-netlify
+J1 Preview Page

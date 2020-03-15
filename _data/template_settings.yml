@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_data/template_settings.yml
-# J1 Template global settings
+# J1 Template settings
 #
 # Product/Info:
 # https://jekyll.one
@@ -11,14 +11,25 @@
 # For details, see https://jekyll.one
 # ------------------------------------------------------------------------------
 
+
 # ==============================================================================
-# SASS and CSS configuration settings
+# THEME configuration
 #
 # ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# CSS and SASS settings
 #
-custom_theme:
+css:
   custom_scss:                          false
   custom_css:                           false
+
+# ------------------------------------------------------------------------------
+# Typography settings
+#
+typography:
+  rtext:                                true
+  rtext_size:                           300
 
 # ==============================================================================
 # URL configuration
@@ -79,8 +90,7 @@ tags_path:                              /builder/tags
 #atom_path:                             /atom.xml
 #rss_path:                              /rss.xml
 
-
-# -------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Common site URLs
 #
 about-site-url:                         /pages/public/about/site/
@@ -92,19 +102,22 @@ theme_author_url:                       https://jekyll.one
 # DATA path configuration settings
 #
 # ------------------------------------------------------------------------------
+runtime_data_path:                      /assets/data/runtime-data.yml
 message_catalog_data_path:              /assets/data/messages.yml
 colors_data_path:                       /assets/data/colors.json
 font_size_data_path:                    /assets/data/font_sizes.json
 country_data_path:                      /assets/data/countries.json
 
+
 # ==============================================================================
-# COOKIE settings
+# COOKIE configuration settings
 #
 # ------------------------------------------------------------------------------
 cookies:
   app_session:                          j1.app.session
   user_session:                         j1.user.session
   user_state:                           j1.user.state
+
     
 # ==============================================================================
 # PAGE configuration settings
@@ -128,8 +141,8 @@ cookies:
 # ------------------------------------------------------------------------------
 flicker_timeout:                        250
 
-# -------------------------------------------------------------------------
-# HTML Pretty Print
+# ------------------------------------------------------------------------------
+# HTML PrettyPrint
 #
 prettify:                               true
 
@@ -139,27 +152,28 @@ prettify:                               true
 #
 # ------------------------------------------------------------------------------
 
-# -------------------------------------------------------------------------
-# Default settings
+# ------------------------------------------------------------------------------
+# Default
 #
 user:
   provider:                             j1
   provider_site_url:                    https://jekyll.one
   provider_home_url:                    https://jekyll.one
   provider_blog_url:                    /pages/public/blog/navigator/ 
-  provider_member_url:                  /pages/public/start/whats_up/
+  provider_member_url:                  /pages/public/learn/whats_up/
   provider_privacy_url:                 /pages/public/legal/en/privacy/                       
   user_name:                            guest
   status:                               active
   provider_membership:                  guest
   provider_permissions:                 [ 'public' ]
 
+
 # ==============================================================================
 # FRAMEWORK configuration settings
 #
 # ------------------------------------------------------------------------------
-#
-# -------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
 # BOOTSTRAP framework settings
 #
 bootstrap:
@@ -167,13 +181,13 @@ bootstrap:
   popovers:                             true
   default_theme:                        uno
 
-# -------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Font AweSome settings
 #
 fa:
   color:                                default
 
-# -------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Body style settings
 #
 body:
@@ -191,7 +205,7 @@ body:
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# COMMENTS connector settings
+# COMMENTS settings
 #
 # Set 'enabled' to false to turn commenting off globally
 # Set 'provider' to the comment provider you want to use
@@ -204,46 +218,65 @@ body:
 comments:
   enabled:                              true
   provider:                             disqus
+
   disqus:    
     short_name:                         jekyll-one
+
 # facebook:
 #   appid:                              123
 #   num_posts:                          5
 #   width:                              580
 #   colorscheme:                        light
+
 # custom:    
 #   custom_data:
 
-# -------------------------------------------------------------------------
-# ANALYTICS connector settings
+# ------------------------------------------------------------------------------
+# ANALYTICS settings
 #
 # Set 'enabled' to false to turn analytics off globally
 # Set 'provider' to the analytics provider you want to use
 #
 analytics:
-  enabled:                              true
+  enabled:                              false
   provider:                             google
   google:
     tracking_id:                        'UA-138160879-1'
   custom:    
     custom_data:
 
-# -------------------------------------------------------------------------
-# ADVERTISING connector settings
+# ------------------------------------------------------------------------------
+# ADVERTISING settings
 #
 # Set 'enabled' to false to turn advertising off globally
 # Set 'provider' to the analytics provider you want to use
 #
 advertising:
-  enabled:                              true
+  enabled:                              false
   provider:                             google
   google:    
     publisher_id:                       ca-pub-6537273267695855
   custom:    
     custom_data:
 
-# -------------------------------------------------------------------------
-# SHARING connector settings (currently NOT supported)
+# ------------------------------------------------------------------------------
+# TRANSLATOR settings
+#
+# Set 'enabled' to false to turn translators off globally
+# Set 'provider' to the translation provider you want to use
+#
+translation:
+  enabled:                              false
+  provider:                             google
+
+  google:
+    layout:                             default
+    meta_data:                          [google-translate-customization]    
+    page_language:                      en
+    translation_languages:              [all]
+
+# ------------------------------------------------------------------------------
+# SHARING settings (currently NOT supported)
 #
 # Settings for sharing helper. Sharing is for things like tweet, plusone,
 # like, reddit buttons etc. Set 'provider' to the sharing provider you
@@ -257,23 +290,5 @@ advertising:
 #   provider:
 
 
-# ==============================================================================
-# Typography configuration settings
-#
 # ------------------------------------------------------------------------------
-typography:
-  rtext:                                true
-  rtext_size:                           300
-
-# ==============================================================================
-# SASS and CSS configuration settings
-#
-# ------------------------------------------------------------------------------
-#
-custom_theme:
-  custom_scss:                          false
-  custom_css:                           false
-
-
 # END config
-# ------------------------------------------------------------------------------

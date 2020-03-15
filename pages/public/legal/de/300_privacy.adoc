@@ -146,43 +146,6 @@ all cookies left.
 endif::[]
 
 
-ifdef::content_permissions[]
-== Content permissions
-
-lorem:sentences[3]
-
-lorem:sentences[2]
-
-
-[cols="2,4,6", options="header", role="table-responsive"]
-|===============================================================================
-|Permission |Provider |Description
-
-|`blocked`
-|`{{site.data.template_settings.user.provider}}`
-|Permission are set to `blocked` if a visitor has *declined* or (currently) 
-not *accepted* on *Cookies*. No content is accessible except on *whitelisted*
-pages like the Home Page, About page or pages like Impress, Privacy or License.
-
-|`public`
-|`{{site.data.template_settings.user.provider}}`
-|Full access on all *public* pages 
-
-|`protected`
-|Provider for authentication
-|Full access on all *public* and *protected* pages 
-
-|`private`
-|Provider for authentication
-|Full access. Access grabted for all *public*, *protected* and *private* pages.
-
-|===============================================================================
-
-TIP: You can accept on Cookies *again* at *any time* by re-visiting one of the
-content pages provided by this website.
-endif::[]
-
-
 ifdef::server-logs[]
 == Server-Log-Files
 

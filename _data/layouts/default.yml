@@ -8,7 +8,7 @@
 # Copyright (C) 2019 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 # NOTE:
@@ -195,13 +195,13 @@ lanes:
   #
   #   NOTE:
   #
-  - lane:
-      enabled:                          true
-      region:                           body-footer
-      type:                             sync
-      base:                             _includes/themes/j1
-      path:                             layouts
-      file:                             layout_shim_generator.html
+  # - lane:
+  #     enabled:                          false
+  #     region:                           body-footer
+  #     type:                             sync
+  #     base:                             _includes/themes/j1
+  #     path:                             layouts
+  #     file:                             layout_shim_generator.html
 
   # ------------------------------------------------------------------
   # THEME loader (body-footer)
@@ -228,5 +228,5 @@ lanes:
       file:                             layout_module_generator.html
 
 
-# END config
 # ------------------------------------------------------------------------------
+# END config
