@@ -133,10 +133,10 @@ settings:
               icon:                     home-outline
               href:                     /pages/public/about/site/
               target:                   false
-            - title:                    Become a Patron
-              icon:                     patreon
-              href:                     /pages/public/about/become_a_patron/
-              target:                   _blank
+            # - title:                    Become a Patron
+            #   icon:                     patreon
+            #   href:                     /pages/public/about/become_a_patron/
+            #   target:                   _blank
             - title:                    Impress
               icon:                     alert-outline
               href:                     /pages/public/legal/en/impress/
