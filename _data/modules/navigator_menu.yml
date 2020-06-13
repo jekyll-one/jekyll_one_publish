@@ -20,74 +20,6 @@
 #
 - item:                                 Learn
   sublevel:
-
-  # - title:                            Webhooks
-  #   href:                             /pages/public/j1_webhooks/
-  #   icon:                             github-circle
-  # - title:                            Translators
-  #   href:                             /pages/public/translators/
-  #   icon:                             alpha-l-circle
-  # - title:                            Utility Server
-  #   href:                             /pages/public/util_server/
-  #   icon:                             server
-
-    - title:                            What's up
-      href:                             /pages/public/learn/whats_up/
-      icon:                             alert
-
-    # --------------------------------------------------------------------------
-    # BS Tour
-    #
-    - title:                            Bootstrap Tour
-      icon:                             highway
-      dropdown:
-        - title:                        BS V3
-          href:                         /pages/test/bs_tour_v3/
-          icon:                         numeric-3-box
-
-        - title:                        BS V4
-          href:                         /pages/test/bs_tour_v4/
-          icon:                         numeric-4-box
-
-    # --------------------------------------------------------------------------
-    # Jupyter Notebooks
-    #
-    - title:                            Jupyter Notebooks
-      icon:                             language-python
-      dropdown:
-        - title:                        nbInteract Tutorial
-          href:                         /pages/public/jupyter/nbinteract_tutorial/
-          icon:                         language-python-text
-
-        - title:                        nbInteract Visualisation
-          href:                         /pages/public/jupyter/nbinteract_visualisation/
-          icon:                         language-python-text
-
-        - title:                        Iris Live Page
-          href:                         /pages/public/jupyter/iris/
-          icon:                         language-python-text
-
-    # --------------------------------------------------------------------------
-    # Manage Python
-    #
-    - title:                            Manage Python
-      icon:                             language-python
-      dropdown:
-
-        - title:                        pyenv
-          href:                         /pages/public/manage_python/anaconda/
-          icon:                         language-python-text
-
-    # --------------------------------------------------------------------------
-    # Video Tutorials
-    #
-    - title:                            Video Tutorials
-      icon:                             video
-      dropdown:
-        - title:                        J1 Basics
-          href:                         /pages/public/learn/vtutorials/basics/
-          icon:                         video
-
     # --------------------------------------------------------------------------
     # Roundtrip
     #
@@ -334,7 +266,6 @@
     - title:                            Become a Patron
       icon:                             patreon
       href:                             /pages/public/about/become_a_patron/
-
 
 # ------------------------------------------------------------------------------
 # END config
