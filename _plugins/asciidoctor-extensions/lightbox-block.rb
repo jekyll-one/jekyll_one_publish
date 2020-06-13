@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
-#  ~/_plugins/asciidoctor-extensions/image-block.rb
-#  Asciidoctor extension for J1 Template
+# ~/_plugins/asciidoctor-extensions/image-block.rb
+# Asciidoctor extension for J1 Template
 #
-#  Product/Info:
-#  https://jekyll.one
+# Product/Info:
+# https://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  For details, see https://jekyll.one
+# J1 Template is licensed under the MIT License.
+# For details, see https://jekyll.one
 #
 # ------------------------------------------------------------------------------
 # A block macro that embeds an Image Block into the output document

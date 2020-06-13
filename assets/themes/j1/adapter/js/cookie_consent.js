@@ -12,7 +12,7 @@ regenerate:                             true
  # Product/Info:
  # http://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 CookieConsent is licensed under the MIT License.
  # For details, see https://jekyll.one
@@ -58,7 +58,7 @@ regenerate:                             true
  # Product/Info:
  # http://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 Cookie Consent is licensed under the MIT License.
  # For details, see https://jekyll.one

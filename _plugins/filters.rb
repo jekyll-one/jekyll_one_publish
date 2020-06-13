@@ -1,33 +1,33 @@
 # ------------------------------------------------------------------------------
-#  ~/_plugins/filters.rb
-#  Liquid filtersfor J1 Template
+# ~/_plugins/filters.rb
+# Liquid filtersfor J1 Template
 #
-#  Product/Info:
-#  https://jekyll.one
+# Product/Info:
+# https://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 #
-#   NOTE:
-#   CustomFilters cannot be used in SAFE mode (e.g not usable for
-#   rendering pages with Jekyll on GitHub
+#  NOTE:
+#  CustomFilters cannot be used in SAFE mode (e.g not usable for
+#  rendering pages with Jekyll on GitHub
 #
-#   USAGE:
-#     regex_replace|regex_replace_first <search> [,<replace>]
+#  USAGE:
+#    regex_replace|regex_replace_first <search> [,<replace>]
 #
-#     These filters are similiar to the replace filters provided by Liquid
-#     StandardFilters, except that it converts the second parameter into a
-#     Regexp before passing it to g|sub.
+#    These filters are similiar to the replace filters provided by Liquid
+#    StandardFilters, except that it converts the second parameter into a
+#    Regexp before passing it to g|sub.
 #
-#     NOTE:
-#     If NO replacement is given, match|es are replaced by an
-#     empty string and gets deleted from output.
+#    NOTE:
+#    If NO replacement is given, match|es are replaced by an
+#    empty string and gets deleted from output.
 #
-#   EXAMPLES:
+#  EXAMPLES:
 #
 #     General:
 #       {{ liquid.var | regex_replace_first: 'regex_search' [, 'regex_replace'] }}

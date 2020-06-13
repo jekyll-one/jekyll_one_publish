@@ -20,8 +20,9 @@ mdi:skip-next[24px, md-grey ml-3]
 <<Whats Next>> -- Find to go further, what's *planned next* +
 mdi:format-section[24px, md-grey ml-3]
 <<All Chapters>> -- The full chain, *all chapters* +
-mdi:book-open[24px, md-grey ml-3]
-<<Further Reading>> -- List of helpful links to *get more* +
+// mdi:book-open[24px, md-grey ml-3]
+// <<Further Reading>> -- List of helpful links to *get more* +
+
 //
 //  end::summarize[]
 
@@ -99,10 +100,10 @@ The protocol suite introduces four roles, discussed in section <<OAuth Roles>>,
 that interacts each other in a sequence, a *flow*. In section <<Base OAuth Flow>>
 the sequence was discussed in more detail.
 
-ifdef::backend-html5[]
-.High Level OAuth Protocol Flow
-lightbox::oauth-abstract-protocol-flow[ 800, {data-oauth-abstract-protocol-flow} ]
-endif::[]
+// ifdef::backend-html5[]
+// .High Level OAuth Protocol Flow
+// lightbox::oauth-abstract-protocol-flow[ 800, {data-oauth-abstract-protocol-flow} ]
+// endif::[]
 
 Keep in mind the *roles* and the fact, the OAuth framework introduce a sequence,
 a *flow*. All this is theory - yes for sure, but good to know.
@@ -142,9 +143,10 @@ it's the time to see in real world what was discsused sofar.
 The following chapter is focussing a web that is *protected*. The app is not
 longer passing all the content pages. The content will be under *control*.
 
-mdi:skip-next[24px, md-grey] 
-To make protected *J1 Webs* real, continue on link:{j1-web-apps-run-an-secured-app}[Run an Secured J1 App]
-then!
+// mdi:skip-next[24px, md-grey] 
+// To make protected *J1 Webs* real, continue on link:{j1-web-apps-run-an-secured-app}[Run an Secured J1 App]
+// then!
+
 //
 //  end::whats_next_200_preparations[]
 
@@ -157,9 +159,10 @@ it's the time to see in real world what was discsused sofar.
 The following chapter is focussing a web that is *protected*. The app is not
 longer passing all the content pages. The content will be under *control*.
 
-mdi:skip-next[24px, md-grey] 
-To make protected *J1 Webs* real, continue on link:{j1-web-apps-run-an-secured-app}[Run an Secured J1 App]
-then!
+// mdi:skip-next[24px, md-grey] 
+// To make protected *J1 Webs* real, continue on link:{j1-web-apps-run-an-secured-app}[Run an Secured J1 App]
+// then!
+
 //
 //  end::whats_next_300_first_awesome_web[]
 

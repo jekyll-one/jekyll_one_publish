@@ -1,5 +1,5 @@
 ---
-title:                                  Web in a Day
+title:                                  Web in a Day 
 tagline:                                preparations
 description:                            Modern static website in a day
 
@@ -7,7 +7,7 @@ tags:                                   [ Kickstarter, Introduction, Web, Day, J
 index:                                  []
 categories:                             [ pages ]
 
-permalink:                              /pages/public/start/kickstarter/web_in_a_day/preparations/
+permalink:                              /pages/public/learn/kickstarter/web_in_a_day/preparations/
 regenerate:                             true
 
 resources:                              [ lightbox, carousel ]
@@ -16,7 +16,7 @@ resource_options:
       collapseDepth:                    2
 ---
 
-// Enable the Liquid Preprocessor
+// Enable the Liquid Preprocessor 
 // -----------------------------------------------------------------------------
 :page-liquid:
 

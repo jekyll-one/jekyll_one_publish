@@ -12,7 +12,7 @@ regenerate:                             true
  # Product/Info:
  # https://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
  # For details, see https://jekyll.one
@@ -84,7 +84,7 @@ regenerate:                             true
  # Product/Info:
  # https://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
  # For details, see https://jekyll.one

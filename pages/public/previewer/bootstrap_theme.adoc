@@ -325,6 +325,18 @@ Refer to: link:{bs_doc_components_buttons}[Bootstrap Docs, window="_blank"].
           </label>
         </div>
       </div>
+
+      <div class="bs-component">
+        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            <button type="button" class="btn btn-primary btn-raised">Button</button>
+            <button type="button" class="btn btn-primary btn-raised">Button</button>
+            <button type="button" class="btn btn-primary btn-raised">Button</button>
+            <button type="button" class="btn btn-primary btn-raised">Button</button>
+            <button type="button" class="btn btn-primary btn-raised">Button</button>
+            <button type="button" class="btn btn-primary btn-raised">Button</button>
+        </div>
+      </div>
+<!--
       <div class="bs-component">
         <div class="btn-group-vertical" data-toggle="buttons">
           <button type="button" class="btn btn-primary btn-raised">Button</button>
@@ -335,6 +347,7 @@ Refer to: link:{bs_doc_components_buttons}[Bootstrap Docs, window="_blank"].
           <button type="button" class="btn btn-primary btn-raised">Button</button>
         </div>
       </div>
+-->
       <div class="bs-component mt-2 mb-2">
         <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-secondary btn-raised">Left</button>
@@ -554,131 +567,74 @@ Refer to: link:{bs_doc_components_forms}[Bootstrap Docs, window="_blank"].
 <!-- Forms
 ============================================================================ -->
 <div class="bs-docs-section">
-  <div class="row mb-5">
-    <div class="col-md-6">
-      <div class="bs-component">
-        <form>
-          <fieldset>
-            <legend>Legend</legend>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group">
-              <label for="exampleSelect1">Example select</label>
-              <select class="form-control" id="exampleSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleSelect2">Example multiple select</label>
-              <select multiple class="form-control" id="exampleSelect2">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleTextarea">Example textarea</label>
-              <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputFile">File input</label>
-              <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-              <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-            </div>
-            <fieldset class="form-group">
-              <legend>Radio buttons</legend>
-              <div class="form-check">
-                <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Option one is this and that&mdash;be sure to include why it's great
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                Option two can be something else and selecting it will deselect option one
-                </label>
-              </div>
-              <div class="form-check disabled">
-                <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                Option three is disabled
-                </label>
-              </div>
-            </fieldset>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input type="checkbox" class="form-check-input">
-              Check me out
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary btn-raised">Submit</button>
-          </fieldset>
-        </form>
+  <div class="row ml-1 mr-1 mb-5">
+
+    <form autocomplete="off">
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="bmd-label-floating">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" autocomplete="none">
+        <span class="bmd-help">We'll never share your email with anyone else.</span>
       </div>
-    </div>
-    <div class="col-md-4 offset-lg-1">
-      <form class="bs-component">
-        <div class="form-group">
-          <fieldset disabled>
-            <label class="control-label" for="disabledInput">Disabled input</label>
-            <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
-          </fieldset>
-        </div>
-        <div class="form-group">
-          <fieldset>
-            <label class="control-label" for="readOnlyInput">Readonly input</label>
-            <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly>
-          </fieldset>
-        </div>
-        <div class="form-group has-success">
-          <label class="form-control-label" for="inputValid">Valid input</label>
-          <input type="text" class="form-control is-valid" id="inputValid">
-          <div class="form-control-feedback">Success! You've done it.</div>
-        </div>
-        <div class="form-group has-danger">
-          <label class="form-control-label" for="inputInvalid">Invalid input</label>
-          <input type="text" class="form-control is-invalid" id="inputInvalid">
-          <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
-        </div>
-        <div class="form-group">
-          <label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
-          <input class="form-control form-control-lg" type="text" id="inputLarge">
-        </div>
-        <div class="form-group">
-          <label class="col-form-label" for="inputDefault">Default input</label>
-          <input type="text" class="form-control" id="inputDefault">
-        </div>
-        <div class="form-group">
-          <label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label>
-          <input class="form-control form-control-sm" type="text" id="inputSmall">
-        </div>
-        <div class="form-group">
-          <label class="control-label">Input addons</label>
-          <div class="form-group">
-            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-            <div class="input-group">
-              <div class="input-group-addon">$</div>
-              <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
-              <div class="input-group-addon">.00</div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="bmd-label-floating">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="form-group">
+        <label for="exampleSelect1" class="bmd-label-floating">Example select</label>
+        <select class="form-control" id="exampleSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleSelect2" class="bmd-label-floating">Example multiple select</label>
+        <select multiple class="form-control" id="exampleSelect2">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleTextarea" class="bmd-label-floating">Example textarea</label>
+        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile" class="bmd-label-floating">File input</label>
+        <input type="file" class="form-control-file" id="exampleInputFile">
+        <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          Option one is this and that&mdash;be sure to include why it's great
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+      </div>
+      <div class="radio disabled">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+          Option three is disabled
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Check me out
+        </label>
+      </div>
+      <button class="btn btn-default">Cancel</button>
+      <button type="submit" class="btn btn-primary btn-raised">Submit</button>
+    </form>
+
   </div>
 </div>
 ++++
@@ -1859,3 +1815,44 @@ Refer to: link:{bs_doc_components_tooltips}[Bootstrap Docs, window="_blank"].
   </div>
 </div>
 ++++
+
+
+/////
+See: https://stackoverflow.com/questions/15738259/disabling-chrome-autofill
+<script>
+  $(document).ready(function () {
+      $('input').attr('autocomplete', 'false');
+  });
+</script>
+
+  (function($) {
+  		$.fn.autoCompleteFix = function(opt) {
+          var ro = 'readonly', settings = $.extend({
+              attribute : 'autocomplete',
+              trigger : {
+                  disable : ["off"],
+              },
+              focus : function() {
+                  $(this).removeAttr(ro);
+              },
+              force : false
+          }, opt);
+
+          $(this).each(function(i, el) {
+              el = $(el);
+
+              if(el.is('form')) {
+                  var force = (-1 !== $.inArray(el.attr(settings.attribute), settings.trigger.disable))
+                  el.find('input').autoCompleteFix({force:force});
+              } else {
+                  var disabled = -1 !== $.inArray(el.attr(settings.attribute), settings.trigger.disable);
+                  var enabled = -1 !== $.inArray(el.attr(settings.attribute), settings.trigger.enable);
+                  if (settings.force && !enabled || disabled)
+                      el.attr(ro, ro).focus(settings.focus).val("");
+              }
+          });
+      };
+      $('form').autoCompleteFix();
+  })(jQuery);
+
+/////

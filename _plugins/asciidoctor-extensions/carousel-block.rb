@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
-#  ~/_plugins/asciidoctor-extensions/carousel-block.rb
-#  Asciidoctor extension for J1 Carousel (Owl Carousel)
+# ~/_plugins/asciidoctor-extensions/carousel-block.rb
+# Asciidoctor extension for J1 Carousel (Owl Carousel)
 #
-#  Product/Info:
-#  https://jekyll.one
+# Product/Info:
+# https://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
@@ -34,6 +34,7 @@ Asciidoctor::Extensions.register do
     name_positional_attributes 'role'
 
     def process parent, target, attrs
+
       title_html  = (attrs.has_key? 'title') ? %(<div class="slider-title">#{attrs['title']}</div>\n) : nil
       html = %(#{title_html} <div id="#{target}" class="#{attrs['role']}"></div>)
       create_pass_block parent, html, attrs, subs: nil

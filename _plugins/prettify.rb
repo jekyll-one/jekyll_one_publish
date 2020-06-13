@@ -1,28 +1,28 @@
 # ------------------------------------------------------------------------------
-#  ~/_plugins/prettify.rb
-#  Liquid filter for J1 Template to beautify HTML code
+# ~/_plugins/prettify.rb
+# Liquid filter for J1 Template to beautify HTML code
 #
-#  Product/Info:
-#  http://jekyll.one
+# Product/Info:
+# http://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 #
-#   NOTE:
-#   CustomFilters cannot be used in SAFE mode (e.g not usable for
-#   rendering pages with Jekyll on GitHub
+#  NOTE:
+#  CustomFilters cannot be used in SAFE mode (e.g not usable for
+#  rendering pages with Jekyll on GitHub
 #
-#   USAGE:
-#     {% capture cache_name %}
+#  USAGE:
+#    {% capture cache_name %}
 #
-#       liquid code to generate HTML output goes here
+#      liquid code to generate HTML output goes here
 #
-#     {% endcapture %}
-#     {{ cache_name | pretty_print }}
+#    {% endcapture %}
+#    {{ cache_name | pretty_print }}
 #
 # ------------------------------------------------------------------------------
 require 'nokogiri'

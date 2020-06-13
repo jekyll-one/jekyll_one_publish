@@ -12,7 +12,7 @@ regenerate:                             true
  # Product/Info:
  # https://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
  # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -53,7 +53,7 @@ regenerate:                             true
  # https://jekyll.one
  # https://github.com/miromannino/Justified-Gallery
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  # Copyright (C) 2016 Miro Mannino
  #
  # J1 Template is licensed under the MIT License.
@@ -209,6 +209,7 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
 
               for (var i in data["{{item.gallery.id}}"]) {
                 var img               = data["{{item.gallery.id}}"][i].img;
+                // var img               = data["{{item.gallery.id}}"][i].image_path + '/' + data["{{item.gallery.id}}"][i].poster;
                 var captions_gallery  = data["{{item.gallery.id}}"][i].captions_gallery;
                 var captions_lightbox = data["{{item.gallery.id}}"][i].captions_lightbox;
                 var lightbox          = "{{lightbox}}";
@@ -220,12 +221,72 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
                 } else {
                   content +=  '<a data-sub-html="' +captions_gallery+ '" ';
                   content +=  'href="' +img+ '">' + '\n';
-                  content +=  '  <img src="' +img+ '" img alt="' +captions_gallery+ '">' + '\n';
+                  content +=  ' <img src="' +img+ '" img alt="' +captions_gallery+ '">' + '\n';
                 }
                 content +=  '</a>' + '\n';
 
               } // END for
+
+          {% elsif gallery_type == "video-html5" or gallery_type == "video-online" %}        
+
+            // Collect html5 video gallery data from data file (xhr_data_path)
+            $.getJSON('{{jf_gallery_options.xhr_data_path}}', function (data) {
+              var play_button = '/assets/themes/j1/extensions/light_gallery/css/themes/icons/play-button.png';
+              var content = '';
+              var gallery_class = 'justified-gallery'
+              {% if lightbox == "lg" %}
+              gallery_class += ' light-gallery ';
+              {% endif %}
+
+              for (var i in data["{{item.gallery.id}}"]) {
+                // var img               = data["{{item.gallery.id}}"][i].img;
+                var img               = data["{{item.gallery.id}}"][i].image_path + '/' + data["{{item.gallery.id}}"][i].poster;
+                var captions_gallery  = data["{{item.gallery.id}}"][i].captions_gallery;
+                var captions_lightbox = data["{{item.gallery.id}}"][i].captions_lightbox;
+                var video_id          = data["{{item.gallery.id}}"][i].video_id;
+                var video             = data["{{item.gallery.id}}"][i].video;
+                var lightbox          = "{{lightbox}}"; 
+
+                if (captions_lightbox != null && lightbox == 'lg') {
+                  content +=  '<a data-sub-html="' +captions_lightbox+ '" ';
+                  {% if gallery_type == "video-html5" %}
+                  content += ' data-html="#' +video_id+ '">' + '\n';
+                  {% endif %}
+                  {% if gallery_type == "video-online" %}
+                  content += ' data-src="' +video+ '">' + '\n';
+                  {% endif %}
+                  content +=  'href="' +img+ '">' + '\n';
+                  content +=  '<img src="' +img+ '" img alt="' +captions_lightbox+ '">' + '\n';
+                  content +=  '<span><img class="justified-gallery img-overlay" src="/assets/themes/j1/extensions/light_gallery/css/themes/icons/play-button.png"></span>' + '\n';
+                } else {
+                  content +=  '<a data-sub-html="' +captions_gallery+ '" ';
+                  content +=  'href="' +img+ '">' + '\n';
+                  content +=  '<img src="' +img+ '" img alt="' +captions_gallery+ '">' + '\n';
+                  content +=  '<span><img class="justified-gallery img-overlay" src="/assets/themes/j1/extensions/light_gallery/css/themes/icons/play-button.png"></span>' + '\n';
+                }
+                content +=  '</a>' + '\n';
+
+              } // END for
+
+              var hidden_video_div = '';
+              for (var i in data["{{item.gallery.id}}"]) {
+                var video        = data["{{item.gallery.id}}"][i].video_path + '/' + data["{{item.gallery.id}}"][i].video;
+                var poster       = data["{{item.gallery.id}}"][i].image_path + '/' + data["{{item.gallery.id}}"][i].poster;
+                var caption      = data["{{item.gallery.id}}"][i].captions_lightbox;
+                var video_id     = data["{{item.gallery.id}}"][i].video_id;
+                var video_type   = video.substr(video.lastIndexOf('.') + 1);
+                hidden_video_div += '<div style="display:none;" id="' +video_id+ '">' + '\n';
+                hidden_video_div += '  <video class="lg-video-object lg-html5 video-js vjs-default-skin"' + '\n';
+                hidden_video_div += '         poster="' +poster+ '" controls="" preload="none">' + '\n';
+                hidden_video_div += '    <source src="' +video+ '" type="video/' +video_type+ '">' + '\n';
+                hidden_video_div += '    Your browser does not support HTML5 video.' + '\n';
+                hidden_video_div += '  </video>' + '\n';
+                hidden_video_div += '</div>' + '\n';
+              }
+              $('#{{ gallery_id }}').before(hidden_video_div);
+       
           {% endif %}
+
               // Hide gallery container (until lightGallery is NOT initialized)
               // and place HTML markup
               $("#{{gallery_id}}").hide().html(content);
@@ -241,8 +302,9 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
                   })
                   .on('jg.complete', function (e) {
                     e.stopPropagation();
+                    // options enabled
                     gallery_selector.lightGallery({
-                      {% for option in item.gallery.jg_options %}
+                      {% for option in item.gallery.lightbox_options %}
                       {{option[0] | json}}: {{option[1] | json}},
                       {% endfor %}
                     });
@@ -262,10 +324,10 @@ j1.adapter['jf_gallery'] = (function (j1, window) {
                     {{option[0] | json}}: {{option[1] | json}},
                     {% endfor %}
                   }).on('jg.complete', function (e) {
-                    e.stopPropagation();
+                     e.stopPropagation();
                     // lightbox initialized on COMPLETE event of justifiedGallery
                     gallery_selector.lightGallery({
-                      {% for option in item.gallery.jg_options %}
+                      {% for option in item.gallery.lightbox_options %}
                       {{option[0] | json}}: {{option[1] | json}},
                       {% endfor %}
                     });

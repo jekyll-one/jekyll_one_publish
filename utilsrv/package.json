@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "utls",
-  "version": "2019.1.7",
+  "version": "2020.0.0",
   "description": "J1 Template Utility Server",
   "homepage": "https://jekyll.one",
   "author": {
@@ -19,7 +19,7 @@
     "yarn": ">=1.6"
   },
   "utilsrv": {
-    "enabled": "true"
+    "enabled": "false"
   },
   "scripts": {
     "clean": "shx rm -f *.lock && shx rm -f package-lock.json",

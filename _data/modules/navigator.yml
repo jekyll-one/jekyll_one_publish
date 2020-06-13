@@ -8,7 +8,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
@@ -79,19 +79,19 @@ settings:
             - title:                    Provider
               value:                    ??provider
               href:                     ??provider-site-url
-              target:                   none                                    # _blank
+              target:                   _blank
               icon:                     domain
             - title:                    User
               icon:                     account
               value:                    ??user-name
               href:                     ??provider_member_url
-              target:                   none                                    # _blank
+              target:                   none
 
             - title:                    Permissions
               icon:                     account-check
               value:                    ??provider-permissions
               href:                     ??provider_member_url
-              target:                   none                                    # _blank
+              target:                   none
             - title:                    Membership
               icon:                     account-settings
               value:                    ??provider-membership
@@ -112,17 +112,17 @@ settings:
               icon:                     face
               value:                    ??theme-name
               href:                     /pages/public/previewer/theme/
-              target:                   none                                    # _blank
+              target:                   none
             - title:                    Author
               icon:                     grease-pencil
               value:                    ??theme-author
               href:                     ??theme-author-url
-              target:                   none                                    # _blank
+              target:                   _blank
             - title:                    Version
               icon:                     numeric
               value:                    ??theme-version
               href:                     /pages/public/previewer/theme/
-              target:                   none                                    # _blank
+              target:                   none
 
       - box:
           enabled:                      true
@@ -132,7 +132,7 @@ settings:
             - title:                    About
               icon:                     home-outline
               href:                     /pages/public/about/site/
-              target:                   none                                    # _blank
+              target:                   none
             # - title:                    Become a Patron
             #   icon:                     patreon
             #   href:                     /pages/public/about/become_a_patron/
@@ -140,20 +140,21 @@ settings:
             - title:                    Impress
               icon:                     alert-outline
               href:                     /pages/public/legal/en/impress/
-              target:                   none                                    # _blank
+              target:                   none
             - title:                    Privacy
               icon:                     heart
               href:                     /pages/public/legal/en/privacy/
-              target:                   none                                    # _blank
+              target:                   none
             - title:                    License
               icon:                     checkbox-multiple-marked-circle-outline
               href:                     /pages/public/legal/en/license_agreement/
-              target:                   none                                    # _blank
+              target:                   none
 
           # - title:                    Contact
           #   icon:                     contact-mail
           #   href:                     mailto:contact@jekyll.one
           #   target:                   none
+
 
 # ------------------------------------------------------------------------------
 # END config

@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -80,58 +80,15 @@ settings:
   #
   #   lb: Lightbox 2
   #   lg: LightGallery
-  #   cb: Colorbox
   #
-  #   values:                           lb|lg|cb
+  #   values:                           lb|lg
   #   default:                          lb
   # ----------------------------------------------------------------------------
   galleries:
 
-    # --------------------------------------------------------------------------
-    # Live DEMO
+    # ==========================================================================
+    # Image Galleries
     #
-    - gallery:
-        enabled:                        true
-        type:                           image
-        id:                             jg_live_demo
-  #     title:                          Masonry grid layout of Justified Gallery
-        show_delay:                     300
-        css_classes:                    mb-3
-        images_path:                    /assets/images/gallery/justified_gallery
-        thumb_path:                     /assets/images/gallery/justified_gallery
-        images:                         [
-                                          24096687789_c37d45712f_b.jpg, 23753792354_bd75d8dabc_b.jpg,
-                                          16961685188_f130144d60_b.jpg, 24014174029_2cfa940264_b.jpg,
-                                          13824674674_ca1e482394_b.jpg, 13824322785_104dc0968c_b.jpg,
-                                          8842312290_f310d491f4_b.jpg, 8811828736_88392f614a_b.jpg,
-                                          8400794773_932654a20e_b.jpg, 8157236803_78aa1698b6_b.jpg,
-                                          7948632554_01f6ae6b6f_b.jpg, 7822678460_ee98ff1f69_b.jpg,
-                                          7002395006_29fdc85f7a_b.jpg, 7062575651_b23918b11a_b.jpg,
-                                          6841267340_855273fd7e_b.jpg, 6791628438_affaa19e10_b.jpg,
-                                          6916180091_9c9559e463_b.jpg, 6880502467_d4b3c4b2a8_b.jpg,
-                                          6876412479_6268c6e2aa_b.jpg, 6840627709_92ed52fb41_b.jpg
-                                        ]
-        captions_gallery:               [
-                                          Peace of mind, Abu Dhabi,
-                                          Never stop climbing, Terme,
-                                          Deep sea, Above the World,
-                                          The Spring, Cat firmness,
-                                          Into the Sea, Bologna's T-Day,
-                                          Just in a dream Place, Erice,
-                                          Freedom, Maybe spring,
-                                          Love, These are the colors I love,
-                                          The Hope, Florence streets. Florence people.,
-                                          I Love You, The painter in Florence
-                                        ]
-        captions_lightbox:              
-
-        gallery_options:
-          rowHeight:                    120
-          margins:                      1
-        lightbox_options:
-          lightbox:                     lg
-          mode:                         lg-fade
-          cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
 
     # --------------------------------------------------------------------------
     # Gallery Customizer (Mega Cities)
@@ -143,8 +100,8 @@ settings:
   #     title:                          Masonry grid layout of Justified Gallery
         show_delay:                     250
         css_classes:                    mb-3
-        images_path:                    /assets/images/gallery/mega_cities
-        thumb_path:                     /assets/images/gallery/mega_cities
+        images_path:                    /assets/images/modules/gallery/mega_cities
+        thumb_path:                     /assets/images/modules/gallery/mega_cities
         images:                         [
                                           banter-snaps_b.jpg, 
                                           denys-nevozhai-1_b.jpg,
@@ -180,47 +137,180 @@ settings:
         gallery_options:
           rowHeight:                    150
           margins:                      1
+
         lightbox_options:
           lightbox:                     lg
           mode:                         lg-fade
           cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
 
-    # --------------------------------------------------------------------------
-    # Old Times
+
+    # ==========================================================================
+    # Video Galleries
     #
+
+      # ------------------------------------------------------------------------
+      # HTML5 VIDEO
+      #
     - gallery:
         enabled:                        true
-        type:                           image
-        id:                             jg_old_times
-  #     title:                          Old Times
+        type:                           video-html5
+        id:                             jg_video_html5
         show_delay:                     300
-        title:                          Grand Pa around the 1930th
-        css_classes:                    mb-5
-        images_path:                    /assets/images/old_times
-        thumb_path:                     /assets/images/old_times
-        images:                         [
-                                          image_01.jpg, image_02.jpg,
-                                          image_03.jpg, image_04.jpg
+        title:                          false                                   # HTML5 Video Gallery
+        css_classes:                    mb-3
+        video_path:                     https://github.com/jekyll-one-org/jekyll-one-lfs/raw/master/videos
+        image_path:                     /assets/videos/gallery
+        thumb_path:                     /assets/videos/gallery
+        videos:                         [
+                                          video1.mp4,
+                                          video2.mp4
                                         ]
         captions_gallery:               [
-                                          "Grand Pa's 80th Birthday",
-                                          "Grand Pa's 80th Birthday",
-                                          "Grand Pa's annual journey",
-                                          "Grand Pa's annual journey"
+                                          "PeckPocketed",
+                                          "Rollin`Wild"
                                         ]
         captions_lightbox:              [
-                                          "<p>Grand Pa's 80th Birthday</p><p>Collegues from the Painters Union</p>",
-                                          "<p>Grand Pa's 80th Birthday</p><p>Family and Friends at the restaurant</p>",
-                                          "<p>Grand Pa's annual journey</p><p>Down the Rhine</p>",
-                                          "<p>Grand Pa's annual journey<p><p>Having some Wine</p>"
+                                          "<p>CGI Animated Short HD: Student Academy Award Winning <b>PeckPocketed</b> by Kevin Herron</p>",
+                                          "<p>Rollin`Wild - Short Funny Animated Clips - Film Academy BW</p>"
+                                        ]
+        poster:                         [
+                                          video1-poster.jpg,
+                                          video2-poster.jpg
                                         ]
         gallery_options:
           rowHeight:                    200
           margins:                      5
+
         lightbox_options:
           lightbox:                     lg
-          mode:                         lg-fade
-          cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
+#         mode:                         lg-fade
+#         cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
+          videojs:                      true
+          videojsOptions:               {}
+
+    # --------------------------------------------------------------------------
+    # Online VIDEO (YouTube)
+    #
+    - gallery:
+        enabled:                        true
+        type:                           video-online
+        id:                             jg_video_online_youtube
+        show_delay:                     300
+        title:                          false                                   # YouTube Video Gallery
+        css_classes:                    mb-3
+        image_path:                     /assets/videos/gallery
+        thumb_path:                     /assets/videos/gallery
+        videos:                         [
+                                          "https://www.youtube.com/watch?v=X5Cfi7U4eL4",
+                                          "https://www.youtube.com/watch?v=Nck6BZga7TQ",
+                                          "https://www.youtube.com/watch?v=F2SXmzk8ve4",
+                                          "https://www.youtube.com/watch?v=ln3wAdRAim4"
+                                        ]
+        captions_gallery:               [
+                                          "Carpool Karaoke - Lady Gaga",
+                                          "Carpool Karaoke - Adele",
+                                          "Carpool Karaoke - Gwen Stefani",
+                                          "Carpool Karaoke - First Lady Michelle Obama"
+                                        ]
+        captions_lightbox:              [
+                                          "<p>Carpool Karaoke by James Corden - Lady Gaga <br/> Lady Gaga joins James for a drive through Los Angeles singing her classics and tracks from her new album</p>",
+                                          "<p>Carpool Karaoke by James Corden - Adele <br/> James Corden is about the holidays in London and gets his girlfriend Adele off for a ride through the city. <br/> On the way they sing some of their biggest hits and Adele raps Nicki Minaj's <b>monster</b></p>",
+                                          "<p>Carpool Karaoke by James Corden - Gwen Stefani <br/> Gwen Stefani, Julia Roberts, George Clooney and James Corden singing Holla back girl, there's nothing left to see</p>",
+                                          "<p>Carpool Karaoke by James Corden - First Lady Michelle Obama <br/> James Corden's White House tour takes an unthinkable turn when First Lady Michelle Obama joins him for a drive around the grounds singing Stevie Wonder and Beyonce</p>"
+                                        ]
+        poster:                         [
+                                          video_gaga-poster.jpg, video_adele-poster.jpg,
+                                          video_gwen-poster.jpg, video_michelle-poster.jpg
+                                        ]
+        gallery_options:
+          rowHeight:                    200
+          margins:                      5
+
+        lightbox_options:
+          lightbox:                     lg
+#         mode:                         lg-fade
+#         cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
+          videojs:                      true
+          videojsOptions:               {}
+
+    # --------------------------------------------------------------------------
+    # Online VIDEO (Vimeo)
+    #
+    - gallery:
+        enabled:                        true
+        type:                           video-online
+        id:                             jg_video_online_vimeo
+        show_delay:                     300
+        title:                          false                                   # Vimeo Video Gallery
+        thumb_items:                    2
+        thumb_spacing:                  5
+        thumb_bordered:                 true
+        thumb_animate:                  true
+        css_classes:                    mb-3
+        image_path:                     /assets/videos/gallery
+        thumb_path:                     /assets/videos/gallery
+        videos:                         [
+                                          "https://vimeo.com/175582480",
+                                          "https://vimeo.com/179528528"
+                                        ]
+        captions_gallery:               [
+                                          "Vogue -  Adriana Lima",
+                                          "Young Fashion - Kick It Old School"
+                                        ]
+        captions_lightbox:              [
+                                          "<p>Adriana Lima on Vimeo</p>",
+                                          "<p>Kick It Old School on Vimeo</p>"
+                                        ]
+        poster:                         [
+                                          adriana-lima-poster.jpg, 
+                                          kick-it-old-school-poster.jpg                                      
+                                        ]
+        gallery_options:
+          rowHeight:                    200
+          margins:                      5
+
+        lightbox_options:
+          lightbox:                     lg
+
+    # --------------------------------------------------------------------------
+    # Tutorial Videos (HTML5 VIDEO)
+    #
+    - gallery:
+        enabled:                        true
+        type:                           video-html5                             # video-html5
+        id:                             jg_video_intro
+        show_delay:                     300
+        title:                          false                                   # Introduction Videos
+        css_classes:                    mb-3
+        video_path:                     /assets/videos/tutorials
+        image_path:                     /assets/videos/tutorials
+        thumb_path:                     /assets/videos/tutorials
+        videos:                         [
+                                          web-erzeugen.1.mp4,
+                                          web-erzeugen.2.mp4
+                                        ]
+        captions_gallery:               [
+                                          "Ein Starter Web erzeugen",
+                                          "Noch ein Starter Web erzeugen"
+                                        ]
+        captions_lightbox:              [
+                                          "<p>Ein Starter Web erzeugen</p>",
+                                          "<p>Noch ein Starter Web erzeugen</p>"
+                                        ]
+        poster:                         [
+                                          web-erzeugen-poster.jpg,
+                                          web-erzeugen-poster.jpg
+                                        ]
+        gallery_options:
+          rowHeight:                    200
+          margins:                      5
+
+        lightbox_options:
+          lightbox:                     lg
+#         mode:                         lg-fade
+#         cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
+          videojs:                      true
+          videojsOptions:               {}
 
 
 # ------------------------------------------------------------------------------

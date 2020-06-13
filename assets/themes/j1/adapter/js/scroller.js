@@ -12,7 +12,7 @@ regenerate:                             false
  # Product/Info:
  # http://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
  # For details, see https://jekyll.one
@@ -58,7 +58,7 @@ regenerate:                             false
  # http://jekyll.one
  # https://github.com/galambalazs/smoothscroll-for-websites
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  # Copyright (C) 2010-2016 Balazs Galambosi
  #
  # J1 Template is licensed under the MIT License.

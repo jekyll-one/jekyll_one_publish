@@ -13,7 +13,7 @@ regenerate:                             false
  # https://jekyll.one
  # http://davidjbradshaw.github.io/iframe-resizer/
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  # Copyright (C) 2013-15 David J. Bradshaw
  #
  # J1 Template is licensed under the MIT License.
@@ -59,7 +59,7 @@ regenerate:                             false
  #  https://jekyll.one
  #  http://davidjbradshaw.github.io/iframe-resizer/
  #
- #  Copyright (C) 2019 Juergen Adams
+ #  Copyright (C) 2020 Juergen Adams
  #  Copyright (C) 2013-15 David J. Bradshaw
  #
  #  J1 Template is licensed under the MIT License.

@@ -7,7 +7,7 @@ tags:                                   [ Kickstarter ]
 index:                                  [ Introduction, Web, Website, Jekyll ]
 categories:                             [ pages ]
 
-permalink:                              /pages/public/start/kickstarter/web_in_a_day/meet_and_greet/
+permalink:                              /pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
 regenerate:                             true
 
 resources:                              [ lightbox, carousel ]
@@ -26,7 +26,7 @@ resource_options:
             href:                       https://unsplash.com/@jeshoots/portfolio
 ---
 
-// Enable the Liquid Preprocessor
+// Enable the Liquid Preprocessor 
 // -----------------------------------------------------------------------------
 :page-liquid:
 
@@ -68,12 +68,11 @@ include::{includedir}/parts.asciidoc[tag=recap_100_meet_and_greet_jekyll]
 
 include::{includedir}/parts.asciidoc[tag=whats_next_100_meet_and_greet_jekyll]
 
-
+/////
 === All Chapters
 include::{includedir}/parts.asciidoc[tag=chapters]
 include::{includedir}/parts.asciidoc[tag=chapters_100_meet_and_greet_jekyll]
 
-/////
 === Further Reading
 
 include::{includedir}/parts.asciidoc[tag=further_reading_100_meet_and_greet_jekyll]

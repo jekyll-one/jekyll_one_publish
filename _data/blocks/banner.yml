@@ -1,14 +1,15 @@
 # ------------------------------------------------------------------------------
-# ~/_data/blocks/banner.yml
-# User configuration settings for BANNER lanes
+#  ~/_data/blocks/banner.yml
+#  User configuration settings for BANNER lanes
 #
-# Product/Info:
-# https://jekyll.one
+#  Product/Info:
+#  https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+#  Copyright (C) 2020 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -40,15 +41,15 @@ settings:
   #   puts some "noise" on the image to focus more on the quote|text rather
   #   than the image.
   #
-  #   values:                           boolean (true|false)
-  #   default:                          true
+  #   values:                         boolean (true|false)
+  #   default:                        true
   #
   #   gridifier
   #   --------------------------------------------------------------------------
   #   Pixel image used to gridify the background image of the banner.
   #
-  #   values:                           image path|name (string)
-  #   default:                          /assets/images/patterns/gridtile.png
+  #   values:                         image path|name (string)
+  #   default:                        /assets/images/modules/patterns/gridtile.png
   #
   #   darken
   #   --------------------------------------------------------------------------
@@ -57,21 +58,21 @@ settings:
   #   range from 1 (light) to 9 (dark). Useful to focus on the quote|text
   #   rather than the background image.
   #
-  #   values:                           number [1 .. 9]
-  #   default:                          3
+  #   values:                         number [1 .. 9]
+  #   default:                        3
   #
   #   background
   #   --------------------------------------------------------------------------
   #   Default background image of the banner if no other image is specified with
   #   the panels configuration (j1_panels.yml).
   #
-  #   values:                           image path|name (string)
-  #   default:                          /assets/images/quotes/default.png
+  #   values:                         image path|name (string)
+  #   default:                        /assets/images/quotes/default.png
   # ----------------------------------------------------------------------------
   parallax_settings:
 
     gridify:                            true
-    gridifier:                          /assets/images/patterns/gridtile.png
+    gridifier:                          /assets/images/modules/patterns/gridtile.png
     text_color:                         rgba_lighten
     cite_color:                         rgba_lighten
     darken:                             3
@@ -85,7 +86,7 @@ settings:
   divider:
 
     # --------------------------------------------------------------------------
-    # Banner 1
+    # DIVIDER banner properties
     #
     - name:                             Divider Banner 1
       banner:
@@ -94,13 +95,28 @@ settings:
         type:                           divider
         comment:                        Divider Banner 1
 
+    - name:                             Divider Banner 2
+      banner:
+        id:                             divider-2
+        enabled:                        true
+        type:                           divider
+        comment:                        Divider Banner 2
+
+    - name:                             Divider Banner 3
+      banner:
+        id:                             divider-3
+        enabled:                        true
+        type:                           divider
+        comment:                        Divider Banner 3
+
+
   # ----------------------------------------------------------------------------
   # TEASER Banner
   #
   teaser:
 
     # --------------------------------------------------------------------------
-    # Home Teaser
+    # home_teaser_banner
     #
     - name:                             Home Teaser Banner
       banner:
@@ -126,9 +142,9 @@ settings:
               title:                    Go the static way
               tagline:                  <large><b>powerful modern static webs</b></large>
               description: >
-                                        If you’re not familiar with Jekyll (or other 
-                                        <a href="https://www.staticgen.com/" target="blank">website generators</a>), 
-                                        Jekyll is a so-called static site generator. Think of it as 
+                                        If you’re not familiar with Jekyll (or other
+                                        <a href="https://www.staticgen.com/" target="blank">website generators</a>),
+                                        Jekyll is a so-called static site generator. Think of it as
                                         a modern but lightweight Content Management System (CMS) - like
                                         <a href="https://wordpress.com/" target="blank">Wordpress</a> or
                                         <a href="https://www.joomla.org/" target="blank">Joomla</a>
@@ -143,8 +159,8 @@ settings:
                                               <td class="content">
                                                 For many use cases, there is no need to use a full blown CMS
                                                 to manage a website. If you go the static way, no database is needed
-                                                and no PHP-based dynamic rendering engine that slows down the 
-                                                performace of your website. For e.g. document servers like 
+                                                and no PHP-based dynamic rendering engine that slows down the
+                                                performace of your website. For e.g. document servers like
                                                 <a href="https://getbootstrap.com/docs" target="blank">Bootstrap</a> or
                                                 <a href="https://docs.docker.com/" target="blank">Docker</a>, Jekyll is
                                                 used for good reasons.
@@ -153,55 +169,188 @@ settings:
                                           </table>
                                         </div>
 
-                                        All you’re doing at the end of the day is writing your content and 
-                                        the builtin engines does all the tricky things in behind needed for 
+                                        All you’re doing at the end of the day is writing your content and
+                                        the builtin engines does all the tricky things in behind needed for
                                         a website: design pages, putting out HTML, CSS and Javascript.
-                                        As a result, the site creation process gets out of your way. It’s done 
-                                        by J1 Template and allows you to concentrate on what truly matters:                                           
+                                        As a result, the site creation process gets out of your way. It’s done
+                                        by J1 Template and allows you to concentrate on what truly matters:
                                         <strong>your content</strong>.
 
+    # --------------------------------------------------------------------------
+    # Home Welcome Banner
+    #
+    - name:                             Home Welcome Banner
+      banner:
+        id:                             home_welcome_banner
+        enabled:                        true
+        comment:                        Teaser shown on home page below the parallax
+        type:                           teaser
+        icon_family:                    MDI
+        style:                          light
+        background_color_1:             md_gray_50
+        background_color_2:             md_gray_50
+        lane_span:                      fixed
+
+        cards:
+
+          - name:                       Welcome Content
+            card:
+              enabled:                  true
+              width:                    12
+              type:                     text
+              animate:                  fadeInUp
+              title:                    Are you corious?
+              tagline:                  <large><b>creating websites</b></large>
+              description: >
+                                        It is not a secret, that many options are available today to create
+                                        and present a web. Content Management Systems like Wordpress or
+                                        Online Services like Wix can be used to manage and present a website.
+                                        CMS are fairly complex because of their nature. CMS are creating dynamic
+                                        pages stored in database systems. And they are using complex programming
+                                        interfaces to generate each and every page.
+                                        On the other hand, a Online Service simplifies the process of creating a
+                                        website a lot but you're quite limited in what a Service Provider is giving
+                                        you at your hands.
+                                        <br/><br/>
+                                        To learn what is behind the scenes will be a quite challenging job if you go for a CMS.
+                                        For Content Management Systems, expect a really steep learning curve to get
+                                        an insight view. If you have plans using an Online Service, forget about learning.
+                                        A provider won't get you any insight view what's happening in behind.
+                                        <br/><br/>
+                                        J1 is created to flatten the learning curve for learning how modern websites
+                                        are being created. Using Jekyll One, people can start on a beginner level but
+                                        simultaneously achive good results. That's important for all users but especially
+                                        for learners. The website generator Jekyll plus the template system J1 enables all
+                                        to reach a next level and having always fun what they're doing.
+                                        <br/><br/>
+                                        Jekyll One is meant to be a useful site for creators, for makers, for learners.
+                                        For all people having this on their minds: creating unique websites by getting
+                                        their hands dirty and to keep control over what's happening.
+                                        <br/><br/>
+                                        Willing for a try?
+
+
+              buttons:
+
+                - name:                 Kickstarter button
+                  button:
+                    text:               Start creating your static web
+                    class:              btn btn-raised btn-flex btn-md btn-info g-mr-5
+                    icon:               rocket
+                    icon_color:         md_white
+                    icon_size:          24px
+                    href:               /pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
+                    target:
 
   # ----------------------------------------------------------------------------
   # IMAGE Banner
   #
   image:
+    # --------------------------------------------------------------------------
+    # home_image_banner
+    #
+    - name:                               Home Image Banner
+      banner:
+        id:                               home_image_banner
+        enabled:                          true
+        type:                             image
+        comment:                          Main image banner shown on home page
+        background_color_1:               md_gray_300
+        background_color_2:               md_gray_50
+        lane_span:                        fluid
+
+        cards:
+
+          - name:                         Image settings
+            card:
+              enabled:                    true
+              gridify:                    false
+              size_y:                     450
+              darken:                     1
+              background_image:           /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
+
 
   # ----------------------------------------------------------------------------
   # PARALLAX Banner
   #
   parallax:
-
     # --------------------------------------------------------------------------
     # home_parallax_banner
     #
-    - name:                             Home Parallax Banner
+    - name:                               Home Parallax Banner v1
       banner:
-        id:                             home_parallax_banner
-        enabled:                        true
-        type:                           parallax
-        comment:                        Parallax banner shown on home page
-        style:                          dark
-        lane_span:                      fluid
+        id:                               home_parallax_banner
+        enabled:                          true
+        type:                             parallax
+        comment:                          Main parallax banner shown on home page
+        style:                            dark
+#       background_color_1:               md_gray_300
+#       background_color_2:               md_gray_50
+        lane_span:                        fluid
 
         cards:
 
-          - name:                       Quote settings
+          - name:                         Quote settings
             card:
-              enabled:                  true
-              type:                     quote
-              cite_text_size:           300%
-              cite_text_quotes:         false
+              enabled:                    true
+              type:                       quote
+              cite_text_size:             300%
+              cite_text_quotes:           false
               cite_text: >
-                                        Making is like Wanting, <br> but even 
-                                        <span style="color:red">Better</span>
-              cite_size:                200%
-              text_color:               rgba_lighten_900
-              cite_color:               rgba_lighten
-              gridify:                  true
-              size_y:                   450
-              darken:                   6
-              background_image:         /assets/images/attics/ideas-start-here-1920x1280-bw.jpg
+                                          Making is like Wanting,
+                                          <br> but even <span style="color:red">Better</span>
+              cite_size:                  200%
+#             cite:                       J1 Team
+              text_color:                 rgba_lighten_900
+              cite_color:                 rgba_lighten
+              gridify:                    true
+              size_y:                     450
+              darken:                     6
+              background_image:           /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
+
+    # --------------------------------------------------------------------------
+    # parallax_banner_einstein
+    #
+    - name:                               Home Parallax Banner v2
+      banner:
+        id:                               parallax_banner_einstein
+        enabled:                          false
+        type:                             parallax
+        comment:                          Main parallax banner shown on home page
+        style:                            dark
+        lane_span:                        fluid
+
+        cards:
+
+          - name:                         Quote settings
+            card:
+              enabled:                    true
+              type:                       quote
+              cite_text: >
+                                          Everything should be made as <b><span class="color-red">simple</span></b>
+                                          as possible,<br>
+                                          but not <b><span class="color-red">simpler</span></b>
+              cite:                       Albert Einstein
+              text_color:                 rgba_lighten_900
+              cite_color:                 rgba_lighten
+              gridify:                    true
+              darken:                     7
+              background_image:           /assets/images/quotes/albert_einstein.png
+
+  # ----------------------------------------------------------------------------
+  # FOO Banner
+  #
+  foo:
+    # --------------------------------------------------------------------------
+    # foo_banner
+    #
+    - name:                               Foo Banner
+      banner:
+        id:                               foo_banner
+        enabled:                          false
+        type:                             foo
+        comment:                          Banner (type) to test config issues/exceptions
 
 
-# ------------------------------------------------------------------------------
 # END config
+# ------------------------------------------------------------------------------

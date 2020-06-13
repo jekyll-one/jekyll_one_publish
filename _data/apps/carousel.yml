@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -44,7 +44,7 @@ settings:
   #   default:                            /assets/data/carousel.json
   #
   # ----------------------------------------------------------------------------
-  enabled:                                true                                  # needed for j1.layout_shim_generator.html
+  enabled:                              true                                    # needed for j1.layout_shim_generator.html
   
   # ----------------------------------------------------------------------------
   # DEFAULT options
@@ -54,8 +54,8 @@ settings:
   #   This variable allows to set the maximum amount of items displayed
   #   at a time with the widest browser width.
   #
-  #   values:                             integer
-  #   default:                            5
+  #   values:                           integer
+  #   default:                          5
   #
   # itemsDesktop
   # ----------------------------------------------------------------------------
@@ -65,31 +65,31 @@ settings:
   #   that if the window size is lower or equal 1199, show 4 slides
   #   per page.
   #
-  #   values:                             array (of resolution|item pairs)
-  #   default:                            [1199,4]
-  #   Other (named) presets:              see items|itemsDesktop
+  #   values:                           array (of resolution|item pairs)
+  #   default:                          [1199,4]
+  #   Other (named) presets:            see items|itemsDesktop
   #
-  #   values:                             array (resolution|item pairs)
+  #   values:                           array (resolution|item pairs)
   #   defaults:
-  #     itemsDesktop:                     [1199,4]
-  #     itemsDesktopSmall:                [980,3]
-  #     itemsTablet:                      [768,2]
-  #     itemsTabletSmall:                 false
-  #     itemsMobile:                      [479,1]
+  #     itemsDesktop:                   [1199,4]
+  #     itemsDesktopSmall:              [980,3]
+  #     itemsTablet:                    [768,2]
+  #     itemsTabletSmall:               false
+  #     itemsMobile:                    [479,1]
   #
   # singleItem:
   # ----------------------------------------------------------------------------
   #  Display only one item independent from screen size.
   #
-  #   values:                             boolean (true|false)
-  #   default:                            false
+  #   values:                           boolean (true|false)
+  #   default:                          false
   #
   # itemsScaleUp
   # ----------------------------------------------------------------------------
   #   Don't stretch items when it is less than the supplied items.
   #
-  #   values:                             boolean (true|false)
-  #   default:                            false
+  #   values:                           boolean (true|false)
+  #   default:                          false
   #
   # itemsCustom
   # ----------------------------------------------------------------------------
@@ -107,8 +107,8 @@ settings:
   #
   #   Example: [ [0, 2], [400, 4], [700, 6], [1000, 8], [1200, 10], [1600, 16] ]
   #
-  #   values:                             array (of screen|item pairs)
-  #   default:                            false (no defaults)
+  #   values:                           array (of screen|item pairs)
+  #   default:                          false (no defaults)
   #
   # ----------------------------------------------------------------------------
 
@@ -226,8 +226,8 @@ settings:
   # ----------------------------------------------------------------------------
   #   Enables|Disables the use of the OwlCarousel
   #
-  #   values:                             boolean (true|false)
-  #   default:                            false
+  #   values:                           boolean (true|false)
+  #   default:                          false
   #
   # carousel
   # ----------------------------------------------------------------------------
@@ -238,8 +238,8 @@ settings:
   # ----------------------------------------------------------------------------
   #   If enabled, show data (JSON) is generated
   #
-  #       values:                         boolean (false|true)
-  #       default:                        no default
+  #       values:                       boolean (false|true)
+  #       default:                      no default
   #
   #   lightbox:
   #   ---------------------------------------------------
@@ -252,16 +252,16 @@ settings:
   #   If lightbox is detected as ENABLED, lazyLoad is
   #   automatically ENABLED as well.
   #
-  #       values:                         boolean (false|true)
-  #       default:                        false
+  #       values:                       boolean (false|true)
+  #       default:                      false
   #
   #   id
   #   --------------------------------------------------------------------------
   #   A unique id used to create and initialize a
   #   (specific) carousel|show.
   #
-  #       values:                         string
-  #       default:                        no defaults
+  #       values:                       string
+  #       default:                      no defaults
   #
   #
   #   item_type
@@ -269,8 +269,8 @@ settings:
   #   For a slide show, images or text (HTML code) can be
   #   used as items.
   #
-  #       values:                         image|text
-  #       default:                        image
+  #       values:                       image|text
+  #       default:                      image
   #
   #   css_classes
   #   --------------------------------------------------------------------------
@@ -279,8 +279,8 @@ settings:
   #   separated by spaces. The class names are passed to all
   #   items specified (like class="{css_classes}")
   #
-  #       values:                         string
-  #       default:                        no defaults
+  #       values:                       string
+  #       default:                      no defaults
   #
   #   images
   #   --------------------------------------------------------------------------
@@ -292,8 +292,8 @@ settings:
   #   Because NO individual path for images can be configured,
   #   all image files are to be located in the SAME directory.
   #
-  #       values:                         array|string (image names)
-  #       default:                        no defaults
+  #       values:                       array|string (image names)
+  #       default:                      no defaults
   #
   #   slide_height
   #   --------------------------------------------------------------------------
@@ -313,8 +313,8 @@ settings:
   #   in relation to the current (window) size of the
   #   browser.
   #
-  #       values:                         integer [10 .. 100] (vh)
-  #       default:                        100
+  #       values:                       integer [10 .. 100] (vh)
+  #       default:                      100
   #
   #   lb_caption
   #   --------------------------------------------------------------------------
@@ -326,16 +326,16 @@ settings:
   #   comma separated list of the SAME number as IMAGES
   #   configured for a show.
   #
-  #       values:                         array|string (caption text)
-  #       default:                        no defaults
+  #       values:                       array|string (caption text)
+  #       default:                      no defaults
   #
   #   images_path
   #   --------------------------------------------------------------------------
   #   Path to the IMAGES configured with the 'images'
   #   sequence (array ).
   #
-  #       values:                         string (path)
-  #       default:                        no defaults
+  #       values:                       string (path)
+  #       default:                      no defaults
   #
   #   text
   #   --------------------------------------------------------------------------
@@ -345,8 +345,8 @@ settings:
   #   items are configured as a comma separated list of
   #   strings.
   #
-  #       values:                         array|string (plain text OR HTML code)
-  #       default:                        no defaults
+  #       values:                       array|string (plain text OR HTML code)
+  #       default:                      no defaults
   #
   #   links
   #   --------------------------------------------------------------------------
@@ -359,8 +359,8 @@ settings:
   #   bound to the first image|text block, the second link
   #   to the second image|text etc.
   #
-  #       values:                         array|string (url)
-  #       default:                        no defaults
+  #       values:                       array|string (url)
+  #       default:                      no defaults
   #
   #
   # ----------------------------------------------------------------------------
@@ -374,137 +374,141 @@ settings:
     # owl_demo_text_carousel
     #
     - show:
-        enabled:                          true
-        id:                               owl_demo_text_carousel
-        lightbox:                         false
-        type:                             text
-        css_classes:                      img-fluid
+        enabled:                        true
+        id:                             owl_demo_text_carousel
+        lightbox:                       false
+        type:                           text
+        css_classes:                    img-fluid
 
-        text:                             [
-                                            "<big>Jekyll One Template</big>         </br> <i>Clean, responsive and fully featured Template made for Jekyll</i>",
-                                            "<big>Jekyll meets Bootstrap</big>      </br> <i>Best of open source and commercial software for the Web</i>",
-                                            "<big>J1 is Open Source</big>           </br> <i>No pain for private or professional use</i>",
-                                            "<big>Explore this site</big>           </br> <i>Learn what's possible if you go the Jekyll Way</i>",
-                                            "<big>Create modern static sites</big>  </br> <i>Secure, powerful and fast<i>"
-                                          ]
+        text:                           [
+                                          "<big>Jekyll One Template</big>         </br> <i>Clean, responsive and fully featured Template made for Jekyll</i>",
+                                          "<big>Jekyll meets Bootstrap</big>      </br> <i>Best of open source and commercial software for the Web</i>",
+                                          "<big>J1 is Open Source</big>           </br> <i>No pain for private or professional use</i>",
+                                          "<big>Explore this site</big>           </br> <i>Learn what's possible if you go the Jekyll Way</i>",
+                                          "<big>Create modern static sites</big>  </br> <i>Secure, powerful and fast<i>"
+                                        ]
         options:
-          autoPlay:                       5000
-          singleItem:                     true
-          pagination:                     false
+          autoPlay:                     5000
+          singleItem:                   true
+          pagination:                   false
 
     # --------------------------------------------------------------------------
     # owl_demo_text_carousel_parallax
     #
     - show:
-        enabled:                          true
-        id:                               owl_demo_text_carousel_parallax
-        lightbox:                         false
-        type:                             text
-        parallax:                         true
-        parallax_id:                      owl_text_carousel_parallax
-        css_classes:                      img-fluid
+        enabled:                        true
+        id:                             owl_demo_text_carousel_parallax
+        lightbox:                       false
+        type:                           text
+#       type:                           parallax
+        parallax:                       true
+        parallax_id:                    owl_text_carousel_parallax
+        css_classes:                    img-fluid
 
-        text:                             [
-                                            "<big>Jekyll One Template</big>         </br> <i>Clean, responsive and fully featured Template made for Jekyll</i>",
+        text:                           [
+                                           "<big>Jekyll One Template</big>         </br> <i>Clean, responsive and fully featured Template made for Jekyll</i>",
                                             "<big>Jekyll meets Bootstrap</big>      </br> <i>Best of open source and commercial software for the Web</i>",
                                             "<big>J1 is Open Source</big>           </br> <i>No pain for private or professional use</i>",
                                             "<big>Explore this site</big>           </br> <i>Learn what's possible if you go the Jekyll Way</i>",
                                             "<big>Create modern static sites</big>  </br> <i>Secure, powerful and fast<i>"
-                                          ]
+                                        ]
         options:
-          autoPlay:                       5000
-          singleItem:                     true
-          pagination:                     false
+          autoPlay:                     5000
+          singleItem:                   true
+          pagination:                   false
 
 
     # --------------------------------------------------------------------------
     # owl_demo_cats
     #
     - show:
-        enabled:                          true
-        id:                               owl_demo_cats
-  #     title:                            Nice cats
-        slide_space_between:              3
-        slide_border:                     true
-        lightbox:                         true
-        type:                             image
-        css_classes:                      img-fluid
-        images_path:                      /assets/images/carousel/cats
-        images:                           [
-                                            cat-1.jpg, cat-2.jpg,
-                                            cat-3.jpg, cat-4.jpg
-                                          ]
-        links:                            [
-                                            "#", "#",
-                                            "#", "#"
-                                          ]
-        lb_caption:                       [
-                                            You see cat no 1,
-                                            You see cat no 2,
-                                            You see cat np 3,
-                                            You see cat no 4
-                                          ]
+        enabled:                        true
+        id:                             owl_demo_cats
+  #     title:                          Nice cats
+        slide_space_between:            3
+        slide_border:                   true
+        lightbox:                       true
+        type:                           image
+        css_classes:                    img-fluid
+        images_path:                    /assets/images/modules/carousel/cats
+        images:                         [
+                                          cat-1.jpg, cat-2.jpg,
+                                          cat-3.jpg, cat-4.jpg
+                                        ]
+        links:                          [
+                                          "#", "#",
+                                          "#", "#"
+                                        ]
+        lb_caption:                     [
+                                          You see cat no 1,
+                                          You see cat no 2,
+                                          You see cat np 3,
+                                          You see cat no 4
+                                        ]
         options:
-          navigation:                     false
-          itemsCustom:                    [
-                                            [0, 1], [400, 1], [700, 2],
-                                            [1000, 2], [1200, 2], [1600, 2]
-                                          ]
-          slideSpeed:                     300
-          paginationSpeed:                400
-          items:                          2
-
+          navigation:                   false
+          itemsCustom:                  [
+                                          [0, 1], [400, 1], [700, 2],
+                                          [1000, 2], [1200, 2], [1600, 2]
+                                        ]
+          slideSpeed:                   300
+          paginationSpeed:              400
+          items:                        2
 
     # --------------------------------------------------------------------------
     # owl_demo_simple
     #
     - show:
-        enabled:                          true
-        provider:                         j1
-        id:                               owl_demo_simple
-        type:                             image
-        css_classes:                      img-fluid
-        images_path:                      /assets/images/gallery/justified_gallery
-        images:                           [
-                                            000_6791628438_affaa19e10_b.jpg, 000_6798453217_72dea2d06e_b.jpg,
-                                            000_6806687375_07d2b7a1f9_b.jpg, 000_6840627709_92ed52fb41_b.jpg,
-                                            000_6876412479_6268c6e2aa_b.jpg, 000_6880502467_d4b3c4b2a8_b.jpg
-                                          ]
-        links:                            [
-                                            "#", "#", "#", "#",
-                                            "#", "#", "#", "#"
-                                          ]
+        enabled:                        true
+        provider:                       j1
+        id:                             owl_demo_simple
+        type:                           image
+        css_classes:                    img-fluid
+        images_path:                    /assets/images/modules/carousel/mega_cities
+        images:                         [
+                                          andreas-brucker_b.jpg, 
+                                          denys-nevozhai-1_b.jpg,
+                                          denys-nevozhai-2_b.jpg,
+                                          luca-bravo_b.jpg,
+                                          thomas-tucker_b.jpg
+                                        ]
+        links:                          [
+                                          "#", "#", "#", "#",
+                                          "#", "#", "#", "#"
+                                        ]
         options:
-          autoPlay:                       3000
-          items:                          3
-          autoHeight :                    true
-          pagination:                     false
-          paginationNumbers:              false
-          itemsDesktop:                   "[1199,3]"
-          itemsDesktopSmall:              "[979,3]"
+          autoPlay:                     3000
+          items:                        3
+          autoHeight :                  true
+          pagination:                   false
+          paginationNumbers:            false
+          itemsDesktop:                 "[1199,3]"
+          itemsDesktopSmall:            "[979,3]"
 
     # --------------------------------------------------------------------------
     # owl_demo_oneslide
     #
     - show:
-        enabled:                          true
-        provider:                         j1
-        id:                               owl_demo_oneslide
-        type:                             image
-        lightbox:                         true
-        css_classes:                      img-fluid
-        images_path:                      /assets/images/gallery/justified_gallery
-        images:                           [
-                                            000_6791628438_affaa19e10_b.jpg, 000_6798453217_72dea2d06e_b.jpg,
-                                            000_6806687375_07d2b7a1f9_b.jpg, 000_6840627709_92ed52fb41_b.jpg,
-                                            000_6876412479_6268c6e2aa_b.jpg, 000_6880502467_d4b3c4b2a8_b.jpg
-                                          ]
+        enabled:                        true
+        provider:                       j1
+        id:                             owl_demo_oneslide
+        type:                           image
+        lightbox:                       true
+        css_classes:                    img-fluid
+        images_path:                    /assets/images/modules/carousel/mega_cities
+        images:                         [
+                                          andreas-brucker_b.jpg, 
+                                          denys-nevozhai-1_b.jpg,
+                                          denys-nevozhai-2_b.jpg,
+                                          luca-bravo_b.jpg,
+                                          thomas-tucker_b.jpg
+                                        ]
         options:
-          navigation:                     true
-          slideSpeed:                     300
-          paginationSpeed:                400
-          singleItem:                     true
-          transitionStyle:                goDown
+          navigation:                   true
+          slideSpeed:                   300
+          paginationSpeed:              400
+          singleItem:                   true
+          transitionStyle:              goDown
 
 
 # ------------------------------------------------------------------------------

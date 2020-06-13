@@ -7,7 +7,7 @@ tags:                                   [ Page, Roundtrip ]
 index:                                  [ Template, Roundtrip, Typography ]
 categories:                             [ pages ]
 
-permalink:                              /pages/public/start/roundtrip/typography/
+permalink:                              /pages/public/learn/roundtrip/typography/
 regenerate:                             false
 
 resources:                              []

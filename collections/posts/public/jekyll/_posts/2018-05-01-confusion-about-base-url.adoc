@@ -6,7 +6,7 @@ description:                            Jekyll URL Configuration
 date:                                   2018-05-01 00:00:00
 series:
 adsense:                                false
-image:                                  /assets/images/blog/featured/what-is-a-baseurl.jpg
+image:                                  /assets/images/collections/blog/featured/what-is-a-baseurl.jpg
 
 tags:                                   [ Jekyll, Configuration ]
 index:                                  [ Jekyll, Configuration, URL, base_url ]
@@ -21,7 +21,7 @@ resource_options:
       padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/attics/banner/jekyll.1200x600-bw.jpg
+        - url:                          /assets/images/modules/attics/banner/jekyll.1200x600-bw.jpg
           alt:                          jekyll.1200x600-bw
 ---
 
@@ -53,7 +53,7 @@ excerpt__end
 [role="mb-3"]
 image::{{page.image}}[{{page.title}}]
 
-See: link:{parker-blog}[Parker Moore, window="_blank"]
+// See: link:{parker-blog}[Parker Moore, window="_blank"]
 
 The config parameter `baseurl` was originally added back in 2010 to allow
 “the user to test the website with the internal webserver under the same

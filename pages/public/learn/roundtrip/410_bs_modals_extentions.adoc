@@ -9,7 +9,7 @@ categories:                             [ pages ]
 
 flowtext:                               false
 
-permalink:                              /pages/public/start/roundtrip/modals/
+permalink:                              /pages/public/learn/roundtrip/modals/
 regenerate:                             true
 
 resources:                              []

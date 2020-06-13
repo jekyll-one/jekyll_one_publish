@@ -10,10 +10,13 @@ categories:                             [ pages ]
 scrollbar:                              false
 toc:                                    true
 
-permalink:                              /pages/public/start/roundtrip/present_videos/
-regenerate:                             false
+permalink:                              /pages/public/learn/roundtrip/present_videos/
+regenerate:                             true
 
-resources:                              [ lightbox, light_gallery, bs_gallery ]
+resources:                              [ 
+                                          light_gallery, justified_gallery, video_js, 
+                                          vimeo_player, vimeo_player, vimeo_froogaloop
+                                        ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -114,15 +117,15 @@ Videos created by a digi cam or a mobile can played by J1 Template using the
 
 Two players are available with *LightGallery*:
 
-. a internal player used by default
-. http://www2.videojs.com/[video.js], a excellent Javascript video library
-
-.HTML5 video gallery
-carousel::bg_video_html5[role="mb-5"]
+. an internal player used by default
+. http://videojs.com/[video.js], a excellent Javascript video library
 
 NOTE: The HTML5 specification does _not_ define which video and audio formats
 browsers _should_ support. J1 *LightGallery* supports all _typical_ types of
 HTML5 Video formats browsers support today such as *MP4*, *WebM*, and *Ogg*.
+
+.HTML5 video gallery
+gallery::jg_video_html5[role="mb-5"]
 
 === Online video content
 
@@ -132,8 +135,12 @@ video content from the Internet, e.g. your channnel, the online video
 support of J1 Template may a good choice. Find some enjoyable videos from
 *James Cordon's* channel: *Carpool Karaoke*.
 
-.Youtube video gallery
-carousel::bg_video_online[role="mb-5"]
+.YouTube Video Gallery - Carpool Karaoke
+gallery::jg_video_online_youtube[role="mb-5"]
+
+.Vimeo Video Gallery - Fashion
+gallery::jg_video_online_vimeo[role="mb-5"]
+
 
 == Whats next
 

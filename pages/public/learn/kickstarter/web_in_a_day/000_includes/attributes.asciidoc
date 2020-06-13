@@ -7,16 +7,16 @@
 // -----------------------------------------------------------------------------
 tag::urls[]
 
-:j1-web-in-a-day-meet-and-greet:                  /pages/public/start/kickstarter/web_in_a_day/meet_and_greet/
-:j1-web-in-a-day-preparations:                    /pages/public/start/kickstarter/web_in_a_day/preparations/
-:j1-web-in-a-day-first-awesome-web:               /pages/public/start/kickstarter/web_in_a_day/first_awesome_web/
+:j1-web-in-a-day-meet-and-greet:                  /pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
+:j1-web-in-a-day-preparations:                    /pages/public/learn/kickstarter/web_in_a_day/preparations/
+:j1-web-in-a-day-first-awesome-web:               /pages/public/learn/kickstarter/web_in_a_day/first_awesome_web/
 
 
 :j1-quick-references-jekyll:                      /pages/protected/manuals/quick_references/jekyll/
 
 
-:j1-download-quickstart-intro:                    /pages/public/start/downloads/quickstart/intro/
-:j1-kickstarter-web-in-a-day-intro:               /pages/public/start/kickstarter/web_in_a_day/intro/
+:j1-download-quickstart-intro:                    /pages/public/learn/downloads/quickstart/intro/
+:j1-kickstarter-web-in-a-day-intro:               /pages/public/learn/kickstarter/web_in_a_day/intro/
 
 :github-home:                                     https://github.com/
 :github-signin:                                   https://github.com/login
@@ -69,7 +69,7 @@ tag::data[]
 :data-gh-oauth-autorization-page:                 "pages/kickstarter/app_in_a_day/gh-oauth-autorization-page.png, GH OAuth autorization page used by Jekyll One"
 :data-gh-oauth-login-page:                        "pages/kickstarter/app_in_a_day/gh-oauth-login-page.png, GH login page for autorization used by Jekyll One"
 
-:data-docker-hub-repositories:                    "assets/images/blog/series/j1_private_sites/docker_hub_dashboard_ubuntu.png, Docker Hub - Repositories"
+:data-docker-hub-repositories:                    "assets/images/collections/blog/series/j1_private_sites/docker_hub_dashboard_ubuntu.png, Docker Hub - Repositories"
 
 :data-run-an-app-initial-starter-web:             "pages/kickstarter/protected_web_in_a_day/100_run_an_app/100_run_an_app_initial_starter_web-1280x800.png, Initial Starter Web"
 

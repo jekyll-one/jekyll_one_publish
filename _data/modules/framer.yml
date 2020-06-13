@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -36,6 +36,7 @@ settings:
   inPageLinks:                        false
   interval:                           32
   heightCalculationMethod:            bodyOffset
+  widthCalculationMethod:             scroll
   maxHeight:                          100000000
   minHeight:                          512
   maxWidth:                           100000000
@@ -45,7 +46,6 @@ settings:
   sizeHeight:                         true
   sizeWidth:                          false
   tolerance:                          0
-  widthCalculationMethod:             scroll
 
 
 # ------------------------------------------------------------------------------

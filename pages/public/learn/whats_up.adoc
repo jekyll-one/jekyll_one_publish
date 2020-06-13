@@ -17,7 +17,7 @@ resource_options:
       padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/attics/runner-1920x1200-bw.jpg
+        - url:                          /assets/images/modules/attics/runner-1920x1200-bw.jpg
           alt:                          Photo by Alexander Redl on Unsplash
           badge:
             type:                       unsplash
@@ -28,6 +28,7 @@ resource_options:
 // Enable the Liquid Preprocessor
 // -----------------------------------------------------------------------------
 :page-liquid:
+
 
 // Set other global page attributes here
 // -----------------------------------------------------------------------------
@@ -112,5 +113,5 @@ you know what Jekyll, static webs and the template system J1 is all about.
 You're welcome!
 
 If you like, continue by walking through the roundtrip examples
-link:{roundtrip-present-images}[by starting the tour here].
+link:/pages/public/learn/roundtrip/present_images/[by starting the tour here].
 

@@ -6,7 +6,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -115,6 +115,9 @@ defaults:
 
     home_icon:                          home-variant
     home_url:                           none
+
+    r_text_sizer:                       false
+    r_text_icon:                        format-text                             # format-color-text format-annotation-plus
 
     back_icon:                          subdirectory-arrow-left
     back_url:                           none

@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/defaults/util_srv.yml
-# Default configuration settings for J1 Utility Server
+# ~/_data/utilities/defaults/util_srv.yml
+# Default configuration settings for J1 Utility Services
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
@@ -20,7 +20,7 @@
 about_config:
   title:                                Utility Services
   scope:                                Default settings
-  location:                             _data/modules/defaults/util_srv.yml
+  location:                             _data/utilities/defaults/util_srv.yml
 
 # ------------------------------------------------------------------------------
 # Default configuration settings

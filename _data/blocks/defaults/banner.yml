@@ -5,7 +5,7 @@
 #  Product/Info:
 #  https://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+#  Copyright (C) 2020 Juergen Adams
 #
 #  J1 Template is licensed under the MIT License.
 #  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -46,7 +46,7 @@ defaults:
   #   Pixel image used to gridify the background image of the banner.
   #
   #   values:                         image path|name (string)
-  #   default:                        /assets/images/patterns/gridtile.png
+  #   default:                        /assets/images/modules/patterns/gridtile.png
   #
   #   darken
   #   ----------------------------------------------------------------------------
@@ -69,7 +69,7 @@ defaults:
   parallax_settings:
 
     gridify:                          true
-    gridifier:                        /assets/images/patterns/gridtile.png
+    gridifier:                        /assets/images/modules/patterns/gridtile.png
     text_color:                       rgba_lighten
     cite_color:                       rgba_lighten
     darken:                           3
@@ -172,7 +172,7 @@ defaults:
         gridify:                        false
         size_y:                         450
         darken:                         1
-        background_image:               /assets/images/attics/ideas-start-here-1920x1200.png
+        background_image:               /assets/images/modules/attics/ideas-start-here-1920x1200.png
 
         buttons:
 

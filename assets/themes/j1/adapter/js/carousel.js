@@ -1,5 +1,5 @@
 ---
-regenerate:                             false
+regenerate:                             true
 ---
 
 {% capture cache %}
@@ -12,7 +12,7 @@ regenerate:                             false
  # Product/Info:
  # https://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
  # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -56,7 +56,7 @@ regenerate:                             false
  # Product/Info:
  # https://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
  # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -102,7 +102,7 @@ j1.adapter['carousel'] = (function (j1, window) {
       {% comment %} Load module config from yml data
       -------------------------------------------------------------------------- {% endcomment %}
       // Load  module DEFAULTS|CONFIG
-      moduleOptions = $.extend({}, {{carousel_settings | replace: '=>', ':' | replace: 'nil', '""'}});
+      moduleOptions = $.extend({}, {{carousel_options | replace: '=>', ':' | replace: 'nil', '""'}});
 
       if (typeof settings !== 'undefined') {
         moduleOptions = j1.mergeData(moduleOptions, settings);
@@ -123,6 +123,7 @@ j1.adapter['carousel'] = (function (j1, window) {
           {% assign slider_id     = item.show.id %}
           {% assign slider_title  = item.show.title %}
           {% assign slider_type   = item.show.type %}
+          {% assign parallax      = item.show.parallax %}
           {% assign css_classes   = item.show.css_classes %}
           {% assign lazyLoad      = item.show.lightbox %}
 
@@ -135,7 +136,6 @@ j1.adapter['carousel'] = (function (j1, window) {
               _this.setState('running');
               logger.info('state: ' + _this.getState());
               logger.info('module is being initialized');
-
             {% endif %}
 
             {% if item.show.slide_height != null %}
@@ -162,18 +162,20 @@ j1.adapter['carousel'] = (function (j1, window) {
             $('#{{slider_id}}').before(slider_title);
             {% endif %}
 
+            // place parallax styles
+            {% if parallax %}
+              $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax{background:url(/assets/images/quotes/default.png) 50% 0 repeat fixed}</style>');
+              $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax{padding:75px 0 75px 25px;position:relative}</style>');
+              $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax{color:#e5e5e5;font-size:1.5rem;font-weight:400}</style>');
+              $('head').append('<!-- style>.parallax-slider__owl_demo_text_carousel_parallax{text-align:center}</style -->');
+              $('head').append('<!-- style>.parallax-slider__owl_demo_text_carousel_parallax{text-transform:uppercase}</style -->');
+              $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax:before{top:0;left:0;width:100%;height:100%;content:" ";position:absolute;background:url(/assets/images/modules/patterns/gridtile.png) repeat;}</style>');
+              $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax:after{top:0;left:0;width:100%;height:100%;content:" ";position:absolute;background:rgba(0,0,0,0.3)}</style>');
+            {% endif %}
+
             $('head').append("<style>.{{slider_id}}-item{margin: {{slide_space}}px;}</style>");
             //$('.{{slider_id}}-item').parent().addClass('owl-carousel');
             //$('.owl-carousel .item').css('margin','{{slide_space}}px');
-
-            {% comment %}
-            // Initialize default parameters
-            $("#{{slider_id}}").owlCarousel({
-              {% for option in carousel_options %}
-              {{option[0] | json}}: {{option[1] | json}},
-              {% endfor %}
-            });
-            {% endcomment %}
 
             // Initialize individual show parameters
             $("#{{slider_id}}").owlCarousel({

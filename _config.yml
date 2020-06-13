@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ==============================================================================
@@ -47,17 +47,17 @@
 #   values:                             development|test|production
 #   default:                            development
 #
-environment:                            production
+environment:                            development
 
 # version
 # ------------------------------------------------------------------------------
-#   Sets the build version of j1-template Gem
+#   Sets the build version of J1 Template Gem
 #
-version:                                2019.1.7
+version:                                2020.0.0
 
 # version
 # ------------------------------------------------------------------------------
-#   Sets the build version of j1-template
+#   Sets the build version of J1 Template
 #
 copyright:                              J1 · Copyright © 2020
 
@@ -249,7 +249,7 @@ robots:
 # Set the brand image and favicon
 
 brand:
-  image:                                icons/j1/j1-512x512.png
+  image:                                modules/icons/j1/j1-512x512.png
   image_height:                         64
   text:                                 Starter Web
   text_color:                           "#9E9E9E"
@@ -257,7 +257,7 @@ brand:
 # Set the favicon (located in the asset_path/images) and type
 #
 favicon:
-  image:                                icons/j1/j1-32x32.ico
+  image:                                modules/icons/j1/j1-32x32.ico
   type:                                 image/ico
 
 
@@ -376,18 +376,18 @@ collections_dir:                        collections
 # FILES configuration
 # Set the files to include, exclude and ignore (keep_files on _site)
 #
-include:                                []
+include:                                [ .htaccess ]
 exclude:                                [
-                                          log, etc, vendor, node_modules, 
-                                          utilsrv, History.markdown, README.md, 
-                                          changelog.md, Rakefile, Passengerfile.json,
+                                          log, vendor, node_modules, utilsrv,
+                                          History.markdown, README.md,
+                                          changelog.md, Rakefile,
                                           Gemfile, Gemfile.lock, Guardfile,
                                           yarn.lock, config.ru,
                                           package-lock.json, package.json,
-                                          '.sass-cache', '.vscode', 
+                                          '.sass-cache', '.vscode',
                                           '.idea', '*.ignore',
                                           '*.bat', '*.sh', '*.tmp', 'dot.*',
-                                          '*.txt', '*.log', '*.ppt*', 
+                                          '*.txt', '*.log', '*.ppt*',
                                           '*.zip', '*.7z', '*.tgz', '*.tar',
                                           '*.a2p', '*.asciidoc'
                                         ]
@@ -596,7 +596,7 @@ collections:
 # Instead of repeating this configuration each time a page is being
 # created, Jekyll provides a way to set these configuration items
 # as defaults in this site configuration (_config.yml).
-# 
+#
 defaults:
 
   # ----------------------------------------------------------------------------
@@ -666,7 +666,7 @@ defaults:
 
       images:
 #       category-image:                 img26.jpg
-        dir:                            /assets/images/blog/featured
+        dir:                            /assets/images/collections/blog/featured
 
       resource_options:
         - toccer:
@@ -701,7 +701,7 @@ defaults:
 
       images:
   #     category-image:                 img26.jpg
-        dir:                            /assets/images/blog/featured
+        dir:                            /assets/images/collections/blog/featured
 
 
   # ----------------------------------------------------------------------------
@@ -733,7 +733,7 @@ defaults:
 
       images:
 #       category-image:                 img26.jpg
-        dir:                            /assets/images/blog/series
+        dir:                            /assets/images/collections/blog/series
 
 
   # ----------------------------------------------------------------------------
@@ -766,7 +766,7 @@ defaults:
 
       images:
         category-image:
-        dir:                            /assets/images/blog/wikipedia
+        dir:                            /assets/images/collections/blog/wikipedia
 
   # ----------------------------------------------------------------------------
   # Collections

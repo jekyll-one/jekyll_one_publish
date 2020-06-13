@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
-#  ~/_plugins/simple_search_filter.rb
-#  Liquid filter's to be used with JekyllSimple Search
+# ~/_plugins/simple_search_filter.rb
+# Liquid filter's to be used with JekyllSimple Search
 #
-#  Product/Info:
-#  http://jekyll.one
+# Product/Info:
+# http://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 

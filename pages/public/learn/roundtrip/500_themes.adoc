@@ -7,7 +7,7 @@ tags:                                   [ Page, Roundtrip ]
 index:                                  [ Template, Roundtrip, Bootstrap, Themes ]
 categories:                             [ pages ]
 
-permalink:                              /pages/public/start/roundtrip/themes/
+permalink:                              /pages/public/learn/roundtrip/themes/
 regenerate:                             false
 
 resources:                              []

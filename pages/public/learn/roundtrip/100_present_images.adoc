@@ -1,5 +1,5 @@
 ---
-title:                                  Roundtrip
+title:                                  Roundtripppp
 tagline:                                present images
 description:                            J1 Template Roundtrip - Present image based data
 
@@ -10,12 +10,12 @@ categories:                             [ pages ]
 toc:                                    true
 scrollbar:                              false
 
-permalink:                              /pages/public/start/roundtrip/present_images/
+permalink:                              /pages/public/learn/roundtrip/present_images/
 regenerate:                             false
 
 resources:                              [
-                                          carousel, justified_gallery,
-                                          lightbox, light_gallery, bs_gallery
+                                          bs_tour, carousel, lightbox,
+                                          justified_gallery, light_gallery
                                         ]
 resource_options:
   - attic:
@@ -173,6 +173,7 @@ build-in carousel module because the software does an excellent job, is based
 on a MIT license with no issues using them for private and business use.
 And offers a lot of great features!
 
+/////
 === Simple Text Carousel
 
 A slider or carousel typically is used for displaying images but the
@@ -194,6 +195,9 @@ type of a slide show may be interesting. Image based slide shows may draw off
 the readers attention from the text, therefor a *pure text based* presentation
 may the better choice.
 
+.Parallax Slider
+// carousel::owl_demo_text_carousel_parallax[role="mb-3"]
+
 ++++
   <div class="parallax-slider__owl_demo_text_carousel_parallax mb-3" style="background-position: 50% 45px">
     <div id="owl_demo_text_carousel_parallax"></div>
@@ -205,7 +209,7 @@ may the better choice.
     $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax{color:#e5e5e5;font-size:1.5rem;font-weight:400}</style>');
     $('head').append('<!-- style>.parallax-slider__owl_demo_text_carousel_parallax{text-align:center}</style -->');
     $('head').append('<!-- style>.parallax-slider__owl_demo_text_carousel_parallax{text-transform:uppercase}</style -->');
-    $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax:before{top:0;left:0;width:100%;height:100%;content:" ";position:absolute;background:url(/assets/images/patterns/gridtile.png) repeat;}</style>');
+    $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax:before{top:0;left:0;width:100%;height:100%;content:" ";position:absolute;background:url(/assets/images/modules/patterns/gridtile.png) repeat;}</style>');
     $('head').append('<style>.parallax-slider__owl_demo_text_carousel_parallax:after{top:0;left:0;width:100%;height:100%;content:" ";position:absolute;background:rgba(0,0,0,0.3)}</style>');
   </script>
 ++++
@@ -219,6 +223,7 @@ TIP: Have a look a https://daneden.github.io/animate.css/[Dan Eden's home page]
 to see all the possible dynamic styles you can create based on pure CSS. *Some*
 of them are implemented for *OWL Carousel* for animation. See the documetation
 for the *CAROUSEL Module* for more details.
+/////
 
 === Simple Image Carousel
 
@@ -270,37 +275,11 @@ gallery app *gallery*.
 and high quality *justified* image galleries. J1 Template combines the gallery
 with the *lightboxes* supported to *enlage* the images of a gallery.
 
-The same to *gallery*. The gallery app is a slim jQuery plugin to create
-galleries using the *grid system* of _Bootstrap_ navively. As mentioned ealier,
-*gallery* is simple but a good choice for *even* sized images or for video
-(thumbnail) previews. Video previews are based typically on *even* sized
-*thumbnail* images. For that reason, the build-in module *gallery* is a
-good choice.
+See *Justified Gallery* in action - and for sure all what you see is even
+responsive. Change the size of your current browser window, by width or height, 
+to see what will happen!
 
-See both of them in action - and for sure all what you see is even responsive.
-Change the size of your current browser window, by width or height, to see
-what will happen!
-
-=== Image Galleries
-
-A bunch of images to display needs an elegant *view* to see all images from a
-preview. That's what the galley apps are doing.
-
-==== Build-in Gallery
-
-The build-in Gallery App *gallery* is a simple gallery using _Bootstrap_'s
-grid system to order images grid based into rows and colums. Beside the
-simplicity, *gallery* has some nice features you can turn on or off to give
-a gallery a special style and behaviour.
-
-As for all galleries, a *lightbox* is put on all images to enlarge and browse
-them for convenience and best access.
-
-.Grand Pa around the 1930th
-gallery::bg_old_times[role="mb-5"]
-
-
-==== Justified Gallery
+=== Justified Gallery
 
 Pictures you've made are typically *not* even in size. Images may have the
 same size (resolution), but some of the are orientated landscape or other
@@ -313,7 +292,7 @@ vertical space. Sort of like mason fitting stones in a wall. You’ll have
 seen it in use all over the Internet!
 
 .Masonry grid layout of Justified Gallery
-gallery::jg_live_demo[]
+gallery::jg_customizer[]
 
 
 == Whats next

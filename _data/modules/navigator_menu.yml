@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -35,45 +35,101 @@
       href:                             /pages/public/learn/whats_up/
       icon:                             alert
 
+    # --------------------------------------------------------------------------
+    # BS Tour
+    #
+    - title:                            Bootstrap Tour
+      icon:                             highway
+      dropdown:
+        - title:                        BS V3
+          href:                         /pages/test/bs_tour_v3/
+          icon:                         numeric-3-box
+
+        - title:                        BS V4
+          href:                         /pages/test/bs_tour_v4/
+          icon:                         numeric-4-box
+
+    # --------------------------------------------------------------------------
+    # Jupyter Notebooks
+    #
+    - title:                            Jupyter Notebooks
+      icon:                             language-python
+      dropdown:
+        - title:                        nbInteract Tutorial
+          href:                         /pages/public/jupyter/nbinteract_tutorial/
+          icon:                         language-python-text
+
+        - title:                        nbInteract Visualisation
+          href:                         /pages/public/jupyter/nbinteract_visualisation/
+          icon:                         language-python-text
+
+        - title:                        Iris Live Page
+          href:                         /pages/public/jupyter/iris/
+          icon:                         language-python-text
+
+    # --------------------------------------------------------------------------
+    # Manage Python
+    #
+    - title:                            Manage Python
+      icon:                             language-python
+      dropdown:
+
+        - title:                        pyenv
+          href:                         /pages/public/manage_python/anaconda/
+          icon:                         language-python-text
+
+    # --------------------------------------------------------------------------
+    # Video Tutorials
+    #
+    - title:                            Video Tutorials
+      icon:                             video
+      dropdown:
+        - title:                        J1 Basics
+          href:                         /pages/public/learn/vtutorials/basics/
+          icon:                         video
+
+    # --------------------------------------------------------------------------
+    # Roundtrip
+    #
     - title:                            Roundtrip
       icon:                             wallet-travel
       dropdown:
         - title:                        Present images
-          href:                         /pages/public/start/roundtrip/present_images/
+          href:                         /pages/public/learn/roundtrip/present_images/
           icon:                         image
         - title:                        Present videos
-          href:                         /pages/public/start/roundtrip/present_videos/
+          href:                         /pages/public/learn/roundtrip/present_videos/
           icon:                         video
         - title:                        Typography
-          href:                         /pages/public/start/roundtrip/typography/
+          href:                         /pages/public/learn/roundtrip/typography/
           icon:                         format-text
         - title:                        Icon fonts
-          href:                         /pages/public/start/roundtrip/mdi_icon_font/
+          href:                         /pages/public/learn/roundtrip/mdi_icon_font/
           icon:                         incognito
         - title:                        Asciidoc extensions
-          href:                         /pages/public/start/roundtrip/asciidoc_extensions/
+          href:                         /pages/public/learn/roundtrip/asciidoc_extensions/
           icon:                         format-annotation-plus
         - title:                        BS modal extensions
-          href:                         /pages/public/start/roundtrip/modals/
+          href:                         /pages/public/learn/roundtrip/modals/
           icon:                         image
         - title:                        BS table extensions
-          href:                         /pages/public/start/roundtrip/responsive_tables/
+          href:                         /pages/public/learn/roundtrip/responsive_tables/
           icon:                         table
         - title:                        BS themes
-          href:                         /pages/public/start/roundtrip/themes/
+          href:                         /pages/public/learn/roundtrip/themes/
           icon:                         face
 
     - title:                            Web in a Day
       icon:                             rocket
       dropdown:
         - title:                        Meet & Greet Jekyll
-          href:                         /pages/public/start/kickstarter/web_in_a_day/meet_and_greet/
+          href:                         /pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
           icon:                         flag-checkered
         - title:                        Getting prepared
-          href:                         /pages/public/start/kickstarter/web_in_a_day/preparations/
+          href:                         "#"                                     # /pages/public/learn/kickstarter/web_in_a_day/preparations/
           icon:                         cart
         - title:                        A first awesome Web
-          href:                         /pages/public/start/kickstarter/web_in_a_day/first_awesome_web/
+          href:                         "#"                                     # /pages/public/learn/kickstarter/web_in_a_day/first_awesome_web/
           icon:                         creation
         - title:                        Writing Articles
           href:                         "#"
@@ -88,29 +144,11 @@
           href:                         "#"
           icon:                         git
         - title:                        Deploy a Web
-          href:                         /pages/public/start/kickstarter/web_in_a_day/document/deploy_aw_eb/
+          href:                         /pages/public/learn/kickstarter/web_in_a_day/document/deploy_aw_eb/
           icon:                         web
         - title:                        Wrapping up
           href:                         "#"
           icon:                         backup-restore
-
-# ------------------------------------------------------------------------------
-# Menu BLOG
-#
-- item:                                 Blog
-  sublevel:
-    - title:                            Creators Blog
-      href:                             /pages/public/blog/navigator/
-      icon:                             navigation
-    - title:                            Categories
-      href:                             /pages/public/blog/navigator/archive/categoryview/
-      icon:                             pin
-    - title:                            Date
-      href:                             /pages/public/blog/navigator/archive/dateview/
-      icon:                             calendar
-    - title:                            Archive
-      href:                             /pages/public/blog/navigator/archive/
-      icon:                             archive
 
 # ------------------------------------------------------------------------------
 # Menu TOOLS
@@ -129,6 +167,24 @@
     - title:                            Automagic iFrame
       href:                             /pages/public/iframer/
       icon:                             image-filter-none
+
+# ------------------------------------------------------------------------------
+# Menu BLOG
+#
+- item:                                 Blog
+  sublevel:
+    - title:                            Creators Blog
+      href:                             /pages/public/blog/navigator/
+      icon:                             navigation
+    - title:                            Categories
+      href:                             /pages/public/blog/navigator/archive/categoryview/
+      icon:                             pin
+    - title:                            Date
+      href:                             /pages/public/blog/navigator/archive/dateview/
+      icon:                             calendar
+    - title:                            Archive
+      href:                             /pages/public/blog/navigator/archive/
+      icon:                             archive
 
 # ------------------------------------------------------------------------------
 # Menu ONLINE

@@ -9,8 +9,8 @@
  # https://jekyll.one
  # http://www.vxk.cz/tips/2017/05/18/netlify-cms/
  #
- # Copyright (C) 2019 Juergen Adams
- # Copyright (C) 2019 Václav Klecanda
+ # Copyright (C) 2020 Juergen Adams
+ # Copyright (C) 2020 Václav Klecanda
  #
  # J1 Template is licensed under the MIT License.
  # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -100,8 +100,11 @@ if (environment === 'dev') {
 // const dotenv_json = JSON.stringify( dotenv, null, 2 );                          // JSON pretty print
 
 // =============================================================================
-// load configuration data (WebHook)
+// load configuration data
 // -----------------------------------------------------------------------------
+
+const util_settings                 = config_home + '/utilities';
+const util_defaults                 = util_settings + '/defaults';
 
 const modules_settings              = config_home + '/modules';
 const modules_defaults              = modules_settings + '/defaults';
@@ -111,8 +114,8 @@ const private_data_file             = config_home + '/' + 'private.yml';
 const log4javascript_defaults_file  = modules_defaults + '/' + 'log4javascript.yml';
 const log4javascript_settings_file  = modules_settings + '/' + 'log4javascript.yml';
 
-const utilsrv_defaults_file         = modules_defaults + '/' + 'util_srv.yml';
-const utilsrv_settings_file         = modules_settings + '/' + 'util_srv.yml';
+const utilsrv_defaults_file         = util_defaults + '/' + 'util_srv.yml';
+const utilsrv_settings_file         = util_settings + '/' + 'util_srv.yml';
 
 try {
   const log4javascript_defaults     = yaml.safeLoad(fs.readFileSync(log4javascript_defaults_file, 'utf8'));

@@ -6,7 +6,7 @@ description:                            Top open-source site generators
 date:                                   2019-05-01 00:00:00
 series:
 adsense:                                false
-image:                                  /assets/images/attics/building-blocks-1920x1280-bw.jpg
+image:                                  /assets/images/modules/attics/building-blocks-1920x1280-bw.jpg
 
 tags:                                   [ Jekyll, Generators ]
 index:                                  [ Jekyll, Top, Open, Source, Static, Site, Generators ]
@@ -21,7 +21,7 @@ resource_options:
       padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/attics/building-blocks-1920x1280-bw.jpg
+        - url:                          /assets/images/modules/attics/building-blocks-1920x1280-bw.jpg
           alt:                          Photo by Ryan Quintal on Unsplash
 #         caption:                      
 #           text:                       Photo by Ryan Quintal on Unsplash
@@ -59,7 +59,7 @@ excerpt__end
 
 [role="mb-3"]
 // image::{{page.image}}[{{page.title}}]
-image::/assets/images/blog/featured/staticgen.jpg[{{page.title}}]
+image::/assets/images/collections/blog/featured/staticgen.jpg[{{page.title}}]
 
 A typical CMS driven website works by building each and every page dynamically. 
 That means fetching the content from a database to pass them over to a template 
@@ -92,6 +92,6 @@ To find out what Open Source Static Site Generators are available today and
 their ranking in terms of popularity go for StaticGen You'll will find the 
 most complete list of generators! 
 
-Check link:{https://www.staticgen.com/}[StaticGen].
+Check https://www.staticgen.com[StaticGen].
 
 Have fun!

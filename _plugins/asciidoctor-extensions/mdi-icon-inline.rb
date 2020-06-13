@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
-#  ~/_plugins/asciidoctor-extensions/mdi-icon-inline.rb
-#  Asciidoctor extension for J1 Template
+# ~/_plugins/asciidoctor-extensions/mdi-icon-inline.rb
+# Asciidoctor extension for J1 Template
 #
-#  Product/Info:
-#  https://jekyll.one
+# Product/Info:
+# https://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'

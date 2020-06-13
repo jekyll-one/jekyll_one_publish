@@ -10,7 +10,7 @@ categories:                             [ pages ]
 
 flowtext:                               false
 
-permalink:                              /pages/public/start/roundtrip/responsive_tables/
+permalink:                              /pages/public/learn/roundtrip/responsive_tables/
 regenerate:                             false
 
 resources:                              []

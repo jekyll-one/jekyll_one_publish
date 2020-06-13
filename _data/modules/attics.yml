@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -70,7 +70,7 @@ settings:
   action_text:                          Download Now
 
   logo_enabled:                         false
-  logo_url:                             /assets/images/icons/j1/j1-512x512.png
+  logo_url:                             /assets/images/modules/icons/j1/j1-512x512.png
   logo_alt:                             Jekyll-One-Template
   logo_height:                          196
   logo_animate:                         slideInDown
@@ -199,7 +199,7 @@ settings:
 #        transitionDuration:            2500
 #        animateFirst:                  false
 #        slides:
-#          - url:                       "/assets/images/attics/pagehead-default-1200.jpg"
+#          - url:                       "/assets/images/modules/attics/pagehead-default-1200.jpg"
 #            alt:                       "J1 Master Header - Default image for Layout PAGE"
 #            caption:                   "Caption for the header image with a link"
 #            caption_href:              "#"

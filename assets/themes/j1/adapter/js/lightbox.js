@@ -12,7 +12,7 @@ regenerate:                             false
  # Product/Info:
  # https://jekyll.one
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  #
  # J1 Template is licensed under the MIT License.
  # For details, see https://jekyll.one
@@ -56,7 +56,7 @@ regenerate:                             false
  # https://jekyll.one
  # https://github.com/lokesh/lightbox2/
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  # Copyright (C) 2007, 2018 Lokesh Dhakar
  #
  # J1 Template is licensed under the MIT License.

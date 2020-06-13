@@ -1,26 +1,25 @@
 # ------------------------------------------------------------------------------
-#  ~/_plugins/debug.rb
-#  Helper to inspect liquid template variables for Jekyll
+# ~/_plugins/debug.rb
+# Helper to inspect liquid template variables for Jekyll
 #
-#  Product/Info:
-#  http://jekyll.one
+# Product/Info:
+# http://jekyll.one
 #
-#  Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
-#
-# ------------------------------------------------------------------------------
-#   USAGE:
-#   Can be used anywhere liquid syntax is parsed with templates, includes,
-#    posts and pages:
-#
-#     {{ site | debug }}
-#     {{ site.pages | debug }}
-#     {{ site.posts | debug }}
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
-
+#  USAGE:
+#  Can be used anywhere liquid syntax is parsed with templates, includes,
+#   posts and pages:
+#
+#    {{ site | debug }}
+#    {{ site.pages | debug }}
+#    {{ site.posts | debug }}
+#
+# ------------------------------------------------------------------------------
 require 'pp'
 
 module Jekyll

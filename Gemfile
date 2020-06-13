@@ -6,7 +6,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2019 Juergen Adams
+# Copyright (C) 2020 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -42,11 +42,11 @@ ruby RUBY_VERSION
 
 # Latest stable Jekyll version
 #
-gem 'jekyll', '~> 3.0'
+gem 'jekyll', '~> 4.0'
 
 # Theme Rubies, default: J1 Template
 #
-gem 'j1-template', '~> 2019.1.7' 
+gem 'j1-template', '~> 2020.0.0' 
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment

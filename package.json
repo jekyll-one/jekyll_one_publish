@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1_starter",
-  "version": "2019.1.3",
+  "version": "2020.0.0",
   "description": "J1 Template starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -78,7 +78,7 @@
     "clean:etc-folder": "echo Remove etc folder .. && shx rm -rf ./etc",
     "clean:logfiles": "echo Remove various log files .. && shx rm -f *.log",
     "clean:locks": "echo Remove lock files .. && shx rm -f *.lock && shx rm -f package-lock.json",
-    "clean:links": "echo Remove shared resources .. && shx rm -f _data/modules/cc.yml",
+    "_clean:links": "echo Remove shared resources .. && shx rm -f _data/modules/cc.yml",
     "credentials": "run-s -s credential:*",
     "credential:echo": "echo Store username and password ..",
     "credential:set": "git config credential.helper store && echo done.",
@@ -96,7 +96,7 @@
     "setup:create-log-folder": "echo Create log folder .. && shx mkdir ./log",
     "setup:create-log-archived-folder": "echo Create archived log folder .. && shx mkdir ./log/archived",
     "setup:create-etc-folder": "echo Create etc folder .. && shx mkdir ./etc && echo done.",
-    "setup:links": "echo Link shared resources .. && lnk -s apps/public/cc/cc.yml _data/modules && echo done.",
+    "_setup:links": "echo Link shared resources .. && lnk -s apps/public/cc/cc.yml _data/modules && echo done.",
     "set-env:loglevel": "cross-var cross-env npm config set jekyll_one_com:loglevel  $npm_package_config_loglevel",
     "set-env:mode": "cross-var cross-env npm config set jekyll_one_com:mode $npm_package_config_mode && echo done.",
     "setup:node-modules-base": "echo Bootstrap project modules .. && echo J1 Project modules: >> install.log && npm --silent install >> install.log",

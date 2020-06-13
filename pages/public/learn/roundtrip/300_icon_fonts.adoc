@@ -7,7 +7,7 @@ tags:                                   [ Page, Roundtrip ]
 index:                                  [ Template, Roundtrip, Material, Design, MDI, FontAwesome, Icon, Fonts ]
 categories:                             [ pages ]
 
-permalink:                              /pages/public/start/roundtrip/mdi_icon_font/
+permalink:                              /pages/public/learn/roundtrip/mdi_icon_font/
 regenerate:                             false
 
 resources:                              []
@@ -203,6 +203,7 @@ For MDI a *Preview Page* is available to explore what can be done base on the
 J1 implemetation regarding sizes, colors, animations etc. Go for the
 link:{previewer-mdi}[Preview Page, {window}] and check-out what's
 possible using MDI font icons!
+
 
 
 === FontAwesome Icons

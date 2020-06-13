@@ -13,7 +13,7 @@ regenerate:                             true
  # https://jekyll.one
  # http://dynamicdrive.com/dynamicindex3/scrolltop.htm
  #
- # Copyright (C) 2019 Juergen Adams
+ # Copyright (C) 2020 Juergen Adams
  # Copyright (C) 2009 dynamicdrive.com
  #
  # J1 Template is licensed under the MIT License.
@@ -74,7 +74,7 @@ regenerate:                             true
  #  https://jekyll.one
  #  http://dynamicdrive.com/dynamicindex3/scrolltop.htm
  #
- #  Copyright (C) 2019 Juergen Adams
+ #  Copyright (C) 2020 Juergen Adams
  #  Copyright (C) 2009 dynamicdrive.com
  #
  #  J1 Template is licensed under the MIT License.

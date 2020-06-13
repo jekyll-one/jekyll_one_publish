@@ -6,7 +6,7 @@ description:                            Useful info on cookies and how they used
 date:                                   2019-06-01 00:00:00 +0200
 series:
 adsense:                                false
-image:                                  /assets/images/attics/cookies-1920x1200-bw.jpg
+image:                                  /assets/images/modules/attics/cookies-1920x1200-bw.jpg
 
 tags:                                   [ About, Cookies ]
 index:                                  [ Cookie, Usage, Type, Policy, Consent ]
@@ -21,7 +21,7 @@ resource_options:
       padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/attics/cookies-1920x1200-bw.jpg
+        - url:                          /assets/images/modules/attics/cookies-1920x1200-bw.jpg
           alt:                          Photo by Miroslava on Unsplash
 #         caption:                      
 #           text:                       Photo by Miroslava on Unsplash
@@ -80,7 +80,7 @@ excerpt__end
 
 [role="mb-3"]
 // image::{{page.image}}[{{page.title}}]
-// image::/assets/images/attics/cookies-1920x1200-bw.png[{{page.title}}, 800]
+// image::/assets/images/modules/attics/cookies-1920x1200-bw.png[{{page.title}}, 800]
  
 In short words. A cookie is a small piece of data that a website asks your
 browser to store on your computer or mobile device. The cookie allows the 
@@ -186,7 +186,7 @@ cookie notice.
 == How to control cookies
 
 You can control and/or delete cookies as you wish – for details, 
-see link:{http://www.aboutcookies.org/}[aboutcookies.org]. You can delete 
+see http://www.aboutcookies.org[aboutcookies.org]. You can delete 
 all cookies that are already on your computer and you can set most 
 browsers to prevent them from being placed. If you do this, however, 
 you may have to manually adjust some preferences every time you visit 

@@ -7,7 +7,7 @@ tags:                                   [ Page, Roundtrip ]
 index:                                  [ Template, Roundtrip, Asciidoc, Asciidoctor, Extensions ]
 categories:                             [ pages ]
 
-permalink:                              /pages/public/start/roundtrip/asciidoc_extensions/
+permalink:                              /pages/public/learn/roundtrip/asciidoc_extensions/
 regenerate:                             false
 
 resources:                              [ lightbox ]
