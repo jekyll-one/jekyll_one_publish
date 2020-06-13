@@ -140,7 +140,7 @@ settings:
                     icon_family:
                     icon_size:
                     icon_color:
-                    href:               https://j1-preview.netlify.com/
+                    href:               https://j1-preview.netlify.app/         # https://j1-preview.netlify.com/
                     target:
 
 
