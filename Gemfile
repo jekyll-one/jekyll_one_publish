@@ -46,7 +46,7 @@ gem 'jekyll', '~> 4.0'
 
 # Theme Rubies, default: J1 Template
 #
-gem 'j1-template', '~> 2020.0.1'
+gem 'j1-template', '~> 2020.0.2'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -105,7 +105,7 @@ group :jekyll_plugins do
 # gem 'jekyll-gist', '>= 1.5.0'
 # gem 'jekyll-sitemap', '>= 1.2.0'
 # gem 'jekyll-redirect-from', '>= 0.13.0'
-  gem 'j1-paginator', '>= 2020.0.1'
+  gem 'j1-paginator', '>= 2020.0.2'
   gem 'jekyll-sass-converter', '>= 1.5.1'
 end
 
