@@ -20,6 +20,11 @@
 #
 - item:                                 Learn
   sublevel:
+
+    - title:                            What's up
+      href:                             /pages/public/learn/whats_up/
+      icon:                             alert
+
     # --------------------------------------------------------------------------
     # Roundtrip
     #

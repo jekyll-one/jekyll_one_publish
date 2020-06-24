@@ -40,13 +40,18 @@ ruby RUBY_VERSION
 # NOTE: J1 Template is using Jekyll v3.8 and above
 #
 
+# Support for Ruby version 2.7 (DEC 2019)
+#
+# See: https://github.com/jekyll/jekyll/issues/8049
+# gem "jekyll", github: "jekyll/jekyll"
+
 # Latest stable Jekyll version
 #
 gem 'jekyll', '~> 4.0'
 
 # Theme Rubies, default: J1 Template
 #
-gem 'j1-template', '~> 2020.0.2'
+gem 'j1-template', '~> 2020.0.4'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
