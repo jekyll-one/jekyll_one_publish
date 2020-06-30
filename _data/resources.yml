@@ -351,7 +351,7 @@ resources:
   #   6   n/a                           moment@2.19.2
   #   7   log4javascript                log4javascript@1.4.15
   #   8   clipboard                     clipboard@1.7.1
-  #   9   smoothscroll                  smoothscroll-for-websites@1.4.6
+  #   9   smoothscroll                  smoothscroll-for-websites@4.11.12
   #   10  bs_material_design            bootstrap-material-design@4.0.0-beta.4
   #   11  j1_template_4                 j1_template_4@0.0.1
   #   12  tocbot                        tocbot@3.0.2
@@ -439,7 +439,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      script_load:                      defer
+      script_load:                      defer                                   # Warum defer???
       dependencies:                     [ logger ]
       pass_init_data:                   false
       data:
@@ -479,7 +479,7 @@ resources:
       layout:                           [ page, post, collection, blog_archive ]
       region:                           head
       required:                         always
-      script_load:                      defer
+      script_load:                      defer                                   # Warum defer???
       dependencies:                     [ navigator ]
       pass_init_data:                   true
       data:
@@ -494,12 +494,12 @@ resources:
   - name:                               J1 Back2Top
     resource:
       id:                               back2top
-      enabled:                          true
+      enabled:                          false
       comment:                          module back2top
       region:                           head
       layout:                           [ all ]
       required:                         always
-      script_load:                      defer
+      script_load:                      defer                                   # Warum defer???
       dependencies:                     [ navigator ]
       pass_init_data:                   false
       data:
@@ -567,6 +567,27 @@ resources:
         files:                          [ adapter/js/cookie_consent.js ]
         js:                             []
         init_function:                  [ j1.adapter.cookie_consent.init ]
+
+  # ----------------------------------------------------------------------------
+  # Sticky Side Menu
+  #
+  - name:                               Sticky Side Menu
+    resource:
+      id:                               ssm
+      enabled:                          true
+      comment:                          module ssm
+      region:                           head
+      layout:                           [ app, page, post, collection ]
+      required:                         always
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   true
+      data:
+        css:                            []
+        files:                          [ adapter/js/ssm.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.ssm.init ]
+
 
 # ==============================================================================
 # J1 Core MODULES initialized 'ondemand' for a layout
@@ -712,11 +733,11 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [                                          
+        css:                            [
                                           extensions/mmenu-light/css/mmenu-light,
                                           extensions/mmenu-light/css/themes/uno
                                         ]
-        files:                          [ adapter/js/mmenu.js]
+        files:                          [ adapter/js/mmenu.js ]
         js:                             [
                                           extensions/mmenu-light/js/mmenu-light,
                                           extensions/mmenu-light/js/mmenu-light.polyfills

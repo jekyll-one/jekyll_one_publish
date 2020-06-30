@@ -288,29 +288,25 @@ j1.adapter['mmenu'] = (function (j1, window) {
               theme:            mmOptions.mmenu_navigator.theme
             });
 
-            // Toggle Bars (Hamburger) for the NavBar to open|close
+            // Button|Toggler for the NavBar to open|close
             // the mmenu drawer
-            $('{{item.menu.content.button}}').each(function(e) {
+            $('{{item.menu.content.button_selector}}').each(function(e) {
               var $this = $(this);
 
               $this.on('click', function(e){
-                const button_{{menu_id}} = this;
+                const toggler_{{menu_id}} = this;
 
                 // TODO: Animated toggle button
                 //
-                // $('{{item.menu.content.toggler}}').toggleClass('fadeIn');
-                // $('{{item.menu.content.toggler}}').toggleClass('rotateIn')
+                $('{{item.menu.content.button_selector}}').toggleClass('fadeIn');
+                $('{{item.menu.content.button_selector}}').toggleClass('rotateIn')
 
-                // $('.mdi', this).toggleClass('mdi-menu');
-                // $('.mdi', this).toggleClass('mdi-close');
-
+                $('.mdi', this).toggleClass('mdi-menu');
+                $('.mdi', this).toggleClass('mdi-close');
                 e.preventDefault();
-
-                // (toggler_{{menu_id}}.t = !toggler_{{menu_id}}.t)
-                //   ? drawer_{{menu_id}}.open()
-                //   : drawer_{{menu_id}}.close();
-
-                drawer_{{menu_id}}.open()
+                (toggler_{{menu_id}}.t = !toggler_{{menu_id}}.t)
+                  ? drawer_{{menu_id}}.open()
+                  : drawer_{{menu_id}}.close();
               });
             });
             clearInterval(dependencies_met_{{menu_id}}_loaded);
@@ -343,33 +339,30 @@ j1.adapter['mmenu'] = (function (j1, window) {
                 position: "{{item.menu.drawer.position}}"
               });
 
-              // button for the MMenu tocbar to open|close the toc drawer
-              $('{{item.menu.content.button}}').each(function(e) {
+              // Button|Toggler for the MMenu tocbar to open|close the toc drawer
+              $('{{item.menu.content.button_selector}}').each(function(e) {
                 var $this = $(this);
 
                 $this.on('click', function(e) {
-                  var button_{{menu_id}} = this;
+                  var toggler_{{menu_id}} = this;
                   var hasClass;
 
-                  // check if the button should be activated
+                  // check if the toggler should be activated
                   // e.g for TOC only if clas js-toc-content is found
                   //
-                  if ('{{item.menu.content.button_activated}}' != 'always') {
-                    hasClass = $('main').hasClass('{{item.menu.content.button_activated}}');
+                  if ('{{item.menu.content.toggler_activated}}' != 'always') {
+                    hasClass = $('main').hasClass('{{item.menu.content.toggler_activated}}');
                   } else {
                     hasClass = true;
                   }
                   if (hasClass) {
                     // Toggle button animation
-                    //$('{{item.menu.content.toggler}}').toggleClass('{{item.menu.content.toggler_animation}}')
+                    $('{{item.menu.content.button_selector}}').toggleClass('{{item.menu.content.toggler_animation}}')
 
                     e.preventDefault();
-
-                    // (toggler_{{menu_id}}.t = !toggler_{{menu_id}}.t)
-                    //   ? drawer_{{menu_id}}.open()
-                    //   : drawer_{{menu_id}}.close();
-
-                    drawer_{{menu_id}}.open()
+                    (toggler_{{menu_id}}.t = !toggler_{{menu_id}}.t)
+                      ? drawer_{{menu_id}}.open()
+                      : drawer_{{menu_id}}.close();
                   } // END if hasclass
                 });
               });

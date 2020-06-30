@@ -68,10 +68,9 @@ settings:
 
           content:
             type:                       navigation
-            title:                      Preview
+            title:                      Starter Web
             theme:                      dark
-            button:                     "#mmenu-button"
-            button_activated:           always
+            button_selector:            "#navbar-toggler"
 
       # ------------------------------------------------------------------------
       # DRAWER Sidebar
@@ -89,8 +88,11 @@ settings:
             type:                       drawer
             title:                      Site Info
             theme:                      dark
-            button:                     "#navbar-brand"
-            button_activated:           always
+            button_selector:            "#navbar-brand"
+            toggle:                     true
+
+            toggler_animation:          rotateIn
+            toggler_activated:          always
 
             boxes:
 
@@ -198,8 +200,10 @@ settings:
             type:                       drawer
             title:                      Table of Contents
             theme:                      light
-            button:                     "#ssm_toc"
-            button_activated:           "js-toc-content"
+            button_selector:            "#toc-toggler"
+            toggle:                     false        
+            toggler_animation:          rotateIn
+            toggler_activated:          "js-toc-content"
 
   # ----------------------------------------------------------------------------
   # NavQuicklinks
@@ -207,8 +211,10 @@ settings:
   nav_quicklinks:
     enabled:                            true
 
-    home_url:                           https://preview.jekyll.one/             # none | URL
-    back_url:                           https://jekyll.one/                     # none | URL
+    home_url:                           /                                       # none | URL
+    back_url:                           none                                    # none | URL
+
+    toc_toggler:                        true
 
     r_text_sizer:                       false                                   # true | false
 
