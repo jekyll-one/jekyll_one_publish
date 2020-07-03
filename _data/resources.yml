@@ -351,17 +351,14 @@ resources:
   #   6   n/a                           moment@2.19.2
   #   7   log4javascript                log4javascript@1.4.15
   #   8   clipboard                     clipboard@1.7.1
-  #   9   smoothscroll                  smoothscroll-for-websites@4.11.12
   #   10  bs_material_design            bootstrap-material-design@4.0.0-beta.4
   #   11  j1_template_4                 j1_template_4@0.0.1
-  #   12  tocbot                        tocbot@3.0.2
+  #   12  tocbot                        tocbot@4.11.2
   #   13  jekyll_search                 simple_jekyll_search@1.1.5
-  #   14  back2top                      back2top@1.1
   #   15  bs_theme_switcher             bs_theme_switcher@1.1.5
   #   16  backstretch                   backstretch@2.1.16
   #   17  cookie consent                cookieConsent@2019-07-24
   #   18  bootstrap_datepicker          datepicker@1.7.1
-  #   19  bs_gallery                    bs_gallery@2017-12-27
   #
   # ----------------------------------------------------------------------------
   #   J1 Template Core, integrated CSS Resources
@@ -489,46 +486,6 @@ resources:
         init_function:                  [ j1.adapter.toccer.init ]
 
   # ----------------------------------------------------------------------------
-  # Back2Top
-  #
-  - name:                               J1 Back2Top
-    resource:
-      id:                               back2top
-      enabled:                          false
-      comment:                          module back2top
-      region:                           head
-      layout:                           [ all ]
-      required:                         always
-      script_load:                      defer                                   # Warum defer???
-      dependencies:                     [ navigator ]
-      pass_init_data:                   false
-      data:
-        css:                            []
-        files:                          [ adapter/js/back2top.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.back2top.init ]
-
-  # ----------------------------------------------------------------------------
-  # Scroller
-  #
-  - name:                               J1 Scroller
-    resource:
-      id:                               scroller
-      enabled:                          true
-      comment:                          module smoothscroll
-      region:                           head
-      layout:                           [ all ]
-      required:                         always
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            []
-        files:                          [ adapter/js/scroller.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.scroller.init ]
-
-  # ----------------------------------------------------------------------------
   # Searcher
   #
   - name:                               J1 Searcher
@@ -577,7 +534,7 @@ resources:
       enabled:                          true
       comment:                          module ssm
       region:                           head
-      layout:                           [ app, page, post, collection ]
+      layout:                           [ page, post, app, collection, blog_archive ]
       required:                         always
       script_load:                      defer
       dependencies:                     false

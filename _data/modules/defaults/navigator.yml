@@ -67,7 +67,7 @@ defaults:
     mmenu_navigator:
       selected:                         Selected
       slidingSubmenus:                  true
-      title:                            Preview
+      title:                            Starter Web
       theme:                            dark
 
     mmenu_drawer:

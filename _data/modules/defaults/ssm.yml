@@ -37,7 +37,7 @@ defaults:
   icon_size:                            mdi-2x
 
   min_width:                            200
-  margin:                               -150                                    # button size 50x50
+  margin:                               -140                                    # button size 50x50
 
   mode:                                 menu                                    # icon|menu
 

@@ -155,8 +155,9 @@ j1.adapter['ssm'] = (function (j1, window) {
         if (interval_count > max_count) {
           logger.warn('dependency check failed for module: navigator');
           logger.warn('dependencies of module navigator met after: ' + interval_count * 25 + ' ms');
+          j1.core.ssm.init (moduleOptions);
+          _this.ssmLoader(moduleOptions);
           clearInterval(dependencies_met_navigator);
-          //j1.adapter.ssm.ssmLoader(ssmMenuOptions);
         }
       }, 25);
 
@@ -189,7 +190,8 @@ j1.adapter['ssm'] = (function (j1, window) {
         // ---------------------------------------------------------------------
         var dependencies_met_mmenu_initialized = setInterval (function () {
           if (ssm) {
-            if (j1.getState() === 'finished') {
+           if (j1.getState() === 'finished') {
+//         if ( j1.adapter.navigator.getState() == 'finished' ) {
               logger.info('load HTML data (AJAX): finished');
               _this.setState('processing');
               logger.info('status: ' + _this.getState());
@@ -204,7 +206,7 @@ j1.adapter['ssm'] = (function (j1, window) {
           } else {
             logger.error('initialize ssm failed, HTML data NOT loaded');
           }
-        }); // END dependencies_met_mmenu_loaded
+        }, 25); // END dependencies_met_mmenu_loaded
       }); // END done
     }, // END dataLoader
 

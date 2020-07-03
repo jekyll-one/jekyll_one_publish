@@ -67,8 +67,9 @@ settings:
             position:                   right
 
           content:
+            id:                         menu_mmenu
             type:                       navigation
-            title:                      Preview
+            title:                      Starter Web
             theme:                      dark
             button:                     "#mmenu-button"
             button_activated:           always
@@ -86,6 +87,7 @@ settings:
             position:                   left
 
           content:
+            id:                         sidebar_mmenu
             type:                       drawer
             title:                      Site Info
             theme:                      dark
@@ -195,9 +197,10 @@ settings:
             position:                   right
 
           content:
+            id:                         toc_mmenu
             type:                       drawer
             title:                      Table of Contents
-            theme:                      light
+            theme:                      dark
             button:                     "#ssm_toc"
             button_activated:           "js-toc-content"
 
