@@ -241,7 +241,7 @@ webmaster:
   email:                                webmaster@example.domain
 
 robots:
-  index:                                false
+  index:                                true
   follow:                               true
 
 # ------------------------------------------------------------------------------
@@ -251,7 +251,7 @@ robots:
 brand:
   image:                                modules/icons/j1/j1-512x512.png
   image_height:                         64
-  text:                                 Starter Web
+  text:                                 J1 Preview
   text_color:                           "#9E9E9E"
 
 # Set the favicon (located in the asset_path/images) and type
@@ -348,7 +348,7 @@ base_path:                              ""
 #
 protocol:                               http
 host:                                   localhost
-port:                                   4000
+port:                                   15000
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 
