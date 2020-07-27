@@ -40,18 +40,21 @@ ruby RUBY_VERSION
 # NOTE: J1 Template is using Jekyll v3.8 and above
 #
 
-# Support for Ruby version 2.7 (DEC 2019)
+# ------------------------------------------------------------------------------
+# Use Jekyll version from GH master
 #
+# Support for Ruby version 2.7 (DEC 2019)
 # See: https://github.com/jekyll/jekyll/issues/8049
-# gem "jekyll", github: "jekyll/jekyll"
+# gem 'jekyll', github: 'jekyll/jekyll'
 
-# Jekyll version
+# ------------------------------------------------------------------------------
+# Use Jekyll version from RubyGems
 #
 gem 'jekyll', '~> 4.0'
 
 # Theme Rubies, default: J1 Template (NOT used for the developmnet system)
 #
-gem 'j1-template', '~> 2020.0.14'
+gem 'j1-template', '~> 2020.0.15'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -169,7 +172,7 @@ end
 # running # tasks defined by a Rakefile prior running the app|web.
 #
 # gem 'passenger', '>= 5.3'
-gem "puma", '>= 4.3.1'
+gem 'puma', '>= 4.3.1'
 
 # ------------------------------------------------------------------------------
 # If J1 is transformed into a (Rack and Sinatra based) Web

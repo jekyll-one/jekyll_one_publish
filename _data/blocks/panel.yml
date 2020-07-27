@@ -346,7 +346,7 @@ settings:
                                         Explore the blog and find some interesting articles around Jekyll and
                                         website creation processes in general. And this blog is an excellent
                                         example how J1 and Jekyll can be used for blogging.
-                                        <br/><br/>
+                                        <br/>
                                         Have fun!
 
         cards:
@@ -357,7 +357,7 @@ settings:
               category:                 featured
 #             truncatewords:            30                                      # currently NOT used
               max_posts:                3
-              readmore_text:            read more
+              readmore_text:            Read
 
   # # ----------------------------------------------------------------------------
   # # STEP Panel
