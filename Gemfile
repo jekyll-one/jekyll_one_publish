@@ -52,9 +52,13 @@ ruby RUBY_VERSION
 #
 gem 'jekyll', '~> 4.0'
 
-# Theme Rubies, default: J1 Template (NOT used for the developmnet system)
+# Theme Rubie
+# Note: Currently, the version lookup range is LOCKED to the
+#       current version to NOT conflict with changes in higher
+#       versions available for unsupported settings
+# TODO: Open range if template settings are stable
 #
-gem 'j1-template', '~> 2020.0.15'
+gem 'j1-template', '~> 2020.0.15' , '= 2020.0.15'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -181,7 +185,7 @@ gem 'puma', '>= 4.3.1'
 # authentication. For default, the Omniauth (authentication) strategies
 # for Github, Twitter, Facebook and Patreon are implemented.
 #
-# gem 'rack', '>= 2.2.3'
+# gem 'rack', '~> 2.2', '>= 2.2.3'
 # gem 'rack-protection', '~> 2.0'
 # gem 'rack-ssl-enforcer', '~> 0.2'
 # gem 'rest-client', '~> 2.0'
