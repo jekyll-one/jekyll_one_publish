@@ -106,7 +106,7 @@ See examples for Bootstrap’s powerful, responsive navigation header, the
 navbar. Includes support for branding, navigation, and more, including
 support for the collapse plugin.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_navbar}[Bootstrap Docs, window="_blank"].
 
 Theming the navbar has never been easier thanks to the combination of
@@ -225,7 +225,7 @@ more with support for multiple sizes, states, and more. Bootstrap includes
 several predefined button styles, each serving its own semantic purpose,
 with a few extras thrown in for more control.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_buttons}[Bootstrap Docs, window="_blank"].
 
 === Active buttons
@@ -283,9 +283,9 @@ Beside the default size, small and large buttons are available.
 
 ++++
 <div class="doc-example mb-3">
-  <button type="button" class="btn btn-primary btn-raised btn-lg">Large button</button>
-  <button type="button" class="btn btn-primary btn-raised">Default button</button>
-  <button type="button" class="btn btn-primary btn-raised btn-sm">Small button</button>
+  <button type="button" class="btn btn-secondary btn-raised btn-lg">Large button</button>
+  <button type="button" class="btn btn-secondary btn-raised">Default button</button>
+  <button type="button" class="btn btn-secondary btn-raised btn-sm">Small button</button>
 </div>
 ++++
 
@@ -320,10 +320,10 @@ state for these buttons is only updated via click event on the button.
 ++++
 <div class="doc-example mb-3">
   <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-primary btn-raised btn-flex active">
+    <label class="btn btn-secondary btn-raised btn-flex active">
       <input type="checkbox" checked> Checkbox 1
     </label>
-    <label class="btn btn-primary btn-raised btn-flex">
+    <label class="btn btn-secondary btn-raised btn-flex">
       <input type="checkbox"> Checkbox 2
     </label>
     <label class="btn btn-primary btn-flex btn-raised">
@@ -359,7 +359,7 @@ For a more inclusive and accessible type scale, it is assuemed that
 the browser default root font-size (typically 16px) so visitors can
 customize their browser defaults as needed.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_content_typography}[Bootstrap Docs, window="_blank"].
 
 === Headings
@@ -443,7 +443,7 @@ Using the most basic table markup, here’s how .table-based tables look in
 Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested
 tables will be styled in the same manner as the parent.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_content_tables}[Bootstrap Docs, window="_blank"].
 
 
@@ -521,7 +521,7 @@ of newer input controls like email verification, number selection, and more.
 Here’s a quick example to demonstrate Bootstrap’s form styles. Keep reading
 for documentation on required classes, form layout, and more.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_forms}[Bootstrap Docs, window="_blank"].
 
 ++++
@@ -542,7 +542,7 @@ Refer to: link:{bs_doc_components_forms}[Bootstrap Docs, window="_blank"].
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="submit" class="btn btn-primary btn-raised">Submit</button>
+    <button type="submit" class="btn btn-secondary btn-raised">Submit</button>
   </form>
 </div>
 ++++
@@ -608,7 +608,7 @@ for building all types of navigation components. It includes some style
 overrides (for working with lists), some link padding for larger hit areas,
 and basic disabled styling.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_navs}[Bootstrap Docs, window="_blank"].
 
 === Tabs
@@ -851,7 +851,7 @@ button. For proper styling, use one of the eight required contextual classes
 (e.g., .alert-success). For inline dismissal, use the alerts
 https://getbootstrap.com/docs/4.0/components/alerts/#dismissing[jQuery plugin].
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_alerts}[Bootstrap Docs, window="_blank"].
 
 ++++
@@ -908,7 +908,7 @@ be presented with the content of the badge. Depending on the specific
 situation, these badges may seem like random additional words or numbers
 at the end of a sentence, link, or button.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_badges}[Bootstrap Docs, window="_blank"].
 
 ++++
@@ -944,7 +944,7 @@ elements, some CSS to set the width, and a few attributes. We don’t use the
 HTML5 <progress> element, ensuring you can stack progress bars, animate them,
 and place text labels over them.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_progress}[Bootstrap Docs, window="_blank"].
 
 === Basic
@@ -1040,7 +1040,7 @@ lorem:sentences[2]
 
 Lightweight, flexible component for showcasing hero unit style content.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_jumbotron}[Bootstrap Docs, window="_blank"].
 
 ++++
@@ -1052,7 +1052,7 @@ Refer to: link:{bs_doc_components_jumbotron}[Bootstrap Docs, window="_blank"].
       <hr class="my-4">
       <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
       <p class="lead">
-        <a class="btn btn-primary btn-raised btn-lg" href="javascript:(void)" role="button">Learn more</a>
+        <a class="btn btn-secondary btn-raised btn-lg" href="javascript:(void)" role="button">Learn more</a>
       </p>
     </div>
   </div>
@@ -1064,7 +1064,7 @@ Refer to: link:{bs_doc_components_jumbotron}[Bootstrap Docs, window="_blank"].
 List groups are a flexible and powerful component for displaying a series of
 content. Modify and extend them to support just about any content within.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_list_group}[Bootstrap Docs, window="_blank"].
 
 ++++
@@ -1147,7 +1147,7 @@ manage to deliver a ton of control and customization. Built with flexbox,
 they offer easy alignment and mix well with other Bootstrap components.
 They have no margin by default, so use spacing utilities as needed.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_cards}[Bootstrap Docs, window="_blank"].
 
 ++++
@@ -1329,7 +1329,7 @@ built with HTML, CSS, and JavaScript. They’re positioned over everything
 else in the document and remove scroll from the <body> so that modal
 content scrolls instead.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_modal}[Bootstrap Docs, window="_blank"].
 
 .Modal types
@@ -1345,7 +1345,7 @@ from the top of the page.
 <div class="ml-2 mb-5">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-secondary btn-raised"
     data-toggle="modal"
     data-target="#exampleSimpleModal">
     Launch Example
@@ -1370,8 +1370,8 @@ from the top of the page.
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-raised mr-2" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-raised">Save changes</button>
+        <button type="button" class="btn btn-primary btn-raised mr-2" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary btn-raised">Save changes</button>
       </div>
     </div>
   </div>
@@ -1386,7 +1386,7 @@ it (the backdrop).
 <div class="ml-2 mb-5">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-secondary btn-raised"
     data-toggle="modal"
     data-target="#exampleStaticModal">
     Launch Example
@@ -1413,8 +1413,8 @@ it (the backdrop).
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-raised mr-2" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-raised">Save changes</button>
+        <button type="button" class="btn btn-primary btn-raised mr-2" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary btn-raised">Save changes</button>
       </div>
     </div>
   </div>
@@ -1430,7 +1430,7 @@ the height.
 <div class="ml-2 mb-5">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-secondary btn-raised"
     data-toggle="modal"
     data-target="#exampleModalLong">
     Launch Example
@@ -1489,8 +1489,8 @@ the height.
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-raised mr-2" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-raised">Save changes</button>
+        <button type="button" class="btn btn-primary btn-raised mr-2" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary btn-raised">Save changes</button>
       </div>
     </div>
   </div>
@@ -1505,7 +1505,7 @@ modal body. Try the demo and scroll the content.
 <div class="ml-2 mb-5">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-secondary btn-raised"
     data-toggle="modal"
     data-target="#exampleModalLongScrollable">
     Launch Example
@@ -1564,8 +1564,8 @@ modal body. Try the demo and scroll the content.
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-raised mr-2" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-raised">Save changes</button>
+        <button type="button" class="btn btn-primary btn-raised mr-2" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary btn-raised">Save changes</button>
       </div>
     </div>
   </div>
@@ -1579,7 +1579,7 @@ modal body. Try the demo and scroll the content.
 <div class="ml-2 mb-5">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-secondary btn-raised"
     data-toggle="modal" data-target="#exampleModalVerticalCenter">
     Launch Example
   </button>
@@ -1605,8 +1605,8 @@ modal body. Try the demo and scroll the content.
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-raised mr-2" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-raised">Save changes</button>
+        <button type="button" class="btn btn-primary btn-raised mr-2" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary btn-raised">Save changes</button>
       </div>
     </div>
   </div>
@@ -1621,7 +1621,7 @@ closed, any tooltips and popovers within are also automatically dismissed.
 <div class="ml-2 mb-5">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-secondary btn-raised"
     data-toggle="modal"
     data-target="#exampleModalTooltip">
     Launch Example
@@ -1650,8 +1650,8 @@ closed, any tooltips and popovers within are also automatically dismissed.
         <p><a href="javascript:(void)" class="tooltip-test" data-toggle="tooltip" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-raised mr-2" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-raised">Save changes</button>
+        <button type="button" class="btn btn-primary btn-raised mr-2" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary btn-raised">Save changes</button>
       </div>
     </div>
   </div>
@@ -1668,7 +1668,7 @@ bootstrap.bundle.js which contains Popper.js in order for popovers to work.
 
 Note: Popovers require the tooltip plugin as a dependency.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_popovers}[Bootstrap Docs, window="_blank"].
 
 ++++
@@ -1690,7 +1690,7 @@ bootstrap.bundle.js which contains Popper.js in order for tooltips to work.
 Note: Tooltips are opt-in for performance reasons, so you must initialize
 them yourself.
 
-pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-bg-primary"></i>]
+pass:[<i class="mdi mdi-book-open mdi-24px mdi-md-blue-900"></i>]
 Refer to: link:{bs_doc_components_tooltips}[Bootstrap Docs, window="_blank"].
 
 ++++

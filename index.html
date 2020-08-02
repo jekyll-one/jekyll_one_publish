@@ -8,7 +8,7 @@ description:                            Jekyll One Template. Gem-based template 
 
 tags:                                   [ Example, Web ]
 index:                                  [ Template, Jekyll, Clean, Responsive, Featured, Gem-Based ]
-categories:                             [ examples]
+categories:                             [ examples ]
 indexed:                                false
 
 debug:                                  false
@@ -21,13 +21,12 @@ toc:                                    false
 
 robots:
   index:                                true
-  follow:                               true
+  follow:                               false
 
 #permalink:                             /
 scrollbar:                              false
 
-resources:                              [ animate ]
-
+resources:                              [ back2top, animate ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -43,9 +42,7 @@ resource_options:
             href:                       https://unsplash.com/@dallehj
 ---
 
-
 <pre>
-
   This page is created by the layout: {{ page.layout }}.
 
   If this text is displayed (instead of the home page expected),
@@ -59,14 +56,13 @@ resource_options:
   If you see this page within the J1 Template DEVELOPMENT system,
   re-run a site built running:
 
-    yarn rebuilt site
+    yarn rebuild site
 
   If you're on a RUNTIME system run a built like so:
 
-    yarn rebuilt
+    yarn rebuild
 
   and open the website again by:
 
     yarn site
-
 </pre>

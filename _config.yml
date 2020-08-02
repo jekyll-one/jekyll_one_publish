@@ -53,7 +53,7 @@ environment:                            production
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2020.0.15
+version:                                2020.0.17
 
 # version
 # ------------------------------------------------------------------------------
@@ -225,7 +225,7 @@ doctype:                                html
 #   default:                            false
 #
 title:                                  J1
-slogan:                                 J1 Preview
+slogan:                                 j1 preview · get out the common
 description:                            Made for Jekyll · Made for Your Web
 keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
                                         Asciidoc, Bootstrap, Javascript,
@@ -241,7 +241,7 @@ webmaster:
   email:                                webmaster@example.domain
 
 robots:
-  index:                                true
+  index:                                false
   follow:                               true
 
 # ------------------------------------------------------------------------------

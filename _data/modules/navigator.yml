@@ -217,7 +217,7 @@ settings:
 
     github_url:                         https://github.com/jekyll-one
     disqus_url:                         none                                    # https://disqus.com/
-    patreon_url:                        none     
+    patreon_url:                        none
 
   # ----------------------------------------------------------------------------
   # NavTopsearch

@@ -58,7 +58,7 @@ gem 'jekyll', '~> 4.0'
 #       versions available for unsupported settings
 # TODO: Open range if template settings are stable
 #
-gem 'j1-template', '~> 2020.0.15' , '= 2020.0.15'
+gem 'j1-template', '~> 2020.0.17' , '= 2020.0.17'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -176,7 +176,7 @@ end
 # running # tasks defined by a Rakefile prior running the app|web.
 #
 # gem 'passenger', '>= 5.3'
-gem 'puma', '>= 4.3.1'
+gem "puma", '>= 4.3.1'
 
 # ------------------------------------------------------------------------------
 # If J1 is transformed into a (Rack and Sinatra based) Web
