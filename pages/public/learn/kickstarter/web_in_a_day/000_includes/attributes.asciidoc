@@ -12,7 +12,7 @@ tag::urls[]
 :j1-web-in-a-day-first-awesome-web:               /pages/public/learn/kickstarter/web_in_a_day/first_awesome_web/
 
 
-:j1-quick-references-jekyll:                      /pages/protected/manuals/quick_references/jekyll/
+:j1-quick-references-jekyll:                      /pages/public/manuals/quick_references/jekyll/
 
 
 :j1-download-quickstart-intro:                    /pages/public/learn/downloads/quickstart/intro/

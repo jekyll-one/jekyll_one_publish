@@ -96,13 +96,13 @@
 - item:                                 Tools
   sublevel:
     - title:                            Gallery Previewer
-      href:                             /pages/protected/previewer/justified_gallery/
+      href:                             /pages/public/previewer/justified_gallery/
       icon:                             view-dashboard
     - title:                            MDI Icon Previewer
-      href:                             /pages/protected/previewer/mdi_font/
+      href:                             /pages/public/previewer/mdi_font/
       icon:                             incognito
     - title:                            Twitter Emoji Previewer
-      href:                             /pages/protected/previewer/twitter_emoji/
+      href:                             /pages/public/previewer/twitter_emoji/
       icon:                             sticker-emoji
     - title:                            Automagic iFrame
       href:                             /pages/public/iframer/

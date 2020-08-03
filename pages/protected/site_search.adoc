@@ -12,7 +12,7 @@ categories:                             [ pages ]
 
 toc:                                    false
 
-permalink:                              /pages/protected/site_search/
+permalink:                              /pages/public/site_search/
 regenerate:                             false
 
 resources:                              [ algolia ]
