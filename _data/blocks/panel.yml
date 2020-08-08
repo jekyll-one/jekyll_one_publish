@@ -84,7 +84,7 @@ settings:
               icon:                     mdi:github-circle
               icon_family:              iconify
               icon_size:                3x
-              icon_color:               bg-primary
+              icon_color:               md-blue-900                             # bg-primary
               text: >
                                         GitHub Pages is a static site hosting service designed to
                                         host your personal or project pages directly from a GitHub
@@ -118,7 +118,7 @@ settings:
               icon:                     simple-icons:netlify
               icon_family:              iconify
               icon_size:                3x
-              icon_color:               bg-primary
+              icon_color:               md-blue-900                             # bg-primary
               text: >
                                         Netlify provides everything you need to build
                                         fast, modern websites based on modern static site
@@ -153,7 +153,7 @@ settings:
               icon:                     simple-icons:heroku
               icon_family:              iconify
               icon_size:                3x
-              icon_color:               bg-primary
+              icon_color:               md-blue-900                             # bg-primary
               text: >
                                         Heroku is a cloud platform that lets build, deliver, monitor
                                         and scale web applications; bypassing all infrastructure headache.
@@ -232,7 +232,7 @@ settings:
               type:                     service
               icon:                     bullseye
               icon_size:                8x
-              icon_color:               md-grey-800
+              icon_color:               md-blue-900                             # md-grey-800
               href:                     /pages/public/panel/service_panel/core
               title:                    J1 Template
               tagline:                  The Core
@@ -265,7 +265,7 @@ settings:
               type:                     service
               icon:                     locker-multiple
               icon_size:                8x
-              icon_color:               md-grey-800
+              icon_color:               md-blue-900                             # md-grey-800
               href:                     /pages/public/panel/service_panel/components/
               title:                    J1 Template
               tagline:                  The Components
@@ -298,7 +298,7 @@ settings:
               type:                     service
               icon:                     language-javascript
               icon_size:                8x
-              icon_color:               md-grey-800
+              icon_color:               md-blue-900                             # md-grey-800
               href:                     /pages/public/panel/service_panel/modules/
               title:                    J1 Template
               tagline:                  The Modules
