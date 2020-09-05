@@ -126,7 +126,10 @@ settings:
         type:                           teaser
         icon_family:                    MDI
         style:                          light
+        background_color_1:             md_gray_50
+        background_color_2:             md_gray_50
         lane_span:                      fixed
+        helper_classes:                 mt-4 mb-4
 
         cards:
 
@@ -136,57 +139,42 @@ settings:
               width:                    12
               type:                     text
               animate:                  fadeInUp
-              title:                    Jekyll One Template
-              tagline:                  <large><b>powerful modern static websites</b></large>
+              title:                    Go the static way
+              tagline:                  <large><b>powerful modern static webs</b></large>
               description: >
-                                        <p>
-                                          Jekyll One Template is the first toolbox to create modern webs
-                                          as well as a learning platform to experience what is in behind
-                                          of current Internet Technologies for the World Wide Web.
-                                          J1 provides creative people both: a rich toolset to build websites
-                                          and the knowledge needed to learn what's all about.
-                                        </p>
-                                        <p>
-                                          J1 meets Jekyll and Bootstrap. And makes a lot of friends.
-                                          The template system combines the best of free software for the web.
-                                          Jekyll One Template is open source and the modules included
-                                          are free to use as well. No license issues for private
-                                          or professional use.
-                                        </p>
-                                        <p>
-                                          Explore what's possible if you create websites the
-                                          the static way.
-                                        </p>
-              buttons:
-                - name:                 Roundtrip button
-                  button:
-                    text:               Roundtrip
-                    class:              btn btn-raised btn-flex btn-md btn-primary mr-2
-                    icon:               eye
-                    icon_color:         md_white
-                    icon_size:          24px
-                    href:               /pages/public/learn/whats_up/
-                    target:
+                                        If you’re not familiar with Jekyll (or other
+                                        <a href="https://www.staticgen.com/" target="blank">website generators</a>),
+                                        Jekyll is a so-called static site generator. Think of it as
+                                        a modern but lightweight Content Management System (CMS) - like
+                                        <a href="https://wordpress.com/" target="blank">Wordpress</a> or
+                                        <a href="https://www.joomla.org/" target="blank">Joomla</a>
+                                        but much, much simpler and without all the complexity.
 
-                - name:                 Kickstarter button
-                  button:
-                    text:               Kickstart
-                    class:              btn btn-raised btn-flex btn-md btn-primary
-                    icon:               rocket
-                    icon_color:         md_white
-                    icon_size:          24px
-                    href:               /pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
-                    target:
+                                        <div class="admonitionblock note">
+                                          <table>
+                                            <tbody><tr>
+                                              <td class="icon">
+                                                <i class="fa icon-note" title="Note"></i>
+                                              </td>
+                                              <td class="content">
+                                                For many use cases, there is no need to use a full blown CMS
+                                                to manage a website. If you go the static way, no database is needed
+                                                and no PHP-based dynamic rendering engine that slows down the
+                                                performace of your website. For e.g. document servers like
+                                                <a href="https://getbootstrap.com/docs" target="blank">Bootstrap</a> or
+                                                <a href="https://docs.docker.com/" target="blank">Docker</a>, Jekyll is
+                                                used for good reasons.
+                                              </td>
+                                            </tr></tbody>
+                                          </table>
+                                        </div>
 
-                # - name:                 Patreon button
-                #   button:
-                #     text:               Become a Patron
-                #     class:              btn btn-raised btn-flex btn-md btn-red
-                #     icon:               patreon
-                #     icon_color:         md_white
-                #     icon_size:          24px
-                #     href:               https://www.patreon.com/join/jekyll_one
-                #     target:             blank
+                                        All you’re doing at the end of the day is writing your content and
+                                        the builtin engines does all the tricky things in behind needed for
+                                        a website: design pages, putting out HTML, CSS and Javascript.
+                                        As a result, the site creation process gets out of your way. It’s done
+                                        by J1 Template and allows you to concentrate on what truly matters:
+                                        <strong>your content</strong>.
 
     # --------------------------------------------------------------------------
     # Home Welcome Banner
@@ -199,6 +187,8 @@ settings:
         type:                           teaser
         icon_family:                    MDI
         style:                          light
+        background_color_1:             md_gray_50
+        background_color_2:             md_gray_50
         lane_span:                      fixed
 
         cards:
@@ -245,7 +235,7 @@ settings:
                 - name:                 Kickstarter button
                   button:
                     text:               Start creating your static web
-                    class:              btn btn-raised btn-flex btn-md btn-primary g-mr-5
+                    class:              btn btn-raised btn-flex btn-md btn-info g-mr-5
                     icon:               rocket
                     icon_color:         md_white
                     icon_size:          24px
@@ -265,6 +255,8 @@ settings:
         enabled:                          true
         type:                             image
         comment:                          Main image banner shown on home page
+        background_color_1:               md_gray_300
+        background_color_2:               md_gray_50
         lane_span:                        fluid
 
         cards:
@@ -292,6 +284,8 @@ settings:
         type:                             parallax
         comment:                          Main parallax banner shown on home page
         style:                            dark
+#       background_color_1:               md_gray_300
+#       background_color_2:               md_gray_50
         lane_span:                        fluid
 
         cards:
@@ -303,9 +297,8 @@ settings:
               cite_text_size:             300%
               cite_text_quotes:           false
               cite_text: >
-                                          <span style="color: #2196f3">Making is</span>
-                                          like Wanting, <br> but even
-                                          <span style="color: #2196f3">Better</span>
+                                          <span style="color: #87aade">Making is</span> like Wanting,
+                                          <br> but even <span style="color: #87aade">Better</span>
               cite_size:                  200%
 #             cite:                       J1 Team
               text_color:                 rgba_lighten_900
@@ -358,5 +351,6 @@ settings:
         type:                             foo
         comment:                          Banner (type) to test config issues/exceptions
 
-# ------------------------------------------------------------------------------
+
 # END config
+# ------------------------------------------------------------------------------

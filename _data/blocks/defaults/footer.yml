@@ -175,5 +175,6 @@ defaults:
           mail:                         contact@jekyll.one
           href:                         www.jekyll.one
 
+
 # ------------------------------------------------------------------------------
-# END config
+# END configuration
