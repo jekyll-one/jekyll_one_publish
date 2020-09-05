@@ -162,6 +162,5 @@ defaults:
   scrollSmoothDuration:                 300
   scrollSmoothOffset:                   -90                                     # TODO: to be removed, calculated dynamically
 
-
 # ------------------------------------------------------------------------------
 # END config

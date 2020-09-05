@@ -103,7 +103,7 @@ resource_options:
   {% for tag in tags %}
     {% assign category = tag|first %}
     {% unless category_list contains category %} {% continue %} {% endunless %}
-    <h3 id="{{tag|first}}" class="toc-link"><i class="mdi mdi-pin mr-1"></i>{{tag|first|capitalize}}</h3>
+    <h3 id="{{tag|first}}" class="mb-4"><i class="mdi mdi-pin mr-1"></i>{{tag|first|capitalize}}</h3>
 
       {% for post in sorted_posts %}
         {%if post.categories contains tag[0]%}
@@ -111,26 +111,21 @@ resource_options:
           {% include {{get_category_item}} category=category %}
           {% include {{select_icon_size}} family=icon_family size=icon_size %}
           {% assign icon_size = size %}
-          {% assign excerpt = post.excerpt|truncatewords: 50|strip_html|strip_newlines|strip %}
+          {% assign excerpt = post.excerpt|truncatewords:50|replace:'...',' ...'|strip_html|strip_newlines|strip %}
 
-          <div class="card card-flat" style="background-color: #fafafa">
-            <div class="card-body">
-              <!-- <span class="post-meta">{{post.date|date: "%B %d, %Y"}}</span> -->
-              <h4 id="{{100000|rand}}" class="card-title">{{post.title}}</h4>
-              <h5 class="notoc card-subtitle text-muted mb-2">{{post.tagline}}</h5>
-              <div class="card-text"><p>{{excerpt}}</p></div>
-              <span class="d-block text-muted text-uppercase g-font-weight-600 g-font-size-12">
-                <i class="mdi mdi-calendar-blank"></i>
-                {{post.date|date:"%Y %B, %e"}}
-              </span>
+          <article class="card raised-z5 mb-5">
+            <h3 id="{{100000|rand}}" class="card-header bg-primary notoc">{{post.title}}</h3>
+            <!-- h5 class="notoc card-subtitle text-muted mb-2">{{post.tagline}}</h5 -->
+            <div class="card-body r-text-300">{{excerpt}}</div>
+            <div class="card-body text-muted r-text-200">
+              <i class="mdi mdi-calendar-blank"></i> {{post.date|date:"%Y %B, %e"}}
             </div>
-            <div class="card-footer" style="background-color: #fafafa">
-              <a class="btn btn-secondary btn-raised btn-flex" href="{{post.url}}#readmore">
-                <i class="mdi mdi-eye mdi-lg mr-2" style="color:#FFFFFF;"></i>
-                Read · {{post.tagline}}
+            <div class="card-footer r-text-200">
+              <a class="card-link md-blue font-weight-bold g-font-size-12 text-uppercase"
+                 href="{{post.url}}#readmore">Read · {{post.tagline}}
               </a>
             </div>
-          </div>
+          </article>
         {% endif %}
       {% endfor %}
   {% endfor %}

@@ -44,7 +44,6 @@ defaults:
     refreshSensitivity:                 0
     justifyThreshold:                   0.90
     captions:                           true
-    
 
 # ------------------------------------------------------------------------------
 # END config

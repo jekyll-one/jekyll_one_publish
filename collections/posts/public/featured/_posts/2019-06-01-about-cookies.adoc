@@ -1,6 +1,6 @@
 ---
 title:                                  Cookies
-tagline:                                good to know about
+tagline:                                good to know
 description:                            Useful info on cookies and how they used
 
 date:                                   2019-06-01 00:00:00 +0200

@@ -65,7 +65,7 @@ defaults:
   icon_color:                           mdi-grey
   icon_size:                            mdi-sm
 
-  nav_primary_color:                    "#0D47A1"                               # md-blue-900, general color for navbar and nav-menus
+  nav_primary_color:                    "#2196F3"                               # md-blue, general color for navbar and nav-menus
 
   # ----------------------------------------------------------------------------
   # NavBar
@@ -85,9 +85,9 @@ defaults:
     position:                           left
     bottom_line_height:                 1
     bottom_line_color:                  "#EEEEEE"                               # md-grey-200
-    background_color_full:              rgba(0, 0, 0, 0.4)                      # rgba-darken-400
-    background_color_collapsed:         "#3F51B5"                               # md-indigo, was: md-blue-grey
-    background_color_scrolled:          "#3F51B5"                               # md-indigo, was: md-blue-grey
+    background_color_full:              rgba(0, 0, 0, 0.4)                      # darken-400
+    background_color_collapsed:         "#2196F3"                               # md-blue
+    background_color_scrolled:          "#2196F3"                               # md-blue
 
   # ----------------------------------------------------------------------------
   # NavMenu (Mobile)
@@ -208,5 +208,5 @@ defaults:
     search_heading_lead:                ""
     result_heading_lead:                ""
 
-# END config
 # ------------------------------------------------------------------------------
+# END config

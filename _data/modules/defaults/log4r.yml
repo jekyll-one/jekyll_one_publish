@@ -166,6 +166,5 @@ log4r_config:
         pattern:                        '[%X{timestamp}] [%X{id}] [%-5X{level}] [%-40X{path}] [%X{logger}] %X{message}'
         type:                           PatternFormatter
 
-
 # ------------------------------------------------------------------------------
 # END config

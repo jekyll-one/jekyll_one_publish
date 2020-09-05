@@ -1,7 +1,7 @@
 ---
 title:                                  Site generators
-tagline:                                open-source tools
-description:                            Top open-source site generators
+tagline:                                open source tools
+description:                            Top Open Source site generators
 
 date:                                   2019-05-01 00:00:00
 series:

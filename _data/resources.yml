@@ -350,7 +350,7 @@ resources:
   #   5   log4javascript                log4javascript@1.4.15
   #   6   Bootstrap                     bootstrap@4.4.1
   #   6   bs_material_design            bootstrap-material-design@4.0.0-beta.4
-  #   7   j1_template                   j1_template_4@2020.0.18
+  #   7   j1_template                   j1_template_4@2020.0.19
   #   8   tocbot                        tocbot@4.11.2
   #   9   jekyll_search                 simple_jekyll_search@1.1.5
   #   10  bs_theme_switcher             bs_theme_switcher@1.1.5
@@ -380,8 +380,8 @@ resources:
         css:                            [
                                           core/css/uno,
                                           core/css/vendor,
-                                          core/css/material-design-icons,
-                                          core/css/fontawesome
+                                          core/css/icons-fontawesome,
+                                          core/css/icons-materialdesign
                                         ]
         files:                          [
                                           modules/util/js/js.cookie.js,
@@ -722,26 +722,6 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Twitter Emoji
-  #
-  - name:                               Twemoji
-    resource:
-      id:                               twemoji
-      enabled:                          true
-      comment:                          Twemoji
-      region:                           head
-      layout:                           [ page, post, collection ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            [ core/css/twemoji ]
-        files:                          []
-        js:                             []
-        init_function:                  []
-
-  # ----------------------------------------------------------------------------
   # Animate CSS
   #
   - name:                               Animate CSS
@@ -825,13 +805,13 @@ resources:
         init_function:                  [ j1.adapter.lightbox.init ]
 
   # ----------------------------------------------------------------------------
-  # Twitter Emoji
+  # Twitter Emoji (Icons)
   #
-  - name:                               Twitter Emoji Picker
+  - name:                               Twitter Emoji Icons
     resource:
       id:                               twemoji
       enabled:                          true
-      comment:                          module twemoji_picker
+      comment:                          module twemoji
       layout:                           [ home, page, post, collection ]
       region:                           head
       required:                         ondemand
@@ -839,7 +819,27 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            []
+        css:                            [ core/css/icons-twemoji ]
+        files:                          []
+        js:                             []
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # Twitter Emoji (Picker)
+  #
+  - name:                               Twitter Emoji Picker
+    resource:
+      id:                               twemoji_picker
+      enabled:                          true
+      comment:                          module twemoji_picker
+      layout:                           [ page ]
+      region:                           head
+      required:                         ondemand
+      script_load:                      deferred
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [ modules/twemoji/css/picker/twemoji-picker ]
         files:                          []
         js:                             [
 #                                         modules/twemoji/js/twemoji,
@@ -848,7 +848,27 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Iconify Framework
+  # MDI Previewer
+  #
+  - name:                               MDI Previewer
+    resource:
+      id:                               mdi_previewer
+      enabled:                          true
+      comment:                          module mdi_previewer
+      layout:                           [ page ]
+      region:                           head
+      required:                         ondemand
+      script_load:                      deferred
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [ modules/mdiPreviewer/css/previewer ]
+        files:                          []
+        js:                             []
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # Iconify (Icons) Framework
   #
   - name:                               Iconify Framework
     resource:
@@ -862,7 +882,7 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ core/css/iconify-icons ]
+        css:                            [ core/css/icons-iconify ]
         files:                          [ modules/iconifyAPI/js/iconify.min.js ]
         js:                             []
         init_function:                  []

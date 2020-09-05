@@ -50,7 +50,7 @@ include::{includedir}/attributes.asciidoc[tag=data]
 
 // Set local page attributes
 // -----------------------------------------------------------------------------
-// :images-dir:                         {imagesdir}/path/to/page/images 
+// :images-dir:                         {imagesdir}/path/to/page/images
 
 
 // Page content
@@ -72,7 +72,7 @@ different icons for many categories used for the Web. See below some details
 for <<Material Design Icons>> and <<FontAwesome Icons>>.
 
 Iconify Icons is not a local stored icon set like MDI or FA. All icons are
-loaded over the *Internet* using the so-called unified open source icon
+loaded over the Internet using the so-called unified open source icon
 framework. See section <<Iconify Icons>> for more information.
 
 
@@ -84,7 +84,7 @@ prospective, _MDI_ has an excellent Material Design support an comes with the
 original icon set created by _Google_ build-in.
 
 _Material Design Icons_ (MDI) is a very helpful design resource for Web Design
-that is based on *_Google_'s Material Design*. _MDI_ is a community-driven
+that is based on _Google_'s Material Design. _MDI_ is a community-driven
 project to create an increased icon-set based on _Google_'s official repository
 and MD style specification.
 
@@ -95,7 +95,7 @@ and MD style specification.
 
 |1x
 |no modifier set
-|All `icon_name` can be found on the Preview page for *MDI Icon Previewer*
+|All `icon_name` can be found on the Preview page for MDI Icon Previewer
 [source, adoc, role="noclip"]
 ----
 mdi:account[1x]
@@ -104,7 +104,7 @@ mdi:account[1x]
 
 |3x
 |no modifier set
-|All `icon_name` can be found on the Preview page for *MDI Icon Previewer*
+|All `icon_name` can be found on the Preview page for MDI Icon Previewer
 [source, adoc, role="noclip"]
 ----
 mdi:account[3x]
@@ -113,7 +113,7 @@ mdi:account[3x]
 
 |5x
 |no modifier set
-|All `icon_name` can be found on the Preview page for *MDI Icon Previewer*
+|All `icon_name` can be found on the Preview page for MDI Icon Previewer
 [source, adoc, role="noclip"]
 ----
 mdi:account[5x]
@@ -199,7 +199,7 @@ the official set created by _Google_.
 _J1 Template_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
 icon set is fully integrated and can be used out-of-the-box.
 
-For MDI a *Preview Page* is available to explore what can be done base on the
+For MDI a Preview Page is available to explore what can be done base on the
 J1 implemetation regarding sizes, colors, animations etc. Go for the
 link:{previewer-mdi}[Preview Page, {window}] and check-out what's
 possible using MDI font icons!
@@ -214,8 +214,8 @@ frameworks used for web development. Today, FA comes with 2300+ icons included.
 
 [NOTE]
 ====
-Since version 5, the icon set comes in two packages: FontAwesome *Free*
-and the *proprietary* FontAwesome *Pro* version available for a license fee.
+Since version 5, the icon set comes in two packages: FontAwesome Free
+and the proprietary FontAwesome Pro version available for a license fee.
 
 The free versions (all releases up to 4 and the free version for 5) are
 available under SIL Open Font License 1.1, Creative Commons Attribution 4.0,
@@ -229,7 +229,7 @@ and the MIT License.
 
 |1x
 |no modifier set
-|All `icon_name` can be found on the Preview page for *MDI Icon Previewer*
+|All `icon_name` can be found on the Preview page for MDI Icon Previewer
 [source, adoc, role="noclip"]
 ----
 fas:user[1x]
@@ -238,7 +238,7 @@ fas:user[1x]
 
 |3x
 |no modifier set
-|All `icon_name` can be found on the Preview page for *MDI Icon Previewer*
+|All `icon_name` can be found on the Preview page for MDI Icon Previewer
 [source, adoc, role="noclip"]
 ----
 fas:user[3x]
@@ -247,7 +247,7 @@ fas:user[3x]
 
 |5x
 |no modifier set
-|All `icon_name` can be found on the Preview page for *MDI Icon Previewer*
+|All `icon_name` can be found on the Preview page for MDI Icon Previewer
 [source, adoc, role="noclip"]
 ----
 fas:user[5x]
@@ -318,11 +318,11 @@ this in section link:{roundtrip-asciidoc-extensions}#icon-fonts[Asciidoc Extensi
 
 FontAwesome V5 meets the Material Design idea (of _Google_) and in compare to
 Version 4, the current version is much more than a face-lifting. The Version 5
-comes with more than 2300+ icons but many of them are available with the *Pro*
-license only. For the *Free* version, a subset of 900+ icons is available.
+comes with more than 2300+ icons but many of them are available with the Pro
+license only. For the Free version, a subset of 900+ icons is available.
 
 NOTE: The CSS styles for FontAwesome V5 has been extended for J1 Template to
-the *same* styles (and their respective *names*) as for other Font Icon sets.
+the same styles (and their respective names) as for other Font Icon sets.
 Already existing styles like `fa-flip-vertical` is available as `fa-flip-v`
 as well. See all styles that can be used with the MDI
 link:{previewer-mdi}[Preview Page, {window}].
@@ -339,13 +339,13 @@ the basics and features and styles.
 
 == Iconify Icons
 
-MDI and FA are quite rich icon sets but designed for *general* use. Sometimes
-icons are missing in one of these fonts like specific *brand* or *theme*
+MDI and FA are quite rich icon sets but designed for general use. Sometimes
+icons are missing in one of these fonts like specific brand or theme
 icons.
 
-An interesting solution for using font icons from a *remote* repository is
+An interesting solution for using font icons from a remote repository is
 link:{iconify-home}[Iconify, {window}]. Iconify is a so-called unified
-*open source icon framework* that makes it possible to use icons from different
+open source icon framework that makes it possible to use icons from different
 icon sets using one syntax.
 
 To access that framework, a Javascript client is needed. For J1 Template, the
@@ -413,7 +413,7 @@ this in section link:{roundtrip-asciidoc-extensions}#icon-fonts[Asciidoc Extensi
 == Whats next
 
 Hopefully you've enjoyed the possibilities J1 offers for managing and
-manipulating *Font Icons*. Do you think these Icons sets fit your needs?
+manipulating Font Icons. Do you think these Icons sets fit your needs?
 
 Using Iconify, for all topics a icon font should be found. And it's simple,
 is'nt it?

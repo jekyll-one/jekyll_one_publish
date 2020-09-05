@@ -58,7 +58,7 @@ gem 'jekyll', '~> 4.0'
 #       versions available for unsupported settings
 # TODO: Open range if template settings are stable
 #
-gem 'j1-template', '~> 2020.0.18' , '= 2020.0.18'
+gem 'j1-template', '~> 2020.0.19' , '= 2020.0.19'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment

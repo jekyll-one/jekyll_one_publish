@@ -267,8 +267,6 @@ defaults:
   sizeHeight:                         true
   sizeWidth:                          false
   tolerance:                          0
-  
-
 
 # ------------------------------------------------------------------------------
 # END config

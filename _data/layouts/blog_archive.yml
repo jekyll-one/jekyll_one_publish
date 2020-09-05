@@ -155,6 +155,5 @@ lanes:
       path:                             layouts
       file:                             content_generator_blog_archive.html
 
-
 # ------------------------------------------------------------------------------
 # END config

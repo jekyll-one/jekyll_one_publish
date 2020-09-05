@@ -34,7 +34,7 @@ defaults:
     # --------------------------------------------------------------------------
     # CONSOLE appender
     - name:                           Console Appender
-      appender:        
+      appender:
         name:                         consoleAppender
         enabled:                      true
         type:                         BrowserConsoleAppender
@@ -57,7 +57,7 @@ defaults:
 
         log_folder:                   log
         log_file_name:                messages
-        log_file_ext:                 log      
+        log_file_ext:                 log
 
         create_on_start:              true
         reset_on_start:               true
@@ -115,7 +115,7 @@ defaults:
     #     level:
     #       production:                 warn
     #       development:                debug
-    
+
     # --------------------------------------------------------------------------
     # MODULE CHILD logger (j1.module)
     # - log:
@@ -125,7 +125,6 @@ defaults:
     #     level:
     #       production:                 warn
     #       development:                debug
-
 
 # ------------------------------------------------------------------------------
 # END config

@@ -110,6 +110,5 @@ defaults:
     actualSize:                     true
     enableZoomAfter:                300
 
-
 # ------------------------------------------------------------------------------
 # END config

@@ -12,7 +12,7 @@ regenerate:                             false
 
 scrollbar:                              false
 
-resources:                              []
+resources:                              [ clipboard, rouge, mdi_previewer ]
 resource_options:
   - attic:
       padding_top:                      400

@@ -53,7 +53,7 @@ environment:                            production
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2020.0.18
+version:                                2020.0.19
 
 # version
 # ------------------------------------------------------------------------------
@@ -250,7 +250,7 @@ robots:
 
 brand:
   image:                                modules/icons/j1/j1-512x512.png
-  image_height:                         64
+  image_height:                         48
   text:                                 J1 Preview
   text_color:                           "#9E9E9E"
 

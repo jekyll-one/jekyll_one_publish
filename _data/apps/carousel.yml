@@ -45,7 +45,7 @@ settings:
   #
   # ----------------------------------------------------------------------------
   enabled:                              true                                    # needed for j1.layout_shim_generator.html
-  
+
   # ----------------------------------------------------------------------------
   # DEFAULT options
   #
@@ -180,7 +180,7 @@ settings:
   # ----------------------------------------------------------------------------
   # AJAX (JSON)
   #
-  # All data items displayed by a carousel are being read from a JSON 
+  # All data items displayed by a carousel are being read from a JSON
   # file (default: /assets/data/carousel.json) automatically generated.
   # AJAX methods are used to supply the needed HTML code at
   # the time the carousel is initialized.
@@ -442,7 +442,7 @@ settings:
         lb_caption:                     [
                                           You see cat no 1,
                                           You see cat no 2,
-                                          You see cat np 3,
+                                          You see cat no 3,
                                           You see cat no 4
                                         ]
         options:
@@ -466,7 +466,7 @@ settings:
         css_classes:                    img-fluid
         images_path:                    /assets/images/modules/carousel/mega_cities
         images:                         [
-                                          andreas-brucker_b.jpg, 
+                                          andreas-brucker_b.jpg,
                                           denys-nevozhai-1_b.jpg,
                                           denys-nevozhai-2_b.jpg,
                                           luca-bravo_b.jpg,
@@ -497,7 +497,7 @@ settings:
         css_classes:                    img-fluid
         images_path:                    /assets/images/modules/carousel/mega_cities
         images:                         [
-                                          andreas-brucker_b.jpg, 
+                                          andreas-brucker_b.jpg,
                                           denys-nevozhai-1_b.jpg,
                                           denys-nevozhai-2_b.jpg,
                                           luca-bravo_b.jpg,
@@ -509,7 +509,6 @@ settings:
           paginationSpeed:              400
           singleItem:                   true
           transitionStyle:              goDown
-
 
 # ------------------------------------------------------------------------------
 # END config

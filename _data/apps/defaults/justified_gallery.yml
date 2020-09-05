@@ -67,6 +67,5 @@ defaults:
   instance_type:                        multiple
   rowHeight:                            170
 
-
 # ------------------------------------------------------------------------------
 # END config

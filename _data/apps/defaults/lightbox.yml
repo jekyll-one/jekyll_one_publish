@@ -176,6 +176,5 @@ defaults:
   showImageNumberLabel:                 true
   wrapAround:                           true
 
-
 # ------------------------------------------------------------------------------
 # END config

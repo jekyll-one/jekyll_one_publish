@@ -42,6 +42,5 @@ settings:
     justifyThreshold:                   0.90
     captions:                           true
 
-
 # ------------------------------------------------------------------------------
 # END config

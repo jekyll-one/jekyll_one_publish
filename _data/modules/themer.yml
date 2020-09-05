@@ -138,8 +138,9 @@ settings:
   bootswatchApiVersion:                 4
   loadFromBootswatch:                   true
   localFeed:                            /assets/data/themes.json
+  localThemes:                          /assets/data/themes.json
   excludeBootswatch:                    default,Default,Lux,Sketchy
-  includeBootswatch:                    /assets/themes/j1/core/css/theme_extensions.css
+  includeBootswatch:                    /assets/themes/j1/core/css/theme-extensions.css
   skipIncludeBootswatch:                Uno
 
 # ------------------------------------------------------------------------------

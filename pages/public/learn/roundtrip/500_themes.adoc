@@ -65,14 +65,14 @@ include::{includedir}/attributes.asciidoc[tag=data]
 <!-- site.source.size:     {{site.source.size | debug}} -->
 ++++
 
-The themes feature for J1 Template is in a *alpha status* of the template
-system. Anyway, it makes sense to present what is possible using *different*
+The themes feature for J1 Template is in a alpha status of the template
+system. Anyway, it makes sense to present what is possible using different
 versions of Bootstrap's CSS styles for a website.
 
 == Themes
 
 It is expected that many people will change the template for their needs. To
-really create *unique* websites. Fundamental to do this is are CSS styles
+really create unique websites. Fundamental to do this is are CSS styles
 defined by Bootstrap.
 
 Modifying the CSS styles of link:{bootstrap-home}[Bootstrap, {window}] is not
@@ -99,20 +99,20 @@ Thanks again the people at Bootswatch for this great work.
 
 == Apply a theme
 
-The base for designing pages using J1 Template is the theme *Uno*, a modern
+The base for designing pages using J1 Template is the theme Uno, a modern
 light theme that can be used for many types of websites. And what we mentioned
-already, web design is not: one size fits all. The theme *Uno* can be seen as
+already, web design is not: one size fits all. The theme Uno can be seen as
 good base, a starting point. Combining Uno and a different theme may a fast
 solution for your site!?
 
 You can find all available themes, all stylesheets to be applied to your pages
-from the menu *Themes*. You're invited to check how a page is changing for
+from the menu Themes. You're invited to check how a page is changing for
 their design if other stylesheets, other ideas of web design is used.
 
 NOTE: Changing BS-based styles is one thing, changing from one theme to the
 next at runtime a bit more challanging. For the alpha version of J1 Template,
 many styles are automatically changed for J1 specific components as well, but
-*not* all of them for now.
+not all of them for now.
 
 Simply select a theme from this menu and a new BS-based stylesheet is
 automatically applied to your pages.
@@ -128,9 +128,9 @@ This was the last place to go for the roundtrip. More details of the most
 common elements of Bootstrap can be found on the previewer for a theme. Have
 a look at the link:{previewer-theme}[Theme previewer].
 
-To make things real for your new site, go for *Web in a day*. This tutorial
+To make things real for your new site, go for Web in a day. This tutorial
 guides you through all the steps how to build a website - your site using
-Jekyll  nd the template system J1. It's really a nice journey to *explore*
-and  *learn* creating a static web.
+Jekyll  nd the template system J1. It's really a nice journey to explore
+and  learn creating a static web.
 
 Start your journey from here: link:{kickstarter-web-in-a-day}[Web in a day].

@@ -78,7 +78,7 @@ images.
 == Responsive Text
 
 One common flaw seen in many templates and frameworks (sadly to say: the same
-to Bootstrap) is a lack of support for truly *responsive text*. While elements
+to Bootstrap) is a lack of support for truly responsive text. While elements
 on a page resize fluidly, text still resizes on a fixed basis. To avoiding this
 issue, especially for heavily text focussed pages, J1 Template supports styles
 that fluidly scales text size and line-height to optimize readability for the
@@ -140,7 +140,7 @@ you can offer different text sizes of your Web for vistors having a visual
 handicap or reading disabilities.
 
 To see `r-text` scaling in action, click on the button above to resize
-the text from `r-text` level *300* to *500* back and forth. And again: resize
+the text from `r-text` level 300 to 500 back and forth. And again: resize
 your Browser and watch the size of this text body change to see responsiveness
 of the text in action.
 
@@ -252,11 +252,11 @@ explorer of the truth, the master-builder of human happiness.
 //////////
 === Mixing font sizes
 
-See the example below. Two cards are tied together by a title of *Your Topic*.
-The *taglines* are different and focus on *different* things. Because the title
-is on each and every card of such a group, it makes sense to give the *upper*
-level headline a smaller font size than the *tagline* that decribes different
-*features*.
+See the example below. Two cards are tied together by a title of Your Topic.
+The taglines are different and focus on different things. Because the title
+is on each and every card of such a group, it makes sense to give the upper
+level headline a smaller font size than the tagline that decribes different
+features.
 
 To not loose the focus on reading the text, font icons are used to support what
 a card decribes to get the readers orientated better. The left one has a
@@ -267,7 +267,7 @@ video and audio.
 <div id="roundtrip_example_panel" class="mt-2 mb-3"></div>
 ++++
 
-The *body* text is the *smallest* in size. On one hand to save space on other
+The body text is the smallest in size. On one hand to save space on other
 hand the readers know in general what they can can expect to read about. To
 focus the body text, it's positioned in the middle and centered for optimal
 placement. A final quote text followed by a button in card footer guides the
@@ -284,10 +284,10 @@ elements may help to reduce to space needed - more can be placed on page. On
 other hand, navigation elements present by playful and interactive means.
 
 The next two simple examples shows you what type of UI's may helpful to present
-a bunch of information *on a small footprint*: tabbed text by using Bootstrap's
-*Nav Pills*.
+a bunch of information on a small footprint: tabbed text by using Bootstrap's
+Nav Pills.
 
-The design for the Bootstrap *nav pills* were change into MD Design. As all
+The design for the Bootstrap nav pills were change into MD Design. As all
 elements available with J1 Template, the _Meterial Design_ color palette is
 used. All Bootstrap base classes can be used to colorize:
 

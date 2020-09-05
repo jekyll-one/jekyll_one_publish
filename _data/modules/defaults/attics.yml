@@ -219,6 +219,5 @@ defaults:
         layout:                         [ collection, app, raw, blog_archive ]
         raised_level:                   0                                     # was: 15
 
-
 # ------------------------------------------------------------------------------
 # END config

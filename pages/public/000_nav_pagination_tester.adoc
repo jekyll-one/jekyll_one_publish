@@ -1,0 +1,297 @@
+---
+title:                                  Navigation
+tagline:                                paginator
+description:                            J1 Template Roundtrip - Present image based data
+
+tags:                                   [ Page, Roundtrip ]
+index:                                  [ Template, Roundtrip, Images ]
+categories:                             [ pages ]
+
+toc:                                    true
+scrollbar:                              false
+
+permalink:                              /pages/public/tester/paginator/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+#     slides:
+#       - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+#         alt:                          Photo by Ricardo Gomez Angel on Unsplash
+#         badge:
+#           type:                       unsplash
+#           author:                     Ricardo Gomez Angel
+#           href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Enable the Liquid Preprocessor
+// -----------------------------------------------------------------------------
+:page-liquid:
+
+// Set other global page attributes here
+// -----------------------------------------------------------------------------
+//:my-asciidoc-attribute:
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture set_env_entry_document %}themes/{{site.template.name}}/procedures/global/set_env_entry_document.proc{%endcapture%}
+
+// Initialize entry document environmental attributes
+// -----------------------------------------------------------------------------
+{% include {{set_env_entry_document}} %}
+
+// Load tag, url and data attributes
+// -----------------------------------------------------------------------------
+// include::{includedir}/attributes.asciidoc[tag=tags]
+// include::{includedir}/attributes.asciidoc[tag=urls]
+// include::{includedir}/attributes.asciidoc[tag=data]
+
+// Set local page attributes
+// -----------------------------------------------------------------------------
+// :images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+
+== Paginator
+
+lorem:sentences[3]
+
+++++
+<div class="mb-5">
+  <!-- Pagination #15 -->
+  <nav class="text-left" aria-label="Page Navigation">
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a class="u-pagination-v1__item g-brd-around g-brd-2 g-brd-gray-dark-v2 g-color-gray-dark-v2 g-bg-gray-dark-v2--hover g-color-white--hover g-brd-gray-dark-v2--hover g-rounded-3 g-pa-4-13" href="#" aria-label="Previous">
+          <span aria-hidden="true">
+            <i class="fa fa-angle-left g-mr-5"></i>
+            Previous
+          </span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="u-pagination-v1__item g-brd-around g-brd-2 g-brd-gray-dark-v2 g-color-gray-dark-v2 g-bg-gray-dark-v2--hover g-color-white--hover g-brd-gray-dark-v2--hover g-rounded-3 g-pa-4-13" href="#" aria-label="Next">
+          <span aria-hidden="true">
+            Next
+            <i class="fa fa-angle-right g-ml-5"></i>
+          </span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End Pagination #15 -->
+</div>
+++++
+
+++++
+<div class="mb-5">
+  <!-- Pagination #08 -->
+  <nav class="text-left" aria-label="Page Navigation">
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a class="u-pagination-v1__item u-pagination-v1-2 g-pa-7-16" href="#" aria-label="Previous">
+          <span aria-hidden="true">
+            <i class="fa fa-angle-left g-mr-5"></i>
+            Previous
+          </span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="list-inline-item g-hidden-sm-down">
+        <a class="u-pagination-v1__item u-pagination-v1-2 g-pa-7-14" href="#">1</a>
+      </li>
+      <li class="list-inline-item g-hidden-sm-down">
+        <a class="u-pagination-v1__item u-pagination-v1-2 u-pagination-v1-2--active g-pa-7-14" href="#">2</a>
+      </li>
+      <li class="list-inline-item g-hidden-sm-down">
+        <a class="u-pagination-v1__item u-pagination-v1-2 g-pa-7-14" href="#">3</a>
+      </li>
+      <li class="list-inline-item g-hidden-sm-down">
+        <a class="g-pa-7-14">...</a>
+      </li>
+      <li class="list-inline-item g-hidden-sm-down">
+        <a class="u-pagination-v1__item u-pagination-v1-2 g-pa-7-14" href="#">80</a>
+      </li>
+      <li class="list-inline-item">
+        <a class="u-pagination-v1__item u-pagination-v1-2 g-pa-7-16" href="#" aria-label="Next">
+          <span aria-hidden="true">
+            Next
+            <i class="fa fa-angle-right g-ml-5"></i>
+          </span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End Pagination #08 -->
+</div>
+++++
+
+++++
+<nav class="text-left mb-5" aria-label="Page Navigation">
+  <ul class="list-inline">
+    <li class="list-inline-item">
+      <a class="u-pagination-v1__item u-pagination-v1-1 u-pagination-v1__item--disabled g-pa-12-21" href="#" aria-label="Previous">
+        <span aria-hidden="true">
+          <i class="fa fa-angle-left g-mr-5"></i>
+          Previous
+        </span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="list-inline-item g-hidden-sm-down">
+      <a class="u-pagination-v1__item u-pagination-v1-1 u-pagination-v1-1--active g-pa-12-19" href="#">1</a>
+    </li>
+    <li class="list-inline-item g-hidden-sm-down">
+      <a class="u-pagination-v1__item u-pagination-v1-1 g-pa-12-19" href="#">2</a>
+    </li>
+    <li class="list-inline-item g-hidden-sm-down">
+      <a class="u-pagination-v1__item u-pagination-v1-1 g-pa-12-19" href="#">3</a>
+    </li>
+    <li class="list-inline-item g-hidden-sm-down">
+      <span class="g-pa-12-19">...</span>
+    </li>
+    <li class="list-inline-item g-hidden-sm-down">
+      <a class="u-pagination-v1__item u-pagination-v1-1 g-pa-12-19" href="#">15</a>
+    </li>
+    <li class="list-inline-item">
+      <a class="u-pagination-v1__item u-pagination-v1-1 g-pa-12-21" href="#" aria-label="Next">
+        <span aria-hidden="true">
+          Next
+          <i class="fa fa-angle-right g-ml-5"></i>
+        </span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+++++
+
+== Bootstrap Paginations
+
+Pagination links indicate a series of related content exists across
+multiple pages. Typically these are used where a multi-page approach
+to long lists of content improves general performance, such as in
+search results or inboxes.
+
+++++
+<div class="shortcode-html">
+  <!-- Pagination Default -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">«</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">4</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">5</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">»</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End Pagination Default -->
+</div>
+++++
+
+++++
+<div class="shortcode-html">
+  <!-- Pagination States -->
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-label="Previous">
+          <span aria-hidden="true">«</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item active">
+        <a class="page-link" href="#">1
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">4</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">5</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">»</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End Pagination States -->
+</div>
+++++
+
+++++
+<div class="shortcode-html">
+  <!-- Pagination Large -->
+  <nav aria-label="...">
+    <ul class="pagination pagination-lg">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">«</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">»</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End Pagination Large -->
+</div>
+++++

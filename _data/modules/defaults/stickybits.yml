@@ -32,6 +32,5 @@ defaults:
   useStickyClasses:                     true                                    # default: false
   verticalPosition:                     bottom
 
-
 # ------------------------------------------------------------------------------
 # END config

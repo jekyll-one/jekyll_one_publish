@@ -103,7 +103,7 @@ settings:
         images_path:                    /assets/images/modules/gallery/mega_cities
         thumb_path:                     /assets/images/modules/gallery/mega_cities
         images:                         [
-                                          banter-snaps_b.jpg, 
+                                          banter-snaps_b.jpg,
                                           denys-nevozhai-1_b.jpg,
                                           gints-gailis_b.jpg,
                                           steven-diaz_b.jpg,
@@ -262,8 +262,8 @@ settings:
                                           "<p>Kick It Old School on Vimeo</p>"
                                         ]
         poster:                         [
-                                          adriana-lima-poster.jpg, 
-                                          kick-it-old-school-poster.jpg                                      
+                                          adriana-lima-poster.jpg,
+                                          kick-it-old-school-poster.jpg
                                         ]
         gallery_options:
           rowHeight:                    200
@@ -311,7 +311,6 @@ settings:
 #         cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
           videojs:                      true
           videojsOptions:               {}
-
 
 # ------------------------------------------------------------------------------
 # END config
