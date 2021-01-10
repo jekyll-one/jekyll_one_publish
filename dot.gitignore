@@ -7,6 +7,7 @@ yarn.lock
 package-lock.json
 
 
+
 # Unneeded files created by you or helper processes
 # ------------------------------------------------------------------------------
 
@@ -50,6 +51,3 @@ _site/
 .jekyll-cache/
 
 .sass-cache/
-
-
-
