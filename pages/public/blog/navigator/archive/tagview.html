@@ -1,15 +1,19 @@
 ---
 layout:                                 page
-
 title:                                  Creators Blog
 tagline:                                blog posts by tag
 description:                            Browse articles by tag
 
-#permalink:                             /pages/private/blog/navigator/archive/tagview/
+tags:                                   [ Blog, Creator ]
+categories:                             [ Navigator, Tag, Viewer ]
 
-skip_words:                             [ posts ]
+sort:                                   date
+toc:                                    true
+fam:                                    true
+fam_menu_id:                            open_toc
 noindex:                                true
 
+#permalink:                             /pages/private/blog/navigator/archive/tagview/
 regenerate:                             false
 
 resource_options:
@@ -86,7 +90,7 @@ resource_options:
   </ul>
 </div>
 
-<div class="post-search-results col-md-10 col-sm-10 col-xs-11">
+<div class="post-search-results ml-3">
   <div class="view-description mb-1">{{view_description}}</div>
   <div class="post-headline"> <h2 id="post-headline" class="mt-5">Posts By Tag</h2></div>
   {% assign letter_group = letter_group_array[letter_group_counter] %}

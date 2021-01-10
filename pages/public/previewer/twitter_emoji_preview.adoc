@@ -1,18 +1,21 @@
 ---
 title:                                  Emoji Previewer
 tagline:                                search and select twitter emojis
-description:                            Twitter Emoji Icons V1 Preview
+date:                                   2020-11-08 12:00:00
+description: >
+                                        Twitter Emoji Icons V1 Previewer.Twitter Emoji is a colored
+                                        icon font developed by Twitter. The full icon set  is fully
+                                        supported by J1 Template.
 
-tags:                                   [ Preview, Emoji ]
-index:                                  [ Twitter, Emoji, Icons, Previewer ]
-categories:                             [ pages, Previewer ]
-
-permalink:                              /pages/public/previewer/twitter_emoji/
-regenerate:                             true
+tags:                                   [ Twitter, Emoji, Icons ]
+categories:                             [ App, Previewer ]
 
 scrollbar:                              false
 
-resources:                              [ twemoji, twemoji_picker ]
+permalink:                              /pages/public/previewer/twitter_emoji/
+regenerate:                             false
+
+resources:                              [ twemoji, twemoji_picker, fam ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -27,35 +30,26 @@ resource_options:
             href:                       https://unsplash.com/@faustogarmen/portfolio
 ---
 
+// Page Initializer
+// =============================================================================
 // Enable the Liquid Preprocessor
-// -----------------------------------------------------------------------------
 :page-liquid:
 
-// Set other global page attributes here
+// Set page (local) attributes here
 // -----------------------------------------------------------------------------
+:jollygoodcode--emoji:                  https://github.com/jollygoodcode/twemoji
 
-// Liquid procedures
+//  Load Liquid procedures
 // -----------------------------------------------------------------------------
-{% capture set_env_entry_document %}themes/{{site.template.name}}/procedures/global/set_env_entry_document.proc{%endcapture%}
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
 
-// Initialize entry document paths
+// Load page attributes
 // -----------------------------------------------------------------------------
-{% include {{set_env_entry_document}} init_folders=all %}
-
-// Load tags and urls
-// -----------------------------------------------------------------------------
-include::{includedir}/attributes.asciidoc[tag=tags]
-include::{includedir}/attributes.asciidoc[tag=urls]
-include::{includedir}/attributes.asciidoc[tag=data]
-
-// Additional Asciidoc page attributes goes here
-// -----------------------------------------------------------------------------
-:jollygoodcode-emoji:                   https://github.com/jollygoodcode/twemoji
-
-// Include documents
-// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="local" %}
 
 
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 == Twitter Emoji's
 
 J1 Template comes with the Twitter Emoji library (Twemoji) V1 included and

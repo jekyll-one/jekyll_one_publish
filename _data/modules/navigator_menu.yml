@@ -5,14 +5,14 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2020 Juergen Adams
+# Copyright (C) 2021 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 #
 # ------------------------------------------------------------------------------
 # NOTE:
-#   For general navigation settings, see j1_navigator.yml
+#   For general navigation settings, see navigator.yml
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -21,8 +21,8 @@
 - item:                                 Learn
   sublevel:
 
-    - title:                            What's up
-      href:                             /pages/public/learn/whats_up/
+    - title:                            Where to go
+      href:                             /pages/public/learn/where_to_go/
       icon:                             alert
 
     # --------------------------------------------------------------------------
@@ -54,10 +54,13 @@
           icon:                         table
         - title:                        BS themes
           href:                         /pages/public/learn/roundtrip/themes/
-          icon:                         face
-        - title:                        Material Design for Bootstrap
-          href:                         /pages/public/mdb_preview/
-          icon:                         face
+          icon:                         theme-light-dark
+        - title:                        Lunr search
+          href:                         /pages/public/learn/roundtrip/lunr/
+          icon:                         magnify
+        - title:                        FAM buttons
+          href:                         /pages/public/learn/roundtrip/fam/
+          icon:                         alpha-a-circle-outline
 
     - title:                            Web in a Day
       icon:                             rocket
@@ -104,6 +107,9 @@
     - title:                            Twitter Emoji Previewer
       href:                             /pages/public/previewer/twitter_emoji/
       icon:                             sticker-emoji
+    - title:                            Rouge Theme Previewer
+      href:                             /pages/public/previewer/rouge/
+      icon:                             code-tags
     - title:                            Automagic iFrame
       href:                             /pages/public/iframer/
       icon:                             image-filter-none
@@ -246,13 +252,13 @@
 - item:                                 Themes
   theme_select:
     - local_themes:                     enabled
-      title:                            Themes from Jekyll-One
+      title:                            Jekyll One
       icon:                             face
     - bootswatch_themes:                enabled
-      title:                            Themes from Bootswatch
+      title:                            Bootswatch
       icon:                             face-profile
     - preview:                          enabled
-      title:                            Theme Previewer
+      title:                            Previewer
       href:                             /pages/public/previewer/theme/
       icon:                             eye
 
@@ -271,9 +277,6 @@
     - title:                            Impress
       icon:                             gavel
       href:                             /pages/public/legal/en/impress/
-    - title:                            Become a Patron
-      icon:                             patreon
-      href:                             /pages/public/about/become_a_patron/
 
 # ------------------------------------------------------------------------------
 # END config
