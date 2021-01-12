@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1_starter",
-  "version": "2021.0.0",
+  "version": "2021.0.2",
   "description": "J1 Template Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -32,7 +32,7 @@
   ],
   "ruby": {
     "gemfile": "Gemfile",
-    "userize": "true"
+    "userize": "false"
   },
   "jekyll": {
     "configfile": "_config.yml",
@@ -90,8 +90,9 @@
     "clean": "run-s -s clean-site && run-s clean:*",
     "clean-site": "echo Clean up site files .. && bundle exec jekyll clean",
     "clean:start": "echo Clean up projects files ..",
-    "clean:log-folder": "echo Remove log folder .. && shx rm -rf ./log",
-    "clean:etc-folder": "echo Remove etc folder .. && shx rm -rf ./etc",
+    "clean:bundle-config-folder": "echo Remove bundle config folder .. && shx rm -rf .bundle",
+    "clean:log-folder": "echo Remove log folder .. && shx rm -rf log",
+    "clean:etc-folder": "echo Remove etc folder .. && shx rm -rf etc",
     "clean:logfiles": "echo Remove various log files .. && shx rm -f *.log",
     "clean:locks": "echo Remove lock files .. && shx rm -f *.lock && shx rm -f package-lock.json",
     "reset": "run-s -s reset:*",
