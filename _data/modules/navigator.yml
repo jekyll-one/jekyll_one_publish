@@ -78,7 +78,7 @@ settings:
       # DRAWER Sidebar
       #
       - menu:
-          enabled:                      true
+          enabled:                      false
 
           xhr_container_id:             navigator_sidebar_mmenu
           xhr_data_path:                /assets/data/mmenu_sidebar/index.html
@@ -210,8 +210,8 @@ settings:
   nav_quicklinks:
     enabled:                            true
 
-    home_url:                           https://preview.jekyll.one/             # none | URL
-    back_url:                           https://jekyll.one/                     # none | URL
+    home_url:                           https://jekyll-one-org.github.io/       # none | URL
+    back_url:                           https://preview.jekyll.one/             # none | URL
 
     r_text_sizer:                       false                                   # true | false
 
