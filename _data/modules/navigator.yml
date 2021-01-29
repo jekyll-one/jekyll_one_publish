@@ -210,8 +210,8 @@ settings:
   nav_quicklinks:
     enabled:                            true
 
-    home_url:                           https://preview.jekyll.one/             # none | URL
-    back_url:                           https://jekyll.one/                     # none | URL
+    home_url:                           https://jekyll-one-org.github.io/       # none | URL
+    back_url:                           https://preview.jekyll.one/             # none | URL
 
     r_text_sizer:                       false                                   # true | false
 

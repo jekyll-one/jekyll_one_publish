@@ -224,7 +224,7 @@ doctype:                                html
 #   default:                            false
 #
 title:                                  J1 Template
-slogan:                                 Starter@JekyllOne
+slogan:                                 Starter@Github
 description:                            Made for Jekyll · Made for Your Web
 keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
                                         Asciidoc, Bootstrap, Javascript,
