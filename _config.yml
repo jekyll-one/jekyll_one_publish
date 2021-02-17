@@ -224,11 +224,20 @@ doctype:                                html
 #   default:                            false
 #
 title:                                  J1 Template
-slogan:                                 preview@jekyll-one
-description:                            Made for Jekyll · Made for Your Web
-keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
-                                        Asciidoc, Bootstrap, Javascript,
-                                        JS, JS3, CSS, CSS3, HTML5, Material, Design
+slogan:                                 publish@jekyll-one
+description: >
+                                        People quite often ask where to place a static
+                                        site on the Internet. Is it possible for free?
+                                        This board highlights top providers to deploy,
+                                        to place your static web on the Internet.
+                                        Check out these great options to publish your web.
+                                        And good news: all the pages are hosted for free.
+
+keywords:                               Publish, Publishing, website,
+                                        Jekyll, One, Template, Ruby,
+                                        Asciidoctor, Asciidoc, Bootstrap,
+                                        Javascript, JS, JS3, CSS, CSS3,
+                                        HTML5, Material, Design
 author:
   name:                                 username
   email:                                username@email.domain
@@ -240,7 +249,7 @@ webmaster:
   email:                                webmaster@example.domain
 
 robots:
-  index:                                false
+  index:                                true
   follow:                               true
 
 # ------------------------------------------------------------------------------

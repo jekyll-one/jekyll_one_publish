@@ -20,12 +20,19 @@
 #
 - item:                                 Publishing
   sublevel:
-    - title:                            Publish a site
-      icon:                             home-outline
-      href:                             '#'
     - title:                            Providers
       icon:                             home-outline
       href:                             '#'
+    - title:                            Publish a site
+      icon:                             home-outline
+      href:                             '#'
+
+
+# ------------------------------------------------------------------------------
+# Item ABOUT
+#
+- item:                                 About
+  href:                                 '#'
 
 # ------------------------------------------------------------------------------
 # END config
