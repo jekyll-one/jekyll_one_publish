@@ -158,7 +158,7 @@ lanes:
   # TRANSLATOR connector
   #
   - lane:
-      enabled:                          true
+      enabled:                          false
       region:                           body-main
       type:                             sync
       base:                             _includes/themes/j1
@@ -169,7 +169,7 @@ lanes:
   # TEASER banner
   #
   - lane:
-      enabled:                          true
+      enabled:                          false
       id:                               home_teaser_banner
       region:                           body-main
       type:                             async
@@ -199,7 +199,7 @@ lanes:
   # PARALLAX banner
   #
   - lane:
-      enabled:                          true
+      enabled:                          false
       id:                               home_parallax_banner
       region:                           body-main
       type:                             async
@@ -239,7 +239,7 @@ lanes:
   # NEWS panel
   #
   - lane:
-      enabled:                          true
+      enabled:                          false
       id:                               home_news_panel
       region:                           body-main
       type:                             async
