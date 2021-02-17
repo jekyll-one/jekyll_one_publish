@@ -55,65 +55,26 @@
         - title:                        BS themes
           href:                         /pages/public/learn/roundtrip/themes/
           icon:                         theme-light-dark
-        - title:                        Lunr search
-          href:                         /pages/public/learn/roundtrip/lunr/
+        - title:                        QuickSearch
+          href:                         /pages/public/learn/roundtrip/quicksearch/
           icon:                         magnify
-        - title:                        FAM buttons
-          href:                         /pages/public/learn/roundtrip/fam/
-          icon:                         alpha-a-circle-outline
 
-    - title:                            Web in a Day
-      icon:                             rocket
+    # --------------------------------------------------------------------------
+    # Asciidoc Skeletons
+    #
+    - title:                            Asciidoc Skeletons
+      icon:                             television-guide
       dropdown:
-        - title:                        Meet & Greet Jekyll
-          href:                         /pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
-          icon:                         flag-checkered
-        - title:                        Getting prepared
-          href:                         "#"                                     # /pages/public/learn/kickstarter/web_in_a_day/preparations/
-          icon:                         cart
-        - title:                        A first awesome Web
-          href:                         "#"                                     # /pages/public/learn/kickstarter/web_in_a_day/first_awesome_web/
-          icon:                         creation
-        - title:                        Writing Articles
-          href:                         "#"
-          icon:                         file-document-box-outline
-        - title:                        Creating Blog Posts
-          href:                         "#"
-          icon:                         file-document-box-multiple-outline
-        - title:                        Design your Site
-          href:                         "#"
-          icon:                         wrench
-        - title:                        Using Git
-          href:                         "#"
-          icon:                         git
-        - title:                        Deploy a Web
-          href:                         /pages/public/learn/kickstarter/web_in_a_day/document/deploy_aw_eb/
-          icon:                         web
-        - title:                        Wrapping up
-          href:                         "#"
-          icon:                         backup-restore
-
-# ------------------------------------------------------------------------------
-# Menu TOOLS
-#
-- item:                                 Tools
-  sublevel:
-    - title:                            Gallery Previewer
-      href:                             /pages/public/previewer/justified_gallery/
-      icon:                             view-dashboard
-    - title:                            MDI Icon Previewer
-      href:                             /pages/public/previewer/mdi_font/
-      icon:                             incognito
-    - title:                            Twitter Emoji Previewer
-      href:                             /pages/public/previewer/twitter_emoji/
-      icon:                             sticker-emoji
-    - title:                            Rouge Theme Previewer
-      href:                             /pages/public/previewer/rouge/
-      icon:                             code-tags
-    - title:                            Automagic iFrame
-      href:                             /pages/public/iframer/
-      icon:                             image-filter-none
-
+        - title:                        Book
+          href:                         /pages/public/skeleton/book/
+          icon:                         book-open-blank-variant
+        - title:                        Multi-Document
+          href:                         /pages/public/skeleton/multi/
+          icon:                         file-document-multiple-outline
+        - title:                        Simple-Document
+          href:                         /pages/public/skeleton/simple/
+          icon:                         file-document-outline
+          
 # ------------------------------------------------------------------------------
 # Menu BLOG
 #
@@ -270,13 +231,6 @@
     - title:                            This site
       icon:                             home-outline
       href:                             /pages/public/about/site
-      icon:                             home-variant
-    - title:                            Privacy
-      icon:                             heart
-      href:                             /pages/public/legal/en/privacy/
-    - title:                            Impress
-      icon:                             gavel
-      href:                             /pages/public/legal/en/impress/
 
 # ------------------------------------------------------------------------------
 # END config
