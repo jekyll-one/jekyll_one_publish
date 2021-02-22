@@ -1,0 +1,95 @@
+---
+title:                                  Publishing
+tagline:                                publish a site
+date:                                   2021-02-20 00:00:00
+description: >
+                                        Bootstrap modals are used to add dialogues to your web pages for user
+                                        notifications. ????????????????????
+
+categories:                             [ Publishing, Knowledge ]
+tags:                                   [ Provider ]
+
+permalink:                              /pages/public/publishing/publish/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/markus-spiske3-1920x1280.jpg
+          alt:                          Photo by Markus Spiske on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Markus Spiske
+            href:                       https://unsplash.com/@markusspiske
+---
+
+
+
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+*Web* publishing, or *online* publishing, is the process of publishing content
+on the Internet. It includes creating and uploading websites, updating
+webpages, and posting blogs online. The published content may include text,
+images, videos, and other types of media.
+
+In order to publish content on the web, you need three things:
+
+. web development software
+. an Internet connection
+. a web server
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+== Publish at GitHub
+
+See:
+
+* https://guides.github.com/features/pages/[GitHub Pages]
+
+GitHub Pages are public webpages hosted and easily published through GitHub.
+The quickest way to get up and running is by using the Jekyll Theme Chooser
+to load a pre-made theme. You can then modify your GitHub Pages’ content and
+style remotely via the web or locally on your computer.
+
+=== Publish at Netlify
+
+See:
+
+* https://www.netlify.com/blog/2020/04/02/a-step-by-step-guide-jekyll-4.0-on-netlify/[step-by-step-guide-jekyll-4.0-on-netlify]
+
+=== Publish at Digital Ocean
+
+See:
+
+* https://www.digitalocean.com/community/tutorials/how-to-deploy-jekyll-blogs-with-git[how-to-deploy-jekyll-blogs-with-git]
+
+DigitalOcean often offers free credit for new customers by using its promo code.
+After registering an account, you can go to Settings/Billing and enter the
+coupon code in the field, and you will get a minimum of $10 for free.
+
+=== Publish at Heroku
+
+See:
+
+* https://blog.heroku.com/jekyll-on-heroku[jekyll-on-heroku]

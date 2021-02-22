@@ -1,0 +1,112 @@
+---
+title:                                  Publishing
+tagline:                                provider
+date:                                   2021-02-20 00:00:00
+description: >
+                                        Bootstrap modals are used to add dialogues to your web pages for user
+                                        notifications. ????????????????????
+
+categories:                             [ Publishing, Knowledge ]
+tags:                                   [ Provider ]
+
+permalink:                              /pages/public/publishing/provider/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/joel-filipe-1920x1280.jpg
+          alt:                          Photo by Joel Filipe on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Joel Filipe
+            href:                       https://unsplash.com/@joelfilip
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A service provider is a vendor that provides IT solutions and/or services to
+end users and organizations. A service provider's delivery model generally
+differs from conventional IT product manufacturers or developers. Typically,
+a service provider does not provide *purchaseing* of an IT product by a user
+or organization. Rather then, a service provider *builds*, *operates* and
+*manages* IT products, which are bundled and delivered as a *service*.
+
+== Provider
+
+In general, (service) provider are commercial IT companies offering (service)
+products to be *paid* for. But most of these comnpanies provide, beside several
+commercial business plans, a plan offered to use their platform for *free*
+(free plan). Services based on a *free plan* are typically quite limited for
+understandable reasons.
+
+A static website based on _Jekyll_ and _J1_ for private use are lightweight.
+A private site may have hundreds of pages and assests (like images) but the
+overall size of the website seldom execeeds 100M. If the needed software, like
+_Ruby_ is counted on top it makes typically less than 250M. Numbers taken from
+Heroku logs for a starter web it is about 220M. Luckily, static websites based
+on _J1_ are very lightweight and doesn't execeed the critcal limit of *512M*
+to use a free plan at any service provider in terms of *size*.
+
+The service providers below are a selection, many others are on the Internet
+available providing similiar services to be used for static webs. Check if
+the selected providers can do what you want.
+
+=== Github
+
+_GitHub_ is a code hosting platform first place for version control and
+collaboration using the version control system _Git_. It lets programmers and
+others work together on projects from anywhere. Millions of developers and
+companies build, ship, and maintain their software on _GitHub_.
+
+GitHub Pages are public webpages hosted and easily published through GitHub.
+The quickest way to get up and running is by using the Jekyll Theme Chooser
+to load a pre-made theme. You can then modify your GitHub Pages’ content and
+style remotely via the web or locally on your computer.
+
+=== Netlify
+
+_Netlify_ provides everything you need to build fast, modern websites based
+on modern static site generators like Jekyll (and many others). Powerful
+features like continuous deployment and serverless functions support your
+website for the better.
+
+=== Digital Ocean
+
+_DigitalOcean_ is an cloud infrastructure provider with data centers worldwide.
+The provider supports developers by cloud services to deploy and scale
+websites and applications that run simultaneously on multiple computers.
+
+DigitalOcean often offers free credit for new customers by using its promo code.
+After registering an account, you can go to Settings/Billing and enter the
+coupon code in the field, and you will get a minimum of $10 for free.
+
+=== Heroku
+
+_Heroku_ is a commercial Internet platform. The company offers a container-based
+cloud Platform as a Service (PaaS). Developers use _Heroku_ to deploy, manage,
+and scale modern (web) apps. The platform is flexible, and easy to use, offering
+developers a simple path to getting their products to market.

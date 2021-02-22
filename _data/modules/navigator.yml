@@ -221,7 +221,7 @@ settings:
   # NavTopsearch
   #
   nav_topsearch:
-    enabled:                            true
+    enabled:                            false
 
 # ------------------------------------------------------------------------------
 # END config

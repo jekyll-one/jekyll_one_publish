@@ -53,7 +53,7 @@ environment:                            production
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2021.0.9
+version:                                2021.0.12
 
 # version
 # ------------------------------------------------------------------------------
@@ -455,8 +455,8 @@ plugins:
 # - jekyll-gist
 # - jekyll-sitemap
 # - jekyll-redirect-from
-  - j1-paginator
-  - jekyll-sass-converter
+# - j1-paginator
+# - jekyll-sass-converter
 
 # ------------------------------------------------------------------------------
 # JEKYLL FEED
@@ -533,65 +533,6 @@ whitelist:
 excerpt_separator:                      excerpt__end
 
 # ------------------------------------------------------------------------------
-# PAGINATION settings (Jekyll Paginate V2)
-#
-pagination:
-  enabled:                              true
-  permalink:                            /page:num/
-  per_page:                             4
-  limit:                                0
-  sort_field:                           date
-  sort_reverse:                         true
-  trail:
-    before:                             2
-    after:                              2
-
-# AUTOPAGE settings
-#
-autopages:
-  enabled:                              false
-
-  tags:
-    enabled:                            false
-    layouts:                            [
-                                          paginator/autopage_collections_tags.html,
-                                          paginator/autopage_tags.html
-                                        ]
-  categories:
-    enabled:                            false
-    layouts:                            [ paginator/autopage_category.html ]
-
-  collections:
-    enabled:                            false
-    layouts:                            [ paginator/autopage_collection.html ]
-
-# ------------------------------------------------------------------------------
-# COLLECTION settings
-# See: https://jekyllrb.com/docs/collections/#collections
-#
-collections:
-
-  # ----------------------------------------------------------------------------
-  # Featured articles
-  #
-  featured:
-    output:                             true
-    permalink:                          /collections/:collection/:name/
-
-  # ----------------------------------------------------------------------------
-  # Book shelf
-  #
-  biography:
-    output:                             true
-    permalink:                          /collections/public/:collection/:name/
-  fantasy:
-    output:                             true
-    permalink:                          /collections/public/:collection/:name/
-  romance:
-    output:                             true
-    permalink:                          /collections/public/:collection/:name/
-
-# ------------------------------------------------------------------------------
 # FRONTMATTER defaults
 #
 
@@ -640,156 +581,7 @@ defaults:
 
       resource_options:
         - toccer:
-            collapseDepth:              2
-
-  # ----------------------------------------------------------------------------
-  # Posts
-  #
-
-  # ----------------------------------------------------------------------------
-  # PUBLIC - FEATURED
-  #
-  - scope:
-      path:                             posts/public/featured/_posts
-      type:                             posts
-
-    values:
-      layout:                           post
-      scrollbar:                        false
-      author:                           J1 Team
-      toc:                              true
-      fam_menu_id:                      page_ctrl_simple
-      resources:                        toccer
-      analytics:                        false
-      advertising:                      false
-      comments:                         true
-
-      robots:
-        index:                          true
-        follow:                         true
-
-      icons:
-#       category-icon:                  comment-text-outline
-        family:                         MDI
-        color:                          md-indigo
-        size:                           5x
-
-      images:
-#       category-image:                 img26.jpg
-        dir:                            /assets/images/collections/blog/featured
-
-      resource_options:
-        - toccer:
-            collapseDepth:              2
-
-  # ----------------------------------------------------------------------------
-  # PUBLIC - SERIES
-  #
-  - scope:
-      type:                             posts
-      path:                             posts/public/series/_posts
-
-    values:
-      layout:                           post
-      scrollbar:                        false
-      author:                           J1 Team
-      toc:                              true
-      fam_menu_id:                      page_ctrl_simple
-      resources:                        toccer
-      analytics:                        false
-      advertising:                      false
-      comments:                         true
-
-      robots:
-        index:                          true
-        follow:                         true
-
-      icons:
-#       category-icon:                  dots-horizontal-circle
-        family:                         MDI
-        color:                          md-indigo
-        size:                           5x
-
-      images:
-#       category-image:                 img26.jpg
-        dir:                            /assets/images/collections/blog/series
-
-  # ----------------------------------------------------------------------------
-  # PUBLIC - WIKIPEDIA
-  #
-  - scope:
-      type:                             posts
-      path:                             posts/public/wikipedia/_posts
-
-    values:
-      layout:                           post
-      scrollbar:                        false
-      author:                           Wikipedia
-      resources:                        toccer
-      toc:                              true
-      fam_menu_id:                      page_ctrl_simple
-      resources:                        toccer
-      analytics:                        false
-      advertising:                      false
-      comments:                         false
-
-      robots:
-        index:                          false
-        follow:                         false
-
-      icons:
-#       category-icon:                  wikipedia
-        family:                         MDI
-        color:                          md-indigo
-        size:                           5x
-
-      images:
-        category-image:
-        dir:                            /assets/images/collections/blog/wikipedia
-
-  # ----------------------------------------------------------------------------
-  # Collections
-  #
-
-  # ----------------------------------------------------------------------------
-  # Featured Articles
-  #
-  - scope:
-      type:                             featured
-      path:                             collections/_featured
-
-    values:
-      layout:                           page
-
-  # ----------------------------------------------------------------------------
-  # Biography (Book Shelf)
-  #
-  - scope:
-      type:                             biography
-      path:                             collections/_biography
-
-    values:
-      layout:                           page
-
-  # ----------------------------------------------------------------------------
-  # Fantasy (Book Shelf)
-  #
-  - scope:
-      type:                             fantasy
-      path:                             collections/_fantasy
-
-    values:
-      layout:                           page
-
-  # ----------------------------------------------------------------------------
-  # Romance (Book Shelf)
-  #
-  - scope:
-      type:                             romance
-      path:                             collections/_romance
-
-    values:
-      layout:                           page
+            collapseDepth:              4
 
 
 # ==============================================================================

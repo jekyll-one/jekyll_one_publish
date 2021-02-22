@@ -25,7 +25,7 @@ about_config:
 #
 settings:
 
-  enabled:                              true
+  enabled:                              false
   placement:                            navbar
   target:                               _blank
 
