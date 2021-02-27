@@ -1,13 +1,16 @@
 ---
-title:                                  Publishing
-tagline:                                publish a site
+title:                                  Bring a site online
+tagline:                                publish your web
 date:                                   2021-02-20 00:00:00
 description: >
-                                        Bootstrap modals are used to add dialogues to your web pages for user
-                                        notifications. ????????????????????
+                                        Learn what providers give free plans to bring websites online,
+                                        to publish a site for free.
+                                        Web publishing, or online publishing, is the process of publishing
+                                        content on the Internet. It includes creating and uploading websites,
+                                        updating webpages, and posting blogs online.
 
-categories:                             [ Publishing, Knowledge ]
-tags:                                   [ Provider ]
+categories:                             [ Provider ]
+tags:                                   [ Publishing, Knowledge ]
 
 permalink:                              /pages/public/publishing/publish/
 regenerate:                             false
@@ -27,9 +30,6 @@ resource_options:
             href:                       https://unsplash.com/@markusspiske
 ---
 
-
-
-
 // Page Initializer
 // =============================================================================
 // Enable the Liquid Preprocessor
@@ -47,16 +47,14 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="global" %}
 
-*Web* publishing, or *online* publishing, is the process of publishing content
-on the Internet. It includes creating and uploading websites, updating
-webpages, and posting blogs online. The published content may include text,
-images, videos, and other types of media.
+Learn what providers give free plans to bring websites online, to publish a
+site for *free* .
 
-In order to publish content on the web, you need three things:
-
-. web development software
-. an Internet connection
-. a web server
+Web publishing, or online publishing, is the process of publishing content on
+the Internet. It includes creating and uploading websites, updating webpages,
+and posting blogs online. It includes creating and updating webpages, and
+posting blogs online. The published content may include text, images, videos,
+and other types of media.
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

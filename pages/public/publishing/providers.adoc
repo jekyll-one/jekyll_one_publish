@@ -1,13 +1,16 @@
 ---
-title:                                  Publishing
-tagline:                                provider
+title:                                  Provider
+tagline:                                free plan services
 date:                                   2021-02-20 00:00:00
 description: >
-                                        Bootstrap modals are used to add dialogues to your web pages for user
-                                        notifications. ????????????????????
+                                        In general, (service) provider are commercial IT
+                                        companies offering (service) products to be paid for.
+                                        But most of these comnpanies provide, beside several
+                                        commercial business plans, a plan offered to use their
+                                        platform for free (free plan).
 
-categories:                             [ Publishing, Knowledge ]
-tags:                                   [ Provider ]
+categories:                             [ Provider ]
+tags:                                   [ Publishing, Knowledge ]
 
 permalink:                              /pages/public/publishing/provider/
 regenerate:                             false
@@ -23,7 +26,7 @@ resource_options:
           alt:                          Photo by Joel Filipe on Unsplash
           badge:
             type:                       unsplash
-            author:                     Joel Filipe
+            author:                     Joel filipe
             href:                       https://unsplash.com/@joelfilip
 ---
 
@@ -44,9 +47,11 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="global" %}
 
-
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
 
 A service provider is a vendor that provides IT solutions and/or services to
 end users and organizations. A service provider's delivery model generally
