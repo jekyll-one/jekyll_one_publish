@@ -1,17 +1,17 @@
 {
   "private": true,
-  "name": "j1_starter",
-  "version": "2021.0.13",
+  "name": "publish",
+  "version": "2021.0.14",
   "description": "J1 Template Pubslish Web",
-  "homepage": "https://your.site",
+  "homepage": "https://jekyll.one/",
   "author": {
-    "name": "Your Name",
-    "email": "name@mail.site",
-    "url": "https://your.site"
+    "name": "Juergen Adams",
+    "email": "juergen@jekyll.one",
+    "url": "https://jekyll.one/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://your.site"
+    "url": "https://jekyll.one/"
   },
   "config": {
     "bumplevel": "patch",
@@ -42,9 +42,9 @@
     "opt_webserver": "puma",
     "opt_interface": "0.0.0.0",
     "opt_web_port": "18000",
-    "opt_web_url": "http://localhost:40000/",
+    "opt_web_url": "http://localhost:18000/",
     "opt_app_port": "18010",
-    "opt_app_url": "http://localhost:40010/",
+    "opt_app_url": "http://localhost:18010/",
     "opt_profile": "",
     "opt_watch": "--watch",
     "opt_livereload": "--livereload",
