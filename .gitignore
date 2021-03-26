@@ -12,6 +12,8 @@ package-lock.json
 
 Gemfile.lock
 
+*pid.lock
+
 Passengerfile.json
 
 tmp/
@@ -50,6 +52,3 @@ _site/
 .jekyll-cache/
 
 .sass-cache/
-
-
-
