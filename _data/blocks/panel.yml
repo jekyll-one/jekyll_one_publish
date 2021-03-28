@@ -59,7 +59,7 @@ settings:
                                                 If you access one of the provider links below, like
                                                 Github, Netlify or Heroku, you'll be redirected to the
                                                 preview page hosted at the respective provider. To get back
-                                                to this page, click on the home button <i class="mdi mdi-home-variant "></i>
+                                                to this page, click on the <b>go-back</b> button <i class="mdi mdi-subdirectory-arrow-left "></i>
                                                 in the quicklinks bar at the top right.
                                               </td>
                                             </tr></tbody>

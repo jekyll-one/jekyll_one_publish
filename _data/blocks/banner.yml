@@ -199,7 +199,7 @@ settings:
               width:                    12
               type:                     text
               animate:                  fadeInUp
-              title:                    Are you corious?
+              title:                    Are you curious?
               tagline:                  <large><b>creating websites</b></large>
               description: >
                                         It is not a secret, that many options are available today to create

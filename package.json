@@ -1,17 +1,17 @@
 {
   "private": true,
-  "name": "publish",
+  "name": "j1_starter",
   "version": "2021.1.0",
-  "description": "J1 Template Pubslish Web",
-  "homepage": "https://jekyll.one/",
+  "description": "J1 Template Starter Web",
+  "homepage": "https://your.site",
   "author": {
-    "name": "Juergen Adams",
-    "email": "juergen@jekyll.one",
-    "url": "https://jekyll.one/"
+    "name": "Your Name",
+    "email": "name@mail.site",
+    "url": "https://your.site"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://jekyll.one/"
+    "url": "https://your.site"
   },
   "config": {
     "bumplevel": "patch",
@@ -41,14 +41,14 @@
     "opt_skip_initial_build": "--skip-initial-build",
     "opt_webserver": "puma",
     "opt_interface": "0.0.0.0",
-    "opt_web_port": "18000",
-    "opt_web_url": "http://localhost:18000/",
-    "opt_app_port": "18010",
-    "opt_app_url": "http://localhost:18010/",
+    "opt_web_port": "40000",
+    "opt_web_url": "http://localhost:40000/",
+    "opt_app_port": "40010",
+    "opt_app_url": "http://localhost:40010/",
     "opt_profile": "",
     "opt_watch": "--watch",
     "opt_livereload": "--livereload",
-    "opt_livereload_port": "18001"
+    "opt_livereload_port": "40001"
   },
   "algolia": {
     "admin_key": "your-algolia-admin-key"
@@ -115,7 +115,7 @@
     "setup:node-modules-utilsrv": "echo Bootstrap utility server modules .. && echo J1 Utility Server modules: >> install.log && cd utilsrv && npm --silent install >> ../install.log && cd .. && echo done.",
     "setup:detect-os": "echo Detect OS .. && cross-env if-env OS=Windows_NT && cross-var echo \"OS detected: $OS\" || OS=$(echo $(getos)) && echo \"OS detected: $OS\" && echo done.",
     "setup:site": "run-s -s build",
-    "site": "run-s site:*",
+    "site": "run-p -s site:*",
     "site:jekyll": "echo Startup the site .. && cross-env SINATRA_ACTIVESUPPORT_WARNING=false bundle exec jekyll s --incremental --livereload --livereload-port $npm_package_jekyll_opt_livereload_port --open",
     "site:utilsrv": "npm --prefix ./utilsrv --silent run utilsrv",
     "bump": "run-s -s ver && run-s -s bump:* && run-s -s ver",

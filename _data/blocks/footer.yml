@@ -151,11 +151,13 @@ settings:
                   tagline:              First addresss for latest news
                   href:                 http://jekyllrb.com/
 
-              - name:                   Jekyll Tips
+              - name:                   CloudCannon
                 link:
-                  title:                Jekyll Tips
+                  title:                Jekyll Tips on CloudCannon
                   tagline:              Learn from experts
                   href:                 http://jekyll.tips/
+                  target:               _blank
+                  rel:                  noopener noreferrer
 
               - name:                   Stackoverflow
                 link:
@@ -183,7 +185,6 @@ settings:
               enabled:                  false
               mail:                     contact@jekyll.one
               href:                     www.jekyll.one
-
 
 # ------------------------------------------------------------------------------
 # END configuration
