@@ -15,6 +15,9 @@ tags:                                   [ Publishing, Knowledge ]
 permalink:                              /pages/public/publishing/publish/
 regenerate:                             false
 
+comments:                               true
+fam_menu_id:                            page_ctrl_simple
+
 resources:                              []
 resource_options:
   - attic:
@@ -61,33 +64,45 @@ and other types of media.
 
 == Publish at GitHub
 
-See:
+GitHub Pages are public webpages hosted and easily published through GitHub.
+The quickest way to get up and running is by using the Jekyll Theme Chooser
+to load a pre-made theme. You can then modify your GitHub Pages’ content and
+style remotely via the web or locally on your computer.
 
-* https://guides.github.com/features/pages/[GitHub Pages]
+== Publish at Netlify
 
 GitHub Pages are public webpages hosted and easily published through GitHub.
 The quickest way to get up and running is by using the Jekyll Theme Chooser
 to load a pre-made theme. You can then modify your GitHub Pages’ content and
 style remotely via the web or locally on your computer.
 
-=== Publish at Netlify
-
-See:
-
-* https://www.netlify.com/blog/2020/04/02/a-step-by-step-guide-jekyll-4.0-on-netlify/[step-by-step-guide-jekyll-4.0-on-netlify]
-
-=== Publish at Digital Ocean
-
-See:
-
-* https://www.digitalocean.com/community/tutorials/how-to-deploy-jekyll-blogs-with-git[how-to-deploy-jekyll-blogs-with-git]
+== Publish at Digital Ocean
 
 DigitalOcean often offers free credit for new customers by using its promo code.
 After registering an account, you can go to Settings/Billing and enter the
 coupon code in the field, and you will get a minimum of $10 for free.
 
-=== Publish at Heroku
+== Publish at Heroku
 
-See:
+GitHub Pages are public webpages hosted and easily published through GitHub.
+The quickest way to get up and running is by using the Jekyll Theme Chooser
+to load a pre-made theme. You can then modify your GitHub Pages’ content and
+style remotely via the web or locally on your computer.
 
-* https://blog.heroku.com/jekyll-on-heroku[jekyll-on-heroku]
+== Further Reading
+
+Find from here some interesting links to additional sources of information
+for further reading. The links will give some more background on publishing
+a website.
+
+mdi:link-variant[24px, md-blue ml-3 mr-2]
+https://guides.github.com/features/pages/[Publish at GitHub Pages, {browser-window--new}] +
+mdi:link-variant[24px, md-blue ml-3 mr-2]
+https://www.netlify.com/blog/2020/04/02/a-step-by-step-guide-jekyll-4.0-on-netlify/[Publish at Netlify, {browser-window--new}] +
+mdi:link-variant[24px, md-blue ml-3 mr-2]
+https://www.digitalocean.com/community/tutorials/how-to-deploy-jekyll-blogs-with-git[Publish at DigitalOcean, {browser-window--new}] +
+mdi:link-variant[24px, md-blue ml-3 mr-2]
+https://blog.heroku.com/jekyll-on-heroku[Publish at Heroku, {browser-window--new}] +
+
+
+== Leave a comment

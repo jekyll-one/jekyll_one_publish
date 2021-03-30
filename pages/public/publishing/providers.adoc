@@ -12,6 +12,9 @@ description: >
 categories:                             [ Provider ]
 tags:                                   [ Publishing, Knowledge ]
 
+comments:                               true
+fam_menu_id:                            page_ctrl_simple
+
 permalink:                              /pages/public/publishing/provider/
 regenerate:                             false
 
@@ -115,3 +118,5 @@ _Heroku_ is a commercial Internet platform. The company offers a container-based
 cloud Platform as a Service (PaaS). Developers use _Heroku_ to deploy, manage,
 and scale modern (web) apps. The platform is flexible, and easy to use, offering
 developers a simple path to getting their products to market.
+
+== Leave a comment
