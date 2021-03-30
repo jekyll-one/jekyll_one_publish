@@ -12,6 +12,8 @@ tags:                                   [ Overview ]
 categories:                             [ Software, Platforms, Contributers ]
 
 scrollbar:                              false
+comments:                               true
+fam_menu_id:                            page_ctrl_simple
 
 permalink:                              /pages/public/about/site/
 regenerate:                             false
@@ -86,3 +88,5 @@ Internet. Find more information on:
   selected providers.
 
 Have fun!
+
+== Leave a comment
