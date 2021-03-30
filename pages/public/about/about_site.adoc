@@ -23,12 +23,12 @@ resource_options:
       padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/ian-schneider-1920x1280.jpg
-          alt:                          Photo by Ian Schneider on Unsplash
+        - url:                          /assets/images/modules/attics/nicola-styles-1920x1280.jpg
+          alt:                          Photo by Nicola Styles on Unsplash
           badge:
             type:                       unsplash
-            author:                     Ian Schneider
-            href:                       https://unsplash.com/@goian
+            author:                     Nicola Styles
+            href:                       https://unsplash.com/@nicolastyles
 ---
 
 // Page Initializer

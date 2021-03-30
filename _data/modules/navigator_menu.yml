@@ -20,9 +20,11 @@
 #
 - item:                                 Publishing
   sublevel:
+
     - title:                            Provider
       icon:                             home-city
       href:                             /pages/public/publishing/provider/
+
     - title:                            Publish a site
       icon:                             publish
       href:                             /pages/public/publishing/publish/
@@ -39,15 +41,26 @@
 #
 - item:                                 About
   sublevel:
+
     - title:                            This site
       icon:                             home-variant-outline
       href:                             /pages/public/about/site
-    - title:                            Privacy
-      icon:                             heart
-      href:                             /pages/public/legal/en/privacy/
+
+    - title:                            Copyright
+      icon:                             copyright
+      href:                             /pages/public/legal/en/copyright/
+
     - title:                            Impress
       icon:                             gavel
       href:                             /pages/public/legal/en/impress/
+
+    - title:                            Privacy
+      icon:                             heart
+      href:                             /pages/public/legal/en/privacy/
+
+    - title:                            Comments
+      icon:                             comment
+      href:                             /pages/public/legal/en/comment_policy/
 
 # ------------------------------------------------------------------------------
 # END config
