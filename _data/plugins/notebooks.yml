@@ -41,7 +41,7 @@ settings:
   #   default:                          /assets/data/jupyther/notebooks
   #
   enabled:                              false
-  
+
   # ----------------------------------------------------------------------------
   # INSTANCE configuration (notebook)
   #
@@ -51,8 +51,8 @@ settings:
     # Tutorial
     #
     - notebook:
-        enabled:                        true
-     
+        enabled:                        false
+
         src:                            tutorial.ipynb
         id:                             nb_tutorial
 
@@ -61,7 +61,7 @@ settings:
     #
     - notebook:
         enabled:                        true
-     
+
         src:                            visualisation.ipynb
         id:                             nb_visualisation
 

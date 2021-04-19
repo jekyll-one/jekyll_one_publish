@@ -53,7 +53,7 @@ environment:                            production
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2021.1.0
+version:                                2021.1.1
 
 # version
 # ------------------------------------------------------------------------------
@@ -582,6 +582,24 @@ autopages:
 defaults:
 
   # ----------------------------------------------------------------------------
+  # HTML partials (loaded via XHR) excluded from sitemap
+  #
+  - scope:
+      path:                             assets/data
+
+    values:
+      sitemap:                          false
+
+  # ----------------------------------------------------------------------------
+  # Module HTML docs and examples excluded from sitemap
+  #
+  - scope:
+      path:                             assets/themes/j1
+
+    values:
+      sitemap:                          false
+
+  # ----------------------------------------------------------------------------
   # Pages
   #
   - scope:
@@ -591,22 +609,22 @@ defaults:
     values:
       layout:                           page
       author:                           J1 Team
-      toc:                              true
-      fam_menu_id:                      page_ctrl_simple
-      resources:                        toccer
-      analytics:                        true
-      advertising:                      false
-      comments:                         false
-      scrollbar:                        false
-      indexed:                          true
 
       robots:
         index:                          true
         follow:                         true
 
+      analytics:                        true
+      advertising:                      false
+      comments:                         false
+
+      toc:                              true
+      fam_menu_id:                      page_ctrl_simple
+      scrollbar:                        false
+
       icons:
         family:                         MDI
-        color:                          md-indigo
+        color:                          md-blue
         size:                           5x
 
       images:
@@ -614,8 +632,7 @@ defaults:
 
       resource_options:
         - toccer:
-            collapseDepth:              4
-
+            collapseDepth:              3
 
 # ==============================================================================
 # 6. LAYOUT configuration

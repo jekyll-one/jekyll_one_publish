@@ -1,25 +1,28 @@
 ---
 title:                                  Comment Policy
 tagline:                                discuss with respect
-date:                                   2021-03-30 00:00:00
+date:                                   2021-03-30 00:00:00 +100
 description: >
-                                        First things first: We love comments and appreciate the time that our
-                                        visitors spend to share ideas and give feedback. Thank you to everyone
+                                        We love comments and appreciate the time that our visitors
+                                        spend to share ideas and give feedback. Thank you to everyone
                                         who comments at {j1--site-name}.
 
-tags:                                   [ Comments ]
-categories:                             [ Policy, Info ]
+tags:                                   [ Legal ]
+categories:                             [ Comments, Policy ]
 
-toc:                                    true
-fam:                                    true
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
 fam_menu_id:                            page_ctrl_simple
 scrollbar:                              false
-indexed:                                false
 comments:                               false
-exclude_from_search:                    true
+toc:                                    true
 
 permalink:                              /pages/public/legal/en/comment_policy/
-regenerate:                             false
+regenerate:                             true
+
 
 resources:                              []
 resource_options:

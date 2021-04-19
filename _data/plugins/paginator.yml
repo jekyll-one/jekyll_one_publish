@@ -30,7 +30,7 @@ about_config:
 #   values:                             true|false (boolean)
 #   default:                            false
 #
-enabled:                                true
+enabled:                                false
 
 # ------------------------------------------------------------------------------
 # User configuration settings
@@ -41,7 +41,7 @@ settings:
   # PAGINATION settings
   #
   pagination:
-    enabled:                            true
+    enabled:                            false
 
   # AUTOPAGE settings
   #

@@ -1,20 +1,22 @@
 ---
 title:                                  Impress
 tagline:                                legal data
-date:                                   2020-10-23 00:00:00
+date:                                   2020-10-23 00:00:00 +100
 description: >
                                         Impressum
 
-tags:                                   [ Impressum ]
-categories:                             [ Legal, Info ]
+categories:                             [ Legal ]
+tags:                                   [ Impressum, Info ]
 
-toc:                                    false
-fam:                                    true
-fam_menu_id:                            default
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
+fam_menu_id:                            page_ctrl_simple
 scrollbar:                              false
-indexed:                                false
 comments:                               false
-exclude_from_search:                    true
+toc:                                    false
 
 permalink:                              /pages/public/legal/en/impress/
 regenerate:                             false
@@ -33,6 +35,7 @@ resource_options:
             author:                     Nicola Styles
             href:                       https://unsplash.com/@nicolastyles
 ---
+
 
 // Page Initializer
 // =============================================================================

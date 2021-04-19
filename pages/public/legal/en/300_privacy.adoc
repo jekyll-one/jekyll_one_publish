@@ -1,20 +1,22 @@
 ---
 title:                                  Privacy
 tagline:                                your personal data
-date:                                   2020-10-23 00:00:00
+date:                                   2020-10-23 00:00:00 +100
 description: >
                                         Protection of your personal data
 
+categories:                             [ Legal ]
 tags:                                   [ Privacy, Statement ]
-categories:                             [ Legal, Info ]
 
-toc:                                    true
-fam:                                    false
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
 fam_menu_id:                            page_ctrl_simple
 scrollbar:                              false
-indexed:                                false
 comments:                               false
-exclude_from_search:                    true
+toc:                                    true
 
 permalink:                              /pages/public/legal/en/privacy/
 regenerate:                             false
