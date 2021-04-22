@@ -18,16 +18,16 @@
 # ------------------------------------------------------------------------------
 # Menu PUBLISHING
 #
-- item:                                 Publishing
-  sublevel:
-
-    - title:                            Provider
-      icon:                             home-city
-      href:                             /pages/public/publishing/provider/
-
-    - title:                            Publish a site
-      icon:                             publish
-      href:                             /pages/public/publishing/publish/
+# - item:                                 Publishing
+#   sublevel:
+#
+#     - title:                            Provider
+#       icon:                             home-city
+#       href:                             /pages/public/publishing/provider/
+#
+#     - title:                            Publish a site
+#       icon:                             publish
+#       href:                             /pages/public/publishing/publish/
 
 
 # ------------------------------------------------------------------------------

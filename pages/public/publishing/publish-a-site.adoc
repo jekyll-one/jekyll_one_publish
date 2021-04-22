@@ -12,6 +12,11 @@ description: >
 categories:                             [ Provider ]
 tags:                                   [ Publishing, Knowledge ]
 
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+  
 permalink:                              /pages/public/publishing/publish/
 regenerate:                             false
 
