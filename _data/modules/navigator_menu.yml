@@ -58,9 +58,9 @@
       icon:                             heart
       href:                             /pages/public/legal/en/privacy/
 
-    - title:                            Comments
-      icon:                             comment
-      href:                             /pages/public/legal/en/comment_policy/
+    # - title:                            Comments
+    #   icon:                             comment
+    #   href:                             /pages/public/legal/en/comment_policy/
 
 # ------------------------------------------------------------------------------
 # END config
