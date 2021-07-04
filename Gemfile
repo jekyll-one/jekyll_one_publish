@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/Gemfile (run-time)
+# ~/Gemfile (runtime)
 # Provides package information to bundle all Ruby gem needed
 # for Jekyll and J1 template (managed by Ruby Gem Bundler)
 #
@@ -52,9 +52,9 @@ ruby RUBY_VERSION
 #
 gem 'jekyll', '~> 4.2'
 
-# Theme Rubies, default: J1 Template
+# Theme Rubies, default: J1 Template (NOT used for the development system)
 #
-gem 'j1-template', '~> 2021.1.2'
+gem 'j1-template', '~> 2021.1.8'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -121,7 +121,7 @@ group :jekyll_plugins do
 # gem 'jekyll-redirect-from', '>= 0.16.0'                                       # Useful ???
 # gem 'jekyll-sass-converter', '>= 2.1.0'                                       # Used if SASS (file) conversion is enabled
   gem 'jekyll-sitemap', '>= 1.2.0'
-  gem 'j1-paginator', '>= 2021.1.0'                                             # New version !!!
+# gem 'j1-paginator', '>= 2021.1.0'                                             # New version !!!
 end
 
 # ------------------------------------------------------------------------------
@@ -133,7 +133,7 @@ end
 # web application, e.g. on Docker or a Heroku Dyno, to define and use
 # of identical Ruby runtime environments.
 #
-# ruby '2.6.5'
+# ruby '2.7.2'
 
 # ------------------------------------------------------------------------------
 # Enable the `rake` Gem if needed. For container-based apps, Rake can
@@ -194,15 +194,12 @@ gem 'omniauth', '~> 1.0'                                                        
 gem 'omniauth-oauth2', '~> 1.7'
 
 gem 'sinatra', '~> 2.0'
-# gem 'sinatra-cross_origin', '~> 0.3'                                          # currently NOT used
-
 gem 'warden', '~> 1.2'
 
 # ------------------------------------------------------------------------------
 # Gem needed for J1 logger based on log4r (middleware)
 #
 gem 'log4r', '~> 1.1', '>= 1.1.10'
-gem 'uuid', '~> 2.3', '>= 2.3.8'
 gem 'date', '~> 2.0'
 
 # ------------------------------------------------------------------------------

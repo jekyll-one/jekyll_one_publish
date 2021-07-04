@@ -30,23 +30,25 @@ about_config:
 #   values:                             true|false (boolean)
 #   default:                            false
 #
-enabled:                                false
+#enabled:                                true
 
 # ------------------------------------------------------------------------------
 # User configuration settings
 #
 settings:
 
-  # ------------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------
   # PAGINATION settings
   #
   pagination:
-    enabled:                            false
+    enabled:                            true
+    rebuild:                            false                                   # currently NOT used
 
   # AUTOPAGE settings
   #
   autopages:
     enabled:                            false
+    rebuild:                            false                                   # currently NOT used
 
 # ------------------------------------------------------------------------------
 # END config

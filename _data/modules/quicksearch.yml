@@ -25,9 +25,11 @@ about_config:
 #
 settings:
 
-  enabled:                              false
+  enabled:                              true
   placement:                            navbar
   target:                               _blank
+  rebuild:                              false
+  full_index:                           false
 
   stopwords_locale:                     en
   min_length:                           3

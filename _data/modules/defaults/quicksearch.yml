@@ -27,6 +27,8 @@ defaults:
   enabled:                              false
   placement:                            navbar
   target:                               _blank
+  rebuild:                              true
+  full_index:                           true
 
   excludes:                             [
                                           /assets/*, /apps/*, /log/* ,

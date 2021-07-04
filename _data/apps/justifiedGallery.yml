@@ -335,46 +335,6 @@ settings:
           lightbox:                     lg
 
     # --------------------------------------------------------------------------
-    # JAMstack Video Tutorials  (HTML5 VIDEO)
-    #
-    - gallery:
-        enabled:                        true
-        type:                           video-online
-        id:                             jg_jamstack_youtube
-        show_delay:                     300
-        title:                          false
-        css_classes:
-        image_path:                     /assets/videos/gallery
-        thumb_path:                     /assets/videos/gallery
-        videos:                         [
-                                          "https://www.youtube.com/watch?v=YljH-aqKUFk",
-                                          "https://www.youtube.com/watch?v=A_l0qrPUJds"
-                                        ]
-        captions_gallery:               [
-                                          "Phil Hawksworth - An introduction to the JAMstack (50m)",
-                                          "Phil Hawksworth - The full JAMstack Course (3h30m)"
-                                        ]
-        captions_lightbox:              [
-                                          "<p> Speaker at the International JavaScript Conference IJC, London 2019 </p>",
-                                          "<p> Learn how to build websites simpler, faster, and more secure </p>"
-                                        ]
-        poster:                         [
-                                          jamstack-1.jpg,
-                                          jamstack-2.jpg
-                                        ]
-        gallery_options:
-          rowHeight:                    200
-          margins:                      5
-
-        lightbox_options:
-          lightbox:                     lg
-#         mode:                         lg-fade
-#         cssEasing:                    cubic-bezier(0.25, 0, 0.25, 1)
-          videojs:                      true
-          videojsOptions:               []
-
-
-    # --------------------------------------------------------------------------
     # Tutorial Videos (HTML5 VIDEO)
     #
     - gallery:
