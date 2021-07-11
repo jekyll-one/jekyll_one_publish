@@ -443,7 +443,7 @@ plugins:
 # - jekyll-gist
 # - jekyll-redirect-from
 # - jekyll-sass-converter
-  - jekyll-sitemap
+# - jekyll-sitemap
 # - j1-paginator
 
 # ------------------------------------------------------------------------------
@@ -594,8 +594,8 @@ defaults:
       author:                           J1 Team
 
       robots:
-        index:                          true
-        follow:                         true
+        index:                          false
+        follow:                         false
 
       analytics:                        false
       advertising:                      false

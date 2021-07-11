@@ -162,7 +162,7 @@ cookies:
 #   NOTE: Used for developent mode ONLY
 #   NOTE: See ~/packages/300_template_src/_layouts/default.html
 # ------------------------------------------------------------------------------
-flicker_timeout:                        250
+flicker_timeout:                        150
 
 # ------------------------------------------------------------------------------
 # HTML PrettyPrint
@@ -387,7 +387,7 @@ comments:
   provider:                             disqus
 
   disqus:
-    short_name:                         jekyll-one
+    short_name:                         'jekyll-one'
 
 # facebook:                                                                     # currently NOT supported
 #   appid:                              123
@@ -409,7 +409,7 @@ analytics:
   provider:                             google
 
   google:
-    tracking_id:                        'G-SVMD14WSD4'
+    tracking_id:                        'G-8ZGNE0WE42'                          # '<your-tracking-id>'
 
 # custom:                                                                       # currently NOT supported
 #   custom_data:
